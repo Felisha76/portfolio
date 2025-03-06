@@ -112,10 +112,11 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 	height: 100%;
 	left: 100px;
   right: 100px;
-	top: 10px;
+	
 	display:inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
+
   gap: 10px;
 }
 .card {
@@ -123,6 +124,7 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 	height: 50px;
 	position: relative;
 	perspective: 1000px;
+
 }
 .front, .back {
 	position: absolute;
