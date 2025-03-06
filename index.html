@@ -95,13 +95,15 @@
     <div class="search_open">    
         <input type="text" id="search" placeholder="  Type at least 4 characters for search">
     	<label> Table type results </label>
-        <!-- 
-        <label for="fileInput"></label>
-        <input type="file" id="fileInput" accept=".csv" onchange="loadCSV()"> -->
         
+        <label for="fileInput"  class="tooltip">
+            <span class="tooltiptext">Choose a .csv file</span>
+        </label>
+        <input type="file" id="fileInput" accept=".csv" onchange="loadCSV()">
+        <!--
         <label for="fileInput" class="file-selector-button">Choose File</label>
         <input type="file" id="fileInput" style="display: none;"  accept=".csv" onchange="loadCSV()>
-        <p id="fileName">No file chosen</p>
+        <p id="fileName">No file chosen</p> -->
     </div>
 
 
@@ -119,7 +121,7 @@
 
         <tbody>
             <!-- Szűrt eredmények megjelenítése -->
-             <p>Here you can open a custom csv file and filter it with the search input. ;-) </p>
+             
         </tbody>
     </table>
    
