@@ -13,30 +13,10 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 .container3 {
     display: flex;
     flex-direction: row;
-
     height: calc(100vh - 100px);
   }
   
-  .side-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    width: 150px;
-    height: 90%;
-    max-width: 200%;
-    position:fixed;
-    overflow-y: auto;
-    overflow-y: auto;
-    padding-left: 10px;
-    padding-top: 0px;
-  }
-  
-  .side-nav ul {
-	  list-style: none;
-	  padding: 0;
-	  margin: 0;
-  }
+
   
   ol {
     display: block;
