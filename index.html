@@ -1,1 +1,126 @@
-valami
+<!-- Not finished yet -->
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <title>Personal profile</title>
+    <link rel="icon" type="image/png" href="media/favicon_light.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/SoloLearn_Python_Core_course_notes/style.css">
+</head>
+<body>
+<div class="container1">
+        <!-- Felső navigációs sáv -->
+    <div class="top-nav">
+      
+            <a href="index.html"><img src="media/favicon_light.png"  alt="FrontNest Studio logo" class="logo"></a>
+       
+            <div>
+                <div class="wrap profile-info">
+                    <div class="card"><div class="front"><span>
+                        <!-- Felirat, kép --> Certifications  </span></div><div class="back"><span>
+                        <!-- link --> <a href="subsites/certificates.html" data-target="subsites/certificates.html"> 
+                        <!-- link címe --> Certifications </a>   </span></div></div>
+  
+                    <div class="card"><div class="front"><span>
+                        <!-- Felirat, kép --> Curriculum  </span></div><div class="back"><span>
+                        <!-- link --> <a href="subsites/curriculum.html" data-target="subsites/curriculum.html"> 
+                        <!-- link címe --> Curriculum </a>   </span></div></div>
+
+                    <div class="card"><div class="front"><span>
+                            <!-- Felirat, kép --> Public profiles  </span></div><div class="back"><span>
+                            <!-- link --> <a href="subsites/public_profiles.html" data-target="subsites/public_profiles.html">	
+                            <!-- link címe --> Public profiles   </a>  </span></div></div> 
+
+                    <div class="card"><div class="front"><span>
+                                    <!-- Felirat, kép --> Site info  </span></div><div class="back"><span>
+                                    <!-- dropdown menu -->
+                                    <div class="dropdown">
+                                            <button class="dropbtn"> Site info <i class="fa fa-caret-down"></i>  </button>
+                                            <div class="dropdown-content">
+                                                <a href=""  class="simpleLink">Copyright</a>
+                                                <a href="" class="simpleLink">1</a>
+                                                <a href="" class="simpleLink">2 </a>
+                                            </div>
+                                    </div> 
+                                    </span></div></div>                 
+                            
+                </div>
+            </div>
+
+		
+		 
+            </div>
+		<!-- dropdown menu -->
+            
+    </div>
+</div>  
+    
+<!-- Oldalsó navigációs sáv -->
+<div class="container2">
+
+    <div class="side-nav">
+        <div class="side-nav-links">
+            <ol>
+                <li><b>Python</b></a>
+                    <ul>
+                        <li><a href="subsites/core_notes.html" data-target="subsites/core_notes.html"  class="simpleLink">	Python core notes	</a></li>
+                        <li><a href="subsites/codebits.html" data-target="subsites/codebits.html" class="simpleLink">	Codebits	</a></li>
+                        <li><a href="subsites/code_coaches.html" data-target="subsites/code_coaches.html" class="simpleLink">	Code Coaches	</a> </li> 
+                    </ul>
+                </li>
+                <li><a href="#">	Link 5	</a></li>
+                <li><a href="#">	Link 6	</a></li>
+
+          
+            </ol>
+        </div>
+        <div>
+            <a href="mailto:felisha19761228@gmail.com" class="feedback">
+			<hr>
+			Felisha76 &copy; <br>Feedback<hr>v.1.1</a>
+		</div>
+			
+			
+    </div>
+    
+  
+<!-- Fő tartalom -->
+<div class="main">
+    <div class="search_open">    
+        <input type="text" id="search" placeholder="  Type at least 4 characters for search">
+    	<label> Table type results </label>
+        <label for="fileInput"></label>
+        <input type="file" id="fileInput" accept=".csv" onchange="loadCSV()">
+    </div>
+
+
+    <table id="resultTable">
+
+        <thead>
+        <tr>
+            <th id="col01">Cathegory</th>
+            <th id="col02">Subcathegory</th>
+            <th id="col03">Info</th>
+            <th id="col04">Code bits</th>
+            <th id="col05">Row</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <!-- Szűrt eredmények megjelenítése -->
+        </tbody>
+    </table>
+   
+</div>
+
+
+
+    <script src="/SoloLearn_Python_Core_course_notes/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body bckgr:		#1c1d1d
+body color:		#d2d4d6
+table bckgr:		#272929
+table color:		#d2d4d6
+td hover bckgr:		#999b9e
+td hover color:		#1c1d1d
+
+Sötétszürke: 		#0b0c0c
+világosszürke: 		#999b9e
+még világosabb szürke: 	#bbbdbf
+még világosabb szürke: 	#d2d4d6
