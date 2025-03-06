@@ -10,10 +10,10 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 }
 
 /* Oldalsó navigációs sáv */     
-.container2 {
+.container3 {
     display: flex;
     flex-direction: row;
-    margin-top: 0px;
+
     height: calc(100vh - 100px);
   }
   
