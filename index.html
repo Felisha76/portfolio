@@ -95,8 +95,13 @@
     <div class="search_open">    
         <input type="text" id="search" placeholder="  Type at least 4 characters for search">
     	<label> Table type results </label>
+        <!-- 
         <label for="fileInput"></label>
-        <input type="file" id="fileInput" accept=".csv" onchange="loadCSV()">
+        <input type="file" id="fileInput" accept=".csv" onchange="loadCSV()"> -->
+        
+        <label for="fileInput" class="file-selector-button">Choose File</label>
+        <input type="file" id="fileInput" style="display: none;"  accept=".csv" onchange="loadCSV()>
+        <p id="fileName">No file chosen</p>
     </div>
 
 
