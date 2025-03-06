@@ -52,7 +52,7 @@ body, a, pre {
 
 
 /* HOVER ACTIONS */
-.cert:hover {
+img:hover {
   transform: /* rotate3d(0, 0, 0.5, 360deg)*/ scale(2); 
   transition-duration: 700ms;
 }
