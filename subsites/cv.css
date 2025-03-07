@@ -14,7 +14,7 @@ body, .top-nav, .side-nav2, .side-nav2 a, pre {
     display: flex;
     flex-direction: row;
     margin-top: 0px;
-    height: 100%;
+    height: 50%;
   }
   
   .side-nav2 {
