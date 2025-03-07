@@ -164,11 +164,11 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 }
 .card:hover .front {
 	transform: rotateY(180deg);
-  transition-duration: 100ms;
+  transition-duration: 200ms;
 }
 .card:hover .back {
 	transform: rotateY(360deg);
-  transition-duration: 100ms;
+  transition-duration: 200ms;
 }  
 
 /* Oldalsó navigációs sáv */     
