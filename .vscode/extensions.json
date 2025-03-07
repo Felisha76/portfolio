@@ -1,6 +1,5 @@
 {
     "recommendations": [
         "ms-edgedevtools.vscode-edge-devtools",
-        "negokaz.live-server-preview"
     ]
 }
