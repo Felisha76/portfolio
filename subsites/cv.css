@@ -61,17 +61,6 @@ body, .top-nav, .side-nav2, .side-nav2 a, pre {
     color: #d2d4d6;
     text-align: center;
   }
-
-  .side-nav2 {
-    position: sticky;
-    bottom: 5px;
-    padding-bottom: 50px;
-    font-size: 8px;
-    color: #d2d4d6;
-    text-align: center;
-    text-decoration: none;
-  }
-
  
   /* Main content */
   .main2 {
