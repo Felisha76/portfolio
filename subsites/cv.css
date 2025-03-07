@@ -2,7 +2,7 @@
 Not finished yet
 */
 
-body, .top-nav, .side-nav2, .side-nav2 a, pre {
+body, .top-nav, .side-nav2, .side-nav2 a {
 	background-color: #1c1d1d;
 	font-family: 'Noto Sans'; 
   	font-size: 12px;
@@ -72,6 +72,9 @@ body, .top-nav, .side-nav2, .side-nav2 a, pre {
     margin-left: 300px;
   }
 
+  .main2 p {
+    text-align: justify;
+  }
 
 /* HOVER ACTIONS */
 .side-nav2 u:hover  {
