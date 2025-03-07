@@ -27,7 +27,7 @@ body, a, pre {
   img {
     max-width: auto;
     height: 100px;
-    padding: 0px;
+    padding: 10px;
   }
 
   label {
