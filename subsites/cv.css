@@ -14,7 +14,7 @@ body, .top-nav, .side-nav2, .side-nav2 a, pre {
     display: flex;
     flex-direction: row;
     margin-top: 0px;
-    height: 50%;
+    
   }
   
   .side-nav2 {
@@ -22,30 +22,32 @@ body, .top-nav, .side-nav2, .side-nav2 a, pre {
     flex-direction: column;
     justify-content: space-between;
     
-    width: 150px;
-    height: 90%;
+    width: 250px;
+    
+    height: calc(100vh - 100px);
     max-width: 200%;
     position:fixed;
     overflow-y: auto;
     overflow-y: auto;
     padding-left: 10px;
     padding-top: 0px;
+    
   }
   
   .side-nav2 ul {
 	  list-style: none;
-	  padding: 0;
-	  margin: 0;
+	  padding: 0px;
+	  margin: 10px;
   }
   
-  ol {
+  ul {
     display: block;
-    list-style-type: decimal;
     padding-inline-start: 0px;
     unicode-bidi: isolate;
 }
   .side-nav2 li {
 	  margin: 0;
+    list-style-type: circle;
   }
   
   .side-nav2 a {
