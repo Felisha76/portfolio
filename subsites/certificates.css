@@ -24,7 +24,7 @@ body, a, pre {
     max-width: 80%;
   }
 
-  img {
+  .cert {
     max-width: auto;
     height: 100px;
     padding: 10px;
@@ -52,10 +52,11 @@ body, a, pre {
 
 
 /* HOVER ACTIONS */
-img:hover {
+.cert:hover {
   transform: /* rotate3d(0, 0, 0.5, 360deg)*/ scale(2); 
   transition-duration: 700ms;
 }
+
 
 /* Görgetősáv */
 ::-webkit-scrollbar {
