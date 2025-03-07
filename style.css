@@ -23,7 +23,7 @@ body, .top-nav, .side-nav, .side-nav a, pre {
       z-index: 500px;
     }
 
-    .logo {
+    #logo {
       margin-right: 100px;
       margin-left: -5px;
       margin-top: 5px;
