@@ -164,9 +164,11 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 }
 .card:hover .front {
 	transform: rotateY(180deg);
+  transition-duration: 100ms;
 }
 .card:hover .back {
 	transform: rotateY(360deg);
+  transition-duration: 100ms;
 }  
 
 /* Oldalsó navigációs sáv */     
@@ -255,20 +257,6 @@ body, .top-nav, .side-nav, .side-nav a, pre {
     border: thin solid #272929;
     border-radius: 3px;
   }
-
-  /* .custom-file-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  .custom-file-button:hover {
-    background-color: #0056b3;
-  } */
 
 
 /* TOOLTIP */
