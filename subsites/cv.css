@@ -2,7 +2,7 @@
 Not finished yet
 */
 
-body, .top-nav, .side-nav, .side-nav a, pre {
+body, .top-nav, .side-nav2, .side-nav2 a, pre {
 	background-color: #1c1d1d;
 	font-family: 'Noto Sans'; 
   	font-size: 12px;
@@ -32,7 +32,7 @@ body, .top-nav, .side-nav, .side-nav a, pre {
     padding-top: 0px;
   }
   
-  .side-nav ul {
+  .side-nav2 ul {
 	  list-style: none;
 	  padding: 0;
 	  margin: 0;
@@ -44,25 +44,25 @@ body, .top-nav, .side-nav, .side-nav a, pre {
     padding-inline-start: 0px;
     unicode-bidi: isolate;
 }
-  .side-nav li {
+  .side-nav2 li {
 	  margin: 0;
   }
   
-  .side-nav a {
+  .side-nav2 a {
 	  display: block;
 
 	  text-decoration: none;
 	  padding: 5px 2px;
   }
 
-  .side-nav p {
+  .side-nav2 p {
     margin: 1px 2px;
     font-size: 12px;
     color: #d2d4d6;
     text-align: center;
   }
 
-  .side-nav {
+  .side-nav2 {
     position: sticky;
     bottom: 5px;
     padding-bottom: 50px;
@@ -74,7 +74,7 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 
  
   /* Main content */
-  .main {
+  .main2 {
     flex-grow: 1;
     padding: 10px;
     max-width: 80%;
@@ -83,7 +83,7 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 
 
 /* HOVER ACTIONS */
-.side-nav a:hover  {
+.side-nav2 a:hover  {
 	background-color: #999b9e;
 	color: #1c1d1d;
 }
