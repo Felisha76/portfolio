@@ -67,14 +67,14 @@ body, .top-nav, .side-nav2, .side-nav2 a, pre {
   /* Main content */
   .main2 {
     flex-grow: 1;
-    padding: 10px;
+    padding: 5px;
     max-width: 80%;
-    margin-left: 10px;
+    margin-left: 300px;
   }
 
 
 /* HOVER ACTIONS */
-.side-nav2 a:hover  {
+.side-nav2 u:hover  {
 	background-color: #999b9e;
 	color: #1c1d1d;
 }
