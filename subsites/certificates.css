@@ -7,7 +7,7 @@ body, a, pre {
 	font-family: 'Noto Sans'; 
   font-size: 12px;
 	color: #d2d4d6;
-}
+} 
 
 .center {
   justify-items: center;
@@ -74,11 +74,3 @@ body, a, pre {
 ::-webkit-scrollbar-track {
   background-color: #282929;
 }
-
-/* Responzivitási beállítások */
-@media (max-width: 300px) {
-    .top-nav {
-        flex-direction: column; /* Egymás alá rendezés */
-        height: auto; /* Magasság automatikusan igazodik */
-        padding: 10px;
-    }}

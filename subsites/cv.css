@@ -2,7 +2,7 @@
 Not finished yet
 */
 
-body, .top-nav, .side-nav2, .side-nav2 a {
+body, .side-nav2, .side-nav2 a {
 	background-color: #1c1d1d;
 	font-family: 'Noto Sans'; 
   	font-size: 12px;
@@ -104,10 +104,3 @@ body, .top-nav, .side-nav2, .side-nav2 a {
   background-color: #282929;
 }
 
-/* Responzivitási beállítások */
-@media (max-width: 300px) {
-    .top-nav {
-        flex-direction: column; /* Egymás alá rendezés */
-        height: auto; /* Magasság automatikusan igazodik */
-        padding: 10px;
-    }}

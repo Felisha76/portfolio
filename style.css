@@ -13,7 +13,7 @@ body, .top-nav, .side-nav, .side-nav a, pre {
 
     .top-nav {
       display: flex;
-      align-items: center;
+      align-items: stretch;
       position: fixed;
         top: 0;
         left: 10px;
@@ -21,17 +21,19 @@ body, .top-nav, .side-nav, .side-nav a, pre {
       padding: 0 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       z-index: 500px;
+      
     }
 
     #logo {
       margin-right: 100px;
       margin-left: -5px;
       margin-top: 5px;
-      margin-bottom: 5px;
-      flex-shrink: 0;
+      margin-bottom: 200px;
+  
       width: 60px;
       height: 60px;
-
+      position:fixed;
+ 
     }
      
     .profile-info {
@@ -413,9 +415,49 @@ th {
 }
 
 /* Responzivitási beállítások */
-@media (max-width: 300px) {
+  @media (max-width: 400px) {
     .top-nav {
-        flex-direction: column; /* Egymás alá rendezés */
-        height: auto; /* Magasság automatikusan igazodik */
+        flex-direction:column; /* Egymás alá rendezés */
+        height: 100px; /* Magasság automatikusan igazodik */
+        align-items:start;
         padding: 10px;
-    }}
+        width: 80%;
+    }   
+    
+    .wrap {
+      position: relative;
+      width: 80%;
+      height: 50%;
+      left: 80px;
+      right: 100px;
+      
+      flex-wrap: wrap;
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+    
+      gap: 2px;
+    
+    }
+
+    .card {
+      height: 20px;
+    
+    }
+
+    .front {
+      font-size: 8px;
+    }
+
+    .back {
+      font-size: 8px;
+    }
+
+    .side-nav {
+      width: 100px;
+    }
+
+    .main {
+      margin-left: 100px;
+    }
+  }
