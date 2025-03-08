@@ -415,7 +415,7 @@ th {
 }
 
 /* Responzivitási beállítások */
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
     .top-nav {
         flex-direction:column; /* Egymás alá rendezés */
         height: 100px; /* Magasság automatikusan igazodik */
