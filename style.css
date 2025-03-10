@@ -2,7 +2,7 @@
 Not finished yet
 */
 
-body, .top-nav, .side-nav, .side-nav a, pre {
+body, .top-nav, .side-nav, .side-nav a, a, pre {
 	background-color: #1c1d1d;
 	font-family: 'Noto Sans'; 
   	font-size: 12px;
