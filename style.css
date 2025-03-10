@@ -5,6 +5,7 @@ body {
     background-image: url("/media/Im_learning.png");
     background-repeat:repeat;
     background-size:cover;
+    display:inline-flex;
 }
 
 a {
@@ -25,7 +26,7 @@ a.clip {  /* Text mask */
     #logo {
       margin-right: 100px;
       margin-left: -5px;
-      margin-top: -60px;
+      margin-top: 0px;
       margin-bottom: 200px;
       width: 60px;
       height: 60px;
@@ -35,8 +36,6 @@ a.clip {  /* Text mask */
   /* Main content */
   .main {
     flex-grow: 1;
-    align-items: center;
-    vertical-align: middle;
     padding: 10px;
     max-width: 80%;
     margin-left: 10px;
