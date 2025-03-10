@@ -1,14 +1,31 @@
-body, a, pre {
-	background-color: #1c1d1d;
+body {
 	font-family: 'Noto Sans'; 
   	font-size: 12px;
-	color: #d2d4d6;
+	color: #1c1d1d;
+    background-image: url("/media/Im_learning.png");
+    background-repeat:repeat;
+    background-size: 100% 100% 100% 100%;
+}
+
+a {
+    font-family: 'Noto Sans'; 
+    font-size: 12px;
+    color: #1c1d1d;
+}
+
+a.clip {  /* Text mask */
+    font-size: 150px;
+    font-weight:1000;
+    background: url("/media/galaxy_stock_bckgr.jpg") 0 0 / cover no-repeat;
+    color: #de466c;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
     #logo {
       margin-right: 100px;
       margin-left: -5px;
-      margin-top: 5px;
+      margin-top: -60px;
       margin-bottom: 200px;
       width: 60px;
       height: 60px;
@@ -20,7 +37,9 @@ body, a, pre {
     flex-grow: 1;
     padding: 10px;
     max-width: 80%;
-    margin-left: 200px;
+    margin-left: 10px;
+    margin-top: 60px;
+    
   }
 
 /* Görgetősáv */
