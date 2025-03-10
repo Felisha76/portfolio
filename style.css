@@ -152,6 +152,11 @@ body, .top-nav, .side-nav, .side-nav a, pre {
   border-width: thin;
   border-color: #999b9e;
 }
+
+.front a {
+	background-color: #232424;
+}
+
 .back {
 	background-color: #1c1d1d;
   color: #999b9e;
