@@ -254,6 +254,7 @@ body, .top-nav, .side-nav, .side-nav a, a, pre {
     display: flex;
     justify-content: space-between;
     flex: 1;
+    padding-top: 10px;
   }
 
   input::file-selector-button {
