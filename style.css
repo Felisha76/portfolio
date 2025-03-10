@@ -4,7 +4,7 @@ body {
 	color: #1c1d1d;
     background-image: url("/media/Im_learning.png");
     background-repeat:repeat;
-    background-size: 100% 100% 100% 100%;
+    background-size:cover;
 }
 
 a {
@@ -14,8 +14,8 @@ a {
 }
 
 a.clip {  /* Text mask */
-    font-size: 150px;
-    font-weight:1000;
+    font-size: 100px;
+    font-weight:bolder;
     background: url("/media/galaxy_stock_bckgr.jpg") 0 0 / cover no-repeat;
     color: #de466c;
         -webkit-background-clip: text;
@@ -35,6 +35,8 @@ a.clip {  /* Text mask */
   /* Main content */
   .main {
     flex-grow: 1;
+    align-items: center;
+    vertical-align: middle;
     padding: 10px;
     max-width: 80%;
     margin-left: 10px;
