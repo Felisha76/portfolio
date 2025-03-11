@@ -1,0 +1,54 @@
+body {
+    background-color: #1c1d1d;
+    font-family: 'Noto Sans';
+    font-size: 12px;
+    color: #d2d4d6;
+    text-decoration: none;
+}
+
+/* Main content */
+.main_logging {
+
+    flex-grow: 1;
+}
+
+div {
+    
+}
+
+.row {
+    display:table-row;
+}
+
+.row label {
+    padding-right: 5px;
+    padding-bottom: 10px;
+    display:table-cell;
+    vertical-align: top;
+}
+
+.row input, textarea {
+    display:table-cell;
+}
+
+/* HOVER ACTIONS */
+
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #282929;
+    border-radius: 5px;
+    border: 1px solid #999b9e;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #282929;
+}
+
+/* Responzivitási beállítások */
+@media (max-width: 300px) {
+
+}
