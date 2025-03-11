@@ -41,7 +41,8 @@ a.clip {  /* Text mask */
     
   /* Main content */
   .main {
-    max-width: 100%;  
+    max-width: 100%; 
+    max-height: 200%; 
   }
 
 /* HOVER ACTIONS */
