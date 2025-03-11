@@ -14,37 +14,42 @@
 <body>
 <div class="main_logging">
     <div class="row">
-        <label for="input1">Number: </label>               
+        <label for="input1" id="number" readonly>Number: </label>               
     </div>
 
     <div class="row">
     <label for="input1">User's name</label>
-    <input type="text" placeholder="Írj be valamit"></input>        
+    <input type="text" id="username" placeholder="Írj be valamit"></input>        
     </div>
 
     <div class="row">
     <label for="input1">User ID</label>
-    <input type="text" placeholder="Írj be valamit"></input>        
+    <input type="text" id="userid" placeholder="Írj be valamit"></input>        
     </div>
 
     <div class="row">
         <label for="input1">Phone number</label>
-        <input type="text" placeholder="Írj be valamit"></input>        
+        <input type="text" id="email" placeholder="Írj be valamit"></input>        
     </div>
 
     <div class="row">
         <label for="input1">Email address</label>
-        <input type="text" placeholder="Írj be valamit"></input>        
+        <input type="text" id="description" rows="3" placeholder="Írj be valamit"></input>        
     </div>    
 
     <div class="row">
         <label for="input1">Problem description</label>
-        <textarea type="text" placeholder="Írj be valamit"></textarea>        
+        <textarea type="text" placeholder="Írj be valamit"></textarea> 
+              
+    </div>
+
+    <div class="row">
+        <button onclick="copyToClipboard()">Copy to Clipboard</button> 
     </div>
 
 </div>
 
 
-    <script src="call_logging.js"></script>
+    <script src="/solutions/call_logging/call_logging.js"></script>
 </body>
 </html>    
