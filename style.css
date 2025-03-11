@@ -13,17 +13,18 @@ body {
 
 h1, h2 {
   display: block;
-  font-size: 2em;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  text-align: center;
+  font-size: 1em;
+  text-align:center;
+
+}
+
+p {
+  margin: 0px;
 }
 
 a.clip {  /* Text mask */
     font-family: 'Rubik', sans-serif; 
-    font-size: 30vw;    
+    font-size: 20vw;    
     font-weight: 1000;
     background: url("./media/galaxy_stock_bckgr.jpg") 0 0 / cover no-repeat;
         -webkit-background-clip: text;
@@ -40,7 +41,6 @@ a.clip {  /* Text mask */
     
   /* Main content */
   .main {
-    padding: 10px;
     max-width: 100%;  
   }
 
@@ -48,11 +48,13 @@ a.clip {  /* Text mask */
 #logo:hover {
 	transform: rotateY(360deg);
   transition-duration: 2000ms;
+  
 }
 
 .main:hover {
 	transform:scale(1.1);
   transition-duration: 3000ms;
+  padding-left: 60px;
 }
 
 /* Görgetősáv */
