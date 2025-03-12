@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="csvquiz.css">
+	<title>Quiz</title>
+</head>
+<body>
+
+<div class="quiz">
+    <div class="open_csv">    
+        <label for="fileInput"></label>
+        <input type="file" id="quiz_csv" accept=".csv" onchange="loadCSV()"> 
+    </div>
+
+	<div class="wrap">
+        <div class="card"><div class="front"><span>
+            Front   </span></div><div class="back"><span>
+            Back    </span></div></div>
+        
+    </div>
+</div>    
+
+    <script src="csvquiz.js"></script>
+</body>
+</html>
