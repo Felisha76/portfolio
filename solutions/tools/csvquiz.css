@@ -4,6 +4,9 @@ body {
     color:#d2d4d6;
 }
 
+p {
+    font-size: 2vw;
+}
 .wrap {
 	position: absolute;
 	width: 100%;
