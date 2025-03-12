@@ -7,6 +7,10 @@ body {
 p {
     font-size: 2vw;
 }
+
+img {
+    width:4vw;
+}
 .wrap {
 	position: absolute;
 	width: 100%;
@@ -79,3 +83,21 @@ p {
   ::-webkit-scrollbar-track {
 	background-color: #282929;
   }
+
+  /* Responzivitási beállítások */
+  @media (max-width: 800px) { 
+    
+    .wrap {
+      position: relative;
+      width: 80%;
+      height: 50%;
+    
+      gap: 2px;
+    
+    }
+
+    .card {
+      height: 50px;
+      width: 100%;    
+    }
+}
