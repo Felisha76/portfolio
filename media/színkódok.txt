@@ -9,3 +9,21 @@ Sötétszürke: 		#0b0c0c
 világosszürke: 		#999b9e
 még világosabb szürke: 	#bbbdbf
 még világosabb szürke: 	#d2d4d6
+
+
+FONTS:
+	font-family: 'Noto Sans'; 
+  	font-size:2vw;
+	  color: #d2d4d6;
+    background-color:#1c1d1d;
+
+    MASK:
+        font-family: 'Rubik', sans-serif;
+        color:#ffe4c4; 
+    font-size: 20vw;    
+    font-weight: 1000;
+    background: url("./media/galaxy_stock_bckgr.jpg") 0 0 / cover no-repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 0.5px #ffe4c4;    
+    text-decoration: none;
