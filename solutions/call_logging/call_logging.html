@@ -1,3 +1,9 @@
+<!--
+TO DO:
+    - Change table to divs
+-->
+
+
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -11,45 +17,71 @@
 
     <link rel="stylesheet" href="call_logging.css"> <!-- NE NYÚLJ HOZZÁ, MŰKÖDIK  -->
 </head>
+</head>
 <body>
-<div class="main_logging">
-    <div class="row">
-        <label for="input1" id="number" readonly>Number: </label>               
-    </div> 
 
-    <div class="row">
-    <label for="input1">User's name</label>
-    <input type="text" id="username" placeholder="Írj be valamit..."></input>        
+
+<!-- Adatbeviteli mezők -->
+    <div class="container">
+        <table id="myTable">
+            <tr>
+                <td>Telefonszám:</td>
+                <td><input type="text" id="input1" placeholder="Adja meg a telefonszámot"></td>
+            </tr>
+            <tr>
+                <td>Adat 01:</td>
+                <td><input type="text" id="input2" placeholder="Adja meg az adatot"></td>
+            </tr>
+            <tr>
+                <td>Adat 02:</td>
+                <td><input type="text" id="input3" placeholder="Adja meg az adatot"></td>
+            </tr>
+            <tr>
+                <td>adat 03:</td>
+                <td><input type="text" id="input4" placeholder="Adja meg az adatot"></td>
+            </tr>
+            <tr>
+                <td>Adat 04:</td>
+                <td><input type="text" id="input5" placeholder="Adja meg az adatot"></td>
+            </tr>
+            <tr>
+                <td>Hívás oka:</td>
+                <td><textarea id="input6" rows="3" placeholder="Adja meg a hívás okát"></textarea></td>
+            </tr>
+            <tr>
+                <td>Adat 05:</td>
+                <td><textarea id="input7" rows="3" placeholder="Adja meg az adatot"></textarea></td>
+            </tr>
+            <tr>
+                <td>Egyéb információk:</td>
+                <td><textarea id="input8" rows="3" placeholder="Adja meg az egyéb, fontos információkat"></textarea></td>
+            </tr>
+        </table>
+        <button onclick="copyTable()">Másolás vágólapra</button>
     </div>
-
-    <div class="row">
-    <label for="input1">User ID</label>
-    <input type="text" id="userid" placeholder="Írj be valamit"></input>        
-    </div>
-
-    <div class="row">
-        <label for="input1">Phone number</label>
-        <input type="text" id="email" placeholder="Írj be valamit"></input>        
-    </div>
-
-    <div class="row">
-        <label for="input1">Email address</label>
-        <input type="text" id="description" rows="3" placeholder="Írj be valamit"></input>        
-    </div>    
-
-    <div class="row">
-        <label for="input1">Problem description</label>
-        <textarea type="text" placeholder="Írj be valamit"></textarea> 
-              
-    </div>
-
-    <div class="row">
-        <button onclick="copyToClipboard()">Copy to Clipboard</button> 
-    </div>
-
-</div>
-
-
     <script src="/solutions/call_logging/call_logging.js"></script>
+
+    <footer>
+
+        <!-- How To buborék -->
+                <a href="#" class="how-to">How to use this form?
+                    <div class="how-to-hint">
+                        Töltsd ki a szöveges mezőket, amelyikre szükséged van, majd nyomd meg a gombot alul, vagy használd a CTRL+S billentyűkombinációt a kitöltött mezők vágólapra másolásához!
+                    </div>
+                </a>
+        
+        <!-- mailto link -->
+        <p>Készítette:
+        <a href="mailto:felisha19761228@gmail.com?
+        &subject=Call%20Logging%20Form&body=Feedback%20about%20the%20form:" target="_top">Felisha76 2025.</a>
+        
+        </p>
+    </footer>
+
 </body>
+
+
+
+    
+
 </html>    

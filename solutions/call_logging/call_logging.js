@@ -1,27 +1,81 @@
-// Generate a unique number when the page loads
-window.onload = () => {
-    const now = new Date();
-    const uniqueNumber = `${now.getFullYear()}${(now.getMonth()+1).toString().padStart(2,'0')}${now.getDate().toString().padStart(2,'0')}${now.getHours().toString().padStart(2,'0')}${now.getMinutes().toString().padStart(2,'0')}${now.getSeconds().toString().padStart(2,'0')}`;
-    document.getElementById('number').value = uniqueNumber;
-  };
+function copyTable() {
+  const table = document.getElementById('myTable');
+  let tableText = '';
 
-  function copyToClipboard() {
-    const number = document.getElementById('number').value;
-    const username = document.getElementById('username').value;
-    const userid = document.getElementById('userid').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const description = document.getElementById('description').value;
+  // Bejárja a táblázatot
+  for (let i = 0; i < table.rows.length; i++) {
+      const label = table.rows[i].cells[0].innerText; // Az első cella tartalmazza a labelt
+      const input = table.rows[i].cells[1].querySelector('input, textarea'); // Második cella: input vagy textarea
 
-    const tableText =
-      `Number:\t${number}\n` +
-      `User's name:\t${username}\n` +
-      `User ID:\t${userid}\n` +
-      `Phone number:\t${phone}\n` +
-      `Email address:\t${email}\n` +
-      `Problem description:\t${description}`;
-
-    navigator.clipboard.writeText(tableText)
-      .then(() => alert('Copied to clipboard!'))
-      .catch(err => alert('Failed to copy: ' + err));
+      // Csak a kitöltött mezőket másoljuk
+      if (input && input.value.trim()) {
+          tableText += `${label} ${input.value}\n`; // Ha van érték, hozzáadjuk a labelt és az értéket
+      }
   }
+
+  // Vágólapra másolás
+  navigator.clipboard.writeText(tableText).then(() => {
+      showConfirmation(); // Visszaigazoló üzenet megjelenítése
+  }).catch(err => {
+      console.error('Hiba a vágólapra másoláskor: ', err);
+  });
+
+  // Beviteli mezők visszaállítása alapállapotra
+  resetInputs();
+}
+
+// Visszaigazoló üzenet megjelenítése
+function showConfirmation() {
+  const confirmation = document.createElement('div');
+  confirmation.innerText = 'Az adatok vágólapra másolva';
+  confirmation.style.position = 'fixed';
+  confirmation.style.top = '50%';
+  confirmation.style.left = '50%';
+  confirmation.style.transform = 'translate(-50%, -50%)';
+  confirmation.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  confirmation.style.color = 'white';
+  confirmation.style.padding = '20px';
+  confirmation.style.borderRadius = '5px';
+  confirmation.style.zIndex = '1000';
+  document.body.appendChild(confirmation);
+
+  // Üzenet eltüntetése
+  setTimeout(() => {
+      confirmation.remove();
+  }, 3000); // 3 másodperc után eltűnik
+
+  // Eltüntetjük a visszaigazoló üzenetet, ha a felhasználó elnavigál, frissít, vagy Ctrl+V-t nyom
+  window.addEventListener('beforeunload', () => confirmation.remove());
+  document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.key === 'v') {
+          confirmation.remove();
+      }
+  });
+}
+
+// Beviteli mezők alaphelyzetbe állítása, méret visszaállítása
+function resetInputs() {
+  const inputs = document.querySelectorAll('#myTable input, #myTable textarea');
+  inputs.forEach(input => {
+      input.value = input.defaultValue; // Visszaállítjuk az alapértelmezett értéket
+      input.style.width = '100%'; // Eredeti szélesség beállítása
+      if (input.tagName.toLowerCase() === 'textarea') {
+          input.style.height = 'auto'; // Eredeti magasság beállítása
+          input.rows = 3; // Textarea eredeti sorainak száma
+      }
+  });
+  
+  // Kurzort az első beviteli mezőbe állítjuk
+  const firstInput = document.querySelector('#myTable input');
+  if (firstInput) {
+      firstInput.focus();
+  }
+}
+
+// Ctrl+S billentyűkombináció figyelése
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.key === 's') {
+      event.preventDefault(); // Megakadályozza az alapértelmezett mentési funkciót
+      copyTable(); // Meghívja a vágólapra másolás funkciót
+  }
+});
