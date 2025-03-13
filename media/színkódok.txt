@@ -10,7 +10,12 @@ világosszürke: 		#999b9e
 még világosabb szürke: 	#bbbdbf
 még világosabb szürke: 	#d2d4d6
 
-
+BUTTON:
+    background-color: #999b9e;
+    color: #1c1d1d;
+INPUT:
+    background-color: #272929;
+    color: #999b9e;
 FONTS:
 	font-family: 'Noto Sans'; 
   	font-size:2vw;

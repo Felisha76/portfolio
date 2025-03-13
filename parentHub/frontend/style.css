@@ -1,14 +1,16 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Noto Sans';
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  background: #1c1d1d;
+  color: #d2d4d6;
 }
 
 .container {
   max-width: 700px;
   margin: 2rem auto;
-  background: #fff;
+  background: #272929;
+  color: #d2d4d6;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -16,7 +18,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #d2d4d6;
   margin-bottom: 2rem;
 }
 
@@ -28,13 +30,13 @@ h1 {
 
 .post-header {
   font-size: 0.9rem;
-  color: #666;
+  color: #d2d4d6;
   margin-bottom: 0.5rem;
 }
 
 .post-body {
   font-size: 1rem;
-  color: #333;
+  color: #d2d4d6;
   margin-bottom: 0.5rem;
 }
 
@@ -50,6 +52,7 @@ h1 {
 
 .post-actions button {
   background: none;
+  color: #d2d4d6;
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -58,7 +61,8 @@ h1 {
 
 .comments-section {
   margin-top: 0.5rem;
-  background: #fafafa;
+  background: #272929;
+  color: #d2d4d6;
   padding: 0.5rem;
   border-radius: 4px;
 }
@@ -68,9 +72,14 @@ h1 {
 }
 
 .comment-input {
+  font-family: 'Noto Sans';
+  background: #1c1d1d;
+  color: #d2d4d6;
+  border: solid 1px #999b9e;
   width: 100%;
-  height: 60px;
-  resize: none;
+  height: 30px;
+  resize: both;
+  overflow-wrap: break-word;
   margin-bottom: 0.3rem;
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -78,8 +87,8 @@ h1 {
 
 .add-comment {
   padding: 0.3rem 0.8rem;
-  background-color: #007bff;
-  color: white;
+  background-color: #999b9e;
+  color: #1c1d1d;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -87,7 +96,8 @@ h1 {
 }
 
 .add-comment:hover {
-  background-color: #0056b3;
+  background-color: #1c1d1d;
+  color:#999b9e;
 }
 
 .comment {
@@ -97,25 +107,25 @@ h1 {
 }
 
 .comment-header {
-  color: #555;
+  color: #d2d4d6;
   font-size: 0.75rem;
   margin-bottom: 0.2rem;
 }
 
 .comment-actions button {
   font-size: 0.75rem;
-  background: none;
+  background: none;  
   border: none;
   cursor: pointer;
   margin-right: 0.3rem;
-  color: #007bff;
+  color: #d2d4d6;
 }
 
 .new-post-btn {
     padding: 10px 20px;
     margin: 20px 0;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #999b9e;
+    color: #1c1d1d;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -124,8 +134,8 @@ h1 {
   .reply-btn {
     padding: 5px 15px;
     margin-left: 10px;
-    background-color: #2196F3;
-    color: white;
+    /* background-color: #999b9e; */
+    color: #1c1d1d;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -133,5 +143,7 @@ h1 {
   
   .new-post-btn:hover, .reply-btn:hover {
     opacity: 0.8;
+    background-color: #1c1d1d;
+    color:#999b9e;
   }
   
