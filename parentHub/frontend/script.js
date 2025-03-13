@@ -2,19 +2,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     const postList = document.getElementById("post-list");
     const postTemplate = document.getElementById("post-template");
   
-    // Load posts from backend - DOESN'T WORK YET
+    const API_URL = 'http://localhost:3000';
+
+    // Load posts from backend
     let posts = [];
     try {
-      const response = await fetch('/api/posts');
+      const response = await fetch(`${API_URL}/api/posts`);
       posts = await response.json();
     } catch (error) {
       posts = [];
     }
   
-    // Save posts to backend - DOESN'T WORK YET
+    // Save posts to backend
     async function savePosts() {
       try {
-        await fetch('/api/posts', {
+        await fetch(`${API_URL}/api/posts`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -198,8 +200,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           // Other buttons retain distinct styling
           const otherButtons = container.querySelectorAll('button:not(.like-btn):not(.dislike-btn):not(.comment-like):not(.comment-dislike)')
           otherButtons.forEach(button => {
-              button.style.backgroundColor = '#999b9e'
-              button.style.color = '#1c1d1d'
+              button.style.backgroundColor = '#1c1d1d'
+              button.style.color = '#999b9e'
           })
       } else {
           // Dark mode
@@ -220,8 +222,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           // Other buttons retain distinct styling
           const otherButtons = container.querySelectorAll('button:not(.like-btn):not(.dislike-btn):not(.comment-like):not(.comment-dislike)')
           otherButtons.forEach(button => {
-              button.style.backgroundColor = '#1c1d1d'
-              button.style.color = '#999b9e'
+              button.style.backgroundColor = '#999b9e'
+              button.style.color = '#1c1d1d'
           })
       }
   })

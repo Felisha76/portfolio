@@ -1,34 +1,26 @@
 const express = require('express');
-const fs = require('fs').promises;
+const cors = require('cors');
 const path = require('path');
 const app = express();
+const port = 3000;
 
+app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'parentHub\frontend')));
 
-const POSTS_FILE = path.join(__dirname, 'parentHub\backend\data\posts.json');
+// Add this line to serve files from the frontend directory
+app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Get all posts
-app.get('/api/posts', async (req, res) => {
-    try {
-        const posts = await fs.readFile(POSTS_FILE, 'utf8');
-        res.json(JSON.parse(posts));
-    } catch (error) {
-        res.json([]);
-    }
+let posts = [];
+
+app.get('/api/posts', (req, res) => {
+    res.json(posts);
 });
 
-// Save/update posts
-app.post('/api/posts', async (req, res) => {
-    try {
-        await fs.writeFile(POSTS_FILE, JSON.stringify(req.body, null, 2));
-        res.json({ success: true });
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to save posts' });
-    }
+app.post('/api/posts', (req, res) => {
+    posts = req.body;
+    res.json({ success: true });
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
