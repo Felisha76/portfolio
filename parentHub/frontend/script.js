@@ -168,120 +168,61 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Load initial posts
     posts.forEach(post => createAndAppendPost(post));
   });
-const lightModeToggle = document.getElementById('light-mode-toggle')
 
-lightModeToggle.addEventListener('change', () => {
-    const h1 = document.querySelector('h1')
-    const container = document.querySelector('.container')
-    const posts = document.querySelectorAll('.post')
-    const postHeader = document.querySelectorAll('.post-header')
-    const postBody = document.querySelectorAll('.post-body')
-    const postActions = document.querySelectorAll('.post-actions')
-    const comments = document.querySelectorAll('.comments-section')
-    const commentHeader = document.querySelectorAll('.comment-header')
-    const inputs = document.querySelectorAll('.comment-input')
-    const buttons = document.querySelectorAll('button')
 
-    if (lightModeToggle.checked) {
-        // Light mode
-        container.style.backgroundColor = '#999b9e'
-        container.style.color = '#1c1d1d'
-        
-        posts.forEach(post => {
-            post.style.backgroundColor = '#999b9e'
-            post.style.color = '#1c1d1d'
-        })
+  const lightModeToggle = document.getElementById('light-mode-toggle')
 
-        comments.forEach(comment => {
-            comment.style.backgroundColor = '#999b9e'
-            comment.style.color = '#1c1d1d'
-        })
-
-        inputs.forEach(input => {
-            input.style.backgroundColor = '#999b9e'
-            input.style.color = '#1c1d1d'
-        })
-
-        postHeader.forEach(header => {
-            header.style.backgroundColor = '#999b9e'
-            header.style.color = '#1c1d1d'
-        })
-
-        postBody.forEach(body => {
-            body.style.backgroundColor = '#999b9e'
-            body.style.color = '#1c1d1d'
-        })
-
-        postActions.forEach(actions => {
-            actions.style.backgroundColor = '#999b9e'
-            actions.style.color = '#1c1d1d'
-        })
-
-        inputs.forEach(input => {
-            input.style.backgroundColor = '#999b9e'
-            input.style.color = '#1c1d1d'
-        })
-
-        commentHeader.forEach(header => {
-            header.style.backgroundColor = '#999b9e'
-            header.style.color = '#1c1d1d'
-        })
-
-        buttons.forEach(button => {
-            button.style.backgroundColor = '#999b9e'
-            button.style.color = '#1c1d1d'
-        })
-    } else {
-        // Dark mode
-        container.style.backgroundColor = '#1c1d1d'
-        container.style.color = '#999b9e'
-        
-        posts.forEach(post => {
-            post.style.backgroundColor = '#1c1d1d'
-            post.style.color = '#999b9e'
-        })
-
-        comments.forEach(comment => {
-            comment.style.backgroundColor = '#1c1d1d'
-            comment.style.color = '#999b9e'
-        })
-
-        inputs.forEach(input => {
-            input.style.backgroundColor = '#1c1d1d'
-            input.style.color = '#999b9e'
-        })
-
-        h1.style.backgroundColor = '#1c1d1d'
-        h1.style.color = '#999b9e'
-
-        postHeader.forEach(header => {
-            header.style.backgroundColor = '#1c1d1d'
-            header.style.color = '#999b9e'
-        })
-
-        postBody.forEach(body => {
-            body.style.backgroundColor = '#1c1d1d'
-            body.style.color = '#999b9e'
-        })
-
-        postActions.forEach(actions => {
-            actions.style.backgroundColor = '#1c1d1d'
-            actions.style.color = '#999b9e'
-        })
-
-        inputs.forEach(input => {
-            input.style.backgroundColor = '#1c1d1d'
-            input.style.color = '#999b9e'
-        })
-
-        commentHeader.forEach(header => {
-            header.style.backgroundColor = '#1c1d1d'
-            header.style.color = '#999b9e'
-        })
-        
-        buttons.forEach(button => {
-            button.style.backgroundColor = '#1c1d1d'
-            button.style.color = '#999b9e'
-        })
-    }
-})
+  lightModeToggle.addEventListener('change', () => {
+      const container = document.querySelector('.container')
+      
+      // Select all elements within container
+      const allElements = container.querySelectorAll('*')
+      const likeButtons = container.querySelectorAll('.like-btn, .dislike-btn, .comment-like, .comment-dislike')
+      
+      if (lightModeToggle.checked) {
+          // Light mode
+          container.style.backgroundColor = '#ffffff'
+          container.style.color = '#1c1d1d'
+          
+          allElements.forEach(element => {
+              element.style.backgroundColor = '#ffffff'
+              element.style.color = '#1c1d1d'
+          })
+          
+          // Style for like/dislike buttons
+          likeButtons.forEach(button => {
+              button.style.backgroundColor = '#ffffff'
+              button.style.color = '#1c1d1d'
+          })
+          
+          // Other buttons retain distinct styling
+          const otherButtons = container.querySelectorAll('button:not(.like-btn):not(.dislike-btn):not(.comment-like):not(.comment-dislike)')
+          otherButtons.forEach(button => {
+              button.style.backgroundColor = '#999b9e'
+              button.style.color = '#1c1d1d'
+          })
+      } else {
+          // Dark mode
+          container.style.backgroundColor = '#1c1d1d'
+          container.style.color = '#999b9e'
+          
+          allElements.forEach(element => {
+              element.style.backgroundColor = '#1c1d1d'
+              element.style.color = '#999b9e'
+          })
+          
+          // Style for like/dislike buttons
+          likeButtons.forEach(button => {
+              button.style.backgroundColor = '#1c1d1d'
+              button.style.color = '#999b9e'
+          })
+          
+          // Other buttons retain distinct styling
+          const otherButtons = container.querySelectorAll('button:not(.like-btn):not(.dislike-btn):not(.comment-like):not(.comment-dislike)')
+          otherButtons.forEach(button => {
+              button.style.backgroundColor = '#1c1d1d'
+              button.style.color = '#999b9e'
+          })
+      }
+  })
+  

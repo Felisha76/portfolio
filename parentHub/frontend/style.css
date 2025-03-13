@@ -8,6 +8,7 @@ body {
 }
 
 .container {
+  position: relative;
   max-width: 700px;
   margin: 2rem auto;
   background: #272929;
@@ -116,7 +117,7 @@ h1 {
 .comment-actions button {
   font-size: 0.75rem;
   background: none;  
-  border: none;
+  border: solid 1px #999b9e;;
   cursor: pointer;
   margin-right: 0.3rem;
   color: #d2d4d6;
@@ -127,7 +128,7 @@ h1 {
     margin: 20px 0;
     background-color: #999b9e;
     color: #1c1d1d;
-    border: none;
+    border: solid 1px #999b9e;
     border-radius: 4px;
     cursor: pointer;
   }
@@ -137,7 +138,7 @@ h1 {
     margin-left: 10px;
     /* background-color: #999b9e; */
     color: #1c1d1d;
-    border: none;
+    border: solid 1px #999b9e;
     border-radius: 4px;
     cursor: pointer;
   }
@@ -148,12 +149,19 @@ h1 {
     color:#999b9e;
   }
   
+  .toggle-container {
+    position:absolute;
+      top: 20px;
+    right: 100px;  
+  }
 
   #light-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    border-radius: 4px;
+  }
+  .light-mode-toggle {
+    position:absolute;
   }
