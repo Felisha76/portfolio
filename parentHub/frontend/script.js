@@ -1,47 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const postList = document.getElementById("post-list");
     const postTemplate = document.getElementById("post-template");
   
-    const examplePosts = [
-      {
-        group: "Group 01",
-        author: "Post Owner's name",
-        timestamp: "2025-03-13 07:45",
-        text: "Example post",
-        image: "https://via.placeholder.com/400x200",
-        likes: 2,
-        dislikes: 0,
-        comments: [
-          {
-            author: "Comment Owner's name",
-            timestamp: "2025-03-13 08:00",
-            text: "Answer text",
-            likes: 1,
-            dislikes: 0,
-            replies: []
-          }
-        ]
-      },
-    ];
+    // Load posts from backend
+    let posts = [];
+    try {
+      const response = await fetch('/api/posts');
+      posts = await response.json();
+    } catch (error) {
+      posts = [];
+    }
   
-    const newPostBtn = document.createElement("button");
-    newPostBtn.textContent = "New Post";
-    newPostBtn.classList.add("new-post-btn");
-    postList.parentElement.insertBefore(newPostBtn, postList);
-  
-    newPostBtn.addEventListener("click", () => {
-      const newPost = {
-        group: "Your Group",
-        author: "Your Name",
-        timestamp: new Date().toLocaleString(),
-        text: prompt("Enter your post text:"),
-        image: "",
-        likes: 0,
-        dislikes: 0,
-        comments: []
-      };
-      createAndAppendPost(newPost);
-    });
+    // Save posts to backend
+    async function savePosts() {
+      try {
+        await fetch('/api/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(posts)
+        });
+      } catch (error) {
+        console.log('Error saving posts:', error);
+      }
+    }
   
     function createAndAppendPost(post) {
       const clone = postTemplate.content.cloneNode(true);
@@ -69,11 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
       likeBtn.addEventListener("click", () => {
         post.likes++;
         likeCount.textContent = post.likes;
+        savePosts();
       });
   
       dislikeBtn.addEventListener("click", () => {
         post.dislikes++;
         dislikeCount.textContent = post.dislikes;
+        savePosts();
       });
   
       const commentList = clone.querySelector(".comment-list");
@@ -83,34 +68,46 @@ document.addEventListener("DOMContentLoaded", () => {
       addCommentBtn.addEventListener("click", () => {
         const commentText = commentInput.value.trim();
         if (commentText) {
+          const newComment = {
+            author: "Your Name",
+            timestamp: new Date().toLocaleString(),
+            text: commentText,
+            likes: 0,
+            dislikes: 0,
+            replies: []
+          };
+  
+          post.comments.push(newComment);
+  
           const commentDiv = document.createElement("div");
           commentDiv.classList.add("comment");
           commentDiv.innerHTML = `
-            <div class="comment-header">Your Name · ${new Date().toLocaleString()}</div>
-            <div class="comment-body">${commentText}</div>
+            <div class="comment-header">${newComment.author} · ${newComment.timestamp}</div>
+            <div class="comment-body">${newComment.text}</div>
             <div class="comment-actions">
-              <button class="comment-like">👍 <span>0</span></button>
-              <button class="comment-dislike">👎 <span>0</span></button>
+              <button class="comment-like">👍 <span>${newComment.likes}</span></button>
+              <button class="comment-dislike">👎 <span>${newComment.dislikes}</span></button>
             </div>
           `;
   
           const commentLikeBtn = commentDiv.querySelector(".comment-like");
           const commentDislikeBtn = commentDiv.querySelector(".comment-dislike");
-          let commentLikes = 0;
-          let commentDislikes = 0;
   
           commentLikeBtn.addEventListener("click", () => {
-            commentLikes++;
-            commentLikeBtn.querySelector("span").textContent = commentLikes;
+            newComment.likes++;
+            commentLikeBtn.querySelector("span").textContent = newComment.likes;
+            savePosts();
           });
   
           commentDislikeBtn.addEventListener("click", () => {
-            commentDislikes++;
-            commentDislikeBtn.querySelector("span").textContent = commentDislikes;
+            newComment.dislikes++;
+            commentDislikeBtn.querySelector("span").textContent = newComment.dislikes;
+            savePosts();
           });
   
           commentList.appendChild(commentDiv);
           commentInput.value = '';
+          savePosts();
         }
       });
   
@@ -132,11 +129,13 @@ document.addEventListener("DOMContentLoaded", () => {
         commentLikeBtn.addEventListener("click", () => {
           comment.likes++;
           commentLikeBtn.querySelector("span").textContent = comment.likes;
+          savePosts();
         });
   
         commentDislikeBtn.addEventListener("click", () => {
           comment.dislikes++;
           commentDislikeBtn.querySelector("span").textContent = comment.dislikes;
+          savePosts();
         });
   
         commentList.appendChild(commentDiv);
@@ -145,6 +144,28 @@ document.addEventListener("DOMContentLoaded", () => {
       postList.insertBefore(clone, postList.firstChild);
     }
   
-    examplePosts.forEach(post => createAndAppendPost(post));
+    const newPostBtn = document.createElement("button");
+    newPostBtn.textContent = "New Post";
+    newPostBtn.classList.add("new-post-btn");
+    postList.parentElement.insertBefore(newPostBtn, postList);
+  
+    newPostBtn.addEventListener("click", () => {
+      const newPost = {
+        group: "Your Group",
+        author: "Your Name",
+        timestamp: new Date().toLocaleString(),
+        text: prompt("Enter your post text:"),
+        image: "",
+        likes: 0,
+        dislikes: 0,
+        comments: []
+      };
+      posts.unshift(newPost);
+      createAndAppendPost(newPost);
+      savePosts();
+    });
+  
+    // Load initial posts
+    posts.forEach(post => createAndAppendPost(post));
   });
   
