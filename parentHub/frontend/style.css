@@ -110,3 +110,28 @@ h1 {
   margin-right: 0.3rem;
   color: #007bff;
 }
+
+.new-post-btn {
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .reply-btn {
+    padding: 5px 15px;
+    margin-left: 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .new-post-btn:hover, .reply-btn:hover {
+    opacity: 0.8;
+  }
+  
