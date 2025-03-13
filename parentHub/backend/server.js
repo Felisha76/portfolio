@@ -4,9 +4,9 @@ const path = require('path');
 const app = express();
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, 'parentHub\frontend')));
 
-const POSTS_FILE = path.join(__dirname, 'data/posts.json');
+const POSTS_FILE = path.join(__dirname, 'parentHub\backend\data\posts.json');
 
 // Get all posts
 app.get('/api/posts', async (req, res) => {
@@ -28,7 +28,7 @@ app.post('/api/posts', async (req, res) => {
     }
 });
 
-const PORT = 5500;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

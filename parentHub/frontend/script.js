@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const postList = document.getElementById("post-list");
     const postTemplate = document.getElementById("post-template");
   
-    // Load posts from backend
+    // Load posts from backend - DOESN'T WORK YET
     let posts = [];
     try {
       const response = await fetch('/api/posts');
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       posts = [];
     }
   
-    // Save posts to backend
+    // Save posts to backend - DOESN'T WORK YET
     async function savePosts() {
       try {
         await fetch('/api/posts', {
