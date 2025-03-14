@@ -11,6 +11,51 @@ p {
 img {
     width:4vw;
 }
+
+label {
+    font-size: 2vw;
+}
+
+a {
+	text-decoration: none;
+	color: #c7e75c
+}
+
+.csv-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#csv-dropdown-container {
+    margin: 20px 0;
+}
+
+.quiz-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Style for the optgroup (category headers) */
+optgroup {
+    font-weight: bold;
+    font-style: normal;
+    color: #555;
+    background-color: #f5f5f5;
+}
+
+/* Style for options within optgroups */
+optgroup option {
+    font-weight: normal;
+    padding-left: 15px;
+}
+
 .wrap {
 	position: absolute;
 	width: 100%;
