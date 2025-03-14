@@ -77,7 +77,7 @@ async function populateFileDropdown() {
     // Add default option
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
-    defaultOption.textContent = 'Select a CSV file';
+    defaultOption.textContent = 'Select a file from my repository';
     defaultOption.selected = true;
     defaultOption.disabled = true;
     select.appendChild(defaultOption);

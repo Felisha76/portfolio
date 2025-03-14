@@ -27,19 +27,20 @@ a {
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
+    
 }
 
 #csv-dropdown-container {
-    margin: 20px 0;
+    margin: 10px 0;
+	width: 100%;
+    max-width: 400px;
 }
 
 .quiz-title {
     margin-top: 10px;
     margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
+    color: #d0cccc;
+    font-size: 0.8em;
 }
 
 /* Style for the optgroup (category headers) */
