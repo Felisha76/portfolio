@@ -9,7 +9,8 @@ p {
 }
 
 img {
-    width:8vw;
+    max-width:8vw;
+	max-height:8vw;
 }
 
 label {
