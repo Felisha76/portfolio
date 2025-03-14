@@ -1,23 +1,23 @@
-béka,frog
-malac,pig
-tyúk,hen
-kutya,dog
-macska,cat
-madár,bird
-méh,bee
-medve,bear
-tehén,cow
-pók,spider
-dinnye,melon
-szilva,plum
-alma,apple
-dió,nut
-körte,pear
-banán,banana
-narancs,orange
-kiwi,kiwi
-szőlő,grapes
-barack,peach
+béka,<img src="https://media.istockphoto.com/id/859715416/photo/green-frog-isolated-on-white.jpg?s=612x612&w=0&k=20&c=YfPA6vUmzbqKJ343BIKaU8351m6lwVduF_UHZjdJ61o="></img><br>frog
+malac,<img src="https://media.istockphoto.com/id/140462837/photo/cute-pig-leaning-on-railing-of-his-cot.jpg?s=612x612&w=0&k=20&c=wX4-WVElHzIvfJoppwRZOgHKu3geSc3zReM_17lcwVc="></img><br>pig
+tyúk,<img src="https://media.istockphoto.com/id/831791190/photo/hen.jpg?s=612x612&w=0&k=20&c=MWCYlBKqBQKHQuuHVfOYdBVXhNJs0yzJ9LnK76qpfqw="></img><br>hen
+kutya,<img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg"></img><br>dog
+macska,<img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg"></img><br>cat
+madár,<img src="https://media.istockphoto.com/id/1307609675/photo/bluebird.jpg?s=612x612&w=0&k=20&c=PdSeFBXLNi2n8vNxDjubRQOsaOw_sJ1w7RhtxjGL5GM="></img><br>bird
+méh,<img src="https://www.shutterstock.com/image-photo/detail-bee-honeybee-latin-apis-600nw-2418453905.jpg"></img><br>bee
+medve,<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZsgc2wuC3uULfwT8WWS5OFAeNjBmyaJNtHg&s"></img><br>bear
+tehén,<img src="https://t3.ftcdn.net/jpg/00/84/09/18/360_F_84091840_8wn1lAJ7jIuYRczt4PRqrrZUoAOoPVrO.jpg"></img><br>cow
+pók,<img src="https://images.pexels.com/photos/68186/jumping-spider-tarantula-bird-spider-insect-68186.jpeg?cs=srgb&dl=pexels-pixabay-68186.jpg&fm=jpg"></img><br>spider
+dinnye,<img src="https://freerangestock.com/sample/152575/a-watermelon-wedges-in-a-bowl.jpg"></img><br>melon
+szilva,<img src="https://media.istockphoto.com/id/179265573/photo/fresh-plums-isolated-on-white.jpg?s=612x612&w=0&k=20&c=hQSMX9r0b2Rwzim8npKi62llYv6nTSo_CkbSTm8-khA="></img><br>plum
+alma,<img src="https://media.istockphoto.com/id/184276818/photo/red-apple.jpg?s=612x612&w=0&k=20&c=NvO-bLsG0DJ_7Ii8SSVoKLurzjmV0Qi4eGfn6nW3l5w="></img><br>apple
+dió,<img src="https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?cs=srgb&dl=pexels-martabranco-1295572.jpg&fm=jpg"></img><br>nut
+körte,<img src="https://thumbs.dreamstime.com/b/red-yellow-pear-fruit-leaf-isolated-white-clipping-path-78863322.jpg"></img><br>pear
+banán,<img src="https://cdn.pixabay.com/photo/2017/06/27/22/21/banana-2449019_640.jpg"></img><br>banana
+narancs,<img src="https://t3.ftcdn.net/jpg/02/01/79/54/360_F_201795443_a16jojvPRiobPC96uO7ePHSNzGVoBLbc.jpg"></img><br>orange
+kiwi,<img src="https://media.istockphoto.com/id/834807852/photo/whole-kiwi-fruit-and-half-kiwi-fruit-on-white.jpg?s=612x612&w=0&k=20&c=zliUVnZlYPcOxEDYef7PMmOEEODFr8FUkTYqqFVaRG8="></img><br>kiwi
+szőlő,<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVFlhm1si4Y6wqWVMnaXGvwbXTHg-tbmJLDg&s"></img><br>grapes
+barack,<img src="https://t3.ftcdn.net/jpg/03/00/59/16/360_F_300591692_sE2Zpz9hoU0H1Klz0JzRw1F74HO7vWne.jpg"></img><br>peach
 fej,<img src="https://st2.depositphotos.com/4556043/7750/i/450/depositphotos_77508784-stock-photo-face-image.jpg"></img><br>head
 haj,<img src="https://t4.ftcdn.net/jpg/02/94/18/19/360_F_294181967_ajuzHkrjY4WNANFZSdcWBY0FVPM5dY83.jpg"></img><br>hair
 nose,<img src="https://media.istockphoto.com/id/641615928/photo/nose-isolated-on-white.jpg?s=612x612&w=0&k=20&c=p-ps_8NubYJJDoghjDg4oiYB6uPI8usLaWnDTD1uUDE="></img><br>orr
@@ -36,25 +36,25 @@ láb,<img src="https://media.istockphoto.com/id/604020424/photo/hairy-man-legs.j
 térd,<img src="https://st.depositphotos.com/1319000/1687/i/450/depositphotos_16870001-stock-photo-knees-a-little-child.jpg"></img><br>knee
 lábfej,<img src="https://media.istockphoto.com/id/156974307/photo/man-foot.jpg?s=612x612&w=0&k=20&c=a7bupV4eHLJvF7QMN39-8ZjwnSk7g-6cB8iTdWvsAwU="></img><br>foot
 lábujj,<img src="https://media.istockphoto.com/id/152138208/photo/beautiful-female-feet-with-french-pedicure-closeup.jpg?s=612x612&w=0&k=20&c=X4HwQ1cGreyCl9mtMDuTyylkzOI58BYUX4nYho7YUvg="></img><br>toe
-tojás,egg
-pizza,pizza
-hot dog,hot dog
-spagetti,spaghetti
-csirke,chicken
-sajt,cheese
-pite,pie
-leves,soup
-limonádé,lemonade
-ásványvíz,mineral water
-piros,red
-kék,blue
-zöld,green
-barna,brown
-sárga,yellow
-narancssárga,orange
-rózsaszín,pink
-lila,purple
-fehér,white
-fekete,black
+tojás,<img src="https://t4.ftcdn.net/jpg/00/61/26/65/360_F_61266562_MBEkMw3fWWOGcBjIGrEXFmRSAvpudaNp.jpg"></img><br>egg
+pizza,<img src="https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU="></img><br>pizza
+hot dog,<img src="https://media.istockphoto.com/id/1130731707/photo/hot-dog-on-white.jpg?s=612x612&w=0&k=20&c=QI_McOEiNf7lcxx_kq7_LUXJIrBWNMlfqdwDK4JcbvY="></img><br>hot dog
+spagetti,<img src="https://t3.ftcdn.net/jpg/01/09/75/90/360_F_109759077_SVp62TBuHkSn3UsGW4dBOm9R0ALVetYw.jpg"></img><br>spaghetti
+csirke,<img src="https://www.shutterstock.com/image-photo/homemade-bbq-chicken-drumsticks-wings-600nw-2496984187.jpg"></img><br>chicken
+sajt,<img src="https://media.istockphoto.com/id/1127471287/photo/cheese-on-white.jpg?s=612x612&w=0&k=20&c=m8kJAfayGrBoqKceiwGAq7SaEDrbZCyPzklYOm3_MBk="></img><br>cheese
+pite,<img src="https://media.istockphoto.com/id/509009097/photo/delicious-homemade-cherry-pie.jpg?s=612x612&w=0&k=20&c=L9uB0hcTHuZ-fI5GXldYzLgpk_IumkC_Qzi4zOU4BvQ="></img><br>pie
+leves,<img src="https://media.istockphoto.com/id/1092632852/photo/vegetable-soup.jpg?s=612x612&w=0&k=20&c=TLMWC8lshitbk8pONGpblEsmcsBy1wZVQ9jJC92Cvh4="></img><br>soup
+limonádé,<img src="https://media.istockphoto.com/id/537228258/photo/mason-jar-glasses-of-homemade-lemonade-on-rustic-wood.jpg?s=612x612&w=0&k=20&c=Cb8WMSL5djmvT1Ob3ROTC43BBKWDZ_wlWuaSYvbVw3Q="></img><br>lemonade
+ásványvíz,<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYs7JGecHAnrwaSEi5RJctbHC65XFLg95QIQ&s"></img><br>mineral water
+piros,<img src="https://st4.depositphotos.com/1031174/38408/i/450/depositphotos_384085908-stock-photo-red-textured-concrete-wall-background.jpg"></img><br>red
+kék,<img src="https://t3.ftcdn.net/jpg/01/91/78/32/360_F_191783282_0TVrx5VrvrkpDHSKdjjI87HkbXJy5TMw.jpg"></img><br>blue
+zöld,<img src="https://t4.ftcdn.net/jpg/02/96/16/07/360_F_296160739_nedGneq7jEQxSpDpT3lNTzRhfT4JYTXB.jpg"></img><br>green
+barna,<img src="https://media.istockphoto.com/id/1203375691/photo/worn-brown-marble-or-cracked-concrete-background.jpg?s=612x612&w=0&k=20&c=_FwX6aasJcbILI23MP6LsuSAZ2wd_iKeQzlAVPsDOgg="></img><br>brown
+sárga,<img src="https://media.istockphoto.com/id/503308960/photo/yellow-watercolor-painting-background.jpg?s=612x612&w=0&k=20&c=mnmZdNIZ3FNbyzvTwGFS2WwI_dRADVEAyQ1MLIg0qbA="></img><br>yellow
+narancssárga,<img src="https://media.istockphoto.com/id/157483801/photo/fiery-wall-texture.jpg?s=612x612&w=0&k=20&c=sVYvo5SYvu-UJcwtvHU2bjlX4JyCNkrShmq22wVS6lo="></img><br>orange
+rózsaszín,<img src="https://cdn.pixabay.com/photo/2023/02/01/21/40/pink-7761356_1280.png"></img><br>pink
+lila,<img src="https://t3.ftcdn.net/jpg/02/25/02/48/360_F_225024841_7b2gkqxIyskWsexHw19gIW9fro1iuOns.jpg"></img><br>purple
+fehér,<img src="https://img.freepik.com/free-photo/white-fabric-texture-background-design-element_53876-107984.jpg?semt=ais_hybrid"></img><br>white
+fekete,<img src="https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?cs=srgb&dl=pexels-adrien-olichon-1257089-2387793.jpg&fm=jpg"></img><br>black
 
 
