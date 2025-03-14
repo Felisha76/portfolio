@@ -23,3 +23,29 @@
     <script src="csvquiz.js"></script>
 </body>
 </html>
+
+<!--  
+How This Works:
+File Naming Convention:
+Files should be named with a prefix that indicates their category
+For example: 
+    en_hu_animals.csv, 
+    math_fractions.csv, 
+    game_pokemon.csv
+
+Category Detection:
+The getCategoryForFile function determines which category a file belongs to based on its prefix
+Files that don't match any prefix go into an "Other" category
+
+Dropdown Organization:
+Files are grouped by category using the <optgroup> HTML element
+Each category becomes a header in the dropdown
+Files within each category are sorted alphabetically
+
+Display Names:
+The code removes the category prefix and file extension to create more readable display names
+Underscores are replaced with spaces for better readability
+
+Quiz Title:
+When a quiz is selected, its name is displayed as a title above the cards
+-->
