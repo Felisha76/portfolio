@@ -22,15 +22,25 @@ p {
   margin: 0px;
 }
 
-a.clip {  /* Text mask */
+.clip {  /* Text mask */
     font-family: 'Rubik', sans-serif; 
-    font-size: 20vw;    
+    font-size: 8vw;    
     font-weight: 1000;
     background: url("./media/galaxy_stock_bckgr.jpg") 0 0 / cover no-repeat;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 0.5px #ffe4c4;    
+        -webkit-text-stroke: 0.3px #ffe4c4;    
     text-decoration: none;
+}
+.clip_smaller {  /* Text mask */
+  font-family: 'Rubik', sans-serif; 
+  font-size: 10vw;    
+  font-weight: 1000;
+  background: url("./media/galaxy_stock_bckgr.jpg") 0 0 / cover no-repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.3px #ffe4c4; 
+  text-decoration: none;   
 }
 
     #logo {
@@ -41,6 +51,7 @@ a.clip {  /* Text mask */
     
   /* Main content */
   .main {
+    padding-top: 5vw;
     max-width: 100%; 
     max-height: 200%; 
   }
@@ -52,11 +63,12 @@ a.clip {  /* Text mask */
   
 }
 
+/* 
 .main:hover {
 	transform:scale(1.1);
   transition-duration: 3000ms;
   padding-left: 60px;
-}
+}  */
 
 /* Görgetősáv */
 ::-webkit-scrollbar {
