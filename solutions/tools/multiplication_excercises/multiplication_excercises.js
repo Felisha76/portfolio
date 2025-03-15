@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let timerInterval = null;
     let timeLeft = 20;
     let incorrectQuestions = [];
+    let waitTimeout = null;
 
     // DOM elements
     const startTable = document.getElementById('startTable');
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const timerDisplay = document.getElementById('timerDisplay');
     const timerEnabled = document.getElementById('timerEnabled');
 
-    // Update questionCount max value dynamically
     function updateMaxQuestions() {
         const start = parseInt(startTable.value);
         const end = parseInt(endTable.value);
@@ -38,28 +38,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Attach event listeners to update max when range changes
     startTable.addEventListener('input', updateMaxQuestions);
     endTable.addEventListener('input', updateMaxQuestions);
 
-    // Start practice
     startBtn.addEventListener('click', function () {
         const start = parseInt(startTable.value);
         const end = parseInt(endTable.value);
 
-        // Validate input ranges
-        if (start < 1 || start > 12) {
-            alert('Start table must be between 1 and 12!');
-            return;
-        }
-
-        if (end < 1 || end > 12) {
-            alert('End table must be between 1 and 12!');
-            return;
-        }
-
-        if (start > end) {
-            alert('Start table must be less than or equal to end table!');
+        if (start < 1 || start > 12 || end < 1 || end > 12 || start > end) {
+            alert('Please enter a valid range (1–12), and make sure start ≤ end.');
             return;
         }
 
@@ -70,31 +57,21 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Generate questions
         generateQuestions(start, end, count);
-
-        // Reset counters
         currentQuestionIndex = 0;
         answeredCount = 0;
         correctCount = 0;
         incorrectQuestions = [];
 
-        // Update UI
         answeredCountElement.textContent = answeredCount;
         totalQuestionsElement.textContent = questions.length;
         correctCountElement.textContent = correctCount;
 
-        // Show practice area
         practiceArea.classList.remove('hidden');
-
-        // Scroll to questions
         practiceArea.scrollIntoView({ behavior: 'smooth' });
-
-        // Display first question
         displayQuestion();
     });
 
-    // Generate questions
     function generateQuestions(start, end, count) {
         const allPossibleQuestions = [];
 
@@ -113,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
         questions = allPossibleQuestions.slice(0, count);
     }
 
-    // Fisher-Yates shuffle
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -121,8 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Display current question
     function displayQuestion() {
+        clearInterval(timerInterval);
+        clearTimeout(waitTimeout);
+
         if (currentQuestionIndex < questions.length) {
             const question = questions[currentQuestionIndex];
             questionElement.textContent = `${question.factor1} × ${question.factor2} = ?`;
@@ -138,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 timerDisplay.textContent = `Time left: ${timeLeft}s`;
                 timerDisplay.classList.remove('hidden');
 
-                clearInterval(timerInterval);
                 timerInterval = setInterval(function () {
                     timeLeft--;
                     timerDisplay.textContent = `Time left: ${timeLeft}s`;
@@ -170,33 +147,52 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Handle answer
     function handleAnswer(isTimeout = false) {
         clearInterval(timerInterval);
+        clearTimeout(waitTimeout);
+
         const currentQuestion = questions[currentQuestionIndex];
         const userAnswer = parseInt(answerInput.value);
 
+        answerInput.disabled = true;
+        nextBtn.disabled = true;
+
         if (isTimeout || isNaN(userAnswer)) {
-            feedbackElement.textContent = `Time's up or no answer! The correct answer is ${currentQuestion.answer}.`;
+            feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
             feedbackElement.className = 'incorrect';
             incorrectQuestions.push(currentQuestion);
+
+            waitTimeout = setTimeout(() => {
+                proceedToNext();
+            }, 3000);
         } else if (userAnswer === currentQuestion.answer) {
             feedbackElement.textContent = 'Correct!';
             feedbackElement.className = 'correct';
             correctCount++;
             correctCountElement.textContent = correctCount;
         } else {
-            feedbackElement.textContent = `Incorrect! The correct answer is ${currentQuestion.answer}.`;
+            feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
             feedbackElement.className = 'incorrect';
             incorrectQuestions.push(currentQuestion);
+
+            waitTimeout = setTimeout(() => {
+                proceedToNext();
+            }, 3000);
         }
 
         answeredCount++;
         answeredCountElement.textContent = answeredCount;
-        currentQuestionIndex++;
+
+        if (!isTimeout && userAnswer === currentQuestion.answer) {
+            currentQuestionIndex++;
+        }
     }
 
-    // Next button
+    function proceedToNext() {
+        currentQuestionIndex++;
+        displayQuestion();
+    }
+
     nextBtn.addEventListener('click', function () {
         if (answerInput.value.trim() === '') {
             alert('Please enter an answer!');
@@ -204,10 +200,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         handleAnswer();
-        displayQuestion();
+        if (feedbackElement.className !== 'incorrect') {
+            displayQuestion();
+        }
     });
 
-    // Enter key = submit
     answerInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             if (answerInput.value.trim() === '') {
@@ -216,10 +213,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             handleAnswer();
-            displayQuestion();
+            if (feedbackElement.className !== 'incorrect') {
+                displayQuestion();
+            }
         }
     });
 
-    // Initial update
     updateMaxQuestions();
 });
