@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Practice</title>
+    <link rel="stylesheet" href="multiplication_excercises.css">
+</head>
+<body>
+    <h1>Multiplication Practice</h1>
+    
+    <div class="settings">
+        <h2>Settings</h2>
+        <div class="settings-row">
+            <div>
+                <label for="startTable">Start with table:</label>
+                <select id="startTable">
+                    <!-- Will be filled with JavaScript -->
+                </select>
+            </div>
+            <div>
+                <label for="endTable">End with table:</label>
+                <select id="endTable">
+                    <!-- Will be filled with JavaScript -->
+                </select>
+            </div>
+        </div>
+        
+        <div class="settings-row">
+            <div>
+                <label for="questionCount">Number of questions:</label>
+                <input type="number" id="questionCount" min="10" max="100" value="20">
+            </div>
+            <div>
+                <input type="checkbox" id="timerEnabled">
+                <label for="timerEnabled">Enable 20-second timer</label>
+            </div>
+        </div>
+        
+        <button id="startBtn">Start Practice</button>
+    </div>
+    
+    <div id="practiceArea" class="hidden">
+        <div id="timerDisplay" class="timer hidden">Time left: 20s</div>
+        
+        <div class="question-container">
+            <div id="question">6 × 7 = ?</div>
+        </div>
+        
+        <div class="answer-container">
+            <input type="number" id="answer" placeholder="Answer">
+            <button id="nextBtn">Next</button>
+            <span id="feedback"></span>
+        </div>
+        
+        <div class="progress">
+            <div>Questions answered: <span id="answeredCount">0</span> / <span id="totalQuestions">20</span></div>
+            <div>Correct answers: <span id="correctCount">0</span></div>
+        </div>
+    </div>
+
+    <script src="multiplication_excercises.js"></script>
+</body>
+</html>
