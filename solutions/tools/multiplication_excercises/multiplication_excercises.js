@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     correctSound.volume = 0.5; // Adjust volume if needed
     const incorrectSound = new Audio('incorrect.mp3');
     incorrectSound.volume = 0.5; // Adjust volume if needed
+    const getreadySound = new Audio('getready.mp3');
+    getreadySound.volume = 0.5; // Adjust volume if needed
+    const finishedSound = new Audio('finished.mp3');
+    finishedSound.volume = 0.5; // Adjust volume if needed
 
     // Variables to track state
     let questions = [];
@@ -76,6 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
         practiceArea.classList.remove('hidden');
         practiceArea.scrollIntoView({ behavior: 'smooth' });
         displayQuestion();
+        /* 🎵 Play sound */
+                getreadySound.currentTime = 0;
+                getreadySound.play();
     });
 
     function generateQuestions(start, end, count) {
@@ -142,6 +149,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 displayQuestion();
             } else {
                 clearInterval(timerInterval);
+                        /* 🎵 Play sound */
+                                finishedSound.currentTime = 0;
+                                finishedSound.play();
                 questionElement.textContent = 'Practice completed!';
                 answerInput.value = '';
                 answerInput.disabled = true;
@@ -183,8 +193,8 @@ document.addEventListener('DOMContentLoaded', function () {
             questionElement.classList.add('bounce');
 
             // 🎵 Play sound
-            correctSound.currentTime = 0;
-            correctSound.play();
+                    correctSound.currentTime = 0;
+                    correctSound.play();
 
             correctCount++;
             correctCountElement.textContent = correctCount;
@@ -195,8 +205,8 @@ document.addEventListener('DOMContentLoaded', function () {
             questionElement.classList.add('shake');
 
             // 🎵 Play sound
-            incorrectSound.currentTime = 0;
-            incorrectSound.play();
+                    incorrectSound.currentTime = 0;
+                    incorrectSound.play();
 
             incorrectQuestions.push(currentQuestion);
 
