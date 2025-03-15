@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // 🎵 Load the correct answer sound
+    // 🎵 Load the answer sounds
     const correctSound = new Audio('correct.mp3');
     correctSound.volume = 0.5; // Adjust volume if needed
+    const incorrectSound = new Audio('incorrect.mp3');
+    incorrectSound.volume = 0.5; // Adjust volume if needed
 
     // Variables to track state
     let questions = [];
@@ -191,6 +193,11 @@ document.addEventListener('DOMContentLoaded', function () {
             feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
             feedbackElement.className = 'incorrect shake';
             questionElement.classList.add('shake');
+
+            // 🎵 Play sound
+            incorrectSound.currentTime = 0;
+            incorrectSound.play();
+
             incorrectQuestions.push(currentQuestion);
 
             waitTimeout = setTimeout(() => {
