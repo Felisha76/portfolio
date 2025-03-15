@@ -94,6 +94,18 @@ body {
     display: none;
 }
 
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #d2d4d6;
+    font-family: 'Noto Sans';
+    text-align: right;
+}
+.feedback:hover {
+    background-color: #1c1d1d;
+    color: #f5dd07;
+}
+
 /* Cute animations */
 @keyframes bounce {
     0% { transform: scale(1); }

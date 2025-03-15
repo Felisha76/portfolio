@@ -82,6 +82,14 @@ body, .side-nav2, .side-nav2 a {
 	color: #1c1d1d;
 }
 
+.feedback {
+  font-size:small;
+  text-decoration: none;
+  color: #d2d4d6;
+  font-family: 'Noto Sans';
+  text-align: right;
+}
+
 
 ::placeholder {
   color: white;
