@@ -108,6 +108,14 @@ optgroup option {
 	transform: rotateY(180deg);
 }
 
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #d2d4d6;
+    font-family: 'Noto Sans';
+    text-align: right;
+}
+
 .card:hover .front {
 	transform: rotateY(180deg);
 }

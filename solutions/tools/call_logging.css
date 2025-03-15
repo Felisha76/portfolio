@@ -132,6 +132,14 @@ a {
     display: block;
 }
 
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #d2d4d6;
+    font-family: 'Noto Sans';
+    text-align: right;
+}
+
 @media (max-width: 700px) {
     td:first-child, td:last-child {
         width: 80%;
