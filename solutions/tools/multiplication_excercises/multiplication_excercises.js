@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // 🎵 Load the correct answer sound
+    const correctSound = new Audio('correct.mp3');
+    correctSound.volume = 0.5; // Adjust volume if needed
+
+    // Variables to track state
     let questions = [];
     let currentQuestionIndex = 0;
     let answeredCount = 0;
@@ -8,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let incorrectQuestions = [];
     let waitTimeout = null;
 
+    // DOM elements
     const startTable = document.getElementById('startTable');
     const endTable = document.getElementById('endTable');
     const questionCountInput = document.getElementById('questionCount');
@@ -26,7 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateMaxQuestions() {
         const start = parseInt(startTable.value);
         const end = parseInt(endTable.value);
-        if (start > end || start < 1 || end > 12) return;
+        if (start > end || start < 1 || end > 12) {
+            return;
+        }
         const maxAvailable = (end - start + 1) * 12;
         questionCountInput.max = maxAvailable;
         if (parseInt(questionCountInput.value) > maxAvailable) {
@@ -70,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function generateQuestions(start, end, count) {
         const allPossibleQuestions = [];
+
         for (let i = start; i <= end; i++) {
             for (let j = 1; j <= 12; j++) {
                 allPossibleQuestions.push({
@@ -80,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }
+
         shuffleArray(allPossibleQuestions);
         questions = allPossibleQuestions.slice(0, count);
     }
@@ -151,10 +161,9 @@ document.addEventListener('DOMContentLoaded', function () {
         answerInput.disabled = true;
         nextBtn.disabled = true;
 
-        // Reset animations
         questionElement.classList.remove('bounce', 'shake');
         feedbackElement.classList.remove('bounce', 'shake');
-        void questionElement.offsetWidth; // trigger reflow
+        void questionElement.offsetWidth;
         void feedbackElement.offsetWidth;
 
         if (isTimeout || isNaN(userAnswer)) {
@@ -170,6 +179,11 @@ document.addEventListener('DOMContentLoaded', function () {
             feedbackElement.textContent = 'Correct!';
             feedbackElement.className = 'correct bounce';
             questionElement.classList.add('bounce');
+
+            // 🎵 Play sound
+            correctSound.currentTime = 0;
+            correctSound.play();
+
             correctCount++;
             correctCountElement.textContent = correctCount;
             currentQuestionIndex++;
@@ -200,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         handleAnswer();
-        if (feedbackElement.className !== 'incorrect shake') {
+        if (feedbackElement.className !== 'incorrect') {
             displayQuestion();
         }
     });
@@ -213,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             handleAnswer();
-            if (feedbackElement.className !== 'incorrect shake') {
+            if (feedbackElement.className !== 'incorrect') {
                 displayQuestion();
             }
         }
