@@ -1,0 +1,354 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Elements
+    const fileSelect = document.getElementById('fileSelect');
+    const questionCount = document.getElementById('questionCount');
+    const direction = document.getElementById('direction');
+    const timerEnabled = document.getElementById('timerEnabled');
+    const startBtn = document.getElementById('startBtn');
+    const testContainer = document.getElementById('testContainer');
+    const questionContainer = document.getElementById('questionContainer');
+    const sourceWord = document.getElementById('sourceWord');
+    const wordImage = document.getElementById('wordImage');
+    const answer = document.getElementById('answer');
+    const nextBtn = document.getElementById('nextBtn');
+    const feedback = document.getElementById('feedback');
+    const timer = document.getElementById('timer');
+    const progress = document.getElementById('progress');
+    const results = document.getElementById('results');
+    const finalScore = document.getElementById('finalScore');
+    const timeSpent = document.getElementById('timeSpent');
+    const restartBtn = document.getElementById('restartBtn');
+    
+    // Audio elements
+    const correctSound = document.getElementById('correctSound');
+    const incorrectSound = document.getElementById('incorrectSound');
+    const startSound = document.getElementById('startSound');
+    const completeSound = document.getElementById('completeSound');
+    
+    // Constants
+    const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/Felisha76/portfolio/main/cs_templates/';
+    
+    // Variables
+    let vocabularyData = [];
+    let currentQuestions = [];
+    let incorrectQuestions = [];
+    let currentQuestionIndex = 0;
+    let correctAnswers = 0;
+    let startTime;
+    let timerInterval;
+    let elapsedTime = 0;
+    
+    // Load available vocabulary files
+    loadVocabularyFiles();
+    
+    // Event listeners
+    startBtn.addEventListener('click', startTest);
+    nextBtn.addEventListener('click', checkAnswer);
+    restartBtn.addEventListener('click', resetTest);
+    answer.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            checkAnswer();
+        }
+    });
+    
+    // Load vocabulary files from GitHub repository
+    async function loadVocabularyFiles() {
+        try {
+            // Fetch the list of files from GitHub API
+            const apiUrl = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates';
+            const response = await fetch(apiUrl);
+            
+            if (!response.ok) {
+                throw new Error('Failed to fetch file list from GitHub');
+            }
+            
+            const files = await response.json();
+            
+            // Filter for en_hu files
+            const enHuFiles = files
+                .filter(file => file.name.startsWith('en_hu') && file.name.endsWith('.csv'))
+                .map(file => file.name);
+            
+            // Populate the dropdown
+            enHuFiles.forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = file;
+                fileSelect.appendChild(option);
+            });
+            
+            if (enHuFiles.length > 0) {
+                fileSelect.value = enHuFiles[0]; // Select the first file by default
+            }
+        } catch (error) {
+            console.error('Error loading vocabulary files:', error);
+            alert('Failed to load vocabulary files. Please try again later.');
+        }
+    }
+    
+    // Start the test
+    function startTest() {
+        const selectedFile = fileSelect.value;
+        if (!selectedFile) {
+            alert('Please select a vocabulary file');
+            return;
+        }
+        
+        // Load the CSV file
+        loadCSV(selectedFile, function(data) {
+            vocabularyData = data;
+            
+            // Prepare questions
+            prepareQuestions();
+            
+            // Hide settings, show test
+            //document.querySelector('.settings').classList.add('hidden');
+            testContainer.classList.remove('hidden');
+            //results.classList.add('hidden');
+            
+            // Reset counters
+            currentQuestionIndex = 0;
+            correctAnswers = 0;
+            incorrectQuestions = [];
+            elapsedTime = 0;
+            
+            // Start timer if enabled
+            if (timerEnabled.checked) {
+                startTime = new Date();
+                timerInterval = setInterval(updateTimer, 1000);
+                timer.classList.remove('hidden');
+            } else {
+                timer.classList.add('hidden');
+            }
+            
+            // Show first question
+            showQuestion();
+            
+            // Play start sound
+            startSound.play();
+        });
+    }
+    
+    // Load CSV file from GitHub
+    async function loadCSV(filename, callback) {
+        try {
+            const fileUrl = GITHUB_RAW_BASE_URL + filename;
+            const response = await fetch(fileUrl);
+        
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${filename}`);
+            }
+        
+            const csvText = await response.text();
+        
+            // Parse CSV using PapaParse
+            Papa.parse(csvText, {
+                complete: function(results) {
+                    console.log('CSV parsing results:', results);
+                
+                    // Process the data
+                    const parsedData = results.data
+                        .filter(row => row.length >= 2 && row[0] && row[1]) // Filter out empty rows
+                        .map(row => {
+                            const hungarian = row[0].trim();
+                            const englishColumn = row[1];
+                        
+                            // Split the B column at <br> tag
+                            const parts = englishColumn.split('<br>');
+                        
+                            // The part before <br> contains the image
+                            const imgPart = parts[0] || '';
+                            // The part after <br> is the English term
+                            const englishTerm = parts.length > 1 ? parts[1].trim() : '';
+                        
+                            // Extract image URL from the img tag
+                            let imageUrl = '';
+                            const imgMatch = imgPart.match(/src="([^"]+)"/i);
+                            if (imgMatch && imgMatch[1]) {
+                                imageUrl = imgMatch[1];
+                            }
+                        
+                            return {
+                                hungarian: hungarian,
+                                english: englishTerm,
+                                imageUrl: imageUrl
+                            };
+                        });
+                
+                    console.log('Parsed vocabulary data:', parsedData);
+                    callback(parsedData);
+                },
+                error: function(error) {
+                    console.error('Error parsing CSV:', error);
+                    alert('Failed to parse the vocabulary file.');
+                }
+            });
+        } catch (error) {
+            console.error('Error loading CSV file:', error);
+            alert('Failed to load the vocabulary file. Please try again later.');
+        }
+    }
+    
+    // Prepare questions for the test
+    function prepareQuestions() {
+        // Shuffle the vocabulary data
+        const shuffled = [...vocabularyData].sort(() => 0.5 - Math.random());
+        
+        // Take the requested number of questions
+        const count = Math.min(parseInt(questionCount.value), shuffled.length);
+        currentQuestions = shuffled.slice(0, count);
+    }
+    
+    // Show the current question
+function showQuestion() {
+    const question = currentQuestions[currentQuestionIndex];
+    const isHuToEn = direction.value === 'hu_to_en';
+        
+        // Update progress
+        progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
+        
+        // Clear previous feedback and answer
+        feedback.textContent = '';
+        feedback.className = '';
+        answer.value = '';
+        answer.focus();
+        
+ // Set the source word based on direction
+ if (isHuToEn) {
+    sourceWord.innerHTML = `<strong>Magyar szó:</strong><br>${question.hungarian}`;
+    
+    // Display the image
+    if (question.imageUrl) {
+        wordImage.src = question.imageUrl;
+        wordImage.style.display = 'block';
+    } else {
+        wordImage.style.display = 'none';
+    }
+} else {
+    sourceWord.innerHTML = `<strong>English word:</strong><br>${question.english}`;
+    
+    // Display the image
+    if (question.imageUrl) {
+        wordImage.src = question.imageUrl;
+        wordImage.style.display = 'block';
+    } else {
+        wordImage.style.display = 'none';
+    }
+}
+}
+    
+    // Check the user's answer
+    function checkAnswer() {
+        const userAnswer = answer.value.trim().toLowerCase();
+        const question = currentQuestions[currentQuestionIndex];
+        const isHuToEn = direction.value === 'hu_to_en';
+        
+        // Get the correct answer based on direction
+        let correctAnswer = isHuToEn ? question.english.toLowerCase() : question.hungarian.toLowerCase();
+        
+        // Normalize both answers for comparison (remove extra spaces, special chars)
+        const normalizedUserAnswer = userAnswer.replace(/\s+/g, ' ').trim();
+        const normalizedCorrectAnswer = correctAnswer.replace(/\s+/g, ' ').trim();
+        
+        console.log('User answer:', normalizedUserAnswer);
+        console.log('Correct answer:', normalizedCorrectAnswer);
+        
+        if (normalizedUserAnswer === normalizedCorrectAnswer) {
+            // Correct answer
+            correctSound.play();
+            feedback.textContent = 'Correct!';
+            feedback.className = 'correct';
+            document.querySelector('.question-container').classList.add('bounce');
+            correctAnswers++;
+            
+            // Move to next question after a short delay
+            setTimeout(() => {
+                document.querySelector('.question-container').classList.remove('bounce');
+                nextQuestion();
+            }, 1000);
+        } else {
+            // Incorrect answer
+            incorrectSound.play();
+            feedback.innerHTML = `Incorrect! <br>A helyes megoldás: ${correctAnswer}`;
+            feedback.className = 'incorrect';
+            document.querySelector('.question-container').classList.add('shake');
+            
+            // Add to incorrect questions for later review
+            incorrectQuestions.push(question);
+            
+            // Move to next question after 3 seconds
+            setTimeout(() => {
+                document.querySelector('.question-container').classList.remove('shake');
+                nextQuestion();
+            }, 3000);
+        }
+    }
+    // Move to the next question
+    function nextQuestion() {
+        currentQuestionIndex++;
+        
+        // Check if we've gone through all the questions
+        if (currentQuestionIndex >= currentQuestions.length) {
+            // If there are incorrect questions, add them for review
+            if (incorrectQuestions.length > 0) {
+                currentQuestions = currentQuestions.concat(incorrectQuestions);
+                incorrectQuestions = [];
+            }
+            
+            // Check if we're done with all questions including reviews
+            if (currentQuestionIndex >= currentQuestions.length) {
+                endTest();
+                return;
+            }
+        }
+        
+        // Show the next question
+        showQuestion();
+    }
+    
+    // Update the timer
+    function updateTimer() {
+        elapsedTime++;
+        timer.textContent = `Time: ${elapsedTime}s`;
+    }
+    
+    // End the test
+    function endTest() {
+        // Stop the timer
+        if (timerInterval) {
+            clearInterval(timerInterval);
+        }
+        
+            // Play completion sound if it exists
+        if (completeSound) {
+            completeSound.play();
+        } else {
+            console.error("Complete sound element is missing.");
+        }
+
+        // Calculate final score
+        const totalQuestions = parseInt(questionCount.value);
+        const score = Math.round((correctAnswers / totalQuestions) * 100);
+        
+        // Update results text
+        finalScore.textContent = `You got ${correctAnswers} out of ${totalQuestions} correct (${score}%)`;
+        timeSpent.textContent = `Time spent: ${elapsedTime} seconds`;
+        
+        // Show results explicitly
+        
+        results.style.display = 'block'; // Show results
+        results.classList.remove('hidden');
+        questionContainer.style.display = 'none'; // Hide test container
+        console.log("Test Ended: Results should now be visible.");
+        
+}
+    
+    // Reset the test to start over
+    function resetTest() {
+        // Show settings again
+        document.querySelector('.settings').classList.remove('hidden');
+        testContainer.classList.add('hidden');
+        questionContainer.classList.add('hidden');
+        //results.classList.add('hidden');
+    }
+});
