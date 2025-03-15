@@ -18,7 +18,9 @@ body {
     margin-bottom: 10px;
     align-items: center;
 }
-
+  #startTable, #endTable {
+      width: 100px;
+  }
 .question-container {
     font-size: 24px;
     margin: 30px 0;
