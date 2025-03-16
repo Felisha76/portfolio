@@ -104,13 +104,13 @@ h1 {
 }
 
 #feedback {
-    font-size: 18px;
+    font-size: 2vw;
     font-weight: bold;
     margin-left: 10px;
 }
 
 .correct {
-    color: green;
+    color: rgb(4, 190, 4);
 }
 
 .incorrect {
