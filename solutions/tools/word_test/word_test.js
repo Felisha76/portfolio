@@ -364,17 +364,17 @@ document.addEventListener('DOMContentLoaded', function() {
         motivationMessage.className = 'motivation-message';
         
         if (score < 60) {
-            motivationMessage.innerHTML = "Practice a little more, don't give up! 💪 🌱 🔄";
+            motivationMessage.innerHTML = "Let's try it again! Practice makes the master!🔥";
         } else if (score >= 60 && score < 70) {
-            motivationMessage.innerHTML = "Let's try it again! Practice makes the master! 🚀 📚 ✨";
+            motivationMessage.innerHTML = "Practice a little more, don't give up! 🔥🔥";
         } else if (score >= 70 && score < 80) {
-            motivationMessage.innerHTML = "Not bad, but a little more practice makes you better. You can do it! 👍 🌟 📈";
+            motivationMessage.innerHTML = "Not bad, but a little more practice makes you even better. You can do it! 🔥🔥🔥";
         } else if (score >= 80 && score < 90) {
-            motivationMessage.innerHTML = "Very good job! You are near to the goal! 🏆 🎯 🔥";
+            motivationMessage.innerHTML = "Good job! You are near to the goal! 🔥🔥🔥🔥";
         } else if (score >= 90 && score < 100) {
-            motivationMessage.innerHTML = "Very good job! You are near to perfection! Go on! 🌟 🎓 💯";
+            motivationMessage.innerHTML = "Very good job! You are near to perfection! Go on! 🔥🔥🔥🔥🔥";
         } else {
-            motivationMessage.innerHTML = "Rocket! You are a superstar! 🚀 🌠 👑 🏆";
+            motivationMessage.innerHTML = "💯 🚀 Rocket! You are a superstar! 🔥🔥🔥🔥🔥 👑 🏆";
         }
         
         // Add the motivation message after the score information
