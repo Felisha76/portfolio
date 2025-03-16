@@ -313,36 +313,41 @@ function showQuestion() {
         timer.textContent = `Time: ${elapsedTime}s`;
     }
     
-    // End the test
-    function endTest() {
-        // Stop the timer
-        if (timerInterval) {
-            clearInterval(timerInterval);
-        }
+        // End the test
+        function endTest() {
+            // Stop the timer
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
         
             // Play completion sound if it exists
-        if (completeSound) {
-            completeSound.play();
-        } else {
-            console.error("Complete sound element is missing.");
-        }
+            if (completeSound) {
+                completeSound.play();
+            } else {
+                console.error("Complete sound element is missing.");
+            }
 
-        // Calculate final score
-        const totalQuestions = parseInt(questionCount.value);
-        const score = Math.round((correctAnswers / totalQuestions) * 100);
+            // Calculate final score
+            const initialQuestions = parseInt(questionCount.value);
+            const totalAttempts = currentQuestionIndex; // Total number of questions attempted including repeats
+            const incorrectCount = totalAttempts - correctAnswers; // Number of incorrect answers
+            const score = Math.round((correctAnswers / totalAttempts) * 100);
         
-        // Update results text
-        finalScore.textContent = `You got ${correctAnswers} out of ${totalQuestions} correct (${score}%)`;
-        timeSpent.textContent = `Time spent: ${elapsedTime} seconds`;
+            // Update results text
+            finalScore.textContent = `You got ${correctAnswers} out of ${totalAttempts} correct (${score}%)`;
+            timeSpent.textContent = `Time spent: ${elapsedTime} seconds`;
         
-        // Show results explicitly
+            // Add information about incorrect answers
+            const incorrectInfo = document.createElement('p');
+            incorrectInfo.textContent = `Original questions: ${initialQuestions}, Incorrect answers: ${incorrectCount}`;
+            finalScore.parentNode.insertBefore(incorrectInfo, timeSpent);
         
-        results.style.display = 'block'; // Show results
-        results.classList.remove('hidden');
-        questionContainer.style.display = 'none'; // Hide test container
-        console.log("Test Ended: Results should now be visible.");
-        
-}
+            // Show results explicitly
+            results.style.display = 'block'; // Show results
+            results.classList.remove('hidden');
+            questionContainer.style.display = 'none'; // Hide test container
+            console.log("Test Ended: Results should now be visible.");
+        }
     
    /* // Reset the test to start over
     function resetTest() {
