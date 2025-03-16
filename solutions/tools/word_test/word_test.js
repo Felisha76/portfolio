@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let startTime;
     let timerInterval;
     let elapsedTime = 0;
+    let startTimeStamp;
+    let endTimeStamp;
+    let testDuration;
     
     // Load available vocabulary files
     loadVocabularyFiles();
@@ -95,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        // Capture precise start time
+        startTimeStamp = performance.now();
+        
         // Load the CSV file
         loadCSV(selectedFile, function(data) {
             vocabularyData = data;
@@ -105,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Hide settings, show test
             document.querySelector('.settings').classList.add('hidden');
             testContainer.classList.remove('hidden');
-            //results.classList.add('hidden');
             
             // Reset counters
             currentQuestionIndex = 0;
@@ -201,42 +206,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Show the current question
-function showQuestion() {
-    const question = currentQuestions[currentQuestionIndex];
-    const isHuToEn = direction.value === 'hu_to_en';
+    function showQuestion() {
+        const question = currentQuestions[currentQuestionIndex];
+        const isHuToEn = direction.value === 'hu_to_en';
+            
+            // Update progress
+            progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
+            
+            // Clear previous feedback and answer
+            feedback.textContent = '';
+            feedback.className = '';
+            answer.value = '';
+            answer.focus();
+            
+     // Set the source word based on direction
+     if (isHuToEn) {
+        sourceWord.innerHTML = `<strong>Magyar szó:</strong><br>${question.hungarian}`;
         
-        // Update progress
-        progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
-        
-        // Clear previous feedback and answer
-        feedback.textContent = '';
-        feedback.className = '';
-        answer.value = '';
-        answer.focus();
-        
- // Set the source word based on direction
- if (isHuToEn) {
-    sourceWord.innerHTML = `<strong>Magyar szó:</strong><br>${question.hungarian}`;
-    
-    // Display the image
-    if (question.imageUrl) {
-        wordImage.src = question.imageUrl;
-        wordImage.style.display = 'block';
+        // Display the image
+        if (question.imageUrl) {
+            wordImage.src = question.imageUrl;
+            wordImage.style.display = 'block';
+        } else {
+            wordImage.style.display = 'none';
+        }
     } else {
-        wordImage.style.display = 'none';
+        sourceWord.innerHTML = `<strong>English word:</strong><br>${question.english}`;
+        
+        // Display the image
+        if (question.imageUrl) {
+            wordImage.src = question.imageUrl;
+            wordImage.style.display = 'block';
+        } else {
+            wordImage.style.display = 'none';
+        }
     }
-} else {
-    sourceWord.innerHTML = `<strong>English word:</strong><br>${question.english}`;
-    
-    // Display the image
-    if (question.imageUrl) {
-        wordImage.src = question.imageUrl;
-        wordImage.style.display = 'block';
-    } else {
-        wordImage.style.display = 'none';
     }
-}
-}
     
     // Check the user's answer
     function checkAnswer() {
@@ -313,67 +318,78 @@ function showQuestion() {
         timer.textContent = `Time: ${elapsedTime}s`;
     }
     
-        // End the test
-        function endTest() {
-            // Stop the timer
-            if (timerInterval) {
-                clearInterval(timerInterval);
-            }
+    // End the test
+    function endTest() {
+        // Capture end time
+        endTimeStamp = performance.now();
         
-            // Play completion sound if it exists
-            if (completeSound) {
-                completeSound.play();
-            } else {
-                console.error("Complete sound element is missing.");
-            }
-
-            // Calculate final score
-            const initialQuestions = parseInt(questionCount.value);
-            const totalAttempts = currentQuestionIndex; // Total number of questions attempted including repeats
-            const incorrectCount = totalAttempts - correctAnswers; // Number of incorrect answers
-            const score = Math.round((correctAnswers / totalAttempts) * 100);
+        // Calculate duration in milliseconds
+        testDuration = endTimeStamp - startTimeStamp;
         
-            // Update results text
-            finalScore.textContent = `You got ${correctAnswers} out of ${totalAttempts} correct (${score}%)`;
-            timeSpent.textContent = `Time spent: ${elapsedTime} seconds`;
+        // Convert to seconds and milliseconds
+        const seconds = Math.floor(testDuration / 1000);
+        const milliseconds = Math.floor(testDuration % 1000);
         
-            // Add information about incorrect answers
-            const incorrectInfo = document.createElement('p');
-            incorrectInfo.textContent = `Original questions: ${initialQuestions}, Incorrect answers: ${incorrectCount}`;
-            finalScore.parentNode.insertBefore(incorrectInfo, timeSpent);
-        
-            // Add motivational message based on score
-            const motivationMessage = document.createElement('p');
-            motivationMessage.className = 'motivation-message';
-            
-            if (score < 60) {
-                motivationMessage.innerHTML = "Practice a little more, don't give up! 🔥";
-            } else if (score >= 60 && score < 70) {
-                motivationMessage.innerHTML = "Let's try it again! Practice makes the master! 🔥🔥";
-            } else if (score >= 70 && score < 80) {
-                motivationMessage.innerHTML = "Not bad, but a little more practice makes you better. You can do it! 🔥🔥🔥";
-            } else if (score >= 80 && score < 90) {
-                motivationMessage.innerHTML = "Very good job! You are near to the goal! 🔥🔥🔥🔥";
-            } else if (score >= 90 && score < 100) {
-                motivationMessage.innerHTML = "Very good job! You are near to perfection! Go on! 🔥🔥🔥🔥🔥";
-            } else {
-                motivationMessage.innerHTML = "Rocket! You are a superstar! 💯 🔥🔥🔥🔥🔥 💯";
-            }
-            
-            // Add the motivation message after the score information
-            finalScore.parentNode.insertBefore(motivationMessage, timeSpent);
-    
-
-            // Show results explicitly
-            results.style.display = 'block'; // Show results
-            results.classList.remove('hidden');
-            questionContainer.style.display = 'none'; // Hide test container
-            //console.log("Test Ended: Results should now be visible.");
+        // Stop the timer
+        if (timerInterval) {
+            clearInterval(timerInterval);
         }
+        
+        // Play completion sound if it exists
+        if (completeSound) {
+            completeSound.play();
+        } else {
+            console.error("Complete sound element is missing.");
+        }
+
+        // Calculate final score
+        const initialQuestions = parseInt(questionCount.value);
+        const totalAttempts = currentQuestionIndex; // Total number of questions attempted including repeats
+        const incorrectCount = totalAttempts - correctAnswers; // Number of incorrect answers
+        const score = Math.round((correctAnswers / totalAttempts) * 100);
+        
+        // Update results text
+        finalScore.textContent = `You got ${correctAnswers} out of ${totalAttempts} correct (${score}%)`;
+        
+        // Update time spent with precise timing
+        timeSpent.textContent = `You completed the test in ${seconds} seconds ${milliseconds} milliseconds`;
+        
+        // Add information about incorrect answers
+        const incorrectInfo = document.createElement('p');
+        incorrectInfo.textContent = `Original questions: ${initialQuestions}, Incorrect answers: ${incorrectCount}`;
+        finalScore.parentNode.insertBefore(incorrectInfo, timeSpent);
+        
+        // Add motivational message based on score
+        const motivationMessage = document.createElement('p');
+        motivationMessage.className = 'motivation-message';
+        
+        if (score < 60) {
+            motivationMessage.innerHTML = "Practice a little more, don't give up! 💪 🌱 🔄";
+        } else if (score >= 60 && score < 70) {
+            motivationMessage.innerHTML = "Let's try it again! Practice makes the master! 🚀 📚 ✨";
+        } else if (score >= 70 && score < 80) {
+            motivationMessage.innerHTML = "Not bad, but a little more practice makes you better. You can do it! 👍 🌟 📈";
+        } else if (score >= 80 && score < 90) {
+            motivationMessage.innerHTML = "Very good job! You are near to the goal! 🏆 🎯 🔥";
+        } else if (score >= 90 && score < 100) {
+            motivationMessage.innerHTML = "Very good job! You are near to perfection! Go on! 🌟 🎓 💯";
+        } else {
+            motivationMessage.innerHTML = "Rocket! You are a superstar! 🚀 🌠 👑 🏆";
+        }
+        
+        // Add the motivation message after the score information
+        finalScore.parentNode.insertBefore(motivationMessage, timeSpent);
+        
+        // Show results explicitly
+        results.style.display = 'block'; // Show results
+        results.classList.remove('hidden');
+        questionContainer.style.display = 'none'; // Hide test container
+        console.log("Test Ended: Results should now be visible.");
+    }
 
     // Reset the test to start over
     function resetTest() {
     // Reload the page
         window.location.reload();
-}
+    }
 });
