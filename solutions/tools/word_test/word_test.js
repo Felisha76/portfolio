@@ -342,21 +342,34 @@ function showQuestion() {
             incorrectInfo.textContent = `Original questions: ${initialQuestions}, Incorrect answers: ${incorrectCount}`;
             finalScore.parentNode.insertBefore(incorrectInfo, timeSpent);
         
+            // Add motivational message based on score
+            const motivationMessage = document.createElement('p');
+            motivationMessage.className = 'motivation-message';
+            
+            if (score < 60) {
+                motivationMessage.innerHTML = "Practice a little more, don't give up! 💪 🌱 🔄";
+            } else if (score >= 60 && score < 70) {
+                motivationMessage.innerHTML = "Let's try it again! Practice makes the master! 🚀 📚 ✨";
+            } else if (score >= 70 && score < 80) {
+                motivationMessage.innerHTML = "Not bad, but a little more practice makes you better. You can do it! 👍 🌟 📈";
+            } else if (score >= 80 && score < 90) {
+                motivationMessage.innerHTML = "Very good job! You are near to the goal! 🏆 🎯 🔥";
+            } else if (score >= 90 && score < 100) {
+                motivationMessage.innerHTML = "Very good job! You are near to perfection! Go on! 🌟 🎓 💯";
+            } else {
+                motivationMessage.innerHTML = "Rocket! You are a superstar! 🚀 🌠 👑 🏆";
+            }
+            
+            // Add the motivation message after the score information
+            finalScore.parentNode.insertBefore(motivationMessage, timeSpent);
+    
+
             // Show results explicitly
             results.style.display = 'block'; // Show results
             results.classList.remove('hidden');
             questionContainer.style.display = 'none'; // Hide test container
-            console.log("Test Ended: Results should now be visible.");
+            //console.log("Test Ended: Results should now be visible.");
         }
-    
-   /* // Reset the test to start over
-    function resetTest() {
-        // Show settings again
-        document.querySelector('.settings').classList.remove('hidden');
-        testContainer.classList.add('hidden');
-        questionContainer.classList.add('hidden');
-        //results.classList.add('hidden');
-    } */
 
     // Reset the test to start over
     function resetTest() {

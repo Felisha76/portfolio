@@ -150,6 +150,13 @@ h1 {
     text-align: right;
 }
 
+.motivation-message {
+    font-weight: bold;
+    color: #d3f919;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
 /* Animations from multiplication_excercises */
 @keyframes bounce {
     0% { transform: scale(1); }
