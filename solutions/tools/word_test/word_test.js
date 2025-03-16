@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentQuestions = [];
     let incorrectQuestions = [];
     let currentQuestionIndex = 0;
+    
     let correctAnswers = 0;
     let startTime;
     let timerInterval;
@@ -343,12 +344,18 @@ function showQuestion() {
         
 }
     
-    // Reset the test to start over
+   /* // Reset the test to start over
     function resetTest() {
         // Show settings again
         document.querySelector('.settings').classList.remove('hidden');
         testContainer.classList.add('hidden');
         questionContainer.classList.add('hidden');
         //results.classList.add('hidden');
-    }
+    } */
+
+    // Reset the test to start over
+    function resetTest() {
+    // Reload the page
+        window.location.reload();
+}
 });
