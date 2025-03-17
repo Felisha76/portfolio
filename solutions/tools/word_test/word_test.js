@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Filter for en_hu files
             const enHuFiles = files
-                .filter(file => file.name.startsWith('en_hu') && file.name.endsWith('.csv'))
+                .filter(file => file.name.startsWith('en_hu') && 
+                file.name.endsWith('.csv'))
                 .map(file => file.name);
             
             // Populate the dropdown
