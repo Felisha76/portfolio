@@ -112,61 +112,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to parse CSV data
     function parseCSV(csvText) {
-        // Split by lines
-        const lines = csvText.split('\n');
-        
-        // Clear current data
-        currentData = [];
-        
-        // Process each line
-        for (let i = 1; i < lines.length; i++) { // Skip header row
-            if (!lines[i].trim()) continue; // Skip empty lines
-            
-            // Parse the CSV line, handling commas within quoted fields
-            const row = parseCSVLine(lines[i]);
-            
-            // We need columns B, C, D, E (indices 1, 2, 3, 4)
-            if (row.length > 1 && row[1].trim()) { // Only include rows where column B has content
-                currentData.push({
-                    topic: row[1] || '',
-                    description: row[2] || '',
-                    example: row[3] || '',
-                    notes: row[4] || ''
-                });
-            }
-        }
-        
-        // Display the data
+        const parsed = Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+        });
+    
+        currentData = parsed.data.map(row => ({
+            topic: row['Topic'] || '',
+            description: row['Description'] || '',
+            example: row['Example'] || '',
+            notes: row['Notes'] || ''
+        }));
+    
         displayData(currentData);
     }
     
-    // Function to parse a CSV line properly (handling quotes and commas)
-    function parseCSVLine(line) {
-        const result = [];
-        let current = '';
-        let inQuotes = false;
-        
-        for (let i = 0; i < line.length; i++) {
-            const char = line[i];
-            
-            if (char === '"') {
-                // Toggle the inQuotes flag
-                inQuotes = !inQuotes;
-            } else if (char === ',' && !inQuotes) {
-                // End of field
-                result.push(current);
-                current = '';
-            } else {
-                // Add character to current field
-                current += char;
-            }
-        }
-        
-        // Add the last field
-        result.push(current);
-        
-        return result;
-    }
     
     // Function to display data in the table
     function displayData(data) {
