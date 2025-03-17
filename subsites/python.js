@@ -118,10 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     
         currentData = parsed.data.map(row => ({
-            topic: row['Topic'] || '',
-            description: row['Description'] || '',
-            example: row['Example'] || '',
-            notes: row['Notes'] || ''
+            topic: row['Main'] || '',
+            description: row['Topics'] || '',
+            example: row['Description'] || '',
+            notes: row['Codes'] || ''
         }));
     
         displayData(currentData);

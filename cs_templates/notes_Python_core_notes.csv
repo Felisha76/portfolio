@@ -1,4 +1,4 @@
-﻿,Topic,Description,Example,Notes,1
+﻿,Main,Topics,Description,Codes,1
 ,printing,printing,"Let's start off by creating a short program that displays ""Hello world!"".
 In Python, we use the print statement to output text. 
 Note that the text should be enclosed into single or double quotes. 
