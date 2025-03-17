@@ -1,12 +1,13 @@
-﻿printingprinting,printing,printing,"Let's start off by creating a short program that displays ""Hello world!"".
+﻿,Topic,Description,Example,Notes,1
+,printing,printing,"Let's start off by creating a short program that displays ""Hello world!"".
 In Python, we use the print statement to output text. 
 Note that the text should be enclosed into single or double quotes. 
 The print statement needs to be followed by parentheses, which enclose the output we want to generate.
 The print statement can also be used to output multiple lines of text.
 Each print statement outputs text from a new line.
 Python code often contains references to the comedy group Monty Python. 
-This is why the words, ""spam"" and ""eggs"" are often used as placeholder variables in Python.",print('Hello world!'),1
-simple operationssimple operations,simple operations,simple operations,"Simple Operations
+This is why the words, ""spam"" and ""eggs"" are often used as placeholder variables in Python.",print('Hello world!'),2
+,simple operations,simple operations,"Simple Operations
 Python has the capability of carrying out calculations.
 Enter a calculation directly into the print statement:
 print(2 + 2)
@@ -16,33 +17,33 @@ The spaces around the plus and minus signs here are optional
 Python also carries out multiplication and division, using an asterisk * to indicate multiplication and a forward slash / to indicate division.
 Use parentheses to determine which operations are performed first.
 Using a single slash to divide numbers produces a decimal (or float, as it is called in programming). We'll have more about floats in the next lesson.","print(2 + 2)
-print(5 + 4 - 3)",2
-floatsfloats,floats,floats,"Floats are used in Python to represent numbers that aren't integers (whole numbers).
+print(5 + 4 - 3)",3
+,floats,floats,"Floats are used in Python to represent numbers that aren't integers (whole numbers).
 Some examples of numbers that are represented as floats are 0.5 and -7.8237591.
 They can be created directly by entering a number with a decimal point, or by using operations such as division on integers.  Computers can't store floats perfectly accurately, in the same way that we can't write down the complete decimal expansion of 1/3 (0.3333333333333333...). Keep this in mind, because it often leads to infuriating bugs!     A float is also produced by running an operation on two floats, or on a float and an integer.  A float can be added to an integer, because Python silently converts the integer to a float.","print( 3/4 )
 print( 0.42 )
 print( 8 / 2 )
 print( 6 * 7.0 )
-print( 4 + 1.65 )",3
-ExponentiationExponentiation **,Exponentiation,Exponentiation **,"Besides addition, subtraction, multiplication, and division, Python also supports exponentiation, which is the raising of one number to the power of another. This operation is performed using two asterisks.
+print( 4 + 1.65 )",4
+,Exponentiation,Exponentiation **,"Besides addition, subtraction, multiplication, and division, Python also supports exponentiation, which is the raising of one number to the power of another. This operation is performed using two asterisks.
 You can chain exponentiations together. In other words, you can rise a number to multiple powers. For example, 2**3**2.
-You can also use floats in exponentiation. Note that the result will be a float.",print(2**5),4
-QuotientQuotient //,Quotient,Quotient //,"Floor division is done using two forward slashes and is used to determine the quotient of a division (the quantity produced by the division of two numbers).
+You can also use floats in exponentiation. Note that the result will be a float.",print(2**5),5
+,Quotient,Quotient //,"Floor division is done using two forward slashes and is used to determine the quotient of a division (the quantity produced by the division of two numbers).
 You can also use floor division on floats.","print( 20 // 6 ) 
-# The code above will output 3, because 6 goes into 20 three times.",5
-RemainderRemainder %,Remainder,Remainder %,"The modulo operator is carried out with a percent symbol (%) and is used to get the remainder of a division.
+# The code above will output 3, because 6 goes into 20 three times.",6
+,Remainder,Remainder %,"The modulo operator is carried out with a percent symbol (%) and is used to get the remainder of a division.
 All numerical operators can also be used with floats.","print(20 % 6)
-print(1.25 % 0.5)",6
-"StringsStrings """" ''",Strings,"Strings """" ''","If you want to use text in Python, you have to use a string.
+print(1.25 % 0.5)",7
+,Strings,"Strings """" ''","If you want to use text in Python, you have to use a string.
 A string is created by entering text between two single or double quotation marks.
 The delimiter ("" or ') used for a string doesn't affect how it behaves in any way.","print('Coding in Finance')
-print(""An investment in knowledge pays the best interest."")",7
-BackslashBackslash \,Backslash,Backslash \,"Some characters can't be directly included in a string. For instance, double quotes can't be directly included in a double quote string; this would cause it to end prematurely.
+print(""An investment in knowledge pays the best interest."")",8
+,Backslash,Backslash \,"Some characters can't be directly included in a string. For instance, double quotes can't be directly included in a double quote string; this would cause it to end prematurely.
 
 Characters like these must be escaped by placing a backslash before them.
 Double quotes only need to be escaped in double quote strings, and the same is true for single quote strings.
-Backslashes can also be used to escape tabs, arbitrary Unicode characters, and various other things that can't be reliably printed.",print('Brian\'s mother: He\'s not an angel. He\'s a very naughty boy!'),8
-"NewlinesNewlines \n \t """"""",Newlines,"Newlines \n \t """"""","\n represents a new line.
+Backslashes can also be used to escape tabs, arbitrary Unicode characters, and various other things that can't be reliably printed.",print('Brian\'s mother: He\'s not an angel. He\'s a very naughty boy!'),9
+,Newlines,"Newlines \n \t """"""","\n represents a new line.
 It can be used in strings to create multi-line output:
 Similarly, \t represents a tab.
 Newlines will be automatically added for strings that are created using three quotes.
@@ -50,16 +51,16 @@ This makes it easier to format long, multi-line texts without the need to explic
 print(""""""this
 is a
 multiline
-text"""""")",9
-ConcatenationConcatenation,Concatenation,Concatenation,"As with integers and floats, strings in Python can be added, using a process called concatenation, which can be done on any two strings.
+text"""""")",10
+,Concatenation,Concatenation,"As with integers and floats, strings in Python can be added, using a process called concatenation, which can be done on any two strings.
 Even if your strings contain numbers, they are still added as strings rather than integers.
 Adding a string to a number produces an error, as even though they might look similar, they are two different entities.
 Strings can also be multiplied by integers. This produces a repeated version of the original string. The order of the string and the integer doesn't matter, but the string usually comes first.
 Strings can't be multiplied by other strings. Strings also can't be multiplied by floats, even if the floats are whole numbers.","print(""Spam"" + 'eggs')
 print(""2"" + ""2"")
 print(""spam"" * 3)
-print(4 * '2')",10
-VariablesVariables,Variables,Variables,"A variable allows you to store a value by assigning it to a name, which can be used to refer to the value later in the program.
+print(4 * '2')",11
+,Variables,Variables,"A variable allows you to store a value by assigning it to a name, which can be used to refer to the value later in the program.
 For example, in game development, you would use a variable to store the points of the player.
 
 To assign a variable, use one equals sign.
@@ -85,8 +86,8 @@ print(x)
 x = 123.456
 print(x)
 x = ""This is a string""
-print(x + ""!"")",11
-InputInput,Input,Input,"To get input from the user in Python, you can use the intuitively named input function.
+print(x + ""!"")",12
+,Input,Input,"To get input from the user in Python, you can use the intuitively named input function.
 For example, a game can ask for the user's name and age as input and use them in the game.
 
 The input function prompts the user for input, and returns what they enter as a string (with the contents automatically escaped).
@@ -120,8 +121,8 @@ print(""His age is "" + str(age))
 
 name = input()
 age = input()
-print(name + "" is "" + age) ",12
-In-Place OperatorsIn-Place Operators,In-Place Operators,In-Place Operators,"To get input from the user in Python, you can use the intuitively named input function.
+print(name + "" is "" + age) ",13
+,In-Place Operators,In-Place Operators,"To get input from the user in Python, you can use the intuitively named input function.
 For example, a game can ask for the user's name and age as input and use them in the game.
 
 The input function prompts the user for input, and returns what they enter as a string (with the contents automatically escaped).
@@ -148,8 +149,8 @@ print(x)
 num = int(input())
 print(num)
 
-print(num:=int(input()))",13
-BooleansBooleans True False == !== < >,Booleans,Booleans True False == !== < >,"Another type in Python is the Boolean type. There are two Boolean values: True and False.
+print(num:=int(input()))",14
+,Booleans,Booleans True False == !== < >,"Another type in Python is the Boolean type. There are two Boolean values: True and False.
 They can be created by comparing values, for instance by using the equal operator ==.
 Be careful not to confuse assignment (one equals sign) with comparison (two equals signs).
 
@@ -179,8 +180,8 @@ print(9 >= 9.0)
 True
 
 print(""Annie"" > ""Andy"")
-True",14
-if Statementsif Statements,if Statements,if Statements,"Another type in Python is the Boolean type. There are two Boolean values: True and False.
+True",15
+,if Statements,if Statements,"Another type in Python is the Boolean type. There are two Boolean values: True and False.
 You can use if statements to run code if a certain condition holds.
 If an expression evaluates to True, some statements are carried out. Otherwise, they aren't carried out.
 An if statement looks like this:
@@ -202,8 +203,8 @@ num = 12
 if num > 5:
     print(""Bigger than 5"")
     if num <=47:
-        print(""Between 5 and 47"")",15
-else Statementselse elif,else Statements,else elif,"The if statement allows you to check a condition and run some statements, if the condition is True.
+        print(""Between 5 and 47"")",16
+,else Statements,else elif,"The if statement allows you to check a condition and run some statements, if the condition is True.
 The else statement can be used to run some statements when the condition of the if statement is False.
 
 As with if statements, the code inside the block should be indented.
@@ -268,8 +269,8 @@ x = 4
 if x == 5:
     print(""Yes"")
 else:
-    print(""No"")",16
-Boolean LogicBoolean Logic,Boolean Logic,Boolean Logic,"Boolean logic is used to make more complicated conditions for if statements that rely on more than one condition.
+    print(""No"")",17
+,Boolean Logic,Boolean Logic,"Boolean logic is used to make more complicated conditions for if statements that rely on more than one condition.
 Python's Boolean operators are and, or, and not.
 The and operator takes two arguments, and evaluates as True if, and only if, both of its arguments are True. Otherwise, it evaluates to False.
 Boolean operators can be used in expression as many times as needed.
@@ -290,20 +291,20 @@ print(1 != 1 or 2 == 2)
 print(2 < 1 or 3 >  6)
 
 print(not 1 == 1)
-print(not 1 > 7)",17
-Operator PrecedenceOperator Precedence,Operator Precedence,Operator Precedence,"Operator precedence is a very important concept in programming. It is an extension of the mathematical idea of order of operations (multiplication being performed before addition, etc.) to include other operators, such as those in Boolean logic.
+print(not 1 > 7)",18
+,Operator Precedence,Operator Precedence,"Operator precedence is a very important concept in programming. It is an extension of the mathematical idea of order of operations (multiplication being performed before addition, etc.) to include other operators, such as those in Boolean logic.
 
 The below code shows that == has a higher precedence than or:
 Python's order of operations is the same as that of normal mathematics: parentheses first, then exponentiation, then multiplication/division, and then addition/subtraction.","print(False == False or True)
 print(False == (False or True))
-print((False == False) or True)",18
-Chaining Multiple ConditionsChaining Multiple Conditions,Chaining Multiple Conditions,Chaining Multiple Conditions,"You can chain multiple conditional statements in an if statement using the Boolean operators.
+print((False == False) or True)",19
+,Chaining Multiple Conditions,Chaining Multiple Conditions,"You can chain multiple conditional statements in an if statement using the Boolean operators.
 
 For example, we can check if the value of a grade is between 70 and 100:
 You can use multiple and, or, not operators to chain multiple conditions together.","grade = 88
 if(grade >= 70 and grade <= 100):
-    print(""Passed!"")",19
-ListsLists,Lists,Lists,"Lists are used to store items.
+    print(""Passed!"")",20
+,Lists,Lists,"Lists are used to store items.
 A list is created using square brackets with commas separating items.
 words = [""Hello"", ""world"", ""!""]
 
@@ -380,8 +381,8 @@ m = [
 print(m[1][2]) 
 
 str = ""Hello world!""
-print(str[6])",20
-List OperationsList Operations,List Operations,List Operations,"The item at a certain index in a list can be reassigned.
+print(str[6])",21
+,List Operations,List Operations,"The item at a certain index in a list can be reassigned.
 nums = [7, 7, 7, 7, 7]
 nums[2] = 5
 print(nums)
@@ -427,8 +428,8 @@ nums = [1, 2, 3]
 print(not 4 in nums)
 print(4 not in nums)
 print(not 3 in nums)
-print(3 not in nums)",21
-List FunctionsList Functions len insert,List Functions,List Functions len insert,"The append method adds an item to the end of an existing list.
+print(3 not in nums)",22
+,List Functions,List Functions len insert,"The append method adds an item to the end of an existing list.
 nums = [1, 2, 3]
 nums.append(4)
 print(nums)
@@ -483,8 +484,8 @@ print(letters.index('r'))
 print(letters.index('p'))
 print(letters.index('z'))
 
-items.count(42)",22
-while Loopswhile Loops,while Loops,while Loops,"A while loop is used to repeat a block of code multiple times.
+items.count(42)",23
+,while Loops,while Loops,"A while loop is used to repeat a block of code multiple times.
 For example, let's say we need to process multiple user inputs, so that each time the user inputs something, the same block of code needs to execute.
 
 Below is a while loop containing a variable that counts up from 1 to 5, at which point the loop terminates.
@@ -594,8 +595,8 @@ while i<5:
   if i==3:
     print(""Skipping 3"")
     continue
-  print(i)",23
-for Loopsfor Loops,for Loops,for Loops,"The for loop is used to iterate over a given sequence, such as lists or strings.
+  print(i)",24
+,for Loops,for Loops,"The for loop is used to iterate over a given sequence, such as lists or strings.
 
 The code below outputs each item in the list and adds an exclamation mark at the end:
 words = [""hello"", ""world"", ""spam"", ""eggs""]
@@ -654,8 +655,8 @@ for x in str:
    if(x == 't'):
     count += 1
 
-print(count)",24
-RangeRange,Range,Range,"The range() function returns a sequence of numbers.
+print(count)",25
+,Range,Range,"The range() function returns a sequence of numbers.
 By default, it starts from 0, increments by 1 and stops before the specified number.
 
 The code below generates a list containing all of the integers, up to 10.
@@ -695,8 +696,8 @@ numbers = list(range(5, 20, 2))
 print(numbers)
 
 for i in range(5):
-    print(""hello!"")",25
-Reusing CodeReusing Code,Reusing Code,Reusing Code,"Code reuse is a very important part of programming in any language. Increasing code size makes it harder to maintain.
+    print(""hello!"")",26
+,Reusing Code,Reusing Code,"Code reuse is a very important part of programming in any language. Increasing code size makes it harder to maintain.
 For a large programming project to be successful, it is essential to abide by the Don't Repeat Yourself, or DRY, principle. We've already looked at one way of doing this: by using loops. In this module, we will explore two more: functions and modules.
 
 Bad, repetitive code is said to abide by the WET principle, which stands for Write Everything Twice, or We Enjoy Typing.
@@ -712,8 +713,8 @@ range(10, 20, 3)
 The words in front of the parentheses are function names, and the comma-separated values inside the parentheses are function arguments.","print(""Hello world!"")
 range(2, 20)
 str(12)
-range(10, 20, 3)",26
-FunctionsFunctions,Functions,Functions,"In addition to using pre-defined functions, you can create your own functions by using the def statement.
+range(10, 20, 3)",27
+,Functions,Functions,"In addition to using pre-defined functions, you can create your own functions by using the def statement.
 Here is an example of a function named my_func. It takes no arguments, and prints ""spam"" three times. It is defined, and then called. The statements in the function are executed only when the function is called.
 def my_func():
     print(""spam"")
@@ -737,8 +738,8 @@ my_func()
 hello()
 
 def hello():
-    print(""Hello world!"")",27
-ArgumentsArguments,Arguments,Arguments,"All the function definitions we've looked at so far have been functions of zero arguments, which are called with empty parentheses.
+    print(""Hello world!"")",28
+,Arguments,Arguments,"All the function definitions we've looked at so far have been functions of zero arguments, which are called with empty parentheses.
 However, most functions take arguments.
 The example below defines a function that takes one argument:
 
@@ -791,8 +792,8 @@ def function(variable):
     print(variable)
 
 function(7)
-print(variable)",28
-Returning from FunctionsReturning from Functions,Returning from Functions,Returning from Functions,"Certain functions, such as int or str, return a value that can be used later.
+print(variable)",29
+,Returning from Functions,Returning from Functions,"Certain functions, such as int or str, return a value that can be used later.
 To do this for your defined functions, you can use the return statement.
 
 For example:
@@ -831,8 +832,8 @@ def add_numbers(x, y):
     return total
     print(""This won't be printed"")
 
-print(add_numbers(4, 5))",29
-CommentsComments,Comments,Comments,"Comments are annotations to code used to make it easier to understand. They don't affect how code is run.
+print(add_numbers(4, 5))",30
+,Comments,Comments,"Comments are annotations to code used to make it easier to understand. They don't affect how code is run.
 In Python, a comment is created by inserting an octothorpe (otherwise known as a number sign or hash symbol: #). All text after it on that line is ignored.
 # this is a comment
 Python doesn't have general purpose multiline comments, as do programming languages such as C.
@@ -842,8 +843,8 @@ Docstrings (documentation strings) serve a similar purpose to comments, as they 
     Print a word with an
     exclamation mark following it.
     """"""
-Unlike conventional comments, docstrings are retained throughout the runtime of the program. This allows the programmer to inspect these comments at run time."," # """"""",30
-Functions as ObjectsFunctions as Objects,Functions as Objects,Functions as Objects,"Comments are annotations to code used to make it easier to understand. They don't affect how code is run.
+Unlike conventional comments, docstrings are retained throughout the runtime of the program. This allows the programmer to inspect these comments at run time."," # """"""",31
+,Functions as Objects,Functions as Objects,"Comments are annotations to code used to make it easier to understand. They don't affect how code is run.
 In Python, a comment is created by inserting an octothorpe (otherwise known as a number sign or hash symbol: #). All text after it on that line is ignored.
 Although they are created differently from normal variables, functions are just like any other kind of value.
 They can be assigned and reassigned to variables, and later referenced by those names.
@@ -886,8 +887,8 @@ def do_twice(func, x, y):
 a = 5
 b = 10
 
-print(do_twice(add, a, b))",31
-ModulesModules,Modules,Modules,"Modules are pieces of code that other people have written to fulfill common tasks, such as generating random numbers, performing mathematical operations, etc.
+print(do_twice(add, a, b))",33
+,Modules,Modules,"Modules are pieces of code that other people have written to fulfill common tasks, such as generating random numbers, performing mathematical operations, etc.
 
 The basic way to use a module is to add import module_name at the top of your code, and then using module_name.var to access functions and values with the name var in the module.
 For example, the following example uses the random module to generate random numbers:
@@ -929,7 +930,7 @@ print(pi)
 
 from math import sqrt as square_root
 print(square_root(100))",33
-The Standard Library & pipThe Standard Library & pip,The Standard Library & pip,The Standard Library & pip,"There are three main types of modules in Python, those you write yourself, those you install from external sources, and those that are preinstalled with Python.
+,The Standard Library & pip,The Standard Library & pip,"There are three main types of modules in Python, those you write yourself, those you install from external sources, and those that are preinstalled with Python.
 The last type is called the standard library, and contains many useful modules. Some of the standard library's useful modules include string, re, datetime, math, random, os, multiprocessing, subprocess, socket, email, json, doctest, unittest, pdb, argparse and sys.
 
 Tasks that can be done by the standard library include string parsing, data serialization, testing, debugging and manipulating dates, emails, command line arguments, and much more!
@@ -948,8 +949,8 @@ The best way to install these is using a program called pip. This comes installe
 
 Using pip is the standard way of installing libraries on most operating systems, but some libraries have prebuilt binaries for Windows. These are normal executable files that let you install libraries with a GUI the same way you would install other programs.
 
-It's important to enter pip commands at the command line, not the Python interpreter.",,33
-ExceptionsExceptions,Exceptions,Exceptions,"You have already seen exceptions in previous code. They occur when something goes wrong, due to incorrect code or input. When an exception occurs, the program immediately stops.
+It's important to enter pip commands at the command line, not the Python interpreter.",,34
+,Exceptions,Exceptions,"You have already seen exceptions in previous code. They occur when something goes wrong, due to incorrect code or input. When an exception occurs, the program immediately stops.
 The following code produces the ZeroDivisionError exception by trying to divide 7 by 0.
 
 num1 = 7
@@ -965,8 +966,8 @@ SyntaxError: the code can't be parsed properly;
 TypeError: a function is called on a value of an inappropriate type;
 ValueError: a function is called on a value of the correct type, but with an inappropriate value.
 
-Python has several other built-in exceptions, such as ZeroDivisionError and OSError. Third-party libraries also often define their own exceptions.",,34
-Exception HandlingException Handling,Exception Handling,Exception Handling,"To handle exceptions, and to call code when an exception occurs, you can use a try/except statement.
+Python has several other built-in exceptions, such as ZeroDivisionError and OSError. Third-party libraries also often define their own exceptions.",,35
+,Exception Handling,Exception Handling,"To handle exceptions, and to call code when an exception occurs, you can use a try/except statement.
 The try block contains code that might throw an exception. If that exception occurs, the code in the try block stops being executed, and the code in the except block is run. If no error occurs, the code in the except block doesn't run.
 
 For example:
@@ -1024,8 +1025,8 @@ try:
     word = ""spam""
     print(word / 0)
 except:
-    print(""An error occurred"")",35
-finallyfinally,finally,finally,"To ensure some code runs no matter what errors occur, you can use a finally statement. The finally statement is placed at the bottom of a try/except statement. Code within a finally statement always runs after execution of the code in the try, and possibly in the except, blocks.
+    print(""An error occurred"")",36
+,finally,finally,"To ensure some code runs no matter what errors occur, you can use a finally statement. The finally statement is placed at the bottom of a try/except statement. Code within a finally statement always runs after execution of the code in the try, and possibly in the except, blocks.
 
 try:
     print(""Hello"")
@@ -1057,8 +1058,8 @@ try:
 except ZeroDivisionError:
     print(unknown_var)
 finally:
-    print(""This is executed last"")",36
-Raising ExceptionsRaising Exceptions,Raising Exceptions,Raising Exceptions,"You can raise exceptions by using the raise statement.
+    print(""This is executed last"")",37
+,Raising Exceptions,Raising Exceptions,"You can raise exceptions by using the raise statement.
 print(1)
 raise ValueError
 print(2)
@@ -1089,8 +1090,8 @@ try:
     num = 5 / 0
 except:
     print(""An error occurred"")
-    raise",37
-AssertionsAssertions,Assertions,Assertions,"An assertion is a sanity-check that you can turn on or turn off when you have finished testing the program.
+    raise",38
+,Assertions,Assertions,"An assertion is a sanity-check that you can turn on or turn off when you have finished testing the program.
 An expression is tested, and if the result comes up false, an exception is raised.
 Assertions are carried out through use of the assert statement.
 
@@ -1113,8 +1114,8 @@ assert 1 + 1 == 3
 print(3)
 
 temp = -10
-assert (temp >= 0), ""Colder than absolute zero!""",38
-Opening FilesOpening Files,Opening Files,Opening Files,"You can use Python to read and write the contents of files.
+assert (temp >= 0), ""Colder than absolute zero!""",39
+,Opening Files,Opening Files,"You can use Python to read and write the contents of files.
 Text files are the easiest to manipulate. Before a file can be edited, it must be opened, using the open function.
 
 myfile = open(""filename.txt"")
@@ -1146,8 +1147,8 @@ This is done with the close method of the file object.
 
 file = open(""filename.txt"", ""w"")
 # do stuff to the file
-file.close()",,39
-Reading FilesReading Files,Reading Files,Reading Files,"The contents of a file that has been opened in text mode can be read using the read method.
+file.close()",,40
+,Reading Files,Reading Files,"The contents of a file that has been opened in text mode can be read using the read method.
 
 file = open(""filename.txt"", ""r"")
 cont = file.read()
@@ -1210,8 +1211,8 @@ Line 1 text
 Line 2 text
 Line 3 text
 >>>
-In the output, the lines are separated by blank lines, as the print function automatically adds a new line at the end of its output.",,40
-Writing FilesWriting Files,Writing Files,Writing Files,"To write to files you use the write method, which writes a string to the file.
+In the output, the lines are separated by blank lines, as the print function automatically adds a new line at the end of its output.",,41
+,Writing Files,Writing Files,"To write to files you use the write method, which writes a string to the file.
 
 For example:
 file = open(""newfile.txt"", ""w"")
@@ -1243,8 +1244,8 @@ amount_written = file.write(msg)
 print(amount_written)
 file.close()
 
-To write something other than a string, it needs to be converted to a string first.",,41
-Working with FilesWorking with Files,Working with Files,Working with Files,"It is good practice to avoid wasting resources by making sure that files are always closed after they have been used. One way of doing this is to use try and finally.
+To write something other than a string, it needs to be converted to a string first.",,42
+,Working with Files,Working with Files,"It is good practice to avoid wasting resources by making sure that files are always closed after they have been used. One way of doing this is to use try and finally.
 
 try:
    f = open(""filename.txt"")
@@ -1266,8 +1267,8 @@ finally:
    f.close()
 
 with open(""filename.txt"") as f:
-   print(f.read())",42
-NoneNone,None,None,"The None object is used to represent the absence of a value.
+   print(f.read())",43
+,None,None,"The None object is used to represent the absence of a value.
 It is similar to null in other programming languages.
 Like other ""empty"" values, such as 0, [] and the empty string, it is False when converted to a Boolean variable.
 When entered at the Python console, it is displayed as the empty string.
@@ -1286,8 +1287,8 @@ def some_func():
     print(""Hi!"")
 
 var = some_func()
-print(var)",43
-DictionariesDictionaries,Dictionaries,Dictionaries,"Dictionaries are data structures used to map arbitrary keys to values.
+print(var)",44
+,Dictionaries,Dictionaries,"Dictionaries are data structures used to map arbitrary keys to values.
 Lists can be thought of as dictionaries with integer keys within a certain range.
 Dictionaries can be indexed in the same way as lists, using square brackets containing keys.
 
@@ -1329,8 +1330,8 @@ primary = {
 }
 
 print(primary[""red""])
-print(primary[""yellow""])",44
-Dictionary functionsDictionary functions,Dictionary functions,Dictionary functions,"Just like lists, dictionary keys can be assigned to different values.
+print(primary[""yellow""])",45
+,Dictionary functions,Dictionary functions,"Just like lists, dictionary keys can be assigned to different values.
 However, unlike lists, a new dictionary key can also be assigned a value, not just ones that already exist.
 squares = {1: 1, 2: 4, 3: ""error"", 4: 16,}
 squares[8] = 64
@@ -1382,8 +1383,8 @@ pairs = {1: ""apple"",
 
 print(pairs.get(""orange""))
 print(pairs.get(7))
-print(pairs.get(12345, ""not in dictionary""))",45
-TuplesTuples,Tuples,Tuples,"Tuples are very similar to lists, except that they are immutable (they cannot be changed).
+print(pairs.get(12345, ""not in dictionary""))",46
+,Tuples,Tuples,"Tuples are very similar to lists, except that they are immutable (they cannot be changed).
 Also, they are created using parentheses, rather than square brackets.
 
 Example:
@@ -1410,8 +1411,8 @@ print(words[0])
 my_tuple = ""one"", ""two"", ""three""
 print(my_tuple[0])
 
-tpl = ()",46
-List SlicesList Slices,List Slices,List Slices,"List slices provide a more advanced way of retrieving values from a list. Basic list slicing involves indexing a list with two colon-separated integers. This returns a new list containing all the values in the old list between the indices.
+tpl = ()",47
+,List Slices,List Slices,"List slices provide a more advanced way of retrieving values from a list. Basic list slicing involves indexing a list with two colon-separated integers. This returns a new list containing all the values in the old list between the indices.
 
 Example:
 squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
@@ -1461,8 +1462,8 @@ print(squares[2:8:3])
 squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 print(squares[1:-1])
 
-Using [::-1] as a slice is a common and idiomatic way to reverse a list.",47
-List ComprehensionsList Comprehensions,List Comprehensions,List Comprehensions,"List comprehensions are a useful way of quickly creating lists whose contents obey a simple rule.
+Using [::-1] as a slice is a common and idiomatic way to reverse a list.",48
+,List Comprehensions,List Comprehensions,"List comprehensions are a useful way of quickly creating lists whose contents obey a simple rule.
 For example, we can do the following:
 # a list comprehension
 cubes = [i**3 for i in range(5)]
@@ -1485,8 +1486,8 @@ print(cubes)
 evens=[i**2 for i in range(10) if i**2 % 2 == 0]
 print(evens)
 
-even = [2*i for i in range(10**100)]",48
-String FormattingString Formatting,String Formatting,String Formatting,"So far, to combine strings and non-strings, you've converted the non-strings to strings and added them.
+even = [2*i for i in range(10**100)]",49
+,String Formatting,String Formatting,"So far, to combine strings and non-strings, you've converted the non-strings to strings and added them.
 String formatting provides a more powerful way to embed non-strings within strings. String formatting uses a string's format method to substitute a number of arguments in the string.
 
 Example:
@@ -1505,8 +1506,8 @@ msg = ""Numbers: {0} {1} {2}"". format(nums[0], nums[1], nums[2])
 print(msg)
 
 a = ""{x}, {y}"".format(x=5, y=12)
-print(a)",49
-String FunctionsString Functions,String Functions,String Functions,"Python contains many useful built-in functions and methods to accomplish common tasks.
+print(a)",50
+,String Functions,String Functions,"Python contains many useful built-in functions and methods to accomplish common tasks.
 join - joins a list of strings with another string as a separator.
 replace - replaces one substring in a string with another.
 startswith and endswith - determine if there is a substring at the start and end of a string, respectively.
@@ -1532,8 +1533,8 @@ print(""AN ALL CAPS SENTENCE"".lower())
 #prints ""an all caps sentence""
 
 print(""spam, eggs, ham"".split("", ""))
-#prints ""['spam', 'eggs', 'ham']""",50
-Numeric FunctionsNumeric Functions,Numeric Functions,Numeric Functions,"To find the maximum or minimum of some numbers or a list, you can use max or min.
+#prints ""['spam', 'eggs', 'ham']""",51
+,Numeric Functions,Numeric Functions,"To find the maximum or minimum of some numbers or a list, you can use max or min.
 To find the distance of a number from zero (its absolute value), use abs.
 To round a number to a certain number of decimal places, use round.
 To find the total of a list, use sum.
@@ -1541,8 +1542,8 @@ Some examples:","print(min(1, 2, 3, 4, 0, 2, 1))
 print(max([1, 4, 9, 2, 5, 6, 8]))
 print(abs(-99))
 print(abs(42))
-print(sum([1, 2, 3, 4, 5]))",51
-List FunctionsList Functions,List Functions,List Functions,"Often used in conditional statements, all and any take a list as an argument, and return True if all or any (respectively) of their arguments evaluate to True (and False otherwise).
+print(sum([1, 2, 3, 4, 5]))",52
+,List Functions,List Functions,"Often used in conditional statements, all and any take a list as an argument, and return True if all or any (respectively) of their arguments evaluate to True (and False otherwise).
 The function enumerate can be used to iterate through the values and indices of a list simultaneously.
 
 Example:","nums = [55, 44, 33, 22, 11]
@@ -1554,8 +1555,8 @@ if any([i % 2 == 0 for i in nums]):
     print(""At least one is even"")
 
 for v in enumerate(nums):
-    print(v)",52
-Functional ProgrammingFunctional Programming,Functional Programming,Functional Programming,"Functional programming is a style of programming that (as the name suggests) is based around functions.
+    print(v)",53
+,Functional Programming,Functional Programming,"Functional programming is a style of programming that (as the name suggests) is based around functions.
 A key part of functional programming is higher-order functions. We have seen this idea briefly in the previous lesson on functions as objects. Higher-order functions take other functions as arguments, or return them as results.
 
 Example:","def apply_twice(func, arg):
@@ -1566,8 +1567,8 @@ def add_five(x):
 
 print(apply_twice(add_five, 10))
 
-The function apply_twice takes another function as its argument, and calls it twice inside its body.",53
-Pure FunctionsPure Functions,Pure Functions,Pure Functions,"Functional programming seeks to use pure functions. Pure functions have no side effects, and return a value that depends only on their arguments.
+The function apply_twice takes another function as its argument, and calls it twice inside its body.",54
+,Pure Functions,Pure Functions,"Functional programming seeks to use pure functions. Pure functions have no side effects, and return a value that depends only on their arguments.
 This is how functions in math work: for example, The cos(x) will, for the same value of x, always return the same result.
 Below are examples of pure and impure functions.
 
@@ -1600,8 +1601,8 @@ Impure function:
 some_list = []
 
 def impure(arg):
-  some_list.append(arg)",54
-LambdasLambdas,Lambdas,Lambdas,"Creating a function normally (using def) assigns it to a variable automatically.
+  some_list.append(arg)",55
+,Lambdas,Lambdas,"Creating a function normally (using def) assigns it to a variable automatically.
 This is different from the creation of other objects - such as strings and integers - which can be created on the fly, without assigning them to a variable.
 The same is possible with functions, provided that they are created using lambda syntax. Functions created this way are known as anonymous.
 This approach is most commonly used when passing a simple function as an argument to another function. The syntax is shown in the next example and consists of the lambda keyword followed by a list of arguments, a colon, and the expression to evaluate and return.
@@ -1647,8 +1648,8 @@ print(polynomial(-4))
 print((lambda x: x**2 + 5*x + 4) (-4))
 
 double = lambda x: x * 2
-print(double(7))",55
-mapmap,map,map,"The built-in functions map and filter are very useful higher-order functions that operate on lists (or similar objects called iterables).
+print(double(7))",56
+,map,map,"The built-in functions map and filter are very useful higher-order functions that operate on lists (or similar objects called iterables).
 The function map takes a function and an iterable as arguments, and returns a new iterable with the function applied to each argument.
 
 Example:
@@ -1676,8 +1677,8 @@ print(result)
 nums = [11, 22, 33, 44, 55]
 
 result = list(map(lambda x: x+5, nums))
-print(result)",56
-filterfilter,filter,filter,"The function filter filters an iterable by removing items that don't match a predicate (a function that returns a Boolean).
+print(result)",57
+,filter,filter,"The function filter filters an iterable by removing items that don't match a predicate (a function that returns a Boolean).
 
 Example:
 nums = [11, 22, 33, 44, 55]
@@ -1686,8 +1687,8 @@ print(res)
 
 Like map, the result has to be explicitly converted to a list if you want to print it.","nums = [11, 22, 33, 44, 55]
 res = list(filter(lambda x: x%2==0, nums))
-print(res)",57
-GeneratorsGenerators,Generators,Generators,"Generators are a type of iterable, like lists or tuples.
+print(res)",58
+,Generators,Generators,"Generators are a type of iterable, like lists or tuples.
 Unlike lists, they don't allow indexing with arbitrary indices, but they can still be iterated through with for loops.
 They can be created using functions and the yield statement.
 
@@ -1763,8 +1764,8 @@ def numbers(x):
         if i % 2 == 0:
             yield i
 
-print(list(numbers(11)))",58
-DecoratorsDecorators,Decorators,Decorators,"Decorators provide a way to modify functions using other functions.
+print(list(numbers(11)))",59
+,Decorators,Decorators,"Decorators provide a way to modify functions using other functions.
 This is ideal when you need to extend the functionality of functions that you don't want to modify.
 
 Example:
@@ -1883,8 +1884,8 @@ def decor(func):
 def print_text():
     print(""Hello world!"")
 print_text = decor(print_text)
-print_text();",59
-RecursionRecursion,Recursion,Recursion,"Recursion is a very important concept in functional programming.
+print_text();",60
+,Recursion,Recursion,"Recursion is a very important concept in functional programming.
 The fundamental part of recursion is self-reference - functions calling themselves. It is used to solve problems that can be broken up into easier sub-problems of the same type.
 
 A classic example of a function that is implemented recursively is the factorial function, which finds the product of all positive integers below a specified number.
@@ -1947,8 +1948,8 @@ def is_odd(x):
     return not is_even(x)
 
 print(is_odd(17))
-print(is_even(23))",60
-SetsSets,Sets,Sets,"Sets are data structures, similar to lists or dictionaries. They are created using curly braces, or the set function. They share some functionality with lists, such as the use of in to check whether they contain a particular item.
+print(is_even(23))",61
+,Sets,Sets,"Sets are data structures, similar to lists or dictionaries. They are created using curly braces, or the set function. They share some functionality with lists, such as the use of in to check whether they contain a particular item.
 
 num_set = {1, 2, 3, 4, 5}
 word_set = set([""spam"", ""eggs"", ""sausage""])
@@ -2005,8 +2006,8 @@ print(first | second)
 print(first & second)
 print(first - second)
 print(second - first)
-print(first ^ second)",61
-Data StructuresData Structures,Data Structures,Data Structures,"As we have seen in the previous lessons, Python supports the following data structures: lists, dictionaries, tuples, sets.
+print(first ^ second)",62
+,Data Structures,Data Structures,"As we have seen in the previous lessons, Python supports the following data structures: lists, dictionaries, tuples, sets.
 
 When to use a dictionary:
 - When you need a logical association between a key:value pair.
@@ -2018,8 +2019,8 @@ When to use the other types:
 - Use a set if you need uniqueness for the elements.
 - Use tuples when your data cannot change.
 
-Many times, a tuple is used in combination with a dictionary, for example, a tuple might represent a key, because it's immutable.",,62
-itertoolsitertools,itertools,itertools,"The module itertools is a standard library that contains several functions that are useful in functional programming.
+Many times, a tuple is used in combination with a dictionary, for example, a tuple might represent a key, because it's immutable.",,63
+,itertools,itertools,"The module itertools is a standard library that contains several functions that are useful in functional programming.
 One type of function it produces is infinite iterators.
 The function count counts up infinitely from a value.
 The function cycle infinitely iterates through an iterable (for instance a list or string).
@@ -2070,8 +2071,8 @@ from itertools import product, permutations
 
 letters = (""A"", ""B"")
 print(list(product(letters, range(2))))
-print(list(permutations(letters))) ",63
-FibonacciFibonacci,Fibonacci,Fibonacci,"The Fibonacci sequence is one of the most famous formulas in mathematics.
+print(list(permutations(letters))) ",64
+,Fibonacci,Fibonacci,"The Fibonacci sequence is one of the most famous formulas in mathematics.
 Each number in the sequence is the sum of the two numbers that precede it.
 For example, here is the Fibonacci sequence for 10 numbers, starting from 0: 0,1,1,2,3,5,8,13,21,34.
 
@@ -2105,8 +2106,8 @@ if num > 0:
     for i in result:  # Iterate directly over the values in the result
         print(i)  # Print each value in the Fibonacci sequence
 else:
-    print(""Input must be a positive integer."")",64
-FibonacciFibonacci,Fibonacci,Fibonacci,"The Fibonacci sequence is one of the most famous formulas in mathematics.
+    print(""Input must be a positive integer."")",65
+,Fibonacci,Fibonacci,"The Fibonacci sequence is one of the most famous formulas in mathematics.
 Each number in the sequence is the sum of the two numbers that precede it.
 For example, here is the Fibonacci sequence for 10 numbers, starting from 0: 0,1,1,2,3,5,8,13,21,34.
 
@@ -2132,8 +2133,8 @@ def fibonacci(n):
        return fibonacci(n-1)+fibonacci(n-2)
                
 for a in range(num):
-    print(fibonacci(a))",65
-ClassesClasses,Classes,Classes,"We have previously looked at two paradigms of programming - imperative (using statements, loops, and functions as subroutines), and functional (using pure functions, higher-order functions, and recursion).
+    print(fibonacci(a))",66
+,Classes,Classes,"We have previously looked at two paradigms of programming - imperative (using statements, loops, and functions as subroutines), and functional (using pure functions, higher-order functions, and recursion).
 
 Another very popular paradigm is object-oriented programming (OOP).
 Objects are created using classes, which are actually the focal point of OOP.
@@ -2161,8 +2162,8 @@ Tap Continue to learn more!","class Cat:
 
 felix = Cat(""ginger"", 4)
 rover = Cat(""dog-colored"", 4)
-stumpy = Cat(""brown"", 3)",66
-__init____init__,__init__,__init__,"The __init__ method is the most important method in a class.
+stumpy = Cat(""brown"", 3)",67
+,__init__,__init__,"The __init__ method is the most important method in a class.
 This is called when an instance (object) of the class is created, using the class name as a function.
 
 All methods must have self as their first parameter, although it isn't explicitly passed, Python adds the self argument to the list for you; you do not need to include it when you call the methods. Within a method definition, self refers to the instance calling the method.
@@ -2206,8 +2207,8 @@ class Student:
         print(self.name+"" says hi"")
 
 obj = Student(""John"")
-obj.greet()",67
-MethodsMethods,Methods,Methods,"Classes can have other methods defined to add functionality to them.
+obj.greet()",68
+,Methods,Methods,"Classes can have other methods defined to add functionality to them.
 Remember, that all methods must have self as their first parameter.
 These methods are accessed using the same dot syntax as attributes.
 
@@ -2284,8 +2285,8 @@ print(rect.color)
 OUTPUT: Traceback (most recent call last):
   File ""./Playground/file0.py"", line 7, in <module>
     print(rect.color)
-AttributeError: 'Rectangle' object has no attribute 'color'",68
-Inheritance subclassInheritance subclass,Inheritance subclass,Inheritance subclass,"Inheritance provides a way to share functionality between classes.
+AttributeError: 'Rectangle' object has no attribute 'color'",69
+,Inheritance subclass,Inheritance subclass,"Inheritance provides a way to share functionality between classes.
 Imagine several classes, Cat, Dog, Rabbit and so on. Although they may differ in some ways (only Dog might have the method bark), they are likely to be similar in others (all having the attributes color and name).
 This similarity can be expressed by making them all inherit from a superclass Animal, which contains the shared functionality.
 To inherit a class from another class, put the superclass name in parentheses after the class name.
@@ -2758,8 +2759,8 @@ B().spam()
 OUTPUT:
 2
 1
-",69
-Magic Methods & Operator OverloadingMagic Methods & Operator Overloading,Magic Methods & Operator Overloading,Magic Methods & Operator Overloading,"Magic methods are special methods which have double underscores at the beginning and end of their names.
+",70
+,Magic Methods & Operator Overloading,Magic Methods & Operator Overloading,"Magic methods are special methods which have double underscores at the beginning and end of their names.
 They are also known as dunders.
 So far, the only one we have encountered is __init__, but there are several others.
 They are used to create functionality that can't be represented as a normal method.
@@ -2902,8 +2903,8 @@ OUTPUT
 4
 B
 B
---------------------------",,70
-Object LifecycleObject Lifecycle,Object Lifecycle,Object Lifecycle,"The lifecycle of an object is made up of its creation, manipulation, and destruction.
+--------------------------",,71
+,Object Lifecycle,Object Lifecycle,"The lifecycle of an object is made up of its creation, manipulation, and destruction.
 
 The first stage of the life-cycle of an object is the definition of the class to which it belongs.
 The next stage is the instantiation of an instance, when __init__ is called. Memory is allocated to store the instance. Just before this occurs, the __new__ method of the class is called. This is usually overridden only in special cases.
@@ -2930,8 +2931,8 @@ del a  # Decrease ref. count  of <42>
 b = 100  # Decrease ref. count  of <42> 
 c[0] = -1  # Decrease ref. count  of <42>
 
-Lower level languages like C don't have this kind of automatic memory management.",del instance,71
-Data HidingData Hiding,Data Hiding,Data Hiding,"A key part of object-oriented programming is encapsulation, which involves packaging of related variables and functions into a single easy-to-use object - an instance of a class.
+Lower level languages like C don't have this kind of automatic memory management.",del instance,72
+,Data Hiding,Data Hiding,"A key part of object-oriented programming is encapsulation, which involves packaging of related variables and functions into a single easy-to-use object - an instance of a class.
 A related concept is data hiding, which states that implementation details of a class should be hidden, and a clean standard interface be presented for those who want to use the class.
 In other programming languages, this is usually done with private methods and attributes, which block external access to certain methods and attributes in a class.
 
@@ -3057,8 +3058,8 @@ acc = BankAccount(0)
 acc.deposit(int(input()))
 print(acc)
 
-",72
-Class MethodsClass Methods,Class Methods,Class Methods,"Methods of objects we've looked at so far are called by an instance of a class, which is then passed to the self parameter of the method.
+",73
+,Class Methods,Class Methods,"Methods of objects we've looked at so far are called by an instance of a class, which is then passed to the self parameter of the method.
 Class methods are different - they are called by a class, which is passed to the cls parameter of the method.
 A common use of these are factory methods, which instantiate an instance of a class, using different parameters than those usually passed to the class constructor.
 Class methods are marked with a classmethod decorator.
@@ -3094,8 +3095,8 @@ Technically, the parameters self and cls are just conventions; they could be cha
         return cls(side_length, side_length)
 
 square = Rectangle.new_square(5)
-print(square.calculate_area())",73
-Class Methods static methodsClass Methods static methods,Class Methods static methods,Class Methods static methods,"Static methods are similar to class methods, except they don't receive any additional arguments; they are identical to normal functions that belong to a class.
+print(square.calculate_area())",74
+,Class Methods static methods,Class Methods static methods,"Static methods are similar to class methods, except they don't receive any additional arguments; they are identical to normal functions that belong to a class.
 They are marked with the staticmethod decorator.
 
 Example:
@@ -3155,8 +3156,8 @@ class Calculator:
 n1 = int(input())
 n2 = int(input())
 
-print(Calculator.add(n1, n2))",74
-Properties setterProperties setter,Properties setter,Properties setter,"Properties provide a way of customizing access to instance attributes.
+print(Calculator.add(n1, n2))",75
+,Properties setter,Properties setter,"Properties provide a way of customizing access to instance attributes.
 They are created by putting the property decorator above a method, which means when the instance attribute with the same name as the method is accessed, the method will be called instead.
 One common use of a property is to make an attribute read-only.
 
@@ -3345,8 +3346,8 @@ class Number:
             return False
  
 x = Number(int(input()))
-print(x.isEven)",75
-A Simple GameA Simple Game,A Simple Game,A Simple Game,"Object-orientation is very useful when managing different objects and their relations. That is especially useful when you are developing games with different characters and features.
+print(x.isEven)",76
+,A Simple Game,A Simple Game,"Object-orientation is very useful when managing different objects and their relations. That is especially useful when you are developing games with different characters and features.
 
 Let's look at an example project that shows how classes are used in game development.
 The game to be developed is an old fashioned text-based adventure game.
@@ -3778,10 +3779,8 @@ verb_dict = {
 
 while True:
     get_input()
-",76
-"PRACTICE EXERCISE
-Juice MakerPRACTICE EXERCISE
-Juice Maker","PRACTICE EXERCISE
+",77
+,"PRACTICE EXERCISE
 Juice Maker","PRACTICE EXERCISE
 Juice Maker","You are given a Juice class, which has name and capacity properties.
 You need to complete the code to enable and adding of two Juice objects, resulting in a new Juice object with the combined capacity and names of the two juices being added.
@@ -3809,8 +3808,8 @@ a = Juice('Orange', 1.5)
 b = Juice('Apple', 2.0)
 
 result = a + b
-print(result)  # Output: Orange&Apple (3.5L)",77
-Regular expressionsRegular expressions,Regular expressions,Regular expressions,"Regular Expressions
+print(result)  # Output: Orange&Apple (3.5L)",78
+,Regular expressions,Regular expressions,"Regular Expressions
 Regular expressions are a powerful tool for various kinds of string manipulation.
 They are a domain specific language (DSL) that is present as a library in most modern programming languages, not just Python.
 They are useful for two main tasks:
@@ -4020,8 +4019,8 @@ print(newPhone + phoneRest)
 
 
 
-",78
-Simple MetacharactersSimple Metacharacters,Simple Metacharacters,Simple Metacharacters,"Metacharacters are what make regular expressions more powerful than normal string methods.
+",79
+,Simple Metacharacters,Simple Metacharacters,"Metacharacters are what make regular expressions more powerful than normal string methods.
 They allow you to create regular expressions to represent concepts like ""one or more repetitions of a vowel"".
 
 The existence of metacharacters poses a problem if you want to create a regular expression (or regex) that matches a literal metacharacter, such as ""$"". You can do this by escaping the metacharacters by putting a backslash in front of them.
@@ -4151,8 +4150,8 @@ pattern = r""^m..e$""
 if re.match(pattern, word):
     print(""Match"")
 else:
-    print(""No match"")",79
-Character ClassesCharacter Classes,Character Classes,Character Classes,"Character classes provide a way to match only one of a specific set of characters.
+    print(""No match"")",80
+,Character Classes,Character Classes,"Character classes provide a way to match only one of a specific set of characters.
 A character class is created by putting the characters it matches inside square brackets.
 
 Example:
@@ -4336,8 +4335,8 @@ else:
 
 
 
-",80
-more metacharactersmore metacharacters,more metacharacters,more metacharacters,"Some more metacharacters are *, +, ?, { and }.
+",81
+,more metacharacters,more metacharacters,"Some more metacharacters are *, +, ?, { and }.
 These specify numbers of repetitions.
 The metacharacter * means ""zero or more repetitions of the previous thing"". It tries to match as many repetitions as possible. The ""previous thing"" can be a single character, a class, or a group of characters in parentheses.
 
@@ -4568,8 +4567,8 @@ else:
     print(""Wrong format"")
 
 
-{1,} == +",81
-GroupsGroups,Groups,Groups,"A group can be created by surrounding part of a regular expression with parentheses.
+{1,} == +",82
+,Groups,Groups,"A group can be created by surrounding part of a regular expression with parentheses.
 This means that a group can be given as an argument to metacharacters such as * and ?.
 
 Example:
@@ -4671,8 +4670,8 @@ if match:
 
 OUTPUT
 Match 1
-Match 2",,82
-Special SequencesSpecial Sequences,Special Sequences,Special Sequences,"There are various special sequences you can use in regular expressions. They are written as a backslash followed by another character.
+Match 2",,83
+,Special Sequences,Special Sequences,"There are various special sequences you can use in regular expressions. They are written as a backslash followed by another character.
 One useful special sequence is a backslash and a number between 1 and 99, e.g., \1 or \17. This matches the expression of the group of that number.
 
 Example:
@@ -4784,8 +4783,8 @@ Match 2
 ""\b(cat)\b"" basically matches the word ""cat"" surrounded by word boundaries.
 
 Which pattern would match 'SPAM!' in a search?
-\AS...\b.\Z",,83
-Email ExtractionEmail Extraction,Email Extraction,Email Extraction,"To demonstrate a sample usage of regular expressions, lets create a program to extract email addresses from a string.
+\AS...\b.\Z",,84
+,Email Extraction,Email Extraction,"To demonstrate a sample usage of regular expressions, lets create a program to extract email addresses from a string.
 Suppose we have a text that contains an email address:
 
 str = ""Please contact info@sololearn.com for assistance""
@@ -4821,8 +4820,8 @@ info@sololearn.com
 In case the string contains multiple email addresses, we could use the re.findall method instead of re.search, to extract all email addresses.
 
 The regex in this example is for demonstration purposes only.
-A much more complex regex is required to fully validate an email address.",,84
-Phone Number ValidatorPhone Number Validator,Phone Number Validator,Phone Number Validator,"You are given a number input, and need to check if it is a valid phone number.
+A much more complex regex is required to fully validate an email address.",,85
+,Phone Number Validator,Phone Number Validator,"You are given a number input, and need to check if it is a valid phone number.
 A valid phone number has exactly 8 digits and starts with 1, 8 or 9.
 Output ""Valid"" if the number is valid and ""Invalid"", if it is not.
 
@@ -4845,8 +4844,8 @@ def is_valid_phone_number(number):
 
 # Sample Input
 number = input().strip()
-print(is_valid_phone_number(number))",,85
-The Zen of PythonThe Zen of Python,The Zen of Python,The Zen of Python,"Writing programs that actually do what they are supposed to do is just one component of being a good Python programmer.
+print(is_valid_phone_number(number))",,86
+,The Zen of Python,The Zen of Python,"Writing programs that actually do what they are supposed to do is just one component of being a good Python programmer.
 It's also important to write clean code that is easily understood, even weeks after you've written it.
 
 One way of doing this is to follow the Zen of Python, a somewhat tongue-in-cheek set of principles that serves as a guide to programming the Pythoneer way. Use the following code to access the Zen of Python.
@@ -4887,8 +4886,8 @@ There are 20 principles in the Zen of Python, but only 19 lines of text.
 The 20th principle is a matter of opinion, but our interpretation is that the blank line means ""Use whitespace"".
 
 The line ""There should be one - and preferably only one - obvious way to do it"" references and contradicts the Perl language philosophy that there should be more than one way to do it.
-",,86
-PEPPEP,PEP,PEP,"Python Enhancement Proposals (PEP) are suggestions for improvements to the language, made by experienced Python developers.
+",,87
+,PEP,PEP,"Python Enhancement Proposals (PEP) are suggestions for improvements to the language, made by experienced Python developers.
 PEP 8 is a style guide on the subject of writing readable code. It contains a number of guidelines in reference to variable names, which are summarized here:
 - modules should have short, all-lowercase names;
 - class names should be in the CapWords style;
@@ -4912,8 +4911,8 @@ However, by and large, following PEP 8 will greatly enhance the quality of your 
 
 Some other notable PEPs that cover code style:
 PEP 20: The Zen of Python
-PEP 257: Style Conventions for Docstrings",,87
-Function ArgumentsFunction Arguments,Function Arguments,Function Arguments,"Python allows to have function with varying number of arguments.
+PEP 257: Style Conventions for Docstrings",,88
+,Function Arguments,Function Arguments,"Python allows to have function with varying number of arguments.
 Using *args as a function parameter enables you to pass an arbitrary number of arguments to that function. The arguments are then accessible as the tuple args in the body of the function.
 
 Example:
@@ -4980,8 +4979,8 @@ a and b are the names of the arguments that we passed to the function call.
 
 The arguments returned by **kwargs are not included in *args.
 
-",*args **kwargs,88
-Tuple UnpackingTuple Unpacking,Tuple Unpacking,Tuple Unpacking,"Tuple unpacking allows you to assign each item in an iterable (often a tuple) to a variable.
+",*args **kwargs,89
+,Tuple Unpacking,Tuple Unpacking,"Tuple unpacking allows you to assign each item in an iterable (often a tuple) to a variable.
 
 Example:
 numbers = (1, 2, 3)
@@ -5017,8 +5016,8 @@ a, b, c, d, *e, f, g = range(20)
 print(len(e))
 
 A: 14
-",,89
-Ternary OperatorTernary Operator,Ternary Operator,Ternary Operator,"Ternary Operator
+",,90
+,Ternary Operator,Ternary Operator,"Ternary Operator
 
 Conditional expressions provide the functionality of if statements while using less code. They shouldn't be overused, as they can easily reduce readability, but they are often useful when assigning variables.
 Conditional expressions are also known as applications of the ternary operator.
@@ -5054,8 +5053,8 @@ minimal = 500
 money_left = balance - to_cash if (balance - to_cash > 0 and to_cash >= minimal) else ""Error""
 
 print(money_left)
-",,90
-More on else StatementsMore on else Statements,More on else Statements,More on else Statements,"The else statement is most commonly used along with the if statement, but it can also follow a for or while loop, which gives it a different meaning.
+",,91
+,More on else Statements,More on else Statements,"The else statement is most commonly used along with the if statement, but it can also follow a for or while loop, which gives it a different meaning.
 With the for or while loop, the code within it is called if the loop finishes normally (when a break statement does not cause an exit from the loop).
 
 Example:
@@ -5127,8 +5126,8 @@ OUTPUT
 4
 
 
-",,91
-__main____main__,__main__,__main__,"Most Python code is either a module to be imported, or a script that does something.
+",,92
+,__main__,__main__,"Most Python code is either a module to be imported, or a script that does something.
 However, sometimes it is useful to make a file that can be both imported as a module and run as a script.
 To do this, place script code inside if __name__ == ""__main__"".
 This ensures that it won't be run if the file is imported.
@@ -5169,8 +5168,8 @@ This is a module function
 >>>
 
 Basically, we've created a custom module called sololearn, and then used it in another script.
-",,92
-Major 3rd-Party LibrariesMajor 3rd-Party Libraries,Major 3rd-Party Libraries,Major 3rd-Party Libraries,"A number of third-party modules are available that make it much easier to carry out scientific and mathematical computing with Python.
+",,93
+,Major 3rd-Party Libraries,Major 3rd-Party Libraries,"A number of third-party modules are available that make it much easier to carry out scientific and mathematical computing with Python.
 The module matplotlib allows you to create graphs based on data in Python.
 The module NumPy allows for the use of multidimensional arrays that are much faster than the native Python solution of nested lists. It also contains functions to perform mathematical operations such as matrix transformations on the arrays.
 The library SciPy contains numerous extensions to the functionality of NumPy.
@@ -5178,8 +5177,8 @@ The library SciPy contains numerous extensions to the functionality of NumPy.
 Python can also be used for game development.
 Usually, it is used as a scripting language for games written in other languages, but it can be used to make games by itself.
 
-For 3D games, the library Panda3D can be used. For 2D games, you can use pygame.",,93
-PackagesPackages,Packages,Packages,"In Python, the term packaging refers to putting modules you have written in a standard format, so that other programmers can install and use them with ease.
+For 3D games, the library Panda3D can be used. For 2D games, you can use pygame.",,94
+,Packages,Packages,"In Python, the term packaging refers to putting modules you have written in a standard format, so that other programmers can install and use them with ease.
 This involves use of the modules setuptools and distutils.
 The first step in packaging is to organize existing files correctly. Place all of the files you want to put in a library in the same parent directory. This directory should also contain a file called __init__.py, which can be blank but must be present in the directory.
 This directory goes into another directory containing the readme and license, as well as an important file called setup.py.
@@ -5218,14 +5217,14 @@ python setup.py sdist
 Run python setup.py bdist or, for Windows, python setup.py bdist_wininst to build a binary distribution.
 Use python setup.py register, followed by python setup.py sdist upload to upload a package.
 
-Finally, install a package with python setup.py install.",,94
-Packaging for UsersPackaging for Users,Packaging for Users,Packaging for Users,"The previous lesson covered packaging modules for use by other Python programmers. However, many computer users who are not programmers do not have Python installed. Therefore, it is useful to package scripts as executable files for the relevant platform, such as the Windows or Mac operating systems. This is not necessary for Linux, as most Linux users do have Python installed, and are able to run scripts as they are.
+Finally, install a package with python setup.py install.",,95
+,Packaging for Users,Packaging for Users,"The previous lesson covered packaging modules for use by other Python programmers. However, many computer users who are not programmers do not have Python installed. Therefore, it is useful to package scripts as executable files for the relevant platform, such as the Windows or Mac operating systems. This is not necessary for Linux, as most Linux users do have Python installed, and are able to run scripts as they are.
 
 For Windows, many tools are available for converting scripts to executables. For example, py2exe, can be used to package a Python script, along with the libraries it requires, into a single executable.
 PyInstaller and cx_Freeze serve the same purpose.
 
-For Macs, use py2app, PyInstaller or cx_Freeze.",,95
-Module quizModule quiz,Module quiz,Module quiz,"Adding Words
+For Macs, use py2app, PyInstaller or cx_Freeze.",,96
+,Module quiz,Module quiz,"Adding Words
 You need to write a function that takes multiple words as its argument and returns a concatenated version of those words separated by dashes (-).
 The function should be able to take a varying number of words as the argument.
 
@@ -5246,8 +5245,7 @@ def concatenate(*args):
 print(concatenate(""I"", ""love"", ""Python"", ""!""))","def concatenate(*args):
     return ""-"".join(args)
 
-print(concatenate(""I"", ""love"", ""Python"", ""!""))",96
-,,,,,97
+print(concatenate(""I"", ""love"", ""Python"", ""!""))",97
 ,,,,,98
 ,,,,,99
 ,,,,,100
