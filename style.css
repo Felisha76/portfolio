@@ -70,7 +70,7 @@ p {
   padding-left: 60px;
 }  */
 
-/* Görgetősáv */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
   height: 8px;
   width: 8px;

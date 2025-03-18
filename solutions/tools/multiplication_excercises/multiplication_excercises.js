@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     // 🎵 Load the answer sounds
-    const correctSound = new Audio('correct.mp3');
+    const correctSound = new Audio('/media/correct.mp3');
     correctSound.volume = 0.5; // Adjust volume if needed
-    const incorrectSound = new Audio('incorrect.mp3');
+    const incorrectSound = new Audio('/media/incorrect.mp3');
     incorrectSound.volume = 0.5; // Adjust volume if needed
-    const getreadySound = new Audio('getready.mp3');
+    const getreadySound = new Audio('/media/getready.mp3');
     getreadySound.volume = 0.5; // Adjust volume if needed
-    const finishedSound = new Audio('finished.mp3');
+    const finishedSound = new Audio('/media/finished.mp3');
     finishedSound.volume = 0.5; // Adjust volume if needed
 
     // Variables to track state

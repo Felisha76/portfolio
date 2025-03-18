@@ -106,6 +106,24 @@ body {
     color: #f5dd07;
 }
 
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #282929;
+    border-radius: 5px;
+    border: 1px solid #999b9e;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #282929;
+  }
+
+  
 /* Cute animations */
 @keyframes bounce {
     0% { transform: scale(1); }
