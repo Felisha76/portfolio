@@ -10,8 +10,8 @@ p {
 }
 
 img {
-    max-width:8vw;
-	max-height:4vw;
+    /*max-width:8vw; */
+	max-height:6vw;
 }
 
 label {
