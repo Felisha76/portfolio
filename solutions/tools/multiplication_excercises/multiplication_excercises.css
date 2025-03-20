@@ -71,11 +71,13 @@ body {
 }
 
 .correct {
-    color: green;
+    color: #008000;
+    font-size: 2vw;
 }
 
 .incorrect {
-    color: red;
+    color: #ffdd00;
+    font-size: 4vw;
 }
 
 .timer {
