@@ -190,65 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
- /*   function handleAnswer(isTimeout = false) {
-    clearInterval(timerInterval);
-    clearTimeout(waitTimeout);
-
-    const currentQuestion = questions[currentQuestionIndex];
-    const userAnswer = parseInt(answerInput.value);
-
-    answerInput.disabled = true;
-    nextBtn.disabled = true;
-
-    questionElement.classList.remove('bounce', 'shake');
-    feedbackElement.classList.remove('bounce', 'shake');
-    void questionElement.offsetWidth;
-    void feedbackElement.offsetWidth;
-
-    if (isTimeout || isNaN(userAnswer)) {
-        feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
-        feedbackElement.className = 'incorrect shake';
-        questionElement.classList.add('shake');
-        incorrectQuestions.push(currentQuestion);
-
-        waitTimeout = setTimeout(proceedToNext, 3000);
-    } else if (userAnswer === currentQuestion.answer) {
-        feedbackElement.textContent = 'Correct!';
-        feedbackElement.className = 'correct bounce';
-        questionElement.classList.add('bounce');
-
-        // 🎵 Play sound
-        correctSound.currentTime = 0;
-        correctSound.play();
-
-        correctCount++;
-        correctCountElement.textContent = correctCount;
-        answeredCount++;
-
-        // **Introduce a short delay before moving to the next question**
-        setTimeout(() => {
-            currentQuestionIndex++;
-            displayQuestion();
-        }, 1000); // 1 second delay
-    } else {
-        feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
-        feedbackElement.className = 'incorrect shake';
-        questionElement.classList.add('shake');
-
-        // 🎵 Play sound
-        incorrectSound.currentTime = 0;
-        incorrectSound.play();
-
-        incorrectQuestions.push(currentQuestion);
-        answeredCount++;
-
-        waitTimeout = setTimeout(proceedToNext, 3000);
-    }
-
-    answeredCountElement.textContent = answeredCount;
-}
-*/
-
 function handleAnswer(isTimeout = false) {
     clearInterval(timerInterval);
     clearTimeout(waitTimeout);
@@ -275,20 +216,19 @@ function handleAnswer(isTimeout = false) {
         feedbackElement.textContent = 'Correct!';
         feedbackElement.className = 'correct bounce';
         questionElement.classList.add('bounce');
-
+    
         // 🎵 Play sound
         correctSound.currentTime = 0;
         correctSound.play();
-
+    
         correctCount++;
         correctCountElement.textContent = correctCount;
         answeredCount++;
-
-        // **Introduce a short delay before moving to the next question**
-        setTimeout(() => {
-            currentQuestionIndex++;
-            displayQuestion();
-        }, 1000); // 1 second delay
+    
+        // ⏳ Wait 2 seconds before moving on
+        waitTimeout = setTimeout(() => {
+            proceedToNext();
+        }, 500);
     } else {
         feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
         feedbackElement.className = 'incorrect shake';
@@ -320,9 +260,7 @@ function handleAnswer(isTimeout = false) {
         }
     
         handleAnswer();
-        if (!feedbackElement.classList.contains('incorrect')) {
-            displayQuestion();
-        }
+
     });
 
     answerInput.addEventListener('keypress', function (e) {
@@ -333,9 +271,6 @@ function handleAnswer(isTimeout = false) {
             }
     
             handleAnswer();
-            if (!feedbackElement.classList.contains('incorrect')) {
-                displayQuestion();
-            }
         }
     });
 
