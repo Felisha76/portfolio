@@ -288,7 +288,7 @@ function handleAnswer(isTimeout = false) {
         setTimeout(() => {
             currentQuestionIndex++;
             displayQuestion();
-        }, 500); // delay
+        }, 1000); // 1 second delay
     } else {
         feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
         feedbackElement.className = 'incorrect shake';
