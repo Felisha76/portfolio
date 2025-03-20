@@ -159,6 +159,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 feedbackElement.textContent = `You got ${correctCount} out of ${answeredCount} correct!`;
                 feedbackElement.className = 'correct';
                 timerDisplay.classList.add('hidden');
+
+                // 🧮 Score calculation
+                const totalAttempts = answeredCount; // Including repeated incorrect ones
+                const incorrectCount = totalAttempts - correctCount;
+                const score = Math.round((correctCount / totalAttempts) * 100);
+
+                // 🟢 Update final feedback
+                feedbackElement.innerHTML = `
+                    You got <strong>${correctCount}</strong> out of <strong>${totalAttempts}</strong> correct.<br>
+                    Score: <strong>${score}%</strong> (${incorrectCount} incorrect)`;
+                feedbackElement.className = 'correct';
+
+                let message = '';
+                    if (score === 100) {
+                        message = "💯 🚀 Rocket! You are a superstar! 🔥🔥🔥🔥🔥 👑 🏆";
+                    } else if (score >= 90) {
+                        message = "Very good job! You are near to perfection! Go on! 🔥🔥🔥🔥🔥";
+                    } else if (score >= 80) {
+                        message = "Good job! You are near to the goal! 🔥🔥🔥🔥";
+                    } else if (score >= 70) {
+                        message = "Not bad, but a little more practice makes you even better. You can do it! 🔥🔥🔥";
+                    } else if (score >= 60) {
+                        message = "Practice a little more, don't give up! 🔥🔥";
+                    } else {
+                        message = "💪🔥 Don't give up!";
+                    }
+                    feedbackElement.innerHTML += `<br>${message}`;
             }
         }
     }
