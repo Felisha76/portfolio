@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else if (score >= 80) {
                         message = "Good job! You are near to the goal! 🔥🔥🔥🔥";
                     } else if (score >= 70) {
-                        message = "Not bad, but a little more practice makes you even better. You can do it! 🔥🔥🔥";
+                        message = "Not bad, but a little more practice makes you even better.<br> You can do it! 🔥🔥🔥";
                     } else if (score >= 60) {
                         message = "Practice a little more, don't give up! 🔥🔥";
                     } else {
@@ -190,61 +190,123 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function handleAnswer(isTimeout = false) {
-        clearInterval(timerInterval);
-        clearTimeout(waitTimeout);
+ /*   function handleAnswer(isTimeout = false) {
+    clearInterval(timerInterval);
+    clearTimeout(waitTimeout);
 
-        const currentQuestion = questions[currentQuestionIndex];
-        const userAnswer = parseInt(answerInput.value);
+    const currentQuestion = questions[currentQuestionIndex];
+    const userAnswer = parseInt(answerInput.value);
 
-        answerInput.disabled = true;
-        nextBtn.disabled = true;
+    answerInput.disabled = true;
+    nextBtn.disabled = true;
 
-        questionElement.classList.remove('bounce', 'shake');
-        feedbackElement.classList.remove('bounce', 'shake');
-        void questionElement.offsetWidth;
-        void feedbackElement.offsetWidth;
+    questionElement.classList.remove('bounce', 'shake');
+    feedbackElement.classList.remove('bounce', 'shake');
+    void questionElement.offsetWidth;
+    void feedbackElement.offsetWidth;
 
-        if (isTimeout || isNaN(userAnswer)) {
-            feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
-            feedbackElement.className = 'incorrect shake';
-            questionElement.classList.add('shake');
-            incorrectQuestions.push(currentQuestion);
+    if (isTimeout || isNaN(userAnswer)) {
+        feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
+        feedbackElement.className = 'incorrect shake';
+        questionElement.classList.add('shake');
+        incorrectQuestions.push(currentQuestion);
 
-            waitTimeout = setTimeout(() => {
-                proceedToNext();
-            }, 3000);
-        } else if (userAnswer === currentQuestion.answer) {
-            feedbackElement.textContent = 'Correct!';
-            feedbackElement.className = 'correct bounce';
-            questionElement.classList.add('bounce');
+        waitTimeout = setTimeout(proceedToNext, 3000);
+    } else if (userAnswer === currentQuestion.answer) {
+        feedbackElement.textContent = 'Correct!';
+        feedbackElement.className = 'correct bounce';
+        questionElement.classList.add('bounce');
 
-            // 🎵 Play sound
-                    correctSound.currentTime = 0;
-                    correctSound.play();
+        // 🎵 Play sound
+        correctSound.currentTime = 0;
+        correctSound.play();
 
-            correctCount++;
-            correctCountElement.textContent = correctCount;
-            currentQuestionIndex++;
-        } else {
-            feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
-            feedbackElement.className = 'incorrect shake';
-            questionElement.classList.add('shake');
-
-            // 🎵 Play sound
-                    incorrectSound.currentTime = 0;
-                    incorrectSound.play();
-
-            incorrectQuestions.push(currentQuestion);
-
-            waitTimeout = setTimeout(() => {
-                proceedToNext();
-            }, 3000);
-        }
-
+        correctCount++;
+        correctCountElement.textContent = correctCount;
         answeredCount++;
-        answeredCountElement.textContent = answeredCount;
+
+        // **Introduce a short delay before moving to the next question**
+        setTimeout(() => {
+            currentQuestionIndex++;
+            displayQuestion();
+        }, 1000); // 1 second delay
+    } else {
+        feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
+        feedbackElement.className = 'incorrect shake';
+        questionElement.classList.add('shake');
+
+        // 🎵 Play sound
+        incorrectSound.currentTime = 0;
+        incorrectSound.play();
+
+        incorrectQuestions.push(currentQuestion);
+        answeredCount++;
+
+        waitTimeout = setTimeout(proceedToNext, 3000);
     }
+
+    answeredCountElement.textContent = answeredCount;
+}
+*/
+
+function handleAnswer(isTimeout = false) {
+    clearInterval(timerInterval);
+    clearTimeout(waitTimeout);
+
+    const currentQuestion = questions[currentQuestionIndex];
+    const userAnswer = parseInt(answerInput.value);
+
+    answerInput.disabled = true;
+    nextBtn.disabled = true;
+
+    questionElement.classList.remove('bounce', 'shake');
+    feedbackElement.classList.remove('bounce', 'shake');
+    void questionElement.offsetWidth;
+    void feedbackElement.offsetWidth;
+
+    if (isTimeout || isNaN(userAnswer)) {
+        feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
+        feedbackElement.className = 'incorrect shake';
+        questionElement.classList.add('shake');
+        incorrectQuestions.push(currentQuestion);
+
+        waitTimeout = setTimeout(proceedToNext, 3000);
+    } else if (userAnswer === currentQuestion.answer) {
+        feedbackElement.textContent = 'Correct!';
+        feedbackElement.className = 'correct bounce';
+        questionElement.classList.add('bounce');
+
+        // 🎵 Play sound
+        correctSound.currentTime = 0;
+        correctSound.play();
+
+        correctCount++;
+        correctCountElement.textContent = correctCount;
+        answeredCount++;
+
+        // **Introduce a short delay before moving to the next question**
+        setTimeout(() => {
+            currentQuestionIndex++;
+            displayQuestion();
+        }, 500); // delay
+    } else {
+        feedbackElement.textContent = `The correct answer is: ${currentQuestion.answer}`;
+        feedbackElement.className = 'incorrect shake';
+        questionElement.classList.add('shake');
+
+        // 🎵 Play sound
+        incorrectSound.currentTime = 0;
+        incorrectSound.play();
+
+        incorrectQuestions.push(currentQuestion);
+        answeredCount++;
+
+        waitTimeout = setTimeout(proceedToNext, 3000);
+    }
+
+    answeredCountElement.textContent = answeredCount;
+}
+
 
     function proceedToNext() {
         currentQuestionIndex++;
