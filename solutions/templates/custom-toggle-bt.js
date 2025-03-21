@@ -1,4 +1,4 @@
-export class CustomToggle extends HTMLElement {
+export class CustomToggleBt extends HTMLElement {
     constructor() {
       super();
   

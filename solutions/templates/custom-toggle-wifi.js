@@ -1,4 +1,4 @@
-export class CustomToggle extends HTMLElement {
+export class CustomToggleWifi extends HTMLElement {
     constructor() {
       super();
   
