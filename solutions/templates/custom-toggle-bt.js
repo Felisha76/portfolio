@@ -1,3 +1,4 @@
+// Prototype name for this template:
 export class CustomToggleBt extends HTMLElement {
     constructor() {
       super();

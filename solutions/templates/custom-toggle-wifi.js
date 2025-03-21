@@ -1,3 +1,4 @@
+// Prototype name for this template:
 export class CustomToggleWifi extends HTMLElement {
     constructor() {
       super();
