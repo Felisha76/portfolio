@@ -9,7 +9,7 @@ export class CustomToggle extends HTMLElement {
       wrapper.classList.add('switch');
   
       // Load CSS
-      fetch(new URL('./custom-toggle.css', import.meta.url))
+      fetch(new URL('custom-toggle.css', import.meta.url))
         .then(res => res.text())
         .then(cssText => {
           const style = document.createElement('style');
