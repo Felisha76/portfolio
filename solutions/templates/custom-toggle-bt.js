@@ -41,6 +41,6 @@ export class CustomToggle extends HTMLElement {
       shadow.appendChild(wrapper);
     }
   }
-  
-  customElements.define('custom-toggle', CustomToggle);
+  // template tag names should be unique
+  customElements.define('custom-toggle-bt', CustomToggle-bt);
   

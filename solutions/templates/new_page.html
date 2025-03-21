@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>New Page with Custom Toggle</title>
-  <script type="module">
+  <!-- <script type="module">
     import { CustomToggle } from './custom-toggle-bt.js';
+    import { CustomToggle } from './custom-toggle-wifi.js';
+  </script> -->
+
+  <script type="module">
+    import './custom-toggle-bt.js';
+    import './custom-toggle-wifi.js';
   </script>
+
 </head>
 <body style="background: #222; color: #fff; font-family: system-ui; padding: 2rem;">
   <h1>My Page</h1>
 
   <p>This is a reusable toggle imported from the prototype:</p>
-  <custom-toggle></custom-toggle>
-<!-- 
-  <p>And here's another clone:</p>
-  <custom-toggle></custom-toggle>-->
+  <custom-toggle-bt></custom-toggle-bt>
+
+  <p>And here's another type:</p>
+  <custom-toggle-wifi></custom-toggle-wifi>
 </body>
 </html>
