@@ -42,5 +42,5 @@ export class CustomToggle extends HTMLElement {
     }
   }
   // template tag names should be unique
-  customElements.define('custom-toggle-bt', CustomToggle-bt);
+  customElements.define('custom-toggle-bt', CustomToggleBt);
   

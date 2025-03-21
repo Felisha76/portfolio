@@ -48,5 +48,5 @@ export class CustomToggle extends HTMLElement {
     }
   }
   // template tag names should be unique
-  customElements.define('custom-toggle-wifi', CustomToggle-wifi);
+  customElements.define('custom-toggle-wifi', CustomToggleWifi);
   
