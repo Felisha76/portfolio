@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
         results.style.display = 'block'; // Show results
         results.classList.remove('hidden');
         questionContainer.style.display = 'none'; // Hide test container
-        document.querySelector('.pagetitle').style.display = 'block'; // Show page title
+        document.querySelector('.pagetitle').style.display = 'block'; // Show page title again
         console.log("Test Ended: Results should now be visible.");
     }
 
