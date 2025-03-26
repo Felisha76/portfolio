@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Elements
+    const pagetitle = document.getElementById('pageTitle');
     const fileSelect = document.getElementById('fileSelect');
     const questionCount = document.getElementById('questionCount');
     const direction = document.getElementById('direction');
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Hide settings, show test
             document.querySelector('.settings').classList.add('hidden');
             testContainer.classList.remove('hidden');
+            pagetitle.classList.add('hidden');
             
             // Reset counters
             currentQuestionIndex = 0;
@@ -384,6 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show results explicitly
         results.style.display = 'block'; // Show results
         results.classList.remove('hidden');
+        pagetitle.classList.remove('hidden');
         questionContainer.style.display = 'none'; // Hide test container
         console.log("Test Ended: Results should now be visible.");
     }
