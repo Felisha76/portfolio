@@ -12,6 +12,11 @@ h1 {
     margin-bottom: 30px;
 }
 
+a {
+	text-decoration: none;
+	color: #c7e75c
+}
+
 .settings {
     background-color: #272929;
     padding: 15px;
