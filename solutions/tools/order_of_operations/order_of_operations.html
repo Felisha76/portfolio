@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematikai Műveletek Sorrendje 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .question { margin: 10px; font-size: 20px; }
+        .hidden { display: none; }
+        .correct { background-color: green; color: white; font-weight: bold; }
+
+        input {
+            width: 50px;
+            height: 20px;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .feedback {
+            font-size:small;
+            text-decoration: none;
+            color: #0c0c0c;
+            font-family: 'Noto Sans';
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Matematikai Műveletek Sorrendje 1</h1>
+    <h3>(Általános iskola 2. osztály számára)</h3>
+    <p>Ebben a változatban egyéni feladatokra kell válaszolni</p>
+    <p><a href="order_of_operations2.html" target="_self">Váltás a másik változatra</a></p>
+    <label for="questionCount">Hány kérdést szeretnél megoldani?</label>
+    <select id="questionCount">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+    </select>
+    <button onclick="generateQuestions()">Feladatok generálása</button>
+    <div id="questionsContainer"></div>
+    <button class="hidden" id="submitBtn" onclick="checkAnswers()">Ellenőrzés</button>
+    <p id="result"></p>
+
+    <script>
+        function generateQuestions() {
+            const count = document.getElementById("questionCount").value;
+            const container = document.getElementById("questionsContainer");
+            container.innerHTML = "";
+            
+            let questions = [];
+            for (let i = 0; i < count; i++) {
+                let q;
+                do {
+                    q = generateExpression();
+                } while (q.result <= 0 || q.result >= 100 || !Number.isInteger(q.result));
+                
+                questions.push(q);
+                container.innerHTML += `<div class='question'>${q.expression} = <input type='number' id='answer${i}'></div>`;
+            }
+            
+            document.getElementById("submitBtn").classList.remove("hidden");
+            window.questions = questions;
+        }
+
+        function generateExpression() {
+            let a, b, c, op1, op2, parenType, expression, result;
+            do {
+                a = getRandom(1, 20);
+                b = getRandom(1, 20);
+                c = getRandom(1, 20);
+                op1 = getRandomOperator();
+                op2 = getRandomOperator();
+                parenType = getRandom(0, 2);
+
+                if (parenType === 0) {
+                    expression = `${a} ${op1} ${b} ${op2} ${c}`;
+                    result = eval(expression);
+                } else if (parenType === 1) {
+                    expression = `(${a} ${op1} ${b}) ${op2} ${c}`;
+                    result = eval(`(${a} ${op1} ${b}) ${op2} ${c}`);
+                } else {
+                    expression = `(${a} ${op1} ${b}) * (${c})`;
+                    result = eval(`(${a} ${op1} ${b}) * (${c})`);
+                }
+            } while (!Number.isInteger(result) || result <= 0 || result >= 100);
+            
+            return { expression, result };
+        }
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomOperator() {
+            const operators = ['+', '-', '*', '/'];
+            return operators[getRandom(0, operators.length - 1)];
+        }
+
+        function checkAnswers() {
+            let correct = 0;
+            window.questions.forEach((q, i) => {
+                let userAnswerField = document.getElementById(`answer${i}`);
+                let userAnswer = parseFloat(userAnswerField.value);
+                
+                if (userAnswer === q.result) {
+                    correct++;
+                    userAnswerField.classList.add("correct");
+                }
+            });
+            document.getElementById("result").textContent = `Helyes válaszok: ${correct} / ${window.questions.length}`;
+        }
+    </script>
+
+    <div class="feedback">
+        <hr>
+        <p>This page is under development</p>
+        
+        <a href="mailto:felisha19761228@gmail.com?
+        &subject=Call%20Logging%20Form&body=Feedback%20about%20the%20form:" target="_top" class="feedback">
+        
+        
+        Felisha76 &copy;2025.</a>
+    </div>
+</body>
+</html>
