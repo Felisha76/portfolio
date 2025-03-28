@@ -77,6 +77,7 @@ optgroup option {
 	height: 80%;
 	position: relative;
 	perspective: 1000px;
+	align-items: center;
 }
 .front, .back {
 	position: absolute;
@@ -121,7 +122,8 @@ optgroup option {
 .card:hover {
 	cursor: pointer;
 	z-index: 100;
-	align-self: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .card:hover .front {
