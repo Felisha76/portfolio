@@ -140,7 +140,7 @@ optgroup option {
 }
 
 .card:hover img {
-	transform: scale(2);
+	transform: scale(1.8);
 	transition-duration: 700ms;
 	vertical-align:15px;
 }
