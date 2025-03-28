@@ -79,3 +79,20 @@ document.addEventListener('keydown', function(event) {
       copyTable(); // Meghívja a vágólapra másolás funkciót
   }
 });
+
+// Add event listener for button click
+const copyButton = document.getElementById('copyButton'); // Ensure you have a button with this ID
+if (copyButton) {
+  copyButton.addEventListener('click', copyTable);
+}
+
+// Add event listener for Enter key on input fields
+/*const inputs = document.querySelectorAll('#myTable input, #myTable textarea');
+inputs.forEach(input => {
+  input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Prevent form submission if inside a form
+      copyTable(); // Call the copy function
+    }
+  });
+}); */
