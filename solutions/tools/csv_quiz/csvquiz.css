@@ -101,13 +101,14 @@ optgroup option {
 .front {
 	background-color: #02153d;
   	color: #0be7e7;
-	
+	text-align: center;
 }
 
 .back {
 	background-color: #012008;
   	color: #459c54;
 	transform: rotateY(180deg);
+	text-align: center;
 }
 
 .feedback {
