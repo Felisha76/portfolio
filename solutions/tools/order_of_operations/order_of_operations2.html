@@ -145,7 +145,12 @@
                     }
                 });
             });
-            document.getElementById("result").textContent = `Helyes válaszok: ${correct} / ${window.questions.length * 3}`;
+
+            // Calculate percentage
+            const total = window.questions.length;
+            const percentage = Math.round(((correct / total) * 100)/3);
+            
+            document.getElementById("result").textContent = `Helyes válaszok: ${correct} / ${window.questions.length * 3} (${percentage}%)`;
         }
     </script>
 
