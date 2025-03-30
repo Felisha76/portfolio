@@ -8,10 +8,10 @@ body {
 
 #abacus-container {
     background-color: white;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 0px;
+    margin: 0px auto;
     width: 80%;
-    max-width: 600px;
+    max-width: 90%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -33,14 +33,14 @@ canvas {
     padding: 20px;
     margin: 20px auto;
     width: 80%;
-    max-width: 600px;
+    max-width: 90%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 label, select, input {
     display: inline-block;
-    margin: 10px auto;
+    margin: 0px auto;
     font-size: 16px;
 }
 
@@ -73,8 +73,8 @@ button:hover {
 
 #settings {
     width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
     background-color: #f5f5f5;
     border-radius: 5px;
 }
@@ -82,7 +82,7 @@ button:hover {
 .left-column {
     flex: 1;
     min-width: 300px;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .right-column {

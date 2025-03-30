@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const startBtn = document.getElementById("start");
     const checkBtn = document.getElementById("check-answers");
     const restartBtn = document.getElementById("restart");
+    const resetAbacusBtn = document.getElementById("reset-abacus");
     const questionsDiv = document.getElementById("questions");
     const resultsDiv = document.getElementById("results");
     
@@ -65,7 +66,14 @@ document.addEventListener("DOMContentLoaded", function() {
         calculateValue();
     }
 
+    function resetAbacus() {
+        beads = Array.from({ length: 8 }, () => ({ upper: false, lower: 0 }));
+        drawAbacus();
+        calculateValue();
+    }
+
     canvas.addEventListener("click", handleClick);
+    resetAbacusBtn.addEventListener("click", resetAbacus);
     drawAbacus();
 
     function generateQuestions() {

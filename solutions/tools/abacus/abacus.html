@@ -9,7 +9,7 @@
 <body>
     
     <div id="settings">
-        <label>Number of Digits:
+        <label><b>Number of Digits:</b>
             <select id="digit-count">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -17,18 +17,19 @@
                 <option value="4">4</option>
             </select>
         </label>
+        
         <label><input type="checkbox" id="addition"> Addition</label>
         <label><input type="checkbox" id="subtraction"> Subtraction</label>
         <label><input type="checkbox" id="multiplication"> Multiplication</label>
         <label><input type="checkbox" id="division"> Division</label>
-        <label>Number of Questions:
+        <label><b>Number of Questions:</b>
             <select id="question-count">
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="15">15</option>
             </select>
         </label>
-        <label>Operations per Question:
+        <label><b>Operations per Question:</b>
             <select id="operations-count">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -43,6 +44,7 @@
             <div id="abacus-container">
                 <canvas id="abacus"></canvas>
                 <div id="abacus-value">Value: 0</div>
+                <button id="reset-abacus">Reset abacus</button>
             </div>
         </div>
         
