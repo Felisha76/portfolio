@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function drawAbacus() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "#058f1c";
         
         for (let i = 0; i < 8; i++) {
             let x = 50 + i * 50;
             ctx.fillRect(x - 2, 30, 5, 240);
             
             // Draw upper bead (worth 5)
-            ctx.fillStyle = "red";
+            ctx.fillStyle = "#016011";
             ctx.fillRect(x - 15, beads[i].upper ? 60 : 30, 30, 30);
 
             // Draw lower beads (worth 1 each, up to 4) with sliding effect
             for (let j = 0; j < 4; j++) {
-                ctx.fillStyle = j < beads[i].lower ? "blue" : "black";
+                ctx.fillStyle = j < beads[i].lower ? "#2be62b" : "#058f1c";
                 ctx.fillRect(x - 15, 120 + j * 40, 30, 30);
             }
         }
