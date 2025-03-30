@@ -7,7 +7,23 @@
     <link rel="stylesheet" href="../../../subsites/substyle.css">
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        .question { margin: 10px; font-size: 20px; }
+
+        .question { 
+            margin: 10px; 
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+     
+       .expression {
+            text-align: right;
+            flex-grow: 1;
+        }
+
         .hidden { display: none; }
         .correct { background-color: green; color: white; font-weight: bold; }
 
@@ -22,7 +38,8 @@
             width: 50px;
             height: 20px;
             font-size: 16px;
-            text-align: left;
+            text-align: center;
+            margin-left: 10px;
         }
 
         .feedback {
@@ -64,7 +81,8 @@
                 } while (q.result <= 0 || q.result >= 100 || !Number.isInteger(q.result));
                 
                 questions.push(q);
-                container.innerHTML += `<div class='question'>${q.expression} = <input type='number' id='answer${i}'></div>`;
+                container.innerHTML += `<div class='question'><span class='expression'>${q.expression} =</span><input type='number' id='answer${i}'></div>`;
+
             }
             
             document.getElementById("submitBtn").classList.remove("hidden");
