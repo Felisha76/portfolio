@@ -41,9 +41,9 @@ canvas {
 #settings {
     background-color: #272929;
     padding: 20px;
-    margin: 20px auto;
+    margin: 20px 20px 20px 20px;
     width: 80%;
-    max-width: 90%;
+    max-width: 97%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -112,6 +112,8 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     margin: 20px 20px 20px 20px;
+    width: 97%;
+    max-width: 97%;
 }
 
 #settings {
@@ -125,7 +127,7 @@ button:hover {
 
 .left-column {
     flex: 1;
-    min-width: 300px;
+    min-width: 450px;
     padding-right: 10px;
 }
 
