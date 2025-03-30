@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 result = eval(`${result} ${op} ${num}`);
             }
             
-            let input = `<input type='text' class='answer' data-answer='${result}' disabled>`;
+            let input = `<input type='text' class='answer' data-answer='${result}'>`; // disabled removed from the end  before >
             questionsDiv.innerHTML += `<div>${question} = ${input}</div>`;
         }
     }
