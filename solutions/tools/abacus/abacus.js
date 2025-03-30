@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function generateQuestions() {
         questionsDiv.innerHTML = "";
         let numQuestions = document.getElementById("question-count").value;
+        let numDigits = document.getElementById("digit-count").value;
+        let operationsCount = document.getElementById("operations-count").value;
         let operations = [];
         if (document.getElementById("addition").checked) operations.push("+");
         if (document.getElementById("subtraction").checked) operations.push("-");
@@ -78,12 +80,21 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.getElementById("division").checked) operations.push("/");
         
         for (let i = 0; i < numQuestions; i++) {
-            let num1 = Math.floor(Math.random() * 1000);
-            let num2 = Math.floor(Math.random() * 100) + 1;
-            let op = operations[Math.floor(Math.random() * operations.length)];
-            let question = `${num1} ${op} ${num2} = `;
-            let input = `<input type='text' class='answer' data-answer='${eval(num1 + op + num2)}' disabled>`;
-            questionsDiv.innerHTML += `<div>${question} ${input}</div>`;
+            let question = "";
+            let result = 0;
+            let num1 = Math.floor(Math.random() * (Math.pow(10, numDigits) - Math.pow(10, numDigits - 1)) + Math.pow(10, numDigits - 1));
+            question += num1;
+            result = num1;
+            
+            for (let j = 0; j < operationsCount; j++) {
+                let op = operations[Math.floor(Math.random() * operations.length)];
+                let num = Math.floor(Math.random() * (Math.pow(10, numDigits) - Math.pow(10, numDigits - 1)) + Math.pow(10, numDigits - 1));
+                question += ` ${op} ${num}`;
+                result = eval(`${result} ${op} ${num}`);
+            }
+            
+            let input = `<input type='text' class='answer' data-answer='${result}' disabled>`;
+            questionsDiv.innerHTML += `<div>${question} = ${input}</div>`;
         }
     }
 
