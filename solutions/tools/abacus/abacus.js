@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const questionsDiv = document.getElementById("questions");
     const resultsDiv = document.getElementById("results");
     
-    canvas.width = 500;
+    canvas.width = 450;
     canvas.height = 300;
 
     let beads = Array.from({ length: 8 }, () => ({ upper: false, lower: 0 }));
