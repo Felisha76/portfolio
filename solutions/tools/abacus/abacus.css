@@ -98,6 +98,14 @@ button:hover {
     min-width: 300px;
 }
 
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #e2f606;
+    font-family: 'Noto Sans';
+    text-align: right;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
