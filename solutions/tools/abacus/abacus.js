@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 correct++;
             }
         });
-        resultsDiv.textContent = `Score: ${correct} / ${answers.length} (${(correct / answers.length * 100).toFixed(2)}%)`;
+        resultsDiv.textContent = `Score: ${correct} / ${answers.length} (${(correct / answers.length * 100).toFixed(0)}%)`;
     });
 
     restartBtn.addEventListener("click", function() {

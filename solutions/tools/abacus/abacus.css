@@ -17,6 +17,7 @@ body {
     margin: auto;
     width: 500;
     max-width: 100%;
+    min-width: 450px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -26,6 +27,7 @@ canvas {
     margin:auto;
     background-color: #272929;
     color:#d2d4d6;
+    border-radius: 10px;
 }
 
 #abacus-value {
@@ -35,7 +37,7 @@ canvas {
     color:#d2d4d6;
 }
 
-#settings, #questions {
+#settings {
     background-color: #272929;
     padding: 20px;
     margin: 20px auto;
@@ -45,10 +47,29 @@ canvas {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
+#questions {
+    background-color: #272929;
+    padding: 10px;
+    margin: 1px 0px 10px auto; /* Changed margin to push it to the right */
+    width: 70%;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    float: right; /* Add float right to position at the right end */
+}
+
 label, select, input {
     display: inline-block;
     margin: 0px auto;
     font-size: 16px;
+}
+
+input {
+    width: 50px;
+    padding: 1px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 button {
@@ -73,11 +94,21 @@ button:hover {
     font-weight: bold;
 }
 
+#results {
+    background-color: #272929;
+    font-weight: 800;
+    padding: 5px;
+    margin: 1px 0px 10px auto;
+    width: 70%;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 20px 20px 20px 20px;
 }
 
 #settings {
@@ -97,6 +128,9 @@ button:hover {
 .right-column {
     flex: 1;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the end (right) of the container */
 }
 
 .feedback {
