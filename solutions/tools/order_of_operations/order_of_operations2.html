@@ -7,9 +7,24 @@
     <link rel="stylesheet" href="../../../subsites/substyle.css">
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        .question-group { margin: 20px; font-size: 20px; border: 1px solid #000; padding: 10px; display: inline-block; }
+        .question-group { 
+            margin: 20px; 
+            font-size: 20px; 
+            border: 1px solid #000; 
+            padding: 10px; 
+            display: inline-flex; 
+            flex-direction: column;
+            align-items:flex-end;
+        }
+
         .hidden { display: none; }
         .correct { background-color: green; color: white; font-weight: bold; }
+
+        a {
+            text-decoration: none;
+            color: #e5dd0b;
+            font-family: 'Noto Sans';
+        }
 
         input {
             width: 50px;
@@ -21,7 +36,7 @@
         .feedback {
             font-size:small;
             text-decoration: none;
-            color: #d2d4d6;
+            color: #e5dd0b;
             font-family: 'Noto Sans';
             text-align: right;
         }
@@ -44,6 +59,8 @@
     <button class="hidden" id="submitBtn" onclick="checkAnswers()">Ellenőrzés</button>
     <p id="result"></p>
 
+
+    
     <script>
         function generateQuestionGroups() {
             const count = document.getElementById("questionCount").value;
