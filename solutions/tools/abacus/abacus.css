@@ -144,6 +144,11 @@ button:hover {
     height: auto;
     margin-bottom: 10px;
     opacity: 0.9;
+    border-radius: 10px;
+}
+
+#rc_buttons {
+    display:inline-block;
 }
 
 .feedback {
