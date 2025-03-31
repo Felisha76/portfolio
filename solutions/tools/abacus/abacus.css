@@ -139,6 +139,13 @@ button:hover {
     align-items: flex-end; /* Align items to the end (right) of the container */
 }
 
+.right-column img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
 .feedback {
     font-size:small;
     text-decoration: none;
