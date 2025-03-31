@@ -2,7 +2,7 @@ body {
     font-family: 'Noto Sans';
     text-align: center;
     background-image: url("../../../media/banboo-5002308_1280.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100% 100%;
     background-color: #1c1d1d;
     color:#d2d4d6;
@@ -11,6 +11,7 @@ body {
 }
 
 #abacus-container {
+    
     background-color: #272929;
     opacity: 0.9;
     color:#d2d4d6;
@@ -25,7 +26,7 @@ body {
 
 canvas {
     display: flex;
-    margin:auto;
+    margin:1px auto 1px auto;
     background-color: #272929;
     color:#d2d4d6;
     border-radius: 10px;
@@ -33,19 +34,20 @@ canvas {
 
 #abacus-value {
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 2px;
     font-weight: bold;
     color:#d2d4d6;
 }
 
 #settings {
     background-color: #272929;
-    padding: 20px;
+    padding: 5px;
     margin: 20px 20px 20px 20px;
-    width: 80%;
+    width: 100%;
     max-width: 97%;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
 }
 
 #questions {
@@ -116,15 +118,6 @@ button:hover {
     max-width: 97%;
 }
 
-#settings {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: #272929;
-    opacity: 0.9;
-    border-radius: 5px;
-}
-
 .left-column {
     flex: 1;
     min-width: 450px;
@@ -141,6 +134,7 @@ button:hover {
 
 .right-column img {
     width: 50%;
+    min-width: 250px;
     height: auto;
     margin-bottom: 10px;
     opacity: 0.9;
