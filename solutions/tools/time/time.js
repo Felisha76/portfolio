@@ -335,7 +335,7 @@ function checkAnswers() {
             
             if (questionText.includes("Hány napból áll egy év")) {
                 expectedAnswer = "365";
-                isCorrect = input.value === "365" || input.value === "366";
+                isCorrect = input.value === "365";
             }
             else if (questionText.includes("Hány napból áll a")) {
                 const monthMatch = questionText.match(/Hány napból áll a (\w+)/);
