@@ -112,25 +112,30 @@ function generateTestQuestions() {
     testContainer.innerHTML = "";
     testActive = true;
 
-// 1. típus: Analóg <-> Digitális átváltás
-    const randomHour = Math.floor(Math.random() * 12);
-    const randomMinute = Math.floor(Math.random() * 60);
+    // 1. típus: Analóg <-> Digitális átváltás
+    const randomHour1 = Math.floor(Math.random() * 12);
+    const randomMinute1 = Math.floor(Math.random() * 60);
 
     const analogToDigitalQuestion = document.createElement("div");
     analogToDigitalQuestion.innerHTML = `<p>Hány óra van az alábbi analóg órán? (DE és DU is elfogadható)</p>
                                         <canvas id='testClockCanvas' width='200' height='200'></canvas>
                                         <input type='time' id='analog-answer' required>`;
     // Store the expected time as data attributes
-    analogToDigitalQuestion.dataset.expectedHour = randomHour;
-    analogToDigitalQuestion.dataset.expectedMinute = randomMinute;
+    analogToDigitalQuestion.dataset.expectedHour = randomHour1;
+    analogToDigitalQuestion.dataset.expectedMinute = randomMinute1;
     testContainer.appendChild(analogToDigitalQuestion);
-    drawTestClock(randomHour, randomMinute, 'testClockCanvas');
+    drawTestClock(randomHour1, randomMinute1, 'testClockCanvas');
+
+    // Generate a different random time for the second question
+    const randomHour2 = Math.floor(Math.random() * 12);
+    const randomMinute2 = Math.floor(Math.random() * 60);
 
     const digitalToAnalogQuestion = document.createElement("div");
-    digitalToAnalogQuestion.innerHTML = `<p>Állítsd be az analóg órát erre az időre: ${randomHour}:${randomMinute.toString().padStart(2, '0')}</p>
+    digitalToAnalogQuestion.innerHTML = `<p>Állítsd be az analóg órát erre az időre: ${randomHour2}:${randomMinute2.toString().padStart(2, '0')}</p>
                                         <canvas id='setClockCanvas' width='200' height='200'></canvas>`;
     testContainer.appendChild(digitalToAnalogQuestion);
     setupAnalogClockInteraction("setClockCanvas");
+
 
     // 2. típus: Idővel kapcsolatos kérdések
     const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
