@@ -428,7 +428,45 @@ function checkAnswers() {
                     }
                 }
             }
-            
+
+            else if (questionText.includes("melyik hónapokból áll")) {
+                const seasonMatch = questionText.match(/A\(z\) ([^\?]+) melyik hónapokból áll/);
+                
+                if (seasonMatch) {
+                    const season = seasonMatch[1].trim();
+                    
+                    // Define seasons and their corresponding months
+                    const seasons = {
+                        "Tavasz": ["Március", "Április", "Május"],
+                        "Nyár": ["Június", "Július", "Augusztus"],
+                        "Ősz": ["Szeptember", "Október", "November"],
+                        "Tél": ["December", "Január", "Február"]
+                    };
+                    
+                    if (season in seasons) {
+                        const expectedMonths = seasons[season];
+                        expectedAnswer = expectedMonths.join(", ");
+                        
+                        // Check if user's answer contains all the expected months
+                        const userAnswer = input.value.trim().toLowerCase();
+                        const isCorrect = expectedMonths.every(month => 
+                            userAnswer.toLowerCase().includes(month.toLowerCase())
+                        );
+                        
+                        // Alternative approach: check if all expected months are mentioned in any order
+                        const userMonths = userAnswer.split(/[,;]/).map(m => m.trim());
+                        const allMonthsPresent = expectedMonths.every(month => 
+                            userMonths.some(userMonth => 
+                                userMonth.toLowerCase() === month.toLowerCase() || 
+                                userMonth.toLowerCase().includes(month.toLowerCase())
+                            )
+                        );
+                        
+                        isCorrect = isCorrect || allMonthsPresent;
+                    }
+                }
+            }
+
 
             // For other questions, we'll just mark them as "correct" for now
             else {
