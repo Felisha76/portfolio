@@ -358,9 +358,10 @@ function checkAnswers() {
                 }
             }
             else if (questionText.includes("Hanyadik hónap a")) {
-                const monthMatch = questionText.match(/Hanyadik hónap a (\w+)/);
+                const monthMatch = questionText.match(/Hanyadik hónap a ([^\?]+)/);
+                
                 if (monthMatch) {
-                    const month = monthMatch[1];
+                    const month = monthMatch[1].trim();
                     // Dictionary mapping month names to their numbers
                     const monthNumbers = {
                         "Január": 1,
@@ -384,6 +385,7 @@ function checkAnswers() {
                     }
                 }
             }
+            
             
             else if (questionText.includes("Hány órából áll egy nap")) {
                 expectedAnswer = "24";
