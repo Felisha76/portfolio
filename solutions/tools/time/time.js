@@ -347,7 +347,7 @@ function checkAnswers() {
                     } else if (month === "Február") {
                         expectedAnswer = "28/29";
                         isCorrect = input.value === "28" || input.value === "29" || input.value === "28/29";
-                    } else {
+                    } else if (["Február", "Április", "Június", "Szeptember", "November"].includes(month)){
                         expectedAnswer = "30";
                         isCorrect = input.value === "30";
                     }
