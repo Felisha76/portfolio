@@ -357,15 +357,30 @@ function checkAnswers() {
                 const monthMatch = questionText.match(/Hanyadik hónap a (\w+)/);
                 if (monthMatch) {
                     const month = monthMatch[1];
-                    const monthIndex = ["Január", "Február", "Március", "Április", "Május", "Június", 
-                                        "Július", "Augusztus", "Szeptember", "Október", "November", "December"]
-                                        .indexOf(month);
-                    if (monthIndex !== -1) {
-                        expectedAnswer = (monthIndex + 1).toString();
-                        isCorrect = input.value === expectedAnswer;
+                    // Dictionary mapping month names to their numbers
+                    const monthNumbers = {
+                        "Január": 1,
+                        "Február": 2,
+                        "Március": 3,
+                        "Április": 4,
+                        "Május": 5,
+                        "Június": 6, 
+                        "Július": 7,
+                        "Augusztus": 8,
+                        "Szeptember": 9,
+                        "Október": 10,
+                        "November": 11,
+                        "December": 12
+                    };
+                    
+                    if (month in monthNumbers) {
+                        expectedAnswer = monthNumbers[month].toString();
+                        // Compare the user's input with the expected number
+                        isCorrect = parseInt(input.value) === monthNumbers[month];
                     }
                 }
             }
+            
             else if (questionText.includes("Hány órából áll egy nap")) {
                 expectedAnswer = "24";
                 isCorrect = input.value === "24";
