@@ -103,6 +103,104 @@ document.addEventListener("DOMContentLoaded", function () {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
+    // Tesztkérdések generálása
+function generateTestQuestions() {
+    const testContainer = document.getElementById("test-container");
+    testContainer.innerHTML = "";
+
+    // 1. típus: Analóg <-> Digitális átváltás
+    const analogToDigitalQuestion = document.createElement("div");
+    let randomHour = Math.floor(Math.random() * 12);
+    let randomMinute = Math.floor(Math.random() * 60);
+    analogToDigitalQuestion.innerHTML = `<p>Hány óra van az alábbi analóg órán?</p>
+                                         <canvas id='testClockCanvas' width='200' height='200'></canvas>
+                                         <input type='time' id='analog-answer' required>`;
+    testContainer.appendChild(analogToDigitalQuestion);
+    drawTestClock(randomHour, randomMinute);
+
+    const digitalToAnalogQuestion = document.createElement("div");
+    digitalToAnalogQuestion.innerHTML = `<p>Állítsd be az analóg órát erre az időre: ${randomHour}:${randomMinute.toString().padStart(2, '0')}</p>
+                                         <canvas id='setClockCanvas' width='200' height='200'></canvas>`;
+    testContainer.appendChild(digitalToAnalogQuestion);
+    setupAnalogClockInteraction("setClockCanvas");
+
+    // 2. típus: Idővel kapcsolatos kérdések
+    const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
+    const seasons = { "Tavasz": ["Március", "Április", "Május"], "Nyár": ["Június", "Július", "Augusztus"], "Ősz": ["Szeptember", "Október", "November"], "Tél": ["December", "Január", "Február"] };
+    const randomMonth = getRandomItem(months);
+    const randomSeason = getRandomItem(Object.keys(seasons));
+
+    const generalQuestions = [
+        `Hány napból áll egy év?`,
+        `Hány napból áll a ${randomMonth} hónap?`,
+        `Hanyadik hónap a ${randomMonth}?`,
+        `Melyik évszakba tartozik a ${randomMonth}?`,
+        `A(z) ${randomSeason} melyik hónapokból áll?`,
+        `Hány hétből áll egy év?`,
+        `Hány hónapból áll egy év?`,
+        `Hány órából áll egy nap?`,
+        `Mik a hét napjai?`
+    ];
+    generalQuestions.forEach(question => {
+        let div = document.createElement("div");
+        div.innerHTML = `<p>${question}</p><input type='text' required>`;
+        testContainer.appendChild(div);
+    });
+
+    // 3. típus: Időtartam kérdések
+    const randomStartHour = Math.floor(Math.random() * 24);
+    const randomStartMinute = Math.floor(Math.random() * 60);
+    const travelMinutes = Math.floor(Math.random() * 90);
+
+    const durationQuestions = [
+        `Ha a lány ${randomStartHour}:${randomStartMinute} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda?`,
+        `Ha egy vonat ${randomStartHour}:${randomStartMinute}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni?`,
+        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute}-kor kezdődik és ${randomStartHour + 2}:${randomStartMinute}-kor ér véget, hány percig tart?`
+    ];
+    durationQuestions.forEach(question => {
+        let div = document.createElement("div");
+        div.innerHTML = `<p>${question}</p><input type='text' required>`;
+        testContainer.appendChild(div);
+    });
+}
+
+// Óra rajzolása a teszthez
+function drawTestClock(hour, minute) {
+    const canvas = document.getElementById("testClockCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(100, 100, 90, 0, Math.PI * 2);
+    ctx.stroke();
+
+    let hourAngle = ((hour % 12) * 30 + minute / 2) * (Math.PI / 180) - Math.PI / 2;
+    let minuteAngle = (minute * 6) * (Math.PI / 180) - Math.PI / 2;
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100 + 40 * Math.cos(hourAngle), 100 + 40 * Math.sin(hourAngle));
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100 + 60 * Math.cos(minuteAngle), 100 + 60 * Math.sin(minuteAngle));
+    ctx.stroke();
+}
+
+// Interaktív óra beállítás
+function setupAnalogClockInteraction(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    canvas.addEventListener("mousedown", function () {
+        alert("Itt lehetne egy óramutató állító mechanizmus.");
+    });
+}
+
+// Teszt indítása
+document.getElementById("start-test").addEventListener("click", generateTestQuestions);
+
+function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
    
     drawClock();
     updateDigitalClock();
