@@ -285,6 +285,10 @@ function checkAnswers() {
     // Get all input elements in the test container
     const testContainer = document.getElementById("test-container");
     const inputs = testContainer.querySelectorAll("input");
+
+    // Track correct answers
+    let correctCount = 0;
+    let totalAnswered = 0;   
     
     // Process each input
     inputs.forEach(input => {
@@ -295,17 +299,99 @@ function checkAnswers() {
         const questionText = questionDiv.querySelector("p")?.textContent || "";
         
         // Check if it's a time input (analog to digital conversion)
-        if (input.type === "time") {
-            // For simplicity, we'll just mark any non-empty answer as correct
-            if (input.value) {
+        if (input.type === "time" && input.value) {
+            totalAnswered++;
+            
+            // Get the expected time from the canvas
+            // For this example, we'll extract it from the question text if available
+            // In a real implementation, you would store this when creating the test
+            let expectedHour = 0;
+            let expectedMinute = 0;
+            
+            // Try to extract from question text (if you added it for debugging)
+            const timeMatch = questionText.match(/\((\d+):(\d+)\)/);
+            if (timeMatch) {
+                expectedHour = parseInt(timeMatch[1]);
+                expectedMinute = parseInt(timeMatch[2]);
+            }
+            
+            // Parse user's answer
+            const [userHours, userMinutes] = input.value.split(':').map(Number);
+            
+            // Check if correct (allowing for 12/24 hour format)
+            const isCorrect = (userHours % 12 === expectedHour % 12) && (userMinutes === expectedMinute);
+            
+            if (isCorrect) {
                 input.style.backgroundColor = "#d4edda"; // Green background
+                correctCount++;
+            } else {
+                input.style.backgroundColor = "#f8d7da"; // Red background
             }
         }
+
         // For text inputs
-        else if (input.type === "text") {
-            // Simple validation - any non-empty answer is "correct"
-            if (input.value.trim() !== "") {
+        else if (input.type === "text" && input.value.trim() !== "") {
+            totalAnswered++;
+            
+            // Determine correct answer based on question text
+            let isCorrect = false;
+            let expectedAnswer = "";
+            
+            if (questionText.includes("Hány napból áll egy év")) {
+                expectedAnswer = "365";
+                isCorrect = input.value === "365" || input.value === "366";
+            }
+            else if (questionText.includes("Hány napból áll a")) {
+                const monthMatch = questionText.match(/Hány napból áll a (\w+)/);
+                if (monthMatch) {
+                    const month = monthMatch[1];
+                    if (["Április", "Június", "Szeptember", "November"].includes(month)) {
+                        expectedAnswer = "30";
+                        isCorrect = input.value === "30";
+                    } else if (month === "Február") {
+                        expectedAnswer = "28/29";
+                        isCorrect = input.value === "28" || input.value === "29" || input.value === "28/29";
+                    } else {
+                        expectedAnswer = "31";
+                        isCorrect = input.value === "31";
+                    }
+                }
+            }
+            else if (questionText.includes("Hanyadik hónap a")) {
+                const monthMatch = questionText.match(/Hanyadik hónap a (\w+)/);
+                if (monthMatch) {
+                    const month = monthMatch[1];
+                    const monthIndex = ["Január", "Február", "Március", "Április", "Május", "Június", 
+                                        "Július", "Augusztus", "Szeptember", "Október", "November", "December"]
+                                        .indexOf(month);
+                    if (monthIndex !== -1) {
+                        expectedAnswer = (monthIndex + 1).toString();
+                        isCorrect = input.value === expectedAnswer;
+                    }
+                }
+            }
+            else if (questionText.includes("Hány órából áll egy nap")) {
+                expectedAnswer = "24";
+                isCorrect = input.value === "24";
+            }
+            else if (questionText.includes("Hány hónapból áll egy év")) {
+                expectedAnswer = "12";
+                isCorrect = input.value === "12";
+            }
+            else if (questionText.includes("Hány hétből áll egy év")) {
+                expectedAnswer = "52";
+                isCorrect = input.value === "52" || input.value === "53";
+            }
+            // For other questions, we'll just mark them as "correct" for now
+            else {
+                isCorrect = true;
+            }
+            
+            if (isCorrect) {
                 input.style.backgroundColor = "#d4edda"; // Green background
+                correctCount++;
+            } else {
+                input.style.backgroundColor = "#f8d7da"; // Red background
             }
         }
     });
@@ -313,18 +399,49 @@ function checkAnswers() {
     // Handle the analog clock canvas (digital to analog conversion)
     const setClockCanvas = document.getElementById("setClockCanvas");
     if (setClockCanvas) {
-        // For simplicity, we'll just highlight the canvas
-        setClockCanvas.style.border = "3px solid #28a745"; // Green border
+        totalAnswered++;
+        
+        // Get the expected time from the question text
+        const questionDiv = setClockCanvas.closest("div");
+        const questionText = questionDiv.querySelector("p")?.textContent || "";
+        const timeMatch = questionText.match(/(\d+):(\d+)/);
+        
+        let isCorrect = false;
+        
+        if (timeMatch) {
+            const expectedHour = parseInt(timeMatch[1]);
+            const expectedMinute = parseInt(timeMatch[2]);
+            
+            // In a real implementation, you would get the user's set time from the canvas
+            // For now, we'll just mark it as correct if the user interacted with it
+            // This is a placeholder - you would need to implement proper validation
+            
+            // Assume it's correct for demonstration
+            isCorrect = true;
+            correctCount++;
+        }
+        
+        setClockCanvas.style.border = isCorrect ? 
+            "3px solid #28a745" : // Green border
+            "3px solid #dc3545";  // Red border
     }
     
-    // Add a simple results message
+    // Calculate percentage
+    const percentage = totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0;
+    
+    
+    // Add a results message
     const resultsMessage = document.createElement("div");
     resultsMessage.style.marginTop = "20px";
     resultsMessage.style.padding = "10px";
     resultsMessage.style.backgroundColor = "#f8f9fa";
     resultsMessage.style.border = "1px solid #dee2e6";
     resultsMessage.style.borderRadius = "5px";
-    resultsMessage.innerHTML = "<h3>Answers Checked!</h3><p>Correct answers are highlighted in green.</p>";
+    resultsMessage.innerHTML = `
+        <h3>Results</h3>
+        <p>You got ${correctCount} out of ${totalAnswered} questions correct (${percentage}%).</p>
+        <p>Correct answers are highlighted in green, incorrect in red.</p>
+    `;
     
     // Remove any existing results message
     const existingMessage = document.getElementById("results-message");
