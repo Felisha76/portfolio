@@ -393,6 +393,36 @@ function checkAnswers() {
                 expectedAnswer = "52";
                 isCorrect = input.value === "52" || input.value === "53";
             }
+
+            else if (questionText.includes("Melyik évszakba tartozik a")) {
+                const monthMatch = questionText.match(/Melyik évszakba tartozik a (\w+)/);
+                if (monthMatch) {
+                    const month = monthMatch[1];
+                    
+                    // Define seasons based on months
+                    const winterMonths = ["December", "Január", "Február"];
+                    const springMonths = ["Március", "Április", "Május"];
+                    const summerMonths = ["Június", "Július", "Augusztus"];
+                    const autumnMonths = ["Szeptember", "Október", "November"];
+                    
+                    // Determine expected answer based on month
+                    if (winterMonths.includes(month)) {
+                        expectedAnswer = "Tél";
+                        isCorrect = input.value.toLowerCase() === "tél";
+                    } else if (springMonths.includes(month)) {
+                        expectedAnswer = "Tavasz";
+                        isCorrect = input.value.toLowerCase() === "tavasz";
+                    } else if (summerMonths.includes(month)) {
+                        expectedAnswer = "Nyár";
+                        isCorrect = input.value.toLowerCase() === "nyár";
+                    } else if (autumnMonths.includes(month)) {
+                        expectedAnswer = "Ősz";
+                        isCorrect = input.value.toLowerCase() === "ősz";
+                    }
+                }
+            }
+
+
             // For other questions, we'll just mark them as "correct" for now
             else {
                 isCorrect = true;
