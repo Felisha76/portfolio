@@ -116,9 +116,12 @@ function generateTestQuestions() {
     const randomMinute = Math.floor(Math.random() * 60);
 
     const analogToDigitalQuestion = document.createElement("div");
-    analogToDigitalQuestion.innerHTML = `<p>Hány óra van az alábbi analóg órán? (${randomHour}:${randomMinute.toString().padStart(2, '0')})</p>
+    analogToDigitalQuestion.innerHTML = `<p>Hány óra van az alábbi analóg órán? (DE és DU is elfogadható)</p>
                                         <canvas id='testClockCanvas' width='200' height='200'></canvas>
                                         <input type='time' id='analog-answer' required>`;
+    // Store the expected time as data attributes
+    analogToDigitalQuestion.dataset.expectedHour = randomHour;
+    analogToDigitalQuestion.dataset.expectedMinute = randomMinute;
     testContainer.appendChild(analogToDigitalQuestion);
     drawTestClock(randomHour, randomMinute, 'testClockCanvas');
 
@@ -302,18 +305,10 @@ function checkAnswers() {
         if (input.type === "time" && input.value) {
             totalAnswered++;
             
-            // Get the expected time from the canvas
-            // For this example, we'll extract it from the question text if available
-            // In a real implementation, you would store this when creating the test
-            let expectedHour = 0;
-            let expectedMinute = 0;
-            
-            // Try to extract from question text (if you added it for debugging)
-            const timeMatch = questionText.match(/\((\d+):(\d+)\)/);
-            if (timeMatch) {
-                expectedHour = parseInt(timeMatch[1]);
-                expectedMinute = parseInt(timeMatch[2]);
-            }
+            // Get the expected time from the data attributes
+            const questionDiv = input.closest("div");
+            const expectedHour = parseInt(questionDiv.dataset.expectedHour || 0);
+            const expectedMinute = parseInt(questionDiv.dataset.expectedMinute || 0);
             
             // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
