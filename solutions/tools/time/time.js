@@ -375,8 +375,8 @@ function checkAnswers() {
                     
                     if (month in monthNumbers) {
                         expectedAnswer = monthNumbers[month].toString();
-                        // Compare the user's input with the expected number
-                        isCorrect = parseInt(input.value) === monthNumbers[month];
+                        // Compare the user's input with the expected number, allowing for both string and number inputs
+                        isCorrect = input.value.trim() === expectedAnswer || parseInt(input.value) === monthNumbers[month];
                     }
                 }
             }
