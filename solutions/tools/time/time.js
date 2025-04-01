@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     clockCanvas.addEventListener("mousemove", function (event) {
         if (!draggingHand) return;
+        
         let rect = clockCanvas.getBoundingClientRect();
         let x = event.clientX - rect.left - 100;
         let y = event.clientY - rect.top - 100;
