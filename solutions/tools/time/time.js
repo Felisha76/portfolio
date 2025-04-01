@@ -348,13 +348,16 @@ function checkAnswers() {
                     if (["Január", "Március", "Május", "Július", "Augusztus", "Október", "December"].includes(month)) {
                         expectedAnswer = "31";
                         isCorrect = input.value.trim() === "31";
+                    } else if (["Április", "Június", "Szeptember", "November"].includes(month)) {
+                        expectedAnswer = "30";
+                        isCorrect = input.value.trim() === "30";
                     } else if (month === "Február") {
                         expectedAnswer = "28/29";
                         isCorrect = input.value.trim() === "28" || input.value.trim() === "29" || input.value.trim() === "28/29";
-                    } else {
+                    } /*else {
                         expectedAnswer = "30";
                         isCorrect = input.value.trim() === "30";
-                    }
+                    } */
                 }
             }
             else if (questionText.includes("Hanyadik hónap a")) {
