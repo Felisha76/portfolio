@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idő Tanuló App</title>
+    <link rel="stylesheet" href="time.css">
+    
+</head>
+<body>
+    <div id="settings">
+        <label for="clockType">Óratípus:</label>
+        <select id="clockType">
+            <option value="analog">Analóg</option>
+            <option value="digital">Digitális</option>
+        </select>
+        
+        <label for="timeFormat">Időformátum:</label>
+        <select id="timeFormat">
+            <option value="12">12 órás</option>
+            <option value="24">24 órás</option>
+        </select>
+    </div>
+
+    <div id="clock-container">
+        <div id="analog-clock">
+            <canvas id="clockCanvas" width="200" height="200"></canvas>
+        </div>
+        <div id="digital-clock">
+            <input type="number" id="digital-hours" min="0" max="23" placeholder="HH">
+            :
+            <input type="number" id="digital-minutes" min="0" max="59" placeholder="MM">
+        </div>
+    </div>
+
+    <div id="question-settings">
+        <label for="questionType">Kérdés típusa:</label>
+        <select id="questionType">
+            <option value="analog-to-digital">Analógról digitálisra</option>
+            <option value="digital-to-analog">Digitálisról analógra</option>
+            <option value="year-related">Évekről váltás</option>
+            <option value="month-related">Hónapokról váltás</option>
+            <option value="day-related">Napokról váltás</option>
+            <option value="hour-related">Órákról váltás</option>
+            <option value="minute-related">Percekről váltás</option>
+            <option value="all" selected>Mind</option>
+        </select>
+        <button id="startTest">Teszt indítása</button>
+    </div>
+
+    <div id="questions">
+        <!-- A tesztkérdések ide kerülnek dinamikusan -->
+    </div>
+    
+    <script src="time.js"></script>
+   
+</body>
+</html>
