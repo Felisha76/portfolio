@@ -532,11 +532,11 @@ function checkAnswers() {
     
     // Add a results message
     const resultsMessage = document.createElement("div");
-    resultsMessage.style.marginTop = "20px";
+    /*resultsMessage.style.marginTop = "20px";
     resultsMessage.style.padding = "10px";
     resultsMessage.style.backgroundColor = "#f8f9fa";
     resultsMessage.style.border = "1px solid #dee2e6";
-    resultsMessage.style.borderRadius = "5px";
+    resultsMessage.style.borderRadius = "5px"; */
     resultsMessage.innerHTML = `
         <h3>Results</h3>
         <p>You got ${correctCount} out of ${totalAnswered} questions correct (${percentage}%).</p>

@@ -1,61 +1,113 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Sans';
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #1c1d1d;
+    color: #d2d4d6;
     margin: 0;
     padding: 20px;
 }
+
+h1, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #d2d4d6;
+    font-family: 'Noto Sans';
+    text-align: right;
+}
+
 #settings, #question-settings {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: white;
+    background: #272929;
+    color: #d2d4d6;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 #clock-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
-    background: white;
+    padding: 2px;
+    background: #999b9e;
+    color: #1c1d1d;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-#analog-clock, #digital-clock {
+
+#setClockCanvas, #testClockCanvas  {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #999b9e;
+    color: #1c1d1d;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#analog-clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#digital-clock {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 #digital-clock input {
     width: 50px;
     font-size: 1.2em;
     text-align: center;
+    vertical-align: top;
 }
 button {
-    background-color: #007bff;
-    color: white;
+    background-color: #999b9e;
+    color: #1c1d1d;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #0056b3;
+    background-color: #1c1d1d;
+    color: #999b9e;
 }
 #questions {
     width: 100%;
     max-width: 600px;
     margin-top: 20px;
-    background: white;
+    background: #1c1d1d;
+    color: #d2d4d6;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#results-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #272929;
+    color: #d2d4d6;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2px;
 }
