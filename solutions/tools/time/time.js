@@ -140,14 +140,14 @@ function generateTestQuestions() {
 
     const generalQuestions = [
         `Hány napból áll egy év? - FIXED`,
-        `Hány napból áll a ${randomMonth} hónap? - FIXED`,
-        `Hanyadik hónap a ${randomMonth}? - FIXED`,
-        `Melyik évszakba tartozik a ${randomMonth}? - FIXED`,
-        `A(z) ${randomSeason} melyik hónapokból áll?`,
+        `Hány napból áll a ${randomMonth} hónap? - not working yet `,
+        `Hanyadik hónap a ${randomMonth}? -  not working yet`,
+        `Melyik évszakba tartozik a ${randomMonth}? -  not working yet`,
+        `A(z) ${randomSeason} melyik hónapokból áll? -  not working yet`,
         `Hány hétből áll egy év? - FIXED`,
         `Hány hónapból áll egy év? - FIXED`,
         `Hány órából áll egy nap? - FIXED`,
-        `Mik a hét napjai?`
+        `Mik a hét napjai? -  not working yet`
     ];
     generalQuestions.forEach(question => {
         let div = document.createElement("div");
