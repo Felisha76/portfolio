@@ -139,14 +139,14 @@ function generateTestQuestions() {
     const randomSeason = getRandomItem(Object.keys(seasons));
 
     const generalQuestions = [
-        `Hány napból áll egy év?`,
-        `Hány napból áll a ${randomMonth} hónap?`,
-        `Hanyadik hónap a ${randomMonth}?`,
+        `Hány napból áll egy év? - FIXED`,
+        `Hány napból áll a ${randomMonth} hónap? - FIXED`,
+        `Hanyadik hónap a ${randomMonth}? - FIXED`,
         `Melyik évszakba tartozik a ${randomMonth}?`,
         `A(z) ${randomSeason} melyik hónapokból áll?`,
-        `Hány hétből áll egy év?`,
-        `Hány hónapból áll egy év?`,
-        `Hány órából áll egy nap?`,
+        `Hány hétből áll egy év? - FIXED`,
+        `Hány hónapból áll egy év? - FIXED`,
+        `Hány órából áll egy nap? - FIXED`,
         `Mik a hét napjai?`
     ];
     generalQuestions.forEach(question => {
@@ -401,9 +401,10 @@ function checkAnswers() {
             }
 
             else if (questionText.includes("Melyik évszakba tartozik a")) {
-                const monthMatch = questionText.match(/Melyik évszakba tartozik a (\w+)/);
+                const monthMatch = questionText.match(/Melyik évszakba tartozik a ([^\?]+)/);
+                
                 if (monthMatch) {
-                    const month = monthMatch[1];
+                    const month = monthMatch[1].trim();
                     
                     // Define seasons based on months
                     const winterMonths = ["December", "Január", "Február"];
@@ -414,20 +415,20 @@ function checkAnswers() {
                     // Determine expected answer based on month
                     if (winterMonths.includes(month)) {
                         expectedAnswer = "Tél";
-                        isCorrect = input.value.toLowerCase() === "tél";
+                        isCorrect = input.value.toLowerCase().trim() === "tél";
                     } else if (springMonths.includes(month)) {
                         expectedAnswer = "Tavasz";
-                        isCorrect = input.value.toLowerCase() === "tavasz";
+                        isCorrect = input.value.toLowerCase().trim() === "tavasz";
                     } else if (summerMonths.includes(month)) {
                         expectedAnswer = "Nyár";
-                        isCorrect = input.value.toLowerCase() === "nyár";
+                        isCorrect = input.value.toLowerCase().trim() === "nyár";
                     } else if (autumnMonths.includes(month)) {
                         expectedAnswer = "Ősz";
-                        isCorrect = input.value.toLowerCase() === "ősz";
+                        isCorrect = input.value.toLowerCase().trim() === "ősz";
                     }
                 }
             }
-
+            
 
             // For other questions, we'll just mark them as "correct" for now
             else {
