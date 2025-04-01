@@ -338,18 +338,22 @@ function checkAnswers() {
                 isCorrect = input.value === "365";
             }
             else if (questionText.includes("Hány napból áll a")) {
-                const monthMatch = questionText.match(/Hány napból áll a (\w+)/);
+                // Use a more inclusive regex pattern that captures accented characters
+                const monthMatch = questionText.match(/Hány napból áll a ([^\?]+)/);
+                
                 if (monthMatch) {
-                    const month = monthMatch[1];
+                    // Trim any whitespace from the extracted month name
+                    const month = monthMatch[1].trim();
+                    
                     if (["Január", "Március", "Május", "Július", "Augusztus", "Október", "December"].includes(month)) {
                         expectedAnswer = "31";
-                        isCorrect = input.value === "31";
+                        isCorrect = input.value.trim() === "31";
                     } else if (month === "Február") {
                         expectedAnswer = "28/29";
-                        isCorrect = input.value === "28" || input.value === "29" || input.value === "28/29";
+                        isCorrect = input.value.trim() === "28" || input.value.trim() === "29" || input.value.trim() === "28/29";
                     } else {
                         expectedAnswer = "30";
-                        isCorrect = input.value === "30";
+                        isCorrect = input.value.trim() === "30";
                     }
                 }
             }
