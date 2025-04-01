@@ -282,7 +282,7 @@ function setupAnalogClockInteraction(canvasId) {
     canvas.addEventListener("mouseup", updateDataset);
 }
 
-// Add this function to check answers and display results
+// CHECK ANSWERS
 function checkAnswers() {
     console.log("Checking answers...");
     
@@ -353,6 +353,7 @@ function checkAnswers() {
                     }
                 }
             }
+
             else if (questionText.includes("Hanyadik hónap a")) {
                 const monthMatch = questionText.match(/Hanyadik hónap a (\w+)/);
                 if (monthMatch) {
@@ -422,6 +423,39 @@ function checkAnswers() {
                 }
             }
 
+            // Season based month question
+            else if (questionText.includes("melyik hónapokból áll")) {
+                const seasonMatch = questionText.match(/A\(z\) (\w+) melyik hónapokból áll\?/);
+                if (seasonMatch) {
+                    const season = seasonMatch[1];
+                    
+                    // Define the correct months for each season
+                    const seasonMonths = {
+                        "Tél": ["december", "január", "február"],
+                        "Tavasz": ["március", "április", "május"],
+                        "Nyár": ["június", "július", "augusztus"],
+                        "Ősz": ["szeptember", "október", "november"]
+                    };
+                    
+                    if (season in seasonMonths) {
+                        expectedAnswer = seasonMonths[season].join(", ");
+                        
+                        // Normalize and compare user input with expected months
+                        const userMonths = input.value.toLowerCase().split(/,\s*|\s+/);
+                        const correctMonths = seasonMonths[season];
+                        
+                        // Check if user provided all correct months (order doesn't matter)
+                        const allCorrectMonthsPresent = correctMonths.every(month => 
+                            userMonths.some(userMonth => userMonth.includes(month)));
+                        
+                        // Check if user didn't provide any incorrect months
+                        const noIncorrectMonthsPresent = userMonths.every(userMonth => 
+                            correctMonths.some(month => userMonth.includes(month)));
+                        
+                        isCorrect = allCorrectMonthsPresent && noIncorrectMonthsPresent;
+                    }
+                }
+            }
 
             // For other questions, we'll just mark them as "correct" for now
             else {
