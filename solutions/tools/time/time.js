@@ -142,7 +142,7 @@ function generateTestQuestions() {
         `Hány napból áll egy év? - FIXED`,
         `Hány napból áll a ${randomMonth} hónap? - FIXED`,
         `Hanyadik hónap a ${randomMonth}? - FIXED`,
-        `Melyik évszakba tartozik a ${randomMonth}?`,
+        `Melyik évszakba tartozik a ${randomMonth}? - FIXED`,
         `A(z) ${randomSeason} melyik hónapokból áll?`,
         `Hány hétből áll egy év? - FIXED`,
         `Hány hónapból áll egy év? - FIXED`,
@@ -428,7 +428,7 @@ function checkAnswers() {
                     }
                 }
             }
-
+/*
             else if (questionText.includes("melyik hónapokból áll")) {
                 const seasonMatch = questionText.match(/A\(z\) ([^\?]+) melyik hónapokból áll/);
                 
@@ -465,7 +465,7 @@ function checkAnswers() {
                         isCorrect = isCorrect || allMonthsPresent;
                     }
                 }
-            }
+            } */
 
 
             // For other questions, we'll just mark them as "correct" for now
