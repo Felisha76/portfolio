@@ -103,49 +103,133 @@ document.addEventListener("DOMContentLoaded", function () {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    function generateTestQuestions() {
-        testContainer.innerHTML = "";
-        const months = ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"];
-        const seasons = { "tél": ["december", "január", "február"], "tavasz": ["március", "április", "május"], "nyár": ["június", "július", "augusztus"], "ősz": ["szeptember", "október", "november"] };
+    // Tesztkérdések generálása
+function generateTestQuestions() {
+    const testContainer = document.getElementById("test-container");
+    testContainer.style.display = "block"; // Make sure it's visible
+    testContainer.innerHTML = "";
+
+    // 1. típus: Analóg <-> Digitális átváltás
+    const analogToDigitalQuestion = document.createElement("div");
+    let randomHour = Math.floor(Math.random() * 12);
+    let randomMinute = Math.floor(Math.random() * 60);
+    analogToDigitalQuestion.innerHTML = `<p>Hány óra van az alábbi analóg órán?</p>
+                                         <canvas id='testClockCanvas' width='200' height='200'></canvas>
+                                         <input type='time' id='analog-answer' required>`;
+    testContainer.appendChild(analogToDigitalQuestion);
+    drawTestClock(randomHour, randomMinute, 'testClockCanvas');
+
+    const digitalToAnalogQuestion = document.createElement("div");
+    digitalToAnalogQuestion.innerHTML = `<p>Állítsd be az analóg órát erre az időre: ${randomHour}:${randomMinute.toString().padStart(2, '0')}</p>
+                                         <canvas id='setClockCanvas' width='200' height='200'></canvas>`;
+    testContainer.appendChild(digitalToAnalogQuestion);
+    setupAnalogClockInteraction("setClockCanvas");
+
+    // 2. típus: Idővel kapcsolatos kérdések
+    const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
+    const seasons = { "Tavasz": ["Március", "Április", "Május"], "Nyár": ["Június", "Július", "Augusztus"], "Ősz": ["Szeptember", "Október", "November"], "Tél": ["December", "Január", "Február"] };
+    const randomMonth = getRandomItem(months);
+    const randomSeason = getRandomItem(Object.keys(seasons));
+
+    const generalQuestions = [
+        `Hány napból áll egy év?`,
+        `Hány napból áll a ${randomMonth} hónap?`,
+        `Hanyadik hónap a ${randomMonth}?`,
+        `Melyik évszakba tartozik a ${randomMonth}?`,
+        `A(z) ${randomSeason} melyik hónapokból áll?`,
+        `Hány hétből áll egy év?`,
+        `Hány hónapból áll egy év?`,
+        `Hány órából áll egy nap?`,
+        `Mik a hét napjai?`
+    ];
+    generalQuestions.forEach(question => {
+        let div = document.createElement("div");
+        div.innerHTML = `<p>${question}</p><input type='text' required>`;
+        testContainer.appendChild(div);
+    });
+
+    // 3. típus: Időtartam kérdések
+    const randomStartHour = Math.floor(Math.random() * 24);
+    const randomStartMinute = Math.floor(Math.random() * 60);
+    const travelMinutes = Math.floor(Math.random() * 90);
+
+    const durationQuestions = [
+        `Ha a lány ${randomStartHour}:${randomStartMinute} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda?`,
+        `Ha egy vonat ${randomStartHour}:${randomStartMinute}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni?`,
+        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute}-kor kezdődik és ${randomStartHour + 2}:${randomStartMinute}-kor ér véget, hány percig tart?`
+    ];
+    durationQuestions.forEach(question => {
+        let div = document.createElement("div");
+        div.innerHTML = `<p>${question}</p><input type='text' required>`;
+        testContainer.appendChild(div);
+    });
+}
+
+// Óra rajzolása a teszthez
+function drawTestClock(hour, minute, canvasId) {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(100, 100, 90, 0, Math.PI * 2);
+    ctx.stroke();
+
+    for (let i = 1; i <= 12; i++) {
+        let angle = (i * 30 - 90) * (Math.PI / 180);
+        let x = 100 + Math.cos(angle) * 75;
+        let y = 100 + Math.sin(angle) * 75;
+        ctx.fillText(i, x - 5, y + 5);
+    }
+
+    let hourAngle = ((hour % 12) * 30 + minute / 2) * (Math.PI / 180) - Math.PI / 2;
+    let minuteAngle = (minute * 6) * (Math.PI / 180) - Math.PI / 2;
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100 + 40 * Math.cos(hourAngle), 100 + 40 * Math.sin(hourAngle));
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100 + 60 * Math.cos(minuteAngle), 100 + 60 * Math.sin(minuteAngle));
+    ctx.stroke();
+}
+
+// Interaktív óra beállítás
+function setupAnalogClockInteraction(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext("2d");
+    let userHours = 0;
+    let userMinutes = 0;
+    
+    // Draw initial clock
+    drawTestClock(userHours, userMinutes, canvasId);
+    
+    canvas.addEventListener("mousedown", function(event) {
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left - 100;
+        let y = event.clientY - rect.top - 100;
+        let angle = Math.atan2(y, x) + Math.PI / 2;
         
-        let randomMonth = getRandomItem(months);
-        let randomSeason = getRandomItem(Object.keys(seasons));
+        // Determine if user is trying to move hour or minute hand
+        let distance = Math.sqrt(x*x + y*y);
+        if (distance < 50) {
+            // Closer to center, likely hour hand
+            userHours = Math.round((angle / (Math.PI * 2)) * 12) % 12;
+            if (userHours < 0) userHours += 12;
+        } else {
+            // Further from center, likely minute hand
+            userMinutes = Math.round((angle / (Math.PI * 2)) * 60) % 60;
+            if (userMinutes < 0) userMinutes += 60;
+        }
+        
+        // Redraw the clock with new values
+        drawTestClock(userHours, userMinutes, canvasId);
+    });
+}
 
-        const questions = [
-            { question: "Hány napból áll egy év?", answer: "365" },
-            { question: `Hány napból áll a ${randomMonth}?`, answer: randomMonth === "február" ? "28" : (["április", "június", "szeptember", "november"].includes(randomMonth) ? "30" : "31") },
-            { question: `Hanyadik hónap a ${randomMonth}?`, answer: (months.indexOf(randomMonth) + 1).toString() },
-            { question: `Melyik évszakba tartozik a ${randomMonth}?`, answer: Object.keys(seasons).find(season => seasons[season].includes(randomMonth)) },
-            { question: `A(z) ${randomSeason} melyik hónapokból áll?`, answer: seasons[randomSeason].join(", ") }
-        ];
-
-        questions.forEach((q, index) => {
-            let questionDiv = document.createElement("div");
-            questionDiv.innerHTML = `<p>${q.question}</p><input type='text' id='answer-${index}'>`;
-            testContainer.appendChild(questionDiv);
-        });
-
-        let submitBtn = document.createElement("button");
-        submitBtn.textContent = "Ellenőrzés";
-        submitBtn.addEventListener("click", checkAnswers);
-        testContainer.appendChild(submitBtn);
-    }
-
-    function checkAnswers() {
-        const inputs = testContainer.querySelectorAll("input");
-        let correctCount = 0;
-        inputs.forEach((input, index) => {
-            if (input.value.trim().toLowerCase() === questions[index].answer.toLowerCase()) {
-                input.style.borderColor = "green";
-                correctCount++;
-            } else {
-                input.style.borderColor = "red";
-            }
-        });
-        alert(`Helyes válaszok száma: ${correctCount}/${inputs.length}`);
-    }
-
-    startTestBtn.addEventListener("click", generateTestQuestions);
+// Teszt indítása
+document.getElementById("start-test").addEventListener("click", generateTestQuestions);
 
     drawClock();
     updateDigitalClock();

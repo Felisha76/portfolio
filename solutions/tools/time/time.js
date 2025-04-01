@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Tesztkérdések generálása
 function generateTestQuestions() {
     const testContainer = document.getElementById("test-container");
+    testContainer.style.display = "block"; // Make sure it's visible
     testContainer.innerHTML = "";
 
     // 1. típus: Analóg <-> Digitális átváltás
@@ -116,7 +117,7 @@ function generateTestQuestions() {
                                          <canvas id='testClockCanvas' width='200' height='200'></canvas>
                                          <input type='time' id='analog-answer' required>`;
     testContainer.appendChild(analogToDigitalQuestion);
-    drawTestClock(randomHour, randomMinute);
+    drawTestClock(randomHour, randomMinute, 'testClockCanvas');
 
     const digitalToAnalogQuestion = document.createElement("div");
     digitalToAnalogQuestion.innerHTML = `<p>Állítsd be az analóg órát erre az időre: ${randomHour}:${randomMinute.toString().padStart(2, '0')}</p>
@@ -197,18 +198,39 @@ function drawTestClock(hour, minute, canvasId) {
 // Interaktív óra beállítás
 function setupAnalogClockInteraction(canvasId) {
     const canvas = document.getElementById(canvasId);
-    canvas.addEventListener("mousedown", function () {
-        alert("Itt lehetne egy óramutató állító mechanizmus.");
+    const ctx = canvas.getContext("2d");
+    let userHours = 0;
+    let userMinutes = 0;
+    
+    // Draw initial clock
+    drawTestClock(userHours, userMinutes, canvasId);
+    
+    canvas.addEventListener("mousedown", function(event) {
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left - 100;
+        let y = event.clientY - rect.top - 100;
+        let angle = Math.atan2(y, x) + Math.PI / 2;
+        
+        // Determine if user is trying to move hour or minute hand
+        let distance = Math.sqrt(x*x + y*y);
+        if (distance < 50) {
+            // Closer to center, likely hour hand
+            userHours = Math.round((angle / (Math.PI * 2)) * 12) % 12;
+            if (userHours < 0) userHours += 12;
+        } else {
+            // Further from center, likely minute hand
+            userMinutes = Math.round((angle / (Math.PI * 2)) * 60) % 60;
+            if (userMinutes < 0) userMinutes += 60;
+        }
+        
+        // Redraw the clock with new values
+        drawTestClock(userHours, userMinutes, canvasId);
     });
 }
 
 // Teszt indítása
 document.getElementById("start-test").addEventListener("click", generateTestQuestions);
 
-function getRandomItem(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
-   
     drawClock();
     updateDigitalClock();
 });
