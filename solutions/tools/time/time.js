@@ -404,22 +404,28 @@ function checkAnswers() {
         let isCorrect = false;
         
         if (timeMatch) {
-            const expectedHour = parseInt(timeMatch[1]);
+            const expectedHour = parseInt(timeMatch[1]) % 12;
             const expectedMinute = parseInt(timeMatch[2]);
             
-            // In a real implementation, you would get the user's set time from the canvas
-            // For now, we'll just mark it as correct if the user interacted with it
-            // This is a placeholder - you would need to implement proper validation
-            
-            // Assume it's correct for demonstration
-            isCorrect = true;
-            correctCount++;
-        }
-        
-        setClockCanvas.style.border = isCorrect ? 
-            "3px solid #28a745" : // Green border
-            "3px solid #dc3545";  // Red border
-    }
+           // Get the user's set time from the canvas data attributes
+           const userHours = parseInt(setClockCanvas.dataset.userHours || 0);
+           const userMinutes = parseInt(setClockCanvas.dataset.userMinutes || 0);
+           
+           // Check if the time is correct (with some tolerance for minutes)
+           const hourCorrect = userHours % 12 === expectedHour % 12;
+           const minuteCorrect = Math.abs(userMinutes - expectedMinute) <= 2; // Allow 2 minutes tolerance
+           
+           isCorrect = hourCorrect && minuteCorrect;
+           
+           if (isCorrect) {
+               correctCount++;
+           }
+       }
+       
+       setClockCanvas.style.border = isCorrect ? 
+           "3px solid #28a745" : // Green border
+           "3px solid #dc3545";  // Red border
+   }
     
     // Calculate percentage
     const percentage = totalAnswered > 0 ? Math.round((correctCount / totalAnswered) * 100) : 0;
