@@ -103,7 +103,50 @@ document.addEventListener("DOMContentLoaded", function () {
         return arr[Math.floor(Math.random() * arr.length)];
     }
 
-   
+    function generateTestQuestions() {
+        testContainer.innerHTML = "";
+        const months = ["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"];
+        const seasons = { "tél": ["december", "január", "február"], "tavasz": ["március", "április", "május"], "nyár": ["június", "július", "augusztus"], "ősz": ["szeptember", "október", "november"] };
+        
+        let randomMonth = getRandomItem(months);
+        let randomSeason = getRandomItem(Object.keys(seasons));
+
+        const questions = [
+            { question: "Hány napból áll egy év?", answer: "365" },
+            { question: `Hány napból áll a ${randomMonth}?`, answer: randomMonth === "február" ? "28" : (["április", "június", "szeptember", "november"].includes(randomMonth) ? "30" : "31") },
+            { question: `Hanyadik hónap a ${randomMonth}?`, answer: (months.indexOf(randomMonth) + 1).toString() },
+            { question: `Melyik évszakba tartozik a ${randomMonth}?`, answer: Object.keys(seasons).find(season => seasons[season].includes(randomMonth)) },
+            { question: `A(z) ${randomSeason} melyik hónapokból áll?`, answer: seasons[randomSeason].join(", ") }
+        ];
+
+        questions.forEach((q, index) => {
+            let questionDiv = document.createElement("div");
+            questionDiv.innerHTML = `<p>${q.question}</p><input type='text' id='answer-${index}'>`;
+            testContainer.appendChild(questionDiv);
+        });
+
+        let submitBtn = document.createElement("button");
+        submitBtn.textContent = "Ellenőrzés";
+        submitBtn.addEventListener("click", checkAnswers);
+        testContainer.appendChild(submitBtn);
+    }
+
+    function checkAnswers() {
+        const inputs = testContainer.querySelectorAll("input");
+        let correctCount = 0;
+        inputs.forEach((input, index) => {
+            if (input.value.trim().toLowerCase() === questions[index].answer.toLowerCase()) {
+                input.style.borderColor = "green";
+                correctCount++;
+            } else {
+                input.style.borderColor = "red";
+            }
+        });
+        alert(`Helyes válaszok száma: ${correctCount}/${inputs.length}`);
+    }
+
+    startTestBtn.addEventListener("click", generateTestQuestions);
+
     drawClock();
     updateDigitalClock();
 });
