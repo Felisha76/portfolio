@@ -485,7 +485,7 @@ function checkAnswers() {
             }
 
             // For time input questions related to duration calculations (last 3 questions)
-            else if (input.type === "time" && (questionText.includes("perc") || questionText.includes("hány percig tart"))) {
+            else if (questionText.includes("Ha a lány") || questionText.includes("Ha egy vonat") || questionText.includes("Ha egy focimeccs")) {
                 totalAnswered++;
                 
                 let isCorrect = false;
