@@ -161,11 +161,11 @@ function generateTestQuestions() {
         `Hány napos a ${randomMonth} hónap? - FIXED`,
         `Hanyadik hónap a ${randomMonth}? - FIXED`,
         `Melyik évszakba tartozik a ${randomMonth}? - FIXED`,
-        `A(z) ${randomSeason} melyik hónapokból áll? -  doesn't work yet`,
+        //`A(z) ${randomSeason} melyik hónapokból áll? -  doesn't work yet`,
         `Hány hétből áll egy év? - FIXED`,
         `Hány hónapból áll egy év? - FIXED`,
         `Hány órából áll egy nap? - FIXED`,
-        `Mik a hét napjai? -  doesn't work yet`
+        //`Mik a hét napjai? -  doesn't work yet`
     ];
     generalQuestions.forEach(question => {
         let div = document.createElement("div");
