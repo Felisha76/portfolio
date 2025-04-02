@@ -53,6 +53,8 @@ h1, h3, p {
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    width: 200px;
+    height: 200px;
     background: #999b9e;
     color: #1c1d1d;
     border-radius: 5px;
@@ -63,6 +65,11 @@ h1, h3, p {
     align-items: center;
     justify-content: center;
     
+}
+
+#analog-answer {
+    width: 100px;
+    height: 20px;
 }
 
 #digital-clock {
@@ -77,6 +84,42 @@ h1, h3, p {
     text-align: center;
     vertical-align: top;
 }
+
+#test-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #999b9e;
+    color: #1c1d1d;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clock_question_row {
+    display: flex;
+    gap: 20px; /* Adjust spacing between elements */
+    align-items: center; /* Align vertically if needed */
+}
+
+.digital_clock_question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between elements */
+}
+
+.analog_clock_question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between elements */
+}
+
 button {
     background-color: #999b9e;
     color: #1c1d1d;
