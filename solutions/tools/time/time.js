@@ -131,9 +131,9 @@ function generateTestQuestions() {
     // Store the expected time as data attributes
     analogToDigitalQuestion.dataset.expectedHour = randomHour1;
     analogToDigitalQuestion.dataset.expectedMinute = randomMinute1;
-    testContainer.appendChild(analogToDigitalQuestion);
+    testContainer.appendChild(analogToDigitalQuestion);    
     drawTestClock(randomHour1, randomMinute1, 'testClockCanvas');
-
+ 
     // Generate a different random time for the second question
     const randomHour2 = Math.floor(Math.random() * 12);
     const randomMinute2 = Math.floor(Math.random() * 60);

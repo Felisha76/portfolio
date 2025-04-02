@@ -105,12 +105,21 @@ h1, h3, p {
     gap: 20px; /* Adjust spacing between elements */
     align-items: center; /* Align vertically if needed */
 }
+
+.question_row {
+    display: inline-flex;
+    flex-direction:row;
+    background-color: aqua;
+    gap: 20px; /* Adjust spacing between elements */
+    /*align-items: center; /* Align vertically if needed */
+}
+
 .question_row p {
-    align-items: flex-start;
+    align-items:start;
     background-color: rgb(8, 71, 173);
 }
 .question_row input {
-    align-items: flex-end;
+    align-items: end;
     background-color: rgb(5, 122, 47);
 }
 
