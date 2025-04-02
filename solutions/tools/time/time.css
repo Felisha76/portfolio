@@ -90,8 +90,8 @@ h1, h3, p {
     flex-direction: column;
     align-items:flex-end;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 2px;
+    padding: 2px;
     background: #999b9e;
     color: #1c1d1d;
     border-radius: 5px;
@@ -125,8 +125,8 @@ h1, h3, p {
 .question_row {
     display: flex;
     flex-direction:row;
-    background-color: aqua;
-    gap: 100px; /* Adjust spacing between elements */
+    background-color: none;
+    gap: 10px; /* Adjust spacing between elements */
 
 
     /*align-items: center; /* Align vertically if needed */
@@ -134,11 +134,11 @@ h1, h3, p {
 
 .question_row p {
     align-items:left;
-    background-color: rgb(8, 71, 173);
+    background-color: none;
 }
 .question_row input {
     align-items: right;
-    background-color: rgb(5, 122, 47);
+    background-color: none;
 }
 
 

@@ -115,7 +115,7 @@ function generateTestQuestions() {
     // 1. típus: Analóg <-> Digitális átváltás
     // Create a flex container for both elements
     const clockQuestionContainer = document.createElement("div");
-    clockQuestionContainer.classList.add("clock_question_row"); // Add a class for styling
+    //clockQuestionContainer.classList.add("clock_question_row"); // Add a class for styling
     
     // Generate the first question
     const randomHour1 = Math.floor(Math.random() * 12);
