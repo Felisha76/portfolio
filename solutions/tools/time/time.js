@@ -191,9 +191,9 @@ function generateTestQuestions() {
     }
 
     const durationQuestions = [
-        `Ha a lány ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda?`,
-        `Ha egy vonat ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni?`,
-        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')}-kor kezdődik és ${matchEndHour}:${matchEndMinute.toString().padStart(2, '0')}-kor ér véget, hány percig tart?`
+        `Ha a lány ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda? - doesn't work yet`,
+        `Ha egy vonat ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni? - doesn't work yet`,
+        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')}-kor kezdődik és ${matchEndHour}:${matchEndMinute.toString().padStart(2, '0')}-kor ér véget, hány percig tart? - doesn't work yet`
     ];
     durationQuestions.forEach(question => {
         let div = document.createElement("div");
