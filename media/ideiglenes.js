@@ -1,8 +1,5 @@
-// Inside the checkAnswers function, add this code to handle duration questions
-// Add this after the other question type checks
-
 // For time input questions related to duration calculations
-else if (input.type === "time" && questionText.includes("perc")) {
+else if (input.type === "time" && (questionText.includes("perc") || questionText.includes("hány percig tart"))) {
     totalAnswered++;
     
     let isCorrect = false;
@@ -34,9 +31,9 @@ else if (input.type === "time" && questionText.includes("perc")) {
             
             // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
-            const userAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
             
-            isCorrect = userAnswer === expectedAnswer;
+            // Compare hours and minutes separately to handle 24-hour format differences
+            isCorrect = (userHours % 24 === expectedHour % 24) && (userMinutes === expectedMinute);
         }
     }
     
@@ -51,7 +48,7 @@ else if (input.type === "time" && questionText.includes("perc")) {
             const arrivalMinute = parseInt(arrivalTimeMatch[2]);
             const travelMinutes = parseInt(travelMinutesMatch[1]);
             
-            // Calculate expected departure time
+            // Calculate expected departure time (when to leave to arrive at the specified time)
             let expectedHour = arrivalHour;
             let expectedMinute = arrivalMinute - travelMinutes;
             
@@ -66,9 +63,9 @@ else if (input.type === "time" && questionText.includes("perc")) {
             
             // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
-            const userAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
             
-            isCorrect = userAnswer === expectedAnswer;
+            // Compare hours and minutes separately to handle 24-hour format differences
+            isCorrect = (userHours % 24 === expectedHour % 24) && (userMinutes === expectedMinute);
         }
     }
     
@@ -89,18 +86,18 @@ else if (input.type === "time" && questionText.includes("perc")) {
                 durationMinutes += 24 * 60; // Add a day if end time is on the next day
             }
             
-            // For this question, we expect a numeric answer in minutes
-            expectedAnswer = durationMinutes.toString();
+            // Calculate hours and minutes for display
+            const durationHours = Math.floor(durationMinutes / 60);
+            const remainingMinutes = durationMinutes % 60;
             
-            // Check if user's answer is correct
-            // Since the input is time type, we need to convert it to minutes
+            // Format expected answer in HH:MM format
+            expectedAnswer = `${durationHours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
+            
+            // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
-            const userAnswer = (userHours * 60 + userMinutes).toString();
             
-            isCorrect = userAnswer === expectedAnswer || 
-                        // Alternative: allow the answer as hours:minutes format
-                        (userHours === Math.floor(durationMinutes / 60) && 
-                         userMinutes === durationMinutes % 60);
+            // Check if user's answer matches the expected duration
+            isCorrect = (userHours === durationHours && userMinutes === remainingMinutes);
         }
     }
     
