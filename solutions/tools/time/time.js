@@ -145,8 +145,8 @@ function generateTestQuestions() {
 
     const generalQuestions = [
         `Hány napból áll egy év? - FIXED`,
-        `Hány napból áll a ${randomMonth} hónap? - not working yet `,
-        `Hanyadik hónap a ${randomMonth}? -  not working yet`,
+        `Hány napos a ${randomMonth} hónap? - FIXED`,
+        `Hanyadik hónap a ${randomMonth}? - FIXED`,
         `Melyik évszakba tartozik a ${randomMonth}? -  not working yet`,
         `A(z) ${randomSeason} melyik hónapokból áll? -  not working yet`,
         `Hány hétből áll egy év? - FIXED`,
@@ -344,7 +344,7 @@ function checkAnswers() {
             }
             else if (questionText.includes("Hány napból áll a")) {
                 // Use a more inclusive regex pattern that captures accented characters
-                const monthMatch = questionText.match(/Hány napból áll a ([^\?]+)/);
+                const monthMatch = questionText.match(/Hány napos a ([^\?]+)/);
                 
                 if (monthMatch) {
                     // Trim any whitespace from the extracted month name
