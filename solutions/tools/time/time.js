@@ -180,13 +180,14 @@ function generateTestQuestions() {
     const travelMinutes = Math.floor(Math.random() * 90);
 
     const durationQuestions = [
-        `Ha a lány ${randomStartHour}:${randomStartMinute} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda?`,
-        `Ha egy vonat ${randomStartHour}:${randomStartMinute}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni?`,
-        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute}-kor kezdődik és ${randomStartHour + 2}:${randomStartMinute}-kor ér véget, hány percig tart?`
+        `Ha a lány ${randomStartHour}:${randomStartMinute} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda? -  not working yet`,
+        `Ha egy vonat ${randomStartHour}:${randomStartMinute}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni? -  not working yet`,
+        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute}-kor kezdődik és ${randomStartHour + 2}:${randomStartMinute}-kor ér véget, hány percig tart? -  not working yet`
     ];
     durationQuestions.forEach(question => {
         let div = document.createElement("div");
-        div.innerHTML = `<p>${question}</p><input type='text' required>`;
+        div.classList.add("question_row"); // Add a class for styling fo each generated question
+        div.innerHTML = `<p>${question}</p><input type='time' required>`;
         testContainer.appendChild(div);
     });
 

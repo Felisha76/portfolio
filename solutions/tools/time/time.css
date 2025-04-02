@@ -98,6 +98,15 @@ h1, h3, p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+#test-container button {
+    background: #1c1d1d;
+    color: #999b9e;
+}
+#test-container button:hover {
+    background: #05c07e;
+    color: #1c1d1d;
+}
+
 .clock_question_row {
     display: flex;
     flex-direction: row;
@@ -143,16 +152,16 @@ h1, h3, p {
 
 
 button {
-    background-color: #999b9e;
-    color: #1c1d1d;
+    background-color: #1c1d1d;
+    color: #999b9e;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
 button:hover {
-    background-color: #1c1d1d;
-    color: #999b9e;
+    background-color: #999b9e;
+    color: #1c1d1d;
 }
 #questions {
     width: 100%;
