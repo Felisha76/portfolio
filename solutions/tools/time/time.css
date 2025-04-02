@@ -100,13 +100,23 @@ h1, h3, p {
 
 .clock_question_row {
     display: flex;
+    flex-direction: row;
+    background-color: aqua;
     gap: 20px; /* Adjust spacing between elements */
     align-items: center; /* Align vertically if needed */
+}
+.question_row p {
+    align-items: flex-start;
+    background-color: rgb(8, 71, 173);
+}
+.question_row input {
+    align-items: flex-end;
+    background-color: rgb(5, 122, 47);
 }
 
 .digital_clock_question {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px; /* Adjust spacing between elements */
@@ -114,10 +124,10 @@ h1, h3, p {
 
 .analog_clock_question {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Adjust spacing between elements */
+    gap: 0px; /* Adjust spacing between elements */
 }
 
 button {

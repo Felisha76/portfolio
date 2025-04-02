@@ -113,7 +113,6 @@ function generateTestQuestions() {
     testActive = true;
 
     // 1. típus: Analóg <-> Digitális átváltás
-
     // Create a flex container for both elements
     const clockQuestionContainer = document.createElement("div");
     clockQuestionContainer.classList.add("clock_question_row"); // Add a class for styling
@@ -126,9 +125,9 @@ function generateTestQuestions() {
     analogToDigitalQuestion.classList.add("analog_clock_question"); // Add a class for individual styling
     analogToDigitalQuestion.style.display = "flex";
     //analogToDigitalQuestion.style.flexDirection = "column"; // Stack elements vertically
-    analogToDigitalQuestion.innerHTML = `<canvas id='testClockCanvas' width='200' height='200'></canvas>
-                                        <p>Hány óra van az analóg órán? (DE és DU is elfogadható)</p>
-                                        <input type='time' id='analog-answer' required>`;
+    analogToDigitalQuestion.innerHTML = `<p>Hány óra van az analóg órán? (DE és DU is elfogadható)</p><br>
+                                        <input type='time' id='analog-answer' required>
+                                        <canvas id='testClockCanvas' width='200' height='200'></canvas>`;
     // Store the expected time as data attributes
     analogToDigitalQuestion.dataset.expectedHour = randomHour1;
     analogToDigitalQuestion.dataset.expectedMinute = randomMinute1;
@@ -143,9 +142,8 @@ function generateTestQuestions() {
     digitalToAnalogQuestion.classList.add("digital_clock_question"); // Add a class for individual styling
     digitalToAnalogQuestion.style.display = "flex";
     //digitalToAnalogQuestion.style.flexDirection = "column"; // Stack elements vertically
-    digitalToAnalogQuestion.innerHTML = `<canvas id='setClockCanvas' width='200' height='200'></canvas>
-                                        <p>Állítsd be az analóg órát erre az időre az óramutatók mozgatásával: <b> ${randomHour2}:${randomMinute2.toString().padStart(2, '0')}</b></p>
-                                        `;
+    digitalToAnalogQuestion.innerHTML = `<p>Állítsd be az analóg órát erre az időre az óramutatók mozgatásával: <b> ${randomHour2}:${randomMinute2.toString().padStart(2, '0')}</b></p>
+                                        <canvas id='setClockCanvas' width='200' height='200'></canvas>`;
     testContainer.appendChild(digitalToAnalogQuestion);
     setupAnalogClockInteraction("setClockCanvas");
 
