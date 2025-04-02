@@ -157,14 +157,14 @@ function generateTestQuestions() {
     const randomSeason = getRandomItem(Object.keys(seasons));
 
     const generalQuestions = [
-        `Hány napból áll egy év? - FIXED`,
-        `Hány napos a ${randomMonth} hónap? - FIXED`,
-        `Hanyadik hónap a ${randomMonth}? - FIXED`,
-        `Melyik évszakba tartozik a ${randomMonth}? - FIXED`,
+        `Hány napból áll egy év?`,
+        `Hány napos a ${randomMonth} hónap?`,
+        `Hanyadik hónap a ${randomMonth}?`,
+        `Melyik évszakba tartozik a ${randomMonth}?`,
         //`A(z) ${randomSeason} melyik hónapokból áll? -  doesn't work yet`,
-        `Hány hétből áll egy év? - FIXED`,
-        `Hány hónapból áll egy év? - FIXED`,
-        `Hány órából áll egy nap? - FIXED`,
+        `Hány hétből áll egy év?`,
+        `Hány hónapból áll egy év?`,
+        `Hány órából áll egy nap?`,
         //`Mik a hét napjai? -  doesn't work yet`
     ];
     generalQuestions.forEach(question => {
@@ -174,6 +174,7 @@ function generateTestQuestions() {
         testContainer.appendChild(div);
     });
 
+    /*
     // 3. típus: Időtartam kérdések
     const randomStartHour = Math.floor(Math.random() * 24);
     const randomStartMinute = Math.floor(Math.random() * 60);
@@ -200,7 +201,7 @@ function generateTestQuestions() {
         div.classList.add("question_row"); // Add a class for styling fo each generated question
         div.innerHTML = `<p>${question}</p><input type='time' required>`;
         testContainer.appendChild(div);
-    });
+    }); */
 
     // Add a check answers button at the end
     const checkButton = document.createElement("button");
