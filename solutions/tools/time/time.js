@@ -314,6 +314,11 @@ function setupAnalogClockInteraction(canvasId) {
 }
 
 // Function to CHECK ANSWERS and display results
+
+function formatTime(hours, minutes) {
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+}
+
 function checkAnswers() {
     console.log("Checking answers...");
     
@@ -348,13 +353,29 @@ function checkAnswers() {
             // Check if correct (allowing for 12/24 hour format)
             const isCorrect = (userHours % 12 === expectedHour % 12) && (userMinutes === expectedMinute);
             
+            
             if (isCorrect) {
                 input.style.backgroundColor = "#d4edda"; // Green background
                 correctCount++;
             } else {
                 input.style.backgroundColor = "#f8d7da"; // Red background
+            // Add expected answer as a paragraph
+            const expectedAnswer = formatTime(expectedHour, expectedMinute);
+            const answerHint = document.createElement("p");
+            answerHint.textContent = `Helyes válasz: ${expectedAnswer}`;
+            answerHint.style.color = "#dc3545";
+            answerHint.style.margin = "5px 0";
+            answerHint.classList.add("expected-answer");
+            
+            // Remove any existing hint
+            const existingHint = questionDiv.querySelector(".expected-answer");
+            if (existingHint) {
+                existingHint.remove();
             }
+            
+            questionDiv.appendChild(answerHint);
         }
+    }
 
         // For text inputs
         else if (input.type === "text" && input.value.trim() !== "") {
@@ -472,7 +493,6 @@ function checkAnswers() {
                 
                 // Question 1: Calculate arrival time (start time + travel time)
                 if (questionText.includes("Ha a lány")) {
-                    // Extract start time and travel minutes from the question
                     const startTimeMatch = questionText.match(/(\d+):(\d+)/);
                     const travelMinutesMatch = questionText.match(/(\d+) percet/);
                     
@@ -480,110 +500,84 @@ function checkAnswers() {
                         const startHour = parseInt(startTimeMatch[1]);
                         const startMinute = parseInt(startTimeMatch[2]);
                         const travelMinutes = parseInt(travelMinutesMatch[1]);
-                        
-                        // Calculate total minutes
+                
+                        // Idő hozzáadása
                         let totalMinutes = startHour * 60 + startMinute + travelMinutes;
-                        
-                        // Convert back to hours and minutes
-                        const expectedHour = Math.floor(totalMinutes / 60) % 24;
-                        const expectedMinute = totalMinutes % 60;
-                        
-                        // Format expected answer
-                        expectedAnswer = `${expectedHour.toString().padStart(2, '0')}:${expectedMinute.toString().padStart(2, '0')}`;
-                        
-                        // Parse user's answer
+                        let expectedHour = Math.floor(totalMinutes / 60) % 24;
+                        let expectedMinute = totalMinutes % 60;
+                        expectedAnswer = formatTime(expectedHour, expectedMinute);
+                
+                        // Felhasználói válasz beolvasása
                         const [userHours, userMinutes] = input.value.split(':').map(Number);
-                        
-                        // Format user's answer for comparison
-                        const formattedUserAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
-                        
-                        // Debug output
-                        console.log(`Question 1: Expected ${expectedAnswer}, Got ${formattedUserAnswer}`);
-                        
+                        const formattedUserAnswer = formatTime(userHours, userMinutes);
+                
+                        console.log(`Expected: ${expectedAnswer}, Got: ${formattedUserAnswer}`);
                         isCorrect = formattedUserAnswer === expectedAnswer;
                     }
                 }
                 
                 // Question 2: Calculate departure time (arrival time - travel time)
                 else if (questionText.includes("Ha egy vonat")) {
-                    // Extract departure time and travel minutes from the question
                     const departureTimeMatch = questionText.match(/(\d+):(\d+)/);
                     const travelMinutesMatch = questionText.match(/(\d+) perc az út/);
-                    
+                
                     if (departureTimeMatch && travelMinutesMatch) {
                         const departureHour = parseInt(departureTimeMatch[1]);
                         const departureMinute = parseInt(departureTimeMatch[2]);
                         const travelMinutes = parseInt(travelMinutesMatch[1]);
-                        
-                        // Calculate total minutes for departure time
-                        let departureMinutesTotal = departureHour * 60 + departureMinute;
-                        
-                        // Subtract travel time
-                        let arrivalMinutesTotal = departureMinutesTotal - travelMinutes;
-                        if (arrivalMinutesTotal < 0) {
-                            arrivalMinutesTotal += 24 * 60; // Add a day if it goes to previous day
+                
+                        // Idő kivonása
+                        let departureMinutesTotal = departureHour * 60 + departureMinute - travelMinutes;
+                        if (departureMinutesTotal < 0) {
+                            departureMinutesTotal += 24 * 60; // Ha visszalépnénk előző napra
                         }
-                        
-                        // Convert back to hours and minutes
-                        const expectedHour = Math.floor(arrivalMinutesTotal / 60) % 24;
-                        const expectedMinute = arrivalMinutesTotal % 60;
-                        
-                        // Format expected answer
-                        expectedAnswer = `${expectedHour.toString().padStart(2, '0')}:${expectedMinute.toString().padStart(2, '0')}`;
-                        
-                        // Parse user's answer
+                
+                        let expectedHour = Math.floor(departureMinutesTotal / 60) % 24;
+                        let expectedMinute = departureMinutesTotal % 60;
+                        expectedAnswer = formatTime(expectedHour, expectedMinute);
+                
+                        // Felhasználói válasz beolvasása
                         const [userHours, userMinutes] = input.value.split(':').map(Number);
-                        
-                        // Format user's answer for comparison
-                        const formattedUserAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
-                        
-                        // Debug output
-                        console.log(`Question 2: Expected ${expectedAnswer}, Got ${formattedUserAnswer}`);
-                        
+                        const formattedUserAnswer = formatTime(userHours, userMinutes);
+                
+                        console.log(`Expected: ${expectedAnswer}, Got: ${formattedUserAnswer}`);
                         isCorrect = formattedUserAnswer === expectedAnswer;
                     }
                 }
                 
+                
                 // Question 3: Calculate duration (end time - start time)
                 else if (questionText.includes("Ha egy focimeccs")) {
-                    // Extract start and end times from the question
                     const timeMatches = questionText.match(/(\d+):(\d+).*?(\d+):(\d+)/);
-                    
+                
                     if (timeMatches) {
                         const startHour = parseInt(timeMatches[1]);
                         const startMinute = parseInt(timeMatches[2]);
                         const endHour = parseInt(timeMatches[3]);
                         const endMinute = parseInt(timeMatches[4]);
-                        
-                        // Calculate total minutes for start and end
-                        const startTotalMinutes = startHour * 60 + startMinute;
-                        const endTotalMinutes = endHour * 60 + endMinute;
-                        
-                        // Calculate duration in minutes
+                
+                        // Időtartam kiszámítása
+                        let startTotalMinutes = startHour * 60 + startMinute;
+                        let endTotalMinutes = endHour * 60 + endMinute;
+                
                         let durationMinutes = endTotalMinutes - startTotalMinutes;
                         if (durationMinutes < 0) {
-                            durationMinutes += 24 * 60; // Add a day if end time is on the next day
+                            durationMinutes += 24 * 60; // Ha az idő átnyúlik másnapra
                         }
-                        
-                        // Convert to hours and minutes
-                        const durationHours = Math.floor(durationMinutes / 60);
-                        const remainingMinutes = durationMinutes % 60;
-                        
-                        // Format expected answer
-                        expectedAnswer = `${durationHours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
-                        
-                        // Parse user's answer
+                
+                        let durationHours = Math.floor(durationMinutes / 60);
+                        let remainingMinutes = durationMinutes % 60;
+                        expectedAnswer = formatTime(durationHours, remainingMinutes);
+                
+                        // Felhasználói válasz beolvasása
                         const [userHours, userMinutes] = input.value.split(':').map(Number);
-                        
-                        // Format user's answer for comparison
-                        const formattedUserAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
-                        
-                        // Debug output
-                        console.log(`Question 3: Expected ${expectedAnswer}, Got ${formattedUserAnswer}`);
-                        
+                        const formattedUserAnswer = formatTime(userHours, userMinutes);
+                
+                        console.log(`Expected: ${expectedAnswer}, Got: ${formattedUserAnswer}`);
                         isCorrect = formattedUserAnswer === expectedAnswer;
                     }
                 }
+                
                 
                 if (isCorrect) {
                     input.style.backgroundColor = "#d4edda"; // Green background
