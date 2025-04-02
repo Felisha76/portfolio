@@ -16,15 +16,12 @@ else if (input.type === "time" && (questionText.includes("perc") || questionText
             const startMinute = parseInt(startTimeMatch[2]);
             const travelMinutes = parseInt(travelMinutesMatch[1]);
             
-            // Calculate expected arrival time
-            let expectedHour = startHour;
-            let expectedMinute = startMinute + travelMinutes;
+            // Calculate total minutes
+            let totalMinutes = startHour * 60 + startMinute + travelMinutes;
             
-            // Adjust for hour overflow
-            if (expectedMinute >= 60) {
-                expectedHour = (expectedHour + Math.floor(expectedMinute / 60)) % 24;
-                expectedMinute = expectedMinute % 60;
-            }
+            // Convert back to hours and minutes
+            const expectedHour = Math.floor(totalMinutes / 60) % 24;
+            const expectedMinute = totalMinutes % 60;
             
             // Format expected answer
             expectedAnswer = `${expectedHour.toString().padStart(2, '0')}:${expectedMinute.toString().padStart(2, '0')}`;
@@ -32,31 +29,39 @@ else if (input.type === "time" && (questionText.includes("perc") || questionText
             // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
             
-            // Compare hours and minutes separately to handle 24-hour format differences
-            isCorrect = (userHours % 24 === expectedHour % 24) && (userMinutes === expectedMinute);
+            // Format user's answer for comparison
+            const formattedUserAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
+            
+            // Debug output
+            console.log(`Question 1: Expected ${expectedAnswer}, Got ${formattedUserAnswer}`);
+            
+            isCorrect = formattedUserAnswer === expectedAnswer;
         }
     }
     
     // Question 2: Calculate departure time (arrival time - travel time)
     else if (questionText.includes("Ha egy vonat")) {
-        // Extract arrival time and travel minutes from the question
-        const arrivalTimeMatch = questionText.match(/(\d+):(\d+)/);
+        // Extract departure time and travel minutes from the question
+        const departureTimeMatch = questionText.match(/(\d+):(\d+)/);
         const travelMinutesMatch = questionText.match(/(\d+) perc az út/);
         
-        if (arrivalTimeMatch && travelMinutesMatch) {
-            const arrivalHour = parseInt(arrivalTimeMatch[1]);
-            const arrivalMinute = parseInt(arrivalTimeMatch[2]);
+        if (departureTimeMatch && travelMinutesMatch) {
+            const departureHour = parseInt(departureTimeMatch[1]);
+            const departureMinute = parseInt(departureTimeMatch[2]);
             const travelMinutes = parseInt(travelMinutesMatch[1]);
             
-            // Calculate expected departure time (when to leave to arrive at the specified time)
-            let expectedHour = arrivalHour;
-            let expectedMinute = arrivalMinute - travelMinutes;
+            // Calculate total minutes for departure time
+            let departureMinutesTotal = departureHour * 60 + departureMinute;
             
-            // Adjust for hour underflow
-            if (expectedMinute < 0) {
-                expectedHour = (expectedHour - 1 + 24) % 24;
-                expectedMinute = expectedMinute + 60;
+            // Subtract travel time
+            let arrivalMinutesTotal = departureMinutesTotal - travelMinutes;
+            if (arrivalMinutesTotal < 0) {
+                arrivalMinutesTotal += 24 * 60; // Add a day if it goes to previous day
             }
+            
+            // Convert back to hours and minutes
+            const expectedHour = Math.floor(arrivalMinutesTotal / 60) % 24;
+            const expectedMinute = arrivalMinutesTotal % 60;
             
             // Format expected answer
             expectedAnswer = `${expectedHour.toString().padStart(2, '0')}:${expectedMinute.toString().padStart(2, '0')}`;
@@ -64,8 +69,13 @@ else if (input.type === "time" && (questionText.includes("perc") || questionText
             // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
             
-            // Compare hours and minutes separately to handle 24-hour format differences
-            isCorrect = (userHours % 24 === expectedHour % 24) && (userMinutes === expectedMinute);
+            // Format user's answer for comparison
+            const formattedUserAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
+            
+            // Debug output
+            console.log(`Question 2: Expected ${expectedAnswer}, Got ${formattedUserAnswer}`);
+            
+            isCorrect = formattedUserAnswer === expectedAnswer;
         }
     }
     
@@ -80,24 +90,33 @@ else if (input.type === "time" && (questionText.includes("perc") || questionText
             const endHour = parseInt(timeMatches[3]);
             const endMinute = parseInt(timeMatches[4]);
             
+            // Calculate total minutes for start and end
+            const startTotalMinutes = startHour * 60 + startMinute;
+            const endTotalMinutes = endHour * 60 + endMinute;
+            
             // Calculate duration in minutes
-            let durationMinutes = (endHour - startHour) * 60 + (endMinute - startMinute);
+            let durationMinutes = endTotalMinutes - startTotalMinutes;
             if (durationMinutes < 0) {
                 durationMinutes += 24 * 60; // Add a day if end time is on the next day
             }
             
-            // Calculate hours and minutes for display
+            // Convert to hours and minutes
             const durationHours = Math.floor(durationMinutes / 60);
             const remainingMinutes = durationMinutes % 60;
             
-            // Format expected answer in HH:MM format
+            // Format expected answer
             expectedAnswer = `${durationHours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
             
             // Parse user's answer
             const [userHours, userMinutes] = input.value.split(':').map(Number);
             
-            // Check if user's answer matches the expected duration
-            isCorrect = (userHours === durationHours && userMinutes === remainingMinutes);
+            // Format user's answer for comparison
+            const formattedUserAnswer = `${userHours.toString().padStart(2, '0')}:${userMinutes.toString().padStart(2, '0')}`;
+            
+            // Debug output
+            console.log(`Question 3: Expected ${expectedAnswer}, Got ${formattedUserAnswer}`);
+            
+            isCorrect = formattedUserAnswer === expectedAnswer;
         }
     }
     
@@ -106,7 +125,7 @@ else if (input.type === "time" && (questionText.includes("perc") || questionText
         correctCount++;
     } else {
         input.style.backgroundColor = "#f8d7da"; // Red background
-        // Optionally show the expected answer
+        // Show the expected answer
         const answerHint = document.createElement("span");
         answerHint.textContent = ` (Correct: ${expectedAnswer})`;
         answerHint.style.color = "#dc3545";
