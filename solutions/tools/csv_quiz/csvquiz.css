@@ -71,6 +71,7 @@ optgroup option {
 	justify-content: center;
 	align-items: center;
   	gap: 10px;
+	overflow: visible;
 }
 .card {
 	width: 100%;
@@ -78,7 +79,18 @@ optgroup option {
 	position: relative;
 	perspective: 1000px;
 	align-items:stretch; /* center */
+	transform-origin: center center;
 }
+
+.card:first-child,
+.card:nth-child(5n + 1) {
+    transform-origin: left center;
+}
+
+.card:nth-child(5n) {
+    transform-origin: right center;
+}
+
 .front, .back {
 	position: absolute;
 	width: 100%;
@@ -125,6 +137,7 @@ optgroup option {
 	z-index: 100;
 	justify-content: center;
 	align-items: center;
+	
 }
 
 .card:hover .front {
@@ -137,6 +150,7 @@ optgroup option {
 	transform: rotateY(360deg) scale(2);
 	transition-duration: 700ms;
 	z-index: 100;
+	
 }
 
 .card:hover img {
