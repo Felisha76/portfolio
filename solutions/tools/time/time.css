@@ -41,8 +41,8 @@ h1, h3, p {
     justify-content: center;
     gap: 20px;
     padding: 2px;
-    background: #999b9e;
-    color: #1c1d1d;
+    background: #272929;
+    color: #d2d4d6;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -55,8 +55,8 @@ h1, h3, p {
     padding: 20px;
     width: 200px;
     height: 200px;
-    background: #999b9e;
-    color: #1c1d1d;
+    background: #272929;
+    color: #d2d4d6;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -92,8 +92,8 @@ h1, h3, p {
     justify-content: center;
     gap: 2px;
     padding: 2px;
-    background: #999b9e;
-    color: #1c1d1d;
+    background: #272929;
+    color: #d2d4d6;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
