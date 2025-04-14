@@ -174,35 +174,7 @@ function generateTestQuestions() {
         testContainer.appendChild(div);
     });
 
-    /*
-    // 3. típus: Időtartam kérdések
-    const randomStartHour = Math.floor(Math.random() * 24);
-    const randomStartMinute = Math.floor(Math.random() * 60);
-    const travelMinutes = Math.floor(Math.random() * 90) + 30; // At least 30 minutes, up to 119 minutes
-
-    // For the soccer match, generate a random duration between 90 and 120 minutes
-    const matchDurationMinutes = Math.floor(Math.random() * 31) + 90; // 90 to 120 minutes
-    let matchEndHour = randomStartHour;
-    let matchEndMinute = randomStartMinute + matchDurationMinutes;
-
-    // Adjust for hour overflow
-    if (matchEndMinute >= 60) {
-        matchEndHour = (matchEndHour + Math.floor(matchEndMinute / 60)) % 24;
-        matchEndMinute = matchEndMinute % 60;
-    }
-
-    const durationQuestions = [
-        `Ha a lány ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')} órakor indul el, és ${travelMinutes} percet utazik, hány órakor ér oda? - doesn't work yet`,
-        `Ha egy vonat ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')}-kor indul, és ${travelMinutes} perc az út az állomásig, mikor kell elindulni? - doesn't work yet`,
-        `Ha egy focimeccs ${randomStartHour}:${randomStartMinute.toString().padStart(2, '0')}-kor kezdődik és ${matchEndHour}:${matchEndMinute.toString().padStart(2, '0')}-kor ér véget, hány percig tart? - doesn't work yet`
-    ];
-    durationQuestions.forEach(question => {
-        let div = document.createElement("div");
-        div.classList.add("question_row"); // Add a class for styling fo each generated question
-        div.innerHTML = `<p>${question}</p><input type='time' required>`;
-        testContainer.appendChild(div);
-    }); */
-
+    
     // Add a check answers button at the end
     const checkButton = document.createElement("button");
     checkButton.textContent = "Check Answers";
