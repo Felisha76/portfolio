@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    background: #f0f8ff;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .question {
+    margin: 20px 0 10px;
+  }
+  
+  input[type="time"] {
+    width: 150px;
+    padding: 5px;
+    font-size: 1em;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  
+  #results {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  

@@ -38,7 +38,7 @@ FONTS:
     <div class="feedback">
         <a href="https://felisha76.github.io/portfolio/subsites/sources.html" class="simpleLink">Media sources </a>
         <a href="mailto:felisha19761228@gmail.com?
-        &subject=Call%20Logging%20Form&body=Feedback%20about%20the%20form:" target="_top" class="feedback">
+        &subject=Portfolio:" target="_top" class="feedback">
         
         <hr>
         Felisha76 &copy;2025.</a>
