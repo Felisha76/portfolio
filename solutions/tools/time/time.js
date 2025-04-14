@@ -18,9 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function drawClock() {
         ctx.clearRect(0, 0, clockCanvas.width, clockCanvas.height);
+        ctx.strokeStyle = "#d2d4d6";
         ctx.beginPath();
         ctx.arc(100, 100, 90, 0, Math.PI * 2);
         ctx.stroke();
+        ctx.fillStyle = "#d2d4d6";
 
         for (let i = 1; i <= 12; i++) {
             let angle = (i * 30 - 90) * (Math.PI / 180);
@@ -197,9 +199,11 @@ function drawTestClock(hour, minute, canvasId) {
     const canvas = document.getElementById(canvasId);
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = "#d2d4d6";
     ctx.beginPath();
     ctx.arc(100, 100, 90, 0, Math.PI * 2);
     ctx.stroke();
+    ctx.fillStyle = "#d2d4d6";
 
     for (let i = 1; i <= 12; i++) {
         let angle = (i * 30 - 90) * (Math.PI / 180);
