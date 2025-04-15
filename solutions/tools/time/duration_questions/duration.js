@@ -43,13 +43,13 @@ function pad(n) {
     const q3DurationStr = minutesToTime(q3Duration);
   
     document.getElementById("q1").textContent =
-      `1. Ha a lány ${q1Start}-kor indul el otthonról, és ${minutesToTime(q1DurationMin)} percet utazik az iskoláig, akkor mikor ér oda? (óra:perc)`;
+      `1. Ha a lány ${q1Start}-kor indul el otthonról, és ${minutesToTime(q1DurationMin)} percet utazik az iskoláig. Mikor ér oda? (óra:perc)`;
   
     document.getElementById("q2").textContent =
-      `2. Ha a fiú vonata ${q2Train}-kor indul az állomásról, és a fiúnak ${minutesToTime(q2WalkMin)} perc kell, hogy az állomásra érjen, akkor mikor kell elindulnia?`;
+      `2. Ha a fiú vonata ${q2Train}-kor indul az állomásról, és a fiúnak ${minutesToTime(q2WalkMin)} perc kell, hogy az állomásra érjen. Mikor kell elindulnia?`;
   
     document.getElementById("q3").textContent =
-      `3. Ha a focimeccs ${q3Start}-kor kezdődik, és ${q3End}-kor ér véget, akkor mennyi ideig tartott? (óra:perc formátum, tehát, ha pl 85 perc, akkor 01:25-öt írj be)`;
+      `3. Ha a focimeccs ${q3Start}-kor kezdődik, és ${q3End}-kor ér véget. Mennyi ideig tartott? (óra:perc formátum, tehát, ha pl 85 perc, akkor 01:25-öt írj be)`;
   
     // Tároljuk a helyes válaszokat
     window.currentAnswers = {
