@@ -230,7 +230,25 @@ button:hover {
     }
 }
 
-c {
-    color: #d60314;
-    background-color: #155724;
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    #clock-container, #setClockCanvas, #testClockCanvas {
+        width: 100%;
+        height: auto;
+    }
+    #settings, #question-settings {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+    .question_row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
+
