@@ -218,7 +218,7 @@ button:hover {
     }
     #settings, #question-settings {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
     }
     button {
@@ -226,7 +226,7 @@ button:hover {
     }
     .question_row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 }
 
@@ -248,7 +248,7 @@ button:hover {
     }
     .question_row {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 }
 
