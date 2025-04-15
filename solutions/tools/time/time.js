@@ -332,10 +332,10 @@ function checkAnswers() {
             
             
             if (isCorrect) {
-                input.style.backgroundColor = "#d4edda"; // Green background
+                input.style.backgroundColor = "#07e53b"; // Green background
                 correctCount++;
             } else {
-                input.style.backgroundColor = "#f8d7da"; // Red background
+                input.style.backgroundColor = "#d60314"; // Red background
             // Add expected answer as a paragraph
             const expectedAnswer = formatTime(expectedHour, expectedMinute);
             const answerHint = document.createElement("p");
@@ -557,10 +557,10 @@ function checkAnswers() {
                 
                 
                 if (isCorrect) {
-                    input.style.backgroundColor = "#d4edda"; // Green background
+                    input.style.backgroundColor = "#07e53b"; // Green background
                     correctCount++;
                 } else {
-                    input.style.backgroundColor = "#f8d7da"; // Red background
+                    input.style.backgroundColor = "#d60314"; // Red background
                     // Show the expected answer
                     const answerHint = document.createElement("span");
                     answerHint.textContent = ` (Correct: ${expectedAnswer})`;
@@ -584,10 +584,10 @@ function checkAnswers() {
             }
             
             if (isCorrect) {
-                input.style.backgroundColor = "#d4edda"; // Green background
+                input.style.backgroundColor = "#07e53b"; // Green background
                 correctCount++;
             } else {
-                input.style.backgroundColor = "#f8d7da"; // Red background
+                input.style.backgroundColor = "#d60314"; // Red background
             }
         }
     });
@@ -640,8 +640,8 @@ function checkAnswers() {
     resultsMessage.style.border = "1px solid #dee2e6";
     resultsMessage.style.borderRadius = "5px"; */
     resultsMessage.innerHTML = `
-        <h3>Results</h3>
-        <p>You got ${correctCount} out of ${totalAnswered} questions correct (${percentage}%).</p>
+        <h2>Results</h2>
+        <p>You got <b> ${correctCount} </b> out of <b> ${totalAnswered} </b>questions correct <b>(${percentage}%).</b></p>
         <p>Correct answers are highlighted in green, incorrect in red.</p>
     `;
     

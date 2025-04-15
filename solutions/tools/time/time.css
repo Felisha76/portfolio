@@ -11,9 +11,15 @@ body {
     padding: 20px;
 }
 
-h1, h3, p {
+h1, h2, h3, p {
     margin: 0;
     padding: 0;
+
+}
+
+b {
+    color: #23cd16;
+    font-weight: bold;
 }
 
 .feedback {
@@ -103,7 +109,7 @@ h1, h3, p {
     color: #999b9e;
 }
 #test-container button:hover {
-    background: #05c07e;
+    background: #23cd16;
     color: #1c1d1d;
 }
 
@@ -171,7 +177,7 @@ button {
     cursor: pointer;
 }
 button:hover {
-    background-color: #999b9e;
+    background-color: #23cd16;
     color: #1c1d1d;
 }
 #questions {
@@ -182,11 +188,13 @@ button:hover {
     color: #d2d4d6;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px #06060632;
 }
 
 #results-message {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
     background: #272929;
@@ -195,4 +203,34 @@ button:hover {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 2px;
+    white-space: normal;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    #clock-container, #setClockCanvas, #testClockCanvas {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    #settings, #question-settings {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+    .question_row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+c {
+    color: #d60314;
+    background-color: #155724;
 }
