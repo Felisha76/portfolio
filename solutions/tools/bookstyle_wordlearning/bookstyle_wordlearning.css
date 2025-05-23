@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
-    background-color: #040b20;
+    background-color: #640424;
 }
 
 /* Button */
@@ -75,7 +75,7 @@ img {
 }
 
 .front {
-    backface-visibility: hidden;
+    /*backface-visibility: hidden;*/
     border-left: 3px solid #dac400;
 }
 
@@ -117,11 +117,11 @@ img {
     transform: rotateY(180deg)
 }
 
-/* Paper Flipped */
+/* Paper Flipped 
 .flipped .front,
 .flipped .back {
     transform: rotateY(-180deg)
-}
+}*/
 
 /* Paper Z-index 
 #p1 {
