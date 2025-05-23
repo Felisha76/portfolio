@@ -108,8 +108,8 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .back-content {
@@ -122,7 +122,7 @@ img {
     transform: rotateY(-180deg)
 }
 
-/* Paper Z-index */
+/* Paper Z-index 
 #p1 {
     z-index: 3;
 }
@@ -133,9 +133,9 @@ img {
 
 #p3 {
     z-index: 1;
-}
+}*/
 
-/* Customization */
+/* Customization 
 
 .book-title {
     font-size: 3em;
@@ -164,7 +164,7 @@ img {
 
 #b1 p {
     margin-bottom: 20px;
-}
+}*/
 
 /* Layout for top bar */
 #top-bar {
