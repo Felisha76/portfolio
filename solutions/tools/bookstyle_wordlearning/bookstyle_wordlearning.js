@@ -313,6 +313,7 @@ function processCSVContent(contents) {
                 <div class="front-content">
                     <div class="content">
                         <h2>End of Flashcards</h2>
+                        <div class="cover-img-placeholder"></div>
                     </div>
                 </div>
             </div>
