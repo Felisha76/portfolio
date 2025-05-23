@@ -82,47 +82,33 @@ async function loadCSVFromGitHub(fileName) {
 function renderBookPages(rows) {
     book.innerHTML = '';
     currentState = 1;
-    maxState = rows.length + 1;
+    maxState = rows.length;
 
-    // Get set name from dropdown
-    const select = document.getElementById('csv-select');
-    const setName = select ? select.options[select.selectedIndex].textContent : 'Word Set';
+    rows.forEach((cols, i) => {
+        if (cols.length < 2) return;
 
-    // Cover page (first front)
-    const coverPaper = document.createElement('div');
-    coverPaper.className = 'paper';
-    coverPaper.id = 'p1';
-
-    const coverFront = document.createElement('div');
-    coverFront.className = 'front';
-    coverFront.innerHTML = `<span class="book-title">${setName}</span>`;
-
-    const coverBack = document.createElement('div');
-    coverBack.className = 'back';
-    coverBack.innerHTML = rows[0] && rows[0][0] ? `<span>${rows[0][0]}</span>` : `<span></span>`;
-
-    coverPaper.appendChild(coverFront);
-    coverPaper.appendChild(coverBack);
-    book.appendChild(coverPaper);
-
-    // Other pages: front = B1, back = A2, etc.
-    for (let i = 0; i < rows.length; i++) {
         const paper = document.createElement('div');
         paper.className = 'paper';
-        paper.id = `p${i + 2}`;
+        paper.id = `p${i + 1}`;
 
+        // Front: Ai + linebreak + Bi
         const front = document.createElement('div');
         front.className = 'front';
-        front.innerHTML = `<span>${rows[i][1] || ''}</span>`;
+        front.innerHTML = `<span>${cols[0]}<br>${cols[1]}</span>`;
 
+        // Back: Ai+1 + linebreak + Bi+1 (or empty if last row)
         const back = document.createElement('div');
         back.className = 'back';
-        back.innerHTML = `<span>${rows[i + 1] ? rows[i + 1][0] : ''}</span>`;
+        if (rows[i + 1] && rows[i + 1].length >= 2) {
+            back.innerHTML = `<span>${rows[i + 1][0]}<br>${rows[i + 1][1]}</span>`;
+        } else {
+            back.innerHTML = `<span></span>`;
+        }
 
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
-    }
+    });
 }
 
 function goNext() {
