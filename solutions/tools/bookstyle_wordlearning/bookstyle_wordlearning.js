@@ -73,36 +73,59 @@ async function loadCSVFromGitHub(fileName) {
         const response = await fetch(GITHUB_RAW_BASE_URL + fileName);
         const csvText = await response.text();
         const rows = csvText.split('\n').filter(row => row.trim()).map(r => r.split(',').map(c => c.trim()));
-        renderBookPages(rows);
+        // Get set name from dropdown
+        const select = document.getElementById('csv-select');
+        const setName = select ? select.options[select.selectedIndex].textContent : '';
+        renderBookPages(rows, setName);
     } catch (e) {
         alert('Failed to load CSV.');
     }
 }
 
-function renderBookPages(rows) {
-    book.innerHTML = ''; // Clear old pages
+function renderBookPages(rows, setName = '') {
+    book.innerHTML = '';
     currentState = 1;
     maxState = rows.length + 1;
 
-    rows.forEach((cols, i) => {
-        if (cols.length < 2) return;
+    // Cover page (first front)
+    const coverPaper = document.createElement('div');
+    coverPaper.className = 'paper';
+    coverPaper.id = 'p1';
 
+    const coverFront = document.createElement('div');
+    coverFront.className = 'front';
+    coverFront.innerHTML = `<span class="book-title">${setName || 'Word Set'}</span>`;
+
+    const coverBack = document.createElement('div');
+    coverBack.className = 'back';
+    if (rows[0] && rows[0][0]) {
+        coverBack.innerHTML = `<span>${rows[0][0]}</span>`;
+    } else {
+        coverBack.innerHTML = `<span></span>`;
+    }
+
+    coverPaper.appendChild(coverFront);
+    coverPaper.appendChild(coverBack);
+    book.appendChild(coverPaper);
+
+    // Second page: front = B1, back = B2, etc.
+    for (let i = 0; i < rows.length; i++) {
         const paper = document.createElement('div');
         paper.className = 'paper';
-        paper.id = `p${i + 1}`;
+        paper.id = `p${i + 2}`;
 
         const front = document.createElement('div');
         front.className = 'front';
-        front.innerHTML = `<span>${cols[0]}</span>`;
+        front.innerHTML = `<span>${rows[i][1] || ''}</span>`;
 
         const back = document.createElement('div');
         back.className = 'back';
-        back.innerHTML = `<span>${cols[1]}</span>`;
+        back.innerHTML = `<span>${rows[i + 1] ? rows[i + 1][0] : ''}</span>`;
 
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
-    });
+    }
 }
 
 function goNext() {

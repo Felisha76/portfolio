@@ -12,9 +12,44 @@ body {
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
-    background-color: #da00a4;
+    background-color: #05607c;
 }
 
+/* Layout for top bar */
+#top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#arrows {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#csv-dropdown-container {
+    min-width: 220px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#book-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 100px;
+    position: relative;
+}
 
 /* Button */
 button {
