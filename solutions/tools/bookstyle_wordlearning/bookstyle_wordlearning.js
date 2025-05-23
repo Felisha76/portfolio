@@ -118,8 +118,10 @@ function renderBookPages(rows) {
     const select = document.getElementById('csv-select');
     const title = select ? select.options[select.selectedIndex].textContent : 'Book';
 
-    // Total pages: 1 (title) + rows.length (each row is a page, alternating front/back)
-    maxState = 1 + rows.length;
+    // Number of papers: 1 (cover) + Math.ceil(rows.length / 1)
+    // Each paper after the cover uses one row for front, one for back
+    const numPapers = Math.ceil(rows.length + 1); // +1 for cover
+    maxState = Math.ceil((rows.length + 1) / 1); // Each paper is a state
 
     let pageNum = 1;
 
@@ -144,12 +146,13 @@ function renderBookPages(rows) {
     paper1.appendChild(back1);
     book.appendChild(paper1);
 
-    // Next papers: front/back alternates, each with Ai+1 + <br> + Bi+1
-    for (let i = 1; i < rows.length; i++) {
+    // Next papers: each paper's front = Ai+1 + <br> + Bi+1, back = Ai+2 + <br> + Bi+2, etc.
+    for (let i = 1; i < rows.length; i += 1) {
         const paper = document.createElement('div');
         paper.className = 'paper';
         paper.id = `p${pageNum++}`;
 
+        // Front: Ai+1 + <br> + Bi+1
         const front = document.createElement('div');
         front.className = 'front';
         if (rows[i] && rows[i].length >= 2) {
@@ -158,14 +161,20 @@ function renderBookPages(rows) {
             front.innerHTML = `<span></span>`;
         }
 
-        // Back is empty unless you want to continue the pattern
+        // Back: Ai+2 + <br> + Bi+2
         const back = document.createElement('div');
         back.className = 'back';
-        back.innerHTML = `<span></span>`;
+        if (rows[i + 1] && rows[i + 1].length >= 2) {
+            back.innerHTML = `<span>${rows[i + 1][0]}<br>${rows[i + 1][1]}</span>`;
+        } else {
+            back.innerHTML = `<span></span>`;
+        }
 
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
+
+        i++; // Skip next row, as it's already used on the back
     }
 }
 
