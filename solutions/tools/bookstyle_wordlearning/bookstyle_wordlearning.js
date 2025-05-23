@@ -204,7 +204,7 @@ function processCSVContent(contents) {
     coverPage.innerHTML = `
         <div class="front">
             <div class="front-content">
-                <h1 class="book-title">${titleText}</h1>
+                <h1 class="book-title">Flashcards</h1>
                 <div class="cover-img-placeholder"></div>
             </div>
         </div>
