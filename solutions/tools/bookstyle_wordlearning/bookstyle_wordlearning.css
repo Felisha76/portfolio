@@ -24,7 +24,8 @@ img {
     position: relative;
     width: 350px;
     height: 400px;
-    transition: transform 0.5s;
+    transition: transform 1s; /* 0.5s */
+    transform-style: preserve-3d;
 }
 
 .paper {
@@ -52,14 +53,10 @@ img {
     z-index: 1;
     backface-visibility: hidden;
     border-left: 3px solid powderblue;
-    border-radius: 0 20% 20% 0;
-    box-shadow: 3px 0 0 0 #00000080;
 }
 
 .back {
     z-index: 0;
-    border-radius: 20% 0 0 20%;
-    box-shadow: 0 0 3px #00000080;
 }
 
 .front-content,

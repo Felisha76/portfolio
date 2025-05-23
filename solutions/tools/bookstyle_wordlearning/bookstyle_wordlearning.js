@@ -23,6 +23,20 @@ let papers = [];
 prevBtn.addEventListener("click", goPrevious);
 nextBtn.addEventListener("click", goNext);
 
+// Add keyboard navigation
+document.addEventListener('keydown', function(event) {
+    switch(event.key) {
+        case 'ArrowLeft':
+            // Left arrow key - go to previous page
+            goPrevious();
+            break;
+        case 'ArrowRight':
+            // Right arrow key - go to next page
+            goNext();
+            break;
+    }
+});
+
 // Function to determine the category of a file based on its name
 function getCategoryForFile(fileName) {
     for (const prefix in CATEGORIES) {
