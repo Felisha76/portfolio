@@ -65,6 +65,10 @@ i {
     perspective: 1500px;
 }
 
+.paper.flipped {
+    transform: rotateY(-180deg);
+}
+
 .front {
     backface-visibility: hidden;
     border-left: 3px solid #dac400;
