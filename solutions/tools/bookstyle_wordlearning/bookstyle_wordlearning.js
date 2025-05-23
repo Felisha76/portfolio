@@ -30,7 +30,7 @@ async function fetchCSVFileList() {
                 name: file.name,
                 displayName: file.name
                     .replace(/^en_hu_/, '')
-                    .replace(/\.csv$/, '')
+                    .replace(/\.csv$/, '') 
                     .replace(/_/g, ' ')
             }));
     } catch (e) {
