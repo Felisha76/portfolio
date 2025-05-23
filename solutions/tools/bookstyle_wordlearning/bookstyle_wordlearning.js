@@ -313,14 +313,15 @@ function processCSVContent(contents) {
                 <div class="front-content">
                     <div class="content">
                         <h2>End of Flashcards</h2>
-                        <div class="cover-img-placeholder"></div>
+                        <div class="cover-img-placeholder2"></div>
                     </div>
                 </div>
             </div>
             <div class="back">
                 <div class="back-content">
                     <div class="content">
-                        <h2>Thank you!</h2>
+                        <h2>Practice makes perfect!</h2>
+
                     </div>
                 </div>
             </div>

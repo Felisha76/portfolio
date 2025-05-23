@@ -30,6 +30,15 @@ img {
     align-items: center;
 }
 
+.cover-img-placeholder2 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("https://img.freepik.com/free-photo/owl-with-big-eyes-branch-3d-illustration_1057-45876.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Book */
 .book {
     position: relative;
