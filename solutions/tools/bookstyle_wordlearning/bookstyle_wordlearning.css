@@ -75,7 +75,6 @@ i {
     height: 100%;
     top: 0;
     left: 0;
-    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
