@@ -80,29 +80,49 @@ async function loadCSVFromGitHub(fileName) {
 }
 
 function renderBookPages(rows) {
-    book.innerHTML = ''; // Clear old pages
+    book.innerHTML = '';
     currentState = 1;
     maxState = rows.length + 1;
 
-    rows.forEach((cols, i) => {
-        if (cols.length < 2) return;
+    // Get set name from dropdown
+    const select = document.getElementById('csv-select');
+    const setName = select ? select.options[select.selectedIndex].textContent : 'Word Set';
 
+    // Cover page (first front)
+    const coverPaper = document.createElement('div');
+    coverPaper.className = 'paper';
+    coverPaper.id = 'p1';
+
+    const coverFront = document.createElement('div');
+    coverFront.className = 'front';
+    coverFront.innerHTML = `<span class="book-title">${setName}</span>`;
+
+    const coverBack = document.createElement('div');
+    coverBack.className = 'back';
+    coverBack.innerHTML = rows[0] && rows[0][0] ? `<span>${rows[0][0]}</span>` : `<span></span>`;
+
+    coverPaper.appendChild(coverFront);
+    coverPaper.appendChild(coverBack);
+    book.appendChild(coverPaper);
+
+    // Other pages: front = B1, back = A2, etc.
+    for (let i = 0; i < rows.length; i++) {
         const paper = document.createElement('div');
         paper.className = 'paper';
-        paper.id = `p${i + 1}`;
+        paper.id = `p${i + 2}`;
 
         const front = document.createElement('div');
         front.className = 'front';
-        front.innerHTML = `<span>${cols[0]}</span>`;
+        front.innerHTML = `<span>${rows[i][1] || ''}</span>`;
 
         const back = document.createElement('div');
         back.className = 'back';
-        back.innerHTML = `<span>${cols[1]}</span>`;
+        back.innerHTML = `<span>${rows[i + 1] ? rows[i + 1][0] : ''}</span>`;
 
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
-    });
+    }
 }
 
 function goNext() {
