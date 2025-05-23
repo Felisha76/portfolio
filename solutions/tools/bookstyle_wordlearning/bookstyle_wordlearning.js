@@ -79,7 +79,7 @@ async function loadCSVFromGitHub(fileName) {
     }
 }
 
-/*function renderBookPages(rows) {
+function renderBookPages(rows) {
     book.innerHTML = '';
     currentState = 1;
     maxState = rows.length;
@@ -109,70 +109,7 @@ async function loadCSVFromGitHub(fileName) {
         paper.appendChild(back);
         book.appendChild(paper);
     });
-} */
-
-function renderBookPages(rows) {
-    book.innerHTML = '';
-    currentState = 1;
-
-    const select = document.getElementById('csv-select');
-    const title = select ? select.options[select.selectedIndex].textContent : 'Book';
-
-    let pageNum = 1;
-
-    // First paper: front = title, back = A1 + <br> + B1
-    const paper1 = document.createElement('div');
-    paper1.className = 'paper';
-    paper1.id = `p${pageNum++}`;
-
-    const front1 = document.createElement('div');
-    front1.className = 'front';
-    front1.innerHTML = `<span class="book-title">${title}</span>`;
-
-    const back1 = document.createElement('div');
-    back1.className = 'back';
-    if (rows[0] && rows[0].length >= 2) {
-        back1.innerHTML = `<span>${rows[0][0]}<br>${rows[0][1]}</span>`;
-    } else {
-        back1.innerHTML = `<span></span>`;
-    }
-
-    paper1.appendChild(front1);
-    paper1.appendChild(back1);
-    book.appendChild(paper1);
-
-    // Next papers: each paper's front = Ai+1 + <br> + Bi+1, back = Ai+2 + <br> + Bi+2, etc.
-    for (let i = 1; i < rows.length; i += 2) {
-        const paper = document.createElement('div');
-        paper.className = 'paper';
-        paper.id = `p${pageNum++}`;
-
-        // Front: Ai+1 + <br> + Bi+1
-        const front = document.createElement('div');
-        front.className = 'front';
-        if (rows[i] && rows[i].length >= 2) {
-            front.innerHTML = `<span>${rows[i][0]}<br>${rows[i][1]}</span>`;
-        } else {
-            front.innerHTML = `<span></span>`;
-        }
-
-        // Back: Ai+2 + <br> + Bi+2
-        const back = document.createElement('div');
-        back.className = 'back';
-        if (rows[i + 1] && rows[i + 1].length >= 2) {
-            back.innerHTML = `<span>${rows[i + 1][0]}<br>${rows[i + 1][1]}</span>`;
-        } else {
-            back.innerHTML = `<span></span>`;
-        }
-
-        paper.appendChild(front);
-        paper.appendChild(back);
-        book.appendChild(paper);
-    }
-
-    // Update maxState for navigation
-    maxState = pageNum - 1;
-}
+} 
 
 function goNext() {
     if (currentState < maxState) {
