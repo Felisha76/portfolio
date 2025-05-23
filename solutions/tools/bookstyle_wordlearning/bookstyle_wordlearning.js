@@ -91,26 +91,21 @@ function renderBookPages(rows) {
         paper.className = 'paper';
         paper.id = `p${i + 1}`;
 
-        // Front: Ai + linebreak + Bi
+        // Show only the current row on the front, nothing on the back
         const front = document.createElement('div');
         front.className = 'front';
         front.innerHTML = `<span>${cols[0]}<br>${cols[1]}</span>`;
 
-        // Back: Ai+1 + linebreak + Bi+1 (or empty if last row)
+        // Empty back
         const back = document.createElement('div');
         back.className = 'back';
-        if (rows[i + 1] && rows[i + 1].length >= 2) {
-            back.innerHTML = `<span>${rows[i + 1][0]}<br>${rows[i + 1][1]}</span>`;
-        } else {
-            back.innerHTML = `<span></span>`;
-        }
+        back.innerHTML = `<span></span>`;
 
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
     });
-} 
-
+}
 function goNext() {
     if (currentState < maxState) {
         const paper = document.getElementById(`p${currentState}`);
