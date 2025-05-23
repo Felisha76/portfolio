@@ -130,7 +130,7 @@ function goPrevious() {
         if (currentState === maxState - 1) openBook();
     }
 }
-
+/*
 function openBook() {
     book.style.transform = "translateX(50%)";
     prevBtn.style.transform = "translateX(-180px)";
@@ -141,7 +141,7 @@ function closeBook(isFirstPage) {
     book.style.transform = isFirstPage ? "translateX(0%)" : "translateX(100%)";
     prevBtn.style.transform = "translateX(0px)";
     nextBtn.style.transform = "translateX(0px)";
-}
+} */
 
 document.addEventListener('DOMContentLoaded', populateFileDropdown);
 document.addEventListener('keydown', (event) => {
