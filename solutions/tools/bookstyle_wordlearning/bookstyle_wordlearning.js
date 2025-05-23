@@ -135,10 +135,12 @@ async function loadCSVFromGitHub(fileName) {
         }
         
         const contents = await response.text();
-        processCSVContent(contents);
         
         // Update page title or header with the current quiz name
         updateQuizTitle(fileName);
+        
+        // Process CSV content after updating the title
+        processCSVContent(contents);
     } catch (error) {
         console.error('Error loading CSV from GitHub:', error);
         alert('Failed to load the selected CSV file. Please try again.');
@@ -167,6 +169,7 @@ function updateQuizTitle(fileName) {
         container.parentNode.insertBefore(titleElement, container.nextSibling);
     }
     
+    // Set the title (not append)
     titleElement.textContent = displayName;
 }
 
@@ -217,44 +220,46 @@ function processCSVContent(contents) {
     book.appendChild(coverPage);
     papers.push(coverPage);
     
-    // Create the second page with the first row's back content
-    if (rows.length > 0) {
-        const secondPage = document.createElement('div');
-        secondPage.id = 'p2';
-        secondPage.className = 'paper';
+    // Create pages for each row in the CSV
+    for (let i = 0; i < rows.length; i++) {
+        const currentRow = rows[i].split(',');
         
-        secondPage.innerHTML = `
-            <div class="front">
-                <div class="front-content">
-                    <div class="content">
-                        <h2>${firstRowBack}</h2>
+        // Skip if this is the first row (already handled in cover page back)
+        if (i === 0) {
+            // Create the second page with the first row's back content
+            const secondPage = document.createElement('div');
+            secondPage.id = 'p2';
+            secondPage.className = 'paper';
+            
+            // Get the next row's front content if available
+            const nextRowFront = i + 1 < rows.length ? rows[i + 1].split(',')[0].trim() : '';
+            
+            secondPage.innerHTML = `
+                <div class="front">
+                    <div class="front-content">
+                        <div class="content">
+                            <h2>${firstRowBack}</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="back">
-                <div class="back-content">
-                    <div class="content">
-                        <h2>${rows.length > 1 ? rows[1].split(',')[0].trim() : ''}</h2>
+                <div class="back">
+                    <div class="back-content">
+                        <div class="content">
+                            <h2>${nextRowFront}</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
+            
+            book.appendChild(secondPage);
+            papers.push(secondPage);
+            continue;
+        }
         
-        book.appendChild(secondPage);
-        papers.push(secondPage);
-    }
-    
-    // Loop through the remaining rows in the CSV file (starting from the second row)
-    for (let i = 1; i < rows.length; i++) {
-        const columns = rows[i].split(',');
-        
-        // Skip the first row as it's already handled
-        if (i === 0) continue;
-        
-        // Ensure we have both A and B column data
-        if (columns.length >= 2) {
-            const frontText = columns[1].trim();  // B column
-            const backText = i + 1 < rows.length ? rows[i + 1].split(',')[0].trim() : ''; // Next row's A column
+        // For all other rows
+        if (currentRow.length >= 2) {
+            const currentBack = currentRow[1].trim();  // B column of current row
+            const nextFront = i + 1 < rows.length ? rows[i + 1].split(',')[0].trim() : ''; // A column of next row
             
             // Create a new paper
             const paper = document.createElement('div');
@@ -265,14 +270,14 @@ function processCSVContent(contents) {
                 <div class="front">
                     <div class="front-content">
                         <div class="content">
-                            <h2>${frontText}</h2>
+                            <h2>${currentBack}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="back">
                     <div class="back-content">
                         <div class="content">
-                            <h2>${backText}</h2>
+                            <h2>${nextFront}</h2>
                         </div>
                     </div>
                 </div>
@@ -280,8 +285,34 @@ function processCSVContent(contents) {
             
             book.appendChild(paper);
             papers.push(paper);
-            i++; // Skip the next row as we've already used it
         }
+    }
+    
+    // Add a final page if needed (when we have an odd number of rows)
+    if (rows.length % 2 === 0) {
+        const finalPage = document.createElement('div');
+        finalPage.id = `p${papers.length + 1}`;
+        finalPage.className = 'paper';
+        
+        finalPage.innerHTML = `
+            <div class="front">
+                <div class="front-content">
+                    <div class="content">
+                        <h2>End of Flashcards</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="back-content">
+                    <div class="content">
+                        <h2>Thank you!</h2>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        book.appendChild(finalPage);
+        papers.push(finalPage);
     }
     
     // Reset state
