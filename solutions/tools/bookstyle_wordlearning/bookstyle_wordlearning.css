@@ -43,3 +43,40 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+/* Layout for top bar */
+#top-bar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+#arrows {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#csv-dropdown-container {
+    min-width: 220px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#book-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 120px;
+    position: relative;
+}
