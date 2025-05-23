@@ -14,9 +14,9 @@ body {
 }
 
 img {
-    width: 100px;
-    height: 100px;
-    border-radius: 30%;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 20%;
 }
 
 /* Book */
@@ -52,10 +52,14 @@ img {
     z-index: 1;
     backface-visibility: hidden;
     border-left: 3px solid powderblue;
+    border-radius: 20% 20% 0 0;
+    box-shadow: 10px 0 0 0 #00000080;
 }
 
 .back {
     z-index: 0;
+      border-radius: 0 0 20% 20%;
+    box-shadow: 0 0 10px #00000080;
 }
 
 .front-content,
