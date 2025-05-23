@@ -107,11 +107,11 @@ i {
     transform: rotateY(180deg)
 }
 
-/* Paper Flipped */
+/* Paper Flipped 
 .flipped .front,
 .flipped .back {
     transform: rotateY(-180deg)
-}
+}*/
 
 /* Paper Z-index */
 #p1 {
@@ -129,8 +129,8 @@ i {
 /* Customization */
 
 img {
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 30px;
 }
