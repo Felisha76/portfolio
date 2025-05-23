@@ -118,11 +118,6 @@ function renderBookPages(rows) {
     const select = document.getElementById('csv-select');
     const title = select ? select.options[select.selectedIndex].textContent : 'Book';
 
-    // Number of papers: 1 (cover) + Math.ceil(rows.length / 1)
-    // Each paper after the cover uses one row for front, one for back
-    const numPapers = Math.ceil(rows.length + 1); // +1 for cover
-    maxState = Math.ceil((rows.length + 1) / 1); // Each paper is a state
-
     let pageNum = 1;
 
     // First paper: front = title, back = A1 + <br> + B1
@@ -147,7 +142,7 @@ function renderBookPages(rows) {
     book.appendChild(paper1);
 
     // Next papers: each paper's front = Ai+1 + <br> + Bi+1, back = Ai+2 + <br> + Bi+2, etc.
-    for (let i = 1; i < rows.length; i += 1) {
+    for (let i = 1; i < rows.length; i += 2) {
         const paper = document.createElement('div');
         paper.className = 'paper';
         paper.id = `p${pageNum++}`;
@@ -173,9 +168,10 @@ function renderBookPages(rows) {
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
-
-        i++; // Skip next row, as it's already used on the back
     }
+
+    // Update maxState for navigation
+    maxState = pageNum - 1;
 }
 
 function goNext() {
