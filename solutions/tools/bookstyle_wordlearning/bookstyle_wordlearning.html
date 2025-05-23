@@ -4,83 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book</title>
-    <link rel="stylesheet" href="bookstyle_wordlearning.css">
+    <title>Flashcard Book</title>
+    <link rel="stylesheet" href="./bookstyle_flipcards.css">
     <script src="https://kit.fontawesome.com/40fdf661e5.js" crossorigin="anonymous"></script>
-    <script defer src="bookstyle_wordlearning.js"></script>
+    <style>
+        #csv-dropdown-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .csv-dropdown {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            min-width: 250px;
+        }
+        
+        .quiz-title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin: 0;
+            z-index: 1000;
+        }
+        
+        .cover-img-placeholder {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        
+        .content {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div id="top-bar">
-    <div id="arrows">
-        <button id="prev-btn"><i class="fa fa-arrow-left"></i></button>
-        <button id="next-btn"><i class="fa fa-arrow-right"></i></button>
-    </div>
     <div id="csv-dropdown-container"></div>
-    </div>
-    <div id="book-container">
-    <div id="book"></div>
-    </div>
-
-<!--
+    
     <button id="prev-btn">
         <i class="fas fa-arrow-circle-left"></i>
     </button>
 
-     The Book 
+    <!-- The Book -->
     <div id="book" class="book">
-        <!-- Paper 1 
-        <div id="p1" class="paper">
-            <div class="front">
-                <div id="f1" class="front-content">
-                    <h1 class="book-title">Little Dog</h1>
-                    <img class="cover-img" src="./dog.jpg" alt="dog">
-                </div>
-            </div>
-            <div class="back">
-                <div id="b1" class="back-content">
-                    <h2>Some Intro</h2>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Paper 2 
-        <div id="p2" class="paper">
-            <div class="front">
-                <div id="f2" class="front-content">
-                    <h1>Some Cool Page</h1>
-                </div>
-            </div>
-            <div class="back">
-                <div id="b2" class="back-content">
-                    <h1>An Awesome Page</h1>
-                </div>
-            </div>
-        </div>
-        <!-- Paper 3 
-        <div id="p3" class="paper">
-            <div class="front">
-                <div id="f3" class="front-content">
-                    <h1>An Amazing Page</h1>
-                </div>
-            </div>
-            <div class="back">
-                <div id="b3" class="back-content">
-                    <h1>The Good Bye</h1>
-                </div>
-            </div>
-        </div>
+        <!-- Papers will be generated dynamically -->
     </div>
 
     <button id="next-btn">
         <i class="fas fa-arrow-circle-right"></i>
     </button>
--->
 
+    <script defer src="./bookstyle_flipcards.js"></script>
 </body>
 </html>
