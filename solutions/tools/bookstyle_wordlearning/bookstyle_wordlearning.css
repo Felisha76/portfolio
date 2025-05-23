@@ -142,7 +142,17 @@ img {
 
 /* Controller Buttons */
 button {
+    width: 40px;
+    height: 40px;
     border: none;
     background-color: transparent;
     cursor: pointer
+}
+
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #e2f606;
+    font-family: 'Noto Sans';
+    text-align: right;
 }
