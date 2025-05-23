@@ -107,11 +107,11 @@ i {
     transform: rotateY(180deg)
 }
 
-/* Paper Flipped 
+/* Paper Flipped */
 .flipped .front,
 .flipped .back {
     transform: rotateY(-180deg)
-}*/
+}
 
 /* Paper Z-index */
 #p1 {
