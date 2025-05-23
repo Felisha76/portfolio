@@ -172,19 +172,31 @@ function updateQuizTitle(fileName) {
 
 // Function to process CSV content and create book pages
 function processCSVContent(contents) {
-    const rows = contents.split('\n');
+    const rows = contents.split('\n').filter(row => row.trim());
     
     // Clear the book
     book.innerHTML = '';
     papers = [];
+    
+    // Get the title from the dropdown
+    const titleText = document.querySelector('.quiz-title')?.textContent || 'Flashcards';
     
     // Create a cover page
     const coverPage = document.createElement('div');
     coverPage.id = 'p1';
     coverPage.className = 'paper';
     
-    // Get the title from the dropdown
-    const titleText = document.querySelector('.quiz-title')?.textContent || 'Flashcards';
+    // Check if we have at least one row for the first page
+    let firstRowFront = '';
+    let firstRowBack = '';
+    
+    if (rows.length > 0) {
+        const columns = rows[0].split(',');
+        if (columns.length >= 2) {
+            firstRowFront = columns[0].trim();
+            firstRowBack = columns[1].trim();
+        }
+    }
     
     coverPage.innerHTML = `
         <div class="front">
@@ -195,10 +207,8 @@ function processCSVContent(contents) {
         </div>
         <div class="back">
             <div class="back-content">
-                <h2>Introduction</h2>
                 <div class="content">
-                    <p>This book contains ${rows.filter(row => row.trim()).length} flashcards.</p>
-                    <p>Use the arrows to navigate through the pages.</p>
+                    <h2>${firstRowFront}</h2>
                 </div>
             </div>
         </div>
@@ -207,20 +217,48 @@ function processCSVContent(contents) {
     book.appendChild(coverPage);
     papers.push(coverPage);
     
-    // Loop through the rows in the CSV file
-    let pageIndex = 2;
-    rows.forEach(row => {
-        if (!row.trim()) return; // Skip empty rows
+    // Create the second page with the first row's back content
+    if (rows.length > 0) {
+        const secondPage = document.createElement('div');
+        secondPage.id = 'p2';
+        secondPage.className = 'paper';
         
-        const columns = row.split(',');
+        secondPage.innerHTML = `
+            <div class="front">
+                <div class="front-content">
+                    <div class="content">
+                        <h2>${firstRowBack}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="back-content">
+                    <div class="content">
+                        <h2>${rows.length > 1 ? rows[1].split(',')[0].trim() : ''}</h2>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        book.appendChild(secondPage);
+        papers.push(secondPage);
+    }
+    
+    // Loop through the remaining rows in the CSV file (starting from the second row)
+    for (let i = 1; i < rows.length; i++) {
+        const columns = rows[i].split(',');
+        
+        // Skip the first row as it's already handled
+        if (i === 0) continue;
+        
         // Ensure we have both A and B column data
         if (columns.length >= 2) {
-            const frontText = columns[0].trim();  // A column
-            const backText = columns[1].trim();   // B column
+            const frontText = columns[1].trim();  // B column
+            const backText = i + 1 < rows.length ? rows[i + 1].split(',')[0].trim() : ''; // Next row's A column
             
-            // Create a new paper for each row
+            // Create a new paper
             const paper = document.createElement('div');
-            paper.id = `p${pageIndex}`;
+            paper.id = `p${i + 2}`; // +2 because we already have two pages
             paper.className = 'paper';
             
             paper.innerHTML = `
@@ -242,9 +280,9 @@ function processCSVContent(contents) {
             
             book.appendChild(paper);
             papers.push(paper);
-            pageIndex++;
+            i++; // Skip the next row as we've already used it
         }
-    });
+    }
     
     // Reset state
     currentState = 1;
