@@ -80,9 +80,9 @@ async function loadCSVFromGitHub(fileName) {
 }
 
 function renderBookPages(rows) {
-    book.innerHTML = ''; // Clear old pages
+    book.innerHTML = '';
     currentState = 1;
-    maxState = rows.length + 1;
+    maxState = rows.length;
 
     rows.forEach((cols, i) => {
         if (cols.length < 2) return;
@@ -91,15 +91,20 @@ function renderBookPages(rows) {
         paper.className = 'paper';
         paper.id = `p${i + 1}`;
 
+        // Front: Ai + linebreak + Bi
         const front = document.createElement('div');
         front.className = 'front';
-        front.innerHTML = `<span>${cols[0]}</span>`;
+        front.innerHTML = `<span>${cols[0]}<br>${cols[1]}</span>`;
 
+        // Back: Ai+1 + linebreak + Bi+1 (or empty if last row)
         const back = document.createElement('div');
         back.className = 'back';
-        back.innerHTML = `<span>${cols[1]}</span>`;
+        if (rows[i + 1] && rows[i + 1].length >= 2) {
+            back.innerHTML = `<span>${rows[i + 1][0]}<br>${rows[i + 1][1]}</span>`;
+        } else {
+            back.innerHTML = `<span></span>`;
+        }
 
-        
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
