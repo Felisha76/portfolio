@@ -12,15 +12,9 @@ body {
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
-    background-color: #000fda;
+    background-color: #dac400;
 }
 
-.main_content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 /* Button */
 button {
