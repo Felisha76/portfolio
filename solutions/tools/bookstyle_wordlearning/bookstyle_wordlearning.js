@@ -82,30 +82,37 @@ async function loadCSVFromGitHub(fileName) {
 function renderBookPages(rows) {
     book.innerHTML = '';
     currentState = 1;
-    maxState = rows.length;
+    maxState = Math.ceil(rows.length / 2);
 
-    rows.forEach((cols, i) => {
-        if (cols.length < 2) return;
-
+    for (let i = 0; i < rows.length; i += 2) {
         const paper = document.createElement('div');
         paper.className = 'paper';
-        paper.id = `p${i + 1}`;
+        paper.id = `p${(i / 2) + 1}`;
 
-        // Show only the current row on the front, nothing on the back
+        // Front: row i
         const front = document.createElement('div');
         front.className = 'front';
-        front.innerHTML = `<span>${cols[0]}<br>${cols[1]}</span>`;
+        front.innerHTML = `
+            <div id="f${(i / 2) + 1}" class="front-content">
+                ${rows[i].map(col => `<span>${col}</span>`).join(' ')}
+            </div>
+        `;
 
-        // Empty back
+        // Back: row i+1 (if exists)
         const back = document.createElement('div');
         back.className = 'back';
-        back.innerHTML = `<span></span>`;
+        back.innerHTML = `
+            <div id="b${(i / 2) + 1}" class="back-content">
+                ${rows[i + 1] ? rows[i + 1].map(col => `<span>${col}</span>`).join(' ') : ''}
+            </div>
+        `;
 
         paper.appendChild(front);
         paper.appendChild(back);
         book.appendChild(paper);
-    });
+    }
 }
+/* */
 function goNext() {
     if (currentState < maxState) {
         const paper = document.getElementById(`p${currentState}`);
