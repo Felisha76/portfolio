@@ -79,7 +79,7 @@ async function loadCSVFromGitHub(fileName) {
     }
 }
 
-function renderBookPages(rows) {
+/*function renderBookPages(rows) {
     book.innerHTML = '';
     currentState = 1;
     maxState = rows.length;
@@ -109,6 +109,82 @@ function renderBookPages(rows) {
         paper.appendChild(back);
         book.appendChild(paper);
     });
+} */
+
+function renderBookPages(rows) { //2nd try
+    // Clear the book and reset state
+    book.innerHTML = '';
+    currentState = 1;
+
+    // Get the selected title from the dropdown
+    const select = document.getElementById('csv-select');
+    const title = select ? select.options[select.selectedIndex].textContent : 'Book';
+
+    // Calculate total pages: 1 (title) + rows.length (A) + rows.length (B)
+    maxState = 1 + rows.length + rows.length;
+
+    let pageNum = 1;
+
+    // First paper: front = title, back = A1
+    const paper1 = document.createElement('div');
+    paper1.className = 'paper';
+    paper1.id = `p${pageNum++}`;
+
+    const front1 = document.createElement('div');
+    front1.className = 'front';
+    front1.innerHTML = `<span class="book-title">${title}</span>`;
+
+    const back1 = document.createElement('div');
+    back1.className = 'back';
+    back1.innerHTML = rows[0] && rows[0][0] ? `<span>${rows[0][0]}</span>` : `<span></span>`;
+
+    paper1.appendChild(front1);
+    paper1.appendChild(back1);
+    book.appendChild(paper1);
+
+    // Next: alternate A2, B1, A3, B2, ...
+    let aIndex = 1; // Already used A1
+    let bIndex = 0;
+    let isFrontA = true;
+
+    while (aIndex < rows.length || bIndex < rows.length) {
+        const paper = document.createElement('div');
+        paper.className = 'paper';
+        paper.id = `p${pageNum++}`;
+
+        const front = document.createElement('div');
+        front.className = 'front';
+        const back = document.createElement('div');
+        back.className = 'back';
+
+        if (isFrontA && aIndex < rows.length) {
+            // Front: Ai+1, Back: Bi
+            front.innerHTML = `<span>${rows[aIndex][0]}</span>`;
+            if (bIndex < rows.length) {
+                back.innerHTML = `<span>${rows[bIndex][1]}</span>`;
+            } else {
+                back.innerHTML = `<span></span>`;
+            }
+            aIndex++;
+            bIndex++;
+        } else if (!isFrontA && bIndex < rows.length) {
+            // Front: Bi+1, Back: Ai+1
+            front.innerHTML = `<span>${rows[bIndex][1]}</span>`;
+            if (aIndex < rows.length) {
+                back.innerHTML = `<span>${rows[aIndex][0]}</span>`;
+            } else {
+                back.innerHTML = `<span></span>`;
+            }
+            bIndex++;
+            aIndex++;
+        }
+
+        paper.appendChild(front);
+        paper.appendChild(back);
+        book.appendChild(paper);
+
+        isFrontA = !isFrontA;
+    }
 }
 
 function goNext() {
