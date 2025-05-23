@@ -24,7 +24,7 @@ img {
     height: 100%;
     /*background-color: lightgray;*/
     background-size: cover;
-    background-image: "https://img.freepik.com/free-vector/cute-owl-perched-branch_1308-165797.jpg";
+    background-image: url("https://img.freepik.com/free-vector/cute-owl-perched-branch_1308-165797.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
