@@ -1,5 +1,3 @@
-/* General */
-
 * {
     margin: 0;
     padding: 0;
@@ -9,88 +7,47 @@
 body {
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
     font-family: sans-serif;
-    background-color: #4e0219;
-}
-
-
-/* Button */
-button {
-    border: none;
-    background-color: transparent;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.5s;
-}
-
-button:focus {
-    outline: none;
-}
-
-button:hover i {
-    color: rgb(102, 102, 102);
-}
-
-i {
-    color: gray;
-    font-size: 4em;
+    background-color: powderblue;
 }
 
 /* Book */
 .book {
+    position: relative;
     width: 350px;
     height: 500px;
-    position: relative;
     transition: transform 0.5s;
-}
-
-#book {
-    position: relative;
-    width: 400px;
-    height: 250px;
-    margin: auto;
-    perspective: 2000px;
-    transform-style: preserve-3d;
-    transition: transform 1s;
 }
 
 .paper {
     position: absolute;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1s;
+    top: 0;
+    left: 0;
     perspective: 1500px;
+
 }
 
-.paper.flipped {
-    transform: rotateY(-180deg);
-}
-
-.front {
-    backface-visibility: hidden;
-    border-left: 3px solid #dac400;
-}
-
-.front, .back {
+.front,
+.back {
+    background-color: white;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
     transform-origin: left;
     transition: transform 0.5s;
 }
 
 .front {
     z-index: 1;
-    background-color: #f9f9f9;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
 }
 
 .back {
@@ -102,7 +59,6 @@ i {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -111,13 +67,35 @@ i {
     transform: rotateY(180deg)
 }
 
-/* Paper Flipped */
+/* Paper flip effect */
 .flipped .front,
 .flipped .back {
-    transform: rotateY(-180deg)
+    transform: rotateY(-180deg);
 }
 
-/* Paper Z-index */
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
 #p1 {
     z-index: 3;
 }
@@ -128,42 +106,4 @@ i {
 
 #p3 {
     z-index: 1;
-}
-
-/* Customization */
-
-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 30px;
-}
-
-.book-title {
-    font-size: 3em;
-    margin-bottom: 40px;
-}
-
-.cover-img {
-    width: 200px;
-    height: 270px;
-    object-fit: cover;
-    border-radius: 30px;
-}
-
-#b1 {
-    padding: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    justify-content: space-around;
-}
-
-#b1 h2 {
-    font-size: 2em;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#b1 p {
-    margin-bottom: 20px;
 }
