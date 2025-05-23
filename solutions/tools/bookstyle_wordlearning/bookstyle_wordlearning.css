@@ -52,15 +52,6 @@ img {
     transition: transform 0.5s;
 }
 
-#book {
-    position: relative;
-    width: 400px;
-    height: 250px;
-    margin: auto;
-    perspective: 2000px;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-}
 
 .paper {
     position: absolute;
@@ -202,4 +193,14 @@ img {
     align-items: flex-start;
     margin-top: 120px;
     position: relative;
+}
+
+#book {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
 }
