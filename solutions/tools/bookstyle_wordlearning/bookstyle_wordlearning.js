@@ -99,9 +99,9 @@ function renderBookPages(rows) {
         back.className = 'back';
         back.innerHTML = `<span>${cols[1]}</span>`;
 
-        paper.appendChild(back);        
+        
         paper.appendChild(front);
-
+        paper.appendChild(back);
         book.appendChild(paper);
     });
 }
