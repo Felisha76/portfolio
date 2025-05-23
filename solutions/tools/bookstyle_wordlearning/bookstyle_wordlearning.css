@@ -37,6 +37,13 @@ i {
     font-size: 4em;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
 /* Book */
 .book {
     width: 350px;
