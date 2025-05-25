@@ -1,5 +1,3 @@
-/* General */
-
 * {
     margin: 0;
     padding: 0;
@@ -9,89 +7,117 @@
 body {
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-family: sans-serif;
-    background-color: #640424;
+    background-color: powderblue;
 }
 
-/* Button */
-button {
-    border: none;
-    background-color: transparent;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.5s;
-}
-
-button:focus {
-    outline: none;
-}
-
-button:hover i {
-    color: rgb(102, 102, 102);
-}
-
-i {
-    color: gray;
-    font-size: 4em;
-}
+#csv-dropdown-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        
+        .csv-dropdown {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            min-width: 100px;
+        }
+        
+        .quiz-title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin: 0;
+            z-index: 1000;
+        }
+        
+        .content {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
 
 img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 30px;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 20%;
 }
 
+.cover-img-placeholder {
+    width: 100%;
+    height: 100%;
+    /*background-color: lightgray;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("https://img.freepik.com/free-vector/cute-owl-perched-branch_1308-165797.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.cover-img-placeholder2 {
+    width: 100%;
+    height: 100%;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-photo/owl-with-big-eyes-branch-3d-illustration_1057-45876.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    border-radius: 5px;
+}
 /* Book */
 .book {
-    width: 350px;
-    height: 500px;
     position: relative;
-    transition: transform 0.5s;
+    width: 350px;
+    height: 400px;
+    transition: transform 1s; /* 0.5s */
+    transform-style: preserve-3d;
 }
-
 
 .paper {
     position: absolute;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 1s;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
 }
 
-.paper.flipped {
-    transform: rotateY(-180deg);
-}
-
-.front {
-    /*backface-visibility: hidden;*/
-    border-left: 3px solid #dac400;
-}
-
-.front, .back {
+.front,
+.back {
+    background-color: white;
     position: absolute;
     width: 100%;
     height: 100%;
-    /*backface-visibility: hidden;*/
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    padding: 20px;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
 }
 
 .front {
     z-index: 1;
-    background-color: #f9f9f9;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
 }
 
 .back {
     z-index: 0;
-    transform: rotateY(180deg);
-    background-color: #dbeafe;
 }
 
 .front-content,
@@ -100,107 +126,33 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
 }
 
 .back-content {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
-/* Paper Flipped 
+/* Paper flip effect */
 .flipped .front,
 .flipped .back {
-    transform: rotateY(-180deg)
-}*/
-
-/* Paper Z-index 
-#p1 {
-    z-index: 3;
+    transform: rotateY(-180deg);
 }
 
-#p2 {
-    z-index: 2;
+/* Controller Buttons */
+button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer
 }
 
-#p3 {
-    z-index: 1;
-}*/
-
-/* Customization 
-
-.book-title {
-    font-size: 3em;
-    margin-bottom: 40px;
-}
-
-.cover-img {
-    width: 200px;
-    height: 270px;
-    object-fit: cover;
-    border-radius: 30px;
-}
-
-#b1 {
-    padding: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    justify-content: space-around;
-}
-
-#b1 h2 {
-    font-size: 2em;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#b1 p {
-    margin-bottom: 20px;
-}*/
-
-/* Layout for top bar */
-#top-bar {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: absolute;
-    top: 20px;
-    left: 0;
-    padding: 0 40px;
-    box-sizing: border-box;
-    z-index: 10;
-}
-
-#arrows {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#csv-dropdown-container {
-    min-width: 220px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-#book-container {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 120px;
-    position: relative;
-}
-
-#book {
-    position: relative;
-    width: 400px;
-    height: 250px;
-    margin: auto;
-    perspective: 2000px;
-    transform-style: preserve-3d;
-    transition: transform 1s;
+.feedback {
+    font-size:small;
+    text-decoration: none;
+    color: #e2f606;
+    font-family: 'Noto Sans';
+    text-align: right;
 }
