@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Proxy Viewer</title>
+  <style>
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Website Viewer</h1>
+  <input id="urlInput" type="text" value="https://example.com" style="width: 60%;">
+  <button onclick="loadSite()">Load</button>
+
+  <iframe id="viewer"></iframe>
+
+  <script>
+    function loadSite() {
+      const url = document.getElementById('urlInput').value;
+      const proxyUrl = `http://localhost:3000/proxy?url=${encodeURIComponent(url)}`;
+
+      fetch(proxyUrl)
+        .then(res => res.text())
+        .then(html => {
+          const iframe = document.getElementById('viewer');
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          doc.open();
+          doc.write(html);
+          doc.close();
+        })
+        .catch(err => alert('Error: ' + err));
+    }
+  </script>
+</body>
+</html>
