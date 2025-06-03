@@ -284,15 +284,14 @@ function processCSVContent(contents) {
                 <div class="front">
                     <div class="front-content">
                         <div class="content">
-                            <h2>${nextFront}</h2>
+                            <h2>${currentBack}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="back">
                     <div class="back-content">
                         <div class="content">
-                            <h2>${currentBack}</h2>
-                            
+                            <h2>${nextFront}</h2>
                         </div>
                     </div>
                 </div>
