@@ -7,7 +7,7 @@ import numpy as np
 import threading
 import time
 from collections import deque
-import requests
+# import requests
 import json
 from datetime import datetime
 
