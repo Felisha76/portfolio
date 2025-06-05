@@ -198,7 +198,7 @@ class SpeedMonitorApp:
                     
             except Exception as e:
                 self.update_gps_status(f"GPS: Error - {str(e)}")
-                # self.simulate_speed()  Fallback to simulation
+                self.simulate_speed()  # Fallback to simulation
                 
         threading.Thread(target=gps_thread, daemon=True).start()
         
@@ -211,7 +211,7 @@ class SpeedMonitorApp:
                     # Simulate realistic speed changes
                     change = np.random.normal(0, 2)
                     base_speed = max(0, base_speed + change)
-                    base_speed = min(120, base_speed)  # Max 120 km/h
+                    base_speed = min(130, base_speed)  # Max 130 km/h
                     self.current_speed = base_speed
                 time.sleep(0.3)  # Update every 0.5 seconds original was 0.1
                 
