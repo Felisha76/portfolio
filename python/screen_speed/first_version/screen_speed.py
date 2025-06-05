@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.animation import FuncAnimation
@@ -8,8 +7,6 @@ import threading
 import time
 from collections import deque
 import requests
-import json
-from datetime import datetime
 
 # For GPS/location services (you'll need to install these)
 try:
@@ -37,6 +34,8 @@ class SpeedMonitorApp:
         # Monitoring flags
         self.is_monitoring = False
         self.gps_connected = False
+        self.gps_retry_count = 0
+        self.max_gps_retries = 10
         
         self.setup_ui()
         self.setup_plot()
@@ -175,47 +174,64 @@ class SpeedMonitorApp:
         )
         
     def connect_gps(self):
-        """Connect to GPS daemon"""
+        """Connect to GPS daemon with retry logic"""
         if not GPS_AVAILABLE:
+            self.update_gps_status("GPS: Module not available")
             return
             
         def gps_thread():
-            try:
-                gpsd.connect()
-                self.gps_connected = True
-                self.update_gps_status("GPS: Connected")
-                
-                while self.gps_connected:
-                    packet = gpsd.get_current()
-                    if packet.mode >= 2:  # 2D fix or better
-                        # Convert m/s to km/h
-                        speed_ms = getattr(packet, 'speed', 0)
-                        if speed_ms is not None:
-                            self.current_speed = speed_ms * 3.6
-                            self.current_location = (packet.lat, packet.lon)
-                            self.get_speed_limit()
-                    time.sleep(0.1)  # original 0.1 seconds
+            self.gps_retry_count = 0
+            
+            while self.gps_retry_count < self.max_gps_retries:
+                try:
+                    self.update_gps_status(f"GPS: Connecting... (Attempt {self.gps_retry_count + 1}/{self.max_gps_retries})")
                     
-            except Exception as e:
-                self.update_gps_status(f"GPS: Error - {str(e)}")
-                self.simulate_speed()  # Fallback to simulation
+                    gpsd.connect()
+                    self.gps_connected = True
+                    self.update_gps_status("GPS: Connected")
+                    
+                    # Main GPS data loop
+                    while self.gps_connected:
+                        try:
+                            packet = gpsd.get_current()
+                            if packet.mode >= 2:  # 2D fix or better
+                                # Convert m/s to km/h
+                                speed_ms = getattr(packet, 'speed', 0)
+                                if speed_ms is not None:
+                                    self.current_speed = speed_ms * 3.6
+                                    self.current_location = (packet.lat, packet.lon)
+                                    self.get_speed_limit()
+                            time.sleep(0.1)
+                        except Exception as e:
+                            print(f"GPS data error: {e}")
+                            # If we lose connection during operation, try to reconnect
+                            self.gps_connected = False
+                            break
+                    
+                    # If we exit the main loop, try to reconnect
+                    if self.gps_retry_count < self.max_gps_retries - 1:
+                        self.gps_retry_count += 1
+                        time.sleep(2)  # Wait 2 seconds before retry
+                        continue
+                    else:
+                        break
+                        
+                except Exception as e:
+                    self.gps_retry_count += 1
+                    print(f"GPS connection attempt {self.gps_retry_count} failed: {e}")
+                    
+                    if self.gps_retry_count < self.max_gps_retries:
+                        self.update_gps_status(f"GPS: Retry in 2s... ({self.gps_retry_count}/{self.max_gps_retries})")
+                        time.sleep(2)  # Wait 2 seconds before retry
+                    else:
+                        break
+            
+            # All retry attempts failed
+            error_message = "GPS is not available. As I want this to use as a car speed monitor, it should be correct."
+            print(error_message)
+            self.update_gps_status("GPS: Failed - Not Available")
                 
         threading.Thread(target=gps_thread, daemon=True).start()
-        
-    def simulate_speed(self):
-        # Simulate speed data for testing
-        def simulation_thread():
-            base_speed = 0
-            while True:
-                if self.is_monitoring:
-                    # Simulate realistic speed changes
-                    change = np.random.normal(0, 2)
-                    base_speed = max(0, base_speed + change)
-                    base_speed = min(130, base_speed)  # Max 130 km/h
-                    self.current_speed = base_speed
-                time.sleep(0.3)  # Update every 0.5 seconds original was 0.1
-                
-        threading.Thread(target=simulation_thread, daemon=True).start()
         
     def get_speed_limit(self):
         """Get speed limit for current location using OpenStreetMap Overpass API"""
@@ -237,7 +253,7 @@ class SpeedMonitorApp:
                 
                 response = requests.post(overpass_url, data=overpass_query, timeout=5)
                 data = response.json()
-                # Simulating response for testing purposes
+                
                 if data['elements']:
                     maxspeed = data['elements'][0]['tags'].get('maxspeed')
                     if maxspeed and maxspeed.isdigit():
@@ -256,17 +272,24 @@ class SpeedMonitorApp:
             
     def update_gps_status(self, status):
         """Update GPS status label"""
-        color = '#00ff00' if 'Connected' in status else '#ff0000'
+        if 'Connected' in status:
+            color = '#00ff00'
+        elif 'Connecting' in status or 'Retry' in status:
+            color = '#ffff00'
+        else:
+            color = '#ff0000'
         self.root.after(0, lambda: self.gps_status_label.config(text=status, fg=color))
         
     def toggle_monitoring(self):
         """Toggle speed monitoring"""
+        if not self.gps_connected:
+            self.update_gps_status("GPS: Must be connected to monitor speed")
+            return
+            
         self.is_monitoring = not self.is_monitoring
         
         if self.is_monitoring:
             self.start_button.config(text="Stop Monitoring", bg='#f44336')
-            if not self.gps_connected:
-                self.simulate_speed()
         else:
             self.start_button.config(text="Start Monitoring", bg='#4CAF50')
             
@@ -280,7 +303,7 @@ class SpeedMonitorApp:
         
     def update_plot(self, frame):
         """Update the speed plot"""
-        if self.is_monitoring:
+        if self.is_monitoring and self.gps_connected:
             current_time = time.time()
             self.speed_history.append(self.current_speed)
             self.time_history.append(current_time)
