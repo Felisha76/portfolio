@@ -55,7 +55,7 @@ class SpeedMonitorApp:
         self.speed_label = tk.Label(
             digital_frame,
             text="0.0",
-            font=('Digital-7', 48, 'bold'),
+            font=('Digital-7', 52, 'bold'),
             fg='#00ff00',
             bg='#2d2d2d'
         )
@@ -77,7 +77,7 @@ class SpeedMonitorApp:
         tk.Label(
             stats_frame,
             text="Max Speed:",
-            font=('Arial', 12),
+            font=('Arial', 12, 'bold'),
             fg='#ffffff',
             bg='#2d2d2d'
         ).grid(row=0, column=0, sticky='w')
@@ -85,7 +85,7 @@ class SpeedMonitorApp:
         self.max_speed_label = tk.Label(
             stats_frame,
             text="0.0 km/h",
-            font=('Arial', 12, 'bold'),
+            font=('Arial', 16, 'bold'),
             fg='#ffff00',
             bg='#2d2d2d'
         )
@@ -95,7 +95,7 @@ class SpeedMonitorApp:
         tk.Label(
             stats_frame,
             text="Speed Limit:",
-            font=('Arial', 12),
+            font=('Arial', 12, 'bold'),
             fg='#ffffff',
             bg='#2d2d2d'
         ).grid(row=1, column=0, sticky='w')
@@ -103,7 +103,7 @@ class SpeedMonitorApp:
         self.speed_limit_label = tk.Label(
             stats_frame,
             text="-- km/h",
-            font=('Arial', 12, 'bold'),
+            font=('Arial', 16, 'bold'),
             fg='#ff6600',
             bg='#2d2d2d'
         )
@@ -119,8 +119,8 @@ class SpeedMonitorApp:
             control_frame,
             text="Start Monitoring",
             command=self.toggle_monitoring,
-            bg='#4CAF50',
-            fg='white',
+            bg="#1F8823",
+            fg='black',
             font=('Arial', 12, 'bold'),
             padx=20
         )
@@ -130,8 +130,8 @@ class SpeedMonitorApp:
             control_frame,
             text="Reset",
             command=self.reset_data,
-            bg='#f44336',
-            fg='white',
+            bg="#f7291a",
+            fg='black',
             font=('Arial', 12, 'bold'),
             padx=20
         )
@@ -141,7 +141,7 @@ class SpeedMonitorApp:
         self.gps_status_label = tk.Label(
             control_frame,
             text="GPS: Disconnected",
-            font=('Arial', 10),
+            font=('Arial', 12),
             fg='#ff0000',
             bg='#1e1e1e'
         )
@@ -155,14 +155,14 @@ class SpeedMonitorApp:
         # Create matplotlib figure
         self.fig, self.ax = plt.subplots(figsize=(10, 4), facecolor='#2d2d2d')
         self.ax.set_facecolor('#1e1e1e')
-        self.ax.set_xlabel('Time (s)', color='white')
-        self.ax.set_ylabel('Speed (km/h)', color='white')
+        self.ax.set_xlabel('Time (s)', color='white', fontsize=12, fontweight='bold')
+        self.ax.set_ylabel('Speed (km/h)', color='white', fontsize=12, fontweight='bold')
         self.ax.set_title('Speed History', color='white', fontsize=14, fontweight='bold')
         self.ax.tick_params(colors='white')
         self.ax.grid(True, alpha=0.3)
         
         # Initialize empty line
-        self.line, = self.ax.plot([], [], color='#00ff00', linewidth=2)
+        self.line, = self.ax.plot([], [], color="#def50e", linewidth=2)
         self.speed_limit_line = None
         
         # Embed plot in tkinter
