@@ -194,16 +194,16 @@ class SpeedMonitorApp:
                             self.current_speed = speed_ms * 3.6
                             self.current_location = (packet.lat, packet.lon)
                             self.get_speed_limit()
-                    time.sleep(0.1)
+                    time.sleep(0.5)  # original 0.1 seconds
                     
             except Exception as e:
                 self.update_gps_status(f"GPS: Error - {str(e)}")
-                self.simulate_speed()  # Fallback to simulation
+                # self.simulate_speed()  Fallback to simulation
                 
         threading.Thread(target=gps_thread, daemon=True).start()
         
-    def simulate_speed(self):
-        """Simulate speed data for testing"""
+    """def simulate_speed(self):
+        # Simulate speed data for testing
         def simulation_thread():
             base_speed = 0
             while True:
@@ -215,7 +215,7 @@ class SpeedMonitorApp:
                     self.current_speed = base_speed
                 time.sleep(0.1)
                 
-        threading.Thread(target=simulation_thread, daemon=True).start()
+        threading.Thread(target=simulation_thread, daemon=True).start()"""
         
     def get_speed_limit(self):
         """Get speed limit for current location using OpenStreetMap Overpass API"""
