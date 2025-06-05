@@ -1,513 +1,325 @@
-import tkinter as tk
-from tkinter import ttk
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.animation import FuncAnimation
-import numpy as np
-import threading
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.clock import Clock
+from kivy.utils import platform
+from kivy.uix.popup import Popup
 import time
 from collections import deque
-import requests
-import json
-from datetime import datetime
-import platform
-import sys
 
-# For GPS/location services (you'll need to install these)
-try:
-    import gpsd
-    GPS_AVAILABLE = True
-except ImportError:
-    GPS_AVAILABLE = False
-    print("GPS module not available. Install python-gps for GPS functionality.")
-
-# For mobile permissions (Android/iOS)
-try:
-    from kivy.garden.mapview import MapView
+# Mobile GPS and permissions
+if platform == 'android':
+    from android.permissions import request_permissions, Permission
     from plyer import gps
-    from jnius.autoclass import autoclass
-    Permission = autoclass('android.Manifest$permission')
-    MOBILE_GPS_AVAILABLE = True
-    IS_MOBILE = True
-except ImportError:
-    MOBILE_GPS_AVAILABLE = False
-    IS_MOBILE = False
+    from jnius import autoclass
+    PythonActivity = autoclass('org.kivy.android.PythonActivity')
+    IS_ANDROID = True
+else:
+    IS_ANDROID = False
 
-class SpeedMonitorApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Car Speed Monitor")
-        self.root.geometry("800x600")
-        self.root.configure(bg='#1e1e1e')
-        
-        # Data storage
-        self.speed_history = deque(maxlen=100)
-        self.time_history = deque(maxlen=100)
+class SpeedMonitorApp(App):
+    def __init__(self):
+        super().__init__()
         self.current_speed = 0.0
         self.max_speed = 0.0
-        self.current_location = None
-        self.speed_limit = None
-        
-        # Monitoring flags
+        self.speed_history = deque(maxlen=100)
         self.is_monitoring = False
-        self.gps_connected = False
-        self.gps_retry_count = 0
-        self.max_gps_retries = 10
+        self.gps_started = False
         self.permissions_granted = False
         
-        # Mobile GPS
-        self.mobile_gps = None
+    def build(self):
+        self.title = "Car Speed Monitor"
         
-        self.setup_ui()
-        self.setup_plot()
+        # Main layout
+        main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
         
-        # Request permissions first, then connect to GPS
-        if IS_MOBILE:
-            self.request_mobile_permissions()
-        else:
-            self.connect_gps()
-        
-    def request_mobile_permissions(self):
-        """Request GPS and location permissions on mobile devices"""
-        def permission_callback(permissions, results):
-            """Callback function for permission results"""
-            granted = all(results)
-            self.permissions_granted = granted
-            
-            if granted:
-                self.update_gps_status("GPS: Permissions granted")
-                print("GPS and location permissions granted")
-                self.connect_mobile_gps()
-            else:
-                error_msg = "GPS permissions denied. Cannot monitor speed without location access."
-                print(error_msg)
-                self.update_gps_status("GPS: Permissions denied")
-                self.show_permission_error()
-        
-        try:
-            # Request both GPS and location permissions
-            permissions = [
-                Permission.ACCESS_FINE_LOCATION,
-                Permission.ACCESS_COARSE_LOCATION,
-            ]
-            
-            self.update_gps_status("GPS: Requesting permissions...")
-            from android.permissions import request_permissions
-            request_permissions(permissions, permission_callback)
-            
-        except Exception as e:
-            print(f"Error requesting permissions: {e}")
-            self.update_gps_status("GPS: Permission error")
-            self.show_permission_error()        
-            
-    def show_permission_error(self):
-    # Show permission error dialog
-        error_window = tk.Toplevel(self.root)
-        error_window.title("Permission Required")
-        error_window.geometry("400x200")
-        error_window.configure(bg='#2d2d2d')
-        error_window.grab_set()  # Make it modal
-        
-        tk.Label(
-            error_window,
-            text="GPS Permission Required",
-            font=('Arial', 16, 'bold'),
-            fg='#ff0000',
-            bg='#2d2d2d'
-        ).pack(pady=20)
-        
-        tk.Label(
-            error_window,
-            text="This app needs GPS and location permissions\nto monitor your car's speed accurately.\n\nPlease grant permissions and restart the app.",
-            font=('Arial', 12),
-            fg='#ffffff',
-            bg='#2d2d2d',
-            justify=tk.CENTER
-        ).pack(pady=10)
-        
-        button_frame = tk.Frame(error_window, bg='#2d2d2d')
-        button_frame.pack(pady=20)
-        
-        tk.Button(
-            button_frame,
-            text="Retry Permissions",
-            command=lambda: [error_window.destroy(), self.request_mobile_permissions()],
-            bg='#4CAF50',
-            fg='white',
-            font=('Arial', 12, 'bold'),
-            padx=20
-        ).pack(side=tk.LEFT, padx=10)
-        
-        tk.Button(
-            button_frame,
-            text="Exit App",
-            command=self.root.quit,
-            bg='#f44336',
-            fg='white',
-            font=('Arial', 12, 'bold'),
-            padx=20
-        ).pack(side=tk.LEFT, padx=10)    
-    def connect_mobile_gps(self):
-        """Connect to mobile GPS using plyer"""
-        if not MOBILE_GPS_AVAILABLE:
-            self.connect_gps()  # Fallback to desktop GPS
-            return
-        
-        def on_location(location):
-            """Callback for GPS location updates"""
-            try:
-                # Calculate speed from GPS data
-                if hasattr(location, 'speed') and location.speed is not None:
-                    # Speed is usually in m/s, convert to km/h
-                    self.current_speed = location.speed * 3.6
-                else:
-                    # If speed not available, calculate from position changes
-                    # This is a simplified approach
-                    self.current_speed = 0.0
-                
-                # Update location
-                if hasattr(location, 'lat') and hasattr(location, 'lon'):
-                    self.current_location = (location.lat, location.lon)
-                    self.get_speed_limit()
-                
-                if not self.gps_connected:
-                    self.gps_connected = True
-                    self.update_gps_status("GPS: Connected (Mobile)")
-                    
-            except Exception as e:
-                print(f"Mobile GPS error: {e}")
-        
-        def on_status(status):
-            """Callback for GPS status updates"""
-            print(f"GPS Status: {status}")
-            if status == 'provider-enabled':
-                self.update_gps_status("GPS: Enabled")
-            elif status == 'provider-disabled':
-                self.update_gps_status("GPS: Disabled")
-                self.gps_connected = False
-        
-        try:
-            # Configure and start mobile GPS
-            gps.configure(on_location=on_location, on_status=on_status)
-            gps.start(minTime=1000, minDistance=0)  # Update every 1 second
-            self.update_gps_status("GPS: Starting mobile GPS...")
-            
-        except Exception as e:
-            print(f"Failed to start mobile GPS: {e}")
-            self.update_gps_status("GPS: Mobile GPS failed")
-            self.connect_gps()  # Fallback to desktop GPS
-    
-    def setup_ui(self):
-        # Main container
-        main_frame = tk.Frame(self.root, bg='#1e1e1e')
-        main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
-        
-        # Digital display frame
-        digital_frame = tk.Frame(main_frame, bg='#2d2d2d', relief=tk.RAISED, bd=2)
-        digital_frame.pack(fill=tk.X, pady=(0, 10))
+        # Title
+        title = Label(
+            text='Car Speed Monitor',
+            size_hint_y=0.1,
+            font_size='24sp',
+            bold=True
+        )
+        main_layout.add_widget(title)
         
         # Current speed display
-        self.speed_label = tk.Label(
-            digital_frame,
-            text="0.0",
-            font=('Digital-7', 52, 'bold'),
-            fg='#00ff00',
-            bg='#2d2d2d'
+        self.speed_label = Label(
+            text='0.0',
+            size_hint_y=0.3,
+            font_size='72sp',
+            bold=True,
+            color=(0, 1, 0, 1)  # Green
         )
-        self.speed_label.pack(pady=10)
+        main_layout.add_widget(self.speed_label)
         
-        tk.Label(
-            digital_frame,
-            text="km/h",
-            font=('Arial', 16),
-            fg='#ffffff',
-            bg='#2d2d2d'
-        ).pack()
-        
-        # Stats frame
-        stats_frame = tk.Frame(digital_frame, bg='#2d2d2d')
-        stats_frame.pack(fill=tk.X, padx=20, pady=10)
+        # Speed unit
+        unit_label = Label(
+            text='km/h',
+            size_hint_y=0.1,
+            font_size='18sp'
+        )
+        main_layout.add_widget(unit_label)
         
         # Max speed
-        tk.Label(
-            stats_frame,
-            text="Max Speed:",
-            font=('Arial', 12, 'bold'),
-            fg='#ffffff',
-            bg='#2d2d2d'
-        ).grid(row=0, column=0, sticky='w')
-        
-        self.max_speed_label = tk.Label(
-            stats_frame,
-            text="0.0 km/h",
-            font=('Arial', 18, 'bold'),
-            fg='#ffff00',
-            bg='#2d2d2d'
+        self.max_speed_label = Label(
+            text='Max Speed: 0.0 km/h',
+            size_hint_y=0.1,
+            font_size='16sp',
+            color=(1, 1, 0, 1)  # Yellow
         )
-        self.max_speed_label.grid(row=0, column=1, sticky='e')
-        
-        # Speed limit
-        tk.Label(
-            stats_frame,
-            text="Speed Limit:",
-            font=('Arial', 12, 'bold'),
-            fg='#ffffff',
-            bg='#2d2d2d'
-        ).grid(row=1, column=0, sticky='w')
-        
-        self.speed_limit_label = tk.Label(
-            stats_frame,
-            text="-- km/h",
-            font=('Arial', 18, 'bold'),
-            fg='#ff6600',
-            bg='#2d2d2d'
-        )
-        self.speed_limit_label.grid(row=1, column=1, sticky='e')
-        
-        stats_frame.columnconfigure(1, weight=1)
-        
-        # Control buttons
-        control_frame = tk.Frame(main_frame, bg='#1e1e1e')
-        control_frame.pack(fill=tk.X, pady=(0, 10))
-        
-        self.start_button = tk.Button(
-            control_frame,
-            text="Start Monitoring",
-            command=self.toggle_monitoring,
-            bg="#1F8823",
-            fg="#dbd5d5",
-            font=('Arial', 12, 'bold'),
-            padx=20
-        )
-        self.start_button.pack(side=tk.LEFT, padx=(0, 10))
-        
-        self.reset_button = tk.Button(
-            control_frame,
-            text="Reset",
-            command=self.reset_data,
-            bg="#f7291a",
-            fg="#dbd5d5",
-            font=('Arial', 12, 'bold'),
-            padx=20
-        )
-        self.reset_button.pack(side=tk.LEFT)
+        main_layout.add_widget(self.max_speed_label)
         
         # GPS status
-        self.gps_status_label = tk.Label(
-            control_frame,
-            text="GPS: Initializing...",
-            font=('Arial', 12),
-            fg='#ffff00',
-            bg='#1e1e1e'
+        self.gps_status_label = Label(
+            text='GPS: Initializing...',
+            size_hint_y=0.1,
+            font_size='14sp',
+            color=(1, 1, 0, 1)  # Yellow
         )
-        self.gps_status_label.pack(side=tk.RIGHT)
+        main_layout.add_widget(self.gps_status_label)
         
-        # Graph frame
-        self.graph_frame = tk.Frame(main_frame, bg='#2d2d2d', relief=tk.RAISED, bd=2)
-        self.graph_frame.pack(fill=tk.BOTH, expand=True)
+        # Control buttons
+        button_layout = BoxLayout(orientation='horizontal', size_hint_y=0.15, spacing=10)
         
-    def setup_plot(self):
-        # Create matplotlib figure
-        self.fig, self.ax = plt.subplots(figsize=(10, 4), facecolor='#2d2d2d')
-        self.ax.set_facecolor('#1e1e1e')
-        self.ax.set_xlabel('Time (s)', color='white', fontsize=12, fontweight='bold')
-        self.ax.set_ylabel('Speed (km/h)', color='white', fontsize=12, fontweight='bold')
-        self.ax.set_title('Speed History', color='white', fontsize=14, fontweight='bold')
-        self.ax.tick_params(colors='white')
-        self.ax.grid(True, alpha=0.3)
-        
-        # Initialize empty line
-        self.line, = self.ax.plot([], [], color="#def50e", linewidth=2)
-        self.speed_limit_line = None
-        
-        # Embed plot in tkinter
-        self.canvas = FigureCanvasTkAgg(self.fig, self.graph_frame)
-        self.canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
-        
-        # Animation
-        self.animation = FuncAnimation(
-            self.fig, self.update_plot, interval=100, blit=False
+        self.start_button = Button(
+            text='Request GPS Permission',
+            background_color=(0.12, 0.53, 0.14, 1)  # Green
         )
+        self.start_button.bind(on_press=self.on_start_button_press)
+        button_layout.add_widget(self.start_button)
         
-    def connect_gps(self):
-        """Connect to GPS daemon with retry logic (Desktop version)"""
-        if not GPS_AVAILABLE:
-            self.update_gps_status("GPS: Module not available")
-            return
-            
-        def gps_thread():
-            self.gps_retry_count = 0
-            
-            while self.gps_retry_count < self.max_gps_retries:
-                try:
-                    self.update_gps_status(f"GPS: Connecting... (Attempt {self.gps_retry_count + 1}/{self.max_gps_retries})")
-                    
-                    gpsd.connect()
-                    self.gps_connected = True
-                    self.update_gps_status("GPS: Connected")
-                    
-                    # Main GPS data loop
-                    while self.gps_connected:
-                        try:
-                            packet = gpsd.get_current()
-                            if packet.mode >= 2:  # 2D fix or better
-                                # Convert m/s to km/h
-                                speed_ms = getattr(packet, 'speed', 0)
-                                if speed_ms is not None:
-                                    self.current_speed = speed_ms * 3.6
-                                    self.current_location = (packet.lat, packet.lon)
-                                    self.get_speed_limit()
-                            time.sleep(0.1)
-                        except Exception as e:
-                            print(f"GPS data error: {e}")
-                            # If we lose connection during operation, try to reconnect
-                            self.gps_connected = False
-                            break
-                    
-                    # If we exit the main loop, try to reconnect
-                    if self.gps_retry_count < self.max_gps_retries - 1:
-                        self.gps_retry_count += 1
-                        time.sleep(2)  # Wait 2 seconds before retry
-                        continue
-                    else:
-                        break
-                        
-                except Exception as e:
-                    self.gps_retry_count += 1
-                    print(f"GPS connection attempt {self.gps_retry_count} failed: {e}")
-                    
-                    if self.gps_retry_count < self.max_gps_retries:
-                        self.update_gps_status(f"GPS: Retry in 2s... ({self.gps_retry_count}/{self.max_gps_retries})")
-                        time.sleep(2)  # Wait 2 seconds before retry
-                    else:
-                        break
-            
-            # All retry attempts failed
-            error_message = "GPS is not available. As I want this to use as a car speed monitor, it should be correct."
-            print(error_message)
-            self.update_gps_status("GPS: Failed - Not Available")
-                
-        threading.Thread(target=gps_thread, daemon=True).start()
+        reset_button = Button(
+            text='Reset',
+            background_color=(0.97, 0.16, 0.10, 1)  # Red
+        )
+        reset_button.bind(on_press=self.reset_data)
+        button_layout.add_widget(reset_button)
         
-    def get_speed_limit(self):
-        """Get speed limit for current location using OpenStreetMap Overpass API"""
-        if not self.current_location:
-            return
-            
-        def speed_limit_thread():
-            try:
-                lat, lon = self.current_location
-                # Overpass API query for speed limits
-                overpass_url = "http://overpass-api.de/api/interpreter"
-                overpass_query = f"""
-                [out:json];
-                (
-                  way(around:100,{lat},{lon})["maxspeed"];
-                );
-                out tags;
-                """
-                
-                response = requests.post(overpass_url, data=overpass_query, timeout=5)
-                data = response.json()
-                
-                if data['elements']:
-                    maxspeed = data['elements'][0]['tags'].get('maxspeed')
-                    if maxspeed and maxspeed.isdigit():
-                        self.speed_limit = int(maxspeed)
-                        self.root.after(0, self.update_speed_limit_display)
-                        
-            except Exception as e:
-                print(f"Error getting speed limit: {e}")
-                
-        threading.Thread(target=speed_limit_thread, daemon=True).start()
+        main_layout.add_widget(button_layout)
         
-    def update_speed_limit_display(self):
-        """Update speed limit display"""
-        if self.speed_limit:
-            self.speed_limit_label.config(text=f"{self.speed_limit} km/h")
-            
-    def update_gps_status(self, status):
-        """Update GPS status label"""
-        if 'Connected' in status:
-            color = '#00ff00'
-        elif 'Connecting' in status or 'Retry' in status:
-            color = '#ffff00'
+        # Initialize GPS
+        if IS_ANDROID:
+            self.request_permissions()
         else:
-            color = '#ff0000'
-        self.root.after(0, lambda: self.gps_status_label.config(text=status, fg=color))
+            self.gps_status_label.text = "GPS: Desktop mode (no GPS)"
+            self.start_button.text = "Start Simulation"
         
+        return main_layout
+    
+    def request_permissions(self):
+        """Request location permissions on Android"""
+        def callback(permissions, results):
+            if all(results):
+                self.permissions_granted = True
+                self.gps_status_label.text = "GPS: Permissions granted"
+                self.start_button.text = "Start Monitoring"
+                print("Location permissions granted")
+            else:
+                self.permissions_granted = False
+                self.gps_status_label.text = "GPS: Permissions denied"
+                self.show_permission_error()
+                print("Location permissions denied")
+        
+        try:
+            permissions = [
+                Permission.ACCESS_FINE_LOCATION,
+                Permission.ACCESS_COARSE_LOCATION
+            ]
+            self.gps_status_label.text = "GPS: Requesting permissions..."
+            request_permissions(permissions, callback)
+        except Exception as e:
+            print(f"Permission request error: {e}")
+            self.show_permission_error()
+    
+    def show_permission_error(self):
+        """Show error popup when permissions are denied"""
+        content = BoxLayout(orientation='vertical', spacing=10, padding=10)
+        
+        error_label = Label(
+            text='Location Permission Required\n\nThis app needs GPS access to monitor\nyour car speed accurately.\n\nPlease grant location permissions\nand restart the app.',
+            text_size=(300, None),
+            halign='center',
+            valign='middle'
+        )
+        content.add_widget(error_label)
+        
+        button_layout = BoxLayout(orientation='horizontal', size_hint_y=0.3, spacing=10)
+        
+        retry_button = Button(text='Retry')
+        exit_button = Button(text='Exit')
+        
+        button_layout.add_widget(retry_button)
+        button_layout.add_widget(exit_button)
+        content.add_widget(button_layout)
+        
+        popup = Popup(
+            title='Permission Required',
+            content=content,
+            size_hint=(0.8, 0.6),
+            auto_dismiss=False
+        )
+        
+        retry_button.bind(on_press=lambda x: [popup.dismiss(), self.request_permissions()])
+        exit_button.bind(on_press=lambda x: self.stop())
+        
+        popup.open()
+    
+    def on_start_button_press(self, instance):
+        """Handle start button press"""
+        if not IS_ANDROID:
+            # Desktop simulation mode
+            self.toggle_simulation()
+            return
+        
+        if not self.permissions_granted:
+            self.request_permissions()
+            return
+        
+        if not self.gps_started:
+            self.start_gps()
+        else:
+            self.toggle_monitoring()
+    
+    def start_gps(self):
+        """Start GPS tracking"""
+        try:
+            gps.configure(
+                on_location=self.on_location,
+                on_status=self.on_status
+            )
+            gps.start(minTime=1000, minDistance=0)  # Update every 1 second
+            self.gps_started = True
+            self.gps_status_label.text = "GPS: Starting..."
+            self.start_button.text = "Start Monitoring"
+            print("GPS started successfully")
+        except Exception as e:
+            print(f"GPS start error: {e}")
+            self.gps_status_label.text = f"GPS: Error - {str(e)}"
+            self.show_gps_error()
+    
+    def on_location(self, **kwargs):
+        """GPS location callback"""
+        try:
+            lat = kwargs.get('lat', 0)
+            lon = kwargs.get('lon', 0)
+            speed = kwargs.get('speed', 0)  # Usually in m/s
+            
+            # Convert speed from m/s to km/h
+            if speed is not None and speed >= 0:
+                self.current_speed = speed * 3.6
+            else:
+                self.current_speed = 0.0
+            
+            if not self.is_monitoring:
+                self.gps_status_label.text = "GPS: Ready"
+                self.gps_status_label.color = (0, 1, 0, 1)  # Green
+            
+            print(f"Location: {lat}, {lon}, Speed: {self.current_speed:.1f} km/h")
+            
+        except Exception as e:
+            print(f"Location processing error: {e}")
+    
+    def on_status(self, stype, status):
+        """GPS status callback"""
+        print(f"GPS Status: {stype} - {status}")
+        if stype == 'provider-enabled':
+            self.gps_status_label.text = "GPS: Enabled"
+        elif stype == 'provider-disabled':
+            self.gps_status_label.text = "GPS: Disabled"
+            self.gps_status_label.color = (1, 0, 0, 1)  # Red
+    
+    def show_gps_error(self):
+        """Show GPS error popup"""
+        content = Label(
+            text='GPS Error\n\nCannot start GPS tracking.\nPlease check if location services\nare enabled in your device settings.',
+            text_size=(300, None),
+            halign='center',
+            valign='middle'
+        )
+        
+        popup = Popup(
+            title='GPS Error',
+            content=content,
+            size_hint=(0.8, 0.4)
+        )
+        popup.open()
+    
     def toggle_monitoring(self):
         """Toggle speed monitoring"""
-        if not self.gps_connected:
-            self.update_gps_status("GPS: Must be connected to monitor speed")
+        if not self.permissions_granted and IS_ANDROID:
+            self.request_permissions()
             return
-            
+        
         self.is_monitoring = not self.is_monitoring
         
         if self.is_monitoring:
-            self.start_button.config(text="Stop Monitoring", bg='#f44336')
+            self.start_button.text = "Stop Monitoring"
+            self.start_button.background_color = (0.97, 0.16, 0.10, 1)  # Red
+            Clock.schedule_interval(self.update_display, 0.1)  # Update every 0.1 seconds
         else:
-            self.start_button.config(text="Start Monitoring", bg='#4CAF50')
-            
-    def reset_data(self):
-        """Reset all data"""
-        self.speed_history.clear()
-        self.time_history.clear()
-        self.max_speed = 0.0
-        self.current_speed = 0.0
-        self.max_speed_label.config(text="0.0 km/h")
+            self.start_button.text = "Start Monitoring"
+            self.start_button.background_color = (0.12, 0.53, 0.14, 1)  # Green
+            Clock.unschedule(self.update_display)
+    
+    def toggle_simulation(self):
+        """Toggle simulation mode for desktop testing"""
+        import random
         
-    def update_plot(self, frame):
-        """Update the speed plot"""
-        if self.is_monitoring and self.gps_connected:
-            current_time = time.time()
-            self.speed_history.append(self.current_speed)
-            self.time_history.append(current_time)
+        self.is_monitoring = not self.is_monitoring
+        
+        if self.is_monitoring:
+            self.start_button.text = "Stop Simulation"
+            self.start_button.background_color = (0.97, 0.16, 0.10, 1)  # Red
+            
+            def simulate_speed(dt):
+                # Simulate realistic speed changes
+                change = random.uniform(-2, 2)
+                self.current_speed = max(0, min(130, self.current_speed + change))
+            
+            Clock.schedule_interval(simulate_speed, 0.5)
+            Clock.schedule_interval(self.update_display, 0.1)
+        else:
+            self.start_button.text = "Start Simulation"
+            self.start_button.background_color = (0.12, 0.53, 0.14, 1)  # Green
+            Clock.unschedule(self.update_display)
+    
+    def update_display(self, dt):
+        """Update speed display"""
+        if self.is_monitoring:
+            # Update current speed display
+            self.speed_label.text = f"{self.current_speed:.1f}"
             
             # Update max speed
             if self.current_speed > self.max_speed:
                 self.max_speed = self.current_speed
-                self.max_speed_label.config(text=f"{self.max_speed:.1f} km/h")
+                self.max_speed_label.text = f"Max Speed: {self.max_speed:.1f} km/h"
             
-            # Update digital display
-            color = '#ff0000' if (self.speed_limit and self.current_speed > self.speed_limit) else '#00ff00'
-            self.speed_label.config(text=f"{self.current_speed:.1f}", fg=color)
+            # Store speed history
+            self.speed_history.append(self.current_speed)
             
-        if len(self.time_history) > 1:
-            # Convert to relative time
-            times = np.array(self.time_history)
-            relative_times = times - times[0]
-            speeds = np.array(self.speed_history)
-            
-            # Update plot
-            self.line.set_data(relative_times, speeds)
-            
-            # Update plot limits
-            self.ax.set_xlim(max(0, relative_times[-1] - 60), relative_times[-1] + 1)
-            self.ax.set_ylim(0, max(100, max(speeds) * 1.1) if len(speeds) > 0 else 100)
-            
-            # Add speed limit line
-            if self.speed_limit:
-                if self.speed_limit_line:
-                    self.speed_limit_line.remove()
-                self.speed_limit_line = self.ax.axhline(
-                    y=self.speed_limit, 
-                    color='red', 
-                    linestyle='--', 
-                    alpha=0.7,
-                    label=f'Speed Limit: {self.speed_limit} km/h'
-                )
-                
-        return self.line,
-
-def main():
-    root = tk.Tk()
-    app = SpeedMonitorApp(root)
+            # Change color based on speed (red if over 100 km/h)
+            if self.current_speed > 100:
+                self.speed_label.color = (1, 0, 0, 1)  # Red
+            else:
+                self.speed_label.color = (0, 1, 0, 1)  # Green
     
-    try:
-        root.mainloop()
-    except KeyboardInterrupt:
-        print("Application closed by user")
+    def reset_data(self, instance):
+        """Reset all speed data"""
+        self.current_speed = 0.0
+        self.max_speed = 0.0
+        self.speed_history.clear()
+        self.speed_label.text = "0.0"
+        self.max_speed_label.text = "Max Speed: 0.0 km/h"
+        self.speed_label.color = (0, 1, 0, 1)  # Green
+    
+    def on_pause(self):
+        """Handle app pause"""
+        return True
+    
+    def on_resume(self):
+        """Handle app resume"""
+        pass
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    SpeedMonitorApp().run()
