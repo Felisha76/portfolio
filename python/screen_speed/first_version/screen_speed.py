@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.animation import FuncAnimation
@@ -7,6 +8,8 @@ import threading
 import time
 from collections import deque
 import requests
+import json
+from datetime import datetime
 
 # For GPS/location services (you'll need to install these)
 try:
