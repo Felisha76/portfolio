@@ -194,7 +194,7 @@ class SpeedMonitorApp:
                             self.current_speed = speed_ms * 3.6
                             self.current_location = (packet.lat, packet.lon)
                             self.get_speed_limit()
-                    time.sleep(0.5)  # original 0.1 seconds
+                    time.sleep(0.1)  # original 0.1 seconds
                     
             except Exception as e:
                 self.update_gps_status(f"GPS: Error - {str(e)}")
@@ -213,7 +213,7 @@ class SpeedMonitorApp:
                     base_speed = max(0, base_speed + change)
                     base_speed = min(120, base_speed)  # Max 120 km/h
                     self.current_speed = base_speed
-                time.sleep(0.5)  # Update every 0.5 seconds original was 0.1
+                time.sleep(0.3)  # Update every 0.5 seconds original was 0.1
                 
         threading.Thread(target=simulation_thread, daemon=True).start()
         
