@@ -3,4 +3,3 @@ matplotlib
 numpy
 requests
 gpsd-py3
-kivy

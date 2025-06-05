@@ -14,7 +14,6 @@ def install_requirements():
         'numpy',
         'requests',
         'gpsd-py3'
-        'kivy',
     ]
     
     for package in requirements:
@@ -38,4 +37,4 @@ if __name__ == "__main__":
     print("Setting up Speed Monitor App...")
     install_requirements()
     setup_gps()
-    print("\nSetup complete! Run: python mobile_speed_app.py")
+    print("\nSetup complete! Run: python screen_speed.py")
