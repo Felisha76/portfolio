@@ -1,0 +1,5 @@
+tkinter
+matplotlib
+numpy
+requests
+gpsd-py3
