@@ -85,7 +85,7 @@ class SpeedMonitorApp:
         self.max_speed_label = tk.Label(
             stats_frame,
             text="0.0 km/h",
-            font=('Arial', 16, 'bold'),
+            font=('Arial', 18, 'bold'),
             fg='#ffff00',
             bg='#2d2d2d'
         )
@@ -103,7 +103,7 @@ class SpeedMonitorApp:
         self.speed_limit_label = tk.Label(
             stats_frame,
             text="-- km/h",
-            font=('Arial', 16, 'bold'),
+            font=('Arial', 18, 'bold'),
             fg='#ff6600',
             bg='#2d2d2d'
         )
@@ -120,7 +120,7 @@ class SpeedMonitorApp:
             text="Start Monitoring",
             command=self.toggle_monitoring,
             bg="#1F8823",
-            fg='black',
+            fg="#dbd5d5",
             font=('Arial', 12, 'bold'),
             padx=20
         )
@@ -131,7 +131,7 @@ class SpeedMonitorApp:
             text="Reset",
             command=self.reset_data,
             bg="#f7291a",
-            fg='black',
+            fg="#dbd5d5",
             font=('Arial', 12, 'bold'),
             padx=20
         )
