@@ -202,7 +202,7 @@ class SpeedMonitorApp:
                 
         threading.Thread(target=gps_thread, daemon=True).start()
         
-    """def simulate_speed(self):
+    def simulate_speed(self):
         # Simulate speed data for testing
         def simulation_thread():
             base_speed = 0
@@ -213,9 +213,9 @@ class SpeedMonitorApp:
                     base_speed = max(0, base_speed + change)
                     base_speed = min(120, base_speed)  # Max 120 km/h
                     self.current_speed = base_speed
-                time.sleep(0.1)
+                time.sleep(0.5)  # Update every 0.5 seconds original was 0.1
                 
-        threading.Thread(target=simulation_thread, daemon=True).start()"""
+        threading.Thread(target=simulation_thread, daemon=True).start()
         
     def get_speed_limit(self):
         """Get speed limit for current location using OpenStreetMap Overpass API"""
