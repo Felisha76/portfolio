@@ -7,7 +7,7 @@ import numpy as np
 import threading
 import time
 from collections import deque
-# import requests
+import requests
 import json
 from datetime import datetime
 
@@ -237,7 +237,7 @@ class SpeedMonitorApp:
                 
                 response = requests.post(overpass_url, data=overpass_query, timeout=5)
                 data = response.json()
-                
+                # Simulating response for testing purposes
                 if data['elements']:
                     maxspeed = data['elements'][0]['tags'].get('maxspeed')
                     if maxspeed and maxspeed.isdigit():
