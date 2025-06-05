@@ -10,6 +10,8 @@ from collections import deque
 import requests
 import json
 from datetime import datetime
+import platform
+import sys
 
 # For GPS/location services (you'll need to install these)
 try:
@@ -19,10 +21,22 @@ except ImportError:
     GPS_AVAILABLE = False
     print("GPS module not available. Install python-gps for GPS functionality.")
 
+# For mobile permissions (Android/iOS)
+try:
+    from kivy.garden.mapview import MapView
+    from plyer import gps
+    from jnius.autoclass import autoclass
+    Permission = autoclass('android.Manifest$permission')
+    MOBILE_GPS_AVAILABLE = True
+    IS_MOBILE = True
+except ImportError:
+    MOBILE_GPS_AVAILABLE = False
+    IS_MOBILE = False
+
 class SpeedMonitorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Vertical Speed Monitor")
+        self.root.title("Car Speed Monitor")
         self.root.geometry("800x600")
         self.root.configure(bg='#1e1e1e')
         
@@ -39,11 +53,150 @@ class SpeedMonitorApp:
         self.gps_connected = False
         self.gps_retry_count = 0
         self.max_gps_retries = 10
+        self.permissions_granted = False
+        
+        # Mobile GPS
+        self.mobile_gps = None
         
         self.setup_ui()
         self.setup_plot()
-        self.connect_gps()
         
+        # Request permissions first, then connect to GPS
+        if IS_MOBILE:
+            self.request_mobile_permissions()
+        else:
+            self.connect_gps()
+        
+    def request_mobile_permissions(self):
+        """Request GPS and location permissions on mobile devices"""
+        def permission_callback(permissions, results):
+            """Callback function for permission results"""
+            granted = all(results)
+            self.permissions_granted = granted
+            
+            if granted:
+                self.update_gps_status("GPS: Permissions granted")
+                print("GPS and location permissions granted")
+                self.connect_mobile_gps()
+            else:
+                error_msg = "GPS permissions denied. Cannot monitor speed without location access."
+                print(error_msg)
+                self.update_gps_status("GPS: Permissions denied")
+                self.show_permission_error()
+        
+        try:
+            # Request both GPS and location permissions
+            permissions = [
+                Permission.ACCESS_FINE_LOCATION,
+                Permission.ACCESS_COARSE_LOCATION,
+            ]
+            
+            self.update_gps_status("GPS: Requesting permissions...")
+            from android.permissions import request_permissions
+            request_permissions(permissions, permission_callback)
+            
+        except Exception as e:
+            print(f"Error requesting permissions: {e}")
+            self.update_gps_status("GPS: Permission error")
+            self.show_permission_error()        
+            
+    def show_permission_error(self):
+    # Show permission error dialog
+        error_window = tk.Toplevel(self.root)
+        error_window.title("Permission Required")
+        error_window.geometry("400x200")
+        error_window.configure(bg='#2d2d2d')
+        error_window.grab_set()  # Make it modal
+        
+        tk.Label(
+            error_window,
+            text="GPS Permission Required",
+            font=('Arial', 16, 'bold'),
+            fg='#ff0000',
+            bg='#2d2d2d'
+        ).pack(pady=20)
+        
+        tk.Label(
+            error_window,
+            text="This app needs GPS and location permissions\nto monitor your car's speed accurately.\n\nPlease grant permissions and restart the app.",
+            font=('Arial', 12),
+            fg='#ffffff',
+            bg='#2d2d2d',
+            justify=tk.CENTER
+        ).pack(pady=10)
+        
+        button_frame = tk.Frame(error_window, bg='#2d2d2d')
+        button_frame.pack(pady=20)
+        
+        tk.Button(
+            button_frame,
+            text="Retry Permissions",
+            command=lambda: [error_window.destroy(), self.request_mobile_permissions()],
+            bg='#4CAF50',
+            fg='white',
+            font=('Arial', 12, 'bold'),
+            padx=20
+        ).pack(side=tk.LEFT, padx=10)
+        
+        tk.Button(
+            button_frame,
+            text="Exit App",
+            command=self.root.quit,
+            bg='#f44336',
+            fg='white',
+            font=('Arial', 12, 'bold'),
+            padx=20
+        ).pack(side=tk.LEFT, padx=10)    
+    def connect_mobile_gps(self):
+        """Connect to mobile GPS using plyer"""
+        if not MOBILE_GPS_AVAILABLE:
+            self.connect_gps()  # Fallback to desktop GPS
+            return
+        
+        def on_location(location):
+            """Callback for GPS location updates"""
+            try:
+                # Calculate speed from GPS data
+                if hasattr(location, 'speed') and location.speed is not None:
+                    # Speed is usually in m/s, convert to km/h
+                    self.current_speed = location.speed * 3.6
+                else:
+                    # If speed not available, calculate from position changes
+                    # This is a simplified approach
+                    self.current_speed = 0.0
+                
+                # Update location
+                if hasattr(location, 'lat') and hasattr(location, 'lon'):
+                    self.current_location = (location.lat, location.lon)
+                    self.get_speed_limit()
+                
+                if not self.gps_connected:
+                    self.gps_connected = True
+                    self.update_gps_status("GPS: Connected (Mobile)")
+                    
+            except Exception as e:
+                print(f"Mobile GPS error: {e}")
+        
+        def on_status(status):
+            """Callback for GPS status updates"""
+            print(f"GPS Status: {status}")
+            if status == 'provider-enabled':
+                self.update_gps_status("GPS: Enabled")
+            elif status == 'provider-disabled':
+                self.update_gps_status("GPS: Disabled")
+                self.gps_connected = False
+        
+        try:
+            # Configure and start mobile GPS
+            gps.configure(on_location=on_location, on_status=on_status)
+            gps.start(minTime=1000, minDistance=0)  # Update every 1 second
+            self.update_gps_status("GPS: Starting mobile GPS...")
+            
+        except Exception as e:
+            print(f"Failed to start mobile GPS: {e}")
+            self.update_gps_status("GPS: Mobile GPS failed")
+            self.connect_gps()  # Fallback to desktop GPS
+    
     def setup_ui(self):
         # Main container
         main_frame = tk.Frame(self.root, bg='#1e1e1e')
@@ -142,9 +295,9 @@ class SpeedMonitorApp:
         # GPS status
         self.gps_status_label = tk.Label(
             control_frame,
-            text="GPS: Disconnected",
+            text="GPS: Initializing...",
             font=('Arial', 12),
-            fg='#ff0000',
+            fg='#ffff00',
             bg='#1e1e1e'
         )
         self.gps_status_label.pack(side=tk.RIGHT)
@@ -177,7 +330,7 @@ class SpeedMonitorApp:
         )
         
     def connect_gps(self):
-        """Connect to GPS daemon with retry logic"""
+        """Connect to GPS daemon with retry logic (Desktop version)"""
         if not GPS_AVAILABLE:
             self.update_gps_status("GPS: Module not available")
             return
