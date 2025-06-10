@@ -7,7 +7,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 
 version = 1.0
-requirements = python3==3.10, kivy, plyer, jnius, android-permissions, numpy, requests, gpsd-py3
+requirements = python3==3.10, kivy, plyer, jnius, numpy, requests, gpsd-py3
 
 
 # Android specific permissions
