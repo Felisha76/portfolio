@@ -7,7 +7,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 
 version = 1.0
-requirements = python3,kivy,plyer,jnius
+requirements = python3,kivy,plyer,jnius,android-permissions
 
 # Android specific permissions
 android.permissions = ACCESS_FINE_LOCATION,ACCESS_COARSE_LOCATION,INTERNET

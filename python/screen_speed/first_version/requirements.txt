@@ -4,3 +4,6 @@ numpy
 requests
 gpsd-py3
 kivy
+android-permissions
+player
+jnius
