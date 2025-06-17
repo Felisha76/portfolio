@@ -3,7 +3,7 @@ import requests
 import os
 
 # Excel fájl beolvasása
-df = pd.read_excel("webzar-tolozar képek.xlsx")  # vagy a saját fájlneved
+df = pd.read_excel("webzar-tolozar_kepek.xlsx")  # vagy a saját fájlneved
 
 # Letöltési mappa
 output_dir = "letoltott_kepek"
