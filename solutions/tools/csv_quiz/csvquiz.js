@@ -4,6 +4,7 @@ const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/Felisha76/portfol
 // Categories configuration - map file prefixes to category names
 const CATEGORIES = {
     'en_hu_': 'English - Hungarian',
+    'ge_hu_': 'German - Hungarian',
     'math_': 'Math',
     'game_': 'Games',
     // Add more categories as needed
@@ -50,7 +51,7 @@ async function fetchCSVFileList() {
                     name: file.name,
                     // You can add a display name by removing the prefix and .csv extension
                     displayName: file.name
-                        .replace(/^(en_hu_|math_|game_)/, '') // Remove prefix
+                        .replace(/^(en_hu_|ge_hu_|math_|game_)/, '') // Remove prefix
                         .replace(/\.csv$/, '')                // Remove .csv extension
                         .replace(/_/g, ' ')                   // Replace underscores with spaces
                 });
@@ -135,7 +136,7 @@ async function loadCSVFromGitHub(fileName) {
 function updateQuizTitle(fileName) {
     // Get display name by removing prefix and extension
     let displayName = fileName
-        .replace(/^(en_hu_|math_|game_)/, '')
+        .replace(/^(en_hu_|ge_hu_math_|game_)/, '')
         .replace(/\.csv$/, '')
         .replace(/_/g, ' ');
     
