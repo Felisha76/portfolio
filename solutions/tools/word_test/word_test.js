@@ -1,3 +1,4 @@
+// Fix the correct answer display issue and ensure the complete sound plays correctly
 document.addEventListener('DOMContentLoaded', function() {
     // Elements
     const fileSelect = document.getElementById('fileSelect');
@@ -246,51 +247,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Check the user's answer
-    function checkAnswer() {
-        const userAnswer = answer.value.trim().toLowerCase();
-        const question = currentQuestions[currentQuestionIndex];
-        const isHuToEn = direction.value === 'hu_to_en' || direction.value === 'ge_to_hu';
-        
-        // Get the correct answer based on direction
-        let correctAnswer = isHuToEn ? question.english.toLowerCase() : question.hungarian.toLowerCase();
-        
-        // Normalize both answers for comparison (remove extra spaces, special chars)
-        const normalizedUserAnswer = userAnswer.replace(/\s+/g, ' ').trim();
-        const normalizedCorrectAnswer = correctAnswer.replace(/\s+/g, ' ').trim();
-        
-        console.log('User answer:', normalizedUserAnswer);
-        console.log('Correct answer:', normalizedCorrectAnswer);
-        
-        if (normalizedUserAnswer === normalizedCorrectAnswer) {
-            // Correct answer
-            correctSound.play();
-            feedback.textContent = 'Correct! 👍';
-            feedback.className = 'correct';
-            document.querySelector('.question-container').classList.add('bounce');
-            correctAnswers++;
-            
-            // Move to next question after a short delay
-            setTimeout(() => {
-                document.querySelector('.question-container').classList.remove('bounce');
-                nextQuestion();
-            }, 1000);
-        } else {
-            // Incorrect answer
-            incorrectSound.play();
-            feedback.innerHTML = `The correct answer is: <br><b style="color:yellow; font-size:2.5vw; "> ${correctAnswer}</b>`;
-            feedback.className = 'incorrect';
-            document.querySelector('.question-container').classList.add('shake');
-            
-            // Add to incorrect questions for later review
-            incorrectQuestions.push(question);
-            
-            // Move to next question after 3 seconds
-            setTimeout(() => {
-                document.querySelector('.question-container').classList.remove('shake');
-                nextQuestion();
-            }, 3000);
-        }
+function checkAnswer() {
+    const userAnswer = answer.value.trim().toLowerCase();
+    const question = currentQuestions[currentQuestionIndex];
+    const dir = direction.value;
+
+    let correctAnswer = '';
+
+    if (dir === 'hu_to_en') {
+        correctAnswer = question.english.toLowerCase();
+    } else if (dir === 'en_to_hu') {
+        correctAnswer = question.hungarian.toLowerCase();
+    } else if (dir === 'ge_to_hu') {
+        correctAnswer = question.hungarian.toLowerCase(); // compare against Hungarian
+    } else if (dir === 'hu_to_ge') {
+        correctAnswer = question.english.toLowerCase(); // if you add Hungarian→German later
     }
+
+    const normalizedUserAnswer = userAnswer.replace(/\s+/g, ' ').trim();
+    const normalizedCorrectAnswer = correctAnswer.replace(/\s+/g, ' ').trim();
+
+    if (normalizedUserAnswer === normalizedCorrectAnswer) {
+        correctSound.play();
+        feedback.textContent = 'Correct! 👍';
+        feedback.className = 'correct';
+        document.querySelector('.question-container').classList.add('bounce');
+        correctAnswers++;
+
+        setTimeout(() => {
+            document.querySelector('.question-container').classList.remove('bounce');
+            nextQuestion();
+        }, 1000);
+    } else {
+        incorrectSound.play();
+        feedback.innerHTML = `The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b>`;
+        feedback.className = 'incorrect';
+        document.querySelector('.question-container').classList.add('shake');
+        incorrectQuestions.push(question);
+
+        setTimeout(() => {
+            document.querySelector('.question-container').classList.remove('shake');
+            nextQuestion();
+        }, 3000);
+    }
+}
+
+
+
     // Move to the next question
     function nextQuestion() {
         currentQuestionIndex++;
