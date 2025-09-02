@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show the current question
     function showQuestion() {
         const question = currentQuestions[currentQuestionIndex];
-        const isHuToEn = direction.value === 'hu_to_en' || direction.value === 'ge_to_hu';
+        const isHuToEn = direction.value === 'hu_to_en' || direction.value === 'hu_to_ge';
             
             // Update progress
             progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
      // Set the source word based on direction
      if (isHuToEn) {
-        sourceWord.innerHTML = `<strong>Magyar szó:</strong><br>${question.hungarian}`;
+        sourceWord.innerHTML = `<strong>🤔</strong><br>${question.hungarian}`;
         
         // Display the image
         if (question.imageUrl) {
@@ -258,11 +258,12 @@ function checkAnswer() {
         correctAnswer = question.english.toLowerCase();
     } else if (dir === 'en_to_hu') {
         correctAnswer = question.hungarian.toLowerCase();
-    } else if (dir === 'ge_to_hu') {
-        correctAnswer = question.hungarian.toLowerCase(); // compare against Hungarian
-    } else if (dir === 'hu_to_ge') {
-        correctAnswer = question.english.toLowerCase(); // if you add Hungarian→German later
-    }
+    } 
+    //else if (dir === 'ge_to_hu') {
+    //  correctAnswer = question.hungarian.toLowerCase(); 
+    //} else if (dir === 'hu_to_ge') {
+    //    correctAnswer = question.english.toLowerCase(); 
+    // }
 
     const normalizedUserAnswer = userAnswer.replace(/\s+/g, ' ').trim();
     const normalizedCorrectAnswer = correctAnswer.replace(/\s+/g, ' ').trim();
