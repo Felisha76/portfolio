@@ -141,20 +141,20 @@ optgroup option {
 }
 
 .card:hover .front {
-	transform: rotateY(180deg) scale(2);
+	transform: rotateY(180deg) scale(1); /* original: transform: rotateY(180deg) scale(2); */
 	transition-duration: 700ms;
 	z-index: 100;
 }
 
 .card:hover .back {
-	transform: rotateY(360deg) scale(2);
+	transform: rotateY(360deg) scale(1); /* original: transform: rotateY(360deg) scale(2); */
 	transition-duration: 700ms;
 	z-index: 100;
 	
 }
 
 .card:hover img {
-	transform: scale(1.8);
+	transform: scale(1); /* original: transform: scale(1.8); */
 	transition-duration: 700ms;
 	vertical-align:15px;
 }
