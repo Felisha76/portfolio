@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
             wordImage.style.display = 'none';
         }
     } else {
-        sourceWord.innerHTML = `<strong>English word:</strong><br>${question.english}`;
+        sourceWord.innerHTML = `<strong>🤔</strong><br>${question.english}`;
         
         // Display the image
         if (question.imageUrl) {
