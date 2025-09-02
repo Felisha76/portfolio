@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Filter for en_hu files
             const enHuFiles = files
-                .filter(file => file.name.startsWith('en_hu') && 
+                .filter(file => (file.name.startsWith('en_hu') || file.name.startsWith('ge_hu')) && 
                 file.name.endsWith('.csv'))
                 .map(file => file.name);
             
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show the current question
     function showQuestion() {
         const question = currentQuestions[currentQuestionIndex];
-        const isHuToEn = direction.value === 'hu_to_en';
+        const isHuToEn = direction.value === 'hu_to_en' || direction.value === 'ge_to_hu';
             
             // Update progress
             progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkAnswer() {
         const userAnswer = answer.value.trim().toLowerCase();
         const question = currentQuestions[currentQuestionIndex];
-        const isHuToEn = direction.value === 'hu_to_en';
+        const isHuToEn = direction.value === 'hu_to_en' || direction.value === 'ge_to_hu';
         
         // Get the correct answer based on direction
         let correctAnswer = isHuToEn ? question.english.toLowerCase() : question.hungarian.toLowerCase();
