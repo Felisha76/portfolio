@@ -75,7 +75,7 @@ optgroup option {
 }
 .card {
 	width: 100%;
-	height: 80%;
+	aspect-ratio: 1 / 1; /* height: 80%; */
 	position: relative;
 	perspective: 1000px;
 	align-items:stretch; /* center */
