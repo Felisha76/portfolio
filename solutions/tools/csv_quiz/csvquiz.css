@@ -137,7 +137,7 @@ optgroup option {
 	z-index: 100;
 	justify-content: center;
 	align-items: center;
-	filter: drop-shadow(16px 16px 20px #eeea04) invert(0%); /* 2025.09.17 */
+	filter: drop-shadow(16px 16px 20px 20px #eeea04) invert(0%); /* 2025.09.17 */
 	
 }
 
