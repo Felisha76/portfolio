@@ -161,7 +161,7 @@ optgroup option {
 
 /* Blur those cards what are NOT hovered */
 .wrap:hover .card:not(:hover) {
-    opacity: 0.5;
+    opacity: 0.2;
     filter: blur(2px);
     transition: opacity 0.5s, filter 0.5s;
 }
