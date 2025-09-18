@@ -137,7 +137,7 @@ optgroup option {
 	z-index: 100;
 	justify-content: center;
 	align-items: center;
-	filter: drop-shadow(16px 16px 20px #04ee37) invert(0%); /* 2025.09.17 */
+	filter: drop-shadow(0px 0px 50px #04ee37) invert(0%); /* 2025.09.17 */
 	
 }
 
@@ -160,12 +160,12 @@ optgroup option {
 	vertical-align:15px;
 }
 
-/* Blur those cards what are NOT hovered */
+/* Blur those cards what are NOT hovered 
 .wrap:hover .card:not(:hover) {
     opacity: 0.8;
     filter: blur(2px);
     transition: opacity 0.5s, filter 0.5s;
-}
+} */
 
 /* Görgetősáv */
 ::-webkit-scrollbar {
