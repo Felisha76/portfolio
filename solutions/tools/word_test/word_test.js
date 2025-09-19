@@ -164,7 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             // Az A oszlopban lehet <img ...> tag és magyar szó is
                             let hungarianRaw = row[0].trim();
                             // Ha van <img ...>, azt szűrjük ki
-                            let hungarian = hungarianRaw.replace(/<img[^>]*>/gi, '').trim();
+                            // let hungarian = hungarianRaw.replace(/<img[^>]*>/gi, '').trim(); 2025.09.19
+                            let hungarian = hungarianRaw
+                            .replace(/<[^>]+>/g, '') // minden HTML tag eltávolítása
+                            .replace(/\s+/g, ' ')    // többszörös szóköz egy szóközre
+                            .trim();
                             
                             const englishColumn = row[1];
                         
