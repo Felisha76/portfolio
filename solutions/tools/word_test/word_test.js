@@ -159,7 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     const parsedData = results.data
                         .filter(row => row.length >= 2 && row[0] && row[1]) // Filter out empty rows
                         .map(row => {
-                            const hungarian = row[0].trim();
+                            // const hungarian = row[0].trim(); 2025.09.19
+
+                            // Az A oszlopban lehet <img ...> tag és magyar szó is
+                            let hungarianRaw = row[0].trim();
+                            // Ha van <img ...>, azt szűrjük ki
+                            let hungarian = hungarianRaw.replace(/<img[^>]*>/gi, '').trim();
+                            
                             const englishColumn = row[1];
                         
                             // Split the B column at <br> tag
