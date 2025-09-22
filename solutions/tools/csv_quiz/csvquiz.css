@@ -110,7 +110,7 @@ optgroup option {
 	top: 10;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 	transition: 0.8s;
 	backface-visibility: hidden;
 	border-radius: 15px;
