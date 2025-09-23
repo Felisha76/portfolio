@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Filter only files that start with "notes_" and end with ".csv"                   ***
             const noteFiles = data.filter(file => 
-                file.name.startsWith('notes_') && 
+                (
+                    file.name.startsWith('di_en_') ||
+                    file.name.startsWith('di_ge_')
+                ) &&
                 file.name.endsWith('.csv')
             );
             
