@@ -38,7 +38,7 @@ async function fetchCSVFileList() {
         
         data
             // Filter files what are CSV files and not notes
-            .filter(file => file.name.endsWith('.csv') && !file.name.startsWith('notes_'))
+            .filter(file => file.name.endsWith('.csv') && !file.name.startsWith('notes_') || !file.name.startsWith('di_') || !file.name.startsWith('tale_'))
             // Filename grouping by category
             .forEach(file => {
                 const category = getCategoryForFile(file.name);
