@@ -56,7 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const option = document.createElement('option');
                 option.value = file.name;
                 // Display a more readable name (remove "notes_" prefix and ".csv" suffix)
-                option.textContent = file.name.replace('di_en_', '').replace('.csv', '').replace('di_ge_', '').replace('_', ' ').replace('to_', 'to '); // replace corrected 2025.09.25
+                option.textContent = file.name.replace('di_en_', '')
+                                                .replace('.csv', '')
+                                                .replace('di_ge_', '')
+                                                .replace('_', ' ')
+                                                .replace('to_', 'to ')
+                                                .replace('s_', 's '); // replace corrected 2025.09.25
                 fileSelect.appendChild(option);
             });
             
