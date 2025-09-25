@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingIndicator = document.getElementById('loadingIndicator');    
     // GitHub repository information
     const GITHUB_RAW_BASE_URL = 'https://raw.githubusercontent.com/Felisha76/portfolio/main/cs_templates/';
-    const GITHUB_API_URL = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates';
+    const GITHUB_API_URL = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates/';
 
     // Current data
     let currentData = [];
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const data = await response.json();
             
-            // Filter only files that start with "notes_" and end with ".csv"                   ***
+            // Filter only files that start with "notes_" and end with ".csv"
             const noteFiles = data.filter(file => 
                 (
                     file.name.startsWith('di_en_') ||
@@ -51,12 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
             defaultOption.textContent = 'Select a file...';
             fileSelect.appendChild(defaultOption);
             
-            // Add options for each note file
+            // Add options for each file
             noteFiles.forEach(file => {
                 const option = document.createElement('option');
                 option.value = file.name;
-                // Display a more readable name (remove "notes_" prefix and ".csv" suffix)      ***
-                option.textContent = file.name.replace('notes_', '').replace('.csv', '');
+                // Display a more readable name (remove "notes_" prefix and ".csv" suffix)
+                option.textContent = file.name.replace('di_en_', '').replace('.csv', '').replace('di_ge_', '').replace('_', ' ').replace('to_', 'to ');
                 fileSelect.appendChild(option);
             });
             
@@ -120,11 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
             skipEmptyLines: true,
         });
     
-        currentData = parsed.data.map(row => ({
-            topic: row['Main'] || '',
-            description: row['Topics'] || '',
-            example: row['Description'] || '',
-            notes: row['Codes'] || ''
+        currentData = parsed.data.map(row => ({ // column headers corrected 2025.09.25
+            topic: row['Book/Ch/L'] || '',
+            description: row['Word'] || '',
+            example: row['Hungarian'] || '',
+            notes: row['Picture'] || ''
         }));
     
         displayData(currentData);
