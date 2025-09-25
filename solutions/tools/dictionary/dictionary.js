@@ -112,25 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingIndicator.textContent = 'Error loading file. Please try again.';
         }
     }
-    
-    // Function to parse CSV data
-    /* 2025.09.25 commented out 
-    function parseCSV(csvText) {
-        const parsed = Papa.parse(csvText, {
-            header: true,
-            skipEmptyLines: true,
-        });
-    
-        currentData = parsed.data.map(row => ({ // column headers corrected 2025.09.25
-            topic: row['Book/Ch/L'] || '',
-            description: row['Word'] || '',
-            example: row['Hungarian'] || '',
-            notes: row['Picture'] || ''
-        }));
-    
-        displayData(currentData);
-    }
-        */
 
     // 2025.09.25 added as corrected function not to wait for headers
        function parseCSV(csvText) {
@@ -180,12 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const exampleCell = document.createElement('td');
             exampleCell.textContent = item.example;
             row.appendChild(exampleCell);
-            
-            /* const notesCell = document.createElement('td');
-            notesCell.textContent = item.notes;
-            row.appendChild(notesCell);
-            
-            tableBody.appendChild(row); 2025.09.25 commented out to display the pictures as HTML*/
 
             const notesCell = document.createElement('td');
             notesCell.innerHTML = item.notes; 
@@ -247,12 +222,9 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.innerHTML = highlightText(item.example, searchTerm);
             row.appendChild(exampleCell);
             
-            /* const notesCell = document.createElement('td');
-            notesCell.innerHTML = highlightText(item.notes, searchTerm); 2025.09.25 commented out to display the pictures as HTML */
             const notesCell = document.createElement('td');
             notesCell.innerHTML = item.notes;
             row.appendChild(notesCell);
-            //row.classList.add('notes-cell');  2025.09.25 added as per AI suggestion
             tableBody.appendChild(row);
         });
     }
@@ -272,10 +244,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }});
 
 
-
-    /* 2025.09.25   File name displays fixed in the dropdown menu
-                    dictionary items displayed correctly in the table.
-                    TO FIX:
-                    - image displaying in the table
-                    -- 2025.09.25 modifications should be reverted next time
-    */
