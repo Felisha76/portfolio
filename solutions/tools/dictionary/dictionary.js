@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const notesCell = document.createElement('td');
             notesCell.innerHTML = item.notes; 
             row.appendChild(notesCell);
-
+            tableBody.appendChild(row); // readded 2025.09.25 to display all rows at the loading of the selected csv.
         });
     }
     

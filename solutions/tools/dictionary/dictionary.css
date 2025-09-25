@@ -10,7 +10,7 @@ body {
     color: #d2d4d6;
     background-color: #1c1d1d;
     padding: 20px;
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 
 .container {
@@ -109,6 +109,13 @@ tr:hover {
 td {
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Feedback */
