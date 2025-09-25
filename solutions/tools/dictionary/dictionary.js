@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const option = document.createElement('option');
                 option.value = file.name;
                 // Display a more readable name (remove "notes_" prefix and ".csv" suffix)
-                option.textContent = file.name.replace('di_en_', '').replace('.csv', '').replace('di_ge_', '').replace('_', ' ').replace('to_', 'to ');
+                option.textContent = file.name.replace('di_en_', '').replace('.csv', '').replace('di_ge_', '').replace('_', ' ').replace('to_', 'to '); // replace corrected 2025.09.25
                 fileSelect.appendChild(option);
             });
             
@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Function to parse CSV data                                                       ***
+    // Function to parse CSV data
+    /* 2025.09.25 commented out 
     function parseCSV(csvText) {
         const parsed = Papa.parse(csvText, {
             header: true,
@@ -129,9 +130,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
         displayData(currentData);
     }
+        */
+
+    // 2025.09.25 added as corrected function not to wait for headers
+       function parseCSV(csvText) {
+        const parsed = Papa.parse(csvText, {
+            header: false,
+            skipEmptyLines: true,
+        });
+
+        currentData = parsed.data.map(row => ({
+            topic: row[0] || '',
+            description: row[1] || '',
+            example: row[2] || '',
+            notes: row[3] || ''
+        }));
+
+        displayData(currentData);
+}
     
     
-    // Function to display data in the table                                                ***
+    // Function to display data in the table
     function displayData(data) {
         tableBody.innerHTML = '';
         
@@ -162,11 +181,16 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.textContent = item.example;
             row.appendChild(exampleCell);
             
-            const notesCell = document.createElement('td');
+            /* const notesCell = document.createElement('td');
             notesCell.textContent = item.notes;
             row.appendChild(notesCell);
             
-            tableBody.appendChild(row);
+            tableBody.appendChild(row); 2025.09.25 commented out to display the pictures as HTML*/
+
+            const notesCell = document.createElement('td');
+            notesCell.innerHTML = item.notes; 
+            row.appendChild(notesCell);
+
         });
     }
     
@@ -180,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Filter data that contains the search term in any field                                       ***
+        // Filter data that contains the search term in any field
         const filteredData = currentData.filter(item => 
             item.topic.toLowerCase().includes(searchTerm) ||
             item.description.toLowerCase().includes(searchTerm) ||
@@ -223,10 +247,12 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.innerHTML = highlightText(item.example, searchTerm);
             row.appendChild(exampleCell);
             
+            /* const notesCell = document.createElement('td');
+            notesCell.innerHTML = highlightText(item.notes, searchTerm); 2025.09.25 commented out to display the pictures as HTML */
             const notesCell = document.createElement('td');
-            notesCell.innerHTML = highlightText(item.notes, searchTerm);
+            notesCell.innerHTML = item.notes;
             row.appendChild(notesCell);
-            
+            //row.classList.add('notes-cell');  2025.09.25 added as per AI suggestion
             tableBody.appendChild(row);
         });
     }
@@ -244,3 +270,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Replace matches with highlighted version
         return text.replace(regex, '<span class="highlight">$1</span>');
     }});
+
+
+
+    /* 2025.09.25   File name displays fixed in the dropdown menu
+                    dictionary items displayed correctly in the table.
+                    TO FIX:
+                    - image displaying in the table
+                    -- 2025.09.25 modifications should be reverted next time
+    */
