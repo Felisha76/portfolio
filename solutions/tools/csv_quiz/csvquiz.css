@@ -25,6 +25,8 @@ img {
     top: 5%;
     left: 2.5%;
     right: 2.5%;
+	z-index:0; /* 2025.09.28 */
+	transition: transform 0.3s ease;
 }
 
 label {
@@ -116,7 +118,7 @@ optgroup option {
 	transition: 0.8s;
 	backface-visibility: hidden;
 	border-radius: 15px;
-
+	z-index: 1; /* 2025.09.28 */
 }
 
 .front a, .back a {
