@@ -7,6 +7,7 @@ body {
 
 p {
     font-size: 2vw;
+	z-index: 2;
 }
 
 img {
@@ -39,7 +40,7 @@ a {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 20px;
     
 }
