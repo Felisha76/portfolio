@@ -7,13 +7,13 @@ body {
 
 p {
     font-size: 2vw;
-	z-index: 1; /* 2025.09.28 */
+	/*z-index: 1;  2025.09.28 */
 }
 
 img {
     /*max-width:8vw; */
 	max-height:10vw;
-	z-index: 2; /* 2025.09.28 */
+	/*z-index: 2;  2025.09.28 */
 }
 
 .card img {
