@@ -188,8 +188,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const filteredData = currentData.filter(item => 
             item.topic.toLowerCase().includes(searchTerm) ||
             item.description.toLowerCase().includes(searchTerm) ||
-            item.example.toLowerCase().includes(searchTerm) ||
-            item.notes.toLowerCase().includes(searchTerm)
+            item.example.toLowerCase().includes(searchTerm) //||
+            // item.notes.toLowerCase().includes(searchTerm)
         );
         
         // Display filtered data with highlighting
