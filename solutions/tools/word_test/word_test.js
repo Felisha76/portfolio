@@ -256,15 +256,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Indítsd el a kérdés időzítőjét, ha a timerEnabled be van kapcsolva
     if (timerEnabled.checked) {
         questionTimeLeft = 15;
-        timer.textContent = `Time left: ${questionTimeLeft}s`;
         timer.classList.remove('hidden');
+        timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: ${questionTimeLeft}s`;
         if (questionTimerInterval) clearInterval(questionTimerInterval);
         questionTimerInterval = setInterval(() => {
             questionTimeLeft--;
-            timer.textContent = `Time left: ${questionTimeLeft}s`;
+            timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: ${questionTimeLeft}s`;
             if (questionTimeLeft <= 0) {
                 clearInterval(questionTimerInterval);
-                timer.textContent = 'Time is up!';
+                timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: 0s<br><span style="color:red;">Time is up!</span>`;
                 checkAnswer(true); // true: idő lejárt
             }
         }, 1000);
@@ -353,7 +353,11 @@ function checkAnswer(timeUp = false) {
     // Update the timer
     function updateTimer() {
         elapsedTime++;
-        timer.textContent = `Time: ${elapsedTime}s`;
+        if (timerEnabled.checked) {
+            timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: ${questionTimeLeft}s`;
+        } else {
+            timer.textContent = `Time: ${elapsedTime}s`;
+        }
     }
     
     // End the test
