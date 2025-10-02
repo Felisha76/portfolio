@@ -42,8 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let startTimeStamp;
     let endTimeStamp;
     let testDuration;
-    let questionTimeLeft = 15; // Új változó: hány másodperc van hátra az aktuális kérdésre
-    let questionTimerInterval; // Új változó: az aktuális kérdés időzítője
     
     // Load available vocabulary files
     loadVocabularyFiles();
@@ -224,19 +222,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function showQuestion() {
         const question = currentQuestions[currentQuestionIndex];
         const isHuToEn = direction.value === 'hu_to_en' || direction.value === 'hu_to_ge';
-
-    // Update progress
-    progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
-
-    // Clear previous feedback and answer
-    feedback.textContent = '';
-    feedback.className = '';
-    answer.value = '';
-    answer.focus();
-
-    // Set the source word based on direction
-    if (isHuToEn) {
+            
+            // Update progress
+            progress.textContent = `Question ${currentQuestionIndex + 1}/${currentQuestions.length}`;
+            
+            // Clear previous feedback and answer
+            feedback.textContent = '';
+            feedback.className = '';
+            answer.value = '';
+            answer.focus();
+            
+     // Set the source word based on direction
+     if (isHuToEn) {
         sourceWord.innerHTML = `<strong>🤔</strong><br>${question.hungarian}`;
+        
+        // Display the image
         if (question.imageUrl) {
             wordImage.src = question.imageUrl;
             wordImage.style.display = 'block';
@@ -245,6 +245,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     } else {
         sourceWord.innerHTML = `<strong>🤔</strong><br>${question.english}`;
+        
+        // Display the image
         if (question.imageUrl) {
             wordImage.src = question.imageUrl;
             wordImage.style.display = 'block';
@@ -252,35 +254,10 @@ document.addEventListener('DOMContentLoaded', function() {
             wordImage.style.display = 'none';
         }
     }
-
-    // Indítsd el a kérdés időzítőjét, ha a timerEnabled be van kapcsolva
-    if (timerEnabled.checked) {
-        questionTimeLeft = 15;
-        timer.textContent = `Time left: ${questionTimeLeft}s`;
-        timer.classList.remove('hidden');
-        if (questionTimerInterval) clearInterval(questionTimerInterval);
-        questionTimerInterval = setInterval(() => {
-            questionTimeLeft--;
-            timer.textContent = `Time left: ${questionTimeLeft}s`;
-            if (questionTimeLeft <= 0) {
-                clearInterval(questionTimerInterval);
-                timer.textContent = 'Time is up!';
-                checkAnswer(true); // true: idő lejárt
-            }
-        }, 1000);
-    } else {
-        timer.classList.add('hidden');
-        if (questionTimerInterval) clearInterval(questionTimerInterval);
     }
-}
     
     // Check the user's answer
-// Módosított checkAnswer függvény: fogad egy optional paramétert, ami jelzi, hogy idő lejárt miatt hívódott-e
-function checkAnswer(timeUp = false) {
-    if (timerEnabled.checked && questionTimerInterval) {
-        clearInterval(questionTimerInterval);
-    }
-
+function checkAnswer() {
     const userAnswer = answer.value.trim().toLowerCase();
     const question = currentQuestions[currentQuestionIndex];
     const dir = direction.value;
@@ -291,12 +268,17 @@ function checkAnswer(timeUp = false) {
         correctAnswer = question.english.toLowerCase();
     } else if (dir === 'en_to_hu') {
         correctAnswer = question.hungarian.toLowerCase();
-    }
+    } 
+    //else if (dir === 'ge_to_hu') {
+    //  correctAnswer = question.hungarian.toLowerCase(); 
+    //} else if (dir === 'hu_to_ge') {
+    //    correctAnswer = question.english.toLowerCase(); 
+    // }
 
     const normalizedUserAnswer = userAnswer.replace(/\s+/g, ' ').trim();
     const normalizedCorrectAnswer = correctAnswer.replace(/\s+/g, ' ').trim();
 
-    if (!timeUp && normalizedUserAnswer === normalizedCorrectAnswer) {
+    if (normalizedUserAnswer === normalizedCorrectAnswer) {
         correctSound.play();
         feedback.textContent = 'Correct! 👍';
         feedback.className = 'correct';
@@ -309,11 +291,7 @@ function checkAnswer(timeUp = false) {
         }, 1000);
     } else {
         incorrectSound.play();
-        if (timeUp) {
-            feedback.innerHTML = `Time is up!<br>The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b>`;
-        } else {
-            feedback.innerHTML = `The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b>`;
-        }
+        feedback.innerHTML = `The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b>`;
         feedback.className = 'incorrect';
         document.querySelector('.question-container').classList.add('shake');
         incorrectQuestions.push(question);
