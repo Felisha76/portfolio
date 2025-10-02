@@ -257,14 +257,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (timerEnabled.checked) {
         questionTimeLeft = 15;
         timer.classList.remove('hidden');
-        timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: ${questionTimeLeft}s`;
+        timer.innerHTML = `Time: ${elapsedTime}s<br><span id="timeLeftDisplay">Time left: ${questionTimeLeft}s</span>`;
         if (questionTimerInterval) clearInterval(questionTimerInterval);
         questionTimerInterval = setInterval(() => {
             questionTimeLeft--;
-            timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: ${questionTimeLeft}s`;
+            let timeLeftHtml = `Time left: ${questionTimeLeft}s`;
+            let timeLeftSpan = document.getElementById('timeLeftDisplay');
+            if (questionTimeLeft <= 5) {
+                // Piros és villogó stílus
+                timeLeftHtml = `<span class="blinking" style="color:red;">Time left: ${questionTimeLeft}s</span>`;
+            }
+            timer.innerHTML = `Time: ${elapsedTime}s<br>${timeLeftHtml}`;
             if (questionTimeLeft <= 0) {
                 clearInterval(questionTimerInterval);
-                timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: 0s<br><span style="color:red;">Time is up!</span>`;
+                timer.innerHTML = `Time: ${elapsedTime}s<br><span style="color:red;">Time left: 0s</span><br><span style="color:red;">Time is up!</span>`;
                 checkAnswer(true); // true: idő lejárt
             }
         }, 1000);
@@ -354,7 +360,11 @@ function checkAnswer(timeUp = false) {
     function updateTimer() {
         elapsedTime++;
         if (timerEnabled.checked) {
-            timer.innerHTML = `Time: ${elapsedTime}s<br>Time left: ${questionTimeLeft}s`;
+            let timeLeftHtml = `Time left: ${questionTimeLeft}s`;
+            if (questionTimeLeft <= 5) {
+                timeLeftHtml = `<span class="blinking" style="color:red;">Time left: ${questionTimeLeft}s</span>`;
+            }
+            timer.innerHTML = `Time: ${elapsedTime}s<br>${timeLeftHtml}`;
         } else {
             timer.textContent = `Time: ${elapsedTime}s`;
         }

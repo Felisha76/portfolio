@@ -186,3 +186,11 @@ a {
 .shake {
     animation: shake 0.4s ease;
 }
+
+/* Fájl: word_test.css vagy a <style> blokkban */
+.blinking {
+    animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
