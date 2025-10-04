@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Föld belső felépítése – Interaktív feladat</title>
+<style>
+  body {
+    font-family: "Noto Sans", sans-serif;
+    background-color: #f0f8ff;
+    color: #222;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #003366;
+  }
+  section {
+    margin-top: 20px;
+  }
+  input[type="text"] {
+    width: 60%;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  .feedback {
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  .correct {
+    color: green;
+  }
+  .incorrect {
+    color: red;
+  }
+  button {
+    display: block;
+    margin: 25px auto;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #005fa3;
+  }
+</style>
+</head>
+<body>
+
+<h1>🌍 A Föld belső felépítése</h1>
+
+<section id="feladat1">
+  <h2>1. Nevezd meg az ábra részeit!</h2>
+  <p>A – <input type="text" id="A" placeholder="ide írd a választ"></p>
+  <p>B – <input type="text" id="B" placeholder="ide írd a választ"></p>
+  <p>C – <input type="text" id="C" placeholder="ide írd a választ"></p>
+  <p>D – <input type="text" id="D" placeholder="ide írd a választ"></p>
+  <p>E – <input type="text" id="E" placeholder="ide írd a választ"></p>
+  <p>F – <input type="text" id="F" placeholder="ide írd a választ"></p>
+  <p>G – <input type="text" id="G" placeholder="ide írd a választ"></p>
+  <p>H – <input type="text" id="H" placeholder="ide írd a választ"></p>
+</section>
+
+<section id="feladat2">
+  <h2>2. Kapcsold össze az állításokat a megfelelő betűkkel!</h2>
+  <ol>
+    <li>A Föld legkülső burka: <input type="text" id="q1" maxlength="1" placeholder="A–H"></li>
+    <li>Csak a legfelső rétege szilárd: <input type="text" id="q2" maxlength="1" placeholder="A–H"></li>
+    <li>Lemezekre tagolódik: <input type="text" id="q3" maxlength="1" placeholder="A–H"></li>
+    <li>Izzó kőzetolvadék található benne: <input type="text" id="q4" maxlength="1" placeholder="A–H"></li>
+    <li>Alsó része a földköpenyhez tartozik: <input type="text" id="q5" maxlength="1" placeholder="A–H"></li>
+    <li>Közvetlenül az óceánok vize alatt helyezkedik el: <input type="text" id="q6" maxlength="1" placeholder="A–H"></li>
+    <li>Egyik része a földkéreg: <input type="text" id="q7" maxlength="1" placeholder="A–H"></li>
+    <li>A mag szilárd része: <input type="text" id="q8" maxlength="1" placeholder="A–H"></li>
+  </ol>
+</section>
+
+<button onclick="ellenoriz()">✅ Ellenőrzés</button>
+
+<p id="eredmeny"></p>
+
+<script>
+function ellenoriz() {
+  // 1. feladat megoldások
+  const helyes = {
+    A: "kéreg",
+    B: "földköpeny",
+    C: "külső mag",
+    D: "belső mag",
+    E: "óceáni kéreg",
+    F: "szilárd köpeny",
+    G: "folyékony külső mag",
+    H: "szilárd belső mag"
+  };
+
+  // 2. feladat helyes betűk
+  const helyes2 = {
+    q1: "A",
+    q2: "B",
+    q3: "A",
+    q4: "C",
+    q5: "B",
+    q6: "E",
+    q7: "A",
+    q8: "H"
+  };
+
+  let pont = 0, osszes = 16;
+
+  // Ellenőrzés az 1. feladathoz
+  for (let betu in helyes) {
+    let valasz = document.getElementById(betu).value.trim().toLowerCase();
+    let helyesValasz = helyes[betu].toLowerCase();
+    let elem = document.getElementById(betu);
+    if (valasz === helyesValasz) {
+      elem.style.border = "2px solid green";
+      pont++;
+    } else {
+      elem.style.border = "2px solid red";
+    }
+  }
+
+  // Ellenőrzés a 2. feladathoz
+  for (let q in helyes2) {
+    let valasz = document.getElementById(q).value.trim().toUpperCase();
+    let helyesValasz = helyes2[q];
+    let elem = document.getElementById(q);
+    if (valasz === helyesValasz) {
+      elem.style.border = "2px solid green";
+      pont++;
+    } else {
+      elem.style.border = "2px solid red";
+    }
+  }
+
+  // Eredmény kiírása
+  let uzenet = `Eredményed: ${pont}/${osszes} pont. `;
+  if (pont === osszes) uzenet += "🎉 Szuper, minden válasz helyes!";
+  else if (pont > osszes * 0.6) uzenet += "🙂 Nagyon ügyes vagy, csak pár hiba!";
+  else uzenet += "😅 Gyakorolj még egy kicsit, menni fog!";
+  document.getElementById("eredmeny").innerHTML = uzenet;
+}
+</script>
+
+</body>
+</html>
