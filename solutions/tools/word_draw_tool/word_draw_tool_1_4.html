@@ -139,20 +139,36 @@ function speakText(text) {
 
 // Web Audio API
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let currentOscillator = null; // a legutóbbi hang tárolása
+
 function playNoteByY(y, height) {
   const minFreq = 220; 
-  const maxFreq = 880; 
+  const maxFreq = 1000; // * test
   const freq = maxFreq - ((y / height) * (maxFreq - minFreq));
+
+  // Ha van már futó oszcillátor, állítsuk le
+  if (currentOscillator) {
+    currentOscillator.stop();
+    currentOscillator.disconnect();
+    currentOscillator = null;
+  }
+
   const oscillator = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();
   oscillator.type = 'sine';
   oscillator.frequency.value = freq;
   gainNode.gain.value = 0.1;
+
   oscillator.connect(gainNode);
   gainNode.connect(audioCtx.destination);
+
   oscillator.start();
   oscillator.stop(audioCtx.currentTime + 0.15);
+
+  // az aktuális oszcillátort tároljuk
+  currentOscillator = oscillator;
 }
+
 
 // magyar digráfok és trigráf
 const DIGRAPHS = ["dzs", "dz", "cs", "gy", "ly", "ny", "sz", "ty", "zs"];
@@ -330,7 +346,7 @@ showAxesInput.addEventListener("change", render);
 exportBtn.addEventListener("click", exportToPNG);
 
 // alap példa
-textarea.value = "Írj ide valamit!";
+textarea.value = "";
 render();
 </script>
 </body>
