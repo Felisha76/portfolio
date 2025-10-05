@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Magyar "Titkosírás" vizualizátor + Hang</title>
+<title>Szöveg vizualizátor + Hang</title>
+<link rel="icon" type="image/png" href="../../../media/favicon_light.png">
+
 <style>
   body {
     margin: 0;
@@ -328,7 +330,7 @@ function exportToPNG() {
     let filename = textarea.value.trim().slice(0, 10); 
     filename = filename.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_]/g, "_");
     if (!filename) filename = "titkosiras";
-    
+
     /* original
     let filename = textarea.value.trim()
       .replace(/\s+/g, "_")
