@@ -217,9 +217,9 @@ function render() {
       const ci2 = charIndex(processed[i+1].ch);
 
       const x1 = marginLeft + processed[i].x * xSpacing;
-      const y1 = marginTop + ci1 * ySpacing;
+      const y1 = height - marginTop - ci1 * ySpacing;
       const x2 = marginLeft + processed[i+1].x * xSpacing;
-      const y2 = marginTop + ci2 * ySpacing;
+      const y2 = height - marginTop - ci2 * ySpacing;
 
       const line = document.createElementNS(svgns, "line");
       line.setAttribute("x1", x1);
@@ -236,7 +236,7 @@ function render() {
   processed.forEach((it) => {
     const ci = charIndex(it.ch);
     const cx = marginLeft + it.x * xSpacing;
-    const cy = marginTop + ci * ySpacing;
+    const cy = height - marginTop - ci * ySpacing;
     const color = palette[ci];
 
     const circle = document.createElementNS(svgns, "circle");
@@ -250,6 +250,10 @@ function render() {
 
   svgWrap.innerHTML = "";
   svgWrap.appendChild(svg);
+
+  // mindig legörgetett legyen a kezdőállapot
+  svgWrap.scrollTop = svgWrap.scrollHeight;
+
 }
 
 function exportToPNG() {
@@ -270,13 +274,22 @@ function exportToPNG() {
     ctx.fillRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(img, 0, 0);
     const png = canvas.toDataURL("image/png");
+
+    // fájlnév generálása a textarea tartalmából
+    let filename = textarea.value.trim()
+      .replace(/\s+/g, "_")       // szóközök _
+      .replace(/[^a-zA-Z0-9_]/g, "_"); // speciális karakterek _
+
+    if (!filename) filename = "titkosiras";
+
     const link = document.createElement("a");
     link.href = png;
-    link.download = "titkosiras.png";
+    link.download = filename + ".png";
     link.click();
   };
   img.src = imgSrc;
 }
+
 
 textarea.addEventListener("input", render);
 dotSizeInput.addEventListener("input", render);
