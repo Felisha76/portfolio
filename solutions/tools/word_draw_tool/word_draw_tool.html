@@ -62,7 +62,7 @@
     border-radius: 8px;
     padding: 0.5rem;
     overflow: auto;
-    min-height: 300px;
+    max-height: 300px; // rajzot befoglaló keret magassága
   }
 
   button {
@@ -87,8 +87,8 @@
 
       <div class="controls">
         <div class="control">Pontméret: <input id="dotSize" type="range" min="4" max="20" value="8"></div>
-        <div class="control">X-távolság: <input id="xSpacing" type="range" min="10" max="50" value="25"></div>
-        <div class="control">Y-távolság: <input id="ySpacing" type="range" min="10" max="25" value="15"></div>
+        <div class="control">X-távolság: <input id="xSpacing" type="range" min="5" max="200" value="20"></div>
+        <div class="control">Y-távolság: <input id="ySpacing" type="range" min="5" max="200" value="5"></div>
         <div class="control"><label><input id="showAxes" type="checkbox" checked> Tengelyek</label></div>
         <div class="control"><button id="exportBtn">Export PNG</button></div>
       </div>
@@ -141,8 +141,8 @@ function createCharset() {
   const base = ['a','á','b','c','cs','d','dz','dzs','e','é','f','g','gy','h','i','í','j','k','l','ly','m','n','ny','o','ó','ö','ő','p','q','r','s','sz','t','ty','u','ú','ü','ű','v','w','x','y','z','zs'];
   const caps = base.map(ch => ch.toUpperCase());
   const digits = Array.from({length:10}, (_,i)=>String(i));
-  const punct = ['.',',',':','-','+','?','!','\'',' '];
-  return [...base, ...caps, ...digits, ...punct];
+  const punct = ['.',',',':','-','+','?','!','\''];
+  return [' ', ...base, ...caps, ...digits, ...punct]; // szóköz legelöl
 }
 
 function createPalette(n) {
@@ -172,18 +172,15 @@ function render() {
   const tokens = tokenizeText(text);
 
   // új x-index: szóban elfoglalt sorszám
-  let processed = [];
-  const words = text.split(/\s+/).filter(Boolean);
-  words.forEach((w, wi) => {
-    let chars = tokenizeText(w);
-    chars.forEach((ch, ci) => {
-      processed.push({ch: ch.ch, x: ci, wordIndex: wi});
-    });
-  });
+  const processed = tokenizeText(text);
+
 
   const maxX = processed.reduce((m, it) => Math.max(m, it.x), 0);
   const width = Math.max(600, (maxX + 2) * xSpacing);
-  const height = Math.max(300, (CHARSET.length + 1) * ySpacing);
+  const rawHeight = (CHARSET.length + 1) * ySpacing + 60; // +60 egy kis margó
+  const height = Math.max(200, rawHeight);
+
+
 
   const svgns = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(svgns, "svg");
@@ -213,10 +210,33 @@ function render() {
     svg.appendChild(yline);
   }
 
-  processed.forEach((it, idx) => {
+  // először összekötjük a pontokat sorrendben
+  if (processed.length > 1) {
+    for (let i = 0; i < processed.length - 1; i++) {
+      const ci1 = charIndex(processed[i].ch);
+      const ci2 = charIndex(processed[i+1].ch);
+
+      const x1 = marginLeft + processed[i].x * xSpacing;
+      const y1 = height - marginTop - ci1 * ySpacing;
+      const x2 = marginLeft + processed[i+1].x * xSpacing;
+      const y2 = height - marginTop - ci2 * ySpacing;
+
+      const line = document.createElementNS(svgns, "line");
+      line.setAttribute("x1", x1);
+      line.setAttribute("y1", y1);
+      line.setAttribute("x2", x2);
+      line.setAttribute("y2", y2);
+      line.setAttribute("stroke", "gray");
+      line.setAttribute("stroke-width", "1");
+      svg.appendChild(line);
+    }
+  }
+
+  // aztán kirajzoljuk a köröket
+  processed.forEach((it) => {
     const ci = charIndex(it.ch);
     const cx = marginLeft + it.x * xSpacing;
-    const cy = marginTop + ci * ySpacing;
+    const cy = height - marginTop - ci * ySpacing;
     const color = palette[ci];
 
     const circle = document.createElementNS(svgns, "circle");
@@ -227,8 +247,13 @@ function render() {
     svg.appendChild(circle);
   });
 
+
   svgWrap.innerHTML = "";
   svgWrap.appendChild(svg);
+
+  // mindig legörgetett legyen a kezdőállapot
+  svgWrap.scrollTop = svgWrap.scrollHeight;
+
 }
 
 function exportToPNG() {
@@ -249,13 +274,22 @@ function exportToPNG() {
     ctx.fillRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(img, 0, 0);
     const png = canvas.toDataURL("image/png");
+
+    // fájlnév generálása a textarea tartalmából
+    let filename = textarea.value.trim()
+      .replace(/\s+/g, "_")       // szóközök _
+      .replace(/[^a-zA-Z0-9_]/g, "_"); // speciális karakterek _
+
+    if (!filename) filename = "titkosiras";
+
     const link = document.createElement("a");
     link.href = png;
-    link.download = "titkosiras.png";
+    link.download = filename + ".png";
     link.click();
   };
   img.src = imgSrc;
 }
+
 
 textarea.addEventListener("input", render);
 dotSizeInput.addEventListener("input", render);
