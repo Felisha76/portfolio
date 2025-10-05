@@ -213,7 +213,30 @@ function render() {
     svg.appendChild(yline);
   }
 
-  processed.forEach((it, idx) => {
+    // először összekötjük a pontokat sorrendben
+  if (processed.length > 1) {
+    for (let i = 0; i < processed.length - 1; i++) {
+      const ci1 = charIndex(processed[i].ch);
+      const ci2 = charIndex(processed[i+1].ch);
+
+      const x1 = marginLeft + processed[i].x * xSpacing;
+      const y1 = marginTop + ci1 * ySpacing;
+      const x2 = marginLeft + processed[i+1].x * xSpacing;
+      const y2 = marginTop + ci2 * ySpacing;
+
+      const line = document.createElementNS(svgns, "line");
+      line.setAttribute("x1", x1);
+      line.setAttribute("y1", y1);
+      line.setAttribute("x2", x2);
+      line.setAttribute("y2", y2);
+      line.setAttribute("stroke", "gray");
+      line.setAttribute("stroke-width", "1");
+      svg.appendChild(line);
+    }
+  }
+
+  // aztán kirajzoljuk a köröket
+  processed.forEach((it) => {
     const ci = charIndex(it.ch);
     const cx = marginLeft + it.x * xSpacing;
     const cy = marginTop + ci * ySpacing;
@@ -226,6 +249,7 @@ function render() {
     circle.setAttribute("fill", color);
     svg.appendChild(circle);
   });
+
 
   svgWrap.innerHTML = "";
   svgWrap.appendChild(svg);
