@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             
                             const englishColumn = row[1];
                         
+
                             // Split the B column at <br> tag
                             const parts = englishColumn.split('<br>');
                         
@@ -188,7 +189,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (imgMatch && imgMatch[1]) {
                                 imageUrl = imgMatch[1];
                             }
-                        
+                            
+
+
                             return {
                                 hungarian: hungarian,
                                 english: englishTerm,
