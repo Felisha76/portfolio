@@ -188,15 +188,19 @@ function processCSVContent(contents) {
             const front = document.createElement('div');
             front.classList.add('front');
             front.innerHTML = `
-                <span>${frontText}<br></span>
-                <div>${visualizeWord(frontText)}</div>
+                <div style="width:95%;margin:0 auto;max-height:50%;display:flex;justify-content:center;align-items:flex-start;">
+                    ${visualizeWord(frontText)}
+                </div>
+                <span><br>${frontText}</span>
             `;
 
             const back = document.createElement('div');
             back.classList.add('back');
             back.innerHTML = `
-                <span>${backText}<br></span>
-                <div>${visualizeWord(backText)}</div>
+                <div style="width:95%;margin:0 auto;max-height:50%;display:flex;justify-content:center;align-items:flex-start;">
+                    ${visualizeWord(backText)}
+                </div>
+                <span><br>${backText}</span>
             `;
 
             // Append the front and back to the card
@@ -286,7 +290,7 @@ function visualizeWord(word) {
     const marginTop = 20;
     const width = Math.max(120, (tokens.length + 2) * xSpacing);
     const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 40);
-    let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:#0e1117;display:block;border-radius:8px;">`;
+    let svg = `<svg width="95%" style="max-height:50%;display:block;border-radius:8px;">`;
     svg += `<line x1="${marginLeft}" y1="${height-marginTop}" x2="${width-10}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
     svg += `<line x1="${marginLeft}" y1="${marginTop}" x2="${marginLeft}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
     for (let i = 0; i < tokens.length - 1; i++) {

@@ -146,6 +146,15 @@ optgroup option {
     text-align: right;
 }
 
+.card .front div, .card .back div {
+    width: 95%;
+    margin: 0 auto;
+    max-height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 /* HOVER ACTIONS */
 .card:hover {
 	cursor: pointer;
