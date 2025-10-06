@@ -161,32 +161,43 @@ function updateQuizTitle(fileName) {
 function processCSVContent(contents) {
     const rows = contents.split('\n');
     const cardsContainer = document.querySelector('.wrap');
-    
+
     // Clear any existing cards
     cardsContainer.innerHTML = '';
-    
+
     // Loop through the rows in the CSV file
     rows.forEach(row => {
         if (!row.trim()) return; // Skip empty rows
-        
+
         const columns = row.split(',');
 
         // Ensure we have both A and B column data
         if (columns.length >= 2) {
-            const frontText = columns[0].trim();  // A column
-            const backText = columns[1].trim();   // B column
-            
+            // Extract text after <br> (magyar és idegen nyelv)
+            const frontTextRaw = columns[0].trim();
+            const backTextRaw = columns[1].trim();
+
+            // Szöveg kinyerése: az utolsó <br> után
+            const frontText = frontTextRaw.split('<br>').pop().trim();
+            const backText = backTextRaw.split('<br>').pop().trim();
+
             // Create a new card for each row
             const card = document.createElement('div');
             card.classList.add('card');
 
             const front = document.createElement('div');
             front.classList.add('front');
-            front.innerHTML = `<span>${frontText}</span>`;
-            
+            front.innerHTML = `
+                <span>${frontText}</span>
+                <div>${visualizeWord(frontText)}</div>
+            `;
+
             const back = document.createElement('div');
             back.classList.add('back');
-            back.innerHTML = `<span>${backText}</span>`;
+            back.innerHTML = `
+                <span>${backText}</span>
+                <div>${visualizeWord(backText)}</div>
+            `;
 
             // Append the front and back to the card
             card.appendChild(front);
@@ -314,4 +325,3 @@ function showCard(cardData, side) {
         <div>${visualizeWord(cardData.en)}</div>
     `;
 }
- 
