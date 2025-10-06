@@ -296,11 +296,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // SVG paraméterek
         const dotSize = 8;
         const xSpacing = 20;
-        const ySpacing = 5;
+        const ySpacing = 1;
         const marginLeft = 30;
-        const marginTop = 20;
+        const marginTop = 10;
         const width = Math.max(120, (tokens.length + 2) * xSpacing);
-        const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 40);
+        const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 4);
 
         // SVG elemek
         let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:#0e1117;display:block;border-radius:8px;">`;
