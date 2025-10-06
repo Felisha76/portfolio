@@ -188,15 +188,17 @@ function processCSVContent(contents) {
             const front = document.createElement('div');
             front.classList.add('front');
             front.innerHTML = `
-                <span>${frontText}</span>
                 <div>${visualizeWord(frontText)}</div>
+                <br>
+                <span>${frontText}</span>
             `;
 
             const back = document.createElement('div');
             back.classList.add('back');
             back.innerHTML = `
-                <span>${backText}</span>
                 <div>${visualizeWord(backText)}</div>
+                <br>
+                <span>${backText}</span>
             `;
 
             // Append the front and back to the card
