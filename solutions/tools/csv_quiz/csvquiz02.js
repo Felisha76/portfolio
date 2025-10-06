@@ -188,14 +188,14 @@ function processCSVContent(contents) {
             const front = document.createElement('div');
             front.classList.add('front');
             front.innerHTML = `
-                <span>${frontText}</span>
+                <span>${frontText}</span><br>
                 <div>${visualizeWord(frontText)}</div>
             `;
 
             const back = document.createElement('div');
             back.classList.add('back');
             back.innerHTML = `
-                <span>${backText}</span>
+                <span>${backText}</span><br>
                 <div>${visualizeWord(backText)}</div>
             `;
 
