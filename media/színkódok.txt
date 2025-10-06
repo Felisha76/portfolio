@@ -1,3 +1,5 @@
+@feature:chat
+
 body bckgr:		#1c1d1d
 body color:		#d2d4d6
 table bckgr:		#272929

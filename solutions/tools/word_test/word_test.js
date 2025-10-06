@@ -181,8 +181,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             // The part before <br> contains the image
                             const imgPart = parts[0] || '';
                             // The part after <br> is the English term
-                            const englishTerm = parts.length > 1 ? parts[1].trim() : '';
-                        
+                            // original changed on 2025.10.06 const englishTerm = parts.length > 1 ? parts[1].trim() : '';
+                            // new line on 2025.10.06:
+                            const englishTerm = parts.length > 1 ? parts[1].trim() : englishColumn.trim();
                             // Extract image URL from the img tag
                             let imageUrl = '';
                             const imgMatch = imgPart.match(/src="([^"]+)"/i);
