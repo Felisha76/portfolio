@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const tokens = tokenizeText(word);
 
         // SVG paraméterek
-        const dotSize = 50;
+        const dotSize = 5;
         const xSpacing = 15;
         const ySpacing = 1;
         const marginLeft = 15; 
