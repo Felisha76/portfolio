@@ -89,8 +89,12 @@ optgroup option {
 	overflow: visible;
 }
 .card {
-	width: 100%;
-	aspect-ratio: 1 / 1; /* height: 80%; */
+	display: flex;
+	flex-direction: column;
+	height: 300px; /* vagy amit használsz */
+    width: 220px;  /* vagy amit használsz */
+	box-sizing: border-box;
+	overflow: hidden;
 	position: relative;
 	perspective: 1000px;
 	align-items:stretch; /* center */
@@ -153,6 +157,30 @@ optgroup option {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+.card .svg-area {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-height: 50%;
+}
+.card .text-area {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+}
+.card svg {
+    width: 95%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 /* HOVER ACTIONS */
