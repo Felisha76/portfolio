@@ -89,12 +89,12 @@ optgroup option {
 	overflow: visible;
 }
 .card {
-	width: 100%;
-	aspect-ratio: 1 / 1; /* height: 80%; */
-	position: relative;
-	perspective: 1000px;
-	align-items:stretch; /* center */
-	transform-origin: center center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%; /* vagy fix px, pl. 300px */
+	overflow: hidden;
 }
 
 .card:first-child,
@@ -126,6 +126,23 @@ optgroup option {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card svg {
+    max-height: 60%; /* vagy pl. 120px */
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card span {
+    display: block;
+    text-align: center;
+    font-size: 2rem; /* vagy ahogy szeretnéd */
+    word-break: break-word;
+    max-width: 90%;
 }
 
 .front a, .back a {
