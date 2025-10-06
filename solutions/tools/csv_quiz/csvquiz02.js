@@ -314,3 +314,4 @@ function showCard(cardData, side) {
         <div>${visualizeWord(cardData.en)}</div>
     `;
 }
+ 
