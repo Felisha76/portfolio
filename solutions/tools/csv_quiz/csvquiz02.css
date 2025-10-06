@@ -121,6 +121,13 @@ optgroup option {
 	z-index: 1; /* 2025.09.28 */
 }
 
+.card .front,
+.card .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .front a, .back a {
 	text-decoration: none;
 }
