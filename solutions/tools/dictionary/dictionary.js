@@ -167,10 +167,12 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.textContent = item.example;
             row.appendChild(exampleCell);
 
-            const notesCell = document.createElement('td');
-            notesCell.innerHTML = item.notes; 
-            row.appendChild(notesCell);
-            tableBody.appendChild(row); // readded 2025.09.25 to display all rows at the loading of the selected csv.
+            // Negyedik oszlop: vizualizáció
+            const visualizationCell = document.createElement('td');
+            visualizationCell.innerHTML = visualizeWord(item.example);
+            row.appendChild(visualizationCell);
+
+            tableBody.appendChild(row);
         });
     }
     
@@ -227,9 +229,11 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.innerHTML = highlightText(item.example, searchTerm);
             row.appendChild(exampleCell);
             
-            const notesCell = document.createElement('td');
-            notesCell.innerHTML = item.notes;
-            row.appendChild(notesCell);
+            // Negyedik oszlop: vizualizáció
+            const visualizationCell = document.createElement('td');
+            visualizationCell.innerHTML = visualizeWord(item.example);
+            row.appendChild(visualizationCell);
+
             tableBody.appendChild(row);
         });
     }
@@ -246,6 +250,89 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Replace matches with highlighted version
         return text.replace(regex, '<span class="highlight">$1</span>');
-    }});
+    }
+
+    // Vizualizációs függvény: minden betűhöz egy színes kör
+    function visualizeWord(word) {
+        if (!word) return '';
+
+        // Magyar digráfok és trigráfok
+        const DIGRAPHS = ["dzs", "dz", "cs", "gy", "ly", "ny", "sz", "ty", "zs"];
+        function tokenizeText(text) {
+            const tokens = [];
+            let i = 0;
+            while (i < text.length) {
+                const rest = text.slice(i).toLowerCase();
+                const digraph = DIGRAPHS.find(d => rest.startsWith(d));
+                if (digraph) {
+                    tokens.push(text.slice(i, i + digraph.length));
+                    i += digraph.length;
+                } else {
+                    tokens.push(text[i]);
+                    i++;
+                }
+            }
+            return tokens;
+        }
+
+        // Karakterkészlet
+        const CHARSET = [
+            'a','á','b','c','cs','d','dz','dzs','e','é','f','g','gy','h','i','í','j','k','l','ly','m','n','ny','o','ó','ö','ő','p','q','r','s','sz','t','ty','u','ú','ü','ű','v','w','x','y','z','zs'
+        ];
+        // Paletta
+        function createPalette(n) {
+            const colors = [];
+            for (let i = 0; i < n; i++) {
+                const hue = Math.round((i / n) * 280);
+                colors.push(`hsl(${hue}deg 70% 50%)`);
+            }
+            return colors;
+        }
+        const palette = createPalette(CHARSET.length);
+
+        // Tokenizálás
+        const tokens = tokenizeText(word);
+
+        // SVG paraméterek
+        const dotSize = 8;
+        const xSpacing = 20;
+        const ySpacing = 5;
+        const marginLeft = 30;
+        const marginTop = 20;
+        const width = Math.max(120, (tokens.length + 2) * xSpacing);
+        const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 40);
+
+        // SVG elemek
+        let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:#0e1117;display:block;border-radius:8px;">`;
+
+        // Tengelyek
+        svg += `<line x1="${marginLeft}" y1="${height-marginTop}" x2="${width-10}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
+        svg += `<line x1="${marginLeft}" y1="${marginTop}" x2="${marginLeft}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
+
+        // Összekötő vonalak
+        for (let i = 0; i < tokens.length - 1; i++) {
+            const ci1 = CHARSET.indexOf(tokens[i].toLowerCase());
+            const ci2 = CHARSET.indexOf(tokens[i+1].toLowerCase());
+            const x1 = marginLeft + i * xSpacing;
+            const y1 = height - marginTop - (ci1 !== -1 ? ci1 : 0) * ySpacing;
+            const x2 = marginLeft + (i+1) * xSpacing;
+            const y2 = height - marginTop - (ci2 !== -1 ? ci2 : 0) * ySpacing;
+            svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="gray" stroke-width="1"/>`;
+        }
+
+        // Pontok
+        tokens.forEach((ch, i) => {
+            const ci = CHARSET.indexOf(ch.toLowerCase());
+            const cx = marginLeft + i * xSpacing;
+            const cy = height - marginTop - (ci !== -1 ? ci : 0) * ySpacing;
+            const color = palette[ci !== -1 ? ci : 0];
+            svg += `<circle cx="${cx}" cy="${cy}" r="${dotSize}" fill="${color}" />`;
+        });
+
+        svg += `</svg>`;
+        return svg;
+    }
+
+});
 
 

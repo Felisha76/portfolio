@@ -12,22 +12,36 @@ p {
 
 img {
     /*max-width:8vw; */
-	max-height:10vw;
+	/* max-height:10vw; */
 	/*z-index: 2;  2025.09.28 */
+    max-height: 50%;  /* Added 2025.10.06 */
 }
-
+ /*
 .card img {
     max-width: 95%;
-    height: auto;
+    
+    height: auto; 
     display: block;
     margin: 0 auto;
     position: absolute;
     top: 5%;
     left: 2.5%;
     right: 2.5%;
-	z-index:0; /* 2025.09.28 */
+	z-index:0; /* 2025.09.28 
 	transition: transform 0.3s ease;
+}*/
+
+.card svg {
+    display: block;
+    /*height: 45%;       mindig a kártya magasságához igazodik */
+    width: auto;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    max-width: 90%;
+    max-height: 50%;
+    box-sizing: border-box;
 }
+ 
 
 label {
     font-size: 2vw;
@@ -119,6 +133,15 @@ optgroup option {
 	backface-visibility: hidden;
 	border-radius: 15px;
 	z-index: 1; /* 2025.09.28 */
+}
+
+.card .front,
+.card .back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* függőlegesen középre */
+    align-items: center;       /* vízszintesen középre */
+    height: 100%;
 }
 
 .front a, .back a {
@@ -214,7 +237,7 @@ optgroup option {
     
     .wrap {
       position: relative;
-      width: 100%;
+      width: 70%;
       height: 100%;
     
       gap: 2px;
@@ -222,7 +245,13 @@ optgroup option {
     }
 
     .card {
-      height: 130px;
+      height: 100%;
       width: 100%;    
     }
+
+    svg {
+        height: 80px;
+        width: 100%;
+    }
+    
 }
