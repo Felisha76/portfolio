@@ -255,23 +255,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Vizualizációs függvény: minden betűhöz egy színes kör
     function visualizeWord(word) {
         if (!word) return '';
-        const colors = ['#FFB300', '#8BC34A', '#03A9F4', '#E91E63', '#9C27B0', '#FF5722', '#607D8B'];
-        let html = '<div style="display:flex;gap:4px;">';
-        for (let i = 0; i < word.length; i++) {
-            const char = word[i];
-            const color = colors[i % colors.length];
-            html += `<div style="
-                width:24px;height:24px;
-                border-radius:50%;
-                background:${color};
-                display:flex;align-items:center;justify-content:center;
-                font-weight:bold;color:#fff;
-                font-size:16px;
-            ">${char}</div>`;
-        }
-        html += '</div>';
-        return html;
-    }
-});
+
+        // Magyar digráfok és trigráfok
+        const DIGRAPHS = ["dzs", "dz", "cs", "gy", "ly", "ny", "sz", "ty", "zs"];
+        function tokenizeText(text) {
+            const tokens = [];
+            let i = 0;
+            while (i < text.length) {
+                const rest = text.slice(i).toLowerCase();
+                const digraph = DIGRAPHS.find(d => rest.startsWith(d));
+                if
 
 
