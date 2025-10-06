@@ -167,10 +167,12 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.textContent = item.example;
             row.appendChild(exampleCell);
 
-            const notesCell = document.createElement('td');
-            notesCell.innerHTML = item.notes; 
-            row.appendChild(notesCell);
-            tableBody.appendChild(row); // readded 2025.09.25 to display all rows at the loading of the selected csv.
+            // Negyedik oszlop: vizualizáció
+            const visualizationCell = document.createElement('td');
+            visualizationCell.innerHTML = visualizeWord(item.example);
+            row.appendChild(visualizationCell);
+
+            tableBody.appendChild(row);
         });
     }
     
@@ -227,9 +229,11 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleCell.innerHTML = highlightText(item.example, searchTerm);
             row.appendChild(exampleCell);
             
-            const notesCell = document.createElement('td');
-            notesCell.innerHTML = item.notes;
-            row.appendChild(notesCell);
+            // Negyedik oszlop: vizualizáció
+            const visualizationCell = document.createElement('td');
+            visualizationCell.innerHTML = visualizeWord(item.example);
+            row.appendChild(visualizationCell);
+
             tableBody.appendChild(row);
         });
     }
@@ -246,6 +250,28 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Replace matches with highlighted version
         return text.replace(regex, '<span class="highlight">$1</span>');
-    }});
+    }
+
+    // Vizualizációs függvény: minden betűhöz egy színes kör
+    function visualizeWord(word) {
+        if (!word) return '';
+        const colors = ['#FFB300', '#8BC34A', '#03A9F4', '#E91E63', '#9C27B0', '#FF5722', '#607D8B'];
+        let html = '<div style="display:flex;gap:4px;">';
+        for (let i = 0; i < word.length; i++) {
+            const char = word[i];
+            const color = colors[i % colors.length];
+            html += `<div style="
+                width:24px;height:24px;
+                border-radius:50%;
+                background:${color};
+                display:flex;align-items:center;justify-content:center;
+                font-weight:bold;color:#fff;
+                font-size:16px;
+            ">${char}</div>`;
+        }
+        html += '</div>';
+        return html;
+    }
+});
 
 
