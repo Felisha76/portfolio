@@ -294,10 +294,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const tokens = tokenizeText(word);
 
         // SVG paraméterek
-        const dotSize = 8;
-        const xSpacing = 20;
+        const dotSize = 5;
+        const xSpacing = 15;
         const ySpacing = 1;
-        const marginLeft = 30;
+        const marginLeft = 15; 
         const marginTop = 10;
         const width = Math.max(120, (tokens.length + 2) * xSpacing);
         const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 4);
