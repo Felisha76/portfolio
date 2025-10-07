@@ -276,9 +276,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Karakterkészlet
-        const CHARSET = [
-            ' ', '.', ',', '?', '!', "'",'a','á','b','c','cs','d','dz','dzs','e','é','f','g','gy','h','i','í','j','k','l','ly','m','n','ny','o','ó','ö','ő','p','q','r','s','sz','t','ty','u','ú','ü','ű','v','w','x','y','z','zs'
-        ];
+        function createCharset() {
+            const punct = ['.', ',', '?', '!', "'"];
+            const digits = Array.from({ length: 10 }, (_, i) => String(i));
+            const base = ['A', 'a', 'Á', 'á', 'B', 'b', 'C', 'c', 'Cs', 'cs', 'D', 'd', 'Dz', 'dz', 'Dzs', 'dzs', 'E', 'e', 'É', 'é', 'F', 'f', 'G', 'g', 'Gy', 'gy', 'H', 'h', 'I', 'i', 'Í', 'í', 'J', 'j', 'K', 'k', 'L', 'l', 'Ly', 'ly', 'M', 'm', 'N', 'n', 'Ny', 'ny', 'O', 'o', 'Ó', 'ó', 'Ö', 'ö', 'Ő', 'ő', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'Sz', 'sz', 'T', 't', 'Ty', 'ty', 'U', 'u', 'Ú', 'ú', 'Ü', 'ü', 'Ű', 'ű', 'V', 'v', 'W', 'w', 'X', 'x', 'Y', 'y', 'Z', 'z', 'Zs', 'zs'];
+            return [...punct, ...digits, ...base];
+        }
+        const CHARSET = createCharset();
+
         // Paletta
         function createPalette(n) {
             const colors = [];
@@ -294,10 +299,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const tokens = tokenizeText(word);
 
         // SVG paraméterek
-        const dotSize = 5;
-        const xSpacing = 15;
+        const dotSize = 8; // Updated default values
+        const xSpacing = 12;
         const ySpacing = 1;
-        const marginLeft = 15; 
+        const marginLeft = 10;
         const marginTop = 10;
         const width = Math.max(120, (tokens.length + 2) * xSpacing);
         const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 4);
@@ -306,23 +311,23 @@ document.addEventListener('DOMContentLoaded', function() {
         let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:#0e1117;display:block;border-radius:8px;">`;
 
         // Tengelyek
-        svg += `<line x1="${marginLeft}" y1="${height-marginTop}" x2="${width-10}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
-        svg += `<line x1="${marginLeft}" y1="${marginTop}" x2="${marginLeft}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
+        svg += `<line x1="${marginLeft}" y1="${height - marginTop}" x2="${width - 10}" y2="${height - marginTop}" stroke="rgba(255,255,255,0.15)" />`;
+        svg += `<line x1="${marginLeft}" y1="${marginTop}" x2="${marginLeft}" y2="${height - marginTop}" stroke="rgba(255,255,255,0.15)" />`;
 
         // Összekötő vonalak
         for (let i = 0; i < tokens.length - 1; i++) {
-            const ci1 = CHARSET.indexOf(tokens[i].toLowerCase());
-            const ci2 = CHARSET.indexOf(tokens[i+1].toLowerCase());
+            const ci1 = CHARSET.indexOf(tokens[i]);
+            const ci2 = CHARSET.indexOf(tokens[i + 1]);
             const x1 = marginLeft + i * xSpacing;
             const y1 = height - marginTop - (ci1 !== -1 ? ci1 : 0) * ySpacing;
-            const x2 = marginLeft + (i+1) * xSpacing;
+            const x2 = marginLeft + (i + 1) * xSpacing;
             const y2 = height - marginTop - (ci2 !== -1 ? ci2 : 0) * ySpacing;
             svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="gray" stroke-width="1"/>`;
         }
 
         // Pontok
         tokens.forEach((ch, i) => {
-            const ci = CHARSET.indexOf(ch.toLowerCase());
+            const ci = CHARSET.indexOf(ch);
             const cx = marginLeft + i * xSpacing;
             const cy = height - marginTop - (ci !== -1 ? ci : 0) * ySpacing;
             const color = palette[ci !== -1 ? ci : 0];
