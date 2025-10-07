@@ -8,12 +8,12 @@ const CATEGORIES = {
     'math_': 'Math',
     'game_': 'Games',
     // Add more categories as needed
-    'full_en_hu_': 'Full dictionary',
-    'full_ge_hu_': 'Full dictionary',
-    'oep1_en_hu_': 'Oxford English Plus 1',
-    'oep2_en_hu_': 'Oxford English Plus 2',
-    'dp1_ge_hu_': 'Die Deutschprofis 1',
-    'dp2_ge_hu_': 'Die Deutschprofis 2',
+    'full_en_hu_': '01 Full dictionary English',
+    'full_ge_hu_': '01 Full dictionary German',
+    'oep1_en_hu_': '02 Oxford English Plus 1',
+    'oep2_en_hu_': '02 Oxford English Plus 2',
+    'dp1_ge_hu_': '03 Die Deutschprofis 1',
+    'dp2_ge_hu_': '03 Die Deutschprofis 2',
 };
 
 // Function to determine the category of a file based on its name
