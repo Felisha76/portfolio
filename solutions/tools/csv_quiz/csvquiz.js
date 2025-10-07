@@ -44,7 +44,11 @@ async function fetchCSVFileList() {
         
         data
             // Filter files what are CSV files and not notes, dictionaries and tales
-            .filter(file => file.name.endsWith('.csv') && !file.name.startsWith('notes_') && !file.name.startsWith('di_') && !file.name.startsWith('tale_'))
+            .filter(file => file.name.endsWith('.csv') && 
+                !file.name.startsWith('notes_') && 
+                !file.name.startsWith('di_') && 
+                !file.name.startsWith('tale_')
+                )
             // Filename grouping by category
             .forEach(file => {
                 const category = getCategoryForFile(file.name);
@@ -57,7 +61,7 @@ async function fetchCSVFileList() {
                     name: file.name,
                     // You can add a display name by removing the prefix and .csv extension
                     displayName: file.name
-                        .replace(/^(en_hu_|ge_hu_|math_|game_)/, '') // Remove prefix
+                        .replace(/^(en_hu_|ge_hu_|math_|game_|full_en_hu_|full_ge_hu_|oep1_en_hu_|oep2_en_hu_|dp1_ge_hu_|dp2_ge_hu_)/, '') // Remove prefix
                         .replace(/\.csv$/, '')                // Remove .csv extension
                         .replace(/_/g, ' ')                   // Replace underscores with spaces
                 });
