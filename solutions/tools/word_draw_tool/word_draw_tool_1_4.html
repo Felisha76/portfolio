@@ -11,7 +11,7 @@
     margin: 0;
     font-family: "Segoe UI", Roboto, sans-serif;
     background: #0e1117;
-    color: #e6eef6;
+    color: #bfddb9;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -32,15 +32,16 @@
     box-shadow: 0 0 12px rgba(0,0,0,0.4);
   }
   textarea {
+  
     width: 100%;
     height: 50vh;
     resize: vertical;
     background: #0e1117;
-    color: #e6eef6;
+    color: #2fe00c;
     border: 1px solid #2d3748;
     border-radius: 8px;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     box-sizing: border-box;
   }
   .controls {
@@ -74,13 +75,7 @@
   <div class="panel">
     <label for="inputText">Írd be a szöveget:</label>
 
-  Nyelv:
-  <select id="voiceSelect">
-    <option value="hu-HU">Magyar</option>
-    <option value="en-US">Angol</option>
-    <option value="de-DE">Német</option>
-    <option value="fr-FR">Francia</option>
-  </select>
+  
 
     <textarea id="inputText" placeholder="Írj ide valamit!"></textarea>
     <div class="control">
@@ -105,12 +100,20 @@
       <div class="control"><button id="exportBtn">Export PNG</button></div>
       <div class="control"><button id="exportAudioBtn">Export Hang (WAV)</button></div>      
       <div class="control"><button id="speakBtn">Felolvasás</button></div>
+      Nyelv:
+        <select id="voiceSelect">
+        <option value="hu-HU">Magyar</option>
+        <option value="en-US">Angol</option>
+        <option value="de-DE">Német</option>
+        <option value="fr-FR">Francia</option>
+      </select>
     </div>
 
   </div>
 
    <!-- Karakter kirajzoló panel -->
   <div class="panel">
+    <label for="inputText">A szöveg alapján generált grafikon és hang:</label>
     <div class="svg-wrap" id="svgWrap"></div>
   </div>
 </div>
