@@ -87,9 +87,9 @@
 
 </div>
     <div class="controls">
-      <div class="control">Pontméret: <input id="dotSize" type="range" min="4" max="20" value="8"></div>
-      <div class="control">X-távolság: <input id="xSpacing" type="range" min="5" max="200" value="20"></div>
-      <div class="control">Y-távolság: <input id="ySpacing" type="range" min="5" max="200" value="5"></div>
+      <div class="control">Pontméret: <input id="dotSize" type="range" min="1" max="20" value="8"></div>
+      <div class="control">X-távolság: <input id="xSpacing" type="range" min="10" max="200" value="12"></div>
+      <div class="control">Y-távolság: <input id="ySpacing" type="range" min="1" max="200" value="1"></div>
       <div class="control"><label><input id="showAxes" type="checkbox" checked> Tengelyek</label></div>
       <div class="control"><button id="exportBtn">Export PNG</button></div>
       <!-- felolvasás gomb -->
@@ -145,7 +145,7 @@ let currentOscillator = null; // a legutóbbi hang tárolása
 
 function playNoteByY(y, height) {
   const minFreq = 220; 
-  const maxFreq = 1000; // * test
+  const maxFreq = 3000; // * test
   const freq = maxFreq - ((y / height) * (maxFreq - minFreq));
 
   // Ha van már futó oszcillátor, állítsuk le
@@ -205,11 +205,11 @@ function createCharset() {
   Kisbetűk
   Nagybetűk commented out on 2025.10.07
  */
-  const punct = [' ', '.', ',', '?', '!', "'"];
+  const punct = ['.', ',','?', '!', "'"];
   const digits = Array.from({length:10}, (_,i)=>String(i));
   const base = ['A','a','Á','á','B','b','C','c','Cs','cs','D','d','Dz','dz','Dzs','dzs','E','e','É','é','F','f','G','g','Gy','gy','H','h','I','i','Í','í','J','j','K','k','L','l','Ly','ly','M','m','N','n','Ny','ny','O','o','Ó','ó','Ö','ö','Ő','ő','P','p','Q','q','R','r','S','s','Sz','sz','T','t','Ty','ty','U','u','Ú','ú','Ü','ü','Ű','ű','V','v','W','w','X','x','Y','y','Z','z','Zs','zs'];
   // const caps = base.map(ch => ch.toUpperCase()); commented out on 2025.10.07
-  return [...punct, ...digits, ...base]; // , ...caps commented out on 2025.10.07
+  return [punct[0], ...punct.slice(1), ...digits, ...base]; // return [...punct, ...digits, ...base]; // , ...caps commented out on 2025.10.07
 }
 
 function createPalette(n) {
@@ -240,7 +240,7 @@ function render() {
   const maxX = processed.reduce((m, it) => Math.max(m, it.x), 0);
   const width = Math.max(600, (maxX + 2) * xSpacing);
   const rawHeight = (CHARSET.length + 1) * ySpacing + 60;
-  const height = Math.max(200, rawHeight);
+  const height = Math.max(50, rawHeight);
 
   const svgns = "http://www.w3.org/2000/svg";
   const svg = document.createElementNS(svgns, "svg");
@@ -249,8 +249,8 @@ function render() {
   svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
   svg.style.display = "block";
 
-  const marginLeft = 50;
-  const marginTop = 30;
+  const marginLeft = 10;
+  const marginTop = 1;
 
   if (showAxes) {
     const xline = document.createElementNS(svgns, "line");
@@ -292,22 +292,23 @@ function render() {
     }
   }
 
-  // pontok + hang
-  processed.forEach((it) => {
-    const ci = charIndex(it.ch);
-    const cx = marginLeft + it.x * xSpacing;
-    const cy = height - marginTop - ci * ySpacing;
-    const color = palette[ci];
-    const circle = document.createElementNS(svgns, "circle");
-    circle.setAttribute("cx", cx);
-    circle.setAttribute("cy", cy);
-    circle.setAttribute("r", dotSize);
-    circle.setAttribute("fill", color);
-    svg.appendChild(circle);
+      // pontok + hang
+      processed.forEach((it) => {
+        const ci = charIndex(it.ch);
+        const cx = marginLeft + it.x * xSpacing;
+        // Bármilyen whitespace karakter felismerése
+        const isWhitespace = /^\s$/.test(it.ch);
+        const cy = isWhitespace ? (height - marginTop) : (height - marginTop - ci * ySpacing);
+        const color = isWhitespace ? '#000' : palette[ci];
+        const circle = document.createElementNS(svgns, "circle");
+        circle.setAttribute("cx", cx);
+        circle.setAttribute("cy", cy);
+        circle.setAttribute("r", dotSize);
+        circle.setAttribute("fill", color);
+        svg.appendChild(circle);
 
-    // hang lejátszása
-    playNoteByY(cy, height);
-  });
+        playNoteByY(cy, height);
+      });
 
   svgWrap.innerHTML = "";
   svgWrap.appendChild(svg);
