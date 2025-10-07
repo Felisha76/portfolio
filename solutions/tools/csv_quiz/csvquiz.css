@@ -58,7 +58,9 @@ a {
     border-radius: 4px;
     font-size: 12px;
     margin-bottom: 10px;
-    
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 #csv-dropdown-container {
