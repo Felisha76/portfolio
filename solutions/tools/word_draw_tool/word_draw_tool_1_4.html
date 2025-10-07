@@ -388,7 +388,7 @@ function exportToWAV() {
 
   // Hang paraméterek
   const sampleRate = 44100;
-  const durationPerChar = 0.25; // másodperc
+  const durationPerChar = 0.2; // másodperc
   const totalDuration = processed.length * durationPerChar;
   const buffer = new Float32Array(Math.ceil(totalDuration * sampleRate));
 
@@ -405,11 +405,16 @@ function exportToWAV() {
     }
   });
 
-  // WAV export
+  // WAV export - filenév a begépelt szöveg első 10 karaktere
   const wavBlob = encodeWAV(buffer, sampleRate);
+
+  let filename = textarea.value.trim().slice(0, 10); 
+  filename = filename.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_]/g, "_");
+  if (!filename) filename = "titkosiras";
+
   const link = document.createElement("a");
   link.href = URL.createObjectURL(wavBlob);
-  link.download = "titkosiras.wav";
+  link.download = filename + ".wav";
   link.click();
 }
 
