@@ -1,6 +1,3 @@
-// Import common visualization module
-import { visualizeWord } from '../common/visualization';
-
 document.addEventListener('DOMContentLoaded', function() {
     const fileSelect = document.getElementById('fileSelect');
     const searchInput = document.getElementById('searchInput');
@@ -254,6 +251,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Replace matches with highlighted version
         return text.replace(regex, '<span class="highlight">$1</span>');
     }
+
+    // Import common visualization module
+    import { visualizeWord } from '../../common/visualization';
 
 });
 
