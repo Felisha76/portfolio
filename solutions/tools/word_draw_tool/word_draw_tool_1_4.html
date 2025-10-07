@@ -267,6 +267,8 @@ function render() {
   // összekötő vonalak
   if (processed.length > 1) {
     for (let i = 0; i < processed.length - 1; i++) {
+      // Ha bármelyik karakter szóköz, ne rajzolj vonalat!
+      if (processed[i].ch === ' ' || processed[i+1].ch === ' ') continue;
       const ci1 = charIndex(processed[i].ch);
       const ci2 = charIndex(processed[i+1].ch);
       const x1 = marginLeft + processed[i].x * xSpacing;
