@@ -8,6 +8,12 @@ const CATEGORIES = {
     'math_': 'Math',
     'game_': 'Games',
     // Add more categories as needed
+    'en_hu_full_': 'Full dictionary',
+    'ge_hu_full_': 'Full dictionary',
+    'en_hu_oep1_': 'Oxford English Plus 1',
+    'en_hu_oep2_': 'Oxford English Plus 2',
+    'ge_hu_dp1_': 'Die Deutschprofis 1',
+    'ge_hu_dp2_': 'Die Deutschprofis 2',
 };
 
 // Function to determine the category of a file based on its name
