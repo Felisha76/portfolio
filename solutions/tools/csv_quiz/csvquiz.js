@@ -8,6 +8,12 @@ const CATEGORIES = {
     'math_': 'Math',
     'game_': 'Games',
     // Add more categories as needed
+    'full_en_hu_': '01 Full dictionary English',
+    'full_ge_hu_': '01 Full dictionary German',
+    'oep1_en_hu_': '02 Oxford English Plus 1',
+    'oep2_en_hu_': '02 Oxford English Plus 2',
+    'dp1_ge_hu_': '03 Die Deutschprofis 1',
+    'dp2_ge_hu_': '03 Die Deutschprofis 2',
 };
 
 // Function to determine the category of a file based on its name
@@ -38,7 +44,11 @@ async function fetchCSVFileList() {
         
         data
             // Filter files what are CSV files and not notes, dictionaries and tales
-            .filter(file => file.name.endsWith('.csv') && !file.name.startsWith('notes_') && !file.name.startsWith('di_') && !file.name.startsWith('tale_'))
+            .filter(file => file.name.endsWith('.csv') && 
+                !file.name.startsWith('notes_') && 
+                !file.name.startsWith('di_') && 
+                !file.name.startsWith('tale_')
+                )
             // Filename grouping by category
             .forEach(file => {
                 const category = getCategoryForFile(file.name);
@@ -51,7 +61,7 @@ async function fetchCSVFileList() {
                     name: file.name,
                     // You can add a display name by removing the prefix and .csv extension
                     displayName: file.name
-                        .replace(/^(en_hu_|ge_hu_|math_|game_)/, '') // Remove prefix
+                        .replace(/^(en_hu_|ge_hu_|math_|game_|full_en_hu_|full_ge_hu_|oep1_en_hu_|oep2_en_hu_|dp1_ge_hu_|dp2_ge_hu_)/, '') // Remove prefix
                         .replace(/\.csv$/, '')                // Remove .csv extension
                         .replace(/_/g, ' ')                   // Replace underscores with spaces
                 });
@@ -273,7 +283,7 @@ function visualizeWord(word) {
         return tokens;
     }
     const CHARSET = [
-        'a','á','b','c','cs','d','dz','dzs','e','é','f','g','gy','h','i','í','j','k','l','ly','m','n','ny','o','ó','ö','ő','p','q','r','s','sz','t','ty','u','ú','ü','ű','v','w','x','y','z','zs'
+        ' ', '.', ',', '?', '!', "'",'a','á','b','c','cs','d','dz','dzs','e','é','f','g','gy','h','i','í','j','k','l','ly','m','n','ny','o','ó','ö','ő','p','q','r','s','sz','t','ty','u','ú','ü','ű','v','w','x','y','z','zs'
     ];
     function createPalette(n) {
         const colors = [];

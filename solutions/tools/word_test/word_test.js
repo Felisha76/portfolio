@@ -58,41 +58,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Load vocabulary files from GitHub repository
-    async function loadVocabularyFiles() {
-        try {
-            // Fetch the list of files from GitHub API
-            const apiUrl = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates';
-            const response = await fetch(apiUrl);
-            
-            if (!response.ok) {
-                throw new Error('Failed to fetch file list from GitHub');
-            }
-            
-            const files = await response.json();
-            
-            // Filter for en_hu files
-            const enHuFiles = files
-                .filter(file => (file.name.startsWith('en_hu') || file.name.startsWith('ge_hu')) && 
-                file.name.endsWith('.csv'))
-                .map(file => file.name);
-            
-            // Populate the dropdown
-            enHuFiles.forEach(file => {
-                const option = document.createElement('option');
-                option.value = file;
-                option.textContent = file;
-                fileSelect.appendChild(option);
-            });
-            
-            if (enHuFiles.length > 0) {
-                fileSelect.value = enHuFiles[0]; // Select the first file by default
-            }
-        } catch (error) {
-            console.error('Error loading vocabulary files:', error);
-            alert('Failed to load vocabulary files. Please try again later.');
+    // Categories configuration - map file prefixes to category names
+const CATEGORIES = {
+    'en_hu_': 'English - Hungarian',
+    'ge_hu_': 'German - Hungarian',
+    'math_': 'Math',
+    'game_': 'Games',
+    'full_en_hu_': '01 Full dictionary English',
+    'full_ge_hu_': '01 Full dictionary German',
+    'oep1_en_hu_': '02 Oxford English Plus 1',
+    'oep2_en_hu_': '02 Oxford English Plus 2',
+    'dp1_ge_hu_': '03 Die Deutschprofis 1',
+    'dp2_ge_hu_': '03 Die Deutschprofis 2',
+};
+
+// Function to determine the category of a file based on its name
+function getCategoryForFile(fileName) {
+    for (const prefix in CATEGORIES) {
+        if (fileName.startsWith(prefix)) {
+            return CATEGORIES[prefix];
         }
     }
+    return 'Other';
+}
+
+// Load vocabulary files from GitHub repository, categorized
+async function loadVocabularyFiles() {
+    try {
+        const apiUrl = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates';
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch file list from GitHub');
+        }
+
+        const files = await response.json();
+
+        // Filter only CSV files and organize by category
+        const categorizedFiles = {};
+
+        files
+            .filter(file => file.name.endsWith('.csv') &&
+                !file.name.startsWith('notes_') &&
+                !file.name.startsWith('di_') &&
+                !file.name.startsWith('tale_')
+            )
+            .forEach(file => {
+                const category = getCategoryForFile(file.name);
+                if (!categorizedFiles[category]) {
+                    categorizedFiles[category] = [];
+                }
+                categorizedFiles[category].push({
+                    name: file.name,
+                    displayName: file.name
+                        .replace(/^(en_hu_|ge_hu_|math_|game_|full_en_hu_|full_ge_hu_|oep1_en_hu_|oep2_en_hu_|dp1_ge_hu_|dp2_ge_hu_)/, '')
+                        .replace(/\.csv$/, '')
+                        .replace(/_/g, ' ')
+                });
+            });
+
+        // Clear previous options
+        fileSelect.innerHTML = '';
+
+        // Add default option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Select a file from my repository';
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
+        fileSelect.appendChild(defaultOption);
+
+        // Add options for each category and its files
+        Object.keys(categorizedFiles).sort().forEach(category => {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = category;
+            categorizedFiles[category].sort((a, b) => a.displayName.localeCompare(b.displayName)).forEach(file => {
+                const option = document.createElement('option');
+                option.value = file.name;
+                option.textContent = file.displayName;
+                optgroup.appendChild(option);
+            });
+            fileSelect.appendChild(optgroup);
+        });
+
+        // Select the first file by default if available
+        const firstOptGroup = fileSelect.querySelector('optgroup');
+        if (firstOptGroup && firstOptGroup.firstChild) {
+            fileSelect.value = firstOptGroup.firstChild.value;
+        }
+    } catch (error) {
+        console.error('Error loading vocabulary files:', error);
+        alert('Failed to load vocabulary files. Please try again later.');
+    }
+}
     
     // Start the test
     function startTest() {
