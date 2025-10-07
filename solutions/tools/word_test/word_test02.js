@@ -58,41 +58,99 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Load vocabulary files from GitHub repository
-    async function loadVocabularyFiles() {
-        try {
-            // Fetch the list of files from GitHub API
-            const apiUrl = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates';
-            const response = await fetch(apiUrl);
-            
-            if (!response.ok) {
-                throw new Error('Failed to fetch file list from GitHub');
-            }
-            
-            const files = await response.json();
-            
-            // Filter for en_hu files
-            const enHuFiles = files
-                .filter(file => (file.name.startsWith('en_hu') || file.name.startsWith('ge_hu')) && 
-                file.name.endsWith('.csv'))
-                .map(file => file.name);
-            
-            // Populate the dropdown
-            enHuFiles.forEach(file => {
-                const option = document.createElement('option');
-                option.value = file;
-                option.textContent = file;
-                fileSelect.appendChild(option);
-            });
-            
-            if (enHuFiles.length > 0) {
-                fileSelect.value = enHuFiles[0]; // Select the first file by default
-            }
-        } catch (error) {
-            console.error('Error loading vocabulary files:', error);
-            alert('Failed to load vocabulary files. Please try again later.');
+    // Categories configuration - map file prefixes to category names
+const CATEGORIES = {
+    'en_hu_': 'English - Hungarian',
+    'ge_hu_': 'German - Hungarian',
+    'math_': 'Math',
+    'game_': 'Games',
+    'full_en_hu_': '01 Full dictionary English',
+    'full_ge_hu_': '01 Full dictionary German',
+    'oep1_en_hu_': '02 Oxford English Plus 1',
+    'oep2_en_hu_': '02 Oxford English Plus 2',
+    'dp1_ge_hu_': '03 Die Deutschprofis 1',
+    'dp2_ge_hu_': '03 Die Deutschprofis 2',
+};
+
+// Function to determine the category of a file based on its name
+function getCategoryForFile(fileName) {
+    for (const prefix in CATEGORIES) {
+        if (fileName.startsWith(prefix)) {
+            return CATEGORIES[prefix];
         }
     }
+    return 'Other';
+}
+
+// Load vocabulary files from GitHub repository, categorized
+async function loadVocabularyFiles() {
+    try {
+        const apiUrl = 'https://api.github.com/repos/Felisha76/portfolio/contents/cs_templates';
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch file list from GitHub');
+        }
+
+        const files = await response.json();
+
+        // Filter only CSV files and organize by category
+        const categorizedFiles = {};
+
+        files
+            .filter(file => file.name.endsWith('.csv') &&
+                !file.name.startsWith('notes_') &&
+                !file.name.startsWith('di_') &&
+                !file.name.startsWith('tale_')
+            )
+            .forEach(file => {
+                const category = getCategoryForFile(file.name);
+                if (!categorizedFiles[category]) {
+                    categorizedFiles[category] = [];
+                }
+                categorizedFiles[category].push({
+                    name: file.name,
+                    displayName: file.name
+                        .replace(/^(en_hu_|ge_hu_|math_|game_|full_en_hu_|full_ge_hu_|oep1_en_hu_|oep2_en_hu_|dp1_ge_hu_|dp2_ge_hu_)/, '')
+                        .replace(/\.csv$/, '')
+                        .replace(/_/g, ' ')
+                });
+            });
+
+        // Clear previous options
+        fileSelect.innerHTML = '';
+
+        // Add default option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = '';
+        defaultOption.textContent = 'Select a file from my repository';
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
+        fileSelect.appendChild(defaultOption);
+
+        // Add options for each category and its files
+        Object.keys(categorizedFiles).sort().forEach(category => {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = category;
+            categorizedFiles[category].sort((a, b) => a.displayName.localeCompare(b.displayName)).forEach(file => {
+                const option = document.createElement('option');
+                option.value = file.name;
+                option.textContent = file.displayName;
+                optgroup.appendChild(option);
+            });
+            fileSelect.appendChild(optgroup);
+        });
+
+        // Select the first file by default if available
+        const firstOptGroup = fileSelect.querySelector('optgroup');
+        if (firstOptGroup && firstOptGroup.firstChild) {
+            fileSelect.value = firstOptGroup.firstChild.value;
+        }
+    } catch (error) {
+        console.error('Error loading vocabulary files:', error);
+        alert('Failed to load vocabulary files. Please try again later.');
+    }
+}
     
     // Start the test
     function startTest() {
@@ -450,82 +508,3 @@ function checkAnswer(timeUp = false) {
         window.location.reload();
     }
 });
-
-function visualizeWord(word) {
-    if (!word) return '';
-    const DIGRAPHS = ["dzs", "dz", "cs", "gy", "ly", "ny", "sz", "ty", "zs"];
-    function tokenizeText(text) {
-        const tokens = [];
-        let i = 0;
-        while (i < text.length) {
-            const rest = text.slice(i).toLowerCase();
-            const digraph = DIGRAPHS.find(d => rest.startsWith(d));
-            if (digraph) {
-                tokens.push(text.slice(i, i + digraph.length));
-                i += digraph.length;
-            } else {
-                tokens.push(text[i]);
-                i++;
-            }
-        }
-        return tokens;
-    }
-    const CHARSET = [
-        'a','á','b','c','cs','d','dz','dzs','e','é','f','g','gy','h','i','í','j','k','l','ly','m','n','ny','o','ó','ö','ő','p','q','r','s','sz','t','ty','u','ú','ü','ű','v','w','x','y','z','zs'
-    ];
-    function createPalette(n) {
-        const colors = [];
-        for (let i = 0; i < n; i++) {
-            const hue = Math.round((i / n) * 280);
-            colors.push(`hsl(${hue}deg 70% 50%)`);
-        }
-        return colors;
-    }
-    const palette = createPalette(CHARSET.length);
-    const tokens = tokenizeText(word);
-    const dotSize = 8;
-    const xSpacing = 20;
-    const ySpacing = 5;
-    const marginLeft = 30;
-    const marginTop = 20;
-    const width = Math.max(120, (tokens.length + 2) * xSpacing);
-    const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 40);
-    let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:#0e1117;display:block;border-radius:8px;">`;
-    svg += `<line x1="${marginLeft}" y1="${height-marginTop}" x2="${width-10}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
-    svg += `<line x1="${marginLeft}" y1="${marginTop}" x2="${marginLeft}" y2="${height-marginTop}" stroke="rgba(255,255,255,0.15)" />`;
-    for (let i = 0; i < tokens.length - 1; i++) {
-        const ci1 = CHARSET.indexOf(tokens[i].toLowerCase());
-        const ci2 = CHARSET.indexOf(tokens[i+1].toLowerCase());
-        const x1 = marginLeft + i * xSpacing;
-        const y1 = height - marginTop - (ci1 !== -1 ? ci1 : 0) * ySpacing;
-        const x2 = marginLeft + (i+1) * xSpacing;
-        const y2 = height - marginTop - (ci2 !== -1 ? ci2 : 0) * ySpacing;
-        svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="gray" stroke-width="1"/>`;
-    }
-    tokens.forEach((ch, i) => {
-        const ci = CHARSET.indexOf(ch.toLowerCase());
-        const cx = marginLeft + i * xSpacing;
-        const cy = height - marginTop - (ci !== -1 ? ci : 0) * ySpacing;
-        const color = palette[ci !== -1 ? ci : 0];
-        svg += `<circle cx="${cx}" cy="${cy}" r="${dotSize}" fill="${color}" />`;
-    });
-    svg += `</svg>`;
-    return svg;
-}
-
-// Példa: kártya generálásnál
-function showCard(cardData, side) {
-    // cardData: { hu: 'béka', en: 'frog', ... }
-    const cardFront = document.getElementById('cardFront');
-    const cardBack = document.getElementById('cardBack');
-    // Előlap: magyar szó + SVG
-    cardFront.innerHTML = `
-        <div>${cardData.hu}</div>
-        <div>${visualizeWord(cardData.hu)}</div>
-    `;
-    // Hátlap: idegen szó + SVG
-    cardBack.innerHTML = `
-        <div>${cardData.en}</div>
-        <div>${visualizeWord(cardData.en)}</div>
-    `;
-}
