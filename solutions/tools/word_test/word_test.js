@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const testContainer = document.getElementById('testContainer');
     const questionContainer = document.getElementById('questionContainer');
     const sourceWord = document.getElementById('sourceWord');
-    const wordImage = document.getElementById('wordImage');
     const answer = document.getElementById('answer');
     const nextBtn = document.getElementById('nextBtn');
     const feedback = document.getElementById('feedback');
@@ -298,21 +297,9 @@ async function loadVocabularyFiles() {
 
     // Set the source word based on direction
     if (isHuToEn) {
-        sourceWord.innerHTML = `<strong>🤔</strong><br>${question.hungarian}`;
-        if (question.imageUrl) {
-            wordImage.src = question.imageUrl;
-            wordImage.style.display = 'block';
-        } else {
-            wordImage.style.display = 'none';
-        }
+        sourceWord.innerHTML = `<strong>🤔</strong><br>${question.hungarian}<br>${visualizeWord(question.hungarian)}`;
     } else {
-        sourceWord.innerHTML = `<strong>🤔</strong><br>${question.english}`;
-        if (question.imageUrl) {
-            wordImage.src = question.imageUrl;
-            wordImage.style.display = 'block';
-        } else {
-            wordImage.style.display = 'none';
-        }
+        sourceWord.innerHTML = `<strong>🤔</strong><br>${question.english}<br>${visualizeWord(question.english)}`;
     }
 
     // Indítsd el a kérdés időzítőjét, ha a timerEnabled be van kapcsolva
@@ -377,10 +364,11 @@ function checkAnswer(timeUp = false) {
         }, 1000);
     } else {
         incorrectSound.play();
+        const correctAnswerSVG = visualizeWord(correctAnswer);
         if (timeUp) {
-            feedback.innerHTML = `Time is up!<br>The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b>`;
+            feedback.innerHTML = `Time is up!<br>The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b><br>${correctAnswerSVG}`;
         } else {
-            feedback.innerHTML = `The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b>`;
+            feedback.innerHTML = `The correct answer is: <br><b style="color:yellow; font-size:2.5vw;">${correctAnswer}</b><br>${correctAnswerSVG}`;
         }
         feedback.className = 'incorrect';
         document.querySelector('.question-container').classList.add('shake');
@@ -507,4 +495,82 @@ function checkAnswer(timeUp = false) {
     // Reload the page
         window.location.reload();
     }
+
+    // Add visualizeWord function
+function visualizeWord(word) {
+    if (!word) return '';
+
+    const DIGRAPHS = ["dzs", "dz", "cs", "gy", "ly", "ny", "sz", "ty", "zs"];
+    function tokenizeText(text) {
+        const tokens = [];
+        let i = 0;
+        while (i < text.length) {
+            const rest = text.slice(i).toLowerCase();
+            const digraph = DIGRAPHS.find(d => rest.startsWith(d));
+            if (digraph) {
+                tokens.push(text.slice(i, i + digraph.length));
+                i += digraph.length;
+            } else {
+                tokens.push(text[i]);
+                i++;
+            }
+        }
+        return tokens;
+    }
+
+    function createCharset() {
+        const punct = ['.', ',', '?', '!', "'"];
+        const digits = Array.from({ length: 10 }, (_, i) => String(i));
+        const base = ['A', 'a', 'Á', 'á', 'B', 'b', 'C', 'c', 'Cs', 'cs', 'D', 'd', 'Dz', 'dz', 'Dzs', 'dzs', 'E', 'e', 'É', 'é', 'F', 'f', 'G', 'g', 'Gy', 'gy', 'H', 'h', 'I', 'i', 'Í', 'í', 'J', 'j', 'K', 'k', 'L', 'l', 'Ly', 'ly', 'M', 'm', 'N', 'n', 'Ny', 'ny', 'O', 'o', 'Ó', 'ó', 'Ö', 'ö', 'Ő', 'ő', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's', 'Sz', 'sz', 'T', 't', 'Ty', 'ty', 'U', 'u', 'Ú', 'ú', 'Ü', 'ü', 'Ű', 'ű', 'V', 'v', 'W', 'w', 'X', 'x', 'Y', 'y', 'Z', 'z', 'Zs', 'zs'];
+        return [...punct, ...digits, ...base];
+    }
+    const CHARSET = createCharset();
+
+    function createPalette(n) {
+        const colors = [];
+        for (let i = 0; i < n; i++) {
+            const hue = Math.round((i / n) * 280);
+            colors.push(`hsl(${hue}deg 70% 50%)`);
+        }
+        return colors;
+    }
+    const palette = createPalette(CHARSET.length);
+
+    const tokens = tokenizeText(word);
+
+    const dotSize = 8;
+    const xSpacing = 12;
+    const ySpacing = 1;
+    const marginLeft = 10;
+    const marginTop = 10;
+    const width = Math.max(120, (tokens.length + 2) * xSpacing);
+    const height = Math.max(80, (CHARSET.length + 1) * ySpacing + 4);
+
+    let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" style="background:#0e1117;display:block;border-radius:8px;">`;
+
+    svg += `<line x1="${marginLeft}" y1="${height - marginTop}" x2="${width - 10}" y2="${height - marginTop}" stroke="rgba(255,255,255,0.15)" />`;
+    svg += `<line x1="${marginLeft}" y1="${marginTop}" x2="${marginLeft}" y2="${height - marginTop}" stroke="rgba(255,255,255,0.15)" />`;
+
+    for (let i = 0; i < tokens.length - 1; i++) {
+        const ci1 = CHARSET.indexOf(tokens[i]);
+        const ci2 = CHARSET.indexOf(tokens[i + 1]);
+        const x1 = marginLeft + i * xSpacing;
+        const y1 = height - marginTop - (ci1 !== -1 ? ci1 : 0) * ySpacing;
+        const x2 = marginLeft + (i + 1) * xSpacing;
+        const y2 = height - marginTop - (ci2 !== -1 ? ci2 : 0) * ySpacing;
+        svg += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="gray" stroke-width="1"/>`;
+    }
+
+    tokens.forEach((ch, i) => {
+        const ci = CHARSET.indexOf(ch);
+        const cx = marginLeft + i * xSpacing;
+        const cy = height - marginTop - (ci !== -1 ? ci : 0) * ySpacing;
+        const color = palette[ci !== -1 ? ci : 0];
+        svg += `<circle cx="${cx}" cy="${cy}" r="${dotSize}" fill="${color}" />`;
+    });
+
+    svg += `</svg>`;
+    return svg;
+}
+
 });
