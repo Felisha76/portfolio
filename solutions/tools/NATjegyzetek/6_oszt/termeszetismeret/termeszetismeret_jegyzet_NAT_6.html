@@ -9,6 +9,74 @@
 
 </head>
 <body>
+
+<style>
+        .link-bar {
+        display: flex;
+        justify-content: space-between; /* egyik balra, másik jobbra */
+        align-items: center;
+        margin-bottom: 8px;
+        padding: 6px 10px;
+        background-color: #f5f5f5;
+        border-radius: 6px;
+        }
+
+        .link-bar a {
+        text-decoration: none;
+        color: #0073e6;
+        font-weight: 500;
+        }
+
+        .link-bar a:hover {
+        color: #005bb5;
+        text-decoration: underline;
+        }
+
+        /* Tooltip stílus – az előző megoldásból */
+        .tooltip {
+        position: relative;
+        cursor: pointer;
+        }
+
+        .tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .tooltip::before {
+        content: "";
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: #333 transparent transparent transparent;
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+
+        .tooltip:hover::after,
+        .tooltip:hover::before {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-3px);
+        }
+
+
+</style>
+
     <div class="container">
         <div class="header">
             <h1>📚 NAT Jegyzetek és tankönyv</h1>
@@ -39,26 +107,35 @@
 
         <!-- Második dokumentum -->
         <div class="document-section">
-            <a href="Termeszetismeret_EPUB/OEBPS/navigation.xhtml" target="drive-frame">Vissza a tartalomjegyzékhez</a>
-            <div class="document-title">
+            <div class="link-bar">
+                <a href="Termeszetismeret_EPUB/OEBPS/navigation.xhtml" target="drive-frame" class="tooltip" data-tooltip="Vissza a tartalomjegyzékhez">
+                ⤴️Back
+                </a>
 
-            <div class="iframe-container">
-                
-                <div class="loading-overlay" id="drive-loading">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-text">Dokumentum betöltése...</div>
-                </div>
-                <iframe 
-                    id="drive-frame"
-                    src="./Termeszetismeret_EPUB/OEBPS/navigation.xhtml"
-                    onload="hideLoading('drive-loading')"
-                    onerror="showError('drive-error')"
-                    title="Természettudomány tankönyv EPUB">
-                </iframe>
+                <a href="https://www.tankonyvkatalogus.hu/storage/pdf/OH-TER06TA__teljes.pdf"
+                target="_blank"
+                class="external-link">
+                Teljes könyv a Tankönyvkatalógus oldalán
+                </a>
             </div>
 
-        </div>
-    </div>
+            <div class="iframe-container">
+                <div class="loading-overlay" id="drive-loading">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Dokumentum betöltése...</div>
+                </div>
+
+                <iframe 
+                id="drive-frame"
+                name="drive-frame"
+                src="./Termeszetismeret_EPUB/OEBPS/navigation.xhtml"
+                onload="hideLoading('drive-loading')"
+                onerror="showError('drive-error')"
+                title="Természettudomány tankönyv EPUB">
+                </iframe>
+            </div>
+            </div>
+
 
 
     <script src="../../01templates/nat.js"></script>
