@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://felisha76.github.io/portfolio/media/favicon_light.png">
+            <title>NAT 6.o. Tortenelem</title>
+            <link rel="stylesheet" href="../../01templates/nat.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 NAT Jegyzetek és tankönyv</h1>
+            <p>6. osztály Tortenelem</p>
+        </div>
+
+        <!-- Első dokumentum -->
+        <div class="document-section">
+            
+            <div class="iframe-container">
+                <div class="loading-overlay" id="docs-loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Dokumentum betöltése...</div>
+                </div>
+                <iframe 
+                    id="docs-frame"
+                    src="https://docs.google.com/document/d/1PxP0TKK9FsfBwG_nVxL2pwrh2z9G5k2xOI9FQnUFZlY/preview?usp=embedding"
+                    onload="hideLoading('docs-loading')"
+                    onerror="showError('docs-error')"
+                    title="Google Docs Dokumentum">
+                </iframe>
+            </div>
+            
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Második dokumentum -->
+        <div class="document-section">
+            <div class="document-title">
+
+            <div class="iframe-container">
+                <div class="loading-overlay" id="drive-loading">
+                    <div class="loading-spinner"></div>
+                    <div class="loading-text">Dokumentum betöltése...</div>
+                </div>
+                <iframe 
+                    id="drive-frame"
+                    src="https://drive.google.com/file/d/1cpfj2t6p5H389t0FGI5NO8dUCG4SUHaO/preview"
+                    onload="hideLoading('drive-loading')"
+                    onerror="showError('drive-error')"
+                    title="Történelem tankönyv PDF">
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="../../01templates/nat.js"></script>
+</body>
+</html>

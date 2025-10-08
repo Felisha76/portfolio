@@ -1,0 +1,114 @@
+/* 
+Not finished yet
+*/
+
+body, .side-nav2, .side-nav2 a {
+	background-color: #1c1d1d;
+	font-family: 'Noto Sans'; 
+  	font-size: 12px;
+	color: #d2d4d6;
+}
+
+/* Oldalsó navigációs sáv */     
+.container3 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    
+  }
+  
+  .side-nav2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 250px;
+    
+    height: calc(100vh - 100px);
+    max-width: 200%;
+    position:fixed;
+    overflow-y: auto;
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-top: 0px;
+    
+  }
+  
+  .side-nav2 ul {
+	  list-style: none;
+	  padding: 0px;
+	  margin: 10px;
+  }
+  
+  ul {
+    display: block;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+}
+  .side-nav2 li {
+	  margin: 0;
+    list-style-type: circle;
+  }
+  
+  .side-nav2 a {
+	  display: block;
+
+	  text-decoration: none;
+	  padding: 5px 2px;
+  }
+
+  .side-nav2 p {
+    margin: 1px 2px;
+    font-size: 12px;
+    color: #d2d4d6;
+    text-align: center;
+  }
+ 
+  /* Main content */
+  .main2 {
+    flex-grow: 1;
+    padding: 5px;
+    max-width: 80%;
+    margin-left: 300px;
+  }
+
+  .main2 p {
+    text-align: justify;
+  }
+
+/* HOVER ACTIONS */
+.side-nav2 u:hover  {
+	background-color: #999b9e;
+	color: #1c1d1d;
+}
+
+.feedback {
+  font-size:small;
+  text-decoration: none;
+  color: #d2d4d6;
+  font-family: 'Noto Sans';
+  text-align: right;
+}
+
+
+::placeholder {
+  color: white;
+}
+
+/* Görgetősáv */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #282929;
+  border-radius: 5px;
+  border: 1px solid #999b9e;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282929;
+}
+
