@@ -1,35 +1,52 @@
-<!DOCTYPE html>
-<html lang="hu">
-<head>
+    <!DOCTYPE html>
+    <html lang="hu">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="https://felisha76.github.io/portfolio/media/favicon_light.png">
-    <title>Template page for NAT Learning</title>
-    <link rel="stylesheet" href="../01templates/nat.css">
-
-</head>
-<body>
+<!-- TANTÁRGY -->            
+<title>NAT 6.o. TANTÁRGY 
+            </title>
+            <link rel="stylesheet" href="../../01templates/nat.css">
+    </head>
+    <body>
     <div class="container">
         <div class="header">
             <h1>📚 NAT Jegyzetek és tankönyv</h1>
-            <p>6. osztály Természettudomány</p>
+<!-- TANTÁRGY --> 
+<p>6. osztály TANTÁRGY</p>
         </div>
+
 
         <!-- Első dokumentum -->
         <div class="document-section">
-            
+            <div class="link-bar">
+
+                <!-- BACK BUTTON  -->
+<!-- jegyzet navigation epub path -->
+<a href="./" 
+                target="docs-frame"  
+                class="tooltip" 
+                data-tooltip="Vissza a tartalomjegyzékhez">
+                ⤴️Back
+                </a>
+                <p>Vázlatok a tankönyv alapján</p>
+            </div>
+                <!-- Loading animation-->          
             <div class="iframe-container">
                 <div class="loading-overlay" id="docs-loading">
                     <div class="loading-spinner"></div>
                     <div class="loading-text">Dokumentum betöltése...</div>
                 </div>
-                <iframe 
+             
+<!-- Jegyzet navigation file path -->    <iframe 
                     id="docs-frame"
-                    src="https://docs.google.com/document/d/1x6brP_3EOoj85gPqCmhnlI4VYzOp5uhXqanKUydOQXE/preview?usp=embedding"
+                    name="docs-frame"
+src="   " 
                     onload="hideLoading('docs-loading')"
                     onerror="showError('docs-error')"
-                    title="Google Docs Dokumentum">
-                </iframe>
+title=" *** jegyzet EPUB">
+<!-- *** A jegyzet elnevezése-->    </iframe>
             </div>
             
         </div>
@@ -38,26 +55,40 @@
 
         <!-- Második dokumentum -->
         <div class="document-section">
-            <div class="document-title">
+            <div class="link-bar">
+                <!-- BACK BUTTON             -->
+<!-- *** Tankönyv navigation link-->
+<a href="   " 
+                target="drive-frame"  
+                class="tooltip" 
+                data-tooltip="Vissza a tartalomjegyzékhez">
+                ⤴️Back
+                </a>
 
+<!-- *** TANKÖNYVKATALÓGUS KÖNYV LINK-->
+<a href="   "
+                target="_blank"
+                class="external-link">
+                Teljes könyv a Tankönyvkatalógus oldalán
+                </a>
+            </div>
+                <!-- Loading animation-->
             <div class="iframe-container">
                 <div class="loading-overlay" id="drive-loading">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-text">Dokumentum betöltése...</div>
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Dokumentum betöltése...</div>
                 </div>
-                <iframe 
-                    id="drive-frame"
-                    src="../6_oszt/tankonyvek/TERMÉSZETTUDOMÁNY_TK_OH-TER06TA__teljes.pdf"
-                    onload="hideLoading('drive-loading')"
-                    onerror="showError('drive-error')"
-                    title="Természettudomány tankönyv PDF">
-                </iframe>
+
+<!-- *** Tankönyv navigation file path--><iframe id="drive-frame" name="drive-frame"
+src="   " 
+                onload="hideLoading('drive-loading')"
+                onerror="showError('drive-error')"
+title=" ">
+<!-- *** A könyv elnevezése -->    </iframe>
             </div>
-
         </div>
-    </div>
 
 
-    <script src="../01templates/nat.js"></script>
+    <script src="../../01templates/nat.js"></script>
 </body>
 </html>

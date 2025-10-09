@@ -1,0 +1,28 @@
+<!-- TANTÁRGY -->            
+<title>NAT 6.o. TANTÁRGY 
+
+<!-- TANTÁRGY --> 
+<p>6. osztály TANTÁRGY</p>
+
+<!-- jegyzet navigation epub path -->
+<a href="./" 
+
+<!-- Jegyzet navigation file path -->
+src="   " 
+                   
+title="  jegyzet EPUB">
+<!-- *** A jegyzet elnevezése-->    
+
+        <!-- Második dokumentum -->
+
+<!-- *** Tankönyv navigation link-->
+<a href="   " 
+
+<!-- *** TANKÖNYVKATALÓGUS KÖNYV LINK-->
+<a href="   "
+
+<!-- *** Tankönyv navigation file path-->
+src="   " 
+
+title="  tankönyv EPUB">
+<!-- *** A könyv elnevezése -->
