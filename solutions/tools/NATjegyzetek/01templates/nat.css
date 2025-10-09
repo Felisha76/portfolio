@@ -155,7 +155,7 @@
         position: absolute;
         top: 0;
         left: 100%;
-        transform: translate(-100%, -100%);
+        transform: translate(10%, -100%);
         background-color: #333;
         color: #fff;
         padding: 6px 10px;
@@ -172,7 +172,7 @@
         position: absolute;
         top: 0;
         left: 100%;
-        transform: translate(-100%, -100%);
+        transform: translate(10%, -100%);
         border-width: 6px;
         border-style: solid;
         border-color: transparent transparent #333 transparent;
@@ -183,7 +183,7 @@
         .tooltip:hover::after,
         .tooltip:hover::before {
         opacity: 1;
-        transform: translate(-100%, -110%);
+        transform: translate(10%, -110%);
         }
 
         
