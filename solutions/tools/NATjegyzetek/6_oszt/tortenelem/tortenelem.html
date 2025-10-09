@@ -38,24 +38,36 @@
 
         <!-- Második dokumentum -->
         <div class="document-section">
-            <div class="document-title">
-
+            <div class="link-bar">
+                <!-- BACK BUTTON Tankönyv navigation link -->
+<!-- *** -->    <a href="Tortenelem_EPUB/TK/OEBPS/navigation.xhtml" target="drive-frame" class="tooltip" data-tooltip="Vissza a tartalomjegyzékhez">
+                ⤴️Back
+                </a>
+                <!-- TANKÖNYVKATALÓGUS KÖNYV LINK -->
+<!-- *** -->    <a href="https://www.tankonyvkatalogus.hu/storage/pdf/OH-TER06TA__teljes.pdf"
+                target="_blank"
+                class="external-link">
+                Teljes könyv a Tankönyvkatalógus oldalán
+                </a>
+            </div>
+                <!-- Loading animation-->
             <div class="iframe-container">
                 <div class="loading-overlay" id="drive-loading">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-text">Dokumentum betöltése...</div>
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Dokumentum betöltése...</div>
                 </div>
-                <iframe 
-                    id="drive-frame"
-                    src="https://drive.google.com/file/d/1cpfj2t6p5H389t0FGI5NO8dUCG4SUHaO/preview"
-                    onload="hideLoading('drive-loading')"
-                    onerror="showError('drive-error')"
-                    title="Történelem tankönyv PDF">
+
+                <!-- Tankönyv navigation link  | A könyv elnevezése-->
+<!-- *** -->    <iframe 
+                id="drive-frame"
+                name="drive-frame"
+                                src="Tortenelem_EPUB/TK/OEBPS/navigation.xhtml" 
+                onload="hideLoading('drive-loading')"
+                onerror="showError('drive-error')"
+                                title="Történelem tankönyv EPUB">
                 </iframe>
             </div>
-
         </div>
-    </div>
 
 
     <script src="../../01templates/nat.js"></script>
