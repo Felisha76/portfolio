@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="hu">
+  <head>
+    <meta name="dtb:uid" content="Id_0BEA76A0-CC3B-4610-9551-5D18C1C0328C_"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:generator" content="calibre (7.4.0)"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>OH-MNY06MB__teljes</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="num_1" playOrder="1">
+      <navLabel>
+        <text>Tanuljunk tanulni!</text>
+      </navLabel>
+      <content src="part01.xhtml#toc_1"/>
+      <navPoint id="num_2" playOrder="2">
+        <navLabel>
+          <text>A szövegfeldolgozás technikái (ismétlés)</text>
+        </navLabel>
+        <content src="part01.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_3" playOrder="3">
+        <navLabel>
+          <text>Értem a szöveget: Szóban elhangzó szöveg megértése</text>
+        </navLabel>
+        <content src="part01.xhtml#toc_3"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_4" playOrder="4">
+      <navLabel>
+        <text>A kommunikáció világa</text>
+      </navLabel>
+      <content src="part02.xhtml#toc_1"/>
+      <navPoint id="num_5" playOrder="5">
+        <navLabel>
+          <text>A testbeszéd és az arcjáték</text>
+        </navLabel>
+        <content src="part02.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_6" playOrder="6">
+        <navLabel>
+          <text>A hangzó szöveg eszköztára</text>
+        </navLabel>
+        <content src="part02.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_7" playOrder="7">
+        <navLabel>
+          <text>Nem nyelvi jelek az írott szövegekben: a szöveg megformálása</text>
+        </navLabel>
+        <content src="part02.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_8" playOrder="8">
+        <navLabel>
+          <text>Az internetes kommunikáció</text>
+        </navLabel>
+        <content src="part02.xhtml#toc_5"/>
+      </navPoint>
+      <navPoint id="num_9" playOrder="9">
+        <navLabel>
+          <text>Sajtótermékek</text>
+        </navLabel>
+        <content src="part02.xhtml#toc_6"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_10" playOrder="10">
+      <navLabel>
+        <text>Szófajok I. Valódi alapszófajok: az ige</text>
+      </navLabel>
+      <content src="part03.xhtml#toc_1"/>
+      <navPoint id="num_11" playOrder="11">
+        <navLabel>
+          <text>Szófajok, szóelemek</text>
+        </navLabel>
+        <content src="part03.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_12" playOrder="12">
+        <navLabel>
+          <text>Az ige</text>
+        </navLabel>
+        <content src="part03.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_13" playOrder="13">
+        <navLabel>
+          <text>Az igék csoportosítása</text>
+        </navLabel>
+        <content src="part03.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_14" playOrder="14">
+        <navLabel>
+          <text>Az igék toldalékai</text>
+        </navLabel>
+        <content src="part03.xhtml#toc_5"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_15" playOrder="15">
+      <navLabel>
+        <text>Szófajok II. Valódi alapszófajok: a névszók és a határozószó</text>
+      </navLabel>
+      <content src="part04.xhtml#toc_1"/>
+      <navPoint id="num_16" playOrder="16">
+        <navLabel>
+          <text>A főnév</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_17" playOrder="17">
+        <navLabel>
+          <text>A tulajdonnevek fajtái</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_18" playOrder="18">
+        <navLabel>
+          <text>A köznevek fajtái</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_19" playOrder="19">
+        <navLabel>
+          <text>A főnevek jellegzetes toldalékai</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_5"/>
+      </navPoint>
+      <navPoint id="num_20" playOrder="20">
+        <navLabel>
+          <text>A melléknév</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_6"/>
+      </navPoint>
+      <navPoint id="num_21" playOrder="21">
+        <navLabel>
+          <text>A tulajdonnévből képzett melléknevek helyesírása</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_7"/>
+      </navPoint>
+      <navPoint id="num_22" playOrder="22">
+        <navLabel>
+          <text>A számnév</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_8"/>
+      </navPoint>
+      <navPoint id="num_23" playOrder="23">
+        <navLabel>
+          <text>A határozószó</text>
+        </navLabel>
+        <content src="part04.xhtml#toc_9"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_24" playOrder="24">
+      <navLabel>
+        <text>Szófajok III. Alapszófajok: a névmások és az igenevek</text>
+      </navLabel>
+      <content src="part05.xhtml#toc_1"/>
+      <navPoint id="num_25" playOrder="25">
+        <navLabel>
+          <text>A névmások</text>
+        </navLabel>
+        <content src="part05.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_26" playOrder="26">
+        <navLabel>
+          <text>A névmások fajtái</text>
+        </navLabel>
+        <content src="part05.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_27" playOrder="27">
+        <navLabel>
+          <text>Az igenevek</text>
+        </navLabel>
+        <content src="part05.xhtml#toc_4"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_28" playOrder="28">
+      <navLabel>
+        <text>Szófajok IV. Viszonyszók, mondatszók</text>
+      </navLabel>
+      <content src="part06.xhtml#toc_1"/>
+      <navPoint id="num_29" playOrder="29">
+        <navLabel>
+          <text>A viszonyszók</text>
+        </navLabel>
+        <content src="part06.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_30" playOrder="30">
+        <navLabel>
+          <text>A mondatszók</text>
+        </navLabel>
+        <content src="part06.xhtml#toc_3"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

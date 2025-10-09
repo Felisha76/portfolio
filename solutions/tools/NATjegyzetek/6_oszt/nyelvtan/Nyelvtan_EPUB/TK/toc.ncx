@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="hu">
+  <head>
+    <meta name="dtb:uid" content="Id_7D972581-FBFA-4028-A438-A2CE2D08D20A_"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:generator" content="calibre (7.2.0)"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>Magyar nyelv 6 tankönyv</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="num_1" playOrder="1">
+      <navLabel>
+        <text>Bevezető</text>
+      </navLabel>
+      <content src="bevezeto.xhtml"/>
+    </navPoint>
+    <navPoint id="num_2" playOrder="2">
+      <navLabel>
+        <text>Tanuljunk tanulni!</text>
+      </navLabel>
+      <content src="tanuljunk-tanulni.xhtml"/>
+      <navPoint id="num_3" playOrder="3">
+        <navLabel>
+          <text>A szövegfeldolgozás technikái (ismétlés)</text>
+        </navLabel>
+        <content src="tanuljunk-tanulni.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_4" playOrder="4">
+        <navLabel>
+          <text>Értem a szöveget: Szóban elhangzó szöveg megértése</text>
+        </navLabel>
+        <content src="tanuljunk-tanulni.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_5" playOrder="5">
+        <navLabel>
+          <text>Szóról szóra 1.</text>
+        </navLabel>
+        <content src="szorol-szora1.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_6" playOrder="6">
+      <navLabel>
+        <text>A kommunikáció világa</text>
+      </navLabel>
+      <content src="a-kommunikacio-vilaga.xhtml"/>
+      <navPoint id="num_7" playOrder="7">
+        <navLabel>
+          <text>A testbeszéd és az arcjáték</text>
+        </navLabel>
+        <content src="a-kommunikacio-vilaga.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_8" playOrder="8">
+        <navLabel>
+          <text>A hangzó szöveg eszköztára</text>
+        </navLabel>
+        <content src="a-kommunikacio-vilaga.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_9" playOrder="9">
+        <navLabel>
+          <text>Nem nyelvi jelek az írott szövegekben: a szöveg megformálása</text>
+        </navLabel>
+        <content src="a-kommunikacio-vilaga.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_10" playOrder="10">
+        <navLabel>
+          <text>Sajtótermékek</text>
+        </navLabel>
+        <content src="a-kommunikacio-vilaga.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_11" playOrder="11">
+        <navLabel>
+          <text>Értem a szöveget: Az internetes szövegek</text>
+        </navLabel>
+        <content src="a-kommunikacio-vilaga.xhtml#toc_5"/>
+      </navPoint>
+      <navPoint id="num_12" playOrder="12">
+        <navLabel>
+          <text>Szóról szóra 2.</text>
+        </navLabel>
+        <content src="szorol-szora2.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_13" playOrder="13">
+      <navLabel>
+        <text>Szófajok I. Valódi alapszófajok: az ige</text>
+      </navLabel>
+      <content src="szofajok1.xhtml"/>
+      <navPoint id="num_14" playOrder="14">
+        <navLabel>
+          <text>Szófajok, szóelemek</text>
+        </navLabel>
+        <content src="szofajok1.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_15" playOrder="15">
+        <navLabel>
+          <text>Az ige</text>
+        </navLabel>
+        <content src="szofajok1.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_16" playOrder="16">
+        <navLabel>
+          <text>Az igék csoportosítása</text>
+        </navLabel>
+        <content src="szofajok1.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_17" playOrder="17">
+        <navLabel>
+          <text>Az igék toldalékai</text>
+        </navLabel>
+        <content src="szofajok1.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_18" playOrder="18">
+        <navLabel>
+          <text>Értem a szöveget: Az irodalmi szöveg megértése</text>
+        </navLabel>
+        <content src="szofajok1.xhtml#toc_5"/>
+      </navPoint>
+      <navPoint id="num_19" playOrder="19">
+        <navLabel>
+          <text>Szóról szóra 3.</text>
+        </navLabel>
+        <content src="szorol-szora3.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_20" playOrder="20">
+      <navLabel>
+        <text>Szófajok II. Valódi alapszófajok: a névszók és a határozószó</text>
+      </navLabel>
+      <content src="szofajok2.xhtml"/>
+      <navPoint id="num_21" playOrder="21">
+        <navLabel>
+          <text>A főnév</text>
+        </navLabel>
+        <content src="szofajok2.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_22" playOrder="22">
+        <navLabel>
+          <text>A tulajdonnevek fajtái</text>
+        </navLabel>
+        <content src="szofajok2.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_23" playOrder="23">
+        <navLabel>
+          <text>A köznevek fajtái</text>
+        </navLabel>
+        <content src="szofajok2.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_24" playOrder="24">
+        <navLabel>
+          <text>A főnevek jellegzetes toldalékai</text>
+        </navLabel>
+        <content src="szofajok2.xhtml#toc_5"/>
+      </navPoint>
+      <navPoint id="num_25" playOrder="25">
+        <navLabel>
+          <text>Értem a szöveget: A daru</text>
+        </navLabel>
+        <content src="szofajok2.xhtml#toc_6"/>
+      </navPoint>
+      <navPoint id="num_26" playOrder="26">
+        <navLabel>
+          <text>Szóról Szóra 4. (Projekt)</text>
+        </navLabel>
+        <content src="szorol-szora4.xhtml"/>
+      </navPoint>
+      <navPoint id="num_27" playOrder="27">
+        <navLabel>
+          <text>A melléknév</text>
+        </navLabel>
+        <content src="szofajok2_2.xhtml"/>
+      </navPoint>
+      <navPoint id="num_28" playOrder="28">
+        <navLabel>
+          <text>A tulajdonnévből képzett melléknevek helyesírása</text>
+        </navLabel>
+        <content src="szofajok2_2.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_29" playOrder="29">
+        <navLabel>
+          <text>A számnév</text>
+        </navLabel>
+        <content src="szofajok2_2.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_30" playOrder="30">
+        <navLabel>
+          <text>A határozószó</text>
+        </navLabel>
+        <content src="szofajok2_2.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_31" playOrder="31">
+        <navLabel>
+          <text>Értem a szöveget: Csau-csau fajtamentés</text>
+        </navLabel>
+        <content src="szofajok2_2.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_32" playOrder="32">
+        <navLabel>
+          <text>Szóról Szóra 5. (Projekt)</text>
+        </navLabel>
+        <content src="szorol-szora5.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_33" playOrder="33">
+      <navLabel>
+        <text>Szófajok III. Alapszófajok: a névmások és az igenevek</text>
+      </navLabel>
+      <content src="szofajok3.xhtml"/>
+      <navPoint id="num_34" playOrder="34">
+        <navLabel>
+          <text>A névmások</text>
+        </navLabel>
+        <content src="szofajok3.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_35" playOrder="35">
+        <navLabel>
+          <text>A névmások fajtái</text>
+        </navLabel>
+        <content src="szofajok3.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_36" playOrder="36">
+        <navLabel>
+          <text>Az igenevek</text>
+        </navLabel>
+        <content src="szofajok3.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_37" playOrder="37">
+        <navLabel>
+          <text>Értem a szöveget: Alapérzelmek a zenében</text>
+        </navLabel>
+        <content src="szofajok3.xhtml#toc_4"/>
+      </navPoint>
+      <navPoint id="num_38" playOrder="38">
+        <navLabel>
+          <text>Szóról Szóra 6. (Projekt)</text>
+        </navLabel>
+        <content src="szorol-szora6.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_39" playOrder="39">
+      <navLabel>
+        <text>Szófajok IV. Viszonyszók, mondatszók</text>
+      </navLabel>
+      <content src="szofajok4.xhtml"/>
+      <navPoint id="num_40" playOrder="40">
+        <navLabel>
+          <text>A viszonyszók</text>
+        </navLabel>
+        <content src="szofajok4.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_41" playOrder="41">
+        <navLabel>
+          <text>A mondatszók</text>
+        </navLabel>
+        <content src="szofajok4.xhtml#toc_2"/>
+      </navPoint>
+      <navPoint id="num_42" playOrder="42">
+        <navLabel>
+          <text>Értem a szöveget: Ének a kőszívű királyról (részletek)</text>
+        </navLabel>
+        <content src="szofajok4.xhtml#toc_3"/>
+      </navPoint>
+      <navPoint id="num_43" playOrder="43">
+        <navLabel>
+          <text>Szóról Szóra 7. (Projekt)</text>
+        </navLabel>
+        <content src="szorol-szora7.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_44" playOrder="44">
+      <navLabel>
+        <text>Szófajok V. A magyar nyelv szófaji rendszere (Összefoglaló táblázat)</text>
+      </navLabel>
+      <content src="szofajok5.xhtml"/>
+      <navPoint id="num_45" playOrder="45">
+        <navLabel>
+          <text>A többszófajúság és a szófajváltás</text>
+        </navLabel>
+        <content src="szofajok5.xhtml#toc_1"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_46" playOrder="46">
+      <navLabel>
+        <text>Könyvtárak a valóságban és a virtuális világban</text>
+      </navLabel>
+      <content src="konyvtarak.xhtml"/>
+      <navPoint id="num_47" playOrder="47">
+        <navLabel>
+          <text>Értem a szöveget: Könyvtárban</text>
+        </navLabel>
+        <content src="konyvtarak.xhtml#toc_1"/>
+      </navPoint>
+      <navPoint id="num_48" playOrder="48">
+        <navLabel>
+          <text>Szóról Szóra 8. (Projekt)</text>
+        </navLabel>
+        <content src="szorol-szora8.xhtml"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="num_49" playOrder="49">
+      <navLabel>
+        <text>Fogalomtár</text>
+      </navLabel>
+      <content src="fogalomtar.xhtml"/>
+    </navPoint>
+    <navPoint id="num_50" playOrder="50">
+      <navLabel>
+        <text>Forrásjegyzék</text>
+      </navLabel>
+      <content src="forrasjegyzek.xhtml"/>
+      <navPoint id="num_51" playOrder="51">
+        <navLabel>
+          <text>Irodalomjegyzék</text>
+        </navLabel>
+        <content src="forrasjegyzek.xhtml"/>
+      </navPoint>
+      <navPoint id="num_52" playOrder="52">
+        <navLabel>
+          <text>Képjegyzék</text>
+        </navLabel>
+        <content src="kepjegyzek.xhtml"/>
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>
