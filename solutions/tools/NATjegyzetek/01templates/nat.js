@@ -1,5 +1,4 @@
-
-        // Betöltési overlay elrejtése
+// Betöltési overlay elrejtése
         function hideLoading(loadingId) {
             const loadingElement = document.getElementById(loadingId);
             if (loadingElement) {
@@ -77,6 +76,20 @@
         // Ablak átméretezésére reagálás
         window.addEventListener('resize', adjustIframeHeight);
         window.addEventListener('load', adjustIframeHeight);
+
+        // Portrait orientation warning
+        function handleOrientationChange() {
+            const warningElement = document.querySelector('.portrait-warning');
+            if (window.matchMedia('(orientation: portrait)').matches) {
+                warningElement.style.display = 'flex';
+            } else {
+                warningElement.style.display = 'none';
+            }
+        }
+
+        // Add event listener for orientation changes
+        window.addEventListener('resize', handleOrientationChange);
+        window.addEventListener('load', handleOrientationChange);
 
         // Kezdeti beállítás
         adjustIframeHeight();

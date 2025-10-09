@@ -220,3 +220,29 @@
                 font-size: 1.5em;
             }
         }
+
+        /* Portrait warning message */
+        .portrait-warning {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+            font-size: 1.2em;
+            padding: 20px;
+        }
+
+        /* Show warning in portrait mode */
+        @media (orientation: portrait) {
+            .portrait-warning {
+                display: flex;
+            }
+        }
