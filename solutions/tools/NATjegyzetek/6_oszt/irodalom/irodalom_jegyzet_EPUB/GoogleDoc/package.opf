@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uid" version="3.0">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <dc:identifier id="uid">6da87cc6-cdbf-48fc-9944-30489db95a4e</dc:identifier>
+    <dc:identifier id="uid">333a536e-4708-4ec3-96a0-10c5b3c9d63d</dc:identifier>
     <dc:language>hu</dc:language>
     <dc:title>IRODALOM 6</dc:title>
-    <meta property="dcterms:modified">2025-10-09T18:34:25Z</meta>
+    <meta property="dcterms:modified">2025-10-09T18:41:25Z</meta>
   </metadata>
   <manifest>
     <item href="nav.xhtml" id="toc" media-type="application/xhtml+xml" properties="nav"/>
