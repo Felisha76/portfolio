@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uid" version="3.0">
   <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <dc:identifier id="uid">f30e5acc-1962-49cb-8ff8-da601c50f289</dc:identifier>
+    <dc:identifier id="uid">438a0140-8014-4cad-bdb6-e8df3e715b82</dc:identifier>
     <dc:language>hu</dc:language>
     <dc:title>NYELVTAN 6</dc:title>
-    <meta property="dcterms:modified">2025-10-10T09:01:46Z</meta>
+    <meta property="dcterms:modified">2025-10-10T13:15:44Z</meta>
   </metadata>
   <manifest>
     <item href="nav.xhtml" id="toc" media-type="application/xhtml+xml" properties="nav"/>
