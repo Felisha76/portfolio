@@ -1,3 +1,5 @@
+// main_script.js BCK
+
 // Not finished yet //
 
 document.querySelectorAll('.dropdown').forEach(dropdown => {
@@ -38,12 +40,21 @@ function displayResults(data) {
     const tbody = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
     tbody.innerHTML = ''; // reset table
 
+    const searchTerm = document.getElementById('search').value.toLowerCase();
+
     data.forEach(row => {
         const tr = document.createElement('tr');
-        row.slice(1, 6).forEach(cell => { // sow only B-G columns (1-5)
+        row.slice(1, 6).forEach(cell => { // show only B-G columns (1-5)
             const td = document.createElement('td');
-            td.innerHTML = cell; // inserting html
-            // td.textContent = cell;
+            let cellContent = cell;
+
+            // Highlight search term
+            if (searchTerm && cell.toLowerCase().includes(searchTerm)) {
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                cellContent = cell.replace(regex, '<span style="background-color: yellow; font-weight: bold; color: black;">$1</span>');
+            }
+
+            td.innerHTML = cellContent; // inserting html with highlighted term
             td.classList.add('cell'); // cell class creation
             styleCell(td, cell); // unique cell styles
             td.addEventListener('click', () => adjustCellHeight(td)); // click event
@@ -84,7 +95,7 @@ function filterCSV() {
 }
 
 // start searching on ENTER
-document.getElementById('search').addEventListener('keydown', function(event) {
+document.getElementById('search').addEventListener('input', function(event) {
     filterCSV(); // searching process
 });
 
@@ -143,6 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-  
-  
-  
+
+
+
