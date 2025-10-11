@@ -33,6 +33,21 @@ h1 {
     cursor: pointer;
 }
 
+/* Expand the area to show full text on hover */
+.news-item p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover p {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-height: none;
+}
+
 .news-item p:hover::after {
     content: attr(data-full-text);
     position: absolute;
