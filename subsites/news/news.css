@@ -3,10 +3,16 @@ Not finished yet
 */
 
 body, p, a, pre {
+ 
 	background-color: #1c1d1d;
-	font-family: 'Noto Sans'; 
   	font-size: 12px;
-	color: #d2d4d6;
+
+}
+
+body, p, a, pre, h1, h2, h3, .item h2, .item h3, .item p {
+    font-family:'Noto Sans';
+    font-size:2vw;
+    color: #d2d4d6;
 }
 
   /* Main content */
@@ -22,19 +28,43 @@ h1 {
     align-items: center;
     text-align: center;
     font-size: xx-large;
+    background-color: #1c1d1d; /* Optional: Add a background color to prevent overlap */
+    z-index: 1000; /* Ensure it stays above other elements */
 }
 
+/* Blog container */
 #blog {
-    background-color: #c0c2d0;
-    border-color: 1px #ec561f;
-    border-radius: 20%;
-}
-
-.item h2, h3  {
-    color:#282929;
+    background-color: #1c1d1d;
+    background-size: cover;
+    border: 1px solid #d2d4d6;
+    padding: 30px;
 
 }
 
+/* Blog items */
+.item {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-color: #999b9e;
+    background-color: #272929;
+}
+
+.item h2 {
+    margin-top: 0px;
+}
+
+.item p {
+    margin-left: 40px;
+    font-family:'Noto Sans';
+    font-size:3vw;
+    color: #d2d4d6;
+}
+
+.highlight {
+    color: yellow;
+}
 
 /* Görgetősáv */
 ::-webkit-scrollbar {
