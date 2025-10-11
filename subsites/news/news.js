@@ -4,10 +4,13 @@ fetch('news.csv')
   .then(csvText => {
     const parsedData = Papa.parse(csvText, { header: false }).data;
 
-    const newsData = parsedData.map(row => ({
-      title: row[0],
-      content: row[1]
-    }));
+    // Filter out empty rows
+    const newsData = parsedData
+      .filter(row => row[0] && row[1]) // Ensure both title and content are present
+      .map(row => ({
+        title: row[0],
+        content: row[1]
+      }));
 
     const blogContainer = document.getElementById('blog');
     blogContainer.innerHTML = ''; // Clear existing content
