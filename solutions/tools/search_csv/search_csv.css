@@ -2,7 +2,7 @@
 Not finished yet
 */
 
-body, .top-nav, .side-nav, .side-nav a, a, pre {
+body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
 	background-color: #1c1d1d;
 	font-family: 'Noto Sans'; 
   	font-size: 12px;
@@ -220,11 +220,11 @@ body, .top-nav, .side-nav, .side-nav a, a, pre {
 
  
   /* Main content */
-  .main {
+  .m12 {
     flex-grow: 1;
     padding: 10px;
     max-width: 80%;
-    margin-left: 200px;
+    margin-left: 0px;
   }
 
   .search_open {
@@ -466,7 +466,7 @@ th {
       width: 100px;
     }
 
-    .main {
+    .m12 {
       margin-left: 100px;
     }
   }
