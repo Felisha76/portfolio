@@ -88,7 +88,7 @@ h1 {
 }
 
 .news-item {
-    background: linear-gradient(135deg, #01014a, #0dcde3);
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
     border-radius: 15px;
     padding: 15px;
     color: #fff;
@@ -97,6 +97,7 @@ h1 {
     overflow: hidden;
     position: relative;
     z-index: 1;
+    margin-bottom: 20px;
 }
 
 .news-item h2 {
