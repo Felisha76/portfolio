@@ -23,7 +23,7 @@ function loadCSV() {
         reader.onload = function(event) {
             Papa.parse(event.target.result, {
                 complete: function(results) {
-                    csvData = results.data.slice(0, 500); // loading the first 500 lines from csv
+                    csvData = results.data.slice(0, 2000); // loading the first 2000 lines from csv
                     displayResults(csvData);
                 },
                 header: false
