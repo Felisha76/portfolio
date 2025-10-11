@@ -30,6 +30,7 @@ fetch('news.csv')
 
       const newsContent = document.createElement('p');
       newsContent.innerHTML = news.content; // Allow HTML content
+      newsContent.setAttribute('data-full-text', news.content); // Add full text for tooltip
 
       newsItem.appendChild(newsTitle);
       newsItem.appendChild(newsContent);
