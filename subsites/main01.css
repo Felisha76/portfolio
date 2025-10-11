@@ -272,28 +272,6 @@ body, .top-nav, .side-nav, .side-nav a, a, pre {
 
                       /* tooltip end */
 
-/*
-table, td, th {
-    border: 1px solid black;
-    border-collapse: collapse;
-	  left: 200px;
-	  background-color: #272929;
-	  font-family: 'Noto Sans'; 
-    font-size: 12px;
-	  color: #d2d4d6;
-}
-
-th, td, cell {
-  padding: 8px;
-  text-align: left;
-  vertical-align: top;
-  max-height: 500px;
-  max-width: 500px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-*/
-
 /* HOVER ACTIONS */
 /* td:hover, */ .side-nav a:hover  {
 	background-color: #999b9e;
@@ -305,12 +283,6 @@ th, td, cell {
   color: #f5dd07;
 }
 
-/* 
-  input::file-selector-button:hover{
-  color: #272929;
-  background-color: #d2d4d6;
-}
-*/
 
 #logo:hover {
 	transform: rotateY(360deg);
@@ -341,74 +313,6 @@ th, td, cell {
 }  
 
 
-
-/* Táblázat oszlop szélességek 
-	#col01 {
-	    width: 10%;
-	    overflow: hidden;
-	}
-
-	#col02 {
- 	   width: 15%;
- 	   overflow: hidden;
-	}
-
-	#col03 {
- 	   width: 35%;
-  	   overflow: auto;
-	}
-
-	#col04 {
-	    width: 35%;
-            overflow: auto;
-	}
-	#col05 {
-	    width: 5%;
-	}
-*/
-/* Táblázat cellák kattinthatósága 
-td, cell {
- 	cursor: pointer;
-}
-*/
-/* Megnövelt magasságú sorok tulajdonsági 
-td.expanded {
-    max-width: 500px;
-    white-space: normal;
-}
-*/
-/* Táblázat fejléc tulajdonságai 
-th {
-    text-align: center;
-    padding: 5px;
-}
-*/
-/* Kereső field tulajdonságai 
-#search {
-    width: 300px;
-    height: 25px;
-    background-color: rgb(12, 3, 60);
-    color: white;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-.Timage {
-  max-width: 100px;
-  height: auto;
-}
-
-.Tlink {
-	background-color: #272929;
-	font-family: 'Noto Sans'; 
-  font-size: 12px;
-	color: #d2d4d6;
-}
-
-::placeholder {
-  color: white;
-}
-*/
 /* Görgetősáv */
 ::-webkit-scrollbar {
   height: 8px;
