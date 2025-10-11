@@ -74,12 +74,12 @@ body, .top-nav, .side-nav, .side-nav a, a, pre {
 	  z-index: 9999;
 	  flex-direction: column;
 
-    border-style: solid;
-    border-left: #1c1d1d;
-    border-top: #1c1d1d;
-    border-width: thin;
-    border-color: #999b9e;
-    border-radius: 15px;
+      border-style: solid;
+      border-left: #1c1d1d;
+      border-top: #1c1d1d;
+      border-width: thin;
+      border-color: #999b9e;
+      border-radius: 15px;
 	}
 
 	.dropdown-content a {
@@ -272,7 +272,7 @@ body, .top-nav, .side-nav, .side-nav a, a, pre {
 
                       /* tooltip end */
 
-
+/*
 table, td, th {
     border: 1px solid black;
     border-collapse: collapse;
@@ -292,9 +292,10 @@ th, td, cell {
   overflow: hidden;
   white-space: nowrap;
 }
+*/
 
 /* HOVER ACTIONS */
-td:hover, .side-nav a:hover  {
+/* td:hover, */ .side-nav a:hover  {
 	background-color: #999b9e;
 	color: #1c1d1d;
 }
@@ -304,10 +305,12 @@ td:hover, .side-nav a:hover  {
   color: #f5dd07;
 }
 
-input::file-selector-button:hover{
+/* 
+  input::file-selector-button:hover{
   color: #272929;
   background-color: #d2d4d6;
 }
+*/
 
 #logo:hover {
 	transform: rotateY(360deg);
@@ -339,7 +342,7 @@ input::file-selector-button:hover{
 
 
 
-/* Táblázat oszlop szélességek */
+/* Táblázat oszlop szélességek 
 	#col01 {
 	    width: 10%;
 	    overflow: hidden;
@@ -362,25 +365,25 @@ input::file-selector-button:hover{
 	#col05 {
 	    width: 5%;
 	}
-
-/* Táblázat cellák kattinthatósága */
+*/
+/* Táblázat cellák kattinthatósága 
 td, cell {
  	cursor: pointer;
 }
-
-/* Megnövelt magasságú sorok tulajdonsági */
+*/
+/* Megnövelt magasságú sorok tulajdonsági 
 td.expanded {
     max-width: 500px;
     white-space: normal;
 }
-
-/* Táblázat fejléc tulajdonságai */
+*/
+/* Táblázat fejléc tulajdonságai 
 th {
     text-align: center;
     padding: 5px;
 }
-
-/* Kereső field tulajdonságai */
+*/
+/* Kereső field tulajdonságai 
 #search {
     width: 300px;
     height: 25px;
@@ -405,7 +408,7 @@ th {
 ::placeholder {
   color: white;
 }
-
+*/
 /* Görgetősáv */
 ::-webkit-scrollbar {
   height: 8px;
@@ -470,3 +473,10 @@ th {
       margin-left: 100px;
     }
   }
+
+/* Iframe stílusok */
+.main iframe {
+    width: 100%;
+    height: calc(100vh - 100px); /* A navigációs sávok helyének figyelembevétele */
+    border: none;
+}
