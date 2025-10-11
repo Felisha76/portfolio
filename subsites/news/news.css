@@ -24,47 +24,17 @@ h1 {
     font-size: xx-large;
 }
 
-/* Tooltip for full text on hover */
-.news-item p {
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    cursor: pointer;
+#blog {
+    background-color: #c0c2d0;
+    border-color: 1px #ec561f;
+    border-radius: 20%;
 }
 
-/* Expand the area to show full text on hover */
-.news-item p {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    transition: all 0.3s ease;
+.item h2, h3  {
+    color:#282929;
+
 }
 
-.news-item:hover p {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
-    max-height: none;
-}
-
-.news-item p:hover::after {
-    content: attr(data-full-text);
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    white-space: normal;
-    z-index: 1000;
-    width: max-content;
-    max-width: 300px;
-    height:500px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 /* Görgetősáv */
 ::-webkit-scrollbar {
@@ -91,42 +61,3 @@ h1 {
       margin-left: 100px;
     }
   }
-
-/* News item styling */
-#blog {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.news-item {
-    background: linear-gradient(135deg, #031064, #12b5f1);
-    border-radius: 15px;
-    padding: 15px;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, z-index 0.3s ease;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
-}
-
-.news-item h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
-}
-
-.news-item p {
-    margin: 0;
-    font-size: 1em;
-    line-height: 1.5;
-    opacity: 0.8;
-}
-
-.news-item:hover {
-    transform: scale(1.1);
-    z-index: 10;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
