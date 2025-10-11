@@ -78,3 +78,41 @@ h1 {
       margin-left: 100px;
     }
   }
+
+/* News item styling */
+#blog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.news-item {
+    background: linear-gradient(135deg, #01014a, #0dcde3);
+    border-radius: 15px;
+    padding: 15px;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.news-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.news-item p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.news-item:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
