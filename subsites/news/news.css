@@ -1,0 +1,80 @@
+/* 
+Not finished yet
+*/
+
+body, p, a, pre {
+	background-color: #1c1d1d;
+	font-family: 'Noto Sans'; 
+  	font-size: 12px;
+	color: #d2d4d6;
+}
+
+  /* Main content */
+  .main {
+    flex-grow: 1;
+    padding: 10px;
+    max-width: 80%;
+    margin-left: 200px;
+  }
+
+h1 {
+    position:sticky;
+    align-items: center;
+    text-align: center;
+    font-size: xx-large;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+                      /* tooltip end */
+
+
+/* Görgetősáv */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #282929;
+  border-radius: 5px;
+  border: 1px solid #999b9e;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #282929;
+}
+
+/* Responzivitási beállítások */
+  @media (max-width: 800px) {
+    
+
+    .main {
+      margin-left: 100px;
+    }
+  }
