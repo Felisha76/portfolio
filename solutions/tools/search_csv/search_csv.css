@@ -9,7 +9,7 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
 	color: #d2d4d6;
 }
 
-/* Felső navigációs sáv */
+/* Felső navigációs sáv 
     .top-nav {
       display: flex;
       align-items: stretch;
@@ -36,7 +36,7 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
       display: flex;
       justify-content: space-between;
       flex: 1;
-      /* margin-right: 100px; */
+      /* margin-right: 100px; 
     }
 
     .profile-info a {
@@ -46,13 +46,13 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
 	    color: #d2d4d6;
       text-decoration: none;
     }
-
+*/
 	.dropdown {
 	  float: left;
 	  overflow: hidden;
 	}
 
-	.navbar a:hover, .dropdown .dropbtn {
+	/*.navbar */ a:hover, .dropdown .dropbtn {
 	  background-color: inherit;
 	  font-family: inherit;
 	  font-size: 1rem;
@@ -74,12 +74,12 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
 	  z-index: 9999;
 	  flex-direction: column;
 
-    border-style: solid;
-    border-left: #1c1d1d;
-    border-top: #1c1d1d;
-    border-width: thin;
-    border-color: #999b9e;
-    border-radius: 15px;
+        border-style: solid;
+        border-left: #1c1d1d;
+        border-top: #1c1d1d;
+        border-width: thin;
+        border-color: #999b9e;
+        border-radius: 15px;
 	}
 
 	.dropdown-content a {
@@ -91,7 +91,7 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
 	  text-align: left;
 	}
 
-/* flicards */
+/* flicards 
 .wrap {
 	position: relative;
 	width: 100%;
@@ -153,9 +153,9 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
   border-color: #999b9e;
 	transform: rotateY(180deg);
 }
+*/
 
-
-/* Oldalsó navigációs sáv */     
+/* Oldalsó navigációs sáv     
 .container2 {
     display: flex;
     flex-direction: row;
@@ -217,7 +217,7 @@ body, a/*.top-nav, .side-nav, .side-nav a, pre*/ {
     text-align: center;
     text-decoration: none;
   }
-
+*/ 
  
   /* Main content */
   .m12 {
@@ -327,7 +327,7 @@ input::file-selector-button:hover{
   background-color: #999b9e;
   color: #1c1d1d;
 }
-
+/*
 .card:hover .front {
 	transform: rotateY(180deg);
   transition-duration: 100ms;
@@ -336,7 +336,7 @@ input::file-selector-button:hover{
 	transform: rotateY(360deg);
   transition-duration: 100ms;
 }  
-
+*/
 
 
 /* Táblázat oszlop szélességek */
@@ -425,12 +425,12 @@ th {
 
 /* Responzivitási beállítások */
   @media (max-width: 800px) {
-    .top-nav {
-        flex-direction:column; /* Egymás alá rendezés */
-        height: 100px; /* Magasság automatikusan igazodik */
+    /*.top-nav {
+        flex-direction:column; /* Egymás alá rendezés 
+        height: 100px; /* Magasság automatikusan igazodik 
         align-items:start;
         padding: 10px;
-        width: 80%;
+        width: 80%; */
     }   
     
     .wrap {
@@ -448,7 +448,7 @@ th {
       gap: 2px;
     
     }
-
+/*
     .card {
       height: 20px;
     
@@ -465,7 +465,7 @@ th {
     .side-nav {
       width: 100px;
     }
-
+*/
     .m12 {
       margin-left: 100px;
     }
