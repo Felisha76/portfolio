@@ -4,6 +4,9 @@ fetch('news.csv')
   .then(csvText => {
     const parsedData = Papa.parse(csvText, { header: false }).data;
 
+    // Log parsed data for debugging
+    console.log('Parsed CSV Data:', parsedData);
+
     // Filter out empty rows
     const newsData = parsedData
       .filter(row => row[0] && row[1]) // Ensure both title and content are present
@@ -11,6 +14,9 @@ fetch('news.csv')
         title: row[0],
         content: row[1]
       }));
+
+    // Log filtered data for debugging
+    console.log('Filtered News Data:', newsData);
 
     const blogContainer = document.getElementById('blog');
     blogContainer.innerHTML = ''; // Clear existing content
@@ -23,11 +29,14 @@ fetch('news.csv')
       newsTitle.textContent = news.title;
 
       const newsContent = document.createElement('p');
-      newsContent.textContent = news.content;
+      newsContent.innerHTML = news.content; // Allow HTML content
 
       newsItem.appendChild(newsTitle);
       newsItem.appendChild(newsContent);
       blogContainer.appendChild(newsItem);
     });
+
+    // Log final DOM structure for debugging
+    console.log('Final Blog Container:', blogContainer.innerHTML);
   })
   .catch(error => console.error('Error loading CSV:', error));
