@@ -51,7 +51,7 @@ h1 {
 .news-item p:hover::after {
     content: attr(data-full-text);
     position: absolute;
-    top: -100%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
@@ -62,6 +62,7 @@ h1 {
     z-index: 1000;
     width: max-content;
     max-width: 300px;
+    height:500px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
