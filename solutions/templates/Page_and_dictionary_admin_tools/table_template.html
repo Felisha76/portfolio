@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table HTML Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Table HTML Generator</h1>
+    <p>Paste your table data below (e.g., copied from a document or PDF), and click "Generate HTML" to create the HTML code for a table.</p>
+    <textarea id="inputText" placeholder="Paste your table data here..."></textarea>
+    <button onclick="generateTableHTML()">Generate HTML</button>
+    <h2>Generated HTML:</h2>
+    <pre id="outputHTML"></pre>
+
+    <script>
+        function generateTableHTML() {
+            const inputText = document.getElementById('inputText').value;
+            const rows = inputText.split('\n');
+            let html = '<table>\n';
+
+            rows.forEach((row, index) => {
+                const cells = row.split('\t'); // Assuming tab-separated values
+                html += index === 0 ? '  <thead>\n    <tr>\n' : '  <tr>\n';
+
+                cells.forEach(cell => {
+                    html += index === 0 ? `      <th>${cell.trim()}</th>\n` : `      <td>${cell.trim()}</td>\n`;
+                });
+
+                html += index === 0 ? '    </tr>\n  </thead>\n  <tbody>\n' : '  </tr>\n';
+            });
+
+            html += '  </tbody>\n</table>';
+
+            document.getElementById('outputHTML').textContent = html;
+        }
+    </script>
+</body>
+</html>
