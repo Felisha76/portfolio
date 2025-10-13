@@ -45,6 +45,7 @@
     <div id="pasteArea" contenteditable="true" placeholder="Paste your table here..."></div>
     <button onclick="generateTableHTML()">Generate HTML</button>
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button onclick="resetPage()">Reset</button>
     <h2>Generated HTML:</h2>
     <pre id="outputHTML"></pre>
 
@@ -84,6 +85,13 @@
             html += '  </tbody>\n</table>';
 
             document.getElementById('outputHTML').textContent = html;
+
+            // Automatically copy to clipboard
+            navigator.clipboard.writeText(html).then(() => {
+                alert('HTML code generated and copied to clipboard!');
+            }).catch(err => {
+                alert('Failed to copy HTML code: ' + err);
+            });
         }
 
         function copyToClipboard() {
@@ -98,6 +106,10 @@
             }).catch(err => {
                 alert('Failed to copy HTML code: ' + err);
             });
+        }
+
+        function resetPage() {
+            location.reload();
         }
     </script>
 </body>
