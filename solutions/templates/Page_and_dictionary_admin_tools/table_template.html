@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paste Table HTML Generator</title>
+     <link rel="icon" type="image/png" href="https://felisha76.github.io/portfolio/media/favicon_light.png">
     <style>
         body {
-            font-family: inherit;
+            font-family: 'Noto Sans';
             margin: 20px;
-            color:white;
+            color:#d2d4d6;
+            background-color: #1c1d1d;
         }
         #pasteArea {
             width: 100%;
@@ -16,9 +18,9 @@
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 20px;
-            background-color: #f9f9f9;
+            background-color: #d2d4d6;
             overflow: auto;
-            color: black;
+            color: #1c1d1d;
         }
         button {
             padding: 10px 20px;
@@ -44,7 +46,6 @@
     <p>Paste your table below (e.g., copied from a document or PDF), and click "Generate HTML" to create the HTML code for a table.</p>
     <div id="pasteArea" contenteditable="true" placeholder="Paste your table here..."></div>
     <button onclick="generateTableHTML()">Generate HTML</button>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
     <button onclick="resetPage()">Reset</button>
     <h2>Generated HTML:</h2>
     <pre id="outputHTML"></pre>
@@ -89,20 +90,6 @@
             // Automatically copy to clipboard
             navigator.clipboard.writeText(html).then(() => {
                 alert('HTML code generated and copied to clipboard!');
-            }).catch(err => {
-                alert('Failed to copy HTML code: ' + err);
-            });
-        }
-
-        function copyToClipboard() {
-            const outputHTML = document.getElementById('outputHTML').textContent;
-            if (!outputHTML) {
-                alert('No HTML code to copy!');
-                return;
-            }
-
-            navigator.clipboard.writeText(outputHTML).then(() => {
-                alert('HTML code copied to clipboard!');
             }).catch(err => {
                 alert('Failed to copy HTML code: ' + err);
             });
