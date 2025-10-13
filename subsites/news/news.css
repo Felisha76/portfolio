@@ -11,7 +11,7 @@ body, p, a, pre {
 
 body, p, a, pre, h1, h2, h3, .item h2, .item h3, .item p {
     font-family:'Noto Sans';
-    font-size:2vw;
+    font-size:1vw;
     color: #d2d4d6;
 }
 
