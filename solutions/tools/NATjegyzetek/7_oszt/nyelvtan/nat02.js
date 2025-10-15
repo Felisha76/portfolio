@@ -25,15 +25,18 @@
             if (frame) {
                 const src = frame.src;
                 frame.src = '';
-                
                 // Loading overlay megjelenítése
-                const loadingId = frameId === 'docs-frame' ? 'docs-loading' : 'drive-loading';
+                let loadingId = '';
+                if (frameId.startsWith('docs-frame')) {
+                    loadingId = frameId.replace('docs-frame', 'docs-loading');
+                } else if (frameId.startsWith('drive-frame')) {
+                    loadingId = frameId.replace('drive-frame', 'drive-loading');
+                }
                 const loadingElement = document.getElementById(loadingId);
                 if (loadingElement) {
                     loadingElement.style.display = 'flex';
                     loadingElement.style.opacity = '1';
                 }
-                
                 setTimeout(() => {
                     frame.src = src;
                 }, 100);
@@ -86,6 +89,23 @@
                 warningElement.style.display = 'none';
             }
         }
+
+
+        		// Flex switcher gomb működése
+		const switcherBtn = document.getElementById('flex-switcher');
+		const switcherIcon = document.getElementById('flex-switcher-icon');
+		let flexIsRow = true;
+		switcherBtn.addEventListener('click', function() {
+			document.querySelectorAll('.iframe-row').forEach(row => {
+				if (flexIsRow) {
+					row.style.flexDirection = 'column';
+				} else {
+					row.style.flexDirection = 'row';
+				}
+			});
+			flexIsRow = !flexIsRow;
+			switcherIcon.textContent = flexIsRow ? '🔀' : '↕️';
+		});
 
         // Add event listener for orientation changes
         window.addEventListener('resize', handleOrientationChange);
