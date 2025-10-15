@@ -284,13 +284,13 @@
         }
 
         /* Csak portrait módban és max-width: 800px alatt jelenjen meg a figyelmeztetés */
-        @media (orientation: portrait) and (max-width: 800px) {
+        @media (orientation: portrait) and (max-width: 700px) {
             .portrait-warning {
                 display: flex !important;
             }
         }
 
-        @media (orientation: landscape), (orientation: portrait) and (min-width: 801px) {
+        @media (orientation: landscape), (orientation: portrait) and (min-width: 701px) {
             .portrait-warning {
                 display: none !important;
             }
