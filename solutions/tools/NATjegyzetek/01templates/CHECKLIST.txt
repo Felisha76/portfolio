@@ -1,0 +1,24 @@
+módosítani:
+
+irodalom_6.html
+		title
+		6. osztály Irodalom
+
+		JEGYZET/OEBPS/Text/nav.xhtml
+		JEGYZET/OEBPS/Text/0002_cimlap.xhtml
+
+		TK/OEBPS/navigation.xhtml
+		MF/OEBPS/navigation.xhtml
+		https://www.tankonyvkatalogus.hu/storage/pdf/OH-MIR06TA__teljes.pdf
+
+		TK/OEBPS/navigation.xhtml
+		TK/OEBPS/cover.xhtml
+
+- JEGYZET/OEBPS/Text/002_cimlap.xhtml 	( be van másolva? )
+- JEGYZET/OEBPS/Text/nav.xhtml		( target="docs-frame02" )
+
+- TK/OEBPS/navigation.xhtml		( target="drive-frame02" )
+
+- MF/OEBPS/navigation.xhtml		( target="drive-frame02" )
+
+- 

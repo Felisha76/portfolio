@@ -41,7 +41,7 @@
 		<!-- Első dokumentum szekció: két docs-frame -->
 		<div class="document-section">
 			<!--<div class="link-bar">
-				
+														Jegyzet navigáció
 				 										<a href='JEGYZET/OEBPS/Text/nav.xhtml' 
 				target="docs-frame01" 
 				class="tooltip" 
@@ -56,7 +56,7 @@
 					<div class="loading-overlay" id="docs-loading01">
 						<div class="loading-spinner"></div>
 						<div class="loading-text">Dokumentum betöltése...</div>
-					</div>
+					</div>									<!-- docs-frame01: Jegyzet navigáció -->
 					<iframe
 						id="docs-frame01"
 						name="docs-frame01"
@@ -70,7 +70,7 @@
 					<div class="loading-overlay" id="docs-loading02">
 						<div class="loading-spinner"></div>
 						<div class="loading-text">Dokumentum betöltése...</div>
-					</div>
+					</div>									<!-- docs-frame02: Jegyzet 0002_cimlap.xhtml -->
 					<iframe
 						id="docs-frame02"
 						name="docs-frame02"
@@ -87,13 +87,14 @@
 
 		<!-- Második dokumentum szekció: két drive-frame -->
 		<div class="document-section">
-			<div class="link-bar">
+			<div class="link-bar">						<!-- LINKBAR -->
 				<div>
-
-				<a href='TK/OEBPS/navigation.xhtml' target="drive-frame01" class="tooltip" data-tooltip="Vissza a tartalomjegyzékhez">🟥 Tankönyv</a>
-				<a href='MF/OEBPS/navigation.xhtml' target="drive-frame01" class="tooltip" data-tooltip="Munkafüzet EPUB megnyitása">🟩 Munkafüzet</a>
-				</div>
-				<a href='https://www.tankonyvkatalogus.hu/storage/pdf/OH-MIR06TA__teljes.pdf' target="_blank" class="external-link">Teljes könyv a Tankönyvkatalógus oldalán</a>
+														<!-- TK navigáció -->
+														<a href='TK/OEBPS/navigation.xhtml' target="drive-frame01" class="tooltip" data-tooltip="Vissza a tartalomjegyzékhez">🟥 Tankönyv</a>
+														<!-- MF navigáció -->
+														<a href='MF/OEBPS/navigation.xhtml' target="drive-frame01" class="tooltip" data-tooltip="Munkafüzet EPUB megnyitása">🟩 Munkafüzet</a>
+				</div>									<!-- Tankönyvkatalógus link -->
+														<a href='https://www.tankonyvkatalogus.hu/storage/pdf/OH-MIR06TA__teljes.pdf' target="_blank" class="external-link">Teljes könyv a Tankönyvkatalógus oldalán</a>
 				
 			</div>
 
@@ -102,11 +103,12 @@
 					<div class="loading-overlay" id="drive-loading01">
 						<div class="loading-spinner"></div>
 						<div class="loading-text">Dokumentum betöltése...</div>
-					</div>
+					</div>								
+															<!-- drive-frame01: TK navigáció -->
 					<iframe
 						id="drive-frame01"
 						name="drive-frame01"
-						src='TK/OEBPS/navigation.xhtml'
+														src='TK/OEBPS/navigation.xhtml'
 						onload="hideLoading('drive-loading01')"
 						onerror="showError('drive-error01')"
 						title='drive-frame01'>
@@ -116,11 +118,11 @@
 					<div class="loading-overlay" id="drive-loading02">
 						<div class="loading-spinner"></div>
 						<div class="loading-text">Dokumentum betöltése...</div>
-					</div>
+					</div>								<!-- drive-frame02: TK címlap -->
 					<iframe
 						id="drive-frame02"
 						name="drive-frame02"
-						src='TK/OEBPS/navigation.xhtml'
+														src='TK/OEBPS/cover.xhtml'
 						onload="hideLoading('drive-loading02')"
 						onerror="showError('drive-error02')"
 						title='drive-frame02'>
