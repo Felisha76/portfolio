@@ -14,7 +14,7 @@ irodalom_6.html
 		TK/OEBPS/navigation.xhtml
 		TK/OEBPS/cover.xhtml
 
-- JEGYZET/OEBPS/Text/002_cimlap.xhtml 	( be van másolva? )
+- JEGYZET/OEBPS/Text/002_cimlap.xhtml 	( módosítani! )
 - JEGYZET/OEBPS/Text/nav.xhtml		( target="docs-frame02" )
 
 - TK/OEBPS/navigation.xhtml		( target="drive-frame02" )
