@@ -24,15 +24,15 @@
 
 	<h1>📚 NAT Jegyzetek és tankönyv</h1>
 														<!-- OSZTÁLY / TANTÁRGY -->
-														<p>6. osztály Nyelvtan</p>	
+														<p>7. osztály Nyelvtan</p>	
 	</div>
-	<!-- Első dokumentum -->
+	<!-- **************************************************** Első dokumentum **************************************************** -->
 	<div class="document-section">
 	<div class="link-bar">
 	<!-- BACK BUTTON  -->
 														<!-- JEGYZET navigation epub path -->
 														<a href='JEGYZET/OEBPS/Text/nav.xhtml'	
-	target="docs-frame"
+	target="docs-frame02"
 	class="tooltip"
 	data-tooltip="Vissza a tartalomjegyzékhez">
 	⤴️Back
@@ -45,16 +45,35 @@
 	<div class="loading-spinner"></div>
 	<div class="loading-text">Dokumentum betöltése...</div>
 	</div>
-														<!-- JEGYZET navigation file path -->    
+
+	<!-- ******************************** Első frameset ******************************** -->
+
+													<!-- JEGYZET navigation file path -->    
 	<iframe
 	id="docs-frame"
-	name="docs-frame"
+	name="docs-frame01"
 														src='JEGYZET/OEBPS/Text/nav.xhtml'	
 	onload="hideLoading('docs-loading')"
 	onerror="showError('docs-error')"
 														title='Nyelvtan jegyzet EPUB'>	
 														<!-- Jegyzet elnevezése-->    
 	</iframe>
+
+	<!-- ****** -->
+
+
+														<!-- JEGYZET navigation file path -->    
+	<iframe
+	id="docs-frame"
+	name="docs-frame02"
+														src='JEGYZET/OEBPS/Text/nav.xhtml'	
+	onload="hideLoading('docs-loading')"
+	onerror="showError('docs-error')"
+														title='Nyelvtan jegyzet EPUB'>	
+														<!-- Jegyzet elnevezése-->    
+	</iframe>
+	<!-- ****** -->
+
 	</div>
 	</div>
 	
@@ -66,7 +85,7 @@
 	<!-- BACK BUTTON             -->
 														<!-- *** TANKÖNYV navigation link-->
 														<a href='TK/navigation.xhtml'	
-	target="drive-frame"
+	target="drive-frame02"
 	class="tooltip"
 	data-tooltip="Vissza a tartalomjegyzékhez">
 	⤴️Back
@@ -77,9 +96,12 @@
 	class="external-link">
 	Teljes könyv a Tankönyvkatalógus oldalán
 	</a>
+
+
+	<!-- ******************************** Második frameset ******************************** -->
 														<!-- *** Munkafüzet navigation link-->
 														<a href='MF/OEBPS/navigation.xhtml'	
-	target="drive-frame"
+	target="drive-frame02"
 	class="tooltip"
 	data-tooltip="Munkafüzet EPUB megnyitása">
 	🟩 Munkafüzet
@@ -101,6 +123,6 @@
 	</iframe>
 	</div>
 	</div>
-	<script src="../../01templates/nat.js"></script>
+	<script src="../../01templates/nat02.js"></script>
 	</body>
 	</html>
