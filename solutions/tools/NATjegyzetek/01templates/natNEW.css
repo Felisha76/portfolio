@@ -292,7 +292,7 @@
 
         @media (orientation: landscape), (orientation: portrait) and (min-width: 401px) {
             .portrait-warning {
-                display: none !important;
+                display: none !important; 
             }
             .iframe-row {
                 display: flex !important;
