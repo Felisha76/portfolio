@@ -1,0 +1,98 @@
+	<!DOCTYPE html>
+	<html lang="hu">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="https://felisha76.github.io/portfolio/media/favicon_light.png">
+	<!-- TANTÁRGY -->
+<title>NAT 6.o. Természettudomány	
+	</title>
+	<link rel="stylesheet" href="../../01templates/nat.css">
+	</head>
+	<body>
+	<div class="container">
+	<div class="header">
+
+<!-- FrontnestStudio Logo -->
+	<a href="../../../../../subsites/main.html">
+    	<img src="../../../../../media/favicon_light.png"  
+                alt="FrontNest Studio" 
+                id="logo"></a>
+<!-- FrontnestStudio Logo -->
+
+	<h1>📚 NAT Jegyzetek és tankönyv</h1>
+	<!-- TANTÁRGY -->
+<p>6. osztály Természettudomány</p>	
+	</div>
+	<!-- Első dokumentum -->
+	<div class="document-section">
+	<div class="link-bar">
+	<!-- BACK BUTTON  -->
+	<!-- jegyzet navigation epub path -->
+<a href='./JEGYZET/OEBPS/Text/nav.xhtml'	
+	target="docs-frame"
+	class="tooltip"
+	data-tooltip="Vissza a tartalomjegyzékhez">
+	⤴️Back
+	</a>
+	<p>Vázlatok a tankönyv alapján</p>
+	</div>
+	<!-- Loading animation-->
+	<div class="iframe-container">
+	<div class="loading-overlay" id="docs-loading">
+	<div class="loading-spinner"></div>
+	<div class="loading-text">Dokumentum betöltése...</div>
+	</div>
+	<!-- Jegyzet navigation file path -->    <iframe
+	id="docs-frame"
+	name="docs-frame"
+src='./JEGYZET/OEBPS/Text/nav.xhtml'	
+	onload="hideLoading('docs-loading')"
+	onerror="showError('docs-error')"
+title='Természettudomány jegyzet EPUB'>	
+	<!-- *** A jegyzet elnevezése-->    </iframe>
+	</div>
+	</div>
+	<div class="divider"></div>
+	<!-- Második dokumentum -->
+	<div class="document-section">
+	<div class="link-bar">
+	<!-- BACK BUTTON -->
+	<!-- *** Tankönyv navigation link-->
+<a href='./TK/OEBPS/navigation.xhtml'	
+	target="drive-frame"
+	class="tooltip"
+	data-tooltip="Vissza a tartalomjegyzékhez">
+	⤴️Back
+	</a>
+	<!-- *** TANKÖNYVKATALÓGUS KÖNYV LINK-->
+<a href='https://www.tankonyvkatalogus.hu/storage/pdf/OH-TER06TA__teljes.pdf'	
+	target="_blank"
+	class="external-link">
+	Teljes könyv a Tankönyvkatalógus oldalán 
+	</a>
+	<!-- *** Munkafüzet navigation link-->
+<a href='./MF/OEBPS/navigation.xhtml'	
+	target="drive-frame"
+	class="tooltip"
+	data-tooltip="Munkafüzet EPUB megnyitása">
+	🟩 Munkafüzet
+	</a>
+	</div>
+	<!-- Loading animation-->
+	<div class="iframe-container">
+	<div class="loading-overlay" id="drive-loading">
+	<div class="loading-spinner"></div>
+	<div class="loading-text">Dokumentum betöltése...</div>
+	</div>
+	<!-- *** Tankönyv navigation file path--><iframe id="drive-frame" name="drive-frame"
+src='./TK/OEBPS/navigation.xhtml'	
+	onload="hideLoading('drive-loading')"
+	onerror="showError('drive-error')"
+title='Természettudomány tankönyv 6.o.'>	
+	<!-- *** A könyv elnevezése -->    </iframe>
+	</div>
+	</div>
+	<script src="../../01templates/nat.js"></script>
+	</body>
+	</html>
