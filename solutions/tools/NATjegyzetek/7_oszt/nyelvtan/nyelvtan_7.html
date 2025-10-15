@@ -9,8 +9,7 @@
 														<!-- OSZTÁLY / TANTÁRGY -->
 														<title>NAT 7.o. Nyelvtan	
 	</title>
-	</link rel="stylesheet" href="nat02.css">
-
+	<link rel="stylesheet" href="nat02.css">
 	</head>
 	<body>
 	<div class="container">
@@ -27,13 +26,13 @@
 														<!-- OSZTÁLY / TANTÁRGY -->
 														<p>7. osztály Nyelvtan</p>	
 	</div>
-	<!-- **************************************************** Első dokumentum **************************************************** -->
+	<!-- Első dokumentum -->
 	<div class="document-section">
 	<div class="link-bar">
 	<!-- BACK BUTTON  -->
 														<!-- JEGYZET navigation epub path -->
 														<a href='JEGYZET/OEBPS/Text/nav.xhtml'	
-	target="docs-frame01"
+	target="docs-frame"
 	class="tooltip"
 	data-tooltip="Vissza a tartalomjegyzékhez">
 	⤴️Back
@@ -41,33 +40,21 @@
 	<p>Vázlatok a tankönyv alapján</p>
 	</div>
 	<!-- Loading animation-->
-	<div class="iframe-row">
-		<div style="position:relative;flex:1 1 50%;">
-			<div class="loading-overlay" id="docs-loading" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;">
-				<div class="loading-spinner"></div>
-				<div class="loading-text">Dokumentum betöltése...</div>
-			</div>
-			<iframe
-				class="iframe-half"
-				id="docs-frame01"
-				name="docs-frame01"
-				src='JEGYZET/OEBPS/Text/nav.xhtml'
-				onload="hideLoading('docs-loading')"
-				onerror="showError('docs-error')"
-				title='Nyelvtan jegyzet EPUB'>
-			</iframe>
-		</div>
-		<div style="position:relative;flex:1 1 50%;">
-			<iframe
-				class="iframe-half"
-				id="docs-frame02"
-				name="docs-frame02"
-				src='JEGYZET/OEBPS/Text/0002_cimlap.xhtml'
-				onload="hideLoading('docs-loading')"
-				onerror="showError('docs-error')"
-				title='Nyelvtan jegyzet EPUB'>
-			</iframe>
-		</div>
+	<div class="iframe-container">
+	<div class="loading-overlay" id="docs-loading">
+	<div class="loading-spinner"></div>
+	<div class="loading-text">Dokumentum betöltése...</div>
+	</div>
+														<!-- JEGYZET navigation file path -->    
+	<iframe
+	id="docs-frame"
+	name="docs-frame"
+														src='JEGYZET/OEBPS/Text/nav.xhtml'	
+	onload="hideLoading('docs-loading')"
+	onerror="showError('docs-error')"
+														title='Nyelvtan jegyzet EPUB'>	
+														<!-- Jegyzet elnevezése-->    
+	</iframe>
 	</div>
 	</div>
 	
@@ -77,11 +64,9 @@
 	<div class="document-section">
 	<div class="link-bar">
 	<!-- BACK BUTTON             -->
-
-
-															<!-- *** TANKÖNYV navigation link-->
+														<!-- *** TANKÖNYV navigation link-->
 														<a href='TK/navigation.xhtml'	
-	target="drive-frame02"
+	target="drive-frame"
 	class="tooltip"
 	data-tooltip="Vissza a tartalomjegyzékhez">
 	⤴️Back
@@ -92,45 +77,28 @@
 	class="external-link">
 	Teljes könyv a Tankönyvkatalógus oldalán
 	</a>
-
-
-	
 														<!-- *** Munkafüzet navigation link-->
 														<a href='MF/OEBPS/navigation.xhtml'	
-	target="drive-frame02"
+	target="drive-frame"
 	class="tooltip"
 	data-tooltip="Munkafüzet EPUB megnyitása">
 	🟩 Munkafüzet
 	</a>
 	</div>
 	<!-- Loading animation-->
-
-	<!-- ******************************** Második frameset ******************************** -->
-	<div class="iframe-row">
-		<div style="position:relative;flex:1 1 50%;">
-			<div class="loading-overlay" id="drive-loading" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;">
-				<div class="loading-spinner"></div>
-				<div class="loading-text">Dokumentum betöltése...</div>
-			</div>
-			<iframe
-				class="iframe-half"
-				id="drive-frame01"
-				name="drive-frame01"
-				src='TK/navigation.xhtml'
-				onload="hideLoading('drive-loading')"
-				onerror="showError('drive-error')"
-				title='Nyelvtan tankönyv 6.o.'>
-			</iframe>
-		</div>
-		<div style="position:relative;flex:1 1 50%;">
-			<iframe
-				class="iframe-half"
-				id="drive-frame02"
-				name="drive-frame02"
-				src='MF/OEBPS/navigation.xhtml'
-				title='Munkafüzet EPUB'>
-			</iframe>
-		</div>
+	<div class="iframe-container">
+	<div class="loading-overlay" id="drive-loading">
+	<div class="loading-spinner"></div>
+	<div class="loading-text">Dokumentum betöltése...</div>
+	</div>
+														<!-- *** TANKÖNYV navigation file path-->
+     <iframe id="drive-frame" name="drive-frame"
+														src='TK/navigation.xhtml'	
+	onload="hideLoading('drive-loading')"
+	onerror="showError('drive-error')"
+														title='Nyelvtan tankönyv 6.o.'>	
+														<!-- *** A TANKÖNYV elnevezése -->    
+	</iframe>
 	</div>
 	</div>
 	<script src="nat02.js"></script>
