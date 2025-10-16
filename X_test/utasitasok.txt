@@ -1,7 +1,7 @@
 Célfile: 	X_test\tortenelem\JEGYZET\OEBPS\Text\08.xhtml <body>
 Tantárgy:	Történelem
 Témakör:	Képek és portrék a magyar állam virágkorából (Összefoglalás)
-Tankönyvi szöveg, amit nézz végig:	
+Tankönyvi szöveg, amit olvass el az elejétől a végéig:	
 portfolio/solutions/tools/NATjegyzetek/6_oszt/tortenelem/TK/OEBPS/pt01_ch01.xhtml
 portfolio/solutions/tools/NATjegyzetek/6_oszt/tortenelem/TK/OEBPS/pt01_ch02.xhtml
 portfolio/solutions/tools/NATjegyzetek/6_oszt/tortenelem/TK/OEBPS/pt01_ch03.xhtml
