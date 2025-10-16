@@ -1,74 +1,24 @@
-  Az új világkép kialakulása
-A földrajzi felfedezések, a kereskedelem és az ipar átalakulása, valamint a reformáció hatott az emberek gondolkodására. Új nézetek kezdtek elterjedni a tudományról, a vallásról, az uralkodói hatalomról és az embereket megillető jogokról. Ez a folyamat vezetett el a felvilágosodáshoz, amely a gondolkodás szabadságát hirdette meg.
-A természettudományok fejlődése
-A középkor tudományos gondolkodása a tekintélyre épült. Egy tudományos feltevést az tett elfogadottá vagy elutasítottá, hogy egy tekintélyes ókori vagy középkori szerző mit gondolt róla. A 16–17. században a tekintély kritika nélküli elfogadása helyett a természettudományos feltevések gyakorlati kísérletekkel történő ellenőrzése vált jellemzővé.
-A lengyel Kopernikusz huszonöt év folyamatos megfigyelés után megerősítettnek látta azt az elméletet, miszerint a Föld kering a Nap körül. Ez ellentétben állt a középkorban elfogadott Föld-központú világképpel. Az egyház gyanakodva figyelte az eretnek gondolatok terjesztőit, de a tudósok állandó megfigyelései és kísérletei egyre több általánosan elfogadott tévhitet cáfoltak meg.
-A fizikában Galilei itáliai tudós alkalmazta először a kísérletezést és a mérést. 1
-■Miért állt ellentétben Kopernikusz világképe az egyház tanításával?
-Az ókori feltevés szerint a testek zuhanási sebessége tömegüktől függ, azaz a nehezebb tárgyak előbb érnek földet. Galileo Galilei ezt egy látványos kísérlettel cáfolta meg. A pisai ferde torony tetejéről két különböző tömegű, de azonos átmérőjű ágyúgolyót ejtett le. A golyók egyszerre értek földet. Ezzel a tudós kísérleti úton bebizonyította, hogy a zuhanás gyorsasága nem függ a testek tömegétől.
-■Miért volt új Galilei módszere?
-Középkori tudomány
-Újkori tudomány
-A tudósok az ókori tekintélyekre, az egyház tanításaira és érvelésére támaszkodva magyarázzák a természet törvényeit.
-A tudósok megfigyeléssel és kísérletezéssel ismereteket gyűjtenek, és ezekből következtetéseket vonnak le a természet működésére vonatkozóan.
-A tudományos gondolkodás változása ■ Sorolj fel három módszert, amellyel ismereteket szereztek a középkorban! Hány lépésből áll a tudományos munka az újkorban? Melyek ezek a lépések?
-■Mi jellemezte a középkor világképét?
-■Hogyan tekintettek a társadalmi rendre?
+Tudós feltalálók a kora újkorban
+■ OLVASMÁNY
+Leonardo da Vinci (1452–1519)
+A reneszánsz kor tudományának kiemelkedő alakja volt Leonardo da Vinci [leonárdo da vincsi]. Eredetileg festőművésznek készült, de gyerekkora óta lelkesen kutatta a természet szépségeit és titkait. Kiváló gondolkodását bizonyítja például az, ahogy a sziklákban előforduló tengeri ősmaradványokból a szikla eredetére következtetett: „Ami valamikor tengerfenék volt, most hegycsúcsként emelkedik a magasba. Erről tanúskodnak a tengeri kagylóhéjak, osztrigák és korallok, amelyeket most a hegyek csúcsán találunk.”
+Egy személyben volt festő, tudós, feltaláló, matematikus, hadmérnök, költő, zeneszerző és író. Mérnöki feljegyzései között a tank és a tengeralattjáró vázlatai is megtalálhatók. Tanulmányozta a repülést, ő tervezett először a mai helikopterhez hasonló eszközt, s felfedezte a siklóernyőt is. Szenvedélyesen érdekelte az emberi test működése. Tanulmányaihoz gyakran végzett az egyház által tiltott boncolásokat is.
+■Idézd fel, mit tanultál Leonardo da Vinci művészetéről az előző tanévben!
 
-Nikolausz Kopernikusz, lengyel csillagász ■ Mi volt a forradalmi Kopernikusz elméletében?
+A Leonardo rajzai alapján megépített repülőszerkezet ■ Mire hasonlít a szerkezet? Minek a megfigyelése alapján akarta megfejteni a repülés titkát?
 
-Galileo Galilei ■ Mi volt a jelentősége Galilei munkásságának?
-1 Galilei levele tanítványához
-„[…] a Szentírást nemcsak lehet, de egyenesen szükséges is a szavak látszólagos értelmétől eltérően magyarázni, úgy vélem, a Szentírásnak tudományos vitákban háttérbe kell szorulnia. A Szentírás és a természet egyaránt isteni igéből ered: az előbbi a Szentlélek kinyilatkoztatása, az utóbbi Isten parancsainak engedelmes végrehajtója. A Szentírásban, hogy azt mindenki megértse, szükségesnek látszott sok olyasmit elmondani, ami a szavak alapját és értelmét tekintve eltér az abszolút igazságtól. A természet azonban kérlelhetetlen, megváltoztathatatlan, nem törődik azzal, vajon rejtett indítékait és működésének módját megértik-e az emberek vagy sem, és sohasem lépi át a törvényeinek határait.”
-■A levél alapján fogalmazd meg, mi volt Galilei véleménye a Szentírás és a tudomány viszonyáról!
+Newton. A fizikai és a matematikai tárgyú írásai mellett a vallási témájú írásait is fontosnak tartotta.
+Isaac Newton (1642–1727)
+Az újkori tudománytörténelem egyik kiemelkedő tudósa Isaac Newton [ájzök nyúton] angol fizikus, matematikus, csillagász, filozófus és alkimista. Az a meggyőződés hajtotta előre, hogy a világot meg lehet érteni, csak figyelni kell a körülöttünk lezajló jelenségeket.
+Ő volt az első, aki megmutatta, hogy az égitestek és a Földön lévő tárgyak mozgását ugyanazon természeti törvények határozzák meg. A földre leeső tárgyak és a bolygók keringését ugyanazok az erők mozgatják. Később e felfedezésének megszületéséről azt mesélte, hogy egy fáról lehulló alma mozgásán gondolkodott el. Arra a kérdésre akart választ találni, hogy miért esik az alma mindig a földre. Miért nem oldalra vagy felfelé esik, hanem mindig a Föld középpontja felé?
+Optikai kutatásokat is végzett. Felfedezte, hogy a prizmán megfigyelhető színek valójában a fehér fény alkotóelemei, s nem azért láthatók, mert a prizma átszínezi a fényt. Ennek nyomán azt is megállapította, hogy a lencsés távcsőre rossz hatással van a fény színekre bomlása, ezért saját kezűleg csiszolt tükrökkel egy újfajta teleszkópot épített, melyet ma Newton-távcsőnek nevezünk.
 
-René Descartes (1596–1650). A francia filozófus szerint az emberi értelem biztos támaszt ad a megismerésben: „én, […] szükségképpen vagyok valami; […] gondolkodom, tehát vagyok – oly szilárd, oly biztos, hogy a szkeptikusok (kételkedők) legtúlzottabb föltevései sem ingathatják meg”. (Frans Hals korabeli festménye)
-Ahogyan a történészek gondolkodnak
-A jelen viszonyai könnyebben megérthetők, ha megismerjük a történelmi előzményeket.
-A felvilágosodás eszméi
-A felvilágosodás eszméinek megismerésével megérthetjük a következő századok történelmi eseményeinek mozgatórugóit.
-■Melyek azok a felvilágosodás idején megfogalmazott gondolatok, amelyeket ma már természetesnek tartunk?
-A természettudományok fejlődése és az ismeretek bővülése megváltoztatta a filozófiai gondolkodásmódot is. Előtérbe került a kutatáson alapuló tapasztalat, illetve a logikus gondolkodás fontosságának a hangsúlyozása.
-A politika tudományával foglalkozók bírálták a fennálló társadalmi rendet, és elvetették a korlátlan királyi hatalmat. Új alapokra kívánták helyezni az állam és a társadalom működését.
-■Miben tért el a kora újkori gondolkodásmód a korábbiaktól?
-A felvilágosodás kora
-A 18. századot a felvilágosodás korának nevezzük. A felvilágosodás hívei hittek a folyamatos fejlődésben. Úgy gondolták, hogy az értelem erejére támaszkodva felszámolhatók a társadalmi egyenlőtlenségek és a vallási konfliktusok.
-Az ész nevében évszázadok óta elfogadott nézeteket kérdőjeleztek meg. A középkori születési előjogokat elvetették. Helyette a mindenkit megillető alapvető szabadságjogok biztosítását követelték. Ezek az élethez, a szabadsághoz, a tulajdonhoz való jog és a törvény előtti egyenlőség. A középkorban az egyház által elfogadott nézetekkel szemben álló gondolatokat eretnekségnek tartották. A felvilágosodás képviselői szólás- és vallásszabadságot hirdettek.
-A felvilágosodás gondolkodói szükségesnek látták az új ismereteket összefoglalni. A 18. században megjelent Nagy Francia Enciklopédia több mint két tucat kötete egyben mutatta be az emberi ész által létrehozott hatalmas tudást. Egyes szócikkeinek forradalmi tartalma miatt a könyvet kezdetben betiltották. Az 1780-as évekre mégis széles körben olvasottá vált. Több mint húszezer példányt adtak el belőle.
-■„A tudás hatalom.” Mit jelent ez a szólás? Igyekezzetek minél több szempontból értelmezni!
- 
-Középkori gondolkodás
-Újkori gondolkodás
-Jogok
-születési előjogok
-mindenkit születésétől fogva megillető alapvető emberi jogok
-az eltérő vélemény
-eretnekség
-vélemény-, szólás- és vallásszabadság
-az uralkodó hatalma
-Istentől származik
-a néptől származik
-hatalomgyakorlás
-Az uralkodó nem fosztható meg a hatalmától.
-A zsarnoktól a hatalom visszavehető.
-Az uralkodó hatalma korlátlan.
-A hatalmi ágakat szét kell választani.
-A politikai gondolkodás átalakulása ■ A táblázat alapján írj fogalmazást a változásokról!
-Honnan származik az uralkodó hatalma?
-A felvilágosodás angol és francia gondolkodói a korlátlan királyi hatalmat zsarnokságnak tartották. Úgy gondolták, mindezt a hatalmi ágak szétválasztásával kell felszámolni. Vagyis szükség van önálló végrehajtó hatalomra (kormány), ettől független törvényhozói hatalomra (országgyűlés) és független igazságszolgáltatásra (bíróságok). Ha ezek kölcsönösen ellenőrzik egymást, akkor elkerülhető az egy kézben összpontosuló hatalom. Ezt az elképzelést először Angliában valósították meg a 17. század végén. A francia filozófusok az ottani gyakorlat átültetését képzelték el saját országukban, és ezzel kívánták megszüntetni a korlátlan királyi hatalmat. Rousseau [russzó] francia gondolkodó szerint az uralkodó hatalmát nem Istentől, hanem a néptől kapta. Ez a népfelség elve. Ha az uralkodó visszaél a néptől kapott hatalmával, akkor a népnek joga van megfosztani attól.
-■Miben tért el a felvilágosodás a középkor hatalomfelfogásától?
+Mikroszkópok és teleszkópok egy londoni boltban a 17. század végén ■ Mely tudományok fejlődését segítették elő e technikai találmányok? Melyek a mi korunk hasonló jelentőségű technikai találmányai?
+Anton van Leeuwenhoek (1632–1723)
+Az első mikroszkópokat szemüvegkészítők állították össze, és kezdetben vásári szórakoztatásként használták: felnagyított bolhákat mutattak be a közönségnek. Tudományos megfigyelést a 17. század közepén végeztek először az eszközzel. A holland Anton van Leeuwenhoek [anton fan lévenhuk] volt az első, aki a mikroszkopikus életet rendszeresen kutatta. Leeuwenhoek nem volt tudós, de szenvedélyesen érdekelte az, amit a mikroszkópján keresztül látott. Munkásságáról véletlenül értesült az Angol Királyi Tudományos Társaság, és felkérték őt, hogy írjon beszámolót a megfigyeléseiről. Leeuwenhoek beszámolója élénk érdeklődést keltett, de amikor arra kérték, mutassa be a mikroszkópját, a holland természetbúvár megtagadta a kérést. Beszámolóit rendszeresen elküldte a tudós társaságnak, a mikroszkóp titkát viszont élete végéig féltékenyen őrizte. A levelezés hosszú éveken keresztül tartott. Munkája elismeréseként a kutatót a tudós társaság teljes jogú tagjává választották.
 
-Jean-Jacques Rousseau [zsan-zsák russzó] (1712–1778)
 
-Az alkotmányos monarchia (királyság) rendszere Angliában ■ Értelmezzük az ábra alapján az alkotmányos monarchia működését! Mennyire volt erős a király hatalma? Hogyan érvényesült a gyakorlatban a hatalmi ágak szétválasztása?
-ÖSSZEFOGLALÓ VÁZLATOK
-Társadalom: a vállalkozó polgárság felemelkedése.
-Tudományos gondolkodás; a tekintélyek helyett tapasztalat: Kopernikusz: Nap-központú világkép; Galilei: kísérletek és mérés.
-Tudományok: kételkedés az ész nevében → a társadalmi rend kritikája.
-Enciklopédia: összegyűjti a korszak tudományos ismereteit.
-Zsarnokság → hatalommegosztás, népfelség elve, Rousseau.
-ÖSSZEFOGLALÓ KÉRDÉSEK ÉS FELADATOK
-■Hasonlítsd össze a középkori és az újkori természettudományos gondolkodást! Mik a fő különbségek?
-■Mutasd be a polgárság megerősödésének főbb okait!
-■Melyek a politikai gondolkodás új elemei az újkorban?
-■Gyűjts érveket a népfelség elve mellett!
+■Milyen hasonlóságok figyelhetők meg Leonardo da Vinci és Isaac Newton gondolkodása és tevékenysége között?
+■Nézz utána, mivel foglalkoztak az alkimisták! Mi lehet a kapcsolat tevékenységük és a tudományos felfedezések között?
+■Nézz utána, mit jelent a polihisztor szó! Kire lehet igaz ez a kifejezés a három megismert személy közül?
+■Gyűjts további érdekességeket e három tudós feltaláló életéről és tevékenységéről!
