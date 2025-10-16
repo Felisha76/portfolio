@@ -1,7 +1,7 @@
 Célfile: 	X_test\tortenelem\JEGYZET\OEBPS\Text\10.xhtml <body>
 Tantárgy:	Történelem
 Témakör:	A korai kapitalizmus
-Tankönyvi szöveg, amit olvass el az elejétől a végéig:	
+Tankönyvi szöveg, amit olvass el az elejétől a végéig:	portfolio\X_test\tankony.txt
 
 
 File terjedelem:	100-150 kódsor
