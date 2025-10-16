@@ -1,6 +1,6 @@
-Célfile: 	X_test\tortenelem\JEGYZET\OEBPS\Text\10.xhtml <body>
+Célfile: 	X_test\tortenelem\JEGYZET\OEBPS\Text\11.xhtml <body>
 Tantárgy:	Történelem
-Témakör:	A korai kapitalizmus
+Témakör:	Élet XIV. Lajos udvarában (Olvasmány)
 Tankönyvi szöveg, amit olvass el az elejétől a végéig:	portfolio\X_test\tankony.txt
 
 
