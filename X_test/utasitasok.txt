@@ -1,7 +1,11 @@
-Célfile: 	X_test\tortenelem\JEGYZET\OEBPS\Text\06.xhtml <body>
+Célfile: 	X_test\tortenelem\JEGYZET\OEBPS\Text\08.xhtml <body>
 Tantárgy:	Történelem
-Témakör:	Hunyadi Mátyás, a reneszánsz uralkodó
+Témakör:	Képek és portrék a magyar állam virágkorából (Összefoglalás)
 Tankönyvi szöveg, amit nézz végig:	
+portfolio/solutions/tools/NATjegyzetek/6_oszt/tortenelem/TK/OEBPS/pt01_ch01.xhtml
+portfolio/solutions/tools/NATjegyzetek/6_oszt/tortenelem/TK/OEBPS/pt01_ch02.xhtml
+portfolio/solutions/tools/NATjegyzetek/6_oszt/tortenelem/TK/OEBPS/pt01_ch03.xhtml
+
 File terjedelem:	100-150 kódsor
 A file egy epub része lesz.
 
