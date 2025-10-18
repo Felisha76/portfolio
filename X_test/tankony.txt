@@ -1,63 +1,69 @@
-Környezetvédelem
+III. Környezetünk vizsgálata
 
-Az előző leckében láthattátok, ahhoz, hogy megfelelő mennyiségű energiát állítsunk elő a mindennapi élethez, igen jelentős környezeti hatásokkal is számolnunk kell.
+Kísérletezni mindenki szeret, a természet folyamatainak, az élővilág viselkedésének megfigyelése sokak kedvelt időtöltése. Az ismeretlen dolgok vizsgálata már az őskorban is vonzotta az embereket, számos felfedezés és találmány köszönhető ennek a velünk született kíváncsiságnak.
 
-A legtöbb szennyező anyag a fosszilis tüzelőanyagokat elégető erőművekből, ipari üzemekből, mezőgazdaságból és közlekedésből származik.
+A természeti jelenségeket, környezetünk élettelen elemeit és élőlényeit vizsgálhatjuk kint a szabadban, azaz terepen és laboratóriumban is.
 
-Környezetünk védelme érdekében a nagy szennyezőanyag-kibocsátók igyekeznek olyan technológiákat kifejleszteni és alkalmazni, melyek csökkentik a környezetszennyezés mértékét. Ilyen berendezések lehetnek például a kéményekbe épített porleválasztók vagy szűrőberendezések, amelyek megakadályozzák, hogy a légszennyező anyagok a környezetbe kerüljenek. Ma már a legtöbb járműbe szerelnek katalizátort, ami az üzemanyag elégetése során keletkező szennyező anyagok átalakítására szolgál.
+A természet megfigyeléséhez, a kísérletek kivitelezéséhez azonban számos fontos ismeretet el kell sajátítanunk. Hogyan tudhatjuk meg, hogy egy folyóvíz vagy egy erdő talaja szennyezett-e? Milyen információkat kaphatunk a növényzet megfigyelésével az élőhelyéről? Hogyan vizsgáljuk a gerinctelen és a gerinces állatokat?
 
-Energiatakarékosság otthon
+A laboratóriumban számos fontos szabályt be kell tartanunk testi épségünk védelmében és ahhoz, hogy kísérleteink sikeresek legyenek. Melyek ezek a szabályok? Milyen anyagokkal és eszközökkel kell dolgoznunk? Ebben a fejezetben a fenti kérdések mindegyikére igyekszünk választ találni.
 
-Energiatakarékos életmóddal mi magunk is tehetünk a kisebb szennyezőanyag-kibocsátásért, környezetünk és egészségünk védelméért. Minél több áramot fogyasztunk ugyanis, annál több energiára van szükség, és annál jobban terheljük a környezetünket is.
+A kísérletezés szerepe az életünkben
 
-Otthonodban figyelj oda, hogy minél kevesebb áramot használj! Ne hagyd, hogy feleslegesen működjön a tévé, rádió vagy a számítógép! Használat után mindig kapcsold ki az elektromos berendezéseket, lehetőleg úgy, hogy a készenléti állapotot jelző égő se világítson! A telefontöltőt is mindig húzd ki használat után! A hagyományos izzókat cseréljétek le energiatakarékos égőkre, LED lámpákra (1. ábra)!
+Ha kísérletezésről esik szó, legtöbbünknek tudósok, laboratóriumok és világraszóló felfedezések jutnak az eszünkbe. Abba azonban kevesebben gondolnak bele, hogy a kisgyerekek is megfigyelések, tapasztalás útján fedezik fel környezetüket (1. ábra).
 
-images
+Számos tudományos kutatás bizonyítja azt is, hogy az iskolában az elméleti tudás elmélyítésére, a gyakorlati készségek megszerzésére a legjobb módszer a saját tapasztalaton alapuló vizsgálódás, kísérletezés. A hétköznapok során is számtalan esetben kísérletezünk, például, amikor egy új étel receptjét vagy egy új barkácsolási technikát próbálunk ki.
 
-1. Hagyományos égő cseréje LED izzóra
-
-Mindig kapcsold le a lámpát, ha kimész a szobából! Ezek neked csak apróságok, de hidd el, sokat számítanak a környezet védelmében!
+A kísérletezés tehát nem csak a tudósok kiváltsága, hanem a tanulás fontos módszere is, nem csupán az iskolában, hanem a mindennapi életben is.
 
 images
 
-Elektromos készülékek vásárlásakor ma már könnyen tájékozódhatunk azok energiaigényéről. A készülékeket az Európai Unióban egységesen energiaosztályokba sorolják. Az „A” jelű a legjobb, vagyis a legkevesebbet fogyasztó készüléket jelöli, míg a „G” a legrosszabb besorolású.
+1. A kisgyerekek is megfigyelés, kísérletezés útján ismerik meg környezetüket
 
 images
 
-Energiaosztályozási rendszer
-
-Energiatakarékos épületek
-
-2012 óta az épületeket is, hasonlóan a háztartási gépekhez, energiaosztályokba soroljuk. A legenergiatakarékosabb épület „A” jelzést, míg a legkevésbé energiatakarékos „I” jelzést kap.
-
-Az épületek energiapazarlása ellen mi magunk is sokat tehetünk. Kívülről szigetelhetjük a házainkat, modern, hőszigetelő nyílászárókra cserélhetjük a régi ajtókat, ablakokat, vagy jobb energiahatékonyságú kazánt vagy bojlert vásárolhatunk.
-
-Aki új ház építésébe vág bele, gondos tervezéssel sok energiát megtakaríthat. A házak megfelelő tájolása, a jó minőségű építőanyag és a szigetelés nagyban csökkentheti a fűtés és a hűtés költségeit. A tetőre szerelt napelemekkel, napkollektorokkal és a zöldfelületekkel (pl. zöldtető) szintén sok energiát takaríthatunk meg (2. ábra).
+A legenda szerint Newton egy almafa alatt ülve éppen azon gondolkodott, hogy a Holdat milyen erő tartja Föld körüli pályán, amikor egy alma a fejére esett. Ennek a tapasztalatnak az alapján jött rá arra, hogy kell lennie egy olyan erőnek, ami miatt a testek mindig lefelé esnek. Rájött, hogy ez az erő tartja a Holdat is a Föld körül.
 
 images
 
-2. Lakóház napelemekkel és zöldfallal
+images
 
-Energiatakarékosság a közlekedésben
+2. A papírt is az ókori Kínában találták fel
 
-Közlekedési szokásaink megváltoztatásával is sokat tehetünk az energiatakarékosságért.
+Kísérletezés a múltban
 
-Kisebb távolságokra ne használjunk autót, menjünk inkább gyalog vagy kerékpárral! Ezzel nem csak a környezetünket, hanem az egészségünket is óvjuk.
+Az emberiség az őskortól kezdve kísérletezik, ennek köszönhetően jutott el a tudomány és a technológia a mai, soha nem látott szintre.
 
-Hosszabb távú utazásainknál vegyük igénybe a tömegközlekedést, szálljunk buszra, vonatra (3. ábra)! Napjainkban már ezek a közlekedési eszközök is kényelmesek és egy személyre lebontva sokkal kevesebb a károsanyag-kibocsátásuk, mint az autóké.
+Az őskori ember a természet megfigyelésével szerzett tapasztalatait elsősorban még a túlélés és a mindennapi élet megkönnyítése érdekében használta, gondoljunk csak a tűz vagy a kerék feltalálására. A vadon élő növények termeszthetőségére, az állatok háziasítására tett megfigyelések miatt vált lehetővé a letelepedett életmód és a folyamatos táplálékellátást biztosító mezőgazdaság elterjedése.
 
-Ha mégis az autót választjuk, igyekezzünk minél jobban kihasználni, utazzunk együtt szomszédainkkal, ismerőseinkkel (telekocsi). Ez kicsit több szervezést igényel, de a környezet védelme mellett a személyes kapcsolatok ápolására is nagyszerű alkalom.
+A nagy ókori kultúrák (pl. az ókori görög, római, kínai birodalmak) gondolkodói számos tudományterület, például a matematika, a csillagászat, az orvostudomány alapjait fektették le. Találmányaik, felfedezéseik nagy részét ma is használjuk. Tudtad, hogy a papírt, a porcelánt, a puskaport az ókori Kínában fedezték fel (2. ábra)? A későbbi korok tudósai sok esetben ókori elődeik kísérletekkel bizonyított elméleteit továbbgondolva jutottak el újabb felfedezésekhez. Arra is van példa, hogy az ókori elméleteket később éppen kísérletek segítségével cáfolták meg.
 
 images
 
-3. Vonatközlekedés
+3. Modern laboratórium
+
+images
+
+4. Terepi vizsgálat
+
+A tudományok fejlődése a 16−17. században kapott új lendületet. Ezt az időszakot tudományos-technológiai forradalomnak is nevezzük. Ebben a korszakban, főleg az ókori felfedezésekre támaszkodva, számos tudós végzett tudományos kísérleteket és kapott újabb, pontosabb eredményeket. Sok teljesen új tudományterület is ekkor jött létre. A kor legjelentősebb tudósai Kopernikusz, Galilei, Kepler és Newton voltak, akik a matematika, a fizika és a csillagászat területén alkottak maradandót.
+
+A modern korok tudósai ugyanúgy megfigyeléseket, kísérleteket használnak kutatásaikhoz, mint elődeik. Természetesen a technikai hátteret, az alkalmazott módszereket és eszközöket össze sem lehet hasonlítani a régebbi korokéval (3. ábra). Egyvalami azonban nem változott: eredményeket csak gondolkodással, vizsgálódással, kísérletezéssel lehet elérni.
+
+A vizsgálódások, kísérletek helyszínei
+
+Megfigyeléseket, kísérleteket végezhetünk a természetben és különböző eszközökkel, műszerekkel felszerelt laboratóriumokban is.
+
+Vannak olyan vizsgálatok, amelyeket csak terepi körülmények között lehet elvégezni, mivel a mintavétel és a szállítás során változások állhatnak be a mérendő tulajdonságokban (4. ábra). Sok esetben azonban terepi körülmények között nem végezhetők olyan pontos mérések, mint a laboratórium modern műszereivel. Ebben az esetben a természetben vett mintákat a laboratóriumba szállítjuk, ott megfelelő módon előkészítjük, és vizsgálatoknak vetjük alá.
 
 images RÖVID ÖSSZEFOGLALÁS
 
-Az erőművek, ipari üzemek, a mezőgazdaság és a közlekedés által kibocsátott szennyező anyagok csökkentéséért energiatakarékos életmóddal mi magunk is sokat tehetünk.
+Az emberiség már az őskor óta kísérletezik, aminek számos fontos, ma is használt találmányt köszönhetünk.
 
-Háztartási gépeink megfelelő kiválasztásával és használatával, házaink szigetelésével, közlekedési szokásaink átgondolásával nem csak környezetünket, de egészségünket is védjük.
+Kísérletezni nem csak a tudósok szoktak, mindennapi életünknek is fontos részét képezik a megfigyelések, kísérletek.
+
+Vizsgálódásaink helyszíne lehet a természet, vagy a műszerekkel, eszközökkel felszerelt laboratórium.
 
 images ÚJ FOGALMAK
 
-szennyező anyagok, energiatakarékosság, energiaosztály
+tudományos-technológiai forradalom, terepi vizsgálat, laboratóriumi kísérlet
