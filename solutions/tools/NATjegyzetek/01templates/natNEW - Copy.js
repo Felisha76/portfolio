@@ -58,7 +58,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Dropdown generálása nav.xhtml alapján ---
     function createDropdownFromNav(section, navUrl, targetFrameId) {
         // Ha már létezik, ne generáljuk újra
-        if (section.dropdownContainer) return;
+        if (section.dropdownContainer && section.dropdownContainer.parentNode) {
+            // Ha már van, ne generáljunk újat, csak mutassuk
+            section.dropdownContainer.style.display = 'flex';
+            return;
+        }
+        // Előző, oda nem való selectek eltávolítása (docs szekcióban)
+        if (section.id === 'docs' && section.rightHalf) {
+            Array.from(section.rightHalf.querySelectorAll('select.toc-dropdown')).forEach(sel => {
+                if (sel.parentNode && sel !== section.dropdownSelect) sel.parentNode.removeChild(sel);
+            });
+        }
         section.dropdownContainer = document.createElement('div');
         section.dropdownContainer.className = 'toc-dropdown-container';
         const label = document.createElement('span');
@@ -146,7 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (enable) {
                     section.iframeRow.classList.add('dropdown-mode');
                     if (section.id === 'docs') {
-                        // Töröljük a forrásválasztó selectet, ha valamiért létezik
+                        // Töröljük az összes, oda nem való selectet
+                        if (section.rightHalf) {
+                            Array.from(section.rightHalf.querySelectorAll('select.toc-dropdown')).forEach(sel => {
+                                if (sel.parentNode && sel !== section.dropdownSelect) sel.parentNode.removeChild(sel);
+                            });
+                        }
                         if (section.sourceSelect && section.sourceSelect.parentNode) {
                             section.sourceSelect.parentNode.removeChild(section.sourceSelect);
                             section.sourceSelect = null;
