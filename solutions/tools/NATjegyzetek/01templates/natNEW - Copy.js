@@ -1,3 +1,104 @@
+// === Drive-frame két dropdownos logika ===
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Beállítások ---
+    const driveSectionId = 'drive';
+    const driveIframeRow = document.querySelectorAll('.iframe-row')[1]; // feltételezve, hogy ez a második szekció
+    const driveRightHalf = driveIframeRow ? driveIframeRow.querySelector('.iframe-half-right') : null;
+    const driveFrameId = driveSectionId + '-frame02';
+
+    // --- Dropdown konténer ---
+    let driveDropdownContainer = null;
+    let driveBookSelect = null;
+    let driveTocSelect = null;
+
+    // --- Elérési utak ---
+    const driveBooks = [
+        { label: 'Tankönyv', value: 'TK/OEBPS/navigation.xhtml' },
+        { label: 'Munkafüzet', value: 'MF/OEBPS/navigation.xhtml' },
+        { label: 'Atlasz', value: 'Atlasz/OEBPS/navigation.xhtml' }
+    ];
+
+    // --- Dropdown generálása ---
+    function createDriveDropdowns() {
+        if (driveDropdownContainer) return;
+        driveDropdownContainer = document.createElement('div');
+        driveDropdownContainer.className = 'toc-dropdown-container';
+        driveDropdownContainer.style.marginBottom = '10px';
+
+        // Első dropdown: könyv választó
+        driveBookSelect = document.createElement('select');
+        driveBookSelect.className = 'toc-dropdown';
+        driveBooks.forEach(book => {
+            const option = document.createElement('option');
+            option.value = book.value;
+            option.textContent = book.label;
+            driveBookSelect.appendChild(option);
+        });
+
+        // Második dropdown: fejezet választó
+        driveTocSelect = document.createElement('select');
+        driveTocSelect.className = 'toc-dropdown';
+        driveTocSelect.innerHTML = '<option value="">Válassz fejezetet...</option>';
+
+        // Label
+        const label1 = document.createElement('span');
+        label1.className = 'toc-dropdown-label';
+        label1.textContent = 'Könyv:';
+        const label2 = document.createElement('span');
+        label2.className = 'toc-dropdown-label';
+        label2.textContent = 'Fejezet:';
+
+        driveDropdownContainer.appendChild(label1);
+        driveDropdownContainer.appendChild(driveBookSelect);
+        driveDropdownContainer.appendChild(label2);
+        driveDropdownContainer.appendChild(driveTocSelect);
+
+        if (driveRightHalf) driveRightHalf.insertBefore(driveDropdownContainer, driveRightHalf.firstChild);
+    }
+
+    // --- Fejezetek betöltése a kiválasztott könyv alapján ---
+    function loadDriveToc(navUrl) {
+        driveTocSelect.innerHTML = '<option value="">Válassz fejezetet...</option>';
+        const basePath = navUrl.replace(/[^\/]+$/, '');
+        fetch(navUrl)
+            .then(resp => resp.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = doc.querySelectorAll('nav[epub\\:type="toc"] li a');
+                links.forEach(link => {
+                    const option = document.createElement('option');
+                    let href = link.getAttribute('href');
+                    if (href && !/^([a-z]+:|\/)/i.test(href)) {
+                        href = basePath + href;
+                    }
+                    option.value = href;
+                    option.textContent = link.textContent;
+                    if (link.style && link.style.color === 'grey') {
+                        option.disabled = true;
+                        option.style.color = '#aaa';
+                    }
+                    driveTocSelect.appendChild(option);
+                });
+            });
+    }
+
+    // --- Események ---
+    createDriveDropdowns();
+    // Alapértelmezett: Tankönyv
+    loadDriveToc(driveBooks[0].value);
+    driveBookSelect.selectedIndex = 0;
+
+    driveBookSelect.addEventListener('change', function() {
+        loadDriveToc(this.value);
+    });
+    driveTocSelect.addEventListener('change', function() {
+        if (this.value) {
+            const frame = document.getElementById(driveFrameId);
+            if (frame) frame.src = this.value;
+        }
+    });
+});
 // === Dropdown/List nézetváltó logika ===
 // Általánosítható, hogy drive-frame-re is működjön majd
 document.addEventListener('DOMContentLoaded', function() {
@@ -193,21 +294,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
-        		// Flex switcher gomb működése
-		const switcherBtn = document.getElementById('flex-switcher');
-		const switcherIcon = document.getElementById('flex-switcher-icon');
-		let flexIsRow = true;
-		switcherBtn.addEventListener('click', function() {
-			document.querySelectorAll('.iframe-row').forEach(row => {
-				if (flexIsRow) {
-					row.style.flexDirection = 'column';
-				} else {
-					row.style.flexDirection = 'row';
-				}
-			});
-			flexIsRow = !flexIsRow;
-			switcherIcon.textContent = flexIsRow ? '🔀' : '↕️';
-		});
+                // Flex switcher gomb működése
+        const switcherBtn = document.getElementById('flex-switcher');
+        const switcherIcon = document.getElementById('flex-switcher-icon');
+        let flexIsRow = true;
+        switcherBtn.addEventListener('click', function() {
+            document.querySelectorAll('.iframe-row').forEach((row, idx) => {
+                if (flexIsRow) {
+                    row.style.flexDirection = 'column';
+                    // Ha drive-frame szekció (második .iframe-row)
+                    if (idx === 1) {
+                        row.classList.add('dropdown-mode');
+                    }
+                } else {
+                    row.style.flexDirection = 'row';
+                    if (idx === 1) {
+                        row.classList.remove('dropdown-mode');
+                    }
+                }
+            });
+            flexIsRow = !flexIsRow;
+            switcherIcon.textContent = flexIsRow ? '🔀' : '↕️';
+        });
 
         // Add event listener for orientation changes
         window.addEventListener('resize', handleOrientationChange);
