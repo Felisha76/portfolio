@@ -1,7 +1,7 @@
-Célfile: 	portfolio\X_test\TEMP.xhtml <body>
+Célfile: 	solutions\tools\NATjegyzetek\6_oszt\termeszettudomany\JEGYZET\OEBPS\Text\II_02.xhtml <body>
 Tantárgy:	Természettudomány
 Témakör:	
-Az energia a mindennapokban
+Energiaforrások
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
 A file egy epub része lesz, ezért nem lehet benne <br>  vagy <hr>

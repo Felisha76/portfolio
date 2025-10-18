@@ -1,75 +1,67 @@
-Gyerekkorunkban a szüleink sokszor mondják rólunk, hogy ez a gyerek tele van energiával. Az idős emberek viszont gyakran arra panaszkodnak, hogy elszállt minden energiájuk. Az emlősök energiadús anyatejjel szoptatják kicsinyeiket, ugyanakkor a fogyókúrázóknak javasolt figyelni az ételek energiatartalmára.
+A természetben számos olyan anyagot és folyamatot találunk, amelyekből megfelelő körülmények között energiát tudunk előállítani. Ezeket az anyagokat és természeti folyamatokat energiaforrásoknak nevezzük.
 
-Mindennapjaink elképzelhetetlenek lennének villanyvilágítás vagy a háztartási munkákat megkönnyítő berendezések (pl. hűtőszekrény, gázsütő, porszívó, vasaló) nélkül. Ugyanígy elképzelhetetlen, hogy hosszabb vagy rövidebb utazásainkat ne autóval vagy tömegközlekedési eszközökkel tegyük meg.
+A Nap
 
-A híradásokban viszont gyakran hallunk vészjósló információkat arról, hogy hamarosan kimerülnek a Föld energiát adó ásványkincskészletei, és hogy az ebből adódó energiaválság hogyan fogja megváltoztatni a világgazdaságot.
+Földünk legfontosabb energiaforrása a Nap. A belsejében folyamatos energia-felszabadulás zajlik. A képződő energiát részben fény, részben pedig hő formájában sugározza Földünkre.
 
-Láthatjátok tehát, hogy az energiáról nagyon sokféle szempontból beszélhetünk. De mit is jelent pontosan az energia fogalma? Életünk mely területein használunk energiaforrásokat? Miből tudunk energiát előállítani? Mit jelent az energiahordozó kifejezés? Hogyan hat a környezetünkre az energiatermelés? Lehet-e környezetbarát módon energiát termelni? Ezekre a kérdésekre keressük a választ ebben a fejezetben.
+A növények növekedéséhez, fejlődéséhez feltétlenül szükséges a Nap energiája. A Nap sugarai melegítik fel a földfelszínt. A Nap energiája tartja fent a víz körforgását és a szélrendszerek működését. Emiatt azt mondhatjuk, hogy közvetlenül vagy közvetve, de szinte minden földi energiaforrás felhasználásával végső soron a Nap energiáját hasznosítjuk.
 
-Az energia
+A nem megújuló energiaforrások
 
-Az energia fogalmának meghatározása nem könnyű feladat. A mindennapi szóhasználatból azonban sejthetjük, hogy valamiféle változásra, aktivitásra utal. A legelfogadottabb meghatározás szerint energián a munkavégző képességet értjük. Ez az anyagok azon képességét jelenti, amellyel más anyagokon változást tudnak létrehozni valamilyen kölcsönhatás révén.
+Energiaforrásaink egy részét a természetből kell kitermelnünk, majd bonyolult folyamatok révén erőművekben átalakítjuk őket, így adnak energiát.
 
-Az elfogyasztott táplálékot testünk bonyolult folyamatok révén olyan anyagokká alakítja, amelyek lehetővé teszik például az izmaink működését, tehát képesek leszünk mozogni. Az autókba tankolt üzemanyag – szintén bonyolult átalakulások révén – mozgásba hozza a járművet. A tábortűz melegét az elégetett fa biztosítja. Ezen folyamatok mindegyike energiát ad. A különböző energiafajták a különböző változások során képesek egymásba átalakulni.
+Azt a mennyiséget, ami megmutatja, hogy 1 kg anyag elégetésével mennyi energiához jutunk, fűtőértéknek nevezzük. Az erőművekben energiatermelésre használható anyagokat, például a szénféleségeket, a kőolajat és a földgázt energiahordozóknak nevezzük (1. ábra). Ezek mennyisége a kitermelés előre haladtával csökken, vagyis egy idő után elfogynak és emberi mértékkel mérhető időn belül nem termelődnek újra. Emiatt ezeket az energiaforrásokat nem megújuló, más néven fosszilis energiaforrásoknak nevezzük.
 
-Táplálkozás
 
-Az energia kérdéskörével életünk legalapvetőbb funkciói során is találkozhatunk. Ha valaki huzamosabb ideig nem, vagy csak nagyon keveset eszik, legyengül és nem lesz ereje mozogni. A táplálkozás és a mozgás között tehát szoros összefüggés van. Szervezetünk a táplálékból nyeri a működéséhez szükséges energiát.
 
-Az élelmiszerek tápértéke magába foglalja az élelmiszer energiát adó anyagainak, valamint a szervezet egészséges működéséhez szükséges vitaminok, növényi rostok és ásványi anyagok mennyiségét.
+1. Szén
 
-Az élelmiszerek energiatartalma azt jelenti, hogy mennyi energiát nyerünk az étel elfogyasztásával. Az élelmiszerek tápértéke nem egyforma. A zsírokban vagy cukorban gazdag élelmiszerek sokkal több energiát tartalmaznak, mint például a rostokban gazdag zöldségek és gyümölcsök (1. ábra).
+A fosszilis energiahordozók növényi és állati maradványok bomlása során, évmilliók alatt keletkeznek. A szénféleségek elpusztult fás szárú növényekből, meleg és nedves körülmények között jönnek létre. A kőolaj és a földgáz elsősorban elhalt algák, állatok maradványaiból alakul ki.
 
-images
+A nem megújuló energiaforrások közé tartozik az uránérc is, az atomenergia energiahordozó anyaga.
 
-1. Zsírban és cukrokban gazdag ételek
+A nem megújuló energiaforrásokat általában a Föld mélyéből, bányászat útján hozzuk a felszínre (2. ábra).
 
-A fizikai aktivitás és több más szempont (nem, életkor, fizikai állapot) függvényében különböző mennyiségű táplálékra van szükségünk. Egy rendszeresen kemény fizikai munkát végző embernek sokkal több energiára van szüksége, mint ülőmunkát végző társának. Nem mindegy tehát, hogy mennyit eszünk, mert ha az étellel több energiát viszünk be a szervezetünkbe mint amennyire szükségünk van, az elhízáshoz vezet. Sportolás közben izmaink a felhalmozott zsírból nyernek energiát, ami rendszeres mozgás esetén fogyáshoz vezethet (2. ábra).
+A Földön nem minden ország gazdag energiahordozókban. Az az ország, ahol hiány van ezekből az anyagokból, behozatalra szorul belőlük. Hazánkban jelenleg a szénféleségek közül csak a kisebb fűtőértékű lignitet bányásszák, a jobb minőségű barna- és feketekőszén felszínre hozatala már nem gazdaságos. Kőolaj- és földgázbányászat még folyik Magyarországon, de a biztonságos ellátás érdekében külföldről is érkezik utánpótlás.
 
-images
 
-2. A rendszeres sportolás egyensúlyban tartja az energiabevitelt
 
-A háztartások
+2. Tengeri olajfúrótorony
 
-Házaink, lakásaink üzemeltetéséhez szintén energiára van szükség. A fűtéshez, sütéshez, főzéshez szükséges energia előállítása többféleképpen is történhet.
+A megújuló energiaforrások
 
-Régebben az emberek fát és szenet használtak energianyerésre, ma ezeket felváltotta az olaj és a gáz, illetve az elektromos áram. A világításhoz és háztartási gépeink működtetéséhez szintén elektromos áram szükséges (3. ábra).
+A természetben több olyan folyamatot is megfigyelhetünk, amelyeket az emberiség már nagyon régóta energiatermelésre tud fordítani.
 
-images
+Őseink a nagy erejű folyóvizek energiáját vízimalmok működtetésére használták, míg a szél erejével távoli tájakra tudtak hajózni (3. ábra). Ezek az energiaforrások látszólag kifogyhatatlanok, erejük folyton megújul, ezért ezeket megújuló energiaforrásoknak nevezzük.
 
-3. Elektromos árammal működő háztartási eszközök
 
-Az energiafogyasztóknak ki kell fizetniük az energia árát. A fát, olajat, szenet meg kell vásárolnunk. A gázfogyasztásunkat, valamint a felhasznált elektromos áram mennyiségét szolgáltatók mérik, és az általuk küldött számlát bizonyos időközönként be kell fizetnünk.
 
-A közlekedés
+3. A vitorlások a szél erejét használják energiaforrásnak
 
-Háztartási gépeinkhez hasonlóan a járművek is energiafogyasztók, hiszen mozgásukhoz energia szükséges.
+Napjainkban a folyók sodrásából származó energiát vízerőművekkel (4. ábra), a szél energiáját pedig szélerőművekkel alakítják elektromos energiává, amit azután távvezetékekkel szállítanak a háztartásokba vagy az ipari felhasználókhoz.
 
-A történelem során sokat változtak a járművek mozgatásához használt energiaforrások.
+A Nap energiáját közvetlenül is felhasználjuk energiatermelésre napelemek vagy napkollektorok formájában.
 
-A legrégebbi időkben a hajókat a víz és a szél energiájával hozták mozgásba.
+A földfelszín alól is nyerhetünk energiát: a feltörő hévizek és a talaj mélyebb rétegeinek hőjét is használhatjuk energiaforrásként. Ezek a geotermikus energiák.
 
-Később, az ókori gályákon vagy a lóvontatású szekereken, emberek és állatok energiáját vették igénybe.
+Napjainkban a globális éghajlatváltozás elleni küzdelem következtében egyre inkább előtérbe kerülnek a megújuló energiaforrások. Ezek az energiahordozók ugyanis nem bocsátanak ki olyan anyagokat, amelyek a légkör felmelegedését okozzák.
 
-Az első géppel hajtott járművek a 18. században jelentek meg. Ezek először gőzt használtak energiaforrásként (gőzhajó, gőzmozdony), amelyet a fa és a szén elégetéséből nyertek. A 19. század végén feltalálták a belső égésű motort, ahol már benzin vagy dízelolaj volt az energiaforrás.
+A világszerte egyre súlyosbodó üvegházhatás ellen tehát hatékony megoldást jelenthet a megújuló energiaforrások nagyobb arányú alkalmazása a fosszilis energiahordozókkal szemben.
 
-Napjainkban egyre inkább terjednek az elektromos hajtású járművek (4. ábra).
 
-images
 
-4. Elektromos busz
+4. Vízerőmű
 
-images RÖVID ÖSSZEFOGLALÁS
+ RÖVID ÖSSZEFOGLALÁS
 
-Energiának nevezzük az anyagoknak azt a képességét, amellyel más anyagokon változást tudnak létrehozni valamilyen kölcsönhatás révén.
+Energiaforrások azok az anyagok, amelyekből megfelelő körülmények között energia nyerhető.
 
-Az ember az élelmiszerek tápértékéből fedezi energiaszükségletét.
+Az emberi léptékben mérve megújulni nem képes anyagokat nem megújuló (fosszilis) energiahordozóknak nevezzük. Ilyenek például a szénféleségek, a kőolaj és a földgáz.
 
-A háztartások és a közlekedés is nagy energiafogyasztó. Az épületek fűtésére, világítására, a háztartási berendezések, illetve a közlekedési eszközök működtetésére különféle energiaforrások állnak rendelkezésre.
+A megújuló energiaforrások ereje folyton megújul. Ide tartozik a víz-, a szél-, a nap- és a geotermikus energia.
 
-Az energiaforrások a történelem során a technikai fejlődés révén sokat változtak.
+A megújuló energiaforrások nagyobb arányú alkalmazása hosszabb távon megoldást jelenthet a globális éghajlatváltozásra.
 
-images ÚJ FOGALMAK
+ ÚJ FOGALMAK
 
-energia, tápérték, energiatartalom, energiafogyasztó
+energiaforrás, fűtőérték, energiahordozó, nem megújuló energiaforrás (fosszilis energiaforrás), megújuló energiaforrás, geotermikus energia
