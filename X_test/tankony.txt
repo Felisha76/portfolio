@@ -1,79 +1,99 @@
-4. Laboratóriumi vizsgálatok
+V. A térképtől a modern navigációs technikákig
+
+Manapság az emberek többsége állandóan úton van. Mindenki siet a munkahelyére, az iskolába, vidéki kiküldetésre vagy külföldi vakációra. Ezekhez a hosszabbrövidebb távolságokra történő utazásokhoz térképek, földrajzi atlaszok, újabban pedig digitális technikák segítségét kérjük.
+
+Bár nyomtatott térképet már egyre ritkábban használunk, kedvtelésből talán néha még előkerül, és kedvünkre böngésszük a színes oldalakat. Hasznos, ha kirándulásaink alkalmával is viszünk magukkal térképet, hiszen előfordulhat, hogy mobilhálózat hiányában telefonos alkalmazásainkat nem mindig tudjuk használni. Hogyan lehet könnyen megtalálni a térképen számunkra érdekes helyszíneket, és mit jelent egy-egy település földrajzi koordinátája?
+
+Gyakran telefonos alkalmazásokon követjük tömegközlekedési eszközeink menetrendjét, számítógépes programokkal tervezzük meg utazásaink célpontjait, interneten vásároljuk meg a vonat- vagy repülőjegyünket. Milyen elven működnek a legegyszerűbb alkalmazások? Hogyan tudjuk gyorsan, aktuális céljainknak megfelelően használni őket? Hogyan készülnek a modern kori térképészet újításai, a műholdképek, amelyeket minden nap látunk az időjárás-jelentésekben? Ezekre a kérdésekre kaptok választ ebben a fejezetben.
+
+1. A földrajzi atlasz
 
 images
 
-Milyen veszélyekre hívják fel a figyelmet a veszélyt jelző piktogramok?
+Hogyan tudjuk könnyen megtalálni a térképen lévő városokat?
 
-A környezeti elemek tulajdonságait, folyamatait nem csak a természetben figyelhetjük meg, a terepen vett mintát laboratóriumban is megvizsgálhatjuk. Sokszor előfordul, hogy a terepi módszerekkel kimutathatónál pontosabb eredményekre van szükségünk. Ezt a legtöbb esetben csak laboratóriumi módszerekkel, esetleg műszerekkel érhetjük el.
+Földrajzi tanulmányokat folytatni lehetetlen térkép nélkül. Az információk elsajátításában a térkép az elsődleges segítségünk. Ötödik osztályban már tanultál a térkép jelrendszeréről, keresőhálózatáról, valamint arról is, hogyan találod meg az egyes városokat, hegycsúcsokat, tavakat a térképen. Ebben a leckében most ezt a tudásodat elevenítjük fel, de emellett sok hasznos információt is kapsz a térképek, atlaszok használatához.
 
-Anyagok a laboratóriumban
+A földrajzi atlasz nem más, mint térképek gyűjteménye (1. ábra). Ahhoz, hogy gyorsan és pontosan megtalálhass benne mindent, ismerned kell a felépítését.
 
-Ahhoz, hogy kísérleteinket eredményesen végezhessük, ismernünk kell a kísérleti munka anyagait, eszközeit és rendszabályait (1. ábra).
+Tartalomjegyzék
 
-A laboratóriumban vegyszerekkel dolgozunk. A vegyszerek veszélyes, sokszor mérgező anyagok lehetnek, ezért azokat megkóstolni, fegyelmezetlenül dolgozni velük nem szabad! Sok olyan anyaggal találkozhatunk a laboratóriumban, amelyeknek kellemetlen a szaga, ingerli a bőrünket, nyálkahártyánkat vagy tűzveszélyes. Ezek megkülönböztetésére a tárolóedényükön jelzéseket, úgynevezett piktogramokat helyeztek el (2. ábra). A piktogramok segítségével rögtön láthatjuk, milyen anyaggal van dolgunk.
+Azért, hogy ne kelljen minden egyes földrajzi hely keresésénél az egész atlaszt átlapoznod, az irodalmi művekhez hasonlóan az atlaszok elején vagy végén is találsz tartalomjegyzéket (2. ábra). Ez az adott térképi oldal címét és oldalszámát tartalmazza, ezzel segítve a minél gyorsabb keresést.
 
-images
+Jelmagyarázat
 
-1. Iskolai kísérlet
+Minden atlaszban megtalálod a jelmagyarázatot is, vagyis azoknak a jeleknek a gyűjteményét, amelyek segítségével bizonyos természeti és gazdasági elemeket jelenítenek meg a térképeken (3. ábra).
 
-images
-
-images
+Ezekről a jelekről, illetve arról, hogy mit jelentenek a térképen látható színek, részben már 5. osztályban is tanultál. A tanultak felfrissítéseként keresd ki az atlaszod jelmagyarázatából, hogyan jelölik a térképeken a következőket!
 
 images
 
-2. Veszélyességi piktogramok
-
-Eszközök a laboratóriumban
-
-A laboratóriumban használt eszközök többsége üvegből készül, de vannak fémből, fából és műanyagból készült kellékek is.
-
-Az üvegedények előnye, hogy láng felett melegíthetők és használat után megfelelően fertőtleníthetők. Hátrányuk viszont, hogy könnyen törnek, ezért is nagyon fontos a fegyelmezett munka. A leggyakrabban használt laboratóriumi üvegeszköz a kémcső (1) és a főzőpohár (2), de fontos üvegedények a lombikok is. Alakjuk és funkciójuk szerint megkülönböztetünk Erlenmeyer lombikot (3) és gömblombikot (4) (3. ábra).
+1. Földrajzi atlasz
 
 images
 
-3. A laboratóriumban leggyakrabban használt üvegedények
+2. Az atlasz tartalomjegyzéke
+
+•csatorna
+
+•autópálya
+
+•200 000–1 000 000 közötti lélekszámú város
+
+•lignitbányászat
+
+•húsipar
+
+•autógyártás
 
 images
 
-4. Bunsen-égő vasháromlábbal és lángelosztóval
+3. A jelmagyarázat részlete
 
-Gyakran használt üvegeszköz még a mérőhenger, a tölcsér, az óraüveg, az üvegkád, az üvegbot és a hőmérő is.
+Névmutató
 
-A vizsgált anyagok melegítése borszeszégő vagy Bunsen-égő (gázégő) segítségével történik. A borszeszégőben alkohol, míg a gázégőben földgáz ég. Ez utóbbihoz fémből készült vasháromlábat és lángelosztó lapot használunk (4. ábra). A kémcsöveket fából vagy fémből készült kémcsőállványban tároljuk és kémcsőcsipesszel fogjuk meg. Gyakran használt eszköz még a desztillált vizes palack és a vegyszerkanál is.
+Keresd meg az atlaszodban a Velencei-tavat!
 
-A laboratóriumok speciális eszköze a mikroszkóp (5. ábra). A mikroszkóppal természeti minták parányi, szabad szemmel nem látható részeit, összetevőit vizsgálhatjuk. Vagyis a mikroszkóp egy olyan optikai eszköz, amely lencserendszere segítségével nagyított képet tud előállítani.
+A feladat megoldásához először nyisd ki az atlaszodat a leghátsó oldalakon, a névmutatónál! Ezt követően keresd ki az ábécérendbe szedett földrajzi nevek közül a Velencei-tó nevét!
 
-images
+A Velencei-tó neve mellett ezt találod:
 
-5. Mikroszkóp használata
+8 D2. Ez azt jelenti, hogy az atlaszban a Velencei-tó a 8. oldalon, a térképre rajzolt keresőhálózat D2 négyzetében található.
 
-A kísérletezés szabályai
-
-A laboratóriumi munkánál számos szigorú szabályt be kell tartani. A laboratóriumi munka egyik legfontosabb jellemzője a rend és a fegyelem. A kísérletekhez csak alaposan felkészülve, a feladatot átlátva lehet hozzákezdeni.
-
-A labormunka alkalmával ajánlatos köpenyt viselni, veszélyes kísérleteknél pedig akár védőszemüveget, kesztyűt is (6. ábra). A hosszú hajat össze kell fogni, nehogy beleérjen a tűzbe, vegyszerbe. Mivel a laborban minden anyag veszélyesnek számít, ott étkezni, a vegyszert megkóstolni, megszagolni szigorúan tilos!
-
-A kísérletek után megmaradt vegyszert a tárolóedénybe visszatenni vagy a laborból kivinni nem szabad, hanem megfelelő módon meg kell semmisíteni. Munka után mindig hagyj rendet magad után!
+Az atlasz névmutatója tehát nem más, mint az atlaszban lévő összes földrajzi név ábécérendbe állított listája, kiegészítve az oldalszámmal és a keresőhálózat kódjával (egy betű és egy szám), ahol az adott földrajzi név található (4. ábra).
 
 images
 
-6. Kísérletezés védőszemüvegben
+4. A névmutató egy részlete
+
+Gyakorlásképpen keresd meg az atlaszodban az alábbi hazai földrajzi neveket a keresőhálózat segítségével!
+
+•Budapest
+
+•Kékestető
+
+•Pécs
+
+•Írott-kő
+
+•Szelidi-tó
 
 images RÖVID ÖSSZEFOGLALÁS
 
-A természet anyagait, folyamatait nem csak terepen, hanem laboratóriumban is vizsgálhatjuk.
+A földrajzzal kapcsolatos tanulmányok elképzelhetetlenek földrajzi atlasz használata nélkül.
 
-A laboratóriumban használt anyagok veszélyesek, gyakran mérgezőek, ezért fegyelmezetten kell velük dolgozni.
+Az atlasz nem más, mint térképek gyűjteménye.
 
-A laboratóriumban számos speciális eszköz áll rendelkezésünkre a kísérletek elvégzéséhez. Ezek közül leggyakrabban különböző üvegeszközöket, például kémcsöveket, lombikokat használunk.
+Bár nagyon sokféle földrajzi atlasz létezik, mégis vannak olyan elemek, amelyeket minden atlasznak tartalmaznia kell.
 
-Anyagokat melegíteni borszeszégővel vagy Bunsen-égővel szoktunk.
+A tartalomjegyzék megkönnyíti az egyes térképek megkeresését az atlaszon belül.
 
-A szabad szemmel nem látható vizsgálandó anyagot mikroszkóp segítségével tudjuk megfigyelni.
+A jelmagyarázatból megtudhatod, hogy mit jelentenek a térképeken használt jelek.
 
-A balesetek elkerülése érdekében a laboratóriumi szabályokat mindig be kell tartani!
+A névmutató az atlaszban szereplő összes földrajzi nevet tartalmazza ábécérendben. Azt is megmutatja, hogy egy földrajzi hely az atlasz melyik oldalán és a keresőhálózat melyik négyzetében található.
+
+A keresőhálózat a térképre rajzolt, betűkkel és számokkal ellátott négyzetháló, amelynek segítségével bármely keresett földrajzi helyet könnyen megtalálhatunk.
 
 images ÚJ FOGALMAK
 
-veszélyességi piktogram, üvegeszközök, lombik, borszeszégő, Bunsen-égő, mikroszkóp
+földrajzi atlasz, jelmagyarázat, névmutató, keresőhálózat
