@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
         dropdownSelect = document.createElement('select');
         dropdownSelect.className = 'toc-dropdown';
         dropdownSelect.innerHTML = '<option value="">Válassz fejezetet...</option>';
-        // Betöltjük a nav.xhtml-t AJAX-szal
+        // Meghatározzuk az alap útvonalat a nav.xhtml alapján
+        const basePath = navUrl.replace(/[^\/]+$/, ''); // pl. 'JEGYZET/OEBPS/Text/'
         fetch(navUrl)
             .then(resp => resp.text())
             .then(html => {
@@ -45,7 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const links = doc.querySelectorAll('nav[epub\\:type="toc"] li a');
                 links.forEach(link => {
                     const option = document.createElement('option');
-                    option.value = link.getAttribute('href');
+                    let href = link.getAttribute('href');
+                    // Ha relatív, egészítsük ki az alap útvonallal
+                    if (href && !/^([a-z]+:|\/)/i.test(href)) {
+                        href = basePath + href;
+                    }
+                    option.value = href;
                     option.textContent = link.textContent;
                     if (link.style && link.style.color === 'grey') {
                         option.disabled = true;
