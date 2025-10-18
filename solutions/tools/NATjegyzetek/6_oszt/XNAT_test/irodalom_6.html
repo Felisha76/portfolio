@@ -1,0 +1,140 @@
+	<!DOCTYPE html>
+	<html lang="hu">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="https://felisha76.github.io/portfolio/media/favicon_light.png">
+
+
+														<!-- OSZTÁLY / TANTÁRGY -->
+														<title>NAT 6.o. Irodalom	
+	</title>
+	<link rel="stylesheet" href="../../01templates/natNEW.css">
+	</head>
+	<body>
+	<div class="container">
+	<div class="header">
+		<!-- FrontnestStudio Logo -->
+		<a href="../../../../../subsites/main.html">
+			<img src="../../../../../media/favicon_light.png"  
+							alt="FrontNest Studio" 
+							id="logo"></a>
+		<!-- FrontnestStudio Logo -->
+
+		<h1>📚 NAT Jegyzetek és tankönyv</h1>
+
+
+														<!-- OSZTÁLY / TANTÁRGY -->
+														<p>6. osztály Irodalom</p>
+		<!-- Flex switcher gomb -->
+		<button id="flex-switcher" 
+		title="Váltás egymás mellé/alá" 
+		style="position:absolute;top:20px;right:30px;
+		padding:8px 14px;border-radius:8px;border:none;
+		background:#0e00002d;color:#4285f4;font-size:1.2em;
+		box-shadow:0 2px 6px rgba(0,0,0,0.12);cursor:pointer;
+		z-index:10;">
+			<span id="flex-switcher-icon">🔀</span>
+		</button>
+	</div>
+
+		<!-- Első dokumentum szekció: két docs-frame -->
+		<div class="document-section">
+			<!--<div class="link-bar">
+														Jegyzet navigáció
+				 										<a href='JEGYZET/OEBPS/Text/nav.xhtml' 
+				target="docs-frame01" 
+				class="tooltip" 
+				data-tooltip="Vissza a tartalomjegyzékhez">
+				⤴️Back</a>
+				<p>Vázlatok a tankönyv alapján</p>
+			</div> -->
+
+
+			<div class="iframe-row">
+				<div class="iframe-half-left">
+					<div class="loading-overlay" id="docs-loading01">
+						<div class="loading-spinner"></div>
+						<div class="loading-text">Dokumentum betöltése...</div>
+					</div>									<!-- docs-frame01: Jegyzet navigáció -->
+					<iframe
+						id="docs-frame01"
+						name="docs-frame01"
+															src='JEGYZET/OEBPS/Text/nav.xhtml'
+						onload="hideLoading('docs-loading01')"
+						onerror="showError('docs-error01')"
+						title='docs-frame01'>
+					</iframe>
+				</div>
+				<div class="iframe-half-right">
+					<div class="loading-overlay" id="docs-loading02">
+						<div class="loading-spinner"></div>
+						<div class="loading-text">Dokumentum betöltése...</div>
+					</div>									<!-- docs-frame02: Jegyzet 0002_cimlap.xhtml -->
+					<iframe
+						id="docs-frame02"
+						name="docs-frame02"
+															src='JEGYZET/OEBPS/Text/0002_cimlap.xhtml'
+						onload="hideLoading('docs-loading02')"
+						onerror="showError('docs-error02')"
+						title='docs-frame02'>
+					</iframe>
+				</div>
+			</div>
+		</div>
+	
+	<div class="divider"></div>
+
+		<!-- Második dokumentum szekció: két drive-frame -->
+		<div class="document-section">
+			<div class="link-bar">						<!-- LINKBAR -->
+				<div>
+														<!-- TK navigáció -->
+														<a href='TK/OEBPS/navigation.xhtml' target="drive-frame01" class="tooltip" data-tooltip="Vissza a tartalomjegyzékhez">🟥 Tankönyv</a>
+														<!-- MF navigáció -->
+														<a href='MF/OEBPS/navigation.xhtml' target="drive-frame01" class="tooltip" data-tooltip="Munkafüzet EPUB megnyitása">🟩 Munkafüzet</a>
+				</div>									<!-- Tankönyvkatalógus link -->
+														<a href='https://www.tankonyvkatalogus.hu/storage/pdf/OH-MIR06TA__teljes.pdf' target="_blank" class="external-link">Teljes könyv a Tankönyvkatalógus oldalán</a>
+				
+			</div>
+
+			<div class="iframe-row">
+				<div class="iframe-half-left">
+					<div class="loading-overlay" id="drive-loading01">
+						<div class="loading-spinner"></div>
+						<div class="loading-text">Dokumentum betöltése...</div>
+					</div>								
+															<!-- drive-frame01: TK navigáció -->
+					<iframe
+						id="drive-frame01"
+						name="drive-frame01"
+														src='TK/OEBPS/navigation.xhtml'
+						onload="hideLoading('drive-loading01')"
+						onerror="showError('drive-error01')"
+						title='drive-frame01'>
+					</iframe>
+				</div>
+				<div class="iframe-half-right">
+					<div class="loading-overlay" id="drive-loading02">
+						<div class="loading-spinner"></div>
+						<div class="loading-text">Dokumentum betöltése...</div>
+					</div>								<!-- drive-frame02: TK címlap -->
+					<iframe
+						id="drive-frame02"
+						name="drive-frame02"
+														src='TK/OEBPS/cover.xhtml'
+						onload="hideLoading('drive-loading02')"
+						onerror="showError('drive-error02')"
+						title='drive-frame02'>
+					</iframe>
+				</div>
+			</div>
+		</div>
+		<!-- 
+		<div class="portrait-warning">
+			📱 Kérlek, fordítsd el a telefonod fekvő (landscape) nézetbe, hogy a tartalom jól látható legyen!
+		</div>-->
+		<script src="../../01templates/natNEW.js"></script>
+
+		</body>
+		</html>
