@@ -1,3 +1,99 @@
+// === Dropdown/List nézetváltó logika ===
+// Általánosítható, hogy drive-frame-re is működjön majd
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Beállítások ---
+    const sectionId = 'docs'; // vagy 'drive' a második szekcióhoz
+    const iframeRow = document.querySelector('.iframe-row');
+    const rightHalf = document.querySelector('.iframe-half-right');
+    const leftHalf = document.querySelector('.iframe-half-left');
+    const frameId = sectionId + '-frame02';
+    const navFrameId = sectionId + '-frame01';
+    // --- Gomb hozzáadása ---
+    const header = document.querySelector('.header');
+    if (header && !document.getElementById('dropdown-switcher')) {
+        const btn = document.createElement('button');
+        btn.id = 'dropdown-switcher';
+        btn.title = 'Váltás lista/legördülő menü nézet között';
+        btn.innerHTML = '<span id="dropdown-switcher-icon">📑</span>';
+        btn.style.marginRight = '10px';
+        header.appendChild(btn);
+    }
+    const dropdownBtn = document.getElementById('dropdown-switcher');
+    let dropdownMode = false;
+    let dropdownContainer = null;
+    let dropdownSelect = null;
+
+    // --- Dropdown generálása nav.xhtml alapján ---
+    function createDropdownFromNav(navUrl, targetFrameId) {
+        // Ha már létezik, ne generáljuk újra
+        if (dropdownContainer) return;
+        dropdownContainer = document.createElement('div');
+        dropdownContainer.className = 'toc-dropdown-container';
+        const label = document.createElement('span');
+        label.className = 'toc-dropdown-label';
+        label.textContent = 'Tartalomjegyzék:';
+        dropdownSelect = document.createElement('select');
+        dropdownSelect.className = 'toc-dropdown';
+        dropdownSelect.innerHTML = '<option value="">Válassz fejezetet...</option>';
+        // Betöltjük a nav.xhtml-t AJAX-szal
+        fetch(navUrl)
+            .then(resp => resp.text())
+            .then(html => {
+                // DOMParser-rel feldolgozzuk
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = doc.querySelectorAll('nav[epub\\:type="toc"] li a');
+                links.forEach(link => {
+                    const option = document.createElement('option');
+                    option.value = link.getAttribute('href');
+                    option.textContent = link.textContent;
+                    if (link.style && link.style.color === 'grey') {
+                        option.disabled = true;
+                        option.style.color = '#aaa';
+                    }
+                    dropdownSelect.appendChild(option);
+                });
+            });
+        dropdownSelect.addEventListener('change', function() {
+            if (this.value) {
+                // Betöltjük a kiválasztott oldalt a jobb oldali frame-be
+                const frame = document.getElementById(targetFrameId);
+                if (frame) frame.src = this.value;
+            }
+        });
+        dropdownContainer.appendChild(label);
+        dropdownContainer.appendChild(dropdownSelect);
+        // A jobb oldali frame tetejére tesszük
+        if (rightHalf) rightHalf.insertBefore(dropdownContainer, rightHalf.firstChild);
+    }
+
+    // --- Nézetváltás ---
+    function setDropdownMode(enable) {
+        dropdownMode = enable;
+        if (iframeRow) {
+            if (enable) {
+                iframeRow.classList.add('dropdown-mode');
+                createDropdownFromNav('JEGYZET/OEBPS/Text/nav.xhtml', frameId);
+                if (dropdownContainer) dropdownContainer.style.display = 'flex';
+            } else {
+                iframeRow.classList.remove('dropdown-mode');
+                if (dropdownContainer) dropdownContainer.style.display = 'none';
+            }
+        }
+    }
+
+    // --- Gomb esemény ---
+    if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function() {
+            setDropdownMode(!dropdownMode);
+            // Ikon váltás
+            const icon = document.getElementById('dropdown-switcher-icon');
+            if (icon) icon.textContent = dropdownMode ? '📃' : '📑';
+        });
+    }
+    // Alapértelmezett: lista nézet
+    setDropdownMode(false);
+});
 // Betöltési overlay elrejtése
         function hideLoading(loadingId) {
             const loadingElement = document.getElementById(loadingId);

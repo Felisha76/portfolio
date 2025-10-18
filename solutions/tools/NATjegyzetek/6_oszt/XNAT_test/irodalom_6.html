@@ -13,7 +13,7 @@
 	</head>
 	<body>
 	<div class="container">
-	<div class="header">
+	<div class="header" style="position:relative;">
 		<!-- FrontnestStudio Logo -->
 		<a href="../../../../../subsites/main.html">
 			<img src="../../../../../media/favicon_light.png"  
@@ -23,19 +23,20 @@
 
 		<h1>📚 NAT Jegyzetek és tankönyv</h1>
 
+		<!-- OSZTÁLY / TANTÁRGY -->
+		<p>6. osztály Irodalom</p>
 
-														<!-- OSZTÁLY / TANTÁRGY -->
-														<p>6. osztály Irodalom</p>
-		<!-- Flex switcher gomb -->
-		<button id="flex-switcher" 
-		title="Váltás egymás mellé/alá" 
-		style="position:absolute;top:20px;right:30px;
-		padding:8px 14px;border-radius:8px;border:none;
-		background:#0e00002d;color:#4285f4;font-size:1.2em;
-		box-shadow:0 2px 6px rgba(0,0,0,0.12);cursor:pointer;
-		z-index:10;">
-			<span id="flex-switcher-icon">🔀</span>
-		</button>
+		<!-- Gombok konténer (jobb felső sarokban egymás mellett) -->
+		<div style="position:absolute;top:20px;right:30px;display:flex;gap:10px;z-index:11;">
+			<button id="flex-switcher" 
+			title="Váltás egymás mellé/alá" 
+			style="padding:8px 14px;border-radius:8px;border:none;
+			background:#0e00002d;color:#4285f4;font-size:1.2em;
+			box-shadow:0 2px 6px rgba(0,0,0,0.12);cursor:pointer;">
+				<span id="flex-switcher-icon">🔀</span>
+			</button>
+			<!-- A dropdown-switcher gombot a JS automatikusan beszúrja ide -->
+		</div>
 	</div>
 
 		<!-- Első dokumentum szekció: két docs-frame -->
