@@ -4,8 +4,6 @@ Témakör:
 Az energia a mindennapokban
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
-
-File terjedelem:	100-150 kódsor
 A file egy epub része lesz.
 
 FELADAT:
@@ -27,12 +25,12 @@ STÍLUSÚTMUTATÓ:
 - Minden jegyzet a következőkkel végződjön:
     - 🟥összefoglaló táblázat  <table style="border-collapse: collapse; width: 100%;"> , <th style="border: 1px solid black; background-color: yellow;"> és <td style="border: 1px solid black;"> használata
     - 💥 új fogalmak megnevezése és rövid leírása
-    - 🟩10 rövid kvízkérdés ( feleletválasztós, a, b, c, és d, lehetséges válaszokkal )
+    - 🟩10 rövid kvízkérdés
     - ✅10 válasz rövid indoklásokkal
 - A magyarázatok legyenek strukturáltak, logikus folyamattal és összefoglaló részekkel.
 - A jegyzetek formázása egységes legyen a könnyű olvashatóság érdekében.
 
-Ha szükséges, a témát bővítheted interneten fellelhető tananyagokkal is, de a fent megjelölt tankönyvi szövegből ne hagyj ki lényeges részletet, fogalmat, definíciót!
+A a fent megjelölt tankönyvi szövegből ne hagyj ki lényeges részletet, fogalmat, definíciót!
 Ne hallucinálj!
 
 A cél: lebilincselő, oktató jellegű, jól strukturált jegyzetek készítése a tananyag minden fontos részletét tartalmazva, önálló tanulást lehetővé téve – mintha a Turbo AI írta volna őket.
