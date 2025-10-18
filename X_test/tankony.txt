@@ -1,95 +1,65 @@
-3. A földrajzi fokhálózat II.
+4. Modern technikák a térképészetben
 
 images
 
-Hogyan jellemeznéd Magyarország földrajzi fekvését?
+Mivel foglalkozik a térinformatika?
 
-Határozd meg a vitorlás hajó földrajzi helyzetét az 1. ábrán! Először olvasd le, melyik szélességi körön található, majd határozd meg a hosszúsági kört is. A szélességi és a hosszúsági kör metszéspontja egyértelműen megadja a pont két koordinátáját. A pont koordinátáinak felírásakor a megállapodás szerint először a szélességi kört, majd utána a hosszúsági kört írjuk fel. A keresett hajó koordinátái ennek alapján: é. sz. 40°, ny. h. 20°.
+Napjainkban az élet szinte minden területén használjuk a digitális technikákat. Okos telefonunk segítségével szinte bárhol megnézhetjük a legfrissebb híreket, néhány gombnyomással kifizethetjük számláinkat vagy mozijegyet vehetünk a délutáni filmvetítésre.
 
-images
-
-1. Földrajzi helyzet meghatározása a fokhálózat segítségével
-
-Ezután határozzuk meg térkép segítségével egy hazai település, Balatonalmádi helyét a Földön! (2. ábra).
-
-1.A térképen a keresőhálózat segítségével megkeressük a kérdéses települést, és leolvassuk, hogy melyik hosszúsági kör húzódik rajta keresztül.
-
-2.A hosszúsági körök számát az atlasz alsó és felső szélén tüntetik fel.
-
-3.Tudjuk, hogy Magyarország Greenwichtől keletre, tehát a keleti félgömbön fekszik, így a leolvasott hosszúság: k. h. 18°.
-
-4.A szélességi értékeket az atlasz jobb és bal szélén szerepeltetik.
-
-5.Hazánk az Egyenlítőtől északra, tehát az északi félgömbön helyezkedik el. A térkép szerint Balatonalmádi földrajzi szélessége: é. sz. 47°.
-
-Balatonalmádi földrajzi koordinátái: é. sz. 47°, k. h. 18°.
+Ma már egy-egy utazás, kirándulás megtervezéséhez is egyre ritkábban használunk térképet (1. ábra). Helyette inkább mobilalkalmazások segítségével veszszük meg a vonat- vagy repülőjegyünket, foglalunk szállást, és nézünk utána a túraútvonalaknak vagy a legfontosabb látnivalóknak. De hogyan is működnek ezeket az életünket megkönnyítő applikációk és milyen lehetőségek rejlenek bennük? A fejezet utolsó két leckéjében ezt fogjuk megvizsgálni.
 
 images
 
-2. Térképrészlet (Dunántúl)
+1. Utazástervezés térképpel
 
-Gyakorló feladatok
+Térinformatika és navigációs rendszerek
 
-1.Melyik városok fekszenek az alábbi földrajzi koordinátákon?
+A térinformatika, vagy más néven geoinformációs rendszer (GIS) a térképészet néhány évtizede kialakult ága. Lényege, hogy az adott területre vonatkozó térbeli adatokat (elhelyezkedés, alak, kapcsolat más objektumokkal) számítástechnikai eszközök használatával összegyűjtik, tárolják, kezelik, illetve feldolgozzák és megjelenítik.
 
-•é.sz. 40°; ny.h. 74°
+A navigációs rendszerek alapja is a térinformatika. Amikor a telefonunkon néhány pillanat alatt megtalálunk egy címet, vagy javaslatot kapunk egy útvonalra, a használt alkalmazás kifejlesztése mögött térinformatikusok és térképészek összehangolt munkája áll.
 
-•d.sz. 33°; k.h. 151°
-
-•é.sz. 60°; k.h. 30°
-
-•d.sz. 12°; ny.h. 77°
-
-•é.sz. 47°; k.h. 21°
-
-•é.sz. 64°; ny.h. 21°
-
-2.Milyen földrajzi koordinátákon fekszenek az alábbi földrajzi helyek?
-
-•Budapest
-
-•Kékestető
-
-•London
-
-•Róma
-
-•Szeged
-
-3.Hazánk és egyben Közép-Európa legnagyobb tava a Balaton. Van azonban hazánkban egy azonos nevű település is.
-
-a)Keresd meg az atlaszodban ezt a települést!
-
-b)Melyik megyében található?
-
-c)Hányas számú főúton lehet megközelíteni?
-
-4.Igazak-e vagy hamisak az alábbi állítások?
-
-a)Afrika területe a keleti és a nyugati félgömbön is megtalálható.
-
-b)Észak-Amerikán áthalad az Egyenlítő.
-
-c)Ausztrália északi része átnyúlik az északi félgömbre.
-
-d)Ázsia a nyugati félgömbön van.
-
-e)Dél-Amerika teljes területe a déli félgömbön található.
-
-Hazánk helye a Földön
-
-Magyarország az északi félgömbön, az Egyenlítőtől és az Északi-sarktól nagyjából azonos távolságra, Európa középső részén, egészen pontosan Kelet-Közép-Európában található (3. ábra). Hazánk szárazföldi ország, az óceántól és a tengerektől viszonylag távol, a Kárpát-medence középső részén helyezkedik el.
-
-A Kárpát-medencét hegységek veszik körül. Nyugat felől az Alpok lealacsonyodó vonulatai, míg északról és keletről a Kárpátok hegykoszorújának belső íve határolja. Délen a Dinári-hegyvidék zárja el az Adriai-tengertől.
+A tömegközlekedési járművek helyzetének folyamatos érzékelése is térinformatikai fejlesztések eredménye. A járatok menetrendjét és a járatsűrűséget a forgalmat befolyásoló tényezők minél teljesebb körű figyelembevételével tervezik meg. Ennek eredményeként láthatjuk online alkalmazásainkon utazás előtt vagy akár közben is a tömegközlekedési eszközök valódi indulási idejét, menetrendjét (2. ábra).
 
 images
 
-3. Hazánk helyzete Európában
+2. A BKK menetrend alkalmazása
+
+Távérzékelés
+
+A távérzékelés fogalmát az 1970-es években a műholdak működésével kapcsolatban kezdték el használni (3. ábra).
+
+A távérzékelés során a közelünkben vagy tágabb környezetünkben található területekről, tárgyakról, jelenségekről úgy gyűjtenek és rögzítenek adatokat, hogy a műholdak nincsenek közvetlen kapcsolatban a megfigyelés tárgyával.
+
+A műholdak a beérkezett jeleket átalakítják és a földi fogadóállomásra továbbítják. A digitális adattömeget számítógépeken futó feldolgozó programok teszik láthatóvá. Az így nyert képek nem azonosak a tárgyakról készített fotókkal, ezért ezeket megkülönböztetésül műholdfelvételeknek nevezzük.
+
+Ezekkel a mindennapi életben leggyakrabban az időjárás-jelentésekben találkozhatunk, de műholdfelvételek segítik a mezőgazdasággal, a környezetvédelemmel és a környezeti katasztrófákkal foglalkozó szakemberek munkáját is (4. ábra).
+
+images
+
+3. A Föld körül keringő műhold
+
+images
+
+4. A kaliforniai erdőtűzről készült műholdfelvétel
+
+images
+
+Navigációs alkalmazásokat nemcsak a hétköznapi életben használunk, a gazdaság különböző területeinek fejlődését is segíti a térinformatika.
+
+Háromdimenziós számítógépes modellek segítik például a bányászok munkáját, amikor ásványkincsek után kutatnak.
+
+Térinformatikai adatbázisokat hoznak létre a felszín alatti vizek mennyiségének felmérésekor is.
+
+Ezt a módszert alkalmazzák a térség- és településfejlesztés, a környezetvédelem és a vészhelyzetek kezelésének számos területén is.
 
 images RÖVID ÖSSZEFOGLALÁS
 
-Az Egyenlítőtől való távolságot a szélességi értékek, a kezdő hosszúsági körtől való távolságot a hosszúsági értékek határozzák meg fokokban kifejezve. A szélességi és a hosszúsági körök hálózata alkotja a földrajzi fokhálózatot. A Földön a földrajzi fokhálózat segítségével egyértelműen megadhatjuk egy pont koordinátáit.
+Mindennapi életünk ma már elképzelhetetlen a modern térképészeti eszközök, alkalmazások nélkül. Ezek kidolgozását a térinformatika tudománya végzi.
+
+A térinformatikai fejlesztések közül a hétköznapokban leggyakrabban a különböző utazástervező és navigációs rendszereket használjuk.
+
+A műholdfelvételek a várható időjárás követésében játszanak fontos szerepet, de a gazdasági élet más területein is nagy hasznukat vesszük.
 
 images ÚJ FOGALMAK
 
-szélességi kör, Ráktérítő, Baktérítő, Északi-sarkkör, Déli-sarkkör, Északi-sark, Déli-sark, hosszúsági kör, földrajzi fokhálózat
+térinformatika, műhold, távérzékelés, műholdfelvétel
