@@ -1,7 +1,7 @@
-Célfile: 	solutions\tools\NATjegyzetek\6_oszt\termeszettudomany\JEGYZET\OEBPS\Text\V_02.xhtml <body>
+Célfile: 	solutions\tools\NATjegyzetek\6_oszt\termeszettudomany\JEGYZET\OEBPS\Text\V_03.xhtml <body>
 Tantárgy:	Természettudomány
 Témakör:	
-Az Alpokalja
+A Dunántúli-domb- és hegyvidék
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
 A file egy epub része lesz, ezért nem lehet benne <br>  vagy <hr>
