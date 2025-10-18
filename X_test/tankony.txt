@@ -1,65 +1,79 @@
-4. Modern technikák a térképészetben
+5. Oldjuk meg együtt!
 
 images
 
-Mivel foglalkozik a térinformatika?
+Hogyan tervezzünk utazást a modern navigációs technika segítségével?
 
-Napjainkban az élet szinte minden területén használjuk a digitális technikákat. Okos telefonunk segítségével szinte bárhol megnézhetjük a legfrissebb híreket, néhány gombnyomással kifizethetjük számláinkat vagy mozijegyet vehetünk a délutáni filmvetítésre.
+Az előző órán megismerkedtetek a térképészet modern technikáival, a navigációs alkalmazások és a légifelvételek lehetőségeivel.
 
-Ma már egy-egy utazás, kirándulás megtervezéséhez is egyre ritkábban használunk térképet (1. ábra). Helyette inkább mobilalkalmazások segítségével veszszük meg a vonat- vagy repülőjegyünket, foglalunk szállást, és nézünk utána a túraútvonalaknak vagy a legfontosabb látnivalóknak. De hogyan is működnek ezeket az életünket megkönnyítő applikációk és milyen lehetőségek rejlenek bennük? A fejezet utolsó két leckéjében ezt fogjuk megvizsgálni.
+A mai órán az lesz a feladatotok, hogy ezeknek a technikáknak a felhasználásával saját magatok tervezzetek meg egy belföldi utazást. Itt most egy konkrét egynapos kirándulás tervezetét vesszük végig, de természetesen hazánk bármely térségét felfedezhetitek. Párban vagy 3-4 fős csoportokban dolgozzatok!
 
-images
+Ha a technikai feltételek nem megfelelőek, a feladatokat egyedül és akár egymástól függetlenül is megoldhatjátok otthon.
 
-1. Utazástervezés térképpel
+1.feladat: Keressétek meg a Google Föld programon Magyarországot és válaszoljatok az alábbi kérdésekre!
 
-Térinformatika és navigációs rendszerek
+a)Milyen jellegzetességek segítenek hazánk megtalálásában a műholdfelvételen?
 
-A térinformatika, vagy más néven geoinformációs rendszer (GIS) a térképészet néhány évtizede kialakult ága. Lényege, hogy az adott területre vonatkozó térbeli adatokat (elhelyezkedés, alak, kapcsolat más objektumokkal) számítástechnikai eszközök használatával összegyűjtik, tárolják, kezelik, illetve feldolgozzák és megjelenítik.
+b)Figyeld meg, hogyan változik az ábrázolt terület nagysága és részletessége akkor, amikor az egér görgőjével megváltoztatod a méretarányt!
 
-A navigációs rendszerek alapja is a térinformatika. Amikor a telefonunkon néhány pillanat alatt megtalálunk egy címet, vagy javaslatot kapunk egy útvonalra, a használt alkalmazás kifejlesztése mögött térinformatikusok és térképészek összehangolt munkája áll.
+2.feladat: Tervezzétek meg a programot a Google Térkép (Google Map) program segítségével (1. ábra)!
 
-A tömegközlekedési járművek helyzetének folyamatos érzékelése is térinformatikai fejlesztések eredménye. A járatok menetrendjét és a járatsűrűséget a forgalmat befolyásoló tényezők minél teljesebb körű figyelembevételével tervezik meg. Ennek eredményeként láthatjuk online alkalmazásainkon utazás előtt vagy akár közben is a tömegközlekedési eszközök valódi indulási idejét, menetrendjét (2. ábra).
+Írjátok be a keresőbe a kiindulópontot! Ez a mi esetünkben Budapest lesz.
 
-images
+Ezt követően kattintsatok az Útvonalterv fülre és írjátok be egymás alá a tervezett megállókat! Ebben a példában Budapestről fogunk Székesfehérvárra kirándulni bérelt autóbusszal. Visszafelé megállunk a Velencei-tónál, Gárdonyban is egy fürdőzésre. Új megállóhelyet a + fülre kattintva tudtok beírni.
 
-2. A BKK menetrend alkalmazása
+a)Hány kilométert és mennyi időt utaztok
 
-Távérzékelés
+•Budapest és Székesfehérvár között?
 
-A távérzékelés fogalmát az 1970-es években a műholdak működésével kapcsolatban kezdték el használni (3. ábra).
+•Székesfehérvár és Gárdony között?
 
-A távérzékelés során a közelünkben vagy tágabb környezetünkben található területekről, tárgyakról, jelenségekről úgy gyűjtenek és rögzítenek adatokat, hogy a műholdak nincsenek közvetlen kapcsolatban a megfigyelés tárgyával.
+•Gárdony és Budapest között?
 
-A műholdak a beérkezett jeleket átalakítják és a földi fogadóállomásra továbbítják. A digitális adattömeget számítógépeken futó feldolgozó programok teszik láthatóvá. Az így nyert képek nem azonosak a tárgyakról készített fotókkal, ezért ezeket megkülönböztetésül műholdfelvételeknek nevezzük.
-
-Ezekkel a mindennapi életben leggyakrabban az időjárás-jelentésekben találkozhatunk, de műholdfelvételek segítik a mezőgazdasággal, a környezetvédelemmel és a környezeti katasztrófákkal foglalkozó szakemberek munkáját is (4. ábra).
+b)Mikor értek vissza Budapestre, ha reggel 8 órakor indultok Budapestről és a székesfehérvári városnézésre 3 órát szántok, majd a Velencei-tónál 2 órát időztök?
 
 images
 
-3. A Föld körül keringő műhold
+1. A kirándulás tervezett útvonala a Google Maps alkalmazáson
+
+3.feladat: Keressétek meg és jelöljétek be a Google Föld alkalmazáson a nap során felkeresendő helyszíneket (2. ábra)!
+
+Írjátok be a Keresés cellába a település nevét!
+
+Tegyétek a menüsor elején található helyzetjelző tüskét a látnivaló helyére!
+
+Írjátok be a felugró Név ablakba a látnivaló nevét, majd mentsétek el az OK gombbal a beírást! (Ezután töröljétek ki a Keresést, hogy ne szerepeljen kétszer is a térképen a hely neve!)
 
 images
 
-4. A kaliforniai erdőtűzről készült műholdfelvétel
+2. A felkeresendő települések megjelenítése a Google Föld térképen
+
+4.feladat: Szervezzétek meg a kirándulást úgy, hogy vonattal utazik az osztály!
+
+Sajnos kiderült, hogy nem sikerült annyi osztálypénzt összegyűjteni, hogy külön buszt lehessen bérelni a kirándulásra, ezért tömegközlekedéssel, vonattal kell utaznia az osztálynak.
+
+A vonat menetrendjét az okostelefonra is letölthető MÁV alkalmazással tudhatjátok meg, de használhatjátok a https://elvira.mav-start.hu/ oldalt is (3. ábra). Mindkét esetben be kell írni a kiinduló és az érkező állomás nevét. Ezek a mi esetünkben a következők lesznek:
+
+•Budapest – Székesfehérvár
+
+•Székesfehérvár – Gárdony
+
+•Gárdony – Budapest.
+
+Be kell állítani az utazás dátumát is, majd a Menetrend gombra kattintva megjelenik a menetrend. Mivel ebben az esetben is reggel 8 óra körül szeretnénk elindulni, ennek megfelelően kell a vonatot is kiválasztani. Mivel 8 órakor több vonat is indul, kiválaszthatjuk azt is, hogy InterCityvel vagy gyorsvonattal szeretnénk utazni. Az indulási időpont előtt látható sárga nyílra kattintva megtekinthetjük az adott járat részleteit. Ugyanezen az oldalon a menetjegyet is meg tudjuk vásárolni.
+
+a)Nézzétek meg a menetrendet a másik két útvonalra is!
+
+b)Hol van a végállomása annak a vonatnak, amellyel Székesfehérvárra utaztok?
+
+c)Mi a kiinduló állomása annak a vonatnak, amelyre Gárdonyban szálltok fel Budapest felé?
+
+d)Hány kilométert tesz meg az osztály vonattal összesen?
+
+e)Mennyi időt tölt összesen az osztály vonatozással?
+
+f)Mennyiben változik a Budapestre visszaérkezési idő, ha nem busszal, hanem vonattal utaztok és Székesfehérváron továbbra is 3, Gárdonyban pedig 2 órát szeretnétek tölteni?
 
 images
 
-Navigációs alkalmazásokat nemcsak a hétköznapi életben használunk, a gazdaság különböző területeinek fejlődését is segíti a térinformatika.
-
-Háromdimenziós számítógépes modellek segítik például a bányászok munkáját, amikor ásványkincsek után kutatnak.
-
-Térinformatikai adatbázisokat hoznak létre a felszín alatti vizek mennyiségének felmérésekor is.
-
-Ezt a módszert alkalmazzák a térség- és településfejlesztés, a környezetvédelem és a vészhelyzetek kezelésének számos területén is.
-
-images RÖVID ÖSSZEFOGLALÁS
-
-Mindennapi életünk ma már elképzelhetetlen a modern térképészeti eszközök, alkalmazások nélkül. Ezek kidolgozását a térinformatika tudománya végzi.
-
-A térinformatikai fejlesztések közül a hétköznapokban leggyakrabban a különböző utazástervező és navigációs rendszereket használjuk.
-
-A műholdfelvételek a várható időjárás követésében játszanak fontos szerepet, de a gazdasági élet más területein is nagy hasznukat vesszük.
-
-images ÚJ FOGALMAK
-
-térinformatika, műhold, távérzékelés, műholdfelvétel
+3. Menetrendrészlet a https://elvira.mav-start.hu/ oldalról
