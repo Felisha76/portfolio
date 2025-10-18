@@ -1,69 +1,61 @@
-III. Környezetünk vizsgálata
-
-Kísérletezni mindenki szeret, a természet folyamatainak, az élővilág viselkedésének megfigyelése sokak kedvelt időtöltése. Az ismeretlen dolgok vizsgálata már az őskorban is vonzotta az embereket, számos felfedezés és találmány köszönhető ennek a velünk született kíváncsiságnak.
-
-A természeti jelenségeket, környezetünk élettelen elemeit és élőlényeit vizsgálhatjuk kint a szabadban, azaz terepen és laboratóriumban is.
-
-A természet megfigyeléséhez, a kísérletek kivitelezéséhez azonban számos fontos ismeretet el kell sajátítanunk. Hogyan tudhatjuk meg, hogy egy folyóvíz vagy egy erdő talaja szennyezett-e? Milyen információkat kaphatunk a növényzet megfigyelésével az élőhelyéről? Hogyan vizsgáljuk a gerinctelen és a gerinces állatokat?
-
-A laboratóriumban számos fontos szabályt be kell tartanunk testi épségünk védelmében és ahhoz, hogy kísérleteink sikeresek legyenek. Melyek ezek a szabályok? Milyen anyagokkal és eszközökkel kell dolgoznunk? Ebben a fejezetben a fenti kérdések mindegyikére igyekszünk választ találni.
-
-A kísérletezés szerepe az életünkben
-
-Ha kísérletezésről esik szó, legtöbbünknek tudósok, laboratóriumok és világraszóló felfedezések jutnak az eszünkbe. Abba azonban kevesebben gondolnak bele, hogy a kisgyerekek is megfigyelések, tapasztalás útján fedezik fel környezetüket (1. ábra).
-
-Számos tudományos kutatás bizonyítja azt is, hogy az iskolában az elméleti tudás elmélyítésére, a gyakorlati készségek megszerzésére a legjobb módszer a saját tapasztalaton alapuló vizsgálódás, kísérletezés. A hétköznapok során is számtalan esetben kísérletezünk, például, amikor egy új étel receptjét vagy egy új barkácsolási technikát próbálunk ki.
-
-A kísérletezés tehát nem csak a tudósok kiváltsága, hanem a tanulás fontos módszere is, nem csupán az iskolában, hanem a mindennapi életben is.
+2. Az élettelen környezeti tényezők vizsgálata a természetben
 
 images
 
-1. A kisgyerekek is megfigyelés, kísérletezés útján ismerik meg környezetüket
+Hogyan tudjuk meghatározni a vizek és a talajok tulajdonságait terepi körülmények között?
+
+Mint ahogy az előző leckében szó volt róla, a természet megfigyelését, kísérletek végzését terepi és laboratóriumi környezetben is lehet végezni. Ebben és a következő leckében a természetben végezhető megfigyelések legfontosabb csoportjaival ismerkedhettek meg.
+
+A természetben történő vizsgálódások során foglalkozhatunk az élettelen környezeti tényezők tulajdonságainak meghatározásával és az élőlények megfigyelésével, elemzésével, csoportosításával. Az élő szervezeteket az különbözteti meg az élettelenektől, hogy életjelenségeket mutatnak.
+
+Az élettelen környezeti tényezők közül leggyakrabban a vizet és a talajt szoktuk terepen vizsgálni, amikor egyszerű kísérletekkel meghatározzuk bizonyos tulajdonságaikat. A vízen és a talajon kívül nagyon fontos a levegő vizsgálata is, hiszen ezt csak terepi körülmények között tudjuk megtenni. Vizsgálata rendkívül sok, az ember egészségét befolyásoló tényezőre (por, pollen, szennyező anyagok stb.) kiterjed.
+
+Terepi vízvizsgálat
+
+Napjainkban a vizek elszennyezése globális problémának számít. Környezetünkben szinte már nincs is olyan vízfolyás vagy tó, amelyben ne találnánk valamilyen szennyező anyagot. Ezeknek az anyagoknak a beazonosítása fontos feladat a vízi élővilág és az emberi egészség megőrzése érdekében.
+
+Egyszerű terepi vizsgálatokkal Ti is információt kaphattok a lakóhelyetek, iskolátok közelében lévő vizek állapotáról. A vízhőmérsékletet hőmérővel ellenőrizhetitek. Ha a víz melegebb, mint az a levegő hőmérséklete alapján várható lenne, elképzelhető, hogy valahol nagyobb mennyiségű meleg vizet eresztenek a vizsgált vízbe, és ez okozza a hőmérséklet-emelkedést. Ezt a folyamatot hőszennyezésnek nevezzük.
 
 images
 
-A legenda szerint Newton egy almafa alatt ülve éppen azon gondolkodott, hogy a Holdat milyen erő tartja Föld körüli pályán, amikor egy alma a fejére esett. Ennek a tapasztalatnak az alapján jött rá arra, hogy kell lennie egy olyan erőnek, ami miatt a testek mindig lefelé esnek. Rájött, hogy ez az erő tartja a Holdat is a Föld körül.
+1. Elszíneződött lakmuszpapír
+
+A vizek fontos tulajdonsága a savasság is. A kívánatosnál savanyúbb vagy lúgosabb víz káros hatással lehet a vízi élővilágra, pusztulását okozhatja. A savasságot indikátorpapírral vizsgálhatjátok, amely a vízbe mártva elszíneződik (1. ábra). Egy színskálával összehasonlítva könnyen megállapítható, mennyire savas a vizsgált víz.
+
+A vízben található egyéb szennyező anyagokat legkönnyebben vízvizsgáló tesztdoboz segítségével mutathatjuk ki (2. ábra). Ilyenkor a vízmintánkhoz a leírásban meghatározott mennyiségű vegyszert adunk, amely hatására a vízmintánk elszíneződik. Ha a színét összehasonlítjuk egy színskálával, megtudjuk, mennyi szennyező anyagot tartalmaz a vizsgált víz. Ezzel a módszerrel leggyakrabban a vizekbe kerülő tápanyagok mennyiségét szoktuk vizsgálni. Ezek az anyagok a vízi növényzet túlzott elszaporodását és végső soron a vizek elmocsarasodását, a meder feltöltődését okozzák. Ha ilyen anyagokat találunk a vizekben, arra gyanakodhatunk, hogy a közelben nem megfelelő módon műtrágyáznak vagy a vízparti házak nincsenek szennyvízcsatorna-hálózatra kötve.
 
 images
 
-images
+2. Vízvizsgáló tesztdoboz
 
-2. A papírt is az ókori Kínában találták fel
+Talajvizsgálat terepen
 
-Kísérletezés a múltban
-
-Az emberiség az őskortól kezdve kísérletezik, ennek köszönhetően jutott el a tudomány és a technológia a mai, soha nem látott szintre.
-
-Az őskori ember a természet megfigyelésével szerzett tapasztalatait elsősorban még a túlélés és a mindennapi élet megkönnyítése érdekében használta, gondoljunk csak a tűz vagy a kerék feltalálására. A vadon élő növények termeszthetőségére, az állatok háziasítására tett megfigyelések miatt vált lehetővé a letelepedett életmód és a folyamatos táplálékellátást biztosító mezőgazdaság elterjedése.
-
-A nagy ókori kultúrák (pl. az ókori görög, római, kínai birodalmak) gondolkodói számos tudományterület, például a matematika, a csillagászat, az orvostudomány alapjait fektették le. Találmányaik, felfedezéseik nagy részét ma is használjuk. Tudtad, hogy a papírt, a porcelánt, a puskaport az ókori Kínában fedezték fel (2. ábra)? A későbbi korok tudósai sok esetben ókori elődeik kísérletekkel bizonyított elméleteit továbbgondolva jutottak el újabb felfedezésekhez. Arra is van példa, hogy az ókori elméleteket később éppen kísérletek segítségével cáfolták meg.
+A talajok megfigyelésének, vizsgálatának kevésbé a szennyezések kimutatása a célja, mint inkább a talaj minőségének, tulajdonságainak a meghatározása. A talaj színe összefüggésben van a termőképességgel, minél sötétebb, általában annál több humuszt tartalmaz, annál termékenyebb (3. ábra).
 
 images
 
-3. Modern laboratórium
+3. A talaj színe a termőképességéről ad információt
+
+A talajok jellemzője a mésztartalom is. Ha mészben gazdag talajra sósavat cseppentünk, a két anyag heves pezsgés kíséretében kölcsönhatásba lép egymással (4. ábra).
 
 images
 
-4. Terepi vizsgálat
+4. A talajok mésztartalmának vizsgálata
 
-A tudományok fejlődése a 16−17. században kapott új lendületet. Ezt az időszakot tudományos-technológiai forradalomnak is nevezzük. Ebben a korszakban, főleg az ókori felfedezésekre támaszkodva, számos tudós végzett tudományos kísérleteket és kapott újabb, pontosabb eredményeket. Sok teljesen új tudományterület is ekkor jött létre. A kor legjelentősebb tudósai Kopernikusz, Galilei, Kepler és Newton voltak, akik a matematika, a fizika és a csillagászat területén alkottak maradandót.
+A talaj összetételét, vagyis azt, hogy inkább homokban vagy inkább agyagban gazdag, szintén könnyen megállapíthatjuk. Vízzel összedolgozva a talajt különböző alakzatokat formálhatunk belőle. Ha csak gombócot tudunk kialakítani, akkor inkább homokos összetételű a talajmintánk, ha viszont nudlit és perecet is tudunk formálni belőle, akkor agyagos talajjal van dolgunk.
 
-A modern korok tudósai ugyanúgy megfigyeléseket, kísérleteket használnak kutatásaikhoz, mint elődeik. Természetesen a technikai hátteret, az alkalmazott módszereket és eszközöket össze sem lehet hasonlítani a régebbi korokéval (3. ábra). Egyvalami azonban nem változott: eredményeket csak gondolkodással, vizsgálódással, kísérletezéssel lehet elérni.
-
-A vizsgálódások, kísérletek helyszínei
-
-Megfigyeléseket, kísérleteket végezhetünk a természetben és különböző eszközökkel, műszerekkel felszerelt laboratóriumokban is.
-
-Vannak olyan vizsgálatok, amelyeket csak terepi körülmények között lehet elvégezni, mivel a mintavétel és a szállítás során változások állhatnak be a mérendő tulajdonságokban (4. ábra). Sok esetben azonban terepi körülmények között nem végezhetők olyan pontos mérések, mint a laboratórium modern műszereivel. Ebben az esetben a természetben vett mintákat a laboratóriumba szállítjuk, ott megfelelő módon előkészítjük, és vizsgálatoknak vetjük alá.
+A talajok vízellátása a növényzet szempontjából fontos tulajdonság, hiszen a növények a vizet a gyökérzetükön keresztül a talajból veszik fel. Ha a talaj gyorsan átereszti a vizet és az elszivárog, a növényzet nem jut elég vízhez. Ha viszont nem ereszti át a vizet, hanem hosszú időn keresztül megtartja, kiszorítva a talajban lévő levegőt, az a növény rothadásához vezethet. A talajok víztartó képességét terepi körülmények között is könnyen megvizsgálhatjuk. Szűrőpapírral bélelt tölcsérbe kis mennyiségű talajmintát helyezünk, majd vizet csorgatunk át rajta. A vizet mérőhengerbe felfogjuk és leolvassuk, hogy a talaj adott idő alatt mennyi vizet eresztett át.
 
 images RÖVID ÖSSZEFOGLALÁS
 
-Az emberiség már az őskor óta kísérletezik, aminek számos fontos, ma is használt találmányt köszönhetünk.
+Terepi vizsgálódásaink során foglalkozhatunk a környezet élettelen elemeivel és az élővilággal is.
 
-Kísérletezni nem csak a tudósok szoktak, mindennapi életünknek is fontos részét képezik a megfigyelések, kísérletek.
+Az élettelen tényezők közül elsősorban a vizeket és a talajokat szoktuk vizsgálni.
 
-Vizsgálódásaink helyszíne lehet a természet, vagy a műszerekkel, eszközökkel felszerelt laboratórium.
+A vízzel történő kísérleteket általában a víz minőségének meghatározása céljából végezzük. Leggyakrabban a víz hőmérsékletét, savasságát és szennyezőanyag-tartalmát szoktuk mérni.
+
+A talajvizsgálatok legfőbb célja a talaj típusának, minőségének a meghatározása. Ehhez a talaj színét, mésztartalmát, összetételét és vízáteresztő képességét határozzuk meg kísérleti úton.
 
 images ÚJ FOGALMAK
 
-tudományos-technológiai forradalom, terepi vizsgálat, laboratóriumi kísérlet
+hőszennyezés, indikátorpapír, vízvizsgáló tesztdoboz, vízáteresztő képesség
