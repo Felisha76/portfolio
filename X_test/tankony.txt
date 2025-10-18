@@ -1,61 +1,65 @@
-2. Az élettelen környezeti tényezők vizsgálata a természetben
+3. Az élőlények vizsgálata a természetben
 
 images
 
-Hogyan tudjuk meghatározni a vizek és a talajok tulajdonságait terepi körülmények között?
+Hogyan viselkedjünk az élőlények terepi megfigyelésekor?
 
-Mint ahogy az előző leckében szó volt róla, a természet megfigyelését, kísérletek végzését terepi és laboratóriumi környezetben is lehet végezni. Ebben és a következő leckében a természetben végezhető megfigyelések legfontosabb csoportjaival ismerkedhettek meg.
+Az élettelen környezeti tényezők vizsgálata mellett a terepi megfigyelések másik célpontját az élőlények jelentik.
 
-A természetben történő vizsgálódások során foglalkozhatunk az élettelen környezeti tényezők tulajdonságainak meghatározásával és az élőlények megfigyelésével, elemzésével, csoportosításával. Az élő szervezeteket az különbözteti meg az élettelenektől, hogy életjelenségeket mutatnak.
+A növények és állatok megfigyelésének is megvannak a módszerei, amelyek alkalmazásával nagyon sok fontos információhoz juthatunk az egészségi állapotukról és élőhelyük minőségéről. A megfigyelések során azonban nagyon fontos, hogy ne ártsunk a természetnek, ne tapossuk le a növényzetet, ne zavarjuk az állatokat, próbáljunk észrevétlenek maradni.
 
-Az élettelen környezeti tényezők közül leggyakrabban a vizet és a talajt szoktuk terepen vizsgálni, amikor egyszerű kísérletekkel meghatározzuk bizonyos tulajdonságaikat. A vízen és a talajon kívül nagyon fontos a levegő vizsgálata is, hiszen ezt csak terepi körülmények között tudjuk megtenni. Vizsgálata rendkívül sok, az ember egészségét befolyásoló tényezőre (por, pollen, szennyező anyagok stb.) kiterjed.
+A növényzet terepi vizsgálata
 
-Terepi vízvizsgálat
+Kirándulásaink során rengeteg növénnyel találkozunk, néhányat virágáról, terméséről fel is ismerünk, gyógynövényként akár be is gyűjthetjük őket. Az ismeretlen növények meghatározása nem könnyű feladat, sok gyakorlást igényel (1. ábra).
 
-Napjainkban a vizek elszennyezése globális problémának számít. Környezetünkben szinte már nincs is olyan vízfolyás vagy tó, amelyben ne találnánk valamilyen szennyező anyagot. Ezeknek az anyagoknak a beazonosítása fontos feladat a vízi élővilág és az emberi egészség megőrzése érdekében.
-
-Egyszerű terepi vizsgálatokkal Ti is információt kaphattok a lakóhelyetek, iskolátok közelében lévő vizek állapotáról. A vízhőmérsékletet hőmérővel ellenőrizhetitek. Ha a víz melegebb, mint az a levegő hőmérséklete alapján várható lenne, elképzelhető, hogy valahol nagyobb mennyiségű meleg vizet eresztenek a vizsgált vízbe, és ez okozza a hőmérséklet-emelkedést. Ezt a folyamatot hőszennyezésnek nevezzük.
+A növényhatározásban segítségünkre vannak különböző növényhatározó könyvek és telefonos alkalmazások is, amelyeket terepi vizsgálódásaink alkalmával jól tudunk használni (2. ábra). A növényhatározókban a növényeket szerveik formája, kinézete alapján csoportosítják, így ezek megfigyelésével vezetnek el a keresett növényig. Az alkalmazások a terepen lefényképezett növényt hasonlítják össze az adatbázisukban lévő növényekkel és ennek alapján lehet kiválasztani az általunk vizsgált példányt.
 
 images
 
-1. Elszíneződött lakmuszpapír
-
-A vizek fontos tulajdonsága a savasság is. A kívánatosnál savanyúbb vagy lúgosabb víz káros hatással lehet a vízi élővilágra, pusztulását okozhatja. A savasságot indikátorpapírral vizsgálhatjátok, amely a vízbe mártva elszíneződik (1. ábra). Egy színskálával összehasonlítva könnyen megállapítható, mennyire savas a vizsgált víz.
-
-A vízben található egyéb szennyező anyagokat legkönnyebben vízvizsgáló tesztdoboz segítségével mutathatjuk ki (2. ábra). Ilyenkor a vízmintánkhoz a leírásban meghatározott mennyiségű vegyszert adunk, amely hatására a vízmintánk elszíneződik. Ha a színét összehasonlítjuk egy színskálával, megtudjuk, mennyi szennyező anyagot tartalmaz a vizsgált víz. Ezzel a módszerrel leggyakrabban a vizekbe kerülő tápanyagok mennyiségét szoktuk vizsgálni. Ezek az anyagok a vízi növényzet túlzott elszaporodását és végső soron a vizek elmocsarasodását, a meder feltöltődését okozzák. Ha ilyen anyagokat találunk a vizekben, arra gyanakodhatunk, hogy a közelben nem megfelelő módon műtrágyáznak vagy a vízparti házak nincsenek szennyvízcsatorna-hálózatra kötve.
+1. Terepi növényhatározás
 
 images
 
-2. Vízvizsgáló tesztdoboz
+2. Növényhatározó könyv
 
-Talajvizsgálat terepen
+Élőhelyek vizsgálata
 
-A talajok megfigyelésének, vizsgálatának kevésbé a szennyezések kimutatása a célja, mint inkább a talaj minőségének, tulajdonságainak a meghatározása. A talaj színe összefüggésben van a termőképességgel, minél sötétebb, általában annál több humuszt tartalmaz, annál termékenyebb (3. ábra).
+Egy terület megismerése során a növényzet a tájnak az a jellemzője, amit elsőként észreveszünk és viszonylag könnyen be tudunk azonosítani. Az, hogy éppen erdőben, réten vagy vizes élőhelyen járunk, mindenki számára egyértelmű. A növényzet részletesebb vizsgálatával azonban nem csak azt tudjuk megmondani, hogy milyen élőhelyen vagyunk, hanem fontos információkat kaphatunk a terület jellemzőiről is. Nem minden növény tud ugyanis mindenhol megélni. Vannak például kifejezetten napfénykedvelő növények, amelyekkel árnyékos erdei környezetben nem találkozunk. A nedves élőhelyet igénylő vízparti növényzet soha nem fog megjelenni a napfénynek kitett, száraz területeken. Vannak olyan növények is, amelyek a legtöbb élőhelyen jól érzik magukat. Vagyis az egyes növények elterjedése egy területen megmutatja, hogy milyen környezeti adottságú élőhelyen járunk.
+
+A növényzet nem csupán az élőhely típusát jelezheti, hanem tájékoztatást adhat annak változásáról is. Ezt a folyamatot nevezzük bioindikációnak. Ha egy korábban nedves terület például a klímaváltozás hatására elkezd kiszáradni, eltűnnek onnan a nedvességkedvelő növények, ugyanakkor egyre nagyobb számban fogunk találkozni a szárazabb élőhelyek jellemző élőlényeivel. A növények tehát eltűnésükkel vagy megjelenésükkel jelzik nekünk a környezetben természetes úton vagy az ember hatására bekövetkező változásokat.
+
+A növényfajok jelenléte egy adott élőhelyen utal az élőhely természetközeliségére is, vagyis arra, hogy az adott területet mennyire alakította át vagy használja az ember. Ahol sok zavarástűrő fajjal találkozunk, ott valószínűsíthetően sokfajta emberi hatás éri a területet. Ilyen hatás lehet a taposás egy sétaút mellett vagy a rendszeres fakivágás egy erdőben. A minimális emberi zavarással érintett élőhelyeken viszont nagyobb a természetességet jelző fajok száma, amelyek között sok a természetvédelmi szempontból értékes, védett faj.
+
+Az állatok terepi vizsgálata
+
+Az állatokat terepi körülmények között általában sokkal nehezebb megfigyelni, mint a növényeket, hiszen rejtőzködnek, és csak ritkán kerülnek a szemünk elé.
+
+A rovarok, pókok, vízi gerinctelenek megfigyelésekor óvatosan befoghatjátok az állatokat, gyűjtőedénybe téve nagyítóval megvizsgálhatjátok a testtájaikat, mozgásukat, esetleg táplálkozásukat. A megfigyelések után minden esetben engedjétek vissza a befogott állatot a természetbe!
+
+Gerincesek esetében kerüljétek az állatok megérintését, inkább csak távolról figyeljétek meg testfelépítésüket, viselkedésüket! Ha van rá lehetőségetek, készítsetek róluk fotót, videót, amit aztán együtt kielemezhettek (3. ábra).
 
 images
 
-3. A talaj színe a termőképességéről ad információt
+3. Madármegfigyelés
 
-A talajok jellemzője a mésztartalom is. Ha mészben gazdag talajra sósavat cseppentünk, a két anyag heves pezsgés kíséretében kölcsönhatásba lép egymással (4. ábra).
+A madarak megfigyelésének, vizsgálatának speciális módja a madárgyűrűzés.
 
-images
+A gyűrűzés során a madarakat befogják, megvizsgálják, majd egyedi kóddal ellátott gyűrűt helyeznek rájuk. A kód alapján a gyűrűzéstől akár több ezer kilométerre is be tudják azonosítani a madarakat, így fontos információkhoz lehet jutni a vándorlási szokásaikról, állapotuk változásáról.
 
-4. A talajok mésztartalmának vizsgálata
-
-A talaj összetételét, vagyis azt, hogy inkább homokban vagy inkább agyagban gazdag, szintén könnyen megállapíthatjuk. Vízzel összedolgozva a talajt különböző alakzatokat formálhatunk belőle. Ha csak gombócot tudunk kialakítani, akkor inkább homokos összetételű a talajmintánk, ha viszont nudlit és perecet is tudunk formálni belőle, akkor agyagos talajjal van dolgunk.
-
-A talajok vízellátása a növényzet szempontjából fontos tulajdonság, hiszen a növények a vizet a gyökérzetükön keresztül a talajból veszik fel. Ha a talaj gyorsan átereszti a vizet és az elszivárog, a növényzet nem jut elég vízhez. Ha viszont nem ereszti át a vizet, hanem hosszú időn keresztül megtartja, kiszorítva a talajban lévő levegőt, az a növény rothadásához vezethet. A talajok víztartó képességét terepi körülmények között is könnyen megvizsgálhatjuk. Szűrőpapírral bélelt tölcsérbe kis mennyiségű talajmintát helyezünk, majd vizet csorgatunk át rajta. A vizet mérőhengerbe felfogjuk és leolvassuk, hogy a talaj adott idő alatt mennyi vizet eresztett át.
+A madárgyűrűzést bárki kipróbálhatja a különböző madármegfigyelő és -gyűrűző táborokban.
 
 images RÖVID ÖSSZEFOGLALÁS
 
-Terepi vizsgálódásaink során foglalkozhatunk a környezet élettelen elemeivel és az élővilággal is.
+Terepi körülmények között lehetőségünk van növények és állatok tanulmányozására is.
 
-Az élettelen tényezők közül elsősorban a vizeket és a talajokat szoktuk vizsgálni.
+A növények meghatározása növényhatározó vagy telefonos alkalmazás segítségével történik.
 
-A vízzel történő kísérleteket általában a víz minőségének meghatározása céljából végezzük. Leggyakrabban a víz hőmérsékletét, savasságát és szennyezőanyag-tartalmát szoktuk mérni.
+A gerinctelen állatokat gyűjtőedénybe téve, nagyítóval végezhetünk megfigyeléseket. A befogott állatokat mindig engedjétek vissza a természetbe!
 
-A talajvizsgálatok legfőbb célja a talaj típusának, minőségének a meghatározása. Ehhez a talaj színét, mésztartalmát, összetételét és vízáteresztő képességét határozzuk meg kísérleti úton.
+A gerinces állatok érintése, befogása nem javasolt és a legtöbb esetben nem is lehetséges. Őket inkább távolról, távcső segítségével vizsgálhatjuk, fényképezhetjük.
+
+A megfigyelések során mindig figyeljünk arra, hogy ne zavarjuk meg az élőlényeket, próbáljunk csendben, észrevétlenül vizsgálódni!
 
 images ÚJ FOGALMAK
 
-hőszennyezés, indikátorpapír, vízvizsgáló tesztdoboz, vízáteresztő képesség
+növényhatározó, bioindikáció, zavarástűrő faj, természetességet jelző faj, madárgyűrűzés
