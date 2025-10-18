@@ -1,3 +1,167 @@
+// === Általános dropdown nézetváltó logika mindkét szekcióhoz ===
+document.addEventListener('DOMContentLoaded', function() {
+    // --- Szekciók beállítása ---
+    const sections = [
+        {
+            id: 'docs',
+            iframeRow: document.querySelector('.iframe-row'),
+            rightHalf: document.querySelector('.iframe-half-right'),
+            leftHalf: document.querySelector('.iframe-half-left'),
+            frameId: 'docs-frame02',
+            navUrl: 'JEGYZET/OEBPS/Text/nav.xhtml',
+            dropdownContainer: null,
+            dropdownSelect: null
+        },
+        {
+            id: 'drive',
+            iframeRow: document.querySelectorAll('.iframe-row')[1],
+            rightHalf: document.querySelectorAll('.iframe-half-right')[1],
+            leftHalf: document.querySelectorAll('.iframe-half-left')[1],
+            frameId: 'drive-frame02',
+            navUrl: null, // dinamikusan választjuk ki
+            dropdownContainer: null,
+            dropdownSelect: null,
+            sourceSelect: null // tankönyv/munkafüzet/atlasz választó
+        }
+    ];
+
+    // --- Források az alsó szekcióhoz ---
+    const driveSources = [
+        {
+            label: 'Tankönyv',
+            navUrl: 'TK/OEBPS/navigation.xhtml'
+        },
+        {
+            label: 'Munkafüzet',
+            navUrl: 'MF/OEBPS/navigation.xhtml'
+        },
+        // Történelem esetén atlasz is
+        {
+            label: 'Atlasz',
+            navUrl: 'AT/OEBPS/navigation.xhtml'
+        }
+    ];
+
+    // --- Gomb hozzáadása ---
+    const header = document.querySelector('.header');
+    if (header && !document.getElementById('dropdown-switcher')) {
+        const btn = document.createElement('button');
+        btn.id = 'dropdown-switcher';
+        btn.title = 'Váltás lista/legördülő menü nézet között';
+        btn.innerHTML = '<span id="dropdown-switcher-icon">📑</span>';
+        btn.style.marginRight = '10px';
+        header.appendChild(btn);
+    }
+    const dropdownBtn = document.getElementById('dropdown-switcher');
+    let dropdownMode = false;
+
+    // --- Dropdown generálása nav.xhtml alapján ---
+    function createDropdownFromNav(section, navUrl, targetFrameId) {
+        // Ha már létezik, ne generáljuk újra
+        if (section.dropdownContainer) return;
+        section.dropdownContainer = document.createElement('div');
+        section.dropdownContainer.className = 'toc-dropdown-container';
+        const label = document.createElement('span');
+        label.className = 'toc-dropdown-label';
+        label.textContent = 'Tartalomjegyzék:';
+        section.dropdownSelect = document.createElement('select');
+        section.dropdownSelect.className = 'toc-dropdown';
+        section.dropdownSelect.innerHTML = '<option value="">Válassz fejezetet...</option>';
+        // Meghatározzuk az alap útvonalat a nav.xhtml alapján
+        const basePath = navUrl.replace(/[^\/]+$/, '');
+        fetch(navUrl)
+            .then(resp => resp.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = doc.querySelectorAll('nav[epub\\:type="toc"] li a');
+                links.forEach(link => {
+                    const option = document.createElement('option');
+                    let href = link.getAttribute('href');
+                    if (href && !/^([a-z]+:|\/)/i.test(href)) {
+                        href = basePath + href;
+                    }
+                    option.value = href;
+                    option.textContent = link.textContent;
+                    if (link.style && link.style.color === 'grey') {
+                        option.disabled = true;
+                        option.style.color = '#aaa';
+                    }
+                    section.dropdownSelect.appendChild(option);
+                });
+            });
+        section.dropdownSelect.addEventListener('change', function() {
+            if (this.value) {
+                const frame = document.getElementById(targetFrameId);
+                if (frame) frame.src = this.value;
+            }
+        });
+        section.dropdownContainer.appendChild(label);
+        section.dropdownContainer.appendChild(section.dropdownSelect);
+        if (section.rightHalf) section.rightHalf.insertBefore(section.dropdownContainer, section.rightHalf.firstChild);
+    }
+
+    // --- Forrásválasztó dropdown az alsó szekcióhoz ---
+    function createSourceSelector(section) {
+        if (section.sourceSelect) return;
+        section.sourceSelect = document.createElement('select');
+        section.sourceSelect.className = 'toc-dropdown';
+        section.sourceSelect.style.marginRight = '10px';
+        section.sourceSelect.innerHTML = '<option value="">Válassz forrást...</option>';
+        driveSources.forEach(src => {
+            const option = document.createElement('option');
+            option.value = src.navUrl;
+            option.textContent = src.label;
+            section.sourceSelect.appendChild(option);
+        });
+        section.sourceSelect.addEventListener('change', function() {
+            // Előző fejezet dropdown törlése
+            if (section.dropdownContainer && section.dropdownContainer.parentNode) {
+                section.dropdownContainer.parentNode.removeChild(section.dropdownContainer);
+                section.dropdownContainer = null;
+                section.dropdownSelect = null;
+            }
+            if (this.value) {
+                createDropdownFromNav(section, this.value, section.frameId);
+            }
+        });
+        // A jobb oldali frame tetejére tesszük
+        if (section.rightHalf) section.rightHalf.insertBefore(section.sourceSelect, section.rightHalf.firstChild);
+    }
+
+    // --- Nézetváltás mindkét szekcióban ---
+    function setDropdownMode(enable) {
+        dropdownMode = enable;
+        sections.forEach(section => {
+            if (section.iframeRow) {
+                if (enable) {
+                    section.iframeRow.classList.add('dropdown-mode');
+                    if (section.id === 'docs') {
+                        createDropdownFromNav(section, section.navUrl, section.frameId);
+                        if (section.dropdownContainer) section.dropdownContainer.style.display = 'flex';
+                    } else if (section.id === 'drive') {
+                        createSourceSelector(section);
+                        if (section.sourceSelect) section.sourceSelect.style.display = 'inline-block';
+                    }
+                } else {
+                    section.iframeRow.classList.remove('dropdown-mode');
+                    if (section.dropdownContainer) section.dropdownContainer.style.display = 'none';
+                    if (section.sourceSelect) section.sourceSelect.style.display = 'none';
+                }
+            }
+        });
+    }
+
+    // --- Gomb esemény ---
+    if (dropdownBtn) {
+        dropdownBtn.addEventListener('click', function() {
+            setDropdownMode(!dropdownMode);
+            const icon = document.getElementById('dropdown-switcher-icon');
+            if (icon) icon.textContent = dropdownMode ? '📃' : '📑';
+        });
+    }
+    setDropdownMode(false);
+});
 // === Dropdown/List nézetváltó logika ===
 // Általánosítható, hogy drive-frame-re is működjön majd
 document.addEventListener('DOMContentLoaded', function() {
