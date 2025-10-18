@@ -1,79 +1,95 @@
-5. Oldjuk meg együtt!
+V. Hazai tájakon
+
+Biztosan gondoltál már arra, milyen jó lenne beutazni Magyarországot, megismerni, milyenek a lakóhelyedtől távolabb fekvő országrészek. Ebben a fejezetben az ország különböző nagytájairól, azok legfontosabb természeti jellemzőiről fogsz olvasni.
+
+Minden nagytájnál megismerkedsz a terület elhelyezkedésével, kialakulásával, földtani felépítésével. Szó lesz hazánk egyes területeinek éghajlati különbségeiről és ennek okairól. Vízrajzi szempontból is megvizsgáljuk hazánk tájait, így megismerheted a legfontosabb folyóinkat és tavainkat. A természeti adottságok mellett minden nagytájnál bemutatjuk a legfontosabb városokat, azok néhány nevezetességét is.
+
+Külön leckében foglalkozunk hazánk gyönyörű fővárosával, Budapesttel.
+
+Mivel ebben a fejezetben nagyon sok új földrajzi név található, mindenképpen javasoljuk az atlasz folyamatos használatát a tanulás során.
+
+Ha pedig lehetőségetek van rá, mozduljatok ki, szervezzetek családi vagy osztálykirándulást lakóhelyetek közelebbi és távolabbi környezetébe! Menjetek túrázni a dombvidékekre vagy a középhegységekbe, ismerjétek meg az alföldi városokat! Egyszóval: fedezzétek fel Magyarországot!
+
+1. Hazánk nagytájai
 
 images
 
-Hogyan tervezzünk utazást a modern navigációs technika segítségével?
+Hogyan befolyásolja hazánk adottságait a földrajzi helyzet?
 
-Az előző órán megismerkedtetek a térképészet modern technikáival, a navigációs alkalmazások és a légifelvételek lehetőségeivel.
+Magyarország Kelet-Közép-Európában található, a Kárpát-medence középső részén (1. ábra), közel azonos távolságra az Egyenlítőtől és az Északi-sarktól.
 
-A mai órán az lesz a feladatotok, hogy ezeknek a technikáknak a felhasználásával saját magatok tervezzetek meg egy belföldi utazást. Itt most egy konkrét egynapos kirándulás tervezetét vesszük végig, de természetesen hazánk bármely térségét felfedezhetitek. Párban vagy 3-4 fős csoportokban dolgozzatok!
-
-Ha a technikai feltételek nem megfelelőek, a feladatokat egyedül és akár egymástól függetlenül is megoldhatjátok otthon.
-
-1.feladat: Keressétek meg a Google Föld programon Magyarországot és válaszoljatok az alábbi kérdésekre!
-
-a)Milyen jellegzetességek segítenek hazánk megtalálásában a műholdfelvételen?
-
-b)Figyeld meg, hogyan változik az ábrázolt terület nagysága és részletessége akkor, amikor az egér görgőjével megváltoztatod a méretarányt!
-
-2.feladat: Tervezzétek meg a programot a Google Térkép (Google Map) program segítségével (1. ábra)!
-
-Írjátok be a keresőbe a kiindulópontot! Ez a mi esetünkben Budapest lesz.
-
-Ezt követően kattintsatok az Útvonalterv fülre és írjátok be egymás alá a tervezett megállókat! Ebben a példában Budapestről fogunk Székesfehérvárra kirándulni bérelt autóbusszal. Visszafelé megállunk a Velencei-tónál, Gárdonyban is egy fürdőzésre. Új megállóhelyet a + fülre kattintva tudtok beírni.
-
-a)Hány kilométert és mennyi időt utaztok
-
-•Budapest és Székesfehérvár között?
-
-•Székesfehérvár és Gárdony között?
-
-•Gárdony és Budapest között?
-
-b)Mikor értek vissza Budapestre, ha reggel 8 órakor indultok Budapestről és a székesfehérvári városnézésre 3 órát szántok, majd a Velencei-tónál 2 órát időztök?
+Ha rápillantunk hazánk domborzati térképére, azon túlnyomórészt zöld és világosbarna színnel jelölt tájakat találunk. Az ország területének közel kétharmad része alföld, hegységei pedig alacsony vagy középmagas hegységek. Magyarország területére kis tengerszint feletti átlagmagasság és szelíd domborzati formák jellemzők.
 
 images
 
-1. A kirándulás tervezett útvonala a Google Maps alkalmazáson
-
-3.feladat: Keressétek meg és jelöljétek be a Google Föld alkalmazáson a nap során felkeresendő helyszíneket (2. ábra)!
-
-Írjátok be a Keresés cellába a település nevét!
-
-Tegyétek a menüsor elején található helyzetjelző tüskét a látnivaló helyére!
-
-Írjátok be a felugró Név ablakba a látnivaló nevét, majd mentsétek el az OK gombbal a beírást! (Ezután töröljétek ki a Keresést, hogy ne szerepeljen kétszer is a térképen a hely neve!)
+1. Hazánk a Kárpát-medence középső részén terül el
 
 images
 
-2. A felkeresendő települések megjelenítése a Google Föld térképen
+Hazánk területének legalacsonyabb pontja a déli országhatár közelében, a Tisza mellett található. Mindössze 78 m-rel magasabb a tenger szintjénél. Az ország legmagasabb pontja a Mátrában a Kékes, 1014 m-rel a tenger szintje felett.
 
-4.feladat: Szervezzétek meg a kirándulást úgy, hogy vonattal utazik az osztály!
+Hazánk nagytájai
 
-Sajnos kiderült, hogy nem sikerült annyi osztálypénzt összegyűjteni, hogy külön buszt lehessen bérelni a kirándulásra, ezért tömegközlekedéssel, vonattal kell utaznia az osztálynak.
+Az ország területét nagytájakra osztjuk (2. ábra). Hazánk nagytájai az Alföld, a Kisalföld, az Alpokalja, a Dunántúli-középhegység, a Dunántúli-dombvidék és az Északi-középhegység.
 
-A vonat menetrendjét az okostelefonra is letölthető MÁV alkalmazással tudhatjátok meg, de használhatjátok a https://elvira.mav-start.hu/ oldalt is (3. ábra). Mindkét esetben be kell írni a kiinduló és az érkező állomás nevét. Ezek a mi esetünkben a következők lesznek:
-
-•Budapest – Székesfehérvár
-
-•Székesfehérvár – Gárdony
-
-•Gárdony – Budapest.
-
-Be kell állítani az utazás dátumát is, majd a Menetrend gombra kattintva megjelenik a menetrend. Mivel ebben az esetben is reggel 8 óra körül szeretnénk elindulni, ennek megfelelően kell a vonatot is kiválasztani. Mivel 8 órakor több vonat is indul, kiválaszthatjuk azt is, hogy InterCityvel vagy gyorsvonattal szeretnénk utazni. Az indulási időpont előtt látható sárga nyílra kattintva megtekinthetjük az adott járat részleteit. Ugyanezen az oldalon a menetjegyet is meg tudjuk vásárolni.
-
-a)Nézzétek meg a menetrendet a másik két útvonalra is!
-
-b)Hol van a végállomása annak a vonatnak, amellyel Székesfehérvárra utaztok?
-
-c)Mi a kiinduló állomása annak a vonatnak, amelyre Gárdonyban szálltok fel Budapest felé?
-
-d)Hány kilométert tesz meg az osztály vonattal összesen?
-
-e)Mennyi időt tölt összesen az osztály vonatozással?
-
-f)Mennyiben változik a Budapestre visszaérkezési idő, ha nem busszal, hanem vonattal utaztok és Székesfehérváron továbbra is 3, Gárdonyban pedig 2 órát szeretnétek tölteni?
+A Dunántúli-középhegység az egyetlen olyan nagytáj, amely teljes egészében hazánk területén található. A többi nagytáj határa sehol sem esik egybe az államhatárral. A tájak a szomszédos országok területén is folytatódnak. Az ország határvonalának egy részét a folyók jelölik ki. Legfontosabb határfolyónk északon a Duna és az Ipoly, délen pedig a Mura és a Dráva.
 
 images
 
-3. Menetrendrészlet a https://elvira.mav-start.hu/ oldalról
+2. Hazánk nagytájai. Becsüld meg, melyik területe a legnagyobb! Mely országokban folytatódnak a nagytájak?
+
+images
+
+A Kárpát-medencét a Keleti-Alpok, a Kárpátok és a Dinári-hegység magas vonulatai övezik. A hegységek jelentősen befolyásolják a mélyebben fekvő medence természeti viszonyait. Hazánk a Kárpát-medence valamivel több mint egynegyed részét foglalja el.
+
+A medencehelyzet
+
+images
+
+3. Magyarország domborzati térképe
+
+A Kárpát-medencét körülölelő magashegységek (3. ábra) felfogják a viharos szeleket, távol tartják a heves, pusztító esőzéseket okozó felhőket, magasabb hőmérsékletet és kevesebb csapadékot eredményeznek.
+
+A medencehelyzetnek azonban kedvezőtlen hatásai is vannak. A hegységekből lesiető, hazánk területén összefutó folyók a tavaszi hóolvadás vagy a nyári esőzések miatt gyakran kilépnek medrükből, és pusztító árvizeket okoznak. Emellett a folyók jelentős mennyiségű szennyeződést hozhatnak magukkal, ami komoly környezeti károkkal járhat. Az árvizek és a környezetszennyezés elleni hatékony védekezés csak a szomszédos országokkal közösen valósítható meg.
+
+Magyarország a kontinensen elfoglalt központi helyzete miatt összekötő kapocs Európa nyugati és keleti, valamint délkeleti térségei között. Ezért hazánk területén jelentős átmenő forgalom bonyolódik le. A nagy forgalom amellett, hogy fontos bevételi forrás, komoly környezeti problémákat is okoz az országnak.
+
+Magyarország
+
+images
+
+images
+
+•Területe: 93 030 km2
+
+•Lakóinak száma: 9 683 000 fő
+
+•Fővárosa: Budapest (1,7 millió lakos)
+
+•Legnagyobb városai: Debrecen, Szeged, Miskolc, Pécs, Győr
+
+•Legnagyobb folyói: Duna, Tisza
+
+•Legnagyobb tavai: Balaton, Tisza-tó, Velencei-tó, Fertő-tó
+
+•Legmagasabb pontja: Kékes (1014 m)
+
+•Legnagyobb nyugat-keleti kiterjedése:kb. 530 km (Felsőszölnök–Tiszabecs)
+
+•Legnagyobb észak-déli kiterjedése:kb. 270 km (Jósvafő–Kiszombor)
+
+•Határának hossza: 2242 km
+
+•Szomszédos országok: Szlovákia, Ukrajna, Románia, Szerbia, Horvátország, Szlovénia, Ausztria
+
+images RÖVID ÖSSZEFOGLALÁS
+
+Hazánk Kelet-Közép-Európában, a Kárpát-medencében fekszik.
+
+Az ország hat nagytája az Alföld, a Kisalföld, az Alpokalja, a Dunántúli-középhegység, a Dunántúli-dombvidék és az Északi- középhegység.
+
+Természeti viszonyainak alakulásában fontos szerepe van a medencehelyzetnek. Területén jelentős átmenő forgalom bonyolódik le.
+
+images ÚJ FOGALMAK
+
+nagytáj, határfolyó, medencehelyzet, átmenő forgalom, Alföld, Kisalföld, Alpokalja, Dunántúli-középhegység, Dunántúli-dombvidék, Északi-középhegység
