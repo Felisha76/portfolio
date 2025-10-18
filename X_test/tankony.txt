@@ -1,12 +1,75 @@
-A felvilágosodás elveinek megvalósulása – az Amerikai Egyesült Államok létrejötte
-■ OLVASMÁNY
-Angol gyarmatok az Újvilágban
-Az első angol telepesek a 17. században érkeztek Észak-Amerikába. Számuk gyorsan növekedett, a 18. század közepére az Atlanti-óceán partján már tizenhárom angol gyarmat létesült. A gyarmatok élén a Londonból irányított angol kormányzók álltak. A gyarmatoknak nem voltak képviselőik az angol parlamentben, hogy az érdekeiket meg tudják védeni.
-A telepesek ezt sérelmezték, és emiatt a londoni parlament által rájuk kivetett adók befizetését is megtagadták. Ha nincs képviselet, adózás sincs, érveltek. A gyarmatokon állomásozó angol csapatok is ellenérzést keltettek a helyiekben. Úgy érezték, a katonák már nem a védelmükre, hanem a szabadságuk korlátozására vannak ott.
-Köztársaság születése az Újvilágban
-A növekedő feszültségek és a megoldatlan ellentétek nyomán 1775-ben kitört a függetlenségi háború. A tizenhárom gyarmat vezető politikusai az 1776. július 4-én kiadott Függetlenségi nyilatkozattal fogalmazták meg főbb törekvéseiket. A nyilatkozat a felvilágosodás eszméit ültette át a gyakorlatba. Kimondta, hogy minden embert megilletnek az alapvető emberi szabadságjogok. A zsarnokság megszüntetése érdekében pedig kimondták a gyarmatok elszakadását Angliától. Mindez a 1783-ban következett be.
-„[…] minden ember egyenlőnek teremtetett, nekik a Teremtő bizonyos el nem idegeníthető jogokat adott, amelyek közé tartozik egyebek között az élethez, a szabadsághoz való jog, a boldogságra való törekvés; ezen jogok biztosítására kormányzatok alakulnak, amelyek jogos hatalma a kormányzottak beleegyezéséből ered; valahányszor a kormányforma e célokat veszélyezteti, a népnek jogában áll azt megsemmisíteni, és újat felállítani.”
-■Melyek az alapjogok a forrás szerint?
-■Mely mondatokban érhető tetten a népfelség elve?
-Néhány évvel később összeült a szövetségi (alkotmányozó) gyűlés, és megalkotta az Amerikai Egyesült Államok alkotmányát, amely a hatalommegosztás elvére épül. A törvények végrehajtásáért az elnök felel. Az elnököt négy évre választja meg az ország választójoggal rendelkező lakossága. A törvényeket a kongresszus választott képviselői hozzák. A bíróságok a többi hatalmi ágtól függetlenek lettek. Az Amerikai Egyesült Államok létrejöttével megszületett az első modern kori köztársaság.
-Amerikai zászló a függetlenségi háborúban ■ Nézz utána, mit jelképeznek a sávok és a csillagok!
+Gyerekkorunkban a szüleink sokszor mondják rólunk, hogy ez a gyerek tele van energiával. Az idős emberek viszont gyakran arra panaszkodnak, hogy elszállt minden energiájuk. Az emlősök energiadús anyatejjel szoptatják kicsinyeiket, ugyanakkor a fogyókúrázóknak javasolt figyelni az ételek energiatartalmára.
+
+Mindennapjaink elképzelhetetlenek lennének villanyvilágítás vagy a háztartási munkákat megkönnyítő berendezések (pl. hűtőszekrény, gázsütő, porszívó, vasaló) nélkül. Ugyanígy elképzelhetetlen, hogy hosszabb vagy rövidebb utazásainkat ne autóval vagy tömegközlekedési eszközökkel tegyük meg.
+
+A híradásokban viszont gyakran hallunk vészjósló információkat arról, hogy hamarosan kimerülnek a Föld energiát adó ásványkincskészletei, és hogy az ebből adódó energiaválság hogyan fogja megváltoztatni a világgazdaságot.
+
+Láthatjátok tehát, hogy az energiáról nagyon sokféle szempontból beszélhetünk. De mit is jelent pontosan az energia fogalma? Életünk mely területein használunk energiaforrásokat? Miből tudunk energiát előállítani? Mit jelent az energiahordozó kifejezés? Hogyan hat a környezetünkre az energiatermelés? Lehet-e környezetbarát módon energiát termelni? Ezekre a kérdésekre keressük a választ ebben a fejezetben.
+
+Az energia
+
+Az energia fogalmának meghatározása nem könnyű feladat. A mindennapi szóhasználatból azonban sejthetjük, hogy valamiféle változásra, aktivitásra utal. A legelfogadottabb meghatározás szerint energián a munkavégző képességet értjük. Ez az anyagok azon képességét jelenti, amellyel más anyagokon változást tudnak létrehozni valamilyen kölcsönhatás révén.
+
+Az elfogyasztott táplálékot testünk bonyolult folyamatok révén olyan anyagokká alakítja, amelyek lehetővé teszik például az izmaink működését, tehát képesek leszünk mozogni. Az autókba tankolt üzemanyag – szintén bonyolult átalakulások révén – mozgásba hozza a járművet. A tábortűz melegét az elégetett fa biztosítja. Ezen folyamatok mindegyike energiát ad. A különböző energiafajták a különböző változások során képesek egymásba átalakulni.
+
+Táplálkozás
+
+Az energia kérdéskörével életünk legalapvetőbb funkciói során is találkozhatunk. Ha valaki huzamosabb ideig nem, vagy csak nagyon keveset eszik, legyengül és nem lesz ereje mozogni. A táplálkozás és a mozgás között tehát szoros összefüggés van. Szervezetünk a táplálékból nyeri a működéséhez szükséges energiát.
+
+Az élelmiszerek tápértéke magába foglalja az élelmiszer energiát adó anyagainak, valamint a szervezet egészséges működéséhez szükséges vitaminok, növényi rostok és ásványi anyagok mennyiségét.
+
+Az élelmiszerek energiatartalma azt jelenti, hogy mennyi energiát nyerünk az étel elfogyasztásával. Az élelmiszerek tápértéke nem egyforma. A zsírokban vagy cukorban gazdag élelmiszerek sokkal több energiát tartalmaznak, mint például a rostokban gazdag zöldségek és gyümölcsök (1. ábra).
+
+images
+
+1. Zsírban és cukrokban gazdag ételek
+
+A fizikai aktivitás és több más szempont (nem, életkor, fizikai állapot) függvényében különböző mennyiségű táplálékra van szükségünk. Egy rendszeresen kemény fizikai munkát végző embernek sokkal több energiára van szüksége, mint ülőmunkát végző társának. Nem mindegy tehát, hogy mennyit eszünk, mert ha az étellel több energiát viszünk be a szervezetünkbe mint amennyire szükségünk van, az elhízáshoz vezet. Sportolás közben izmaink a felhalmozott zsírból nyernek energiát, ami rendszeres mozgás esetén fogyáshoz vezethet (2. ábra).
+
+images
+
+2. A rendszeres sportolás egyensúlyban tartja az energiabevitelt
+
+A háztartások
+
+Házaink, lakásaink üzemeltetéséhez szintén energiára van szükség. A fűtéshez, sütéshez, főzéshez szükséges energia előállítása többféleképpen is történhet.
+
+Régebben az emberek fát és szenet használtak energianyerésre, ma ezeket felváltotta az olaj és a gáz, illetve az elektromos áram. A világításhoz és háztartási gépeink működtetéséhez szintén elektromos áram szükséges (3. ábra).
+
+images
+
+3. Elektromos árammal működő háztartási eszközök
+
+Az energiafogyasztóknak ki kell fizetniük az energia árát. A fát, olajat, szenet meg kell vásárolnunk. A gázfogyasztásunkat, valamint a felhasznált elektromos áram mennyiségét szolgáltatók mérik, és az általuk küldött számlát bizonyos időközönként be kell fizetnünk.
+
+A közlekedés
+
+Háztartási gépeinkhez hasonlóan a járművek is energiafogyasztók, hiszen mozgásukhoz energia szükséges.
+
+A történelem során sokat változtak a járművek mozgatásához használt energiaforrások.
+
+A legrégebbi időkben a hajókat a víz és a szél energiájával hozták mozgásba.
+
+Később, az ókori gályákon vagy a lóvontatású szekereken, emberek és állatok energiáját vették igénybe.
+
+Az első géppel hajtott járművek a 18. században jelentek meg. Ezek először gőzt használtak energiaforrásként (gőzhajó, gőzmozdony), amelyet a fa és a szén elégetéséből nyertek. A 19. század végén feltalálták a belső égésű motort, ahol már benzin vagy dízelolaj volt az energiaforrás.
+
+Napjainkban egyre inkább terjednek az elektromos hajtású járművek (4. ábra).
+
+images
+
+4. Elektromos busz
+
+images RÖVID ÖSSZEFOGLALÁS
+
+Energiának nevezzük az anyagoknak azt a képességét, amellyel más anyagokon változást tudnak létrehozni valamilyen kölcsönhatás révén.
+
+Az ember az élelmiszerek tápértékéből fedezi energiaszükségletét.
+
+A háztartások és a közlekedés is nagy energiafogyasztó. Az épületek fűtésére, világítására, a háztartási berendezések, illetve a közlekedési eszközök működtetésére különféle energiaforrások állnak rendelkezésre.
+
+Az energiaforrások a történelem során a technikai fejlődés révén sokat változtak.
+
+images ÚJ FOGALMAK
+
+energia, tápérték, energiatartalom, energiafogyasztó

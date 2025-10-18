@@ -1,7 +1,8 @@
-Célfile: 	solutions\tools\NATjegyzetek\6_oszt\tortenelem\JEGYZET\OEBPS\Text\16.xhtml <body>
-Tantárgy:	Történelem
-Témakör:	A felvilágosodás elveinek megvalósulása – az Amerikai Egyesült Államok létrejötte (Olvasmány)
-Tankönyvi szöveg ÖSSZES SORÁT olvasd be:	portfolio\X_test\tankony.txt
+Célfile: 	portfolio\X_test\TEMP.xhtml <body>
+Tantárgy:	Természettudomány
+Témakör:	
+Az energia a mindennapokban
+TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
 
 File terjedelem:	100-150 kódsor
@@ -15,20 +16,22 @@ STÍLUSÚTMUTATÓ:
 - Adj hozzá emojikat, ahol szükséges, a hangnem vagy a szerkezet kiemeléséhez (🎯📘🧠💡✨❓💥❌❗0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟➡️⬅️✔️🟨🟪💭💬🗨️👁️‍🗨️).
 - Írj világosan és didaktikusan, mintha egy diákot tanítanál. - Használj **Markdown** formátumot:
 
-- `#` a fő címekhez 🟦
-- `##` az alfejezetekhez ➡️
+- 🟦<h3> `#` a fő címekhez 
+- ➡️ <h4> `##` az alfejezetekhez 
 - Félkövér betűtípus a kulcsszavakhoz
 - Felsorolások és példák, ahol csak lehetséges 
-- Tippek ötös jegy megszerzéséhez 💡
-- Összefüggések magyarázata, ahol lehet 🌐
+- 🧠 Tippek ötös jegy megszerzéséhez 
+- 🌐 Összefüggések magyarázata, ahol lehet 
+- ✨ Példák
 - Minden jegyzet a következőkkel végződjön:
-- összefoglaló táblázat 🟥 <table style="border-collapse: collapse; width: 100%;"> és <td style="border: 1px solid black;"> használata
-- 10 rövid kvízkérdés 🟩
-- 10 tömör válasz ✅
+    - 🟥összefoglaló táblázat  <table style="border-collapse: collapse; width: 100%;"> , <th style="border: 1px solid black; background-color: yellow;"> és <td style="border: 1px solid black;"> használata
+    - 💥 új fogalmak megnevezése és rövid leírása
+    - 🟩10 rövid kvízkérdés ( feleletválasztós, a, b, c, és d, lehetséges válaszokkal )
+    - ✅10 válasz rövid indoklásokkal
 - A magyarázatok legyenek strukturáltak, logikus folyamattal és összefoglaló részekkel.
 - A jegyzetek formázása egységes legyen a könnyű olvashatóság érdekében.
 
-Ha szükséges, a témát bővítheted interneten fellelhető tananyagokkal is.
+Ha szükséges, a témát bővítheted interneten fellelhető tananyagokkal is, de a fent megjelölt tankönyvi szövegből ne hagyj ki lényeges részletet, fogalmat, definíciót!
 Ne hallucinálj!
 
 A cél: lebilincselő, oktató jellegű, jól strukturált jegyzetek készítése a tananyag minden fontos részletét tartalmazva, önálló tanulást lehetővé téve – mintha a Turbo AI írta volna őket.
