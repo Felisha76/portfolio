@@ -104,7 +104,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Forrásválasztó dropdown az alsó szekcióhoz ---
     function createSourceSelector(section) {
         // Csak a drive szekcióban jelenjen meg!
-        if (section.id !== 'drive') return;
+        if (section.id !== 'drive') {
+            // Ha docs szekcióban valamiért létezik, töröljük
+            if (section.sourceSelect && section.sourceSelect.parentNode) {
+                section.sourceSelect.parentNode.removeChild(section.sourceSelect);
+                section.sourceSelect = null;
+            }
+            return;
+        }
         if (section.sourceSelect) return;
         section.sourceSelect = document.createElement('select');
         section.sourceSelect.className = 'toc-dropdown';
