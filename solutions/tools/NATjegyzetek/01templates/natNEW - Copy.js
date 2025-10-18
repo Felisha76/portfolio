@@ -139,6 +139,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (enable) {
                     section.iframeRow.classList.add('dropdown-mode');
                     if (section.id === 'docs') {
+                        // Töröljük a forrásválasztó selectet, ha valamiért létezik
+                        if (section.sourceSelect && section.sourceSelect.parentNode) {
+                            section.sourceSelect.parentNode.removeChild(section.sourceSelect);
+                            section.sourceSelect = null;
+                        }
                         createDropdownFromNav(section, section.navUrl, section.frameId);
                         if (section.dropdownContainer) section.dropdownContainer.style.display = 'flex';
                     } else if (section.id === 'drive') {
