@@ -57,20 +57,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Dropdown generálása nav.xhtml alapján ---
     function createDropdownFromNav(section, navUrl, targetFrameId) {
-        // Ha már létezik, ne generáljuk újra
-        if (section.dropdownContainer && section.dropdownContainer.parentNode) {
-            // Ha már van, ne generáljunk újat, csak mutassuk
-            section.dropdownContainer.style.display = 'flex';
-            return;
-        }
-        // Előző, oda nem való selectek eltávolítása (docs szekcióban)
+        // Minden dropdownMode váltáskor először töröljük az összes selectet és dropdownContainer-t a docs szekció rightHalf-jából
         if (section.id === 'docs' && section.rightHalf) {
-            Array.from(section.rightHalf.querySelectorAll('select.toc-dropdown')).forEach(sel => {
-                if (sel.parentNode && sel !== section.dropdownSelect) sel.parentNode.removeChild(sel);
+            Array.from(section.rightHalf.querySelectorAll('.toc-dropdown-container, select.toc-dropdown')).forEach(el => {
+                if (el.parentNode) el.parentNode.removeChild(el);
             });
         }
+        // Új dropdownContainer létrehozása
         section.dropdownContainer = document.createElement('div');
         section.dropdownContainer.className = 'toc-dropdown-container';
+        // FIX: első select csak "Jegyzet" felirattal, nem választható
+        if (section.id === 'docs') {
+            const fixedSelect = document.createElement('select');
+            fixedSelect.className = 'toc-dropdown';
+            fixedSelect.disabled = true;
+            fixedSelect.style.marginRight = '10px';
+            const opt = document.createElement('option');
+            opt.textContent = 'Jegyzet';
+            fixedSelect.appendChild(opt);
+            section.dropdownContainer.appendChild(fixedSelect);
+        }
         const label = document.createElement('span');
         label.className = 'toc-dropdown-label';
         label.textContent = 'Tartalomjegyzék:';
