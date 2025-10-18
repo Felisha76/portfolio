@@ -1,67 +1,63 @@
-A természetben számos olyan anyagot és folyamatot találunk, amelyekből megfelelő körülmények között energiát tudunk előállítani. Ezeket az anyagokat és természeti folyamatokat energiaforrásoknak nevezzük.
+Környezetvédelem
 
-A Nap
+Az előző leckében láthattátok, ahhoz, hogy megfelelő mennyiségű energiát állítsunk elő a mindennapi élethez, igen jelentős környezeti hatásokkal is számolnunk kell.
 
-Földünk legfontosabb energiaforrása a Nap. A belsejében folyamatos energia-felszabadulás zajlik. A képződő energiát részben fény, részben pedig hő formájában sugározza Földünkre.
+A legtöbb szennyező anyag a fosszilis tüzelőanyagokat elégető erőművekből, ipari üzemekből, mezőgazdaságból és közlekedésből származik.
 
-A növények növekedéséhez, fejlődéséhez feltétlenül szükséges a Nap energiája. A Nap sugarai melegítik fel a földfelszínt. A Nap energiája tartja fent a víz körforgását és a szélrendszerek működését. Emiatt azt mondhatjuk, hogy közvetlenül vagy közvetve, de szinte minden földi energiaforrás felhasználásával végső soron a Nap energiáját hasznosítjuk.
+Környezetünk védelme érdekében a nagy szennyezőanyag-kibocsátók igyekeznek olyan technológiákat kifejleszteni és alkalmazni, melyek csökkentik a környezetszennyezés mértékét. Ilyen berendezések lehetnek például a kéményekbe épített porleválasztók vagy szűrőberendezések, amelyek megakadályozzák, hogy a légszennyező anyagok a környezetbe kerüljenek. Ma már a legtöbb járműbe szerelnek katalizátort, ami az üzemanyag elégetése során keletkező szennyező anyagok átalakítására szolgál.
 
-A nem megújuló energiaforrások
+Energiatakarékosság otthon
 
-Energiaforrásaink egy részét a természetből kell kitermelnünk, majd bonyolult folyamatok révén erőművekben átalakítjuk őket, így adnak energiát.
+Energiatakarékos életmóddal mi magunk is tehetünk a kisebb szennyezőanyag-kibocsátásért, környezetünk és egészségünk védelméért. Minél több áramot fogyasztunk ugyanis, annál több energiára van szükség, és annál jobban terheljük a környezetünket is.
 
-Azt a mennyiséget, ami megmutatja, hogy 1 kg anyag elégetésével mennyi energiához jutunk, fűtőértéknek nevezzük. Az erőművekben energiatermelésre használható anyagokat, például a szénféleségeket, a kőolajat és a földgázt energiahordozóknak nevezzük (1. ábra). Ezek mennyisége a kitermelés előre haladtával csökken, vagyis egy idő után elfogynak és emberi mértékkel mérhető időn belül nem termelődnek újra. Emiatt ezeket az energiaforrásokat nem megújuló, más néven fosszilis energiaforrásoknak nevezzük.
+Otthonodban figyelj oda, hogy minél kevesebb áramot használj! Ne hagyd, hogy feleslegesen működjön a tévé, rádió vagy a számítógép! Használat után mindig kapcsold ki az elektromos berendezéseket, lehetőleg úgy, hogy a készenléti állapotot jelző égő se világítson! A telefontöltőt is mindig húzd ki használat után! A hagyományos izzókat cseréljétek le energiatakarékos égőkre, LED lámpákra (1. ábra)!
 
+images
 
+1. Hagyományos égő cseréje LED izzóra
 
-1. Szén
+Mindig kapcsold le a lámpát, ha kimész a szobából! Ezek neked csak apróságok, de hidd el, sokat számítanak a környezet védelmében!
 
-A fosszilis energiahordozók növényi és állati maradványok bomlása során, évmilliók alatt keletkeznek. A szénféleségek elpusztult fás szárú növényekből, meleg és nedves körülmények között jönnek létre. A kőolaj és a földgáz elsősorban elhalt algák, állatok maradványaiból alakul ki.
+images
 
-A nem megújuló energiaforrások közé tartozik az uránérc is, az atomenergia energiahordozó anyaga.
+Elektromos készülékek vásárlásakor ma már könnyen tájékozódhatunk azok energiaigényéről. A készülékeket az Európai Unióban egységesen energiaosztályokba sorolják. Az „A” jelű a legjobb, vagyis a legkevesebbet fogyasztó készüléket jelöli, míg a „G” a legrosszabb besorolású.
 
-A nem megújuló energiaforrásokat általában a Föld mélyéből, bányászat útján hozzuk a felszínre (2. ábra).
+images
 
-A Földön nem minden ország gazdag energiahordozókban. Az az ország, ahol hiány van ezekből az anyagokból, behozatalra szorul belőlük. Hazánkban jelenleg a szénféleségek közül csak a kisebb fűtőértékű lignitet bányásszák, a jobb minőségű barna- és feketekőszén felszínre hozatala már nem gazdaságos. Kőolaj- és földgázbányászat még folyik Magyarországon, de a biztonságos ellátás érdekében külföldről is érkezik utánpótlás.
+Energiaosztályozási rendszer
 
+Energiatakarékos épületek
 
+2012 óta az épületeket is, hasonlóan a háztartási gépekhez, energiaosztályokba soroljuk. A legenergiatakarékosabb épület „A” jelzést, míg a legkevésbé energiatakarékos „I” jelzést kap.
 
-2. Tengeri olajfúrótorony
+Az épületek energiapazarlása ellen mi magunk is sokat tehetünk. Kívülről szigetelhetjük a házainkat, modern, hőszigetelő nyílászárókra cserélhetjük a régi ajtókat, ablakokat, vagy jobb energiahatékonyságú kazánt vagy bojlert vásárolhatunk.
 
-A megújuló energiaforrások
+Aki új ház építésébe vág bele, gondos tervezéssel sok energiát megtakaríthat. A házak megfelelő tájolása, a jó minőségű építőanyag és a szigetelés nagyban csökkentheti a fűtés és a hűtés költségeit. A tetőre szerelt napelemekkel, napkollektorokkal és a zöldfelületekkel (pl. zöldtető) szintén sok energiát takaríthatunk meg (2. ábra).
 
-A természetben több olyan folyamatot is megfigyelhetünk, amelyeket az emberiség már nagyon régóta energiatermelésre tud fordítani.
+images
 
-Őseink a nagy erejű folyóvizek energiáját vízimalmok működtetésére használták, míg a szél erejével távoli tájakra tudtak hajózni (3. ábra). Ezek az energiaforrások látszólag kifogyhatatlanok, erejük folyton megújul, ezért ezeket megújuló energiaforrásoknak nevezzük.
+2. Lakóház napelemekkel és zöldfallal
 
+Energiatakarékosság a közlekedésben
 
+Közlekedési szokásaink megváltoztatásával is sokat tehetünk az energiatakarékosságért.
 
-3. A vitorlások a szél erejét használják energiaforrásnak
+Kisebb távolságokra ne használjunk autót, menjünk inkább gyalog vagy kerékpárral! Ezzel nem csak a környezetünket, hanem az egészségünket is óvjuk.
 
-Napjainkban a folyók sodrásából származó energiát vízerőművekkel (4. ábra), a szél energiáját pedig szélerőművekkel alakítják elektromos energiává, amit azután távvezetékekkel szállítanak a háztartásokba vagy az ipari felhasználókhoz.
+Hosszabb távú utazásainknál vegyük igénybe a tömegközlekedést, szálljunk buszra, vonatra (3. ábra)! Napjainkban már ezek a közlekedési eszközök is kényelmesek és egy személyre lebontva sokkal kevesebb a károsanyag-kibocsátásuk, mint az autóké.
 
-A Nap energiáját közvetlenül is felhasználjuk energiatermelésre napelemek vagy napkollektorok formájában.
+Ha mégis az autót választjuk, igyekezzünk minél jobban kihasználni, utazzunk együtt szomszédainkkal, ismerőseinkkel (telekocsi). Ez kicsit több szervezést igényel, de a környezet védelme mellett a személyes kapcsolatok ápolására is nagyszerű alkalom.
 
-A földfelszín alól is nyerhetünk energiát: a feltörő hévizek és a talaj mélyebb rétegeinek hőjét is használhatjuk energiaforrásként. Ezek a geotermikus energiák.
+images
 
-Napjainkban a globális éghajlatváltozás elleni küzdelem következtében egyre inkább előtérbe kerülnek a megújuló energiaforrások. Ezek az energiahordozók ugyanis nem bocsátanak ki olyan anyagokat, amelyek a légkör felmelegedését okozzák.
+3. Vonatközlekedés
 
-A világszerte egyre súlyosbodó üvegházhatás ellen tehát hatékony megoldást jelenthet a megújuló energiaforrások nagyobb arányú alkalmazása a fosszilis energiahordozókkal szemben.
+images RÖVID ÖSSZEFOGLALÁS
 
+Az erőművek, ipari üzemek, a mezőgazdaság és a közlekedés által kibocsátott szennyező anyagok csökkentéséért energiatakarékos életmóddal mi magunk is sokat tehetünk.
 
+Háztartási gépeink megfelelő kiválasztásával és használatával, házaink szigetelésével, közlekedési szokásaink átgondolásával nem csak környezetünket, de egészségünket is védjük.
 
-4. Vízerőmű
+images ÚJ FOGALMAK
 
- RÖVID ÖSSZEFOGLALÁS
-
-Energiaforrások azok az anyagok, amelyekből megfelelő körülmények között energia nyerhető.
-
-Az emberi léptékben mérve megújulni nem képes anyagokat nem megújuló (fosszilis) energiahordozóknak nevezzük. Ilyenek például a szénféleségek, a kőolaj és a földgáz.
-
-A megújuló energiaforrások ereje folyton megújul. Ide tartozik a víz-, a szél-, a nap- és a geotermikus energia.
-
-A megújuló energiaforrások nagyobb arányú alkalmazása hosszabb távon megoldást jelenthet a globális éghajlatváltozásra.
-
- ÚJ FOGALMAK
-
-energiaforrás, fűtőérték, energiahordozó, nem megújuló energiaforrás (fosszilis energiaforrás), megújuló energiaforrás, geotermikus energia
+szennyező anyagok, energiatakarékosság, energiaosztály
