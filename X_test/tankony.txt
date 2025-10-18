@@ -1,65 +1,71 @@
-3. Más éghajlati övek jellemző erdői
+4. Az erdő mint életközösség I.
 
 images
 
-Hol él a mangroveerdő?
+Miért élnek együtt az élőlények egy-egy életközösségben? Segítik vagy akadályozzák egymás fennmaradását?
 
-A mérsékelt éghajlati övezet dombsági és hegyvidéki területein a lombhullató erdők a meghatározók. Az erdei életközösségek túlnyomó többségét itt a tölgy-, illetve bükkerdők alkotják. A Földnek azonban vannak olyan részei, ahol az éghajlati tényezők hatására más típusú erdők alakultak ki és borítanak nagy területeket.
+Az erdők élőlényei kapcsolatban állnak egymással, segítik vagy gátolják a másik növekedését, szaporodását. Tekintsük át ezeknek a kapcsolatoknak a fajtáit!
 
-A trópusi esőerdők
+Táplálkozási kapcsolatok
 
-Az Egyenlítő térsége Földünk legcsapadékosabb éghajlati zónája, így ezen a területen alakultak ki a legnagyobb fajgazdagságú erdők. Ezek a trópusi esőerdők. Elnevezésük onnan származik, hogy minden nap éri őket eső. Az igen jelentős csapadékmennyiség mellett az egész évben magas, 20 °C feletti hőmérséklet is kedvez a gazdag élővilág elterjedésének (1. ábra).
+Az erdei életközösségekben a növények, állatok és gombák sokféle kölcsönhatásban állnak egymással. A társulást a kölcsönhatások, a populációk közötti kapcsolatok tartják fenn. Közülük a táplálkozási kapcsolatok a legfontosabbak. A növények a napfény felhasználásával szén-dioxidból és vízből előállítják a testüket felépítő szerves anyagokat, miközben oxigént termelnek. Ez a folyamat a fotoszintézis.
 
-A trópusi esőerdők a hazai lombhullató erdőkhöz hasonlóan több szintre tagolódnak. Az esőerdőkben azonban a különböző fényigényű fajok három lombkoronaszintet hoznak létre. Ezek az esőerdők fajokban leggazdagabb részei. A cserjeszint és a gyepszint is viszonylag gazdag, bár ide már lényegesen kevesebb fény jut le.
+MEGHATÁROZÁS
 
-images
+A fotoszintézis olyan anyagcsere-folyamat, melynek során szén-dioxidból, vízből és ásványi sókból fény jelenlétében szerves anyag (szénhidrát) és oxigén képződik.
 
-1. Trópusi esőerdő
-
-Az esőerdőben előforduló növények levelei általában nagy felületűek. A trópusi esőerdőkre igen jellemzőek a fákra felkúszó liánok, illetve a fán lakó növények (pl. orchideák). A trópusi esőerdő növényei is lombhullatók, azonban az évszakok hiánya miatt nem egyszerre hullajtják le leveleiket, hanem folyamatosan, így ezek az erdők örökzöldek. A szél általi beporzás ritka, inkább a rovar, madár vagy denevér általi beporzás a jellemző.
+A növények az életközösségek termelő szervezetei. Szerves anyagaikkal táplálkoznak a növényevő állatok, ezért fogyasztóknak nevezzük őket. Mivel közvetlenül használják fel a növények által előállított szerves anyagokat, ezek az elsődleges fogyasztók.
 
 images
 
-A trópusi esőerdők Földünk leggazdagabb élőhelyei. A bolygónkon élő ismert fajok fele megtalálható itt, és a kutatók szerint még több millió, elsősorban rovarfaj vár felfedezésre. Az egyre fokozódó erdőirtás azonban rengeteg növény és állat élőhelyét elpusztítja és a kihalás szélére sodor számos fajt.
-
-A mangroveerdők
-
-A mangroveerdők a trópusi éghajlati öv folyótorkolataiban és a beömlő folyók vizétől kevésbé sós tengerpartokon fordulnak elő (2. ábra).
-
-Az itt élő fák jellegzetessége, hogy el tudják viselni a kissé sós vizet is. A fák törzsét, mivel gyakran vízben állnak, szellőzőgyökerek veszik körül, az iszapban pedig támasztógyökerek rögzítik.
-
-A mangroveerdők számos vízi élőlénynek, halaknak, rákoknak, csigáknak, kagylóknak nyújtanak biztonságos élő- és szaporodóhelyet.
+1. Gímszarvas
 
 images
 
-2. Mangroveerdő
+2. Őz
+
+Hazai erdeink legértékesebb növényevője a gerinces, emlős gímszarvas (1. ábra). Vékony, kecses, de erős lábán négy lábujj van, amelyeknek végét kemény szaruképződmény, a pata borítja. A felnőtt hímek jellemző éke, védekező és támadó fegyvere az agancs. Az agancs a koponya homlokcsontjának nyúlványán fejlődik ki.
+
+A gímszarvas közeli rokona, erdeink leggyakoribb növényevő nagyvadja az őz (2. ábra). A gímszarvasnál kisebb méretű, de a pata és az agancs növesztése rá is jellemző.
+
+A növényevőket a ragadozó vagy mindenevő másodlagos fogyasztók zsákmányolják.
+
+Erdeinkben igen elterjedt, igazi mindenevő a vaddisznó, fogazata is erről árulkodik. Őrlőfogai gumós felszínűek, metszőfogai és jól fejlett szemfogai vannak. A kemény talajon, a gyökerek közt jó hasznát veszi agyarainak is, melyek nagyra nőtt szemfogak, de veszedelmes fegyverek is lehetnek.
+
+Látható, hogy a táplálkozási kapcsolatban álló populációk táplálékláncokat, ezek pedig táplálékhálózatokat alkotnak. A táplálékláncok első tagjai mindig a termelő szervezetek, a lánc végén pedig a csúcsragadozók (harmadlagos fogyasztók) állnak (3. ábra).
+
+MEGHATÁROZÁS
+
+A növények termelő szervezetek, szerves anyagot állítanak elő szén-dioxidból és vízből.
+
+A fogyasztók más élőlények szerves anyagaival táplálkoznak. Vannak köztük növényevők, húsevők és mindenevők.
+
+A csúcsragadozók olyan fogyasztók, amelyeket más állat már nem zsákmányol.
 
 images
 
-A mangroveerdő fafajainak többsége „elevenszülő”. Ez azt jelenti, hogy nem magvakat, hanem félig fejlett, 20–40 cm-es csíranövényeket potyogtatnak el, azok pedig a puha iszapba fúródva rögtön meggyökeresednek.
+3. Az életközösségekben a táplálékláncok összefüggnek egymással, táplálékhálózatot alkotnak
 
-A tajga
-
-A szárazföldek elhelyezkedése miatt a tajga éghajlat csak az északi félgömbön, a mérsékelt övezet legészakibb részén alakulhatott ki. A tajga öv természetes növénytakaróját szintén tajgának hívják. Ez tulajdonképpen Földünk legnagyobb összefüggő fenyőerdeje (3. ábra).
-
-A tajga lombkoronaszintje többnyire zárt, kevés fényt enged át. Ennek megfelelően a cserjeszint és a gyepszint is fejletlen. A nyirkos felszínt 30-40 cm vastagságban mohaszőnyeg borítja, de a moha megtelepszik a fák törzsein is.
-
-A tajgán megélő növények nagy része örökzöld és képes elviselni a hideg időjárást. A növények gyökérzete általában nem nyúlik mélyre, mert körülbelül egy méter mély az a talajréteg, amely nem marad egész évben jéggé fagyva. A tajgaerdőben elszórtan előfordulnak lombhullató fák is, ezek a fenyőfélékkel elegyednek.
+A vörös róka ragadozó emlősállat (4. ábra). Bundája vörösbarna, sötétebb és világosabb foltokkal. Rejtőszíne jól beleolvad az erdei környezetbe. Teste erős, izmos, mozgása könnyed. Kitűnő a látása, a hallása és a szaglása is. A róka szemfogai hegyesek, a zsákmány megragadására szolgálnak. Őrlőfogai tarajos felszínűek, éles peremeik alkalmasak a csontok és a hús szétdarabolására. Egereket, bogarakat fogyaszt.
 
 images
 
-3. Tajga
+4. Vörös róka
 
-images RÖVID ÖSSZEFOGLALÁS
+A termelő és a fogyasztó szervezeteken kívül lebontók is élnek a életközösségekben. Ezek elhalt növényi és állati szervezetekkel, szerves hulladékokkal táplálkoznak. Így kapcsolódnak a táplálékláncokhoz. Lebontó a talajban élő baktériumok és a gombák nagy része, de lebontó szerepe van a szarvasbogár lárvájának is.
 
-A mérsékelt övezetre jellemző lombhullató erdőkön kívül a Föld más éghajlati adottságú részein másfajta erdők alakulnak ki.
+A versengés
 
-Az Egyenlítő környezetében a sok csapadék és az állandóan meleg hőmérséklet miatt alakult ki bolygónk leggazdagabb élőlényközössége, a trópusi esőerdő.
+A populációk között nem csak táplálkozási kapcsolatok vannak. A hasonló környezeti igényű populációk között versengés alakul ki például a fényért vagy a táplálékért. A versengő populációk gátolják egymás elterjedését. A versengésben részt vevő populációk megosztják a rendelkezésre álló forrásokat. Az erdőben a fényért való versengés miatt alakul ki a szintezettség. A rovarevő madarak (pl. harkály, széncinege, fülemüle) populációi közötti verseny gátolja a táplálékhoz jutást, és korlátozza a populációk túlzott elszaporodását (5. ábra).
 
-A trópusi tengerpartok és folyótorkolatok jellegzetes erdei élőhelye a mangrove.
+images
 
-A mérsékelt övezet legészakibb részét több ezer kilométer hosszan alkotják a tajga fenyőerdői.
+5. A fülemüle az erdő cserjeszintjében, a bokrok sűrűjében fészkel, és ott szerzi táplálékát is
 
-images ÚJ FOGALMAK
+Az együttélés
 
-trópusi esőerdő, örökzöld erdő, mangrove, tajga
+A versengéssel ellentétben az együttélés kedvező a kapcsolatban álló populációk számára. Erdei környezetben talán a legszembetűnőbb példa erre a gombák és különböző fafajok együttélése. A kalapos gombák a felszín alatt messzire nyúló fonalaikkal kapcsolódnak a fák gyökérzetéhez. Ebben az esetben a két fél segíti egymást a táplálkozásban, ezzel támogatják egymás elterjedését (6. ábra).
+
+images
+
+6. Hazánkban is elterjedt kalapos gomba a vargánya
