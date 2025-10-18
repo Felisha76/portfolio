@@ -16,8 +16,8 @@ STÍLUSÚTMUTATÓ:
 - Adj hozzá emojikat, ahol szükséges, a hangnem vagy a szerkezet kiemeléséhez (🎯📘🧠💡✨❓💥❌❗0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟➡️⬅️✔️🟨🟪💭💬🗨️👁️‍🗨️).
 - Írj világosan és didaktikusan, mintha egy diákot tanítanál. - Használj **Markdown** formátumot:
 
-- 🟦<h3> `#` a fő címekhez 
-- ➡️ <h4> `##` az alfejezetekhez 
+- 🟦 <h3><u> a fő címekhez 
+- ➡️ <h4> az alfejezetekhez 
 - Félkövér betűtípus a kulcsszavakhoz
 - Felsorolások és példák, ahol csak lehetséges 
 - 🧠 Tippek ötös jegy megszerzéséhez 
