@@ -1,99 +1,63 @@
-V. A térképtől a modern navigációs technikákig
-
-Manapság az emberek többsége állandóan úton van. Mindenki siet a munkahelyére, az iskolába, vidéki kiküldetésre vagy külföldi vakációra. Ezekhez a hosszabbrövidebb távolságokra történő utazásokhoz térképek, földrajzi atlaszok, újabban pedig digitális technikák segítségét kérjük.
-
-Bár nyomtatott térképet már egyre ritkábban használunk, kedvtelésből talán néha még előkerül, és kedvünkre böngésszük a színes oldalakat. Hasznos, ha kirándulásaink alkalmával is viszünk magukkal térképet, hiszen előfordulhat, hogy mobilhálózat hiányában telefonos alkalmazásainkat nem mindig tudjuk használni. Hogyan lehet könnyen megtalálni a térképen számunkra érdekes helyszíneket, és mit jelent egy-egy település földrajzi koordinátája?
-
-Gyakran telefonos alkalmazásokon követjük tömegközlekedési eszközeink menetrendjét, számítógépes programokkal tervezzük meg utazásaink célpontjait, interneten vásároljuk meg a vonat- vagy repülőjegyünket. Milyen elven működnek a legegyszerűbb alkalmazások? Hogyan tudjuk gyorsan, aktuális céljainknak megfelelően használni őket? Hogyan készülnek a modern kori térképészet újításai, a műholdképek, amelyeket minden nap látunk az időjárás-jelentésekben? Ezekre a kérdésekre kaptok választ ebben a fejezetben.
-
-1. A földrajzi atlasz
+2. A földrajzi fokhálózat I.
 
 images
 
-Hogyan tudjuk könnyen megtalálni a térképen lévő városokat?
+Hogyan tudjuk meghatározni a helyzetünket a Földön?
 
-Földrajzi tanulmányokat folytatni lehetetlen térkép nélkül. Az információk elsajátításában a térkép az elsődleges segítségünk. Ötödik osztályban már tanultál a térkép jelrendszeréről, keresőhálózatáról, valamint arról is, hogyan találod meg az egyes városokat, hegycsúcsokat, tavakat a térképen. Ebben a leckében most ezt a tudásodat elevenítjük fel, de emellett sok hasznos információt is kapsz a térképek, atlaszok használatához.
+Talán te is hallottál olyan vészhelyzetekről, amikor az óceán közepén bajba jutott egy hajó, vagy menet közben segélykérő jelzést küldött egy repülőgép. Vajon hogyan tudták meghatározni helyüket a segélyt kérők, hogy minél hamarabb megtalálhassák őket?
 
-A földrajzi atlasz nem más, mint térképek gyűjteménye (1. ábra). Ahhoz, hogy gyorsan és pontosan megtalálhass benne mindent, ismerned kell a felépítését.
-
-Tartalomjegyzék
-
-Azért, hogy ne kelljen minden egyes földrajzi hely keresésénél az egész atlaszt átlapoznod, az irodalmi művekhez hasonlóan az atlaszok elején vagy végén is találsz tartalomjegyzéket (2. ábra). Ez az adott térképi oldal címét és oldalszámát tartalmazza, ezzel segítve a minél gyorsabb keresést.
-
-Jelmagyarázat
-
-Minden atlaszban megtalálod a jelmagyarázatot is, vagyis azoknak a jeleknek a gyűjteményét, amelyek segítségével bizonyos természeti és gazdasági elemeket jelenítenek meg a térképeken (3. ábra).
-
-Ezekről a jelekről, illetve arról, hogy mit jelentenek a térképen látható színek, részben már 5. osztályban is tanultál. A tanultak felfrissítéseként keresd ki az atlaszod jelmagyarázatából, hogyan jelölik a térképeken a következőket!
+A tartózkodási hely meghatározásában fontos az Egyenlítőtől való távolság. Ezt a földrajzi szélesség határozza meg, amelyet fokokban fejezünk ki (1. ábra).
 
 images
 
-1. Földrajzi atlasz
+1. A szélességi köröket fokokban fejezzük ki
+
+Azok a pontok, amelyek az Egyenlítőtől azonos távolságban vannak, egy szélességi körön helyezkednek el, azaz földrajzi szélességi értékük megegyezik. Megállapodás szerint az Egyenlítő a 0 fokos (0°) szélességi kör. Ettől északra és délre haladva 90-90° távolságra vannak a sarkok (2. ábra). Ezért a szélességi körök megadásakor azt is jelölni kell, hogy melyik félgömbön húzódnak. Ennek alapján megkülönböztetünk északi és déli szélességet (rövidítve: é. sz., illetve d. sz.). A földrajzi szélesség tehát azt is kifejezi, hogy milyen irányban található egy pont az Egyenlítőhöz képest.
+
+MEGHATÁROZÁS
+
+A Föld egy pontjának földrajzi szélessége azt határozza meg, hogy az adott pont mekkora távolságra és melyik irányban van az Egyenlítőtől.
 
 images
 
-2. Az atlasz tartalomjegyzéke
+2. A szélességi körök
 
-•csatorna
+A földgömbön és az atlasz világtérképén az Egyenlítőt folyamatos vonallal, néhány más szélességi kört pedig szaggatott vonallal jelölnek (3. ábra). Ezek a nevezetes szélességi körök, amelyeket külön névvel is illetnek. Az Egyenlítőtől északra, 23,5°-ra húzódó szélességi kör a Ráktérítő. Az Egyenlítőtől északi irányban 66,5°-nyi távolságra levő pontok az Északi-sarkkörön helyezkednek el. Az Egyenlítőtől északra, 90°-ra található az Északi-sark. A déli félgömb 23,5° szélességi köre a Baktérítő, a déli szélesség 66,5°-a a Déli-sarkkör, 90°-ra pedig a Déli-sark helyezkedik el.
 
-•autópálya
+MEGHATÁROZÁS
 
-•200 000–1 000 000 közötti lélekszámú város
-
-•lignitbányászat
-
-•húsipar
-
-•autógyártás
+A Föld nevezetes szélességi körei: az Északi-sark (é. sz. 90°), az Északi-sarkkör (é. sz. 66,5°), a Ráktérítő (é. sz. 23,5°), az Egyenlítő (0°), a Baktérítő (d. sz. 23,5°), a Déli-sarkkör (d. sz. 66,5°) és a Déli-sark (d. sz. 90°).
 
 images
 
-3. A jelmagyarázat részlete
+3. A nevezetes szélességi körök
 
-Névmutató
+A szélességi körökkel egy pontnak csak az egyik koordinátáját jelöltük ki, csak az Egyenlítőhöz viszonyított távolságát adtuk meg. Egy szélességi kör azonban sok tájon húzódik végig. Ezért a pontos helymeghatározáshoz meg kell adni a másik koordinátát is, azaz azt is meg kell mondanunk, hogy az adott szélességi kör melyik pontján tartózkodunk. Erre szolgálnak a hosszúsági körök.
 
-Keresd meg az atlaszodban a Velencei-tavat!
+MEGHATÁROZÁS
 
-A feladat megoldásához először nyisd ki az atlaszodat a leghátsó oldalakon, a névmutatónál! Ezt követően keresd ki az ábécérendbe szedett földrajzi nevek közül a Velencei-tó nevét!
+A hosszúsági körök, más szóval délkörök a sarkpontokat összekötő, észak–déli irányban futó vonalak.
 
-A Velencei-tó neve mellett ezt találod:
+A hosszúsági köröket szintén egy kezdő körtől számozzuk. A megállapodás szerint a 0 fokos (0°) hosszúsági kör (más néven délkör) London egyik külvárosán, Greenwichen (ejtsd: grinics) halad keresztül. A többi hosszúsági kör a greenwichi délkörhöz viszonyított távolságot jelenti fokokban kifejezve. A hosszúsági köröket keleti és nyugati irányban haladva számozzuk 180°-ig. Ennek alapján különböztetjük meg a keleti és a nyugati hosszúságot (röviden: k. h., illetve ny. h.). A kezdő hosszúsági kör és a 180° hosszúság a Földet nyugati és keleti félgömbre osztja.
 
-8 D2. Ez azt jelenti, hogy az atlaszban a Velencei-tó a 8. oldalon, a térképre rajzolt keresőhálózat D2 négyzetében található.
+MEGHATÁROZÁS
 
-Az atlasz névmutatója tehát nem más, mint az atlaszban lévő összes földrajzi név ábécérendbe állított listája, kiegészítve az oldalszámmal és a keresőhálózat kódjával (egy betű és egy szám), ahol az adott földrajzi név található (4. ábra).
+Egy pont földrajzi hosszúsága azt határozza meg, hogy az adott pont a kezdő, 0°-os hosszúsági körtől melyik irányban és mekkora távolságra fekszik.
+
+A szélességi körökkel ellentétben a hosszúsági körök egyenlő hosszúak és nem párhuzamosak, hanem a sarkpontokban metszik egymást.
 
 images
 
-4. A névmutató egy részlete
+A keleti hosszúság 180° és nyugati hoszszúság 180° ugyanazt a délkört jelöli.
 
-Gyakorlásképpen keresd meg az atlaszodban az alábbi hazai földrajzi neveket a keresőhálózat segítségével!
+A kezdő hosszúsági kör az 1883-ban megkötött egyezmény alapján a híres greenwichi csillagvizsgálón halad keresztül (4. ábra). A csillagvizsgáló udvarán kijelölt vonalon átlépve egyik lábunkkal a nyugati, a másikkal pedig a keleti félgömbön állunk.
 
-•Budapest
+images
 
-•Kékestető
+4. A greenwichi kezdő hosszúsági kör
 
-•Pécs
+A szélességi és hosszúsági körök hálózata alkotja a földrajzi fokhálózatot, amely segítségével pontosan meghatározhatjuk tartózkodási helyünket a Földön. Ezek jelölik ki a Föld pontjainak koordinátáit. Egy pont egy szélességi és egy hosszúsági értékkel egyértelműen megadható. A földrajzi fokhálózat segítségével meg tudjuk határozni egy város, egy hegycsúcs stb. helyét, az adatok ismeretében pedig megtalálhatjuk a keresett pontot a Földön. Ez a magyarázata, hogy a vészjelzést adó hajóról és repülőről érkezett adatok alapján a segítségnyújtás azonnal megindulhat.
 
-•Írott-kő
+images
 
-•Szelidi-tó
-
-images RÖVID ÖSSZEFOGLALÁS
-
-A földrajzzal kapcsolatos tanulmányok elképzelhetetlenek földrajzi atlasz használata nélkül.
-
-Az atlasz nem más, mint térképek gyűjteménye.
-
-Bár nagyon sokféle földrajzi atlasz létezik, mégis vannak olyan elemek, amelyeket minden atlasznak tartalmaznia kell.
-
-A tartalomjegyzék megkönnyíti az egyes térképek megkeresését az atlaszon belül.
-
-A jelmagyarázatból megtudhatod, hogy mit jelentenek a térképeken használt jelek.
-
-A névmutató az atlaszban szereplő összes földrajzi nevet tartalmazza ábécérendben. Azt is megmutatja, hogy egy földrajzi hely az atlasz melyik oldalán és a keresőhálózat melyik négyzetében található.
-
-A keresőhálózat a térképre rajzolt, betűkkel és számokkal ellátott négyzetháló, amelynek segítségével bármely keresett földrajzi helyet könnyen megtalálhatunk.
-
-images ÚJ FOGALMAK
-
-földrajzi atlasz, jelmagyarázat, névmutató, keresőhálózat
+A földrajzi fokhálózat képzeletbeli hálózat. Természetesen nem csak annyi szélességi és hosszúsági kör van, mint amennyit a térkép jelöl. A Föld bármely pontjához húzható egy szélességi és egy hosszúsági kör.
