@@ -1,63 +1,95 @@
-2. A földrajzi fokhálózat I.
+3. A földrajzi fokhálózat II.
 
 images
 
-Hogyan tudjuk meghatározni a helyzetünket a Földön?
+Hogyan jellemeznéd Magyarország földrajzi fekvését?
 
-Talán te is hallottál olyan vészhelyzetekről, amikor az óceán közepén bajba jutott egy hajó, vagy menet közben segélykérő jelzést küldött egy repülőgép. Vajon hogyan tudták meghatározni helyüket a segélyt kérők, hogy minél hamarabb megtalálhassák őket?
-
-A tartózkodási hely meghatározásában fontos az Egyenlítőtől való távolság. Ezt a földrajzi szélesség határozza meg, amelyet fokokban fejezünk ki (1. ábra).
+Határozd meg a vitorlás hajó földrajzi helyzetét az 1. ábrán! Először olvasd le, melyik szélességi körön található, majd határozd meg a hosszúsági kört is. A szélességi és a hosszúsági kör metszéspontja egyértelműen megadja a pont két koordinátáját. A pont koordinátáinak felírásakor a megállapodás szerint először a szélességi kört, majd utána a hosszúsági kört írjuk fel. A keresett hajó koordinátái ennek alapján: é. sz. 40°, ny. h. 20°.
 
 images
 
-1. A szélességi köröket fokokban fejezzük ki
+1. Földrajzi helyzet meghatározása a fokhálózat segítségével
 
-Azok a pontok, amelyek az Egyenlítőtől azonos távolságban vannak, egy szélességi körön helyezkednek el, azaz földrajzi szélességi értékük megegyezik. Megállapodás szerint az Egyenlítő a 0 fokos (0°) szélességi kör. Ettől északra és délre haladva 90-90° távolságra vannak a sarkok (2. ábra). Ezért a szélességi körök megadásakor azt is jelölni kell, hogy melyik félgömbön húzódnak. Ennek alapján megkülönböztetünk északi és déli szélességet (rövidítve: é. sz., illetve d. sz.). A földrajzi szélesség tehát azt is kifejezi, hogy milyen irányban található egy pont az Egyenlítőhöz képest.
+Ezután határozzuk meg térkép segítségével egy hazai település, Balatonalmádi helyét a Földön! (2. ábra).
 
-MEGHATÁROZÁS
+1.A térképen a keresőhálózat segítségével megkeressük a kérdéses települést, és leolvassuk, hogy melyik hosszúsági kör húzódik rajta keresztül.
 
-A Föld egy pontjának földrajzi szélessége azt határozza meg, hogy az adott pont mekkora távolságra és melyik irányban van az Egyenlítőtől.
+2.A hosszúsági körök számát az atlasz alsó és felső szélén tüntetik fel.
 
-images
+3.Tudjuk, hogy Magyarország Greenwichtől keletre, tehát a keleti félgömbön fekszik, így a leolvasott hosszúság: k. h. 18°.
 
-2. A szélességi körök
+4.A szélességi értékeket az atlasz jobb és bal szélén szerepeltetik.
 
-A földgömbön és az atlasz világtérképén az Egyenlítőt folyamatos vonallal, néhány más szélességi kört pedig szaggatott vonallal jelölnek (3. ábra). Ezek a nevezetes szélességi körök, amelyeket külön névvel is illetnek. Az Egyenlítőtől északra, 23,5°-ra húzódó szélességi kör a Ráktérítő. Az Egyenlítőtől északi irányban 66,5°-nyi távolságra levő pontok az Északi-sarkkörön helyezkednek el. Az Egyenlítőtől északra, 90°-ra található az Északi-sark. A déli félgömb 23,5° szélességi köre a Baktérítő, a déli szélesség 66,5°-a a Déli-sarkkör, 90°-ra pedig a Déli-sark helyezkedik el.
+5.Hazánk az Egyenlítőtől északra, tehát az északi félgömbön helyezkedik el. A térkép szerint Balatonalmádi földrajzi szélessége: é. sz. 47°.
 
-MEGHATÁROZÁS
-
-A Föld nevezetes szélességi körei: az Északi-sark (é. sz. 90°), az Északi-sarkkör (é. sz. 66,5°), a Ráktérítő (é. sz. 23,5°), az Egyenlítő (0°), a Baktérítő (d. sz. 23,5°), a Déli-sarkkör (d. sz. 66,5°) és a Déli-sark (d. sz. 90°).
+Balatonalmádi földrajzi koordinátái: é. sz. 47°, k. h. 18°.
 
 images
 
-3. A nevezetes szélességi körök
+2. Térképrészlet (Dunántúl)
 
-A szélességi körökkel egy pontnak csak az egyik koordinátáját jelöltük ki, csak az Egyenlítőhöz viszonyított távolságát adtuk meg. Egy szélességi kör azonban sok tájon húzódik végig. Ezért a pontos helymeghatározáshoz meg kell adni a másik koordinátát is, azaz azt is meg kell mondanunk, hogy az adott szélességi kör melyik pontján tartózkodunk. Erre szolgálnak a hosszúsági körök.
+Gyakorló feladatok
 
-MEGHATÁROZÁS
+1.Melyik városok fekszenek az alábbi földrajzi koordinátákon?
 
-A hosszúsági körök, más szóval délkörök a sarkpontokat összekötő, észak–déli irányban futó vonalak.
+•é.sz. 40°; ny.h. 74°
 
-A hosszúsági köröket szintén egy kezdő körtől számozzuk. A megállapodás szerint a 0 fokos (0°) hosszúsági kör (más néven délkör) London egyik külvárosán, Greenwichen (ejtsd: grinics) halad keresztül. A többi hosszúsági kör a greenwichi délkörhöz viszonyított távolságot jelenti fokokban kifejezve. A hosszúsági köröket keleti és nyugati irányban haladva számozzuk 180°-ig. Ennek alapján különböztetjük meg a keleti és a nyugati hosszúságot (röviden: k. h., illetve ny. h.). A kezdő hosszúsági kör és a 180° hosszúság a Földet nyugati és keleti félgömbre osztja.
+•d.sz. 33°; k.h. 151°
 
-MEGHATÁROZÁS
+•é.sz. 60°; k.h. 30°
 
-Egy pont földrajzi hosszúsága azt határozza meg, hogy az adott pont a kezdő, 0°-os hosszúsági körtől melyik irányban és mekkora távolságra fekszik.
+•d.sz. 12°; ny.h. 77°
 
-A szélességi körökkel ellentétben a hosszúsági körök egyenlő hosszúak és nem párhuzamosak, hanem a sarkpontokban metszik egymást.
+•é.sz. 47°; k.h. 21°
+
+•é.sz. 64°; ny.h. 21°
+
+2.Milyen földrajzi koordinátákon fekszenek az alábbi földrajzi helyek?
+
+•Budapest
+
+•Kékestető
+
+•London
+
+•Róma
+
+•Szeged
+
+3.Hazánk és egyben Közép-Európa legnagyobb tava a Balaton. Van azonban hazánkban egy azonos nevű település is.
+
+a)Keresd meg az atlaszodban ezt a települést!
+
+b)Melyik megyében található?
+
+c)Hányas számú főúton lehet megközelíteni?
+
+4.Igazak-e vagy hamisak az alábbi állítások?
+
+a)Afrika területe a keleti és a nyugati félgömbön is megtalálható.
+
+b)Észak-Amerikán áthalad az Egyenlítő.
+
+c)Ausztrália északi része átnyúlik az északi félgömbre.
+
+d)Ázsia a nyugati félgömbön van.
+
+e)Dél-Amerika teljes területe a déli félgömbön található.
+
+Hazánk helye a Földön
+
+Magyarország az északi félgömbön, az Egyenlítőtől és az Északi-sarktól nagyjából azonos távolságra, Európa középső részén, egészen pontosan Kelet-Közép-Európában található (3. ábra). Hazánk szárazföldi ország, az óceántól és a tengerektől viszonylag távol, a Kárpát-medence középső részén helyezkedik el.
+
+A Kárpát-medencét hegységek veszik körül. Nyugat felől az Alpok lealacsonyodó vonulatai, míg északról és keletről a Kárpátok hegykoszorújának belső íve határolja. Délen a Dinári-hegyvidék zárja el az Adriai-tengertől.
 
 images
 
-A keleti hosszúság 180° és nyugati hoszszúság 180° ugyanazt a délkört jelöli.
+3. Hazánk helyzete Európában
 
-A kezdő hosszúsági kör az 1883-ban megkötött egyezmény alapján a híres greenwichi csillagvizsgálón halad keresztül (4. ábra). A csillagvizsgáló udvarán kijelölt vonalon átlépve egyik lábunkkal a nyugati, a másikkal pedig a keleti félgömbön állunk.
+images RÖVID ÖSSZEFOGLALÁS
 
-images
+Az Egyenlítőtől való távolságot a szélességi értékek, a kezdő hosszúsági körtől való távolságot a hosszúsági értékek határozzák meg fokokban kifejezve. A szélességi és a hosszúsági körök hálózata alkotja a földrajzi fokhálózatot. A Földön a földrajzi fokhálózat segítségével egyértelműen megadhatjuk egy pont koordinátáit.
 
-4. A greenwichi kezdő hosszúsági kör
+images ÚJ FOGALMAK
 
-A szélességi és hosszúsági körök hálózata alkotja a földrajzi fokhálózatot, amely segítségével pontosan meghatározhatjuk tartózkodási helyünket a Földön. Ezek jelölik ki a Föld pontjainak koordinátáit. Egy pont egy szélességi és egy hosszúsági értékkel egyértelműen megadható. A földrajzi fokhálózat segítségével meg tudjuk határozni egy város, egy hegycsúcs stb. helyét, az adatok ismeretében pedig megtalálhatjuk a keresett pontot a Földön. Ez a magyarázata, hogy a vészjelzést adó hajóról és repülőről érkezett adatok alapján a segítségnyújtás azonnal megindulhat.
-
-images
-
-A földrajzi fokhálózat képzeletbeli hálózat. Természetesen nem csak annyi szélességi és hosszúsági kör van, mint amennyit a térkép jelöl. A Föld bármely pontjához húzható egy szélességi és egy hosszúsági kör.
+szélességi kör, Ráktérítő, Baktérítő, Északi-sarkkör, Déli-sarkkör, Északi-sark, Déli-sark, hosszúsági kör, földrajzi fokhálózat

@@ -1,7 +1,7 @@
-Célfile: 	solutions\tools\NATjegyzetek\6_oszt\termeszettudomany\JEGYZET\OEBPS\Text\IV_02.xhtml <body>
+Célfile: 	solutions\tools\NATjegyzetek\6_oszt\termeszettudomany\JEGYZET\OEBPS\Text\IV_03.xhtml <body>
 Tantárgy:	Természettudomány
 Témakör:	
-A földrajzi fokhálózat I.
+A földrajzi fokhálózat II.
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
 A file egy epub része lesz, ezért nem lehet benne <br>  vagy <hr>
