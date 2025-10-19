@@ -27,7 +27,7 @@ h1 {
     position:sticky;
     align-items: center;
     text-align: center;
-    font-size: 2.2vw;
+    font-size: 14;
     background-color: #1c1d1d; /* Optional: Add a background color to prevent overlap */
     z-index: 1000; /* Ensure it stays above other elements */
 }
