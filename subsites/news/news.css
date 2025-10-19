@@ -62,7 +62,10 @@ h1 {
 }
 
 .highlight {
-    color: yellow;
+    color: #6dadee;
+    font-weight: bold;
+    text-decoration:solid;
+    text-decoration-color: rgb(8, 242, 70);
 }
 
 /* Görgetősáv */
