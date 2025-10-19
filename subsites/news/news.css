@@ -7,6 +7,7 @@ body, a, pre {
 	background-color: #1c1d1d;
   	font-size:14;
     color: #d2d4d6;
+    
 }
 
 h1, h2, h3, .item h2, .item h3, .item p {
@@ -49,6 +50,7 @@ h1 {
     border: 1px solid;
     border-color: #999b9e;
     background-color: #272929;
+    overflow:scroll;
 }
 
 .item h2 {
