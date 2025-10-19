@@ -197,20 +197,36 @@ function processCSVContent(contents) {
 
             const front = document.createElement('div');
             front.classList.add('front');
+            // Kép generálás kikommentelve
+            /*
             front.innerHTML = `
                 <div style="display:flex;flex-direction:column;align-items:center;">
                     ${visualizeWord(frontText)}
-                    
+                    <span>${frontText}</span>
+                </div>
+            `;
+            */
+            front.innerHTML = `
+                <div style="display:flex;flex-direction:column;align-items:center;">
+                    <!-- ${visualizeWord(frontText)} -->
                     <span>${frontText}</span>
                 </div>
             `;
 
             const back = document.createElement('div');
             back.classList.add('back');
+            // Kép generálás kikommentelve
+            /*
             back.innerHTML = `
                 <div style="display:flex;flex-direction:column;align-items:center;">
                     ${visualizeWord(backText)}
-                    
+                    <span>${backText}</span>
+                </div>
+            `;
+            */
+            back.innerHTML = `
+                <div style="display:flex;flex-direction:column;align-items:center;">
+                    <!-- ${visualizeWord(backText)} -->
                     <span>${backText}</span>
                 </div>
             `;
@@ -349,13 +365,27 @@ function showCard(cardData, side) {
     const cardFront = document.getElementById('cardFront');
     const cardBack = document.getElementById('cardBack');
     // Előlap: magyar szó + SVG
-    cardFront.innerHTML = `
-        <div>${cardData.hu}</div>
-        <div>${visualizeWord(cardData.hu)}</div>
-    `;
+        // Kép generálás kikommentelve
+        /*
+        cardFront.innerHTML = `
+            <div>${cardData.hu}</div>
+            <div>${visualizeWord(cardData.hu)}</div>
+        `;
+        */
+        cardFront.innerHTML = `
+            <div>${cardData.hu}</div>
+            <!-- <div>${visualizeWord(cardData.hu)}</div> -->
+        `;
     // Hátlap: idegen szó + SVG
-    cardBack.innerHTML = `
-        <div>${cardData.en}</div>
-        <div>${visualizeWord(cardData.en)}</div>
-    `;
+        // Kép generálás kikommentelve
+        /*
+        cardBack.innerHTML = `
+            <div>${cardData.en}</div>
+            <div>${visualizeWord(cardData.en)}</div>
+        `;
+        */
+        cardBack.innerHTML = `
+            <div>${cardData.en}</div>
+            <!-- <div>${visualizeWord(cardData.en)}</div> -->
+        `;
 }
