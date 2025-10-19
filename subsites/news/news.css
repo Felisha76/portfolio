@@ -5,13 +5,13 @@ Not finished yet
 body, p, a, pre {
  
 	background-color: #1c1d1d;
-  	font-size: 12px;
-
+  	font-size:2vw;
+    color: #d2d4d6;
 }
 
-body, p, a, pre, h1, h2, h3, .item h2, .item h3, .item p {
+h1, h2, h3, .item h2, .item h3, .item p {
     font-family:'Noto Sans';
-    font-size:2vw;
+    
     color: #d2d4d6;
 }
 
@@ -27,7 +27,7 @@ h1 {
     position:sticky;
     align-items: center;
     text-align: center;
-    font-size: xx-large;
+    font-size: 2.2vw;
     background-color: #1c1d1d; /* Optional: Add a background color to prevent overlap */
     z-index: 1000; /* Ensure it stays above other elements */
 }
@@ -55,10 +55,9 @@ h1 {
     margin-top: 0px;
 }
 
-.item p {
+.item p, li {
     margin-left: 40px;
     font-family:'Noto Sans';
-    font-size:1.5vw;
     color: #d2d4d6;
 }
 
