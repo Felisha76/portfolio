@@ -2,10 +2,10 @@
 Not finished yet
 */
 
-body, p, a, pre {
+body, a, pre {
  
 	background-color: #1c1d1d;
-  	font-size:2vw;
+  	font-size:14;
     color: #d2d4d6;
 }
 
@@ -56,7 +56,7 @@ h1 {
 }
 
 .item p, li {
-    margin-left: 40px;
+    margin-left: 20px;
     font-family:'Noto Sans';
     color: #d2d4d6;
 }
