@@ -1,7 +1,7 @@
 // test.js - Interaktív tesztlogika
 // Feltételezzük, hogy a CSV fájl elérhető: "../../tesztkerdesek.csv"
 
-const CSV_PATH = "../../tesztkerdesek.csv";
+const CSV_PATH = "01.csv";
 
 let questions = [];
 let selectedChapters = [];
