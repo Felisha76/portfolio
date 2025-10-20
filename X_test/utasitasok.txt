@@ -1,12 +1,11 @@
-Célfile: 	solutions\tools\NATjegyzetek\6_oszt\irodalom\JEGYZET\OEBPS\Text\06.xhtml
+Célfile: 	solutions\tools\NATjegyzetek\6_oszt\irodalom\JEGYZET\OEBPS\Text\16.xhtml
 Tantárgy:	Irodalom
 Témakör:	
-Csörsz árka
+Összefoglalás – Hősök az irodalomban
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
 A file egy epub része lesz, ezért nem lehet benne <br>  vagy <hr>
-MINTA OLDAL:
-<?xml version="1.0" encoding="utf-8"?>
+MINTA OLDAL: <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
 <head>
