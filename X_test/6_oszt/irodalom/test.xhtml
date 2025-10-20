@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Interaktív Tudásellenőrző Teszt</title>
+    <link rel="stylesheet" href="../../../../style.css" />
+    <link rel="stylesheet" href="test.css" />
+    <style>
+        .correct { background: #c8f7c5; }
+        .incorrect { background: #f7c5c5; }
+        .explanation { font-size: 0.95em; color: #444; margin-top: 0.3em; }
+        .score-summary { font-weight: bold; margin-top: 1em; }
+        .timer { font-size: 1em; margin-left: 1em; }
+        .chapter-select { margin-bottom: 1em; }
+    </style>
+</head>
+<body>
+    <div class="chapter-select">
+        <label for="chapterDropdown">Fejezet(ek):</label>
+        <select id="chapterDropdown" multiple="multiple" size="5"></select>
+        <button id="startTestBtn">Teszt indítása</button>
+        <span class="timer" id="timer">00:00</span>
+    </div>
+    <form id="testForm" style="display:none;">
+        <ol id="questionList"></ol>
+        <button type="button" id="checkBtn" style="display:none;">Ellenőrzés</button>
+    </form>
+    <div id="resultSummary"></div>
+    <script type="text/javascript" src="test.js"></script>
+</body>
+</html>
