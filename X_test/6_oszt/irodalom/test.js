@@ -13,7 +13,8 @@ function parseCSV(text) {
     const lines = text.trim().split(/\r?\n/);
     return lines.map(line => {
         // Egyszerű CSV split, idézőjelet nem kezel
-        const [chapter, question, a, b, c, d, correct, explanation] = line.split(';');
+        let [chapter, question, a, b, c, d, correct, explanation] = line.split(';');
+        correct = (correct || '').trim().toUpperCase();
         return { chapter, question, a, b, c, d, correct, explanation };
     });
 }
@@ -120,16 +121,18 @@ function checkAnswers() {
         radios.forEach(r => { if (r.checked) selected = r.value; });
         const answerDiv = li.querySelector('.answers');
         const explanationDiv = li.querySelector('.explanation');
+        // Letiltjuk a további választást
+        radios.forEach(r => { r.disabled = true; });
         if (selected === q.correct) {
             answerDiv.classList.add('correct');
             correctCount++;
         } else {
             answerDiv.classList.add('incorrect');
             explanationDiv.style.display = '';
-            explanationDiv.innerHTML = `Helyes válasz: <b>${q.correct}</b> (${q[q.correct.toLowerCase()]})<br>${q.explanation}`;
+            // Mindig nagybetűs property lookup
+            const correctText = q[q.correct] || '';
+            explanationDiv.innerHTML = `Helyes válasz: <b>${q.correct}</b> (${correctText})<br />${q.explanation || ''}`;
         }
-        // Letiltjuk a további választást
-        radios.forEach(r => r.disabled = true);
     });
     document.getElementById('checkBtn').style.display = 'none';
     // Pontszámítás
