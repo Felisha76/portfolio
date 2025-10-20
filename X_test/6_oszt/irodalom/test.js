@@ -60,10 +60,10 @@ function renderQuestions() {
         li.innerHTML = `
             <div class="qtext">${q.question}</div>
             <div class="answers">
-                <label><input type="radio" name="q${idx}" value="A"> ${q.a}</label><br>
-                <label><input type="radio" name="q${idx}" value="B"> ${q.b}</label><br>
-                <label><input type="radio" name="q${idx}" value="C"> ${q.c}</label><br>
-                <label><input type="radio" name="q${idx}" value="D"> ${q.d}</label>
+                <label><input type="radio" name="q${idx}" value="A" /> ${q.a}</label><br />
+                <label><input type="radio" name="q${idx}" value="B" /> ${q.b}</label><br />
+                <label><input type="radio" name="q${idx}" value="C" /> ${q.c}</label><br />
+                <label><input type="radio" name="q${idx}" value="D" /> ${q.d}</label>
             </div>
             <div class="explanation" style="display:none;"></div>
         `;
