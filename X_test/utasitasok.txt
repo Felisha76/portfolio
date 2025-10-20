@@ -1,7 +1,7 @@
-Célfile: 	solutions\tools\NATjegyzetek\6_oszt\irodalom\JEGYZET\OEBPS\Text\49.xhtml
+Célfile: 	solutions\tools\NATjegyzetek\6_oszt\irodalom\JEGYZET\OEBPS\Text\56.xhtml
 Tantárgy:	Irodalom
 Témakör:	
-Összefoglalás – Gárdonyi Géza: Egri csillagok
+Összefoglalás – Daniel Defoe: Robinson Crusoe
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
 
 A file egy epub része lesz, ezért nem lehet benne <br>  vagy <hr>
