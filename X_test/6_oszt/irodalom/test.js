@@ -57,16 +57,15 @@ function renderQuestions() {
     testQuestions.forEach((q, idx) => {
         const li = document.createElement('li');
         li.className = 'question-item';
-        li.innerHTML = `
-            <div class="qtext">${q.question}</div>
-            <div class="answers">
-                <label><input type="radio" name="q${idx}" value="A" /> ${q.a}</label><br />
-                <label><input type="radio" name="q${idx}" value="B" /> ${q.b}</label><br />
-                <label><input type="radio" name="q${idx}" value="C" /> ${q.c}</label><br />
-                <label><input type="radio" name="q${idx}" value="D" /> ${q.d}</label>
-            </div>
-            <div class="explanation" style="display:none;"></div>
-        `;
+        li.innerHTML =
+            '<div class="qtext">' + q.question + '</div>' +
+            '<div class="answers">' +
+                '<label><input type="radio" name="q' + idx + '" value="A" /> ' + q.a + '</label><br />' +
+                '<label><input type="radio" name="q' + idx + '" value="B" /> ' + q.b + '</label><br />' +
+                '<label><input type="radio" name="q' + idx + '" value="C" /> ' + q.c + '</label><br />' +
+                '<label><input type="radio" name="q' + idx + '" value="D" /> ' + q.d + '</label>' +
+            '</div>' +
+            '<div class="explanation" style="display:none;"></div>';
         ol.appendChild(li);
     });
 }
