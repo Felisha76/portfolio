@@ -138,7 +138,7 @@ function checkAnswers() {
     // Pontszámítás
     const score = ((correctCount * 10) / (elapsed || 1)).toFixed(2);
     document.getElementById('resultSummary').innerHTML =
-        `<div class="score-summary">Helyes válaszok: ${correctCount}/${testQuestions.length}<br>Idő: ${elapsed} mp<br>Összpontszám: ${score}</div>`;
+        `<div class="score-summary">Helyes válaszok: ${correctCount}/${testQuestions.length}<br />Idő: ${elapsed} mp<br />Összpontszám: ${score}</div>`;
 }
 
 document.getElementById('startTestBtn').addEventListener('click', startTest);
