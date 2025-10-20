@@ -15,10 +15,12 @@
 </head>
 <body>
     <div class="chapter-select">
-        <label for="chapterDropdown">Fejezet(ek):</label>
+        <label for="chapterDropdown" style="display:block; margin-bottom:0.5em;">Fejezet(ek):</label>
         <select id="chapterDropdown" multiple="multiple" size="5"></select>
-        <button id="startTestBtn">Teszt indítása</button>
-        <span class="timer" id="timer">00:00</span>
+        <div style="display:flex; gap:1em; align-items:center; margin-top:0.7em;">
+            <button id="startTestBtn">Teszt indítása</button>
+            <span class="timer" id="timer">00:00</span>
+        </div>
     </div>
     <form id="testForm" style="display:none;">
         <ol id="questionList"></ol>
