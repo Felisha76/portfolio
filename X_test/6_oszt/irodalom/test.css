@@ -42,10 +42,18 @@
     transition: background 0.3s;
 }
 
+.answers {
+    display: flex;
+    gap: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
 .answers label {
-    display: block;
-    margin-bottom: 0.3em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
     cursor: pointer;
+    margin-bottom: 0;
 }
 
 .answers.correct {
