@@ -77,11 +77,14 @@ function startTest() {
         alert('Válassz legalább egy fejezetet!');
         return;
     }
-    testQuestions = pickRandomQuestions(selectedChapters, 20);
-    if (testQuestions.length < 20) {
-        alert('Nincs elég kérdés a kiválasztott fejezet(ek)ben!');
+    // Számoljuk meg, hány kérdés van összesen a kiválasztott fejezetekben
+    const availableQuestions = questions.filter(q => selectedChapters.includes(q.chapter));
+    const count = Math.min(20, availableQuestions.length);
+    if (count === 0) {
+        alert('Nincs kérdés a kiválasztott fejezet(ek)ben!');
         return;
     }
+    testQuestions = pickRandomQuestions(selectedChapters, count);
     renderQuestions();
     document.getElementById('testForm').style.display = '';
     document.getElementById('checkBtn').style.display = '';
@@ -133,7 +136,7 @@ function checkAnswers() {
     // Pontszámítás
     const score = ((correctCount * 10) / (elapsed || 1)).toFixed(2);
     document.getElementById('resultSummary').innerHTML =
-        `<div class="score-summary">Helyes válaszok: ${correctCount}/20<br>Idő: ${elapsed} mp<br>Összpontszám: ${score}</div>`;
+        `<div class="score-summary">Helyes válaszok: ${correctCount}/${testQuestions.length}<br>Idő: ${elapsed} mp<br>Összpontszám: ${score}</div>`;
 }
 
 document.getElementById('startTestBtn').addEventListener('click', startTest);
