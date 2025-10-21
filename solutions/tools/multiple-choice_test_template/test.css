@@ -1,6 +1,6 @@
 /* Közös wrapper a tartalomnak */
 .container {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 1em;
     background: none;
@@ -50,7 +50,7 @@
     box-sizing: border-box;
     font-size: 1.08em;
     min-height: 8em;
-    padding: 0.1em 2em 0.1em 2em;
+    padding: 0.1em 0.1em 0.1em 0.1em;
     margin-bottom: 0;
     z-index: 1000;
 }
