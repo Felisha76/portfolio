@@ -123,15 +123,17 @@ function checkAnswers() {
         const explanationDiv = li.querySelector('.explanation');
         // Letiltjuk a további választást
         radios.forEach(r => { r.disabled = true; });
-        if (selected === q.correct) {
+        // A felhasználó által kiválasztott válasz szövege
+        const chosenText = (q[selected ? selected.toLowerCase() : ''] || '').trim().toLowerCase();
+        const correctText = (q.correct || '').trim().toLowerCase();
+        if (chosenText === correctText && chosenText !== '') {
             answerDiv.classList.add('correct');
             correctCount++;
         } else {
             answerDiv.classList.add('incorrect');
             explanationDiv.style.display = '';
-            // Mindig nagybetűs property lookup
-            const correctText = q[q.correct] || '';
-            explanationDiv.innerHTML = `Helyes válasz: <b>${q.correct}</b> (${correctText})<br />${q.explanation || ''}`;
+            // Helyes válasz szövegének megjelenítése
+            explanationDiv.innerHTML = `Helyes válasz: <b>${q.correct}</b><br />${q.explanation || ''}`;
         }
     });
     document.getElementById('checkBtn').style.display = 'none';
