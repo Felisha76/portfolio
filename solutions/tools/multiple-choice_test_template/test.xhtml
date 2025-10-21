@@ -14,33 +14,28 @@
     </style>
 </head>
 <body>
+  <div class="container"> 
     <div class="top-bar">
         
         <div class="top-bar-left">
-            <div class="label">
-                <label for="chapterDropdown" class="chapter-label">Fejezetek:</label>
-            </div>
-                <select id="chapterDropdown" multiple="multiple" size="5" class="chapter-select"></select>
-           
+            <label for="chapterDropdown" class="chapter-label">Fejezetek:</label>
+            <select id="chapterDropdown" multiple="multiple" size="5" class="chapter-select"></select>
         </div>
 
 
-        <div class="top-bar-center">
-            <div class="timer-block"> 
+        <div class="top-bar-center"> 
                 <span class="timer" id="timer">00:00</span>
-            </div>
-
-            <div class="startButton">              
                 <button id="startTestBtn">Teszt indítása</button>
-            </div>
+                <button type="button" id="checkBtn">Ellenőrzés</button>           
         </div>
 
         <div class="top-bar-right">
-            <button type="button" id="checkBtn" style="display:none;">Ellenőrzés</button>
-            <div id="resultSummary" class="result-summary">Eredmények kijelzése a teszt végén</div>
+            
+            <div id="resultSummary" class="result-summary">
+                Eredmények kijelzése a teszt végén</div>
         </div>
     </div>
-    <form id="testForm" style="display:none;">
+    <form id="testForm">
         <ol id="questionList"></ol>
     </form>
 
@@ -93,7 +88,7 @@
         
     </div>
 
-        <div style="text-align: center; background-color: bisque;">
+        <div id="offer">
                 <H3><b> Ez egy minta teszt.</b></H3>
                 <p>Ha szeretnél ilyen teszteket íratni a diákjaiddal,
                 kérlek, küld el a használni kívánt kérdéseket, válaszokat 
@@ -603,8 +598,8 @@
                         </tr>
                     </tbody>
                     </table>
-                </div>
-
+        </div>
+  </div>
     <script type="text/javascript" src="test.js"></script>
 </body>
 </html>
