@@ -1,7 +1,7 @@
 Célfile: 	
-solutions\tools\NATjegyzetek\6_oszt\tortenelem\JEGYZET\OEBPS\Text\29.xhtml
+solutions\tools\NATjegyzetek\6_oszt\tortenelem\JEGYZET\OEBPS\Text\31.xhtml
 Témakör:	
-Társadalmi-politikai forradalom
+Forradalmak kora (Összefoglalás)
 
 Tantárgy:	Történelem
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
