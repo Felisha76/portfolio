@@ -3,11 +3,11 @@
 
 .chapter-select {
     position: fixed;
-    top: 1em;
-    left: 1em;
+    top: 0.5em;
+    left: 0.5em;
     background: #f8f8f8;
     border-radius: 8px;
-    padding: 1em 1.5em;
+    padding: 1em 1em;
     box-shadow: 0 2px 8px #0001;
     z-index: 100;
     min-width: 240px;
@@ -24,7 +24,7 @@ body {
 }
 
 #testForm {
-    margin: 2em 2em 2em calc(24vw + 4em);
+    margin: 2em 2em 2em calc(24vw + 3em);
     max-width: 900px;
     background: #fff;
     border-radius: 8px;
