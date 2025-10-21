@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: 0 1em;
     background: none;
+    margin-top: 8.5em;
 }
 .timer-block {
     display: flex;
@@ -33,7 +34,13 @@
 }
 
 .top-bar {
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
     background: #ffe3b3;
     border-bottom: 2px solid #c9a96a;
     display: flex;
@@ -45,6 +52,7 @@
     min-height: 8em;
     padding: 0.1em 2em 0.1em 2em;
     margin-bottom: 0;
+    z-index: 1000;
 }
 
 
@@ -143,11 +151,11 @@
 
 /* A top-bar min-height: 8em, padding: 0.1em top + 0.1em bottom, border-bottom: 2px, tehát kb. 8em + 0.2em + 2px. Biztonságosan: */
 #description {
-    margin-top: 0.5em;
+    margin-top: 11em;
     background: #fffbe6;
     border-radius: 8px;
     box-shadow: 0 2px 12px #0001;
-    padding: 1.5em 2em 1em 2em;
+    padding: 0em 2em 1em 2em;
     min-width: 320px;
     display: block;
     transition: opacity 0.3s;
@@ -155,11 +163,11 @@
 
 
 #testForm {
-    margin-top: 1.5em;
+    margin-top: 11em;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 12px #0002;
-    padding: 2em 2em 1em 2em;
+    padding: 0em 2em 1em 2em;
     min-width: 320px;
 }
 #questionList {
