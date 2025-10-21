@@ -89,6 +89,9 @@ function startTest() {
     document.getElementById('testForm').style.display = '';
     document.getElementById('checkBtn').style.display = '';
     document.getElementById('resultSummary').innerHTML = '';
+    // Elrejtjük a leírást
+    var desc = document.getElementById('description');
+    if (desc) desc.style.display = 'none';
     startTime = Date.now();
     startTimer();
 }
@@ -112,8 +115,13 @@ function stopTimer() {
 function checkAnswers() {
     stopTimer();
     let correctCount = 0;
+    let timeBonus = 0;
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
     const ol = document.getElementById('questionList');
+    const perQuestionTimes = [];
+    // Minden kérdéshez: helyes válasz + időbónusz
+    // Feltételezzük, hogy a teszt kitöltése folyamatos, így az egyes kérdések idejét becsüljük: teljes idő / kérdésszám
+    const avgTimePerQuestion = testQuestions.length ? elapsed / testQuestions.length : 0;
     testQuestions.forEach((q, idx) => {
         const li = ol.children[idx];
         const radios = li.querySelectorAll('input[type=radio]');
@@ -129,6 +137,10 @@ function checkAnswers() {
         if (chosenText === correctText && chosenText !== '') {
             answerDiv.classList.add('correct');
             correctCount++;
+            // Időbónusz számítása (max 30mp/kérdés, minden megtakarított mp 1 pont)
+            const timeForThis = avgTimePerQuestion;
+            const bonus = Math.max(0, 30 - timeForThis);
+            timeBonus += Math.round(bonus);
         } else {
             answerDiv.classList.add('incorrect');
             explanationDiv.style.display = '';
@@ -137,13 +149,19 @@ function checkAnswers() {
         }
     });
     document.getElementById('checkBtn').style.display = 'none';
-    // Pontszámítás
-    const score = ((correctCount * 1000) / (elapsed || 1)).toFixed(2);
+    // Pontszámítás: minden helyes válasz 10 pont + időbónusz
+    const score = (correctCount * 10 + timeBonus);
     document.getElementById('resultSummary').innerHTML =
-        `<div class="score-summary">Helyes válaszok (a): ${correctCount}/${testQuestions.length}<br />Idő (b): ${elapsed} mp<br />Összpontszám (a*1000)/b): ${score}</div>`;
+        `<div class="score-summary">Helyes válaszok: ${correctCount}/${testQuestions.length}<br />Idő: ${elapsed} mp<br />Időbónusz: ${timeBonus} pont<br />Összpontszám: ${score}</div>`;
 }
 
 document.getElementById('startTestBtn').addEventListener('click', startTest);
 document.getElementById('checkBtn').addEventListener('click', checkAnswers);
 
 window.addEventListener('DOMContentLoaded', loadCSV);
+// Oldal betöltésekor a description látható legyen
+window.addEventListener('DOMContentLoaded', function() {
+    loadCSV();
+    var desc = document.getElementById('description');
+    if (desc) desc.style.display = 'block';
+});
