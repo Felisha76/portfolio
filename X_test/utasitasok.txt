@@ -1,7 +1,7 @@
 Célfile: 	
-solutions\tools\NATjegyzetek\6_oszt\tortenelem\JEGYZET\OEBPS\Text\17.xhtml
+solutions\tools\NATjegyzetek\6_oszt\tortenelem\JEGYZET\OEBPS\Text\29.xhtml
 Témakör:	
-Új látóhatárok (Összefoglalás)
+Társadalmi-politikai forradalom
 
 Tantárgy:	Történelem
 TANKÖNYV: A file összes sorát olvasd el a feldolgozáshoz:	portfolio\X_test\tankony.txt
