@@ -123,7 +123,7 @@ function checkAnswers() {
         const explanationDiv = li.querySelector('.explanation');
         // Letiltjuk a további választást
         radios.forEach(r => { r.disabled = true; });
-        if (selected === q.correct) {
+        if ((selected || '').toLowerCase() === (q.correct || '').toLowerCase()) {
             answerDiv.classList.add('correct');
             correctCount++;
         } else {
