@@ -129,8 +129,8 @@ function checkAnswers() {
         } else {
             answerDiv.classList.add('incorrect');
             explanationDiv.style.display = '';
-            // Mindig nagybetűs property lookup
-            const correctText = q[q.correct] || '';
+            // Mindig kisbetűs property lookup
+            const correctText = q[q.correct ? q.correct.toLowerCase() : ''] || '';
             explanationDiv.innerHTML = `Helyes válasz: <b>${q.correct}</b> (${correctText})<br />${q.explanation || ''}`;
         }
     });
