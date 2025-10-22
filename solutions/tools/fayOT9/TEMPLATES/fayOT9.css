@@ -357,4 +357,17 @@
 			gap: 1rem;
 			width: 100%;
 		}
-        /* Törölve: duplikált magasság beállítások, mindenhol 80vh lesz */
+       
+        
+        /* Alapértelmezett (asztali gép) */
+g {
+  transform: scale(0.85, 0.85);
+  transform-origin: 0 0;
+}
+
+/* Mobil landscape */
+@media only screen and (max-width: 700px) and (orientation: landscape) {
+  g {
+    transform: scale(0.5, 0.5);
+  }
+}
