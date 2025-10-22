@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 # Input and output paths
 HTML_PATH = r'd:\____ORSI\____TANULÁS\GITHUB\portfolio\X_test\fay_tankonyvek\02_muszaki_rajz_alapjai\02_Muszaki-rajz-alapjai.67025187.html'
-OEBPS_PATH = 'OEBPS'
+OEBPS_PATH = os.path.join(os.path.dirname(__file__), 'OEBPS')
 NAV_FILE = '000_nav.xhtml'
 OPF_FILE = 'content.opf'
 
