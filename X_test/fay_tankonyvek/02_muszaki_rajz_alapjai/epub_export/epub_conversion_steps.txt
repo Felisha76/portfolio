@@ -1,0 +1,38 @@
+EPUB konverziós lépések PDF/HTML forrásból, SVG képek finomhangolásával
+
+1. Forrásfájl előkészítése:
+   - PDF-ből HTML-t generálj (pl. pdf2htmlEX vagy más konverterrel).
+   - Ellenőrizd, hogy az oldalak <div class="page"> tag-ekkel legyenek elválasztva.
+
+2. EPUB szerkezet létrehozása:
+   - Hozd létre az EPUB mappákat: mimetype, META-INF/container.xml, OEBPS/content.opf.
+
+3. Oldalak feldarabolása:
+   - Python script (BeautifulSoup) segítségével minden <div class="page"> tartalmat külön .xhtml fájlba mentsd (001.xhtml, 002.xhtml, ...).
+
+4. Tartalomjegyzék generálása:
+   - Készíts 000_nav.xhtml fájlt, amelyben a fájlnevekre mutató linkek vannak.
+   - Az <html> tag-ben legyen: xmlns:epub="http://www.idpf.org/2007/ops"
+
+5. SVG képek finomhangolása:
+   - Futtasd a fix_svg_image_transform.py scriptet, amely minden .xhtml fájlban arányosítja az SVG <image> elemek transform attribútumát.
+   - A script átlagolja a matrix() x és y skálázási értékeit, így a képek nem torzulnak.
+
+6. (Opcionális) Stílusfájl használata:
+   - Ha szükséges, készíts style_epub.css-t, de SVG képek arányosításához nem szükséges.
+   - Szövegek, margók, egyéb stílusok beállításához használható.
+
+7. EPUB csomagolása:
+   - Az OEBPS mappában legyenek az oldalak, nav, opf, (esetleg css).
+   - Az EPUB szerkezetet zip-pel, majd .epub kiterjesztéssel mentsd.
+
+8. Tesztelés:
+   - Nyisd meg az EPUB-ot olvasóval (pl. Calibre, Thorium), ellenőrizd a képek és szövegek arányait.
+
+Hasznos parancsok:
+- PDF-ből HTML: pdf2htmlEX input.pdf output.html
+- Python feldaraboló script: generate_epub.py
+- SVG transform javító script: fix_svg_image_transform.py
+- EPUB csomagolás: zip -X0 mimetype; zip -rX9 epub_export.epub *
+
+A fenti lépések ismételhetők bármilyen PDF/HTML forrásra, ahol SVG képek is vannak.

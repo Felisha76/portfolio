@@ -1,0 +1,30 @@
+# EPUB konverzió Copilot utasítások
+
+1. Forrásfájl: PDF vagy HTML, oldalak <div class="page"> tag-ekkel elválasztva.
+2. EPUB szerkezet létrehozása: mimetype, META-INF/container.xml, OEBPS/content.opf.
+3. Oldalak feldarabolása: minden <div class="page"> tartalom külön .xhtml fájlba (001.xhtml, 002.xhtml, ...).
+4. Tartalomjegyzék generálása: 000_nav.xhtml, linkek az oldalfájlokra, <html> tag-ben xmlns:epub deklaráció.
+5. SVG képek arányosítása: minden <image> tag transform="matrix(...)" attribútumában az x és y skálázási értékek átlagolása, preserveAspectRatio="xMidYMid meet".
+6. Stílusfájl csak akkor szükséges, ha szöveg vagy egyéb HTML elemek stílusát kell módosítani.
+7. EPUB csomagolás: OEBPS mappában oldalak, nav, opf, (css), zip-pel, majd .epub kiterjesztéssel.
+8. Tesztelés: EPUB olvasóval ellenőrizni a képek és szövegek arányait.
+
+# Automatikus feldolgozás lépései
+- PDF-ből HTML: pdf2htmlEX vagy hasonló.
+- Python feldaraboló script: BeautifulSoup-pal, oldalak mentése.
+- SVG transform javító script: minden .xhtml fájlban átlagolja a matrix skálázást.
+- EPUB szerkezet generálása, metaadatok frissítése.
+
+# Speciális utasítások Copilot számára
+- Mindig ellenőrizd, hogy az SVG képek transform attribútuma arányos legyen.
+- Ha nem arányos, automatikusan javítsd átlagolással.
+- A tartalomjegyzékben csak a fájlnevek legyenek, ha nincs külön cím.
+- Ha stílusfájl van, csak a szöveges elemekre alkalmazd, SVG képekre ne.
+- Minden lépés után validáld az eredményt EPUB olvasóval.
+
+# Bemenet
+- Forrásfájl elérési útja
+- EPUB export mappa elérési útja
+
+# Kimenet
+- EPUB szerkezetű mappa, benne oldalak, nav, metaadatok, arányos SVG képek

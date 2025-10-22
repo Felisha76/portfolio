@@ -2,23 +2,3 @@ g {
   transform: scale(0.8, 0.8);
   transform-origin: 0 0;
 }
-
-img {
-  transform: scale(0.8, 1.2);
-  transform-origin: 0 0;
-}
-/*
-image {
-  width: 10% !important;
-  height: auto !important;
-}
-
-
-body {
-  font-size: 40%;
-}
-img {
-  max-width: 40%;
-  height: auto;
-}
-*/

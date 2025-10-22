@@ -74,7 +74,7 @@
             height: 80vh;
         }
         .iframe-half-left {
-            flex: 1 1 10%;
+            flex: 1 1 15%;
             min-width: 0;
             height: 80vh;
             border: 2px solid #222;
@@ -89,7 +89,7 @@
             font-weight: bold;
         }
         .iframe-half-right {
-            flex: 1 1 90%;
+            flex: 1 1 85%;
             min-width: 0;
             height: 80vh;
             border: 2px solid #222;
