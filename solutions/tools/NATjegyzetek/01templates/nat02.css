@@ -252,6 +252,12 @@
 
         
         @media (max-width: 56.25em) and (orientation: portrait) {
+            body {
+                min-height: 100vh !important;
+            }
+            .container {
+                min-height: 100vh !important;
+            }
             .main-content {
                 flex-direction: column;
                 gap: 1rem;
