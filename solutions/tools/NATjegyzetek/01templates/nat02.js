@@ -27,10 +27,10 @@
                 frame.src = '';
                 // Loading overlay megjelenítése
                 let loadingId = '';
-                if (frameId.startsWith('docs-frame')) {
-                    loadingId = frameId.replace('docs-frame', 'docs-loading');
-                } else if (frameId.startsWith('drive-frame')) {
-                    loadingId = frameId.replace('drive-frame', 'drive-loading');
+                if (frameId.startsWith('docsFrame')) {
+                    loadingId = frameId.replace('docsFrame', 'docs-loading');
+                } else if (frameId.startsWith('driveFrame02')) {
+                    loadingId = frameId.replace('driveFrame02', 'drive-loading02');
                 }
                 const loadingElement = document.getElementById(loadingId);
                 if (loadingElement) {
