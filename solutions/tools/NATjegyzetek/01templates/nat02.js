@@ -1,15 +1,4 @@
-// Betöltési overlay elrejtése
-        function hideLoading(loadingId) {
-            const loadingElement = document.getElementById(loadingId);
-            if (loadingElement) {
-                setTimeout(() => {
-                    loadingElement.style.opacity = '0';
-                    setTimeout(() => {
-                        loadingElement.style.display = 'none';
-                    }, 300);
-                }, 500);
-            }
-        }
+
 
         // Hiba üzenet megjelenítése
         function showError(errorId) {
@@ -114,7 +103,3 @@
         // Kezdeti beállítás
         adjustIframeHeight();
 
-        // Konzol üzenet
-        console.log('📚 Google Dokumentumok Megjelenítő betöltve');
-        console.log('🔗 Docs link: https://docs.google.com/document/d/1x6brP_3EOoj85gPqCmhnlI4VYzOp5uhXqanKUydOQXE/preview');
-        console.log('� PDF link: ../tankonyvek/TERMÉSZETTUDOMÁNY_TK_OH-TER06TA__teljes.pdf');
