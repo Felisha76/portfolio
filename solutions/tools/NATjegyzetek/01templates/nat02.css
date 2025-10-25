@@ -10,6 +10,7 @@
             min-height: 100vh;
             height: 100%;
             padding: 0;
+            /*background: linear-gradient(45deg, #4285f4, #34a853);*/
         }
  
         .container {
@@ -48,7 +49,7 @@
             height: 4em;
             position: absolute;
             top: 1em;
-            left: 1em;
+            right: 1em;
         }
 
 		#logo:hover {
