@@ -33,6 +33,29 @@ window.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}
+	
+	// Add listeners for TK, MF, Jegyzet buttons to show navigation
+	var tkBtn = document.getElementById('tkBtn');
+	var mfBtn = document.getElementById('mfBtn');
+	var nBtn = document.getElementById('nBtn');
+	
+	function toggleNavigation() {
+		if (document.body.classList.contains('show-frame01')) {
+			document.body.classList.remove('show-frame01');
+		} else {
+			document.body.classList.add('show-frame01');
+		}
+	}
+	
+	if (tkBtn) {
+		tkBtn.addEventListener('click', toggleNavigation);
+	}
+	if (mfBtn) {
+		mfBtn.addEventListener('click', toggleNavigation);
+	}
+	if (nBtn) {
+		nBtn.addEventListener('click', toggleNavigation);
+	}
 
 	window.addEventListener('resize', updateToggleBtnVisibility);
 	updateToggleBtnVisibility();
