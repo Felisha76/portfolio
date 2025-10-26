@@ -43,7 +43,7 @@ FONTS:
 /* Görgetősáv */
 ::-webkit-scrollbar {
   height: 8px;
-  width: 8px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -116,4 +116,27 @@ NAT jegyzet tetejére:
 </ul>	
 
 
+ol {
+    list-style-type: "➡️";
+}
 
+/* Görgetősáv */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d19f73;
+  border-radius: 5px;
+  border: 1px solid #d9bda5;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #d9bda5;
+}
+
+<tr>
+    <th style="border: 1px solid black; background-color: #d9bda5;">Műnem</th>
+    <th style="border: 1px solid black; background-color: #d9bda5;">Hogyan jelenik meg a balladában?</th>
+    </tr>
