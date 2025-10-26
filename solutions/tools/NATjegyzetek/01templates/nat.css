@@ -22,7 +22,8 @@
         }
 
         .header {
-            color: black;
+            background: linear-gradient(45deg, #683304, #eee7d7);
+            color: #2b1501;
             padding: 0.5em;
             text-align: center;
         }
@@ -30,12 +31,13 @@
         .header h1 {
             font-size: 1.2em;
             margin-bottom: 0.5em;
-            text-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0.2em 0.4em #351901f8;
         }
 
         .header p {
             font-size: 1em;
             opacity: 0.9;
+            text-shadow: 0 0.2em 0.4em #351901f8;
         }
 
         /* LOGO */
@@ -215,11 +217,13 @@ td {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #d19f73;
+  /*background-color: #d19f73;*/
+  background: linear-gradient(45deg, #6f421b, #d9bda5);
   border-radius: 5px;
   border: 1px solid #d9bda5;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #d9bda5;
+  /*background-color: #d9bda5;*/
+  background: linear-gradient(45deg, #6f421b, #d9bda5);
 }
