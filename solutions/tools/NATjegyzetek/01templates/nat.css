@@ -10,13 +10,11 @@
             min-height: 100vh;
             height: 100%;
             padding: 0;
-            /*background: linear-gradient(45deg, #4285f4, #34a853);*/
         }
  
         .container {
             max-width: 100%;
             margin: 0 auto;
-            /* background: linear-gradient(45deg, #4285f4, #34a853); */
             border-radius: 1em;
             box-shadow: 0 1em 3em rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -24,7 +22,6 @@
         }
 
         .header {
-            /* background: linear-gradient(45deg, #4285f4, #34a853); */
             color: black;
             padding: 0.5em;
             text-align: center;
