@@ -91,7 +91,7 @@
                                 margin: 0;
                                 display: block;
                                 background-color: #f6eee3;
-            
+        }
 
     @media (max-width: 900px) {
             #docsFrame01, #docsFrame02 {
@@ -100,8 +100,17 @@
                 min-width: 150px;
                 min-height: 100px;
             }
+
+             #logo {
+                margin: 0;
+                width: 2em;
+                height: 2em;
+                position: absolute;
+                top: 0.5em;
+                right: 0.5em;
+            }
         }
-        }
+        
 
 
 /* Jegyzet oldalakra és TK, MF navigációkra is használt stílusok */        
