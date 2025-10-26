@@ -6,7 +6,7 @@ nav#page-list {
     display:none;
 }
 
-ol {
+ul {
     list-style-type: "➡️";
 }
 
