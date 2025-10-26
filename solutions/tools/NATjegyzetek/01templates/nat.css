@@ -91,18 +91,26 @@
             margin:0.5em 0;
             background-color: #f6eee3;
             border-color: #d9bda5;
-            border-radius: 15%;
+            border-radius: 10%;
             box-shadow: #d19f73;
+            font-size: large;
         }
 
         #tkBtn, #mfBtn, #nBtn {
             margin:0.5em 0;
             background-color: #f6eee3;
             border-color: #d9bda5;
-            border-radius: 15%;
+            border-radius: 10%;
             box-shadow: #d19f73;
-            padding: 5px;
         }
+
+        #tkBtn a, #mfBtn a, #nBtn a {
+            color: red;
+            text-align: left;
+            font-size: large;
+            font-weight: bold;
+        }
+
 
 /* RESPONSIVITY SETTINGS  */        
     @media (max-width: 300px) {
