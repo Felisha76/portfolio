@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	var tkBtn = document.getElementById('tkBtn');
 	var mfBtn = document.getElementById('mfBtn');
 	var nBtn = document.getElementById('nBtn');
+	var aBtn = document.getElementById('aBtn');
 	
 	function toggleNavigation() {
 		if (document.body.classList.contains('show-frame01')) {
@@ -55,6 +56,9 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 	if (nBtn) {
 		nBtn.addEventListener('click', toggleNavigation);
+	}
+	if (aBtn) {
+		aBtn.addEventListener('click', toggleNavigation);
 	}
 
 	window.addEventListener('resize', updateToggleBtnVisibility);
