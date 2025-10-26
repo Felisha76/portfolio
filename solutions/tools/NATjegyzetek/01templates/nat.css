@@ -53,7 +53,7 @@
 			transition-duration: 2000ms;
 		}
 
-        /* Új layout: bal oldali frame, jobb oldalon két frame egymás alatt */
+        
         .main-content {
             display: flex;
             flex-direction: row;
@@ -64,7 +64,7 @@
             gap: 0;
             overflow: hidden;
         }
-        /* Iframe layout for irodalom_6_02.html */
+        
         #docsFrame01 {
             flex: 0 0 25%;
             width: 25%;
@@ -86,6 +86,25 @@
             background-color: #f6eee3;
         }
 
+        #toggleFrame01 {
+            display:none;
+            margin:0.5em 0;
+            background-color: #f6eee3;
+            border-color: #d9bda5;
+            border-radius: 15%;
+            box-shadow: #d19f73;
+        }
+
+        #tkBtn, #mfBtn, #nBtn {
+            margin:0.5em 0;
+            background-color: #f6eee3;
+            border-color: #d9bda5;
+            border-radius: 15%;
+            box-shadow: #d19f73;
+            padding: 5px;
+        }
+
+/* RESPONSIVITY SETTINGS  */        
     @media (max-width: 300px) {
         #docsFrame01, #docsFrame02 {
             width: 98vw;
@@ -100,6 +119,29 @@
             position: absolute;
             top: 0.5em;
             right: 0.5em;
+        }
+    }
+
+    @media (max-width: 600px) {
+        #docsFrame01 {
+            display: none !important;
+        }
+        #docsFrame02 {
+            width: 100vw !important;
+            min-width: 150px;
+            min-height: 100px;
+        }
+        #toggleFrame01 {
+            display: inline-block !important;
+        }
+        .show-frame01 #docsFrame01 {
+            display: block !important;
+        }
+        .show-frame01 #docsFrame02 {
+            width: 75vw !important;
+        }
+        .show-frame01 #toggleFrame01 {
+            display: inline-block !important;
         }
     }
         

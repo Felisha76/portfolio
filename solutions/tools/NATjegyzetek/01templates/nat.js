@@ -3,6 +3,19 @@
 window.addEventListener('DOMContentLoaded', function() {
 	var header = document.querySelector('.header');
 	var mainContent = document.querySelector('.main-content');
+	var frame01 = document.getElementById('docsFrame01');
+	var frame02 = document.getElementById('docsFrame02');
+	var toggleBtn = document.getElementById('toggleFrame01');
+
+	function updateToggleBtnVisibility() {
+		if (window.innerWidth <= 600) {
+			if (toggleBtn) toggleBtn.style.display = 'inline-block';
+		} else {
+			if (toggleBtn) toggleBtn.style.display = 'none';
+			document.body.classList.remove('show-frame01');
+		}
+	}
+
 	if (header && mainContent) {
 		var headerHeight = header.offsetHeight;
 		var newHeight = 'calc(100vh - ' + headerHeight + 'px)';
@@ -10,6 +23,19 @@ window.addEventListener('DOMContentLoaded', function() {
 		mainContent.style.maxHeight = newHeight;
 		mainContent.style.overflowY = 'auto';
 	}
+
+	if (toggleBtn) {
+		toggleBtn.addEventListener('click', function() {
+			if (document.body.classList.contains('show-frame01')) {
+				document.body.classList.remove('show-frame01');
+			} else {
+				document.body.classList.add('show-frame01');
+			}
+		});
+	}
+
+	window.addEventListener('resize', updateToggleBtnVisibility);
+	updateToggleBtnVisibility();
 });
 
 
