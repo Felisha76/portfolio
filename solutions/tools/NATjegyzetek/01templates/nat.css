@@ -103,15 +103,37 @@
         }
         }
 
+
+/* Jegyzet oldalakra és TK, MF navigációkra is használt stílusok */        
 a {
     color: black;
     text-decoration: none;    
 }
 
-ol {
-    list-style-type: "➡️";
+p {
+    padding: 0 10px 0 20px;
 }
 
+ol, ul {
+    list-style-type: "🔹";
+    padding: 0 10px 0 40px;
+}
+
+table {
+    border-collapse: collapse; width: 100%;
+}
+
+th {
+    text-align: center;
+    font-weight: bold;
+    background-color: #d9bda5;
+    border: 1px solid black;
+}
+
+td {
+    padding: 0 2px 0 5px;
+    border: 1px solid black;
+}
 /* Görgetősáv */
 ::-webkit-scrollbar {
   height: 8px;
