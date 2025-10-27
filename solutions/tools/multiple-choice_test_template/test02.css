@@ -1,3 +1,18 @@
+        /* LOGO */
+        #logo {
+            margin: 0;
+            width: 3em;
+            height: 3em;
+            position: absolute;
+            top: 1em;
+            right: 1.5em;
+        }
+
+		#logo:hover {
+		    transform: rotateY(360deg);
+			transition-duration: 2000ms;
+		}
+
 body {
   margin: 0;
   padding: 0;
@@ -262,6 +277,15 @@ a {
   #startTestBtn, #checkBtn {
     font-size: 0.8em;
   }
+
+  #logo {
+            margin: 0;
+            width: 3em;
+            height: 3em;
+            position: absolute;
+            top: 1.5em;
+            right: 1.5em;
+        }
 }
 
 
@@ -286,6 +310,15 @@ a {
   #startTestBtn, #checkBtn {
     font-size: 0.6em;
   }
+
+    #logo {
+            margin: 0;
+            width: 3em;
+            height: 3em;
+            position: absolute;
+            top: 1em;
+            right: 0.5em;
+        }
 }
 
 @media (max-width: 300px) {
@@ -308,4 +341,13 @@ a {
   #startTestBtn, #checkBtn {
     font-size: 0.4em;
   }
+
+      #logo {
+            margin: 0;
+            width: 3em;
+            height: 3em;
+            position: absolute;
+            top: 0.8em;
+            right: 0.1em;
+        }
 }
