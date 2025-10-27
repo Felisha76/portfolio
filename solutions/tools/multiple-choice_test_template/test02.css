@@ -42,11 +42,17 @@ body {
                 min-width: 0;
             }
 
+                .chapter-label {
+                    margin: 2px 0px 2px 10px;
+                    font-family: 'Noto Sans';
+                    font-size: 1em ;
+                }
+
                 .chapter-select {
                     width:90%;
-                    margin-left: 10px;
+                    margin: 0px 0px 2px 10px;
                     font-family: 'Noto Sans';
-                    font-size: 24px ;
+                    font-size: 1em;
                 }
 
             .top-bar-center {
@@ -67,9 +73,11 @@ body {
                     margin-top: 16px;
                     }
 
-                    button, input[type="submit"] {
-                    padding: 10px 24px;
-                    font-size: 1rem;
+                    #startTestBtn, #checkBtn {
+                    padding: 10px 10px 10px 10px;
+                    font-family: 'Noto Sans';
+                    font-weight: bold;
+                    font-size: 1em;
                     border: none;
                     border-radius: 6px;
                     background: #007bff;
@@ -77,7 +85,7 @@ body {
                     cursor: pointer;
                     transition: background 0.2s;
                     }
-                    button:hover, input[type="submit"]:hover {
+                    #startTestBtn:hover, #checkBtn:hover {
                     background: #0056b3;
                     }
 
@@ -117,14 +125,16 @@ body {
                     }   
 
                         .question-item {
-                            /* margin-bottom: 2em; */
                             display: flex;
                             flex-direction: column;
-                            padding: 1em 1em 0em 1em;
+                            padding: 0.5em 1em 0.5em 1em;
                             border-radius: 6px;
+                            border:#060243 solid 1px;
                             background: #ffe3b3;
                             transition: background 0.3s;
                             flex-wrap: wrap;
+                            font-family: 'Noto Sans';
+                            font-size: 1em;
                         }
 
                         .answers label {
@@ -133,49 +143,55 @@ body {
                             gap: 0.3em;
                             cursor: pointer;
                             margin-bottom: 0;
+                            font-family: 'Noto Sans';
+                            font-size: 1em;
                         }
 
                         .answers {
                             display: flex;
                             flex-direction: row;
                             flex-wrap: wrap;
-                            gap: 1.5em;
+                            gap: 1em;
                             margin-top: 0.5em;
                             margin-bottom: 0.5em;
                         }
                                             
                             .answers.correct {
-                                background: #c8f7c5;
+                                background: linear-gradient(154deg, rgba(2, 83, 21, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
                             }
 
                             .answers.incorrect {
-                                background: #f7c5c5;
+                                background: linear-gradient(154deg, rgba(110, 2, 2, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
                             }
 
                             .correct { 
-                                background: #29e61b; 
+                                background: linear-gradient(154deg, rgba(3, 97, 16, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%); 
                             }
 
                             .incorrect { 
-                                background: #f7c5c5; 
+                                background: linear-gradient(154deg, rgba(238, 27, 27, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%); 
                             }
 
                             .explanation { 
-                                font-size: 0.95em; 
-                                color: #444; 
+                                font-family: 'Noto Sans';
+                                font-size: 1em; 
+                                color: #ddd8d8; 
+                                background: linear-gradient(154deg, rgba(3, 24, 106, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
                                 margin-top: 0.3em; 
                             }
 
 
 
-            .score-summary { 
-                font-weight: bold; 
-                margin-top: 1em; 
+            .result-summary { 
+                font-family: 'Noto Sans';
+                font-size: 1em;
+                font-weight: bold;
+                padding: 10px;
             }
 
             .timer { 
-                font-size: 1em; 
-                margin-left: 1em; 
+                font-size: 2em; 
+                padding: 10px; 
             }
                 
 
@@ -193,8 +209,11 @@ h1, h2, h3 {
     max-width: 100%;
     padding: 16px 8px;
   }
-  .question, .choices, .result {
-    font-size: 1.05rem;
+  body, .chapter-label, .chapter-select, 
+  #startTestBtn, #checkBtn, #testForm, 
+  .question-item, .answers label, 
+  .explanation, .result-summary, .timer  {
+    font-size: 1.5svh;
   }
 }
 
@@ -203,19 +222,12 @@ h1, h2, h3 {
     padding: 8px 2px;
     border-radius: 8px;
   }
-  h1, h2, h3 {
-    font-size: 1.2rem;
-  }
-  .question {
-    font-size: 1rem;
-    padding: 10px;
-  }
-  .choice {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
-  .button-row {
-    gap: 8px;
+
+    body, .chapter-label, .chapter-select, 
+  #startTestBtn, #checkBtn, #testForm, 
+  .question-item, .answers label, 
+  .explanation, .result-summary, .timer  {
+    font-size: 2svh;
   }
 }
 
@@ -224,15 +236,11 @@ h1, h2, h3 {
     padding: 2px 0;
     border-radius: 4px;
   }
-  h1, h2, h3 {
-    font-size: 1rem;
-  }
-  .question, .choice, .result {
-    font-size: 0.85rem;
-    padding: 6px;
-  }
-  button, input[type="submit"] {
-    font-size: 0.85rem;
-    padding: 6px 10px;
+
+    body, .chapter-label, .chapter-select, 
+  #startTestBtn, #checkBtn, #testForm, 
+  .question-item, .answers label, 
+  .explanation, .result-summary, .timer  {
+    font-size: 2.5svh;
   }
 }
