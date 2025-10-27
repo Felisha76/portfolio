@@ -280,12 +280,14 @@ a {
 
   #logo {
             margin: 0;
-            width: 3em;
-            height: 3em;
+            width: 2em;
+            height: 2em;
             position: absolute;
             top: 1.5em;
             right: 1.5em;
+            z-index: 0;
         }
+
 }
 
 
@@ -313,12 +315,14 @@ a {
 
     #logo {
             margin: 0;
-            width: 3em;
-            height: 3em;
+            width: 1.8em;
+            height: 1.8em;
             position: absolute;
             top: 1em;
             right: 0.5em;
+            z-index: 0;
         }
+
 }
 
 @media (max-width: 300px) {
@@ -344,10 +348,12 @@ a {
 
       #logo {
             margin: 0;
-            width: 3em;
-            height: 3em;
+            width: 1.6em;
+            height: 1.6em;
             position: absolute;
             top: 0.8em;
             right: 0.1em;
+            z-index: 0;
         }
+
 }
