@@ -91,46 +91,93 @@ body {
                 min-width: 0;
             }
 
-                .result {
-                    margin-top: 24px;
-                    padding: 16px;
-                    background: #e8b92f;
+
+            .test-bar {
+                display: flex;
+                flex-direction: column;
+                width:100%;
+            }
+                    
+                #testForm {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    background: linear-gradient(154deg, rgba(33, 227, 237, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
                     border-radius: 8px;
-                    font-size: 1.1rem;
-                    text-align: center;
-                    }
+                    box-shadow: 0 2px 12px #0002;
+                    font-size: 1em;
+                }
 
-        .question {
-        width: 100%;
-        margin-bottom: 24px;
-        padding: 16px;
-        background: #76f182;
-        border-radius: 8px;
-        font-size: 1.2rem;
-        box-sizing: border-box;
-        }
+                    #questionList {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0;
+                        padding: 1em 0em 1em 0em;
+                        overflow: auto;
+                    }   
 
-            .choices {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-            margin-bottom: 24px;
+                        .question-item {
+                            /* margin-bottom: 2em; */
+                            display: flex;
+                            flex-direction: column;
+                            padding: 1em 1em 0em 1em;
+                            border-radius: 6px;
+                            background: #ffe3b3;
+                            transition: background 0.3s;
+                            flex-wrap: wrap;
+                        }
+
+                        .answers label {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.3em;
+                            cursor: pointer;
+                            margin-bottom: 0;
+                        }
+
+                        .answers {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            gap: 1.5em;
+                            margin-top: 0.5em;
+                            margin-bottom: 0.5em;
+                        }
+                                            
+                            .answers.correct {
+                                background: #c8f7c5;
+                            }
+
+                            .answers.incorrect {
+                                background: #f7c5c5;
+                            }
+
+                            .correct { 
+                                background: #29e61b; 
+                            }
+
+                            .incorrect { 
+                                background: #f7c5c5; 
+                            }
+
+                            .explanation { 
+                                font-size: 0.95em; 
+                                color: #444; 
+                                margin-top: 0.3em; 
+                            }
+
+
+
+            .score-summary { 
+                font-weight: bold; 
+                margin-top: 1em; 
             }
 
-                .choice {
-                display: flex;
-                align-items: center;
-                padding: 12px 16px;
-                background: #f1f3f4;
-                border-radius: 6px;
-                cursor: pointer;
-                transition: background 0.2s;
-                font-size: 1rem;
-                }
-                .choice:hover {
-                background: #d1e7dd;
-                }
+            .timer { 
+                font-size: 1em; 
+                margin-left: 1em; 
+            }
+                
 
 /* General */
 h1, h2, h3 {
