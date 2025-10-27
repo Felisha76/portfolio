@@ -28,22 +28,44 @@ function loadCSV() {
         })
         .catch(() => alert('Nem sikerült betölteni a tesztkérdéseket!'));
 }
-
+// Custom dropdown
 function fillChapterDropdown() {
-    const dropdown = document.getElementById('chapterDropdown');
+    const customDropdown = document.getElementById('customDropdown');
+    const selectedDiv = customDropdown.querySelector('.selected');
+    const optionsDiv = customDropdown.querySelector('.options');
     const chapters = [...new Set(questions.map(q => q.chapter))];
-    dropdown.innerHTML = '';
+    optionsDiv.innerHTML = '';
     chapters.forEach(ch => {
-        const opt = document.createElement('option');
-        opt.value = ch;
+        const opt = document.createElement('div');
+        opt.className = 'option';
         opt.textContent = ch;
-        dropdown.appendChild(opt);
+        opt.dataset.value = ch;
+        opt.addEventListener('click', function(e) {
+            // Minden kattintás/érintés toggle-olja a kijelölést (mobilbarát)
+            opt.classList.toggle('selected');
+            // Frissítjük a selectedDiv szövegét
+            const selected = Array.from(optionsDiv.querySelectorAll('.option.selected')).map(o => o.textContent);
+            selectedDiv.textContent = selected.length ? selected.join(', ') : 'Válassz fejezetet';
+            optionsDiv.style.display = 'none';
+        });
+        optionsDiv.appendChild(opt);
+    });
+    // Kattintásra lenyit
+    selectedDiv.onclick = function() {
+        optionsDiv.style.display = optionsDiv.style.display === 'none' ? 'block' : 'none';
+    };
+    // Kattintás kívülre bezárja
+    document.addEventListener('click', function(e) {
+        if (!customDropdown.contains(e.target)) {
+            optionsDiv.style.display = 'none';
+        }
     });
 }
 
 function getSelectedChapters() {
-    const dropdown = document.getElementById('chapterDropdown');
-    return Array.from(dropdown.selectedOptions).map(opt => opt.value);
+    const customDropdown = document.getElementById('customDropdown');
+    const optionsDiv = customDropdown.querySelector('.options');
+    return Array.from(optionsDiv.querySelectorAll('.option.selected')).map(opt => opt.dataset.value);
 }
 
 function pickRandomQuestions(chapters, count) {
