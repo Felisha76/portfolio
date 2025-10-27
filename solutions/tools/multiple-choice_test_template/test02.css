@@ -1,0 +1,186 @@
+/* test02.css - Responsive Flexbox CSS for test.xhtml */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #4b96e1;
+  color: #222;
+  align-items: center;
+}
+
+    .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 97%;
+    margin: 10px;
+    padding: 10px 10px;
+    background: #13c7ef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-radius: 12px;
+    }
+
+        .top-bar {
+            background-color: #76f182;
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 100%;
+            
+        }
+
+            .top-bar-left {
+                background-color: blueviolet;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex: 1;
+                min-width: 0;
+            }
+
+                .chapter-select {
+                    width:90%;
+                }
+
+            .top-bar-center {
+                background-color: brown;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+                min-width: 0;
+            }
+
+                .button-row {
+                    display: flex;
+                    justify-content: center;
+                    gap: 16px;
+                    margin-top: 16px;
+                    }
+
+                    button, input[type="submit"] {
+                    padding: 10px 24px;
+                    font-size: 1rem;
+                    border: none;
+                    border-radius: 6px;
+                    background: #007bff;
+                    color: #fff;
+                    cursor: pointer;
+                    transition: background 0.2s;
+                    }
+                    button:hover, input[type="submit"]:hover {
+                    background: #0056b3;
+                    }
+
+            .top-bar-right {
+                background-color: darkgreen;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+                min-width: 0;
+            }
+
+                .result {
+                    margin-top: 24px;
+                    padding: 16px;
+                    background: #e8b92f;
+                    border-radius: 8px;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    }
+
+        .question {
+        width: 100%;
+        margin-bottom: 24px;
+        padding: 16px;
+        background: #76f182;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        box-sizing: border-box;
+        }
+
+            .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 24px;
+            }
+
+                .choice {
+                display: flex;
+                align-items: center;
+                padding: 12px 16px;
+                background: #f1f3f4;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background 0.2s;
+                font-size: 1rem;
+                }
+                .choice:hover {
+                background: #d1e7dd;
+                }
+
+/* General */
+h1, h2, h3 {
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+
+
+/* Media Queries - responsivity */
+@media (max-width: 900px) {
+  .container {
+    max-width: 100%;
+    padding: 16px 8px;
+  }
+  .question, .choices, .result {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 8px 2px;
+    border-radius: 8px;
+  }
+  h1, h2, h3 {
+    font-size: 1.2rem;
+  }
+  .question {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .choice {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  .button-row {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 300px) {
+  .container {
+    padding: 2px 0;
+    border-radius: 4px;
+  }
+  h1, h2, h3 {
+    font-size: 1rem;
+  }
+  .question, .choice, .result {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+  button, input[type="submit"] {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
