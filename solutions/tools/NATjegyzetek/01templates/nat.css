@@ -99,7 +99,7 @@
             font-size: large;
         }
 
-        #tkBtn, #mfBtn, #nBtn, #aBtn {
+        #tkBtn, #mfBtn, #nBtn, #aBtn, #testBtn {
             margin:0.5em 0;
             /* background-color: #f6eee3; */
             border-color: #d9bda5;
@@ -123,7 +123,11 @@
             background: linear-gradient(45deg, #7a7002, #d5c303);
         }
 
-        #tkBtn a, #mfBtn a, #nBtn a, #aBtn a {
+        #testBtn {
+            background: linear-gradient(45deg, #be9203, #d58f03);
+        }
+
+        #tkBtn a, #mfBtn a, #nBtn a, #aBtn a, #tBtn a {
             text-align: left;
             font-size: xx-large;
             font-weight: bold;
