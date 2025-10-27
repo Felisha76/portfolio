@@ -139,10 +139,10 @@ body {
                         }
 
                         .question-item.correct {
-                          background: linear-gradient(154deg, rgba(3, 97, 16, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                          background: linear-gradient(154deg, rgb(5, 112, 20) 38%, rgba(20, 158, 2, 0.436) 100%);
                         }
                         .question-item.incorrect {
-                          background: linear-gradient(154deg, rgba(238, 27, 27, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                          background: linear-gradient(154deg, rgb(128, 3, 3) 38%, rgba(227, 9, 9, 0.675) 100%);
                         }
 
                         .answers label {
@@ -163,28 +163,32 @@ body {
                             margin-top: 0.5em;
                             margin-bottom: 0.5em;
                         }
-                                            
+                                           
                             .answers.correct {
-                                background: linear-gradient(154deg, rgba(2, 83, 21, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                            /*     background: linear-gradient(154deg, rgba(2, 83, 21, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                            */
                             }
 
                             .answers.incorrect {
-                                background: linear-gradient(154deg, rgba(110, 2, 2, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                                /*background: linear-gradient(154deg, rgba(110, 2, 2, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                            */
                             }
 
                             .correct { 
-                                background: linear-gradient(154deg, rgba(3, 97, 16, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%); 
+                               /* background: linear-gradient(154deg, rgba(3, 97, 16, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%); 
+                            */
                             }
 
                             .incorrect { 
-                                background: linear-gradient(154deg, rgba(238, 27, 27, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%); 
+                               /* background: linear-gradient(154deg, rgba(238, 27, 27, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%); 
+                            */
                             }
 
                             .explanation { 
                                 font-family: 'Noto Sans';
                                 font-size: 1em; 
                                 color: #ddd8d8; 
-                                background: linear-gradient(154deg, rgba(3, 24, 106, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);
+                                /*background: linear-gradient(154deg, rgba(3, 24, 106, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);*/
                                 margin-top: 0.3em; 
                             }
 
