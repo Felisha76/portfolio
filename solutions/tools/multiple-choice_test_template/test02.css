@@ -158,17 +158,6 @@ body {
                     padding: 10px;
                 }
 
-                .howTo {
-                    display: flex;
-                    justify-content:right;
-                    align-items: right;
-                }
-
-                .info {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
 
             .test-bar {
                 display: flex;
