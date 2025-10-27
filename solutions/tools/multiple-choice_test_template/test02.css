@@ -205,42 +205,65 @@ h1, h2, h3 {
 
 /* Media Queries - responsivity */
 @media (max-width: 900px) {
-  .container {
+    body { font-size: 1.2em; }
+  /*.container {    
     max-width: 100%;
     padding: 16px 8px;
-  }
+  }*/
   body, .chapter-label, .chapter-select, 
-  #startTestBtn, #checkBtn, #testForm, 
+  #testForm, 
   .question-item, .answers label, 
   .explanation, .result-summary, .timer  {
-    font-size: 1.5svh;
+    font-size: 1em;
+  }
+
+  #startTestBtn, #checkBtn {
+    font-size: 0.8em;
   }
 }
 
+
+
 @media (max-width: 600px) {
-  .container {
+    body { font-size: 1.3em; }
+  /*.container {
     padding: 8px 2px;
     border-radius: 8px;
-  }
+  }*/
 
-    body, .chapter-label, .chapter-select, 
-  #startTestBtn, #checkBtn, #testForm, 
+  body, .chapter-label, .chapter-select, 
+  #testForm, 
   .question-item, .answers label, 
   .explanation, .result-summary, .timer  {
-    font-size: 2svh;
+    font-size: 1em;
+  }
+  .button-row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  #startTestBtn, #checkBtn {
+    font-size: 0.6em;
   }
 }
 
 @media (max-width: 300px) {
-  .container {
+    body { font-size: 1.4em; }
+ /* .container {
     padding: 2px 0;
     border-radius: 4px;
-  }
+  } */
 
-    body, .chapter-label, .chapter-select, 
-  #startTestBtn, #checkBtn, #testForm, 
+  body, .chapter-label, .chapter-select, 
+  #testForm, 
   .question-item, .answers label, 
   .explanation, .result-summary, .timer  {
-    font-size: 2.5svh;
+    font-size: 1em;
+  }
+  .button-row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  #startTestBtn, #checkBtn {
+    font-size: 0.4em;
   }
 }
