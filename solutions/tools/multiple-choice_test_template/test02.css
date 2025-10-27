@@ -260,6 +260,25 @@ a {
 }
 
 
+/* Görgetősáv */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*background-color: #d19f73;*/
+  background: linear-gradient(45deg, #6f421b, #d9bda5);
+  border-radius: 5px;
+  border: 1px solid #d9bda5;
+}
+
+::-webkit-scrollbar-track {
+  /*background-color: #d9bda5;*/
+  background: linear-gradient(45deg, #6f421b, #d9bda5);
+}
+
+
 /* Media Queries - responsivity */
 @media (max-width: 900px) {
     body { font-size: 1.2em; }
