@@ -135,14 +135,16 @@ function checkAnswers() {
         const chosenText = (q[selected ? selected.toLowerCase() : ''] || '').trim().toLowerCase();
         const correctText = (q.correct || '').trim().toLowerCase();
         if (chosenText === correctText && chosenText !== '') {
-            answerDiv.classList.add('correct');
+                answerDiv.classList.add('correct');
+                li.classList.add('correct');
             correctCount++;
             // Időbónusz számítása (max 30mp/kérdés, minden megtakarított mp 1 pont)
             const timeForThis = avgTimePerQuestion;
             const bonus = Math.max(0, 30 - timeForThis);
             timeBonus += Math.round(bonus);
         } else {
-            answerDiv.classList.add('incorrect');
+                answerDiv.classList.add('incorrect');
+                li.classList.add('incorrect');
             explanationDiv.style.display = '';
             // Helyes válasz szövegének megjelenítése
             explanationDiv.innerHTML = `Helyes válasz: <b>${q.correct}</b><br />${q.explanation || ''}`;
