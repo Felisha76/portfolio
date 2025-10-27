@@ -115,7 +115,7 @@ body {
                     margin-bottom: 10px;
                     }
 
-                    #startTestBtn, #checkBtn {
+                    button {
                     padding: 10px 10px 10px 10px;
                     font-family: 'Noto Sans';
                     font-weight: bold;
@@ -133,6 +133,11 @@ body {
                     color: #f6eee3;
                     }
 
+                    .timer { 
+                        font-size: 2em; 
+                        padding: 10px; 
+                    }
+
             .top-bar-right {
                 background: transparent;
                 color: #2b1501;
@@ -144,6 +149,26 @@ body {
                 min-width: 0;
             }
 
+                .result-summary { 
+                    display: flex;
+                    flex-direction: column;
+                    font-family: 'Noto Sans';
+                    font-size: 1em;
+                    font-weight: bold;
+                    padding: 10px;
+                }
+
+                .howTo {
+                    display: flex;
+                    justify-content:right;
+                    align-items: right;
+                }
+
+                .info {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
 
             .test-bar {
                 display: flex;
@@ -217,20 +242,6 @@ body {
                                 /*background: linear-gradient(154deg, rgba(3, 24, 106, 0.51) 38%, rgba(5, 20, 158, 0.45) 100%);*/
                                 margin-top: 0.3em; 
                             }
-
-
-
-            .result-summary { 
-                font-family: 'Noto Sans';
-                font-size: 1em;
-                font-weight: bold;
-                padding: 10px;
-            }
-
-            .timer { 
-                font-size: 2em; 
-                padding: 10px; 
-            }
                 
 
 /* General */
