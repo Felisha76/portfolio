@@ -1,6 +1,3 @@
-// test.js - Interaktív tesztlogika
-// Feltételezzük, hogy a CSV fájl elérhető: "../../tesztkerdesek.csv"
-
 const CSV_PATH = "irodalom_6.csv";
 
 let questions = [];
