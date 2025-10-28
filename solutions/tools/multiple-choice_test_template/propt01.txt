@@ -1,7 +1,7 @@
 Olvasd el végig a file-t: solutions\tools\multiple-choice_test_template\mateial.txt
 
-Ebből a tananyagból készíts 30 tudásellenőrző kérdést a következő formátumban:
-Fazekas Mihály: Lúdas Matyi – Első levonás;kérdés;válasz 1;válasz 2;válasz 3;válasz 4;helyes válasz;rövid magyarázat
+Ebből a tananyagból készíts 25-30 tudásellenőrző kérdést a következő formátumban:
+Arany János élete;kérdés;válasz 1;válasz 2;válasz 3;válasz 4;helyes válasz;rövid magyarázat
 
 Ezek egy csv -be fognak kerülni, onnan fogja egy webapp beolvasni, hogy 10 random kérdést adjon fel a gyerekeknek a témából. Ez egy rövid téma, ezért nehéz ennyi teljesen különböző kérdést feltenni, ezért egy dologra többféleképpen is rákérdezhetsz, de a 30 kérdés összességében fedje le az egész tananyagot. 
 Ne hallucinálj!
