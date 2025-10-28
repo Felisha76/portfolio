@@ -88,8 +88,9 @@ body {
                         z-index: 10; 
                         border-radius: 0 0 6px 6px; 
                         box-shadow: 0 2px 8px rgba(0,0,0,0.07); 
-                        height: 180px; /* kb. 5 opció magassága */
+                        height: 500px; /* kb. 9 opció magassága */
                         overflow-y: auto;
+                        min-width: 300px;
                     }
                     /*Fix magasságú :
                     .custom-dropdown .options {

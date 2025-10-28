@@ -46,7 +46,7 @@ function fillChapterDropdown() {
             // Frissítjük a selectedDiv szövegét
             const selected = Array.from(optionsDiv.querySelectorAll('.option.selected')).map(o => o.textContent);
             selectedDiv.textContent = selected.length ? selected.join(', ') : 'Válassz fejezetet';
-            optionsDiv.style.display = 'none';
+            //optionsDiv.style.display = 'none'; // minden kiválasztás után visszacsukódik a lista
         });
         optionsDiv.appendChild(opt);
     });

@@ -1,7 +1,7 @@
 // test.js - Interaktív tesztlogika
 // Feltételezzük, hogy a CSV fájl elérhető: "../../tesztkerdesek.csv"
 
-const CSV_PATH = "01.csv";
+const CSV_PATH = "01.csv"; // Nevezd át a file-t és a path-on levő filenevet is.
 
 let questions = [];
 let selectedChapters = [];
@@ -46,7 +46,7 @@ function fillChapterDropdown() {
             // Frissítjük a selectedDiv szövegét
             const selected = Array.from(optionsDiv.querySelectorAll('.option.selected')).map(o => o.textContent);
             selectedDiv.textContent = selected.length ? selected.join(', ') : 'Válassz fejezetet';
-            optionsDiv.style.display = 'none';
+            //optionsDiv.style.display = 'none'; // minden választás után visszacsukódik a lista
         });
         optionsDiv.appendChild(opt);
     });
