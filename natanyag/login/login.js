@@ -6,6 +6,10 @@ function handleCredentialResponse(response) {
 	console.log('Google user:', data);
 	// Példa: felhasználó nevét kiírjuk az oldalra
 	document.querySelector('.login-container').innerHTML = `<h2>Szia, ${data.name}!</h2><p>Sikeres bejelentkezés Google fiókkal.</p>`;
+	// Átirányítás a főoldalra
+	setTimeout(function() {
+		window.location.href = "../main/main.html";
+	}, 1200); // 1.2 másodperc után
 }
 
 // JWT dekódoló segédfüggvény
