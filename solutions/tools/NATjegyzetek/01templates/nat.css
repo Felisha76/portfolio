@@ -124,10 +124,10 @@
         }
 
         #testBtn {
-            background: linear-gradient(45deg, #be9203, #d58f03);
+            background: linear-gradient(45deg, #e80303, #02691a);
         }
 
-        #tkBtn a, #mfBtn a, #nBtn a, #aBtn a, #tBtn a {
+        #tkBtn a, #mfBtn a, #nBtn a, #aBtn a, #testBtn a {
             text-align: left;
             font-size: xx-large;
             font-weight: bold;
