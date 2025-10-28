@@ -1,8 +1,8 @@
 Olvasd el végig a file-t: solutions\tools\multiple-choice_test_template\mateial.txt
 
-Ebből a tananyagból készíts 20-30 tudásellenőrző kérdést a következő formátumban:
-kérdés;válasz 1;válasz 2;válasz 3;válasz 4;helyes válasz;rövid magyarázat
-Ez egy rövid téma, ezért nehéz ennyi teljesen különböző kérdést feltenni, ezért egy dologra többféleképpen is rákérdezhetsz, de a 30 kérdés összességében fedje le az egész tananyagot. 
+Ebből a tananyagból készíts 30 tudásellenőrző kérdést a következő formátumban:
+Arany János: Szent László (legenda);kérdés;válasz 1;válasz 2;válasz 3;válasz 4;helyes válasz;rövid magyarázat
+
+Ezek egy csv -be fognak kerülni, onnan fogja egy webapp beolvasni, hogy 10 random kérdést adjon fel a gyerekeknek a témából. Ez egy rövid téma, ezért nehéz ennyi teljesen különböző kérdést feltenni, ezért egy dologra többféleképpen is rákérdezhetsz, de a 30 kérdés összességében fedje le az egész tananyagot. 
 Ne hallucinálj!
-A helyes válasz mindig legyen másik oszlopban, mint az előző kérdésnél (ne fodrulon elő, hogy sok kérdés esetén a helyes válasz mondjuk a második oszlopban levő.)
-Célfile: solutions\tools\multiple-choice_test_template\questions.csv
+Minden kérdésnél a későbbi helyes válasz legyen a 3. oszlopban (válasz 1)
