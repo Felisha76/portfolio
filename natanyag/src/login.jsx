@@ -2,6 +2,7 @@ import { useState } from "react";
 import { auth, googleProvider } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import './login.css';
+import { GoogleSignInButton } from './components/googleSignInButton';
 
 
 export default function Login({ onLogin }) {
@@ -66,7 +67,7 @@ export default function Login({ onLogin }) {
               <button onClick={handleEmailLogin}>Login</button>
               <button onClick={handleRegister}>Register</button>
               <hr />
-              <button onClick={handleGoogleLogin}>Login with Google</button>
+              <GoogleSignInButton onClick={handleGoogleLogin}/>
               {error && <p style={{ color: "red" }}>{error}</p>}
           </div>
 
