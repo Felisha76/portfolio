@@ -19,6 +19,7 @@ function App() {
 
   if (!user) return <Login onLogin={()=>{}} />;
 
+  console.log("user:", user);
   return (
     <div>
       <h1>Welcome, {user.email}</h1>
