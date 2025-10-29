@@ -3,12 +3,27 @@ import { auth, googleProvider } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import './login.css';
 import GoogleSignInButton from './components/googleSignInButton/GoogleSignInButton';
+import { sendPasswordResetEmail } from "firebase/auth";
 
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const handleForgotPassword = async (e) => {
+    e.preventDefault();
+    if (!email) {
+      setError("Add meg az email címed!");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setError("Jelszó-visszaállító email elküldve! (Kérlek, ellenőrizd a spam mappát is az email fiókodban!)");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
   const handleEmailLogin = async () => {
     try {
@@ -55,11 +70,11 @@ export default function Login({ onLogin }) {
           <div className="remember-forgot">
             <div className="remember-me">
               <input type="checkbox" id="remember" />
-              <label htmlFor="remember">Remember me</label>
+              <label htmlFor="remember"> Remember me</label>
             </div>
 
             <div className="forgot">
-              <a href="#">Forgot password?</a>
+              <a href="#" onClick={handleForgotPassword}>Forgot password?</a>
             </div>
           </div>
 
@@ -68,7 +83,7 @@ export default function Login({ onLogin }) {
               <button onClick={handleRegister}>Register</button>
               <hr />
               <GoogleSignInButton onClick={handleGoogleLogin}/>
-              {error && <p style={{ color: "red" }}>{error}</p>}
+              {error && <p style={{ color: "white" }}>{error}</p>}
           </div>
 
       </div>
