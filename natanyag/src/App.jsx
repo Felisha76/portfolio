@@ -38,7 +38,7 @@ export default App
 
 
 import { useState, useEffect } from "react";
-import Login from ".Login";
+import Login from "./Login";
 import { auth } from "./firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
