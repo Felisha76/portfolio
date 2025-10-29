@@ -1,4 +1,4 @@
-* {
+/* * {
   font-family: 'Noto Sans';
   font-size: 1em;
   margin: 0;
@@ -41,21 +41,21 @@ body {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* Görgetősáv */
+/* Görgetősáv *
 ::-webkit-scrollbar {
   height: 8px;
   width: 14px;
 }
 
 ::-webkit-scrollbar-thumb {
-  /*background-color: #d19f73;*/
+  /*background-color: #d19f73;*
   background: linear-gradient(45deg, #6f421b, #d9bda5);
   border-radius: 5px;
   border: 1px solid #d9bda5;
 }
 
 ::-webkit-scrollbar-track {
-  /*background-color: #d9bda5;*/
+  /*background-color: #d9bda5;*
   background: linear-gradient(45deg, #6f421b, #d9bda5);
 }
 
@@ -82,3 +82,4 @@ body {
 .read-the-docs {
   color: #888;
 }
+*/

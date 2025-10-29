@@ -10,15 +10,16 @@
   }
 
 body {
-    display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
 	  color: var(--primary-color);
     background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
+
 }
 
 /* =============================================== ITEM SETTINGS   */    
