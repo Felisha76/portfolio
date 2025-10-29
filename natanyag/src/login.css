@@ -1,41 +1,40 @@
-
-:root {
-  --primary-color: #c6c3c3;
-  --second-color: #ffffff;
-  --black-color: #000000;
+* {
+    font-family: 'Noto Sans';
+    font-size: 1em;
 }
 
-.login-body {
-  font-family: 'Noto Sans';
-  font-size: 1em;
-  min-height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--primary-color);
-  background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+:root {
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	  color: var(--primary-color);
+    background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* =============================================== ITEM SETTINGS   */    
    
-  .login-body .wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
-  min-height: 100vh;
-  margin: 1em auto;
+  .wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    min-height: 100vh;
+    margin: 1em;
   }
   
-  .login-body .login_box {
+  .login_box {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -48,7 +47,7 @@
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
   }
   
-  .login-body .login-header {
+  .login-header {
     position: absolute;
     top: 0;
     left: 50%;
@@ -62,12 +61,12 @@
     border-radius: 0 0 20px 20px;
   }
   
-  .login-body .login-header span {
+  .login-header span {
     font-size: 3em;
     color: var(--black-color);
   }
   
-  .login-body .login-header::before {
+  .login-header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -79,7 +78,7 @@
     box-shadow: 15px 0 0 0 var(--primary-color);
   }
   
-  .login-body .login-header::after {
+  .login-header::after {
     content: "";
     position: absolute;
     top: 0;
@@ -91,14 +90,14 @@
     box-shadow: -15px 0 0 0 var(--primary-color); 
   }
   
-  .login-body input {
+  input {
     font-size: 1.2em;
     padding: 0.5em;
     border-radius: 0 15px 0 15px;
     width: 70%;
   }
 
-  .login-body button {
+  button {
     font-size: 1.5em;
     width:45%;
     border-radius: 0 15px 0 15px;
@@ -107,7 +106,7 @@
     padding: 5px;
   }
 
-  .login-body .input_box {
+  .input_box {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -115,7 +114,7 @@
     margin: 20px 0;
   }
    
-  .login-body .label {
+  .label {
     position: absolute;
     top: 15px;
     left: 20px;
@@ -123,7 +122,7 @@
     color: var(--primary-color);
   }
     
-  .login-body .remember-forgot {
+  .remember-forgot {    
     position: relative;
     display: flex;
     flex-direction: row;
@@ -133,19 +132,19 @@
     align-items: flex-end;
     }
     
-  .login-body a {
+     a {
     text-decoration: none;
     color: var(--primary-color);
   } 
 /* =============================================== HOVER ACTIONS   */
 /*  */
 
-  .login-body a:hover {
+a:hover {
   text-decoration: none;
   color: var(--second-color);
 }
 
-  .login-body label:hover {
+label:hover {
   color: var(--second-color);
 }
 
@@ -170,21 +169,23 @@
 /* =============================================== RESPONSIVITY SETTINGS   */
 /*  */
   @media (max-width: 800px) {
-    .login-body .wrapper {
+    .wrapper {
       padding: 2em 2em;
       min-height: 90vh;
-      margin: 0 auto;
+    }
+
+    .main {
+      margin: 1em;
     }
   }
 
   @media only screen and (max-width: 564px) {
-    .login-body .wrapper {
+    .wrapper {
       padding: 1em 1em;
       min-height: 70vh;
-      margin: 0 auto;
     }
   
-    .login-body .login_box {
+    .login_box {
       padding: 4em 1.5em 4em 1.5em;
     }
   }
