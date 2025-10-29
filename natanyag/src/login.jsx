@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { auth, googleProvider } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import './login.css';
+
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -35,15 +37,38 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input type="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} />
-      <button onClick={handleEmailLogin}>Login</button>
-      <button onClick={handleRegister}>Register</button>
-      <hr />
-      <button onClick={handleGoogleLogin}>Login with Google</button>
-      {error && <p style={{color:"red"}}>{error}</p>}
+    <div className="wrapper">
+      <div className="login_box">
+        <div className="login-header">
+          <span>Login</span>
+        </div>
+
+        <div className="input_box">
+          <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+        </div>
+
+        <div className="input_box">
+          <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
+        </div>
+
+        <div className="remember-forgot">
+          <div className="remember-me">
+            <input type="checkbox" id="remember" />
+            <label htmlFor="remember">Remember me</label>
+          </div>
+
+          <div className="forgot">
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+      <div className="input_box">
+        <button onClick={handleEmailLogin}>Login</button>
+        <button onClick={handleRegister}>Register</button>
+        <hr />
+        <button onClick={handleGoogleLogin}>Login with Google</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
     </div>
   );
 }
