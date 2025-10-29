@@ -24,7 +24,7 @@ function App() {
       <h1>Welcome, {user.email}</h1>
       <button onClick={handleLogout}>Logout</button>
       {
-      /* Itt jöhet a fő app tartalom */     
+      <p>Firebase elindult!!!</p>     
       }
     </div>
   );
