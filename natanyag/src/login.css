@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-	color: var(--primary-color);
+	  color: var(--primary-color);
     background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-position: center;
     background-size: cover;
@@ -24,6 +24,7 @@ body {
 /* =============================================== ITEM SETTINGS   */    
    
   .wrapper {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -93,10 +94,11 @@ body {
 
   button {
     font-size: 1.5em;
-    width:70%;
+    width:45%;
     border-radius: 15px;
     border: var(--second-color) solid 1px;
     margin: 3px;
+    padding: 5px;
   }
 
   .input_box {

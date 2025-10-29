@@ -138,3 +138,23 @@ export default App;
 *******************************
 A localhoston localhost:5173 kéne elindítanom a http://localhost:5173/natanyag/src/login.jsx -et?
 Hogyan tovább?
+
+
+
+********************
+Ha a login oldalt "kívülről" (azaz más gépről vagy az interneten) szeretnéd elérni, ezekre van szükség:
+
+Fejlesztői szerver elérhetővé tétele:
+
+Indítsd a Vite szervert úgy, hogy minden IP-ről elérhető legyen: npm run dev -- --host
+Ekkor a szerver nem csak localhost, hanem a géped IP-címén is elérhető lesz (pl. http://192.168.1.100:5173).
+Tűzfal és router beállítás:
+
+Ha másik gépről akarod elérni, a tűzfalon engedélyezd a portot (alapértelmezett: 5173).
+Ha interneten keresztül akarod elérni, a routeren állíts be port forwardingot a géped IP-jére és a 5173-as portra.
+Publikus elérés (éles környezet):
+
+Fejlesztői szervert ne használd élesben! Inkább buildeld le az alkalmazást: npm run build
+Az elkészült dist mappát töltsd fel egy web szerverre (pl. Netlify, Vercel, Firebase Hosting, vagy saját szerver).
+Összefoglalva: fejlesztéshez a --host opcióval indítsd, éleshez pedig buildeld le és töltsd fel egy publikus szerverre. 
+Ha konkrét platformra szeretnéd telepíteni, írd meg, és segítek a lépésekben!
