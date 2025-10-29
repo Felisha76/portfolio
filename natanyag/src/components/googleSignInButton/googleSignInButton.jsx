@@ -1,5 +1,5 @@
 import React from "react";
-import './googleSignInButton.css';
+import './GoogleSignInButton.css';
 
 export default function GoogleSignInButton({ onClick }) {
   return (
