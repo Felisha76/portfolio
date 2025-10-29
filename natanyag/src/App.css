@@ -10,6 +10,15 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --text-colorDark: #2b1501;
+  --text-colorLight: #eee7d7;
+  --text-shadow: #351901f8;
+  --box-shadow:  0 1em 3em rgba(0, 0, 0, 0.2);
+  --box-shadowChocolate: #572b05;
+  --background-colorLight: #f6eee3;
+  --background-gradient01: linear-gradient(45deg, #683304, #eee7d7);
+  --border-colorLight:  #d9bda5;
+  --a-colorBlack: black;
 }
 
 body {
@@ -31,6 +40,25 @@ body {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
+/* Görgetősáv */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*background-color: #d19f73;*/
+  background: linear-gradient(45deg, #6f421b, #d9bda5);
+  border-radius: 5px;
+  border: 1px solid #d9bda5;
+}
+
+::-webkit-scrollbar-track {
+  /*background-color: #d9bda5;*/
+  background: linear-gradient(45deg, #6f421b, #d9bda5);
+}
+
 
 @keyframes logo-spin {
   from {

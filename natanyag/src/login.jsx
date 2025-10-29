@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { auth, googleProvider } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import './login.css';
@@ -10,6 +10,14 @@ export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  // Login page body class
+  React.useEffect(() => {
+    document.body.classList.add('login-body');
+    return () => {
+      document.body.classList.remove('login-body');
+    };
+  }, []);
 
   const handleForgotPassword = async (e) => {
     e.preventDefault();
