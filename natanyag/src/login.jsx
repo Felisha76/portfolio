@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth, googleProvider } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import './login.css';
-import { GoogleSignInButton } from './components/googleSignInButton';
+import GoogleSignInButton from './components/googleSignInButton/GoogleSignInButton';
 
 
 export default function Login({ onLogin }) {
