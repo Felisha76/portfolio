@@ -1,3 +1,4 @@
+/*
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,11 +34,11 @@ function App() {
 }
 
 export default App
+*/
 
 
-/*
 import { useState, useEffect } from "react";
-import Login from "./Login";
+import Login from ".login";
 import { auth } from "./firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
@@ -62,7 +63,7 @@ function App() {
       <h1>Welcome, {user.email}</h1>
       <button onClick={handleLogout}>Logout</button>
       {
-      /* Itt jöhet a fő app tartalom */    /*  
+      /* Itt jöhet a fő app tartalom */     
       }
     </div>
   );
@@ -70,4 +71,3 @@ function App() {
 
 export default App;
 
-*/
