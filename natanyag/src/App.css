@@ -51,9 +51,9 @@ body {
   }
 
     .welcomeMessage {
-      font-size: 1.3em;
+      font-size: clamp(1em, 3vw, 4em);
       padding-left: 10px;
-      text-shadow: var(--textShadow);
+      text-shadow: var(--btnBckgrDark);
     }
 
     .logoutBox {
@@ -61,7 +61,7 @@ body {
     }
 
     .logoutButton {
-      background-color: var(--btnBckgrDark);
+      background-color: var(--textShadow);
       color: var(--colorLight);
       box-shadow: var(--boxShadow002);
       border: var(--borderColor)
@@ -89,6 +89,7 @@ body {
     .title {
       color: var(--colorDark);
       font-size: 2em;
+      font-weight: bold;
       margin: 0px;
     }
 
@@ -105,14 +106,50 @@ body {
     color: var(--colorLight);
     text-shadow: var(--textShadow);
     box-shadow: var(--boxShadow02);
-    margin: 10px 20px;
-      width:100%
+    margin: 10px;
+      width:90%;
+      height: 40px;
+      overflow-x:hidden;
+      scrollbar-width: none;
+      transition: height 10s;
+    }
+
+    .natJegyzetek::-webkit-scrollbar {
+      display: none; /* Chrome, Edge, Safari */
+    }
+
+    .natJegyzetek:hover {
+      height:auto;
+
     }
 
       .mainLabel {
+        font-size: clamp(1em, 3vw, 4em);
+        font-weight: bold;
+        color: #f2d4bf;
+        text-shadow: var(--textShadow);
+        transition: height 10s;
+      }
+
+      .mainLabel:hover {
+        color:#331201;
+        border-radius: 15px;
+        background-color: #f2d4bf;
 
       }
 
       .appLink {
         text-decoration: none;
+        font-size: clamp(1em, 2.5vw, 3em);
+        color: var(--colorLight);
+        text-shadow: var(--textShadow);
       }
+
+        .appLink:hover {
+          text-decoration: none;
+          font-size: clamp(1em, 2.7vw, 3em);
+          color: var(--colorLight);
+          text-shadow: var(--textShadow);
+          background-color: #572b05;
+          border-radius: 15px;
+        }
