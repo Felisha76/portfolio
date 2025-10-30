@@ -182,129 +182,14 @@
 }
 
 /* =============================================== RESPONSIVITY SETTINGS   */
-/*  */
-    @media (max-width: 2000px) {
-      .mainBox {
-        width:2000px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1900px) {
-      .mainBox {
-        width:1900px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1800px) {
-      .mainBox {
-        width:1800px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1700px) {
-      .mainBox {
-        width:1700px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1600px) {
-      .mainBox {
-        width:1600px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1500px) {
-      .mainBox {
-        width:1500px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1400px) {
-      .mainBox {
-        width:1400px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1300px) {
-      .mainBox {
-        width:1300px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1200px) {
-      .mainBox {
-        width:1200px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1100px) {
-      .mainBox {
-        width:1100px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 1000px) {
-      .mainBox {
-        width:1000px;
-        height: auto;
-      }
-  }
-
-  @media (max-width: 900px) {
-      .mainBox {
-        width:900px;
-        height: auto;
-      }
-  }
-
-  @media (max-width: 800px) {
-    .mainBox {
-        width:800px;
-        height: auto;
-      }
-  }
-
-  @media (max-width: 700px) {
-    .mainBox {
-        width:700px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 600px) {
-      .mainBox {
-        width:600px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 500px) {
-      .mainBox {
-        width:500px;
-        height: auto;
-      }
-  }
-
-    @media (max-width: 400px) {
-      .mainBox {
-        width:400px;
-        height: auto;
-      }
-  }
 
     @media (max-width: 300px) {
       .mainBox {
-        width:300px;
+        width: clamp(300px, 50vw, 2000px);
+        height: auto;
+      }
+      .wrapper {
+        width: clamp(300px, 50vw, 2000px);
         height: auto;
       }
   }
