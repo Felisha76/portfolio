@@ -1,28 +1,18 @@
 * {
-    font-family: 'Noto Sans';
-    font-size: 1em;
+    font-family: 'Noto Sans';    
 }
 
-:root {
-    --primary-color: #c6c3c3;
-    --second-color: #ffffff;
-    --black-color: #000000;
-  }
-
-body {
+.mainBox {
+    display: flex;
+    width: 900px;
+    height: auto;
     justify-content: center;
     align-items: center;
     align-self: center;
-	  color: var(--primary-color);
-    background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-position: center;
-    background-size: cover;
-    background-repeat: repeat;
-    background-attachment: fixed;
-
+    --primary-color: #c6c3c3;
+    --second-color: #ffffff;
+    --black-color: #000000;
 }
-
-/* =============================================== ITEM SETTINGS   */    
    
   .wrapper {
     position: relative;
@@ -32,7 +22,11 @@ body {
     align-items: center;
     vertical-align: middle;
     min-height: 100vh;
-    margin: 1em;
+      background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: repeat-x;
   }
   
   .login_box {
@@ -42,10 +36,10 @@ body {
     width: 450px;
     backdrop-filter: blur(100px);
     border: 2px solid var(--primary-color);
-    border-radius: 0 15px 0 15px;
-    padding: 4em 2.5em 4em 2.5em;
+    border-radius: 0 15px 0 15px;    
     color: var(--second-color);
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    margin: 1px;
   }
   
   .login-header {
@@ -91,39 +85,26 @@ body {
     box-shadow: -15px 0 0 0 var(--primary-color); 
   }
   
-  input {
-    font-size: 1.2em;
-    padding: 0.5em;
-    border-radius: 0 15px 0 15px;
-    width: 70%;
-  }
-
-  button {
-    font-size: 1.5em;
-    width:45%;
-    border-radius: 0 15px 0 15px;
-    border: var(--second-color) solid 1px;
-    margin: 3px;
-    padding: 5px;
-  }
-
-  .input_box {
-    position: relative;
+  .input_box_email {
+    position:relative;
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
     align-items: center;
-    margin: 20px 0;
+    justify-content: center;
+
   }
-   
-  .label {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    transition: 0.2s;
-    color: var(--primary-color);
-  }
-    
-  .remember-forgot {    
+    .login_input_email {
+            position:relative;
+            font-size: 1.2em;    
+            border-radius: 0 15px 0 15px;
+            width: 70%;
+            margin: 2px;
+            padding: 10px;
+            text-align: center;
+          }
+
+    .remember-forgot {    
     position: relative;
     display: flex;
     flex-direction: row;
@@ -131,21 +112,51 @@ body {
     align-self: center;
     justify-content: space-between;
     align-items: flex-end;
+    margin-bottom: 20px;
     }
-    
-     a {
-    text-decoration: none;
-    color: var(--primary-color);
-  } 
+
+      .remember-me {
+          display: flex;
+          flex-direction: row;
+      }
+          .remember_label {
+            margin-left: 2px;
+            margin-right: 3px;
+            transition: 0.2s;
+            color: var(--primary-color);
+          }
+
+        .login_a {
+        text-decoration: none;
+        color: var(--primary-color);
+        margin-left: 3px;
+      } 
+
+  .input_box_loginButtons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+     .login_button {
+    font-size: 1.2em;
+    width: 45%;
+    border-radius: 0 15px 0 15px;
+    border: var(--second-color) solid 1px;
+    margin: 5px;
+  }
+
+     
+
 /* =============================================== HOVER ACTIONS   */
 /*  */
 
-a:hover {
+.login_a:hover {
   text-decoration: none;
   color: var(--second-color);
 }
 
-label:hover {
+.login_label:hover {
   color: var(--second-color);
 }
 
@@ -169,24 +180,128 @@ label:hover {
 
 /* =============================================== RESPONSIVITY SETTINGS   */
 /*  */
-  @media (max-width: 800px) {
-    .wrapper {
-      padding: 2em 2em;
-      min-height: 90vh;
-    }
-
-    .main {
-      margin: 1em;
-    }
+    @media (max-width: 2000px) {
+      .mainBox {
+        width:2000px;
+        height: auto;
+      }
   }
 
-  @media only screen and (max-width: 564px) {
-    .wrapper {
-      padding: 1em 1em;
-      min-height: 70vh;
-    }
-  
-    .login_box {
-      padding: 4em 1.5em 4em 1.5em;
-    }
+    @media (max-width: 1900px) {
+      .mainBox {
+        width:1900px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1800px) {
+      .mainBox {
+        width:1800px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1700px) {
+      .mainBox {
+        width:1700px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1600px) {
+      .mainBox {
+        width:1600px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1500px) {
+      .mainBox {
+        width:1500px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1400px) {
+      .mainBox {
+        width:1400px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1300px) {
+      .mainBox {
+        width:1300px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1200px) {
+      .mainBox {
+        width:1200px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1100px) {
+      .mainBox {
+        width:1100px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 1000px) {
+      .mainBox {
+        width:1000px;
+        height: auto;
+      }
+  }
+
+  @media (max-width: 900px) {
+      .mainBox {
+        width:900px;
+        height: auto;
+      }
+  }
+
+  @media (max-width: 800px) {
+    .mainBox {
+        width:800px;
+        height: auto;
+      }
+  }
+
+  @media (max-width: 700px) {
+    .mainBox {
+        width:700px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 600px) {
+      .mainBox {
+        width:600px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 500px) {
+      .mainBox {
+        width:500px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 400px) {
+      .mainBox {
+        width:400px;
+        height: auto;
+      }
+  }
+
+    @media (max-width: 300px) {
+      .mainBox {
+        width:300px;
+        height: auto;
+      }
   }

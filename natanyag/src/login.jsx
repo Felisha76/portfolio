@@ -53,41 +53,40 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="wrapper">
-      <div className="login_box">
-          <div className="login-header">
-            <span>Login</span>
-          </div>
-
-          <div className="input_box">
-            <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-          </div>
-
-          <div className="input_box">
-            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-          </div>
-
-          <div className="remember-forgot">
-            <div className="remember-me">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember"> Remember me</label>
+    <div class="mainBox">
+      <div className="wrapper">
+        <div className="login_box">
+            <div className="login-header">
+              <span>Login</span>
             </div>
 
-            <div className="forgot">
-              <a href="#" onClick={handleForgotPassword}>Forgot password?</a>
+            <div className="input_box_email">
+              <input class="login_input_email" type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+              <input  class="login_input_email" type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
             </div>
-          </div>
 
-          <div className="input_box">
-              <button onClick={handleEmailLogin}>Login</button>
-              <button onClick={handleRegister}>Register</button>
-              <hr />
-              <GoogleSignInButton onClick={handleGoogleLogin}/>
-              {error && <p style={{ color: "white" }}>{error}</p>}
-          </div>
+            <div className="remember-forgot">
+              <div className="remember-me">
+                <input class="remember_input" type="checkbox" id="remember" />
+                <label class="remember_label" htmlFor="remember"> Remember me</label>
+              </div>
 
+              
+                <a href="#" class="login_a" onClick={handleForgotPassword}>Forgot password?</a>
+              
+            </div>
+
+            <div className="input_box_loginButtons">
+                <button class="login_button" onClick={handleEmailLogin}>Login</button>
+                <button class="login_button" onClick={handleRegister}>Register</button>
+                <hr />
+                <GoogleSignInButton onClick={handleGoogleLogin}/>
+                {error && <p style={{ color: "white" }}>{error}</p>}
+            </div>
+
+        </div>
+        
       </div>
-      
     </div>
   );
 }
