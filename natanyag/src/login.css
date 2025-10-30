@@ -2,11 +2,16 @@
     font-family: 'Noto Sans';    
 }
 
+body {
+  width: clamp(100px, 100vw, 3000px); 
+  height: auto;
+}
+
 .mainBox {
     
     display: flex;
     flex-direction: row;
-    width: 900px;
+    width: clamp(100px, 100vw, 3000px); /* For responsiveness: min < preferred < max */
     height: auto;
     align-content:center;
     --primary-color: #c6c3c3;
@@ -181,15 +186,15 @@
   background-color: #282929;
 }
 
-/* =============================================== RESPONSIVITY SETTINGS   */
+/* =============================================== RESPONSIVITY SETTINGS   
 
-    @media (max-width: 300px) {
+    @media (max-width: 200px) {
       .mainBox {
-        width: clamp(300px, 50vw, 2000px);
+        width: clamp(200px, 100vw, 2000px);
         height: auto;
       }
       .wrapper {
-        width: clamp(300px, 50vw, 2000px);
+        width: clamp(200px, 100vw, 2000px);
         height: auto;
       }
-  }
+  }*/
