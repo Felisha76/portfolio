@@ -22,12 +22,13 @@ function App() {
 
   console.log("user:", user);
   return (
-    <div>
-      <h1>Welcome, {user.email}</h1>
-      <button onClick={handleLogout}>Logout</button>
+    <div class="appEnterBox">
+      <h1 class="welcomeMessage">Welcome, {user.email}</h1>
+      <button class="logoutButton" onClick={handleLogout}>Logout</button>
       {
       <p>Firebase elindult!!!</p>     
       }
+      <a href="/NATjegyzetek/6.oszt/irodalom/irodalom_6.html" class="appLink">Irodalom jegyzetek</a>
     </div>
   );
 }
