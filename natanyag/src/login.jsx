@@ -79,8 +79,8 @@ export default function Login({ onLogin }) {
             <div className="input_box_loginButtons">
                 <button class="login_button" onClick={handleEmailLogin}>Login</button>
                 <button class="login_button" onClick={handleRegister}>Register</button>
-                <hr />
-                <GoogleSignInButton onClick={handleGoogleLogin}/>
+                
+                <GoogleSignInButton class="googleButton" onClick={handleGoogleLogin}/>
                 {error && <p style={{ color: "white" }}>{error}</p>}
             </div>
 
