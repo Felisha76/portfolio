@@ -1,85 +1,118 @@
-/* * {
-  font-family: 'Noto Sans';
-  font-size: 1em;
-  margin: 0;
-  padding: 0;
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  --text-colorDark: #2b1501;
-  --text-colorLight: #eee7d7;
-  --text-shadow: #351901f8;
-  --box-shadow:  0 1em 3em rgba(0, 0, 0, 0.2);
-  --box-shadowChocolate: #572b05;
-  --background-colorLight: #f6eee3;
-  --background-gradient01: linear-gradient(45deg, #683304, #eee7d7);
-  --border-colorLight:  #d9bda5;
-  --a-colorBlack: black;
-}
-
 body {
-  background: linear-gradient(45deg, #d9bda5, #eee7d7);
-  min-height: 100vh;
+  display:block;
+  align-items: self-start;
+  background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: repeat-x;
+}
+
+:root {
+
+}
+
+.appEnterBox {
+  width: clamp(100px, 100vw, 3000px); 
   height: 100%;
-  padding: 0;
+  
+  color:#291001;
+  display:flex;
+  flex-direction: column;
+  align-self: flex-start;
+  --bckgrGradLight: linear-gradient(45deg, #d9bda5, #eee7d7);
+  --bckgrGradDark: linear-gradient(45deg, #683304, #d9bda5);
+  --bckgrSolidLight: #f6eee3;
+  --scrollbarGradient: linear-gradient(45deg, #6f421b, #d9bda5);
+  --boxShadow01: 0 1em 3em rgba(0, 0, 0, 0.2);
+  --boxShadow002: #572b05;
+  --colorDark: #2b1501;
+  --colorLight: #f6eee3;
+  --textShadow: 0 0.2em 0.4em #351901f8;
+  --borderColor: #d9bda5;
+  --btnBckgrDark: #331201;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-/* Görgetősáv *
-::-webkit-scrollbar {
-  height: 8px;
-  width: 14px;
-}
-
-::-webkit-scrollbar-thumb {
-  /*background-color: #d19f73;*
-  background: linear-gradient(45deg, #6f421b, #d9bda5);
-  border-radius: 5px;
-  border: 1px solid #d9bda5;
-}
-
-::-webkit-scrollbar-track {
-  /*background-color: #d9bda5;*
-  background: linear-gradient(45deg, #6f421b, #d9bda5);
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+  .headerBox {
+    border: 1px solid;
+    border-color: var(--borderColor);
+    border-radius: 15px;
+    box-shadow: var(--boxShadow01);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 50px;
+    background: var(--bckgrGradDark);
+    color: var(--colorLight);
+    text-shadow: var(--textShadow);
+    box-shadow: var(--boxShadow01);
+    margin: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+    .welcomeMessage {
+      font-size: 1.3em;
+      padding-left: 10px;
+      text-shadow: var(--textShadow);
+    }
+
+    .logoutBox {
+      padding-right: 10px;
+    }
+
+    .logoutButton {
+      background-color: var(--btnBckgrDark);
+      color: var(--colorLight);
+      box-shadow: var(--boxShadow002);
+      border: var(--borderColor)
+    }
+
+  .mainContent{
+    border: 1px solid;
+    border-color: var(--borderColor);
+    border-radius: 15px;
+    box-shadow: var(--boxShadow01);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bckgrGradDark);
+    color: var(--colorLight);
+    text-shadow: var(--textShadow);
+    box-shadow: var(--boxShadow02);
+    margin: 10px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+    .titleBox {
+      margin: 5px;
+    }
+    .title {
+      color: var(--colorDark);
+      font-size: 2em;
+      margin: 0px;
+    }
 
-.card {
-  padding: 2em;
-}
+    .natJegyzetek {
+    border: 1px solid;
+    border-color: var(--boxShadow002);
+    border-radius: 15px;
+    box-shadow: var(--btnBckgrDark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bckgrGradDark);
+    color: var(--colorLight);
+    text-shadow: var(--textShadow);
+    box-shadow: var(--boxShadow02);
+    margin: 10px 20px;
+      width:100%
+    }
 
-.read-the-docs {
-  color: #888;
-}
-*/
+      .mainLabel {
+
+      }
+
+      .appLink {
+        text-decoration: none;
+      }

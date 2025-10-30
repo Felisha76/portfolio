@@ -24,11 +24,19 @@ function App() {
   return (
     <div class="appEnterBox">
         <div class="headerBox">
-          <h1 class="welcomeMessage">Welcome, {user.email}</h1>
+          <div class="welcomeMessage">
+          <p class="welcomeText">Welcome, {user.email}</p>
+          </div>
+          <div class="logoutBox">
           <button class="logoutButton" onClick={handleLogout}>Logout</button>
+          </div>
         </div>
 
         <div class="mainContent">
+          <div class="titleBox">
+            <p class="title">NAT jegyzetek</p>
+          </div>
+          
           <div class="natJegyzetek">
             <label class="mainLabel">3. osztály</label>
           </div>
@@ -52,7 +60,7 @@ function App() {
           <div class="natJegyzetek">
             <label class="mainLabel">7. osztály</label>
           </div>
-          
+
           <div class="natJegyzetek">
             <label class="mainLabel">8. osztály</label>
           </div>
