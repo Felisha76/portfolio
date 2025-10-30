@@ -23,12 +23,41 @@ function App() {
   console.log("user:", user);
   return (
     <div class="appEnterBox">
-      <h1 class="welcomeMessage">Welcome, {user.email}</h1>
-      <button class="logoutButton" onClick={handleLogout}>Logout</button>
-      {
-      <p>Firebase elindult!!!</p>     
-      }
-      <a href="/NATjegyzetek/6.oszt/irodalom/irodalom_6.html" class="appLink">Irodalom jegyzetek</a>
+        <div class="headerBox">
+          <h1 class="welcomeMessage">Welcome, {user.email}</h1>
+          <button class="logoutButton" onClick={handleLogout}>Logout</button>
+        </div>
+
+        <div class="mainContent">
+          <div class="natJegyzetek">
+            <label class="mainLabel">3. osztály</label>
+          </div>
+
+          <div class="natJegyzetek">
+            <label class="mainLabel">4. osztály</label>
+          </div>
+
+          <div class="natJegyzetek">
+            <label class="mainLabel">5. osztály</label>
+          </div>
+
+          <div class="natJegyzetek">
+            <label class="mainLabel">6. osztály</label>
+            <a href="/NATjegyzetek/6_oszt/irodalom/irodalom_6.html" class="appLink">Irodalom</a>
+            <a href="/NATjegyzetek/6_oszt/nyelvtan/nyelvtan_6.html" class="appLink">Nyelvtan</a>
+            <a href="/NATjegyzetek/6_oszt/tortenelem/tortenelem_6.html" class="appLink">Történelem</a>
+            <a href="/NATjegyzetek/6_oszt/termeszettudomany/termeszettudomany_6.html" class="appLink">Természettudomány</a>
+          </div>
+
+          <div class="natJegyzetek">
+            <label class="mainLabel">7. osztály</label>
+          </div>
+          
+          <div class="natJegyzetek">
+            <label class="mainLabel">8. osztály</label>
+          </div>
+        </div>
+            
     </div>
   );
 }
