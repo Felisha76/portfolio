@@ -8,9 +8,6 @@ body {
       background-repeat: repeat-x;
 }
 
-:root {
-
-}
 
 .appEnterBox {
   width: clamp(100px, 100vw, 3000px); 
@@ -21,16 +18,19 @@ body {
   flex-direction: column;
   align-self: flex-start;
   --bckgrGradLight: linear-gradient(45deg, #d9bda5, #eee7d7);
-  --bckgrGradDark: linear-gradient(45deg, #683304, #d9bda5);
+  --bckgrGradDark: linear-gradient(45deg, #391b01, #d7965d);
+  --bckgrGrad03: linear-gradient(45deg, #70432d, #f1b578);
   --bckgrSolidLight: #f6eee3;
+  --bckgrSolidDark: #2b1501;
   --scrollbarGradient: linear-gradient(45deg, #6f421b, #d9bda5);
   --boxShadow01: 0 1em 3em rgba(0, 0, 0, 0.2);
-  --boxShadow002: #572b05;
+  --boxShadow002: 5px 0.5em 0.3em #272626;
   --colorDark: #2b1501;
   --colorLight: #f6eee3;
   --textShadow: 0 0.2em 0.4em #351901f8;
-  --borderColor: #d9bda5;
+  --borderColor: #f1d5c0 #431c01 #431c01 #f1d5c0;
   --btnBckgrDark: #331201;
+  --borderRadius: 6px 6px 0px 0px;
 }
 
   .headerBox {
@@ -61,11 +61,16 @@ body {
     }
 
     .logoutButton {
-      background-color: var(--textShadow);
+      background-color: var(--bckgrSolidDark);
       color: var(--colorLight);
       box-shadow: var(--boxShadow002);
       border: var(--borderColor)
     }
+
+      .logoutButton:hover {
+        background-color: var(--bckgrSolidLight);
+        color: var(--colorDark);
+      }
 
   .mainContent{
     border: 1px solid;
@@ -95,9 +100,9 @@ body {
 
     .natJegyzetek {
     border: 1px solid;
-    border-color: var(--boxShadow002);
-    border-radius: 15px;
-    box-shadow: var(--btnBckgrDark);
+    border-color: var(--borderColor);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadow002);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -105,13 +110,14 @@ body {
     background: var(--bckgrGradDark);
     color: var(--colorLight);
     text-shadow: var(--textShadow);
-    box-shadow: var(--boxShadow02);
+    
     margin: 10px;
       width:90%;
       height: 40px;
       overflow-x:hidden;
       scrollbar-width: none;
-      transition: height 10s;
+    height: 2em;
+    transition: height 1s;
     }
 
     .natJegyzetek::-webkit-scrollbar {
@@ -120,22 +126,26 @@ body {
 
     .natJegyzetek:hover {
       height:auto;
-
+      padding: 3px;
+      transition: height 10s;
+      background: var(--bckgrGrad03);
+      box-shadow: 20px 1em 0.5em #272626;
     }
 
       .mainLabel {
-        font-size: clamp(1em, 3vw, 4em);
+        font-size: clamp(1em, 2.1vw, 4em);
         font-weight: bold;
         color: #f2d4bf;
         text-shadow: var(--textShadow);
-        transition: height 10s;
+        
       }
 
       .mainLabel:hover {
         color:#331201;
         border-radius: 15px;
         background-color: #f2d4bf;
-
+        padding: 0px 10px 0px 10px;
+        
       }
 
       .appLink {
@@ -143,6 +153,7 @@ body {
         font-size: clamp(1em, 2.5vw, 3em);
         color: var(--colorLight);
         text-shadow: var(--textShadow);
+        padding-top: 5px;
       }
 
         .appLink:hover {
@@ -150,6 +161,10 @@ body {
           font-size: clamp(1em, 2.7vw, 3em);
           color: var(--colorLight);
           text-shadow: var(--textShadow);
-          background-color: #572b05;
-          border-radius: 15px;
+          background-color: var(--bckgrGradDark);
+          border-radius: var(--borderRadius);
+          border: solid 1px;
+          border-color: var(--borderColor);
+          box-shadow: var(--boxShadow002);
+          padding: 0px 10px 0px 10px;
         }
