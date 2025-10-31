@@ -68,8 +68,9 @@ body {
     }
 
       .logoutButton:hover {
-        background-color: var(--bckgrSolidLight);
+        background-color: #f1b578;
         color: var(--colorDark);
+        box-shadow: 20px 1em 0.5em #272626;
       }
 
   .mainContent{
@@ -83,7 +84,7 @@ body {
     align-items: center;
     background: var(--bckgrGradDark);
     color: var(--colorLight);
-    text-shadow: var(--textShadow);
+    /*text-shadow: var(--textShadow);*/
     box-shadow: var(--boxShadow02);
     margin: 10px;
   }
@@ -92,10 +93,11 @@ body {
       margin: 5px;
     }
     .title {
-      color: var(--colorDark);
+      color: #391b01;
       font-size: 2em;
       font-weight: bold;
       margin: 0px;
+    
     }
 
     .natJegyzetek {
