@@ -29,6 +29,7 @@ body {
   --colorLight: #f6eee3;
   --textShadow: 0 0.2em 0.4em #351901f8;
   --borderColor: #f1d5c0 #431c01 #431c01 #f1d5c0;
+  --borderColor02: #f9f6f5 #431c01 #793301 #f9f6f5;
   --btnBckgrDark: #331201;
   --borderRadius: 6px 6px 0px 0px;
 }
@@ -64,13 +65,17 @@ body {
       background-color: var(--bckgrSolidDark);
       color: var(--colorLight);
       box-shadow: var(--boxShadow002);
-      border: var(--borderColor)
+      border: 1px solid;
+      border-color: var(--borderColor);
     }
 
       .logoutButton:hover {
         background-color: #f1b578;
         color: var(--colorDark);
         box-shadow: 20px 1em 0.5em #272626;
+        transform: scale(1.15, 1.15);
+        border: 1px solid;
+        border-color: var(--borderColor02);
       }
 
   .mainContent{
@@ -132,6 +137,7 @@ body {
       transition: height 10s;
       background: var(--bckgrGrad03);
       box-shadow: 20px 1em 0.5em #272626;
+      transform: scale(1.04, 1.04);
     }
 
       .mainLabel {
