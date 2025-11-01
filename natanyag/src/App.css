@@ -121,10 +121,11 @@ body {
     margin: 10px;
       width:90%;
       height: 40px;
+      height: 3em;
       overflow-x:hidden;
       scrollbar-width: none;
-    height: 2em;
-    transition: height 1s;
+    
+    transition: all 0.5s;
     }
 
     .natJegyzetek::-webkit-scrollbar {
@@ -141,13 +142,13 @@ body {
     }
 
       .mainLabel {
-        font-size: clamp(1em, 2.1vw, 4em);
+        font-size: clamp(1em, 2vw, 4em);
         font-weight: bold;
         color: #f2d4bf;
         text-shadow: var(--textShadow);
         
       }
-
+/*
       .mainLabel:hover {
         color:#331201;
         border-radius: 15px;
@@ -155,7 +156,7 @@ body {
         padding: 0px 10px 0px 10px;
         
       }
-
+*/
       .appLink {
         text-decoration: none;
         font-size: clamp(1em, 2.5vw, 3em);
