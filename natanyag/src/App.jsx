@@ -52,69 +52,109 @@ function App() {
                     */}
 
                     <div class="newsItem">
-                      <label class="mainLabel">2025. november</label>
+                      <label class="mainLabel">2025.</label>
+                      {/* TEMPLATE
+                      <p class="article">november 01.
+                          <ol>
+                            <li></li>
+                          </ol>
+                        </p>
+                      <div class="divider-gradient"><p></p></div>
+                      */}
+
                         <p class="article">november 01.
                           <ol>
                             <li>A Nat jegyzetek átköltöztek egy Firebase alapú webapplikációba.</li>
                           </ol>
                         </p>
-                    </div>
-
-                    <div class="newsItem">
-                      <label class="mainLabel">2025. október</label>
-                      <p class="article">október 21.
-                        <ol>
-                          <li>Készen lett az összes hatodikos <b class="highlight">történelem</b> jegyzet is.</li>
-                          <li>Elkészült egy olyan <b class="highlight">teszt sablon</b> amivel egyszerűen 
-                              készíthetünk feleletválasztós teszteket bármilyen témában. </li>   
-                          <li>A 6-os irodalom jegyzetekbe ez a teszt beépítésre került ✏️</li>
-                        </ol>  
-                        <ul>
-                          <li>A jobb oldali menüben találjátok ezeket ➡️ </li>                         
-                        </ul>
-                      </p>
-                      
-                      <div class="divider-gradient"></div>
-                      
-                      <p class="article">október 19.
+                        <div class="divider-gradient"><p></p></div>
+                        <p class="article">október 21.
                           <ol>
-                            <li>A hatodikos <b>Természettudomány</b> jegyzetek készen vannak. </li>
-                            <li>A <b class="highlight">nyelvtanulási segéletekből</b>  a Die Deutschprofis A1 és A2 most már fejezetenkénti bontásban is 
-                                megtalálható a <b>Szótanuló flipcard-okban</b>, és a <b>Word Test</b>applikációkban. (Ezek átköltöztetése a webapplikációba
-                                még folyamatban van, a régi oldalon találjátok.)
-                            </li>
-                            <li>A <b class="highlight">flipcardokról</b> levettem a generált pötty képeket, többen jeleztétek, hogy mobilon zavaróak. 
-                                Sajnos nem tudom visszatenni az eredeti képeket, mert bár azok stock képek, és ez az oldal 
-                                oktatási célból készült, mégis jogos érdekbe ütközne, ha itt ilyen mennyiségben használnánk őket.
-                                Egyelőre még erre nem találtunk megoldást, hogy ingyen, vagy legalábbis nagyon olcsón ilyen mennyiségű képet
-                                letöltve, vagy csak linkelve használhatnánk. 😢</li>
-                            <li>Holnap valószínűleg - ha a rendszerek lelkivilága is engedi - elkészülnek a hatodikos 
-                                irodalom jegyzetek is, és várhatóan a hét végéig a történelem fejezetek is elkészülnek.
-                                Folyamatosan készülnek a jegyzetek, tananyagok.
-                            </li>
-                            <li>
-                                Minden felhasználót bíztatunk arra, hogy ha hibát talál pl a jegyzetekben, vagy kiegészítést kér, 
-                                esetleg kreatív ötlet másfajta tananyagokra, tesztekre,
-                                egyéb kérdés, kérés, óhaj, sóhaj, vélemény van, azt írjátok meg 
-                                <a href="mailto:frontneststudio@gmail.com"><b class="appLink">📧 emailben!</b></a>           
+                            <li>Készen lett az összes hatodikos <b>történelem</b> jegyzet is.</li>
+                            <li>Elkészült egy olyan <b>teszt sablon 📝</b> amivel egyszerűen 
+                            készíthetünk feleletválasztós teszteket bármilyen témában.</li>
+                            <li>A teszt beépítésre került a hatodikos irodalom jegyzetbe ✏️</li>
+                          </ol>
+                        </p>
+                        <div class="divider-gradient"><p></p></div>
+                        <p class="article">október 19.
+                          <ol>
+                            <li>A hatodikos <b>Természettudomány</b> jegyzetek készen vannak.</li>
+                          </ol>
+                        </p>
+                        <div class="divider-gradient"><p></p></div>
+                        <p class="article">október 14.
+                          <ol>
+                            <li>A hatodikos <b>Nyelvtan</b> jegyzetek készen vannak.</li>
+                            <li>📖 Irodalomból ezek vannak már készen:
+                                <ul>
+                                  <li>Szent László és a kun vitéz küzdelme 8</li>
+                                  <li>A tordai hasadék 12</li>
+                                  <li>Arany János: Szent László (legenda) 14</li>
+                                  <li>Csörsz árka 18</li>
+                                  <li>Szimónidész: A thermopülei hősök sírfelirata 20</li>
+                                  <li>Széchenyi Zsigmond: Csui!… (részlet) 22</li>
+                                  <li>Kőmíves Kelemenné 25</li>
+                                  <li>Arany János: Mátyás anyja 30</li>
+                                  <li>Arany János: A walesi bárdok 35</li>
+                                  <li>Fazekas Mihály: Lúdas Matyi – Első levonás 41</li>
+                                  <li>Fazekas Mihály: Lúdas Matyi – Második levonás 45</li>
+                                  <li>Fazekas Mihály: Lúdas Matyi – Harmadik levonás 51</li>
+                                  <li>Fazekas Mihály: Lúdas Matyi – Negyedik levonás 55</li>
+                                  <li>Összefoglalás – Hősök az irodalomban 60</li>
+                                </ul>
                             </li>
                           </ol>
                         </p>
+                        <div class="divider-gradient"><p></p></div>
+                        <p class="article">október 13.
+                          <ol>
+                            <li>⚠️Nyelvtan: Új formátumú jegyzetek, és újabb fejezetek készültek el:
+                              <ul>
+                                  <li>🆕1–2. Ismétlés 7</li>
+                                  <li>🆕3. Szövegértés, szövegalkotás a gyakorlatban 10</li>
+                                  <li>🆕4. Az ismeretközlő szöveg beszédben és írásban 15</li>
+                              </ul>
+                                  I. SZÓFAJOK A MONDATBAN: főnév, melléknév, számnév; viszonyszók I.
+                              <ul>
+                                  <li>🆕5–6. A szófajok csoportjai 18</li>
+                                  <li>🆕7. A főnév jelentése, toldalékolhatósága, mondatbeli szerepe 23</li>
+                                  <li>🆕8. A főnév fajtái 26</li>
+                                  <li>🆕9. A tulajdonnevek helyesírása I. 30</li>
+                                  <li>🆕10. A tulajdonnevek helyesírása II. : A földrajzi nevek helyesírása 32</li>
+
+                                  <li>🆕12. A viszonyszók I. Névelő, névutó, kötőszó, tagadószó 36</li>
+                                  <li>🆕13. A melléknév 38</li>
+                                  <li>🆕14. A tulajdonnévből képzett melléknevek helyesírása 41</li>
+
+                                  <li>🆕18. A számnév 51</li>
+                                  <li>🆕💥19. A számnév helyesírása és helyes használata 54</li>
+
+                              </ul>
+                            </li>
+                          </ol>
+                        </p>
+                        <div class="divider-gradient"><p></p></div>
+                        <p class="article">október 10.
+                          <ol>
+                            <li>⚠️ <b>Nyelvtan</b> kattintható EPUB tartalomjegyzék készen lett. 😊</li>
+                            <li>⚠️<b>NYELVTAN:</b> Ma a jegyzetekkel végeztem 'A tulajdonnévből képzett melléknevek helyesírása' 
+                                fejezetig, vagyis az első témacsoport a témazáróig már készen van ebből. </li> 
+                            <li>⚜️ <b>TÖRTÉNELEM</b>-ből a Hunyadi János a törökverő fejezet is készen van, 
+                                és a jegyzetet, a tankönyvet, a munkafüzetet és az atlaszt is meg tudjátok
+                                nyitni akár mobilról is.  </li>
+                            <li>📖 <b>IRODALOM</b>-ból Arany János: A walesi bárdok és az ezt megelőző leckék 
+                                kijegyzetelése készen van, azt hiszem, nagyjából itt tartanak most a gyerkek 
+                                az iskolában. Szintén meg lehet nyitni az EPUB munkafüzetet is alul. </li> 
+                            <li>🌿 <b>TERMÉSZETTUDOMÁNY</b>-ból a jegyzetekkel ma nem haladtam, de látom, 
+                                hogy párhuzamosan tanulják a földrajzi és biológiai témákat ❤ 
+                                Igyekszem majd ehhez alkalmazkodni. </li>
+                          </ol>
+                        </p>
+                                               
                     </div>
-                    
-
-
-
-
-
-
-
-
 
                 </div>  
-
-                
-                
 
                <div class="natJegyzetBox">  
                   <div class="titleBox">
@@ -149,33 +189,14 @@ function App() {
                         <label class="mainLabel">8. osztály</label>
                       </div>
 
-                  <div class="titleBox">
-                    <p class="title">Egyéb</p>
-                  </div>
-                      
-                      <div class="natJegyzetek">
-                        <label class="mainLabel">Nyelvtanulás</label>
-                        <a href="" class="appLink">Szótárak</a>
-                        <a href="" class="appLink">Flipcards</a>
-                        <a href="" class="appLink">Teszt</a>
-                      </div>
-
-                      <div class="natJegyzetek">
-                        <label class="mainLabel">Matematika</label>
-                        <a href="" class="appLink">01</a>
-                        <a href="" class="appLink">02</a>
-                        <a href="" class="appLink">03</a>
-                      </div>
-
-                      <div class="natJegyzetek">
-                        <label class="mainLabel">Egyéb</label>
-                        <a href="" class="appLink">01</a>
-                        <a href="" class="appLink">02</a>
-                        <a href="" class="appLink">03</a>
-                      </div>
+                  
               </div>    
         </div>
-            
+
+        <div class="footer">
+          <p class="article">NATanyag&copy; Version: 1.5 2025.11.02 </p>
+          <a href="mailto:frontneststudio@gmail.com" class="appLink"><b>Contact:📧 frontneststudio@gmail.com</b></a>
+        </div>    
     </div>
   );
 }
