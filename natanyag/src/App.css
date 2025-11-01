@@ -161,16 +161,14 @@ body {
     align-items: center;
     background: var(--bckgrGradDark);
     color: var(--colorLight);
-    text-shadow: var(--textShadow);
-    
-    margin: 10px;
-      width:90%;
+    text-shadow: var(--textShadow);      
+    width:90%;
+    overflow-x:hidden;
+    scrollbar-width: none;
       height: 40px;
-
-      overflow-x:hidden;
-      scrollbar-width: none;
-    
-    transition: all 1s;
+      margin: 10px;   
+      padding: 10px; 
+      transition: height 10s;
     }
 
     .natJegyzetek::-webkit-scrollbar {
@@ -178,17 +176,16 @@ body {
     }
 
     .natJegyzetek:hover {
-      height:auto;
-      padding: 3px;
-      
+      height:auto;      
       transition: height 10s;
       background: var(--bckgrGrad03);
       box-shadow: 20px 1em 0.5em #272626;
-      transform: scale(1.04, 1.04);
+      transform: height scale(1.04, 1.04) 10s;
+      padding: 20px;
     }
 
     .newsItem:hover {
-      padding-left:25px;
+      padding-left: 25px;
       transition: all 1s;
       background: var(--bckgrGrad03);
       box-shadow: 20px 1em 0.5em #272626;
@@ -213,7 +210,7 @@ body {
         font-size: clamp(1em, 2.5vw, 3em);
         color: var(--colorLight);
         text-shadow: var(--textShadow);
-        padding-top: 5px;
+        padding-top: 10px;
       }
 
         .appLink:hover {
