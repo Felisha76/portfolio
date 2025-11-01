@@ -129,8 +129,7 @@ body {
       justify-content: space-between;
       align-items: left;
       background: var(--bckgrGradDark);
-      color: var(--colorLight);
-      text-shadow: var(--textShadow);      
+      color: var(--colorLight);      
       width:90%;
       height: auto;
       margin: 10px;
@@ -143,8 +142,16 @@ body {
 
       .article {
         margin: 5px 0px;
-        font-size: clamp(1em, 2vw, 4em);
+        font-size: clamp(1em, 2.5vw, 4em);
       }
+
+      .divider-gradient {
+        height: 4px;
+        margin: 5px 10px 5px 5px;
+        background: linear-gradient(to left, #311700, #edcfad);
+        border: none;
+      }
+
 
     .natJegyzetBox {
       display: flex;
@@ -192,7 +199,7 @@ body {
     .newsItem:hover {
       padding-left: 25px;
       transition: all 1s;
-      background: var(--bckgrGrad03);
+      /*background: var(--bckgrGrad03);*/
       box-shadow: 20px 1em 0.5em #272626;
       transform: scale(1.04, 1.04) translate(10px, 8px);
     }
