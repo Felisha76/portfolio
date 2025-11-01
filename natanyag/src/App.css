@@ -129,14 +129,15 @@ body {
       align-items: left;
       background: var(--bckgrGradDark);
       color: var(--colorLight);
-      text-shadow: var(--textShadow);
-      margin: 10px;
+      text-shadow: var(--textShadow);      
       width:90%;
       height: auto;
+      margin: 10px;
       overflow-x:hidden;
       scrollbar-width: none;    
-      transition: all 1s;
+      
       padding-left: 20px;
+      transition: all 1s, transform 1s;
     }
 
       .article {
@@ -167,8 +168,8 @@ body {
     scrollbar-width: none;
       height: 40px;
       margin: 10px;   
-      padding: 10px; 
-      transition: height 10s;
+      /*padding: 10px; */
+      transition: all 1s, transform 1s;
     }
 
     .natJegyzetek::-webkit-scrollbar {
@@ -176,12 +177,14 @@ body {
     }
 
     .natJegyzetek:hover {
-      height:auto;      
-      transition: height 10s;
+      height:auto;   
+      min-height: 40px;   
+      transition: all 1s;
       background: var(--bckgrGrad03);
       box-shadow: 20px 1em 0.5em #272626;
-      transform: height scale(1.04, 1.04) 10s;
-      padding: 20px;
+      transform: scale(1.04, 1.04) translate(-10px, 8px);
+      /*transform: height scale(1.04, 1.04) 10s;
+      padding: 20px;*/
     }
 
     .newsItem:hover {
@@ -189,7 +192,7 @@ body {
       transition: all 1s;
       background: var(--bckgrGrad03);
       box-shadow: 20px 1em 0.5em #272626;
-      transform: scale(1.04, 1.04);
+      transform: scale(1.04, 1.04) translate(10px, 8px);
     }
 
       .mainLabel {
